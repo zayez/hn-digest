@@ -63,6 +63,10 @@ A quote is `{ "author", "text", "commentId" }`, copied from one comment in `comm
 }
 ```
 
+## Unslop the prose
+
+Read `~/.claude/skills/unslop/SKILL.md` and apply it to every field you wrote: `tldr`, `keyPoints`, `whyItMatters`, `articleNote`, `overview`, theme `title` and `synthesis`, `consensus`, `dissent`, `contrarian.why`. A summary reports what others said, so skip its "use I" and "have opinions" advice. Leave `quote.text`, `title` and the other fields copied from `meta.json` exactly as they are, curly quotes and dashes included: verify compares them byte for byte. Done when the self-audit finds no tells.
+
 ## Verify
 
 `npm run verify -- <id>` checks the copied metadata against `meta.json` and every quote against its comment (`npm run build` checks the shape). Fix any mismatched field. For every rejected quote, find the exact wording in `comments.txt` and fix the text, author or id — or pick a different quote. Done when verify reports all good.
