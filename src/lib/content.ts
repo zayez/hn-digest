@@ -10,11 +10,15 @@ export interface IssuePost {
   section: string;
 }
 
-export const issuePath = (issue: Issue) => `/issues/${issue.data.number}/`;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+/** A root-relative path under the site's base, which Astro doesn't add to hand-written links. */
+export const withBase = (path: string) => `${base}${path}`;
+
+export const issuePath = (issue: Issue) => withBase(`/issues/${issue.data.number}/`);
 export const postSlug = (post: Post) => `${post.id}-${slugify(post.data.title)}`;
-export const postPath = (post: Post) => `/posts/${postSlug(post)}/`;
+export const postPath = (post: Post) => withBase(`/posts/${postSlug(post)}/`);
 export const sectionSlug = (section: string) => slugify(section);
-export const sectionPath = (section: string) => `/sections/${sectionSlug(section)}/`;
+export const sectionPath = (section: string) => withBase(`/sections/${sectionSlug(section)}/`);
 export const hnThreadUrl = (id: number) => `https://news.ycombinator.com/item?id=${id}`;
 
 /** Newest first. */

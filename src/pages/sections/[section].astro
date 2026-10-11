@@ -9,6 +9,7 @@ import {
   sectionSlug,
   type Issue,
   type Post,
+  withBase,
 } from '../../lib/content';
 import { formatCount, formatDate } from '../../lib/format';
 import stack from '../../styles/objects/stack.module.css';
@@ -44,7 +45,7 @@ const { section, entries } = Astro.props;
   <div class:list={[stack.stack, stack.gapXl]}>
     <header class:list={[stack.stack, stack.gap2xs]}>
       <p class={page.eyebrow}>
-        <a href="/">Issues</a> › Section
+        <a href={withBase('/')}>Issues</a> › Section
       </p>
       <h1>#{section}</h1>
       <p class={page.eyebrow}>{formatCount(entries.length, 'post')} across all issues</p>

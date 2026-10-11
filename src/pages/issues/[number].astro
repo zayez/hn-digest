@@ -11,6 +11,7 @@ import {
   issuePath,
   sectionSlug,
   type Issue,
+  withBase,
 } from '../../lib/content';
 import { formatCount, formatDate, isoDate } from '../../lib/format';
 import cluster from '../../styles/objects/cluster.module.css';
@@ -45,7 +46,7 @@ const link = (i?: Issue) =>
   <div class:list={[stack.stack, stack.gapXl]}>
     <header class:list={[stack.stack, stack.gap2xs]}>
       <p class={page.eyebrow}>
-        <a href="/">Issues</a>
+        <a href={withBase('/')}>Issues</a>
       </p>
       <h1>Issue #{issue.data.number}</h1>
       <p class:list={[cluster.cluster, page.eyebrow]}>
