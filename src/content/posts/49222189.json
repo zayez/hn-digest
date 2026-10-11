@@ -1,0 +1,118 @@
+{
+  "hnId": 49222189,
+  "title": "“Code was never the hard part” is an insult to all programmers",
+  "url": "https://blog.senko.net/code-was-never-the-hard-part-is-an-insult-to-all-programmers",
+  "domain": "blog.senko.net",
+  "kind": "article",
+  "author": "senko",
+  "postedAt": "2026-08-08T14:32:33.000Z",
+  "points": 946,
+  "commentCount": 589,
+  "readingMinutes": 7,
+  "tldr": "Senko Rašić argues that the AI-era refrain \"code was never the hard part\" belittles a hard craft. Programmers should learn to write good code and to understand users, he says, and stop retreating into \"code is easy\" or \"code is art\" cope.",
+  "article": {
+    "keyPoints": [
+      "If coding were easy, the author asks, why did programmers command high salaries and sit leetcode-style interviews long before ZIRP? Why would books like TAOCP and SICP exist, and why is software so buggy?",
+      "If deciding what to build were the hard part, product managers, market researchers and business analysts would be the highly paid stars of software companies. Instead they are often seen as clueless or as pencil pushers.",
+      "Most programmers he has met don't want to talk to stakeholders, and the ones who claim to \"solve customer problems\" mostly argue about monads and DRY. He later retracted a jab that anyone who cares about both craft and customers needs a psychiatrist.",
+      "His answer is \"why not both\". Understanding users and writing good code are both critical, and declaring either \"code is easy\" or \"code is art that cannot be automated\" is cope.",
+      "Some things won't change. Complexity keeps growing, software rots, and users can't say what they want. Some skills will lose value, like fighting memory bugs in C, the way punch cards and COBOL did before.",
+      "Seniors should learn UX, customer interviews and business strategy. Juniors should go deeper into fundamentals like pointers, the memory hierarchy and HTTP. Nobody should hand their judgement to AI or become a \"meat proxy\"."
+    ],
+    "whyItMatters": "Read the original for its run of \"if coding is easy...\" questions and a reading list that includes SICP and The Mom Test. The summary keeps the argument but loses the tone, and the tone provoked much of the thread."
+  },
+  "comments": {
+    "overview": "A large, heated thread. Most commenters said the essay attacks a straw man, since the phrase means coding is the easiest part or not the bottleneck, not that it is easy. The rest split by domain. Enterprise and CRUD developers said requirements and organisations are the real difficulty, while people doing systems, performance and scientific work insisted the code itself is hard. AI coding came up in nearly every subthread.",
+    "themes": [
+      {
+        "title": "The essay attacks a misreading of the phrase",
+        "synthesis": "The most common reaction was that \"code was never the hard part\" means coding is the least hard of many hard parts, or that it isn't the bottleneck. Read that way, the essay's questions about salaries and Carmack miss the point. Commenters drew the line between typing and programming, or between code and the decisions inside it, and said AI has pulled the two apart. Others answered that a blanket slogan misleads business leaders whatever its defenders meant.",
+        "quotes": [
+          {
+            "author": "wesselbindt",
+            "text": "there's much, much more to a software engineer's job than just coding, and that other stuff is very hard to do well, and people pay for that.",
+            "commentId": 49225031
+          },
+          {
+            "author": "electric_toucan",
+            "text": "AI has decoupled “typing the code” from “making the decisions about what to type” because AI can generate code from very ambiguous prompts.",
+            "commentId": 49226291
+          }
+        ]
+      },
+      {
+        "title": "It depends on the domain",
+        "synthesis": "Enterprise, CRUD and frontend developers said their code is mostly simple validation, SQL and mapping. For them the hard part is pinning down requirements and all their edge cases. People working on HPC, embedded, trading systems, distributed systems or novel math said the code itself is the bottleneck. One described PhD work optimised until memory bandwidth and the CPU pipelines were saturated. Several said the answer changes with career stage and with the layer of the stack you work in.",
+        "quotes": [
+          {
+            "author": "jdw64",
+            "text": "In the end, whether coding was difficult or easy depends entirely on which layer you're working in.",
+            "commentId": 49224466
+          },
+          {
+            "author": "Waterluvian",
+            "text": "In my career code was the hard part for the first few years. Then I got over the hump and everything else about my job was harder.",
+            "commentId": 49225539
+          }
+        ]
+      },
+      {
+        "title": "Code is design, not transcription",
+        "synthesis": "A large camp argued that you can't finish requirements and design before coding. Writing the code shows what is wrong with the plan, which is why waterfall failed. Performance, invariants and maintainability all live in the code, and bad loops can undo a sound architecture. The other side said the hard decisions happen upstream in specs and architecture, and that rushing into code produces systems that barely hold together.",
+        "quotes": [
+          {
+            "author": "blub",
+            "text": "The idea that code is mere transcription - which I see a lot in these AI discussions - is completely false. Code is a form of low-level design and is where the rubber hits the road.",
+            "commentId": 49226427
+          },
+          {
+            "author": "dofm",
+            "text": "if you are an actually good developer there are choices that emerge only from the first draft of the code",
+            "commentId": 49224750
+          }
+        ]
+      },
+      {
+        "title": "Organisations, not code, are the bottleneck",
+        "synthesis": "Many described projects where the code was trivial and the time went to meetings, compliance, shifting priorities and review queues. One medical-device change touched about 100 lines and took months of process. In another case a build the CIO ordered took two weeks, then years of design meetings followed. Several said AI has made this worse, with more low-quality code to review and product owners generating designs with AI.",
+        "quotes": [
+          {
+            "author": "HeyLaughingBoy",
+            "text": "The actual code that changed was probably only around 100 LOC but the project took several months. Heck, the code was simple enough that an intern could have done it.",
+            "commentId": 49224920
+          },
+          {
+            "author": "al_borland",
+            "text": "If a tool was going to come along and automate away a huge part of a programmer’s job, I think most would want that tool to eliminate the meetings, ambiguity, scope creep, and administrative work… not the coding itself.",
+            "commentId": 49226560
+          }
+        ]
+      },
+      {
+        "title": "Do salaries prove coding is hard?",
+        "synthesis": "The essay's salary argument started a long debate. Some said many people simply can't learn to code, pointing to CS101 dropouts and failed screening interviews. Others said pay follows supply and demand and the economics of writing software once and selling it everywhere. In their view programmers are paid because software is cheaper than the labour it replaces, not because the work is hard.",
+        "quotes": [
+          {
+            "author": "hn_throwaway_99",
+            "text": "IMO coding requires a particular way of thinking that a large subset of people just aren't good at",
+            "commentId": 49226335
+          },
+          {
+            "author": "pjmorris",
+            "text": "But we haven't really been paid because it's difficult, we've been paid because we're cheaper than the alternative.",
+            "commentId": 49226367
+          }
+        ]
+      }
+    ],
+    "consensus": "Writing code that works and building the right system that stays maintainable are different jobs, and the second one is hard. Most of the argument came from people meaning different things by \"coding\".",
+    "dissent": "A sizable minority sided with the author. To them code really was the hard part, the slogan is cope or an AI-evangelist mantra, and the people repeating it have lost touch with real coding. Separately, several readers called the essay a straw man or rage-bait, and some criticised its split-personality jab.",
+    "contrarian": {
+      "author": "frgturpwd",
+      "text": "The fact that programming has difficulty that people spend decades mastering it, or that the best programmers can do things ordinary programmers cannot does not tell you how much of that depth is actually required to produce the software people value. Which is, tbh, very little.",
+      "commentId": 49230337,
+      "why": "It grants that the craft is deep and still explains the slogan. What matters economically is how much of that depth the software people value actually needs, not how hard the craft is to master."
+    }
+  },
+  "digestedAt": "2026-10-11T13:52:31.000Z"
+}

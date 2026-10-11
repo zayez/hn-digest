@@ -1,0 +1,118 @@
+{
+  "hnId": 49271994,
+  "title": "AI is removing the middle class of software engineering?",
+  "url": "https://blog.florianherrengt.com/ai-removing-middle-class-software-engineering.html",
+  "domain": "blog.florianherrengt.com",
+  "kind": "article",
+  "author": "florianherrengt",
+  "postedAt": "2026-08-12T13:20:05.000Z",
+  "points": 1014,
+  "commentCount": 937,
+  "readingMinutes": 14,
+  "tldr": "AI didn't create bad engineers. It removed their speed limit. Anyone can now generate tens of thousands of lines a day, but understanding and reviewing a change is as slow as ever. The author argues this pulls pay apart. The few people who know what the system does get paid more, and the rest get priced out.",
+  "article": {
+    "keyPoints": [
+      "In a typical 2026 scene, a senior engineer comes back from a weekend to seven PRs, one of them +24,506 lines. The engineer who wrote a feature can't say where its data comes from without asking Claude, and design decisions live only in long Claude conversations.",
+      "AI makes projects with a weak engineering culture fail faster. To an untrained eye the generated code works, so teams keep piling on until nobody understands the system.",
+      "Bad decisions are cheap to make and expensive to reverse. An LLM can add database tables in ten minutes, but once real data lives in them, removing them needs migrations, rollback plans and care for foreign keys. By the time one bad decision is untangled, five more have been merged.",
+      "Tests, CI and code review haven't gone away, but they were built for a world where producing huge changes was impossible. If the people validating changes are the bottleneck, the only options are to generate less, find a better way to validate, or accept lower quality.",
+      "The author expects salaries to spread further apart. The bar for being employable is whatever the current best model can do, so good engineers become more valuable and the rest become cheaper or get replaced. He thinks the same will happen in other knowledge work.",
+      "An updated objections section answers the comment thread. An LLM is not a compiler, because it makes design decisions rather than translating code with fixed meaning. A 10-PR-a-day engineer may just be moving work onto reviewers. Two juniors who use AI to understand things beat seniors who stopped trying."
+    ],
+    "whyItMatters": "Worth reading in full for leads and reviewers dealing with floods of AI-generated PRs. The opening story is a recognisable scene to show management, and the objections section answers the usual pushback in one place, such as 'just fix your process', 'you're anti-AI' and 'it's like a compiler'."
+  },
+  "comments": {
+    "overview": "A huge, mostly sympathetic thread full of first-hand stories: CPU usage climbing from Claude-written HTTP clients, 14k-line PRs that turned out to be 5-line config changes, managers ranking people by token spend. The author replied to dozens of comments, and many of those replies ended up in the article. The main arguments were over whether the real culprit is bad engineers or the incentives managers set, whether understanding the system still matters, and what this means for the job market. Long side debates on leetcode interviews and licensing software engineers took up a lot of space.",
+    "themes": [
+      {
+        "title": "AI multiplies bad engineers' blast radius",
+        "synthesis": "Most commenters recognised the problem. A weak engineer who once struggled to get code to compile can now ship thousands of lines that compile, pass CI and look plausible. One staff engineer traced exponential CPU growth to engineers who 'ship whatever Claude gives them'. Others called AI a force multiplier that multiplies negative skill too. A minority argued that AI actually limits damage from bad developers, since it writes tidier code and more tests than they would. Others replied that the damage is in the architecture, which bad developers don't notice.",
+        "quotes": [
+          {
+            "author": "ryandrake",
+            "text": "Today, a bad engineer can churn out ten thousand lines of garbage that actually compiles and runs, before my first cup of coffee. If not on a tight leash, they'll sink the whole codebase or inundate every senior person with garbage code review requests.",
+            "commentId": 49273758
+          },
+          {
+            "author": "mjr00",
+            "text": "If you're a good dev, you can totally prompt Claude to not do this and correct itself, that's not an issue. The issue is that bad devs won't even notice this is happening in the first place.",
+            "commentId": 49273671
+          }
+        ]
+      },
+      {
+        "title": "Blame the incentives, not the engineers",
+        "synthesis": "Many commenters pushed the problem up the chain. Managers measure tickets closed, lines changed and now AI spend, so the careful engineer looks like the weak one, and pushing back can get you called toxic. Several described leaders who openly don't care about quality, QA teams cut to pay for LLM bills, and executives vibe-coding products themselves. The author agreed that companies are measuring the wrong thing but held that refusing bad changes is still part of the job.",
+        "quotes": [
+          {
+            "author": "ponector",
+            "text": "If you are closing one ticket per week with \"good\" code but your teammate does three with \"bad\" code - it's actually you are a bad employee. Also they may say you are a toxic one.",
+            "commentId": 49277250
+          },
+          {
+            "author": "b40d-48b2-979e",
+            "text": "I got DMed by management recently asking if I was anti-AI because I had the lowest spend on the team as the lead, y'know, the one that has to review all the slop my peers are generating.",
+            "commentId": 49274083
+          }
+        ]
+      },
+      {
+        "title": "Can process replace understanding?",
+        "synthesis": "AI-first teams described moving the work to an 'agent layer': detailed coding standards, review skills and test batteries, so that humans only skim the PRs. Others asked what QA practices the complainers had before. The author replied that standards and green CI can coexist with a system nobody has a mental model of, and that the difficulty of writing code used to be a safeguard in itself. Pushback came from people who say they can keep a 25k-line diff understood through careful plans. Others predicted that reviewing code will go the way of reading compiler output, an analogy the author rejected because LLMs make design decisions.",
+        "quotes": [
+          {
+            "author": "_fat_santa",
+            "text": "But the real work is not in the \"development layer\", it's now in the \"agent layer\".",
+            "commentId": 49273789
+          },
+          {
+            "author": "florianherrengt",
+            "text": "You can have code that perfectly follows every standard and passes every test while gradually building a system nobody has a mental model of.",
+            "commentId": 49277200
+          }
+        ]
+      },
+      {
+        "title": "Where good engineers come from",
+        "synthesis": "A long branch blamed the 2010s 'learn to code' and bootcamp push for filling the industry with people who never cared about the craft. Bootcamp graduates pushed back, and some saw the push as a way to drive down wages. That branch spun off into long debates about leetcode as a hiring filter and whether software engineering should be licensed like civil engineering. A sharper worry was that AI breaks the paths by which people improve: fewer junior roles, and failures that feel like the tool's fault rather than one's own.",
+        "quotes": [
+          {
+            "author": "WorldMaker",
+            "text": "A lot of \"good\" engineers started as \"bad\" engineers that learned, sometimes the hard way and sometimes with patient mentorship, how to be better engineers. Patient mentorship becomes harder as code reviews become less personal.",
+            "commentId": 49277222
+          },
+          {
+            "author": "overgard",
+            "text": "I remember people used to debate all the time about if there were \"10x\" engineers or whatever. A few I'm sure, but I think the real problem is we have a lot of 0.1x engineers or worse.",
+            "commentId": 49276395
+          }
+        ]
+      },
+      {
+        "title": "The job market and the missing middle",
+        "synthesis": "Several noted that the article says little about a 'middle class'. They read the title as being about mid-level jobs disappearing, and some predicted lower wages and a career only for the exceptional. Skeptics asked where the vibe-coded products that beat established software actually are, and whether any layoffs can really be traced to AI rather than interest rates. An H-1B branch argued over how much foreign labor matters. Others described the jobs that are gone as ticket-to-code work and expected that layer to shrink.",
+        "quotes": [
+          {
+            "author": "ryandrake",
+            "text": "We keep hearing this, but where is the Photoshop killer written by a gas station attendant? Where is the PayPal alternative written by a retired nurse?",
+            "commentId": 49273857
+          },
+          {
+            "author": "lookACamel",
+            "text": "Again this is not about the soldiers in the army being bad of incompetent, those are excuses. The real reason is that it takes a lot to train and maintain a soldier.",
+            "commentId": 49281528
+          }
+        ]
+      }
+    ],
+    "consensus": "AI speeds up writing code, not understanding it, and whoever submits or approves a change must be able to explain it. Huge PRs nobody understands are a real and growing problem, and teams that keep changes small and reviewable do fine.",
+    "dissent": "A large group argued this is a management and incentive failure, or a process failure, not something AI causes, since bad code shipped before too. Others said nobody really understood large systems before AI either. AI-first teams said strong standards and verification make deep review unnecessary.",
+    "contrarian": {
+      "author": "jplusequalt",
+      "text": "This article has made the implicit assumption that the top quartile of engineers are immune from skill decline. They're not. If you're an engineer who increasingly outsources the planning, writing, and analysis of code to an LLM, you're losing your ability to plan, write, and analyze code.",
+      "commentId": 49274948,
+      "why": "Where the thread argued over which engineers are bad, this points out that the good engineers the article counts on may be losing the understanding that makes them valuable."
+    }
+  },
+  "digestedAt": "2026-10-11T13:52:26.000Z"
+}

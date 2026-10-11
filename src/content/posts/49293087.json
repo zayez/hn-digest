@@ -1,0 +1,102 @@
+{
+  "hnId": 49293087,
+  "title": "Blog about things you don't understand yet",
+  "url": "https://www.seangoedecke.com/blog-about-things-you-dont-understand-yet/",
+  "domain": "seangoedecke.com",
+  "kind": "article",
+  "author": "gfysfm",
+  "postedAt": "2026-08-13T23:39:33.000Z",
+  "points": 169,
+  "commentCount": 49,
+  "readingMinutes": 7,
+  "tldr": "Sean Goedecke argues that blogging about a topic while you're still learning it is one of the best ways to learn it. Each post should argue a point someone could disagree with, you should research enough to defend it, and you should be honest with readers about your credentials.",
+  "article": {
+    "keyPoints": [
+      "Every post he publishes teaches him at least two things: the idea that prompted it and something he found while writing. If drafting teaches him nothing new, the post isn't worth publishing.",
+      "Each post must argue a point a sensible person could disagree with. He compares this to rhyme and meter in poetry. The constraint makes writing easier, and it forces him to research enough to answer the obvious objections.",
+      "Writing exposes gaps that thinking alone hides. He often changes his mind mid-draft, and his conclusions come out so much sharper than his introductions that he routinely rewrites the opening paragraph.",
+      "He gives three reasons it's fine to write outside his expertise. Beginners often explain a field better than experts. A little research can debunk a wrong public consensus, such as the \"500ml per prompt\" water figure. And his real name and résumé are public.",
+      "Feedback is a big part of the payoff. Public posts call for a thick skin. LLMs give junk advice and hedge constantly, but they're good at spotting real misunderstandings and far kinder than commenters on Lobsters or HN.",
+      "He offers two checks that the practice is working. You should change your mind often while writing, and a first draft's conclusion should be tighter than its introduction. If it isn't, the draft taught you nothing."
+    ],
+    "whyItMatters": "Read the original if you blog or want to. It links to the specific posts where he changed his mind or debunked a popular claim, and those examples show what the method produces better than this summary can."
+  },
+  "comments": {
+    "overview": "A mostly friendly thread. Most commenters accepted that writing helps you think, then argued over the edges. Should novices publish at all? Can AI or conversation replace the work of writing? Does publishing matter when bots are the only readers? A few top-level replies were one-line jokes about the title, which they had read as promising a blog to read rather than advice.",
+    "themes": [
+      {
+        "title": "Should learners publish, and how honestly",
+        "synthesis": "The sharpest split was over whether people should blog about subjects they don't understand yet. Animats said no, because people and LLMs already fill the web with that. Most replies narrowed his objection to pretending to expertise, not learning in public. They pointed to Julia Evans's blog as the model and to the author's public credentials. rramadass and gpjt proposed a middle ground. Write once you've just started to understand something, say how deep your knowledge goes, and avoid both a falsely expert voice and ChatGPT-style hedging.",
+        "quotes": [
+          {
+            "author": "tmoertel",
+            "text": "Blogging about things you are learning about, especially if you invite feedback, is a great way to learn and to build a shared understanding within a larger community.",
+            "commentId": 49294765
+          },
+          {
+            "author": "gpjt",
+            "text": "It's really tricky to strike the right balance between making it clear that the topic is new to you, and hedging so much that you sound like ChatGPT on a bad day.",
+            "commentId": 49298057
+          }
+        ]
+      },
+      {
+        "title": "Writing versus discussion and AI as a way to learn",
+        "synthesis": "tmoertel compared writing to lifting weights. If an AI writes for you, you don't get stronger. altmanaltman answered that discussion, with people or with AI, teaches better. HexPhantom suggested using AI as a critic, a spotter that pokes holes in your draft instead of lifting the weight for you. tmoertel replied that only writing a coherent account entirely on your own tests mastery. matwood added that writing shields you from people who flood a debate with bad arguments.",
+        "quotes": [
+          {
+            "author": "tmoertel",
+            "text": "If I let an AI write for me, it would be the same as letting a robot lift weights for me. Yeah, it would be easier, but I would not get stronger, nor would I gain the confidence and self discipline that comes from doing hard things.",
+            "commentId": 49293934
+          },
+          {
+            "author": "HexPhantom",
+            "text": "Having it generate the argument is like letting the robot lift the weight. Having it poke holes in an argument you wrote yourself is more like having a spotter",
+            "commentId": 49294994
+          }
+        ]
+      },
+      {
+        "title": "Why publish if nobody reads it",
+        "synthesis": "stackghost shut down his blog because 99% of its traffic was bots, and now keeps study notes in a private notebook. Replies defended publishing anyway. krapp pointed out that blogs have always gone mostly unread and said the fun was in the activity itself. dgellow said some people just want the thing to exist. conradludgate and beej71 said that writing for a possible reader makes them check their assumptions in a way private notes never do.",
+        "quotes": [
+          {
+            "author": "conradludgate",
+            "text": "When writing for myself, I don't think about the assumptions as much, but when writing for others they become a lot more evident to me.",
+            "commentId": 49295810
+          },
+          {
+            "author": "dgellow",
+            "text": "Because you want the thing to exist. I make music I don’t expect anyone to ever listen to, I just want the thing to be and I feel good uploading it somewhere I can link to in the future if I want to.",
+            "commentId": 49297104
+          }
+        ]
+      },
+      {
+        "title": "The essay as an attempt, and the argue-a-point rule",
+        "synthesis": "Commenters placed the post in an older tradition. zenoprax noted that \"essay\" literally means attempt, as in Montaigne. b800h recalled that Boris Johnson wrote steelmanned Brexit columns for both sides to make up his mind. CurtMonash recognized the philosophy-student habit of picking an argument to disagree with. MarkSweep objected that requiring every post to argue a point dismisses posts that just share something interesting. HexPhantom replied that the author presents the rule as a constraint on himself, not on other bloggers.",
+        "quotes": [
+          {
+            "author": "MarkSweep",
+            "text": "What’s wrong with posting about something interesting about the world you have discovered without arguing any point?",
+            "commentId": 49294661
+          },
+          {
+            "author": "HexPhantom",
+            "text": "He explicitly says other kinds of blogging are fine; the \"argue a point\" rule seems more like a constraint he imposes on himself because it forces him to investigate the subject more deeply",
+            "commentId": 49295001
+          }
+        ]
+      }
+    ],
+    "consensus": "Writing for an audience, even a hypothetical one, is a good way to find out what you actually understand. Learning in public is fine as long as you're upfront about how deep your knowledge goes.",
+    "dissent": "A minority said novices shouldn't publish at all, because people and LLMs already fill the web with confident misinformation. Others felt discussion teaches more than writing alone, or objected to the author's rule that every post argue a point.",
+    "contrarian": {
+      "author": "kqr",
+      "text": "My secret worry is that one of my readers will meet me in person and quiz me verbally on the subjects of one of my articles. I would end up sounding really dumb compared to the impression made by the article!",
+      "commentId": 49294823,
+      "why": "A carefully researched post can show more understanding than its author holds onto afterward. So learning-in-public writing can overstate expertise even when the writer is honest."
+    }
+  },
+  "digestedAt": "2026-10-11T13:52:03.000Z"
+}

@@ -1,0 +1,117 @@
+{
+  "hnId": 49234675,
+  "title": "How I use LLMs to learn complex topics",
+  "url": "https://laurentiugabriel.github.io/blog/articles/how-i-use-llms-to-learn/",
+  "domain": "laurentiugabriel.github.io",
+  "kind": "article",
+  "author": "laurentiurad",
+  "postedAt": "2026-08-09T19:16:49.000Z",
+  "points": 835,
+  "commentCount": 547,
+  "readingMinutes": 3,
+  "tldr": "A developer learns unfamiliar subjects like chip fabrication in three steps. A coding agent writes a knowledge base, reviews it for accuracy, then turns it into a low-poly animated simulation in the style of Rollercoaster Tycoon. He claims the result is \"100% accurate and free of hallucinations\".",
+  "article": {
+    "keyPoints": [
+      "The author finds LLM explanations hard to follow, too simple and full of emojis. He wanted a game format instead, where each concept maps onto an object on screen and sticks better.",
+      "He works in an agent's plan mode (Claude Code or OpenCode). The model first writes foundational notes on the topic and then reviews them for accuracy. Next it builds a low-poly, Rollercoaster Tycoon-like simulation that fits small and large screens and has controls to pause the flow. He publishes each one on GitHub Pages.",
+      "His main example, ChipTycoon, follows a cart from a pile of sand to a finished chip delivered to a data center, and the cart changes shape at each manufacturing step. He calls the result \"100% accurate and free of hallucinations\" and says it beats search results or a bulleted LLM answer for him.",
+      "For more realistic visuals he suggests turning photos into 3D objects with a skill he wrote. For retention he suggests quizzes and puzzles about earlier steps.",
+      "He links similar pages on rocket engines, LLMs, F1 engines and EUV machines. After the HN thread he released a skill file for the method and a course product called Learnscape."
+    ],
+    "whyItMatters": "The post takes three minutes to read. Click through to ChipTycoon and the other simulations and decide for yourself how much a low-poly walkthrough teaches, since that is the thread's main argument."
+  },
+  "comments": {
+    "overview": "A big, mostly skeptical thread that soon dropped the animation and argued about whether LLMs help people learn at all. Nearly everyone attacked the \"100% accurate\" claim. Plenty of commenters shared workflows that do work for them, and almost all of those keep a book, a problem set or the learner's own effort in charge.",
+    "themes": [
+      {
+        "title": "Use the LLM next to a real source, not as the source",
+        "synthesis": "The most-endorsed pattern was to read a book yourself and ask the LLM about the passages you get stuck on, instead of having it write a custom course. Commenters fed PDFs into projects, worked through Baby Rudin sentence by sentence before solving every exercise, or used the model like office hours. Several who had built elaborate LLM learning tools ended up back at \"just read the damn book and go to the AI when you've got questions.\" One critic said that using an LLM to soften Rudin means you never learn to absorb hard material. Others said LLMs are good at finding the right books in the first place.",
+        "quotes": [
+          {
+            "author": "copperx",
+            "text": "It's much better to feed the book to the LLM and ask questions as you read along, instead of asking the LLM to basically write a custom book for you from scratch.",
+            "commentId": 49235538
+          },
+          {
+            "author": "qnleigh",
+            "text": "In both cases, the LLM isn't providing the curriculum or guiding what I learn. The textbooks, papers and coding tasks are. But now I can pick these things up much more efficiently.",
+            "commentId": 49240561
+          }
+        ]
+      },
+      {
+        "title": "LLM prose is exhausting to learn from",
+        "synthesis": "The top thread opened with a common complaint. LLM output is long, monotonous and padded, so the useful part drowns, and Opus 5 got named as one of the worst. Suggested fixes were \"be concise\", style transfer from sample text, Simplified Technical English, caveman-style skills, and a system prompt that limits answers to four concepts at a time. Others said these barely help or make the answers worse. Some blamed the verbosity on LLMs not knowing what the listener already knows. Others saw it as the model hedging against its own hallucinations.",
+        "quotes": [
+          {
+            "author": "epolanski",
+            "text": "It's just long. It just doesn't shut up. It's overly verbose. And you can't tell it to be concise or you degrade its quality.",
+            "commentId": 49236006
+          },
+          {
+            "author": "lelanthran",
+            "text": "It's dense along the wrong axis and verbose Along the wrong axis.",
+            "commentId": 49244272
+          }
+        ]
+      },
+      {
+        "title": "Self-review doesn't make it \"100% accurate\"",
+        "synthesis": "Dozens of comments quoted the accuracy claim. Asking the model to review its own work is \"turtles all the way down\", they said, and a novice has no way to spot the errors that remain. In a side debate, one camp held that a second pass makes it unlikely for the same hallucination to survive. The reply was that the errors aren't statistically independent, and different models can disagree with each other consistently. Commenters also found real mistakes, like a conveyor belt running backwards on the rocket engine page. The author granted that LLMs may have little training data on chip manufacturing, which is secretive, but held that high-level introductions are fairly safe.",
+        "quotes": [
+          {
+            "author": "tempacct2cmmnt",
+            "text": "It’s just a wild lack of insight: “I’m using the LLM to teach me something I don’t know about, I definitely have the knowledge base to spot any errors that might remain!”",
+            "commentId": 49235761
+          },
+          {
+            "author": "Terr_",
+            "text": "That rests on a false-assumption that the errors are statistically independent events, and have nothing to do with the shared nature of the judges.",
+            "commentId": 49237286
+          }
+        ]
+      },
+      {
+        "title": "Feeling like you learned vs. learning",
+        "synthesis": "The second-largest thread asked for proof, meaning problems people can now solve that they couldn't before, and compared LLM learning to edutainment on YouTube. People answered with Rust, Terraform, CUDA and hacking cheap routers. Skeptics replied that code tells you plainly when you're wrong, while in biology or quantum mechanics you can't check a single source against anything. As for the animations, many called them a shallow recipe or a bulleted list in costume that hides how complex chip fabrication really is.",
+        "quotes": [
+          {
+            "author": "matherial",
+            "text": "In my experience, LLMs are really good for taking up your time and making you feel like you're learning, in the same way that many of the popular educational videos on YouTube are fun to watch and don't really teach you anything.",
+            "commentId": 49239268
+          },
+          {
+            "author": "light_hue_1",
+            "text": "You've learned something when you have a mental model that makes correct predictions. Until then you've memorized it at best…",
+            "commentId": 49237083
+          }
+        ]
+      },
+      {
+        "title": "Make the learner do the work",
+        "synthesis": "Many found LLMs most useful with the roles reversed. The model quizzes the learner, asks one-sentence Socratic questions during a walk, writes exercises without solutions, or points students to the right section of the source and works like a lab partner. One commenter called Socratic skills naive and pointed to learning-science research. Another identified that research as Graesser's AutoTutor and its pump, hint, prompt and assertion pattern. A view that kept coming up is that struggling is how you know you're learning, so the LLM should clear roadblocks and not hand over answers.",
+        "quotes": [
+          {
+            "author": "gf000",
+            "text": "TLDR: Actual human tutoring sessions were recorded and analyzed and Socratic questioning was barely used at all.",
+            "commentId": 49241844
+          },
+          {
+            "author": "sumitkumar",
+            "text": "If the follow up is just \"continue\", \"go on\", \"next\" or a non-sequitur then it is smell of a stall. If it is challenging or filling a gap in the answer then it is progress.",
+            "commentId": 49241515
+          }
+        ]
+      }
+    ],
+    "consensus": "An LLM can speed up learning as a patient tutor next to a trusted source and real practice. It can't be the only source, and no self-review step guarantees its output is right, least of all for someone new to the topic.",
+    "dissent": "A sizable minority reported gains they could test, like picking up new languages, CUDA or homelab hardware. They said current models rarely hallucinate on undergraduate material and called the skepticism outdated or a refusal to use a better tool.",
+    "contrarian": {
+      "author": "bonoboTP",
+      "text": "Countless people have to resort to learning from teachers who themselves are confused and know the material only shallowly and give confused and wrong explanations that can be very hard to untie for the learner.",
+      "commentId": 49242028,
+      "why": "The thread kept comparing LLMs to books written by experts. This comment points out that for many learners the real alternative is a confused teacher, and LLMs may well beat that."
+    }
+  },
+  "digestedAt": "2026-10-11T13:52:21.000Z"
+}

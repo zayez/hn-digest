@@ -1,0 +1,118 @@
+{
+  "hnId": 49209539,
+  "title": "What happens if an entire class of workers loses faith in their careers",
+  "url": "https://www.noemamag.com/why-is-everyone-in-tech-so-sad/",
+  "domain": "noemamag.com",
+  "kind": "article",
+  "author": "RickJWagner",
+  "postedAt": "2026-08-07T12:42:27.000Z",
+  "points": 1110,
+  "commentCount": 1325,
+  "readingMinutes": 17,
+  "tldr": "The author says knowledge workers' despair goes deeper than money. AI hands their already abstract work to agents, which exposes \"Workism\", the habit of treating a career as the source of meaning, as an illusion. Companies that lose this talent may not get it back. His remedy is to accept that most office work doesn't matter and look for meaning in people and community.",
+  "article": {
+    "keyPoints": [
+      "The author, a director of AI operations, sees peers dreaming of farms, pottery and going off the grid. He says this angst differs from past recessions or outsourcing because it is existential, and it reaches well-paid senior professionals too.",
+      "Drawing on Derek Thompson's \"Workism\" and Graeber's \"Bullshit Jobs\", he argues that finance, consulting and tech jobs lack the altruistic payoff of nursing or plumbing. Workism works like a religion that keeps people from noticing the gap.",
+      "Using Debord's \"Society of the Spectacle\", he argues that work only has to look impactful. Once AI agents produce the deck, the strategy or the newsletter, workers lose even the effort that made the work feel like theirs, and they can see through the illusion.",
+      "He says executives want AI so they need less collaboration and fewer people, and that cuts out the \"messy middle\" of the job. Citing Teresa Amabile's research, he argues that creative, high-quality work comes from this collaborative, exploratory middle. Losing it hurts \"experience-first\" workers and suits \"outcome-first\" ones.",
+      "He calls the current layoff wave AI-washed, since AI isn't yet efficient enough to justify it. Disillusioned workers may not come back when companies try to rehire, he warns, because many of them don't own homes or plan on kids and can pivot easily.",
+      "Like Debord, he doubts anyone can escape, since even quitting gets turned into content. His advice is to keep some work human, remind each other that the work is not that important, and put that energy into real relationships and community."
+    ],
+    "whyItMatters": "Read the full essay for the whole chain from Workism to Debord's spectacle, plus the Klosterman officiating analogy and the outcome-first versus experience-first split. It gives white-collar workers words for the malaise but no plan. As commenters pointed out, it says nothing about paying the bills."
+  },
+  "comments": {
+    "overview": "A huge, mostly gloomy thread of over 1,300 comments. Most commenters accepted that the sadness is real but rejected the author's existential framing. They argued over whether the cause is AI, a broken industry and economy, or a steady diet of online doom. The fiercest fights were about printers and weavers, and whether past automation shows that people adapt or that they suffer, and about whether UBI is the answer. A long side debate asked whether remote work isolated the people who wanted it most.",
+    "themes": [
+      {
+        "title": "This time is bigger, and the displaced don't bounce back",
+        "synthesis": "The second-largest thread opened with printers. Printing was a skilled trade for centuries, then it vanished, and some former printers ended up homeless. Others pointed to UK weavers and Wapping. Optimists said society always adapts and new jobs appear. Others replied that 'society came out fine' is not the same as 'individuals came out fine', that retraining is mostly lip service, and that AI threatens a far larger share of the workforce far faster than printing did. That led into a long argument about UBI and the safety net. One side sees UBI as the only way through. The other expects it to kill the incentive to work or get inflated away.",
+        "quotes": [
+          {
+            "author": "Animats",
+            "text": "Knitting is not the answer. This is a survival issue. Somehow I suspect the author inherited money.",
+            "commentId": 49215503
+          },
+          {
+            "author": "Macha",
+            "text": "Also fails to distinguish between “society came out of it fine” (generally true) and “individuals came out of it fine” (much more mixed of a track record)",
+            "commentId": 49221712
+          }
+        ]
+      },
+      {
+        "title": "AI empties out the craft",
+        "synthesis": "Many developers said AI takes away the part of the job they loved. Directing an agent feels like ordering rather than making, and 'you'll just be a manager now' sounds like a demotion to people who avoided management on purpose. Some described their own skills fading while they keep up with huge AI-generated PRs. Others said LLMs brought the joy back. The output still feels like theirs at the level of architecture, and long-shelved side projects are finally possible. A few argued that the people suffering are the ones who came into tech for the money rather than the craft.",
+        "quotes": [
+          {
+            "author": "rubicon33",
+            "text": "Despite having built more in the last year than would have ever been possible before, I feel empty.",
+            "commentId": 49224791
+          },
+          {
+            "author": "geertj",
+            "text": "The output still feels mine. Maybe not line by line, but definitely architecturally.",
+            "commentId": 49219177
+          }
+        ]
+      },
+      {
+        "title": "The industry soured before AI",
+        "synthesis": "A large group said AI gets the blame for a decline that started earlier. The end of zero-interest-rate money in 2022 brought layoffs, more pressure and less autonomy. Even before that, the industry had drifted from tinkering and connecting people toward ad-tech, data extraction and monopoly. AI is just the latest and most visible insult. In this view, executives' AI push and AI-blamed layoffs are cost-cutting in disguise, and quality often drops.",
+        "quotes": [
+          {
+            "author": "pydry",
+            "text": "The culture of the tech industry started going to shit in 2022/2023 after rates were hiked and before LLMs were capable of anything much.",
+            "commentId": 49217838
+          },
+          {
+            "author": "stego-tech",
+            "text": "For a lot of folks, AI was the final canary in the toxic coalmine.",
+            "commentId": 49210877
+          }
+        ]
+      },
+      {
+        "title": "Doom is partly an online diet",
+        "synthesis": "The top thread blamed the mood on an online diet of outrage, astroturfing and doom headlines, and tech workers eat more of it than most. Some added that unhappy people post more, so negativity feeds on itself, HN included. Advice to stop reading the news drew sharp pushback. Some called it a privilege for people the news doesn't touch, citing ICE raids and real political harm. One person who stayed off the news for about six months said their anxiety was back to baseline within a month, with new triggers to pin it on.",
+        "quotes": [
+          {
+            "author": "marginalia_nu",
+            "text": "If you spend any time online, as most tech workers do, you have exceptional resiliency if you're able to stay sane and level headed.",
+            "commentId": 49210565
+          },
+          {
+            "author": "qlte",
+            "text": "But after a month my baseline pretty much reset with the same levels of anxiety, just with different sources/triggers to attribute those feelings to.",
+            "commentId": 49215781
+          }
+        ]
+      },
+      {
+        "title": "Distrust of the author and his conclusion",
+        "synthesis": "Many readers noted that the author directs AI operations and that the Berggruen Institute owns Noema, and some read the piece as quiet AI promotion. Others called that guilt by association. The ending drew more fire than the funding. Telling people their work doesn't matter does nothing for the meaning crisis or the rent. Several readers also found an off-putting glee in the essay, and pointed out that tech bros quitting for a farm is a decades-old story.",
+        "quotes": [
+          {
+            "author": "npilk",
+            "text": "So the author tells us there is a crisis of meaning in the workplace, and their proposed solution is… to remember none of the work matters?",
+            "commentId": 49215976
+          },
+          {
+            "author": "hingler36",
+            "text": "Sure, it's great when you're able to derive philosophical meaning from your work, but at the end of the day the vast majority of people are here for the paycheck.",
+            "commentId": 49216114
+          }
+        ]
+      }
+    ],
+    "consensus": "The malaise is real and widespread, and its roots are mostly material: layoffs, a frozen job market, no safety net, and an industry that now seems built for extraction. Telling someone the work doesn't matter anyway does nothing about a lost income.",
+    "dissent": "A vocal minority said they have never been happier. AI lets them build projects they had shelved for years. In their view the gloom sits mostly with people who joined tech for the money or who doomscroll, and job churn from new technology is old news that people should adapt to.",
+    "contrarian": {
+      "author": "smath",
+      "text": "The knitting / pottery making is not rewarding because its made by hands or is not knowledge work, but because it is done in the direct service of someone.",
+      "commentId": 49217620,
+      "why": "smath locates the problem in the layers between a worker and the person the work serves, not in AI or in hands versus keyboards. That points to a fix that needs neither quitting nor a farm."
+    }
+  },
+  "digestedAt": "2026-10-11T13:52:42.000Z"
+}
