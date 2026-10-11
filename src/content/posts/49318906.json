@@ -1,0 +1,64 @@
+{
+  "hnId": 49318906,
+  "title": "Ask HN: Do you know of any company that went back to hand-written code?",
+  "kind": "discussion",
+  "author": "antipurist",
+  "postedAt": "2026-08-16T11:05:47.000Z",
+  "points": 117,
+  "commentCount": 126,
+  "tldr": "Has any company tried LLM coding and then gone back to writing code by hand? Hacker News turned up almost no clean cases. A few startups keep AI out of their core code on purpose, and one founder is weighing a rewrite without it, but the headline examples people cited (Ford, IBM, Commonwealth Bank) were rehiring after layoffs, not dropping AI.",
+  "comments": {
+    "overview": "A testy thread. The one answer with named companies got picked apart within minutes, and much of the rest argued over whether AI is the problem at all or just exposes weak teams and leadership. The most useful material came from people describing how fast code piled up past what their team understood.",
+    "themes": [
+      {
+        "title": "The cited reversals don't fit the question",
+        "synthesis": "The top link-based answer named Ford, Commonwealth Bank of Australia and IBM, and several replies pointed out that these were companies rehiring people after AI-motivated layoffs. Ford brought veterans back to fix the data pipelines that feed its AI. IBM's rehiring was in HR, not engineering. Nobody produced a company that adopted AI coding and then banned it. The closest cases were a doctor and her colleagues who dropped AI scribes because checking and trimming the notes ate the time saved, and companies that never adopted AI in the first place.",
+        "quotes": [
+          { "author": "rpdillon", "text": "Ford did *not*. They hired back veterans to better train the AI.", "commentId": 49319327 },
+          { "author": "quantumwoke", "text": "Turns out the gains were eroded by having to check the work and turn verbose prose into an actual note.", "commentId": 49319326 }
+        ]
+      },
+      {
+        "title": "Speed outruns understanding",
+        "synthesis": "The firsthand reports all describe the same failure. Code arrives faster than anyone can hold it in their head. One founder's team refactored a prototype-era core and watched it turn messy again, partly because the agent dug deleted code back out of git history. Another commenter watched an experienced team that moved to 99% AI changes lose its knowledge of the project, so any bug the model couldn't fix took far longer than before. A startup working in a deep technical area writes everything by hand and says it has almost no technical debt. A 15-engineer startup keeps AI off its core code because building the mental model is most of the work.",
+        "quotes": [
+          { "author": "c2h5oh", "text": "the team collectively lost the project knowledge and any problem discovered that llm could not fix took significantly longer to correct - they were effectively working on a new to them codebase.", "commentId": 49319324 },
+          { "author": "jaccola", "text": "having derived the code and built a mental model is something like 90% of the work, the code artefact being 10%.", "commentId": 49319391 }
+        ]
+      },
+      {
+        "title": "Blame the tool or blame the team",
+        "synthesis": "When the founder said developers kept making a mess with AI, the pushback said this was a leadership failure. Developers who know what matters won't ship slop whatever tools they use. Others answered that the tools push people toward handing over control, and that a manager can't easily say no to a colleague who gets a feature in an hour. Suggested fixes ran from structured agent workflows like spec-driven development to the view that spec-driven development is waterfall again, because a prose spec separate from the code always drifts.",
+        "quotes": [
+          { "author": "adamtaylor_13", "text": "This is a leadership problem, not an AI problem.", "commentId": 49319243 },
+          { "author": "strange_quark", "text": "The tools encourage you to hand over all control to the AI, taking the user out of the drivers seats resulting in slop.", "commentId": 49326252 }
+        ]
+      },
+      {
+        "title": "Just another tool, like compilers and IDEs?",
+        "synthesis": "One camp called the question silly. Nobody went back to assembly or plain text editors, and developers already lean on garbage collectors and other people's libraries without understanding them. Critics replied that compilers don't hallucinate, that IntelliSense only completes what you already meant to type, and that AI is not an abstraction layer at all. One commenter added that companies did ban IDEs and Stack Overflow when those were new.",
+        "quotes": [
+          { "author": "glimshe", "text": "Stepping back from AI completely (vs changing how AI is used in the company) is like stopping using IDEs, compilers etc. It's a *tool*.", "commentId": 49319748 },
+          { "author": "pockybum522", "text": "I've never used intellisense to input something I wasn't already looking for/about to type out.", "commentId": 49319452 }
+        ]
+      },
+      {
+        "title": "Productivity for whom",
+        "synthesis": "A side argument asked whether faster output is worth anything. Skeptics said measuring code speed is lines-of-code by another name, and that AI lets five engineers build a legacy codebase in six months. Others said employers asked for speed and got it, so developers who stop caring at work are giving employers what they chose. One employer reportedly counts token use in performance reviews.",
+        "quotes": [
+          { "author": "sjducb", "text": "Now with AI five engineers can build a legacy codebase in six months.", "commentId": 49319273 },
+          { "author": "probably_wrong", "text": "I don't see how one can hold \"speed of code generation\" as a good metric while, simultaneously, holding \"number of lines generated in a unit of time\" as a bad metric.", "commentId": 49319944 }
+        ]
+      }
+    ],
+    "consensus": "No one could name a company that adopted AI coding and then went back to writing everything by hand. Most agreed the real choice is where to use AI, with core or hard-to-reason-about code the most common place people keep it out.",
+    "dissent": "A vocal minority said asking about reversal makes as much sense as asking who abandoned compilers, and that teams producing a mess have a leadership or process problem rather than a tooling one.",
+    "contrarian": {
+      "author": "Decabytes",
+      "text": "As if people weren’t copying code from stack overflow, auto completing their way through APIs using intellisense, intellicode, tab nine, or checking in code there didn’t properly test or understand",
+      "commentId": 49319362,
+      "why": "It questions whether hand-written code was ever as well understood as the thread assumes, when a lot of it was already pasted in and never reviewed."
+    }
+  },
+  "digestedAt": "2026-10-11T16:53:07.000Z"
+}

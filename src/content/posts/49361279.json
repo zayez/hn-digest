@@ -1,0 +1,118 @@
+{
+  "hnId": 49361279,
+  "title": "PostgreSQL for Everything",
+  "url": "https://www.raphaelbauer.com:443/posts/postgresql-everything/",
+  "domain": "raphaelbauer.com",
+  "kind": "article",
+  "author": "karlmush",
+  "postedAt": "2026-08-19T13:21:21.000Z",
+  "points": 451,
+  "commentCount": 269,
+  "readingMinutes": 9,
+  "tldr": "Raphael Bauer argues that PostgreSQL, plus its extensions, can stand in for Elasticsearch, MongoDB, Kafka, Redis, ClickHouse, Neo4j and a vector database. His advice is to start every new need in Postgres and add a dedicated system only once Postgres measurably falls short.",
+  "article": {
+    "keyPoints": [
+      "Bauer has used PostgreSQL since 2003, when he picked it over MySQL for a research project because built-in full-text search saved him from running and syncing a separate Lucene or Solr system.",
+      "He credits Postgres with three strengths. It has been stable since 1996, every cloud provider offers it as a one-click managed service, and one install covers many jobs that would otherwise each need their own system.",
+      "For search he says to start with the built-in tsvector/tsquery and move to extensions like pg_textsearch or ParadeDB when you need BM25 ranking. JSONB with GIN indexes covers most MongoDB use cases, and SELECT ... FOR UPDATE SKIP LOCKED turns a table into a queue.",
+      "TimescaleDB handles high-volume time series in place of ClickHouse, pgvector makes Postgres a vector store, and unlogged tables with an expiry trigger can replace a Redis cache. He credits Timescale with pgvector, which commenters pointed out is wrong.",
+      "In one client project, storing small Flatbuffers-encoded blobs in Postgres beat reading them from the file system. LTREE handles hierarchies, and Apache AGE adds openCypher graph queries that can mix with plain SQL.",
+      "His rule for a new requirement is to ask whether Postgres can already do it before adopting new technology."
+    ],
+    "whyItMatters": "The article works as a catalog of Postgres features and extensions with links to case studies from Contentful, Instacart and The Guardian. It says little about where each substitute breaks down, so read the thread for the limits."
+  },
+  "comments": {
+    "overview": "A big, split thread. Many commenters run small and mid-size products on Postgres alone and like it that way. Others, including a longtime Postgres contributor, find the \"just use Postgres\" genre tiresome and listed what it can't replace. Most of the argument came down to whether starting in Postgres and migrating later is cheap or a trap, and the queue section drew the most fire. A long side thread rehashed how Postgres overtook MySQL.",
+    "themes": [
+      {
+        "title": "Start in Postgres, but can you get out later?",
+        "synthesis": "The most common position was to use Postgres until load shows exactly where it fails, because every extra system is another thing to run. Critics said the migration is the hard part. Once queues, search and stored procedures all live in the database, they are tangled into everything, and the limits can arrive sooner than expected. Defenders answered that the feared rewrite rarely happens and is usually less painful than predicted, and that many teams were running FAANG-scale infrastructure for loads a small instance could handle.",
+        "quotes": [
+          {
+            "author": "psadauskas",
+            "text": "Anything you introduce is another moving part you have to operate and maintain, and in the beginning, Postgres can probably handle it. Wait for load, see *where* its failing, and then you'll have a better idea if adding another tool is worth the cost.",
+            "commentId": 49364851
+          },
+          {
+            "author": "AdieuToLogic",
+            "text": "The problem with this approach is, once \"use PostgreSQL for everything\" is identified as being no longer be feasible, it has already become an inextricable component underpinning system functionality.",
+            "commentId": 49382423
+          }
+        ]
+      },
+      {
+        "title": "Postgres as a queue",
+        "synthesis": "Firsthand reports pulled both ways. One team moved a working Postgres job queue to RabbitMQ and regretted it, and another said a Postgres queue made fair scheduling across tenants easy and reused backups and HA they already had. One commenter found it robust but slow once more than a few servers were pushing, and moved to ZeroMQ and then SQS. A Kafka SRE argued that a well-known tool comes with public answers to its problems, which a homegrown queue does not.",
+        "quotes": [
+          {
+            "author": "tensor",
+            "text": "Postgresql actually has very good mechanisms to support message style communication, and as long as you design your message tables independently you shouldn't have horrid issues around locking and transactions. Message queues don't save you from thinking about that anyways, they just replace transactions with acknowledgements.",
+            "commentId": 49367034
+          },
+          {
+            "author": "dorfsmay",
+            "text": "I tried very hard to use postgres as a queue, it was robust but slow once I started to push from more than a few processes/servers. Moving to zeromq initially and sqs after solved all my perf issues, and was still solid.",
+            "commentId": 49369579
+          }
+        ]
+      },
+      {
+        "title": "Where the substitutes fall short",
+        "synthesis": "Several commenters went through the article's list item by item. Built-in full-text search lacks faceting, custom tokenization and BM25, so it is no Elasticsearch. ClickHouse's declarative materialized views and columnar speed have no real Postgres equivalent, though one reply noted TimescaleDB's continuous aggregates. pgvector competes with other workloads for cache and CPU on a busy server and slows down past roughly 100 million vectors. Another commenter mirrored data into ClickHouse and saw some queries drop from 60 seconds to half a second. Extension fans replied that ParadeDB and pg_textsearch close some of these gaps, and skeptics replied that running custom extensions is its own complexity.",
+        "quotes": [
+          {
+            "author": "anarazel",
+            "text": "Fwiw, I, as someone who has worked on Postgres for a long time, also find it quite tiresome. Like there's plenty stuff I wouldn't use Postgres for, and I can probably get get more out of it than most.",
+            "commentId": 49362290
+          },
+          {
+            "author": "Gluber",
+            "text": "Forget about adding vector storage to an existing high volume db, that must server other complex queries.. PGVector will either trash your caches, or take over your cpu so that workloads that used to work fine stall.",
+            "commentId": 49362150
+          }
+        ]
+      },
+      {
+        "title": "Postgres is not low-maintenance",
+        "synthesis": "Experienced operators disputed the \"easy to run\" claim. Postgres has many interacting tuning knobs, it falls over on long-running transactions, and at scale it needs VACUUM care, connection pooling and third-party HA tooling like Patroni, while MySQL runs acceptably on defaults. Blobs drew specific warnings: they thrash the buffer cache and bloat WAL and backups. One commenter said 600 GB of bytea made restores slow enough that he would choose S3 from the start next time.",
+        "quotes": [
+          {
+            "author": "sgarland",
+            "text": "Postgres, on the other hand, has a million knobs, many of them interact, you'll find conflicting advice for some of them, and it can rapidly fall over if you aren't keeping a close eye on long-running transactions.",
+            "commentId": 49368099
+          },
+          {
+            "author": "Tostino",
+            "text": "I had a system that has ~600gb of blob data in bytea that could have easily been an S3 bucket + db reference. It made backups way more of a pain than necessary.",
+            "commentId": 49367268
+          }
+        ]
+      },
+      {
+        "title": "Why not SQLite?",
+        "synthesis": "A sizable group runs everything on SQLite, sometimes with Litestream backups to object storage, and asked why the same simplicity argument doesn't favor it even more. Replies said SQLite and Postgres solve different problems. SQLite lacks users, row-level security, updatable views and real date types, and using it locally while production runs Postgres hides bugs. A newer WAL2 mode and published benchmarks were offered against the claim that SQLite is single-writer only.",
+        "quotes": [
+          {
+            "author": "groundzeros2015",
+            "text": "No. SQLite doesn't have users, proper views, row level security, proper foreign keys, or functions.",
+            "commentId": 49370126
+          },
+          {
+            "author": "zelphirkalt",
+            "text": "I can't recommend this \"switch\". If you are not testing locally with the same relational database as in production, you can miss mistakes and bugs.",
+            "commentId": 49363435
+          }
+        ]
+      }
+    ],
+    "consensus": "Postgres is a sane default for most applications, and teams often adopt Elasticsearch, Kafka or Redis long before their scale requires it. Readers also agreed the article overstates its case. Its headings say Postgres \"replaces\" ClickHouse and Elastic, and it wrongly credits Timescale with pgvector, which Andrew Kane created, as a Timescale cofounder confirmed in the thread.",
+    "dissent": "A vocal minority called the post fanboyism from someone without experience of complex systems. They argued that tools should follow the business model, that Postgres limits show up much sooner than its fans admit, and that MySQL is simpler for common needs because it doesn't need a connection pooler or VACUUM tuning.",
+    "contrarian": {
+      "author": "jroseattle",
+      "text": "If you know anything about queues, scaling, availability, access semantics, message formats and concepts such as delivery guarantees, you find out very quickly that the server which stores a queued message is not the high-order bit in that equation.",
+      "commentId": 49374876,
+      "why": "Most of the thread framed the queue question as a matter of scale, and he points out that delivery semantics take the same work whichever server holds the messages."
+    }
+  },
+  "digestedAt": "2026-10-11T16:53:18.000Z"
+}

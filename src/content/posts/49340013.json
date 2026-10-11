@@ -1,0 +1,112 @@
+{
+  "hnId": 49340013,
+  "title": "Ask HN: Does anyone else feel like nothing matters anymore?",
+  "kind": "discussion",
+  "author": "ramesh31",
+  "postedAt": "2026-08-18T01:28:48.000Z",
+  "points": 297,
+  "commentCount": 175,
+  "tldr": "A developer says AI has made software work feel pointless, like playing a game with cheats switched on. Many HN commenters said they feel the same. The most common answer was to work for the joy of the work and stop tying your worth to a career that AI can now undercut.",
+  "article": {
+    "keyPoints": [
+      "Keeping up no longer seems worth it to the author. New releases, CS concepts and interview prep all feel wasted when the job may not exist in a year.",
+      "Side projects feel pointless to him too. Anything he builds lands on a \"mountain of slop\" that, in his words, the guy bagging your groceries could also produce with AI.",
+      "He compares it to enabling cheats in a game. You can do anything, so nothing you do means much, and he says that has taken the purpose and joy out of the work."
+    ],
+    "whyItMatters": "The post is five sentences long. The thread is the reason to click, since it holds dozens of firsthand accounts from developers who quit, retrained or found another way to keep going."
+  },
+  "comments": {
+    "overview": "The thread is raw and personal. People describe burnout, a shut-down startup, a move to medical school and a past career lost to illness. Most of the argument is between people who say the loss is real and people who say the meaning was never in the job, and a smaller group doubts AI is as capable as the post assumes.",
+    "themes": [
+      {
+        "title": "The work itself still belongs to you",
+        "synthesis": "The largest group split motivation in two. If you liked the process, AI takes nothing from personal projects, and several people described coding by hand at 3am or keeping \"tradcode only\" projects for fun. Others answered that AI changes the product itself. Code you only review is code you never internalize, and at work economics forces that mode on you. The chess comparison landed with many: winning with an engine gives no satisfaction, and some colleagues seem to have only ever cared about winning.",
+        "quotes": [
+          {
+            "author": "throw-the-towel",
+            "text": "Opus could probably have done this in five minutes. I'm writing this (mostly) myself, it's been two evenings of work, and I'm not done. If Opus could know how utterly I don't care about this fact, it would have cried.",
+            "commentId": 49340386
+          },
+          {
+            "author": "bah9",
+            "text": "Programming was a chess for me. AI is a chess engine. For sure, i cared about winning (i.e. deliver product), but i have zero enjoyment from winning if i used a chess engine",
+            "commentId": 49388127
+          }
+        ]
+      },
+      {
+        "title": "Grief, and the argument over \"just adapt\"",
+        "synthesis": "A former pilot who lost his career to illness said developers are going through the grief he went through, and the only way out is to drop the old identity and adapt. Others called that selfish. One person changing careers is a personal setback, they said, while a whole profession losing its footing is a disaster. A third view held that the hollow feeling comes from the money side of tech, where work now props up the look of value for shareholders, and AI only sped it up.",
+        "quotes": [
+          {
+            "author": "piloto_ciego",
+            "text": "Reguardless, that's what I see, people grieving and being ANGRY because they aren't quite sure what to do with their newfound uselessness.  I was that way for a long while.",
+            "commentId": 49341555
+          },
+          {
+            "author": "tavavex",
+            "text": "Instead what everyone is feeling, even many expert AI users, is that now everyone is increasingly working on creating the appearance of value, not actual value.",
+            "commentId": 49348304
+          }
+        ]
+      },
+      {
+        "title": "AI drains the shared work of the field",
+        "synthesis": "The top thread was about AI crowding out talk of languages, protocols and algorithms, because nobody is sure those topics still matter. Commenters said anything they write gets absorbed into training data with the credit going to the model. Others have stopped contributing to open source or reading CS books because the career payoff is no longer clear. One argued that with no reputation to earn from shared code, everything becomes one-off code and software stops improving.",
+        "quotes": [
+          {
+            "author": "bm3719",
+            "text": "Maybe someone will ask a question that our content influences, but if that user bothers to thank anyone, he'll thank Claude.  Perhaps this is what it feels like to be fully commoditized, fully alienated from one's labor.",
+            "commentId": 49340340
+          },
+          {
+            "author": "AtlasBarfed",
+            "text": "With AI, everything is one-off code, and removes the impetus to make software as a whole easier for future coding.",
+            "commentId": 49348427
+          }
+        ]
+      },
+      {
+        "title": "Meaning was never in the job",
+        "synthesis": "A long tail of replies reached for philosophy, citing existentialism, Camus, Ecclesiastes, Nietzsche, Marx's alienation and Stoicism. Their shared claim was that a job was a weak foundation for meaning. Some offered hobbies instead, like photographing spiders, woodworking and reading. A blunter group called the post entitled and said the grocery bagger's life always mattered as much as a programmer's.",
+        "quotes": [
+          {
+            "author": "pickleglitch",
+            "text": "In Western culture we tend to define ourselves based on our job, aka our economic output.",
+            "commentId": 49345490
+          },
+          {
+            "author": "themgt",
+            "text": "Did the universe bestow on you some right to code better than the guy who bags your groceries?",
+            "commentId": 49340575
+          }
+        ]
+      },
+      {
+        "title": "The cheats don't work that well",
+        "synthesis": "Several people disputed the premise that AI can do anything. One described agents failing every time at long, high-stakes infrastructure migrations once the context compacts. Others noted that the grocery bagger still can't write a good spec or judge the output. Another pointed out that AI has produced no great software, games or medicine yet, only cheaper mediocre work.",
+        "quotes": [
+          {
+            "author": "lelandbatey",
+            "text": "When you *absolutely cannot* cause downtime, if you hand Fable/Sol/Kimi the reigns and say \"do this 30 million token novel thing and absolutely don't screw up customer traffic\" they'll blow it after the first compaction, every time.",
+            "commentId": 49340520
+          },
+          {
+            "author": "OutOfHere",
+            "text": "The random guy bagging the groceries can never do it, not even with AI, because to get it right requires defining the specifications and requirements in good detail to the AI.",
+            "commentId": 49346797
+          }
+        ]
+      }
+    ],
+    "consensus": "The feeling is real and widely shared. Most agreed that the people who loved the craft lost more than those who coded only for a paycheck, and that personal projects done for their own sake still bring satisfaction.",
+    "dissent": "A sizable minority rejected the framing. Some were excited about what AI lets them build, including a non-programmer who finally can. Others said the meaning was always misplaced, and some suggested the poster is burnt out or depressed rather than reacting to AI.",
+    "contrarian": {
+      "author": "zingababba",
+      "text": "I think the hard lesson here that will probably get buried and obfuscated eternally is that we have literally just recreated all of the horrible parts of management but now at the IC level.",
+      "commentId": 49351062,
+      "why": "It moves the problem from personal meaning to organizations, where demoralized engineers now ship incompatible agent-built fiefdoms that someone will have to clean up."
+    }
+  },
+  "digestedAt": "2026-10-11T16:53:46.000Z"
+}

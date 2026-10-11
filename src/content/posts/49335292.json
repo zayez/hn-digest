@@ -1,0 +1,113 @@
+{
+  "hnId": 49335292,
+  "title": "How I over-engineered my book",
+  "url": "https://ben.balter.com/2026/08/17/how-i-over-engineered-my-book/",
+  "domain": "ben.balter.com",
+  "kind": "article",
+  "author": "benbalter",
+  "postedAt": "2026-08-17T18:15:27.000Z",
+  "points": 54,
+  "commentCount": 47,
+  "readingMinutes": 24,
+  "tldr": "Ben Balter wrote his 576-page book in Markdown in a Git repo and built it like software: about 30 custom prose validators, 20 LLM audit lenses, 2,204 test cases and 14 parallel CI jobs that turn one source into five store-ready formats.",
+  "article": {
+    "keyPoints": [
+      "Each chapter is a Markdown file ordered by one index.yml, written mostly on an iPad through Codespaces, with six prose linters (Vale, Harper, LanguageTool and others) flagging problems as he typed.",
+      "Every mistake he caught once became a build-failing rule: about 30 Node validators check things like the hyphenation of \"open source\" and any sentence implying he still works at GitHub, and one caught an AI-sounding opener he had written himself.",
+      "Three layers of duplication detection (jscpd, word n-grams, then an LLM pass over TL;DRs and extracted claims) found the same argument repeated in five chapters plus 166 smaller self-restatements, and an LLM \"Claims\" lens caught a wrong statistic about GitHub all-hands meetings.",
+      "Ebooks are HTML and CSS, so one Tailwind stylesheet drives EPUB, Kindle, web and print, with Pandoc Lua filters for per-format changes and WeasyPrint plus Ghostscript producing the PDF/X-1a that IngramSpark requires.",
+      "The print PDF is pinned to exactly 576 pages because the cover spine depends on it, and that gate caught a CSS leak that had shrunk the book to 567 pages; a separate bug with Twemoji transparency needed opposite fixes for Kindle and for print.",
+      "Publishing itself was manual uploads to KDP, IngramSpark and Draft2Digital under his own LLC and ISBNs, with metadata kept in the repo, and he plans translation and audiobook pipelines on the same setup."
+    ],
+    "whyItMatters": "Anyone self-publishing technical or nonfiction writing gets the concrete toolchain here: the validator roster, the Lua filters, the CSS pitfalls between screen and print, and the store validators to run before upload day. The footnotes list every tool and check by name, which the summary can't reproduce."
+  },
+  "comments": {
+    "overview": "The thread mostly ignored the build pipeline and argued about whether the post, the book's landing page and possibly the book itself read as AI-written. Balter answered in the thread with the book's blog-post origins and an admission that Copilot drafted an early version of the post. A smaller set of commenters shared their own doc-automation tricks and book toolchains.",
+    "themes": [
+      {
+        "title": "The prose reads like an LLM wrote it",
+        "synthesis": "The largest share of discussion said the post's style, with its reversals, punchy setups and \"here's the X\" signposts, matches LLM output, and one commenter extended that to the book's landing page and called it vibe-written marketing. Others pushed back hard, saying nobody can reliably detect AI text and that these accusations drive human writers away. The original critic clarified she was naming recognizable patterns, not claiming proof.",
+        "quotes": [
+          {
+            "author": "sinab",
+            "text": "In this article alone there are three \"here's the X\" rhetorical signposts, well over a dozen neatly constructed reversals/antitheses (\"not X but Y,\" \"solved X and created Y\"), repeated setup->complication->punchline paragraph structures, rhetorical questions used as transitions, and a high density of anthropomorphized technical metaphors.",
+            "commentId": 49337137
+          },
+          {
+            "author": "soulofmischief",
+            "text": "The most alarming part is it appears Ben either did not bother to review and edit the content, or was not adept enough to recognize it as deficient.",
+            "commentId": 49336967
+          }
+        ]
+      },
+      {
+        "title": "Where the book and post came from",
+        "synthesis": "Balter said most chapters descend from blog posts going back to 2012 and listed about twenty of them by title. He also said Copilot spiked out a first draft of this post, which he then rewrote by hand, using Claude only for line edits. Skeptics weren't satisfied: one misread the rewrite claim as covering the whole book, another said even his replies sounded generated.",
+        "quotes": [
+          {
+            "author": "benbalter",
+            "text": "I did a full (human) blank page rewrite three days ago and then only used Claude for line edits like adding links or fixing failing lints.",
+            "commentId": 49336481
+          },
+          {
+            "author": "benbalter",
+            "text": "most of the book's chapters began as blog posts that I've published for over a decade, well before AI slop came into the picture.",
+            "commentId": 49337568
+          }
+        ]
+      },
+      {
+        "title": "Did the linters train him to sound like a model?",
+        "synthesis": "Some commenters suspected the tooling itself shaped the voice. The rules that flag passive voice and weak phrasing push toward the same punchy style LLMs are tuned for. Another found it absurd that a writer needed an \"AI tells\" lens to check his own voice.",
+        "quotes": [
+          {
+            "author": "thallada",
+            "text": "It makes sense that a lot of what the linters would red squiggly on (e.g. weak passive voice) would also be the type of prose that gets trained out of LLMs as not \"punchy\" enough. So, basically, did you accidentally RLHF yourself into sounding like an LLM?",
+            "commentId": 49357229
+          },
+          {
+            "author": "pushcx",
+            "text": "Having an \"AI tells\" linter to catch \"Phrasing that reads as machine-generated rather than my voice\" has a real echo of \"What does God need with a starship?\".",
+            "commentId": 49344076
+          }
+        ]
+      },
+      {
+        "title": "Automating the boring parts pays off",
+        "synthesis": "Those who engaged with the engineering liked it. One recalled Bruce Eckel's tooling for extracting tested code into Thinking in Java, then used the FOSS tool jcite to cut a week of doc work per release to under an hour. Others noted custom lint hooks now take a minute to set up with an agent, and shared alternative stacks: Org-mode with a homemade Go converter and WeasyPrint, Astro for short stories, and a couple of EPUB tools.",
+        "quotes": [
+          {
+            "author": "hinkley",
+            "text": "With that done, it took less an hour per release to fix the developer documentation, and half of that hour I got one of our tech writers to take off my plate",
+            "commentId": 49336285
+          },
+          {
+            "author": "everybodyknows",
+            "text": "Markdown could not seem to meet the third point.  For instance, progress-related comments that would be stripped from final output were essential, but Markdown's HTML-style comments are intolerably unergonomic, and editors know how to de-emphasize no other syntax.",
+            "commentId": 49337990
+          }
+        ]
+      },
+      {
+        "title": "Is over-engineering a virtue or procrastination?",
+        "synthesis": "A few questioned why \"over-engineered\" now reads as a boast. Replies split: one said it was more an admission, another argued over-engineered products leave margin the consumer benefits from. Several joked it was structured procrastination, and Balter agreed with a wink.",
+        "quotes": [
+          {
+            "author": "thereisnospork",
+            "text": "In an over engineered thing margin is left on the table which the consumer gets to take advantage of.",
+            "commentId": 49337606
+          }
+        ]
+      }
+    ],
+    "consensus": "Most commenters who addressed the writing found the post's style read as machine-generated, whatever its actual origin, and Balter accepted the point and promised to rewrite the flagged passages.",
+    "dissent": "A minority said AI detection by eye is unreliable and that calling human authors AI discourages them from writing at all; the engineering-minded commenters simply praised the pipeline.",
+    "contrarian": {
+      "author": "KPGv2",
+      "text": "The thing LLMs are best at in the entire world is imitating human writing. So all you're really doing is discouraging a human from writing.",
+      "commentId": 49336955,
+      "why": "Against a thread sure it could spot AI prose, it notes that a model trained to imitate humans makes style an unreliable signal, so the accusation costs real writers."
+    }
+  },
+  "digestedAt": "2026-10-11T16:53:13.000Z"
+}

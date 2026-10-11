@@ -1,0 +1,118 @@
+{
+  "hnId": 49345263,
+  "title": "The Amazon tax",
+  "url": "https://seths.blog/2026/08/the-amazon-tax/",
+  "domain": "seths.blog",
+  "kind": "article",
+  "author": "herbertl",
+  "postedAt": "2026-08-18T13:22:38.000Z",
+  "points": 1415,
+  "commentCount": 705,
+  "readingMinutes": 3,
+  "tldr": "Seth Godin argues that Amazon's search ads, nearly a billion dollars of profit a week, are a toll on sales that would have happened anyway. Sellers pay to be shown to shoppers who were already looking for them, and shoppers end up covering the cost in higher prices and worse products.",
+  "article": {
+    "keyPoints": [
+      "Amazon makes close to a billion dollars a week from search ads. Godin says that is enough to pay each Amazon employee a $35,000 bonus with money left over.",
+      "Amazon already knows which air fryer is best reviewed, least returned and best priced. A search ad exists to steer you to a different one, or forces the best maker to pay just to keep the sale it would have made anyway.",
+      "Ordinary ads can grow demand. Search ads mostly split a fixed pie between rival sellers, and he cites a study arguing that a store with search ads sells fewer items than the same store without them.",
+      "His publisher's best-performing Amazon ad targets the search \"Seth Godin The Knot\". It costs about a dollar a click to show the ad to people who were already looking for his book.",
+      "Shoppers pay the $50 billion a year in the end. Makers cut quality to fund clicks, and Amazon, like Google before it, gains a reason to make organic results worse so sellers buy more ads.",
+      "Amazon earned its customer-first reputation by cutting prices and opening its doors to small merchants. He thinks the ad system, legal as it is, shows that reputation no longer fits."
+    ],
+    "whyItMatters": "The post is short, and most of it is above. The original is worth opening for its links, to Cory Doctorow's earlier piece and to the study claiming search ads reduce total sales, which is the evidence his case leans on."
+  },
+  "comments": {
+    "overview": "A huge and mostly angry thread. Most commenters agreed that Amazon search has turned hostile and traded stories about Google Maps and the app stores doing the same thing. The real arguments were over Godin's premise that Amazon knows the best product, whether paying to appear on your own book's search is extortion or a wasted budget, and whether any of it is illegal.",
+    "themes": [
+      {
+        "title": "Does Amazon know the best air fryer, and how does a new one get seen?",
+        "synthesis": "The most-argued point was Godin's claim that ads only pull buyers away from the product Amazon knows is best. Critics said no single best exists once price, features and taste differ, and that a new product with no reviews has no way to rank without paying. Defenders answered that the article targets ads on searches for a specific product, not ads in general. Some offered alternatives to ads for new entrants, such as launch discounts, exploration built into the ranking, or trusted reviewers. One long exchange ended with both sides agreeing that Amazon could at least warn buyers away from products with high return rates.",
+        "quotes": [
+          {
+            "author": "Brendinooo",
+            "text": "What if I made a new air fryer that hasn't received a lot of reviews and costs a little more because of its quality? How would I break through, if not ads?",
+            "commentId": 49352254
+          },
+          {
+            "author": "ndriscoll",
+            "text": "Put another way, the buyer uncertainty about your product *actually, concretely makes your product worse*. … All else equal, either your product is *not* the best product, or you need to offer a lower price.",
+            "commentId": 49346744
+          }
+        ]
+      },
+      {
+        "title": "Paying to be found on your own name",
+        "synthesis": "The \"Seth Godin The Knot\" ad split readers. Many saw it as a protection racket, since if the publisher stops bidding a competitor buys the slot, and small businesses and app developers said they pay the same toll on Google and Apple. Others said the ad is high-yield only because those searchers would buy anyway, so the publisher is wasting money, and good advertisers measure the sales an ad adds rather than its conversion rate. A few noted that shoppers who don't see the book near the top may assume Amazon doesn't stock it.",
+        "quotes": [
+          {
+            "author": "ndiddy",
+            "text": "Finally, they ask him how he does it. He says, \"I stand in the waiting area of the restaurant\".",
+            "commentId": 49347650
+          },
+          {
+            "author": "bombcar",
+            "text": "It’s worse than that. If that employee isn’t standing in the waiting room, handing out coupons some other restaurant’s employee will be standing in the waiting room, handing out coupon for the restaurant next-door.",
+            "commentId": 49354570
+          }
+        ]
+      },
+      {
+        "title": "Search is broken on purpose, and people route around it",
+        "synthesis": "Commenters listed what they see as deliberate damage. Amazon dropped exclusion and phrase operators, filters don't hold, exact product names return pages of alternatives, and one person counted most of a phone screen of sponsored items for \"red air fryer\". Google Maps sending people to a rival doctor or pizza place and app stores ranking knockoffs above the real app came up as the same pattern. The workarounds were sorting by Best Sellers, ad blockers, searching Amazon through Google, and leaving for Costco, Etsy or local shops. Others pushed back that Etsy has the same problems and that nobody matches Amazon's delivery.",
+        "quotes": [
+          {
+            "author": "mrandish",
+            "text": "Years ago Amazon intentionally nerfed their own on-site search into *complete* uselessness. A step at a time they removed the ability to exclude a term by prefixing a '-', then they removed grouping terms into a phrase either with quote marks or plus+signs.",
+            "commentId": 49349658
+          },
+          {
+            "author": "ryandvm",
+            "text": "I clicked through it into Google Maps and since it had the full address specified I just trusted it. Well, it turned out that the first result was actually an ad for a competing doctor 20 minutes in the wrong direction.",
+            "commentId": 49347411
+          }
+        ]
+      },
+      {
+        "title": "Fraud, trademark, or antitrust?",
+        "synthesis": "One commenter proposed suing on trademark and fraud grounds. Others replied that bidding on a rival's brand is settled as legal, citing the FTC losing its case against 1-800 Contacts and Australia's failed suit against Google, and that the ads are labelled, so there is no deception. Several argued the fix is competition law rather than rules about what a search box must return. Others pointed out that Amazon had just moved customers to binding arbitration with a class-action waiver. The SABRE case, where regulators banned an airline's booking system from favoring its own flights, came up as a precedent.",
+        "quotes": [
+          {
+            "author": "zmmmmm",
+            "text": "The day someone can sue me because they searched for something on my web site and what they expected didn't come up, my web site is effectively legally prevented from having a search box.",
+            "commentId": 49355278
+          },
+          {
+            "author": "tadzikpk",
+            "text": "Back in 1984 this \"Preferential display\" was considered illegal by the US government. How times have changed....",
+            "commentId": 49349714
+          }
+        ]
+      },
+      {
+        "title": "Nothing new, and Godin overstates it",
+        "synthesis": "A sizable minority said this is shelf-space and slotting fees moved online, and that publishers have always paid bookstores for placement. Opponents replied that a store's shelf is finite and the same for everyone, while Amazon can bury the exact item you typed on page 23. Others picked at the rhetoric: \"legal theft\" is a contradiction, the opening mixes up revenue and profit, no seller is \"entitled\" to sales, and ad costs land on both buyers and sellers, not only shoppers. One commenter checked the $35,000 figure against Amazon's headcount and found it reasonable.",
+        "quotes": [
+          {
+            "author": "jameshart",
+            "text": "Distribution channels have never been neutral champions of the consumer.",
+            "commentId": 49348523
+          },
+          {
+            "author": "geodel",
+            "text": "Huh, retail store has fixed amount of shelf space, it can't keep infinite variants, but Amazon has infinite real estate it can keep the exact item you search for on page 23 instead of page 1.",
+            "commentId": 49347128
+          }
+        ]
+      }
+    ],
+    "consensus": "Amazon's search results are worse than they used to be, ads take up much of the first screen, and the same thing is happening on Google search, Google Maps and both app stores. Most also agreed that paying to appear on a search for your own product is a toll that exists only because a rival can buy the slot otherwise.",
+    "dissent": "A vocal minority defended the ads. They say there is no single best product, new sellers need some way to get seen, supermarkets have sold shelf space for decades, and Godin, a marketer, is complaining about how marketing works.",
+    "contrarian": {
+      "author": "raincole",
+      "text": "At least ads give the sellers a chance to compete for eyeballs 'legitimately'. The same marketing budget will not just vaporize if there is no ad space. It will be spent on fake reviews and even fake customers.",
+      "commentId": 49352711,
+      "why": "Most of the thread assumed that removing ads would leave clean organic rankings, and this points out the money would flow into gaming those rankings."
+    }
+  },
+  "digestedAt": "2026-10-11T16:53:16.000Z"
+}

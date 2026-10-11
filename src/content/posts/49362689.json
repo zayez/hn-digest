@@ -1,0 +1,77 @@
+{
+  "hnId": 49362689,
+  "title": "HTML Can Do That",
+  "url": "https://chrisburnell.com/html-can-do-that/",
+  "domain": "chrisburnell.com",
+  "kind": "article",
+  "author": "encyclopedism",
+  "postedAt": "2026-08-19T15:11:36.000Z",
+  "points": 1023,
+  "commentCount": 231,
+  "readingMinutes": 4,
+  "tldr": "Chris Burnell lists interactive features that plain HTML now handles without JavaScript, including popovers, modal dialogs, exclusive accordions, invoker buttons, lazy images and find-in-page reveals. He adds that several native form controls are still too buggy or inaccessible to rely on.",
+  "article": {
+    "keyPoints": [
+      "The popover and popovertarget attributes give light dismiss, Esc to close and top-layer stacking for free, so there is no z-index to manage and no script to write.",
+      "The dialog element pairs with the new command and commandfor attributes, which let separate buttons open and close a dialog or popover. Only the show, close and popover actions have shipped in stable browsers so far.",
+      "Giving several details elements the same name attribute turns them into an accordion where opening one closes the others.",
+      "loading=\"lazy\" defers an image until it nears the viewport, and hidden=\"until-found\" keeps content hidden until find-in-page or a fragment link reveals it. Burnell notes the second works with browser search but poorly with screen reader search.",
+      "He warns that the color, date and range inputs look different in every browser and are often poorly accessible. He suggests skipping datalist for now because support across input types is spotty and buggy.",
+      "He built the page in one hour for HTML Day 2026, then edited it the next day to stress where browser support and accessibility fall short."
+    ],
+    "whyItMatters": "Front-end developers looking to drop JavaScript for overlays and accordions should open the original. Each feature has a live demo, its markup and a browser support link, so you can test it in your own browser before committing."
+  },
+  "comments": {
+    "overview": "The thread liked the page and treated it as a starting point for complaints. People who ship popover and dialog in production praised them. The longest arguments were about native controls that still fall short, and whether HTML should take over work that JavaScript libraries already do.",
+    "themes": [
+      {
+        "title": "Native form controls still fall short",
+        "synthesis": "The widest agreement was that datalist can't replace a real combobox. Users can type anything, nothing filters fuzzily, Firefox support is weak, and there is no way to force the list open, so several people went back to a library or a plain list. Others noted that backend validation is still needed either way, and yurishimo answered that the complaint was about UX, not security. The native date picker drew the same verdict, since it can't do ranges or highlights and can't be told to use the page's locale instead of the OS's. A smaller group disliked the exclusive accordion itself, citing the Nielsen Norman Group's advice against closing content a reader opened.",
+        "quotes": [
+          { "author": "vlucas", "text": "HTML can NOT, in fact, replace a good combobox with search input. Datalist has significant shortcomings.", "commentId": 49376200 },
+          { "author": "esprehn", "text": "I do still think the date picker API is a disaster. Everyone actually needs something much richer than the system date picker. Travel websites want ranges.", "commentId": 49379698 }
+        ]
+      },
+      {
+        "title": "Should HTML take over JavaScript's job?",
+        "synthesis": "A request for native sortable tables became a fight over scope. krapp said HTML is for structure and a small JS file solved sorting long ago. A file you vendor is one you control, while a browser feature is whatever the vendor ships. Others said browser vendors can make sorting better than any single site, and that blocked or abusive JavaScript makes native features worth having. jwr and dansalvato raised harder problems, such as sort keys that differ from display values, rowspans, and HTML describing an order that the DOM doesn't follow. Some suggested server-side sorting with links in the headers, and others objected that it costs a round trip and puts sort state in shared URLs.",
+        "quotes": [
+          { "author": "krapp", "text": "You can edit a JS file to your specific needs, but you're stuck with whatever the browser decides.", "commentId": 49380175 },
+          { "author": "account42", "text": "JS is better suited to only handle non-standard cases where no native functionality exist as browser vendors can afford to spend infinitely more time to make sorting better than you can spend on doing it for one website.", "commentId": 49386888 }
+        ]
+      },
+      {
+        "title": "Popover and dialog in production, and anchor positioning",
+        "synthesis": "Several developers said they had replaced custom overlay managers with popover and dialog, and they praised top-layer stacking and cascading close. The one gap they kept hitting was placing a popover next to the button that opened it. CSS anchor positioning fixes this, but people found it hard to learn and argued over whether browser support is wide enough. A rich-text editor developer gave a limit from the other side: contenteditable produces different HTML in each browser, so complex editors still need JavaScript.",
+        "quotes": [
+          { "author": "maya335", "text": "The top-layer + cascading-close behavior is exactly why we finally dropped a bunch of custom overlay managers.", "commentId": 49385172 },
+          { "author": "nozzlegear", "text": "I found it difficult to wrap my head around too, but once it clicks it's pretty simple.", "commentId": 49378667 }
+        ]
+      },
+      {
+        "title": "LLMs don't know the new standards",
+        "synthesis": "dajonker said coding models rarely use these features, often believe they aren't baseline yet, and have far more old JS and CSS to learn from. Commenters worried that AI coding could freeze front-end practice at whatever was common in its training data. Others pointed to skills such as Google's Modern Web Guidance that tell agents to use modern CSS, which started a side argument over whether a skill is anything more than a text file in the context.",
+        "quotes": [
+          { "author": "Wowfunhappy", "text": "I really wonder if AI coding is just going to lock us into 2024-ish era languages and libraries forever.", "commentId": 49380914 },
+          { "author": "chmod775", "text": "But I guess \"my LLM can use skills\" sounds a lot cooler than \"my LLM can read text files\", so we'd rather keep pretending really hard.", "commentId": 49387616 }
+        ]
+      },
+      {
+        "title": "NoScript users and the case against SPAs",
+        "synthesis": "A NoScript user hoped features like these would make single-page apps less necessary. Others complained that SPAs break bookmarks and the back button. SPA builders replied that routers handle URLs and history, and critics answered that the reimplementation usually works worse than the browser's own. A few commenters build sites that work without JavaScript, and others said JS-based bot protection has made browsing without scripts harder lately.",
+        "quotes": [
+          { "author": "account42", "text": "It's the norm to try to re-implement browser functionality in JS but it is very far from the norm for the re-implementation to work as well and as reliably as the native browser functionality.", "commentId": 49386753 }
+        ]
+      }
+    ],
+    "consensus": "Popover, dialog and named details are worth using now and remove a lot of custom JavaScript. Datalist and the date picker are not ready to replace a library.",
+    "dissent": "A minority said interactivity belongs in JavaScript. They argued that each new declarative attribute bloats browsers, appears only in one API, and leaves developers stuck with how the vendor implemented it.",
+    "contrarian": {
+      "author": "bellowsgulch",
+      "text": "Adopting them makes a future with multiple browser engines more labor intensive and unlikely as the number of standards targets one is required to support grows",
+      "commentId": 49376897,
+      "why": "Everyone else judged each feature by what it saves one site. This comment counts the cost to anyone building a new browser engine, though a reply notes that skipping features already shipped everywhere won't lower that cost."
+    }
+  },
+  "digestedAt": "2026-10-11T16:53:44.000Z"
+}

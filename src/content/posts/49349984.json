@@ -1,0 +1,112 @@
+{
+  "hnId": 49349984,
+  "title": "How does IKEA come up with names for its products?",
+  "url": "https://www.ikea.com/se/en/customer-service/knowledge/articles/6f564c4d-2ccc-46de-b643-545a3948dc79.html",
+  "domain": "ikea.com",
+  "kind": "article",
+  "author": "NaOH",
+  "postedAt": "2026-08-18T18:11:53.000Z",
+  "points": 465,
+  "commentCount": 326,
+  "readingMinutes": 2,
+  "tldr": "IKEA names products with real Swedish words picked by category: sofas get Swedish place names, bookshelves get men's names, children's products get animals. Each name must be 4 to 12 letters, ideally contain Å, Ä or Ö, and pass a check for bad meanings in other languages. The company names 2,000 to 3,000 new products a year.",
+  "article": {
+    "keyPoints": [
+      "Founder Ingvar Kamprad had trouble remembering product numbers, so he gave products names instead. A practical workaround became part of the brand.",
+      "Rule one is that products get Swedish names. They are real words, often places, nature, emotions or everyday expressions, sorted by category: Swedish places for sofas, men's names for bookshelves, animals and nature for children's products.",
+      "A candidate name must be a real word of 4 to 12 letters, preferably with Å, Ä or Ö, pleasant to say, and never trademarked or a surname. IKEA says it checks every name for unwanted meanings in other languages and for political or religious associations.",
+      "Rule two is that services, functions and customer communication use plain descriptive names in the local language. The exception is a handful of Swedish words kept on purpose: hello, bye, welcome, welcome back and coffee.",
+      "IKEA names around 2,000 to 3,000 new products every year."
+    ],
+    "whyItMatters": "The page is short and the summary covers nearly all of it. Open it for the exact wording of the naming rules, which commenters spent much of the thread testing against real products."
+  },
+  "comments": {
+    "overview": "A playful, sprawling thread. Most of it is commenters from a dozen language backgrounds reporting IKEA names that mean something rude or silly in their language, which made the article's claim of careful vetting the running joke. The serious arguments were about whether Swedish names help or confuse shoppers, how Swedish letters should be pronounced abroad, and whether IKEA quality has fallen.",
+    "themes": [
+      {
+        "title": "Names that got past the language check",
+        "synthesis": "Readers lined up counterexamples to the claim that every name is screened: SVALKA wine glasses (Baltic slang for a promiscuous woman), the JERKER desk, GUTVIK bunk beds, HOVEN (excrement in Czech, which produced a 'Hoven sale'), VIREN toilet brushes, TRAMPA mats, FARTFULL workbenches. Swedes pushed back on some of them. SÄRNA is not the Spanish 'sarna' because Ä is its own vowel, and several old names like SVALKA and JERKER may predate the rule, or even prompted it. Others pointed to the deliberate puns, such as FEJKA for fake plants and LACK for a flimsy side table.",
+        "quotes": [
+          {
+            "author": "Markoff",
+            "text": "So when IKEA had Hoven sale - Doprodej Hoven (Excrements sale), people were amused",
+            "commentId": 49358298
+          },
+          {
+            "author": "tverbeure",
+            "text": "I love the JERKER desk that I bought 26 years ago, so I assume this rule must be younger than that.",
+            "commentId": 49350799
+          }
+        ]
+      },
+      {
+        "title": "Do odd names help or hurt shoppers?",
+        "synthesis": "Defenders said real names beat the ERP-code model numbers most firms use, and compared IKEA with Sony phones, Microsoft versions and Shimano groupsets, where names give no clue to rank. Critics said foreign words are hard to remember, say or type, and that near-identical cabinet doors with similar names are a nightmare to find in the warehouse. One reply blamed that on English spelling, arguing that speakers of phonetic languages can pronounce and recall foreign names easily. Others noted GNOME dropped whimsical app names because users couldn't remember them.",
+        "quotes": [
+          {
+            "author": "designerarvid",
+            "text": "Most companies name their products straight from the ERP system, creating incomprehensible codes that sounds like they come from Star Trek.",
+            "commentId": 49360562
+          },
+          {
+            "author": "greatgib",
+            "text": "good luck finding which white cabinet door you need to buy between VEDDINGE and VALLSTENA that are 99,9% the same, and have the same description on ikea website and shops...",
+            "commentId": 49354691
+          }
+        ]
+      },
+      {
+        "title": "Å, Ä, Ö and pronunciation abroad",
+        "synthesis": "Asked why IKEA wants Å, Ä or Ö, most replies said it's foreign branding, the same trick as Häagen-Dazs and the metal umlaut. Swedes stressed that these are separate letters at the end of their alphabet, not accented A and O. A Swede in London complained that staff don't recognize product names said correctly, so he has to imitate an English mispronunciation. Others told him to treat it as funny and pointed out that English speakers will always read Swedish words with English spelling rules.",
+        "quotes": [
+          {
+            "author": "unwind",
+            "text": "Å is a distinct letter, with a different and unique vowel sound. It is in no way \"a slightly different kind of A\".",
+            "commentId": 49357615
+          },
+          {
+            "author": "thomashabets2",
+            "text": "As a Swede in London, it's annoying that IKEA staff don't understand you when you pronounce the names correctly.",
+            "commentId": 49357926
+          }
+        ]
+      },
+      {
+        "title": "The rules versus the catalog",
+        "synthesis": "Commenters checked the stated rules against real products. PAX has three letters, though it predates any formal rules, and MALM is a common Swedish surname. One Swede argued the real rule must be 'no names that are mainly surnames', since so many Swedish surnames are ordinary nouns. The 2,000 to 3,000 new names a year drew doubt, until a reply cited a dataset of about 35,000 products and IKEA Canada's own figure of more than 12,000.",
+        "quotes": [
+          {
+            "author": "BambooleanLogic",
+            "text": "A completely literal \"No surnames, ever\" rule would probably be quite a bit too restrictive. I suspect that the actual internal rule is \"No names that are primarily (or solely) surnames\", or something to that effect.",
+            "commentId": 49352329
+          }
+        ]
+      },
+      {
+        "title": "Has IKEA quality dropped?",
+        "synthesis": "A side argument said IKEA has become fast fashion for furniture, citing replaced kitchen tools and new pieces that yellowed within years. Many replies disagreed from experience: decade-old LACK tables, furniture moved and rebuilt many times, and pricier brands that fell apart faster. A middle view held that IKEA sells across price points, from particleboard meant to last a few years to IVAR in solid wood.",
+        "quotes": [
+          {
+            "author": "whirlwin",
+            "text": "You buy something one day, and it starts to deteriorate and become janky after a year, and you'll have a buy a new one. All products have gone through spreadsheet cost optimizations.",
+            "commentId": 49359491
+          },
+          {
+            "author": "sdoering",
+            "text": "It cost about four times as much as IKEA’s higher-end lines. After moving it from my mom’s place to my office, I can already see it falling apart after just three years",
+            "commentId": 49359628
+          }
+        ]
+      }
+    ],
+    "consensus": "The names are fun and good for the brand, and the article is a rare piece of clear corporate writing. Its promise that names are screened in every language doesn't hold up, since nearly every language group here found a rude one.",
+    "dissent": "A minority found the names a real nuisance: hard to remember, pronounce or tell apart when buying spare parts or matching cabinet doors. A Swede added that correct pronunciation doesn't work in IKEA stores abroad.",
+    "contrarian": {
+      "author": "bluebarbet",
+      "text": "The stuff lasts. Probably for a simple reason: Any given product line is bought by millions of customers, so design flaws are quickly found and remedied.",
+      "commentId": 49361920,
+      "why": "Against the nostalgia for older, sturdier IKEA, it names a concrete mechanism, huge sales volume, that should make current designs more reliable rather than less."
+    }
+  },
+  "digestedAt": "2026-10-11T16:53:19.000Z"
+}

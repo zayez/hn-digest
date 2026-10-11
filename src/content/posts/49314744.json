@@ -1,0 +1,113 @@
+{
+  "hnId": 49314744,
+  "title": "Engineers will do anything to avoid learning from history",
+  "url": "https://horn.gg/blog/engineers-will-do-anything-to-avoid-learning-from-history/",
+  "domain": "horn.gg",
+  "kind": "article",
+  "author": "madrox",
+  "postedAt": "2026-08-15T22:08:22.000Z",
+  "points": 178,
+  "commentCount": 117,
+  "readingMinutes": 4,
+  "tldr": "David Horn argues that software engineers keep reinventing older disciplines under new names, and that managing AI coding agents is just program management. He thinks they should read the classic books on it instead of rediscovering waterfall the hard way.",
+  "article": {
+    "keyPoints": [
+      "Horn sees a pattern. Data science was largely statistics with a cooler name, and crypto speedran the history of finance, as Matt Levine put it. Now engineers are discovering that running several agents feels like running a team.",
+      "He grants two fair reasons for the habit. Older institutional fields can seem arcane, and working from first principles sometimes yields deeper understanding. The bad reasons are money and hubris. \"Nobody raises a round to apply a well understood discipline correctly,\" and there's always \"How hard could it be?\"",
+      "Agents push engineers toward work they used to dismiss. People who never took design docs or PRDs seriously now have to spell out every behavior up front, and they can't be bothered to read the 10k-line PRs their AI writes. In Horn's words, \"Suddenly, waterfall is the thing to do.\"",
+      "He predicts the industry will give this a sexier name rather than call it waterfall or program management. Few engineers have read Winston Royce's original paper, so even the process they rejected, they rejected without understanding it.",
+      "Agent orchestration is program management, he says. It means documented requirements, checking that the work is worth the tokens, clear lanes of work, acceptance criteria, and regular check-ins, which is the standup engineers have argued about for fifteen years.",
+      "He closes with a reading list: Making Things Happen, the PMBOK Guide, The Mythical Man-Month, Royce's 12-page waterfall paper, High Output Management (which he admits he hasn't read) and The Goal, the source of the theory of constraints."
+    ],
+    "whyItMatters": "Short and opinionated, so the main thing the original adds is the annotated reading list, with Horn's one-line take on how each book applies to running agents. Worth a look if you lead a team or orchestrate agents and want the program-management canon in one place."
+  },
+  "comments": {
+    "overview": "A lively, mostly sympathetic thread that drifted quickly. The biggest fight was about whether software developers deserve the word \"engineer\" at all, which several commenters said proves Horn's point about the title. On the actual claim, people with management experience backed him, while others said agents differ enough from teams that the old playbooks only partly apply.",
+    "themes": [
+      {
+        "title": "Are software developers real engineers?",
+        "synthesis": "Many read the title as a dig at licensed engineering. One camp says real engineering is defined by learning from failures, licensing and legal liability, so developers who skip the history aren't engineers. Others pushed back hard. Licensed engineers also ship bad designs and rarely face consequences, as the Christchurch CTV building collapse showed, and many developers had the title handed to them by HR. A long side argument over that collapse ended with both sides agreeing the prosecutions failed but disagreeing on whether certification means anything.",
+        "quotes": [
+          {
+            "author": "mikewarot",
+            "text": "Engineering schools showcase failures of the past as a teaching tool. I still remember learning about the bridge that shook itself apart during my freshman year. Engineers value safety margins and failure analysis.",
+            "commentId": 49319346
+          },
+          {
+            "author": "robocat",
+            "text": "The vast majority of engineers have no consequences for their shite. Neither is certification a panacea against bad engineers.",
+            "commentId": 49316355
+          }
+        ]
+      },
+      {
+        "title": "Is managing agents really program management?",
+        "synthesis": "An engineering lead with about 20 reports said he has spent six months pushing exactly this. His PRD-heavy workflows, which limit how much agents talk to each other, baffle engineers who never managed anyone. Critics said agents add new problems like token budgets, drift and extreme literalism, though one reply mapped each of those onto ordinary engineers. Others agreed on scoping and check-ins but thought full waterfall is overkill when agents work this fast, and one asked how delegation works when you can't hold an LLM accountable.",
+        "quotes": [
+          {
+            "author": "bluehatbrit",
+            "text": "On Friday we had a coffee hour to share how we've been working recently and they all seemed perplexed at the workflows I've been adopting. It seems natural to me as someone who's been a manager for some time now, but very alien to all those who've never gone down that path.",
+            "commentId": 49315147
+          },
+          {
+            "author": "mpyne",
+            "text": "I do agree that it's important to do things like scope out your demands of your AI agent, check-in on progress, give as clear a requirement and test cases as you can. But you've always been able to do that with agile methods, and LLMs are fast enough that you don't need to go full waterfall (and if anything it would be counter productive).",
+            "commentId": 49315121
+          }
+        ]
+      },
+      {
+        "title": "Over-splitting work, for people and for agents",
+        "synthesis": "One subthread blamed a botched version of Agile. Lean and Agile say to limit work in progress and avoid context switching, but most shops run scrum on top of fixed marketing deadlines and break tasks into pieces for different people. One commenter described a day's work split into four hour-long tickets for four people, which doubled the man-hours while the WIP metric looked great. He sees people splitting work across agents the same way when one session could hold the whole problem.",
+        "quotes": [
+          {
+            "author": "Fordec",
+            "text": "I'm thinking some people are approaching agentic development in the same manner, splitting work up across agents too aggressively, giving each agent new context/upfront plans, when the one session could have done the whole problem in the one context window.",
+            "commentId": 49315972
+          }
+        ]
+      },
+      {
+        "title": "Software forgot what expensive mistakes cost",
+        "synthesis": "A related complaint was that software thinks other industries are slow because they're less smart, when a cast part that takes months to make has to be right the first time. Veterans of boxed software and console games agreed that shipping used to work that way too. Once a disc was pressed, you couldn't patch it. A long tangent argued whether 3D printing now beats casting, and an aircraft-parts designer gave break-even volumes showing it mostly doesn't, except for very small runs.",
+        "quotes": [
+          {
+            "author": "collinmcnulty",
+            "text": "It drives me nuts the number of people in software who think that people in other industries are slow because they’re just not as smart as us, rather than because when it takes months to get a cast part made, it better be right the first time.",
+            "commentId": 49315123
+          },
+          {
+            "author": "louthy",
+            "text": "getting a game past Sony testing was so fricking difficult, but it was because once that black disc was cut, there was no way to get an update. You had to be on the money, first release.",
+            "commentId": 49315552
+          }
+        ]
+      },
+      {
+        "title": "Why reinventing happens anyway",
+        "synthesis": "Commenters offered reasons Horn missed. Building things is fun, nobody can know every field well enough to recognize prior art, and nobody gets rewarded for rejecting the new thing. Others blamed ego and VC money, saying novelty is what gets funded. A chemistry professor's line about calling the same work nanotechnology to get grants showed the habit isn't limited to software.",
+        "quotes": [
+          {
+            "author": "wat10000",
+            "text": "There’s a good list of reasons why we do this, but it leaves out the biggest one, at least for me: building stuff is fun. Reinventing stuff is fun.",
+            "commentId": 49315021
+          },
+          {
+            "author": "eadwu",
+            "text": "You can't not reinvent something if you don't know it exists in the first place.",
+            "commentId": 49315423
+          }
+        ]
+      }
+    ],
+    "consensus": "Most agreed that the industry rediscovers old knowledge under new names, and that working with agents needs clear requirements, scoping and regular check-ins, the things managers have always done.",
+    "dissent": "Some said agents differ from human teams in ways old process books don't cover, such as token cost and drift, and that full waterfall is wrong when iterations take minutes. Others said licensed engineers already learn from history, so Horn's target is programmers, not engineers.",
+    "contrarian": {
+      "author": "felineflock",
+      "text": "But the article has a big irony:  the article accuses engineers of oversimplifying other disciplines and then does exactly that itself.",
+      "commentId": 49315772,
+      "why": "It points out that Donoho's paper, which Horn cites, describes data science as much broader than statistics, so the article commits the \"X is really just Y\" move it criticizes."
+    }
+  },
+  "digestedAt": "2026-10-11T16:53:08Z"
+}

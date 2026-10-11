@@ -1,0 +1,78 @@
+{
+  "hnId": 49353432,
+  "title": "AI usage patterns in software teams",
+  "url": "https://linear.app/data",
+  "domain": "linear.app",
+  "kind": "article",
+  "author": "giuliomagnifico",
+  "postedAt": "2026-08-18T22:08:07.000Z",
+  "points": 199,
+  "commentCount": 115,
+  "readingMinutes": 13,
+  "tldr": "Linear's data on its paid customers shows AI use roughly tripling in every role in the first half of 2026. AI agents now write almost half of new issues, and pull requests per workspace are up 111% in two years, mostly from teams with coding agents. Time spent on work went up, not down.",
+  "article": {
+    "keyPoints": [
+      "Among 127,000 paid users active in both January and June 2026, the share using Linear's AI features at least doubled in every function. Product went from 12% to 34%, and go-to-market from 5% to 18%.",
+      "Executives use AI as much as their teams or more. CEOs at companies of 201+ people jumped from 9% to 36% in six months, the biggest move in the report, and company size barely changed adoption rates.",
+      "Agents and MCP clients went from under one issue in a thousand two years ago to nearly half of all issues created. At the current pace they will soon create more than people and integrations combined.",
+      "Time spent creating, triaging and commenting rose, AI chat and agent delegation appeared as new work, and planning time stayed flat. Linear reads this as AI being added on top of existing work, so teams work more hours, a Jevons-paradox effect.",
+      "Pull requests opened per workspace are up 111% since June 2024, with the bend coming in 2026. Teams with a coding agent went from 21 to 65 PRs a week while teams without one went from 8 to 10. The share of product managers attaching PRs rose from 3% to 10%, and designers from 1% to 8%.",
+      "The author admits PRs opened measure motion rather than value and that Linear can't tell whether the extra output helped the business. He still argues PRs are a better proxy than token spend."
+    ],
+    "whyItMatters": "Worth opening for the charts and the methodology appendix if you want the weekly series, the per-role and per-executive breakdowns, or the exact cohort definitions. The data covers only AI use inside Linear and repos connected to it, so read the caveats before quoting the numbers."
+  },
+  "comments": {
+    "overview": "The thread was skeptical and at times hostile. Most commenters said PR counts and issue volume measure activity rather than value, and a long subthread turned into an argument over whether AI pays for its cost at all. Developers also traded stories about how much of their time now goes to reading and fixing generated code.",
+    "themes": [
+      {
+        "title": "Activity is not value",
+        "synthesis": "The most common objection is that Linear measured what it could count. More PRs, more issues and more founder time in the tool don't show better outcomes, and Linear has no customer or revenue data to check against. Others added that the report can only correlate AI use with PRs, not attribute them, and that the 111% figure counts only PRs in repos connected to Linear. A few defended the doubling as plausible, since AI makes small cleanups cheap, while agreeing it doesn't mean twice the output.",
+        "quotes": [
+          { "author": "gkamal", "text": "This looks like measuring what is easy to do, rather than what really matters.", "commentId": 49355413 },
+          { "author": "well_ackshually", "text": "AI reduces ceremony around PRs, makes the small shitty changes that you never had time to do possible and the larger cleanups at least doable.", "commentId": 49359550 }
+        ]
+      },
+      {
+        "title": "Does any of it pay off",
+        "synthesis": "cmiles8 read the report as an attempt to imply customer ROI without evidence, and pointed to the talk of an AI bubble as proof the returns aren't clear. stuartjohnson12 replied that AI-assisted coding is plainly faster in daily practice and the real question is who captures the value. kyllo doubted faster code means better products rather than layoffs, and Majromax compared AI to compilers and high-level languages, with Amdahl's law limiting the gain. cmiles8 and Majromax then split on whether the trillions in investment are a problem for users or only for the companies that made the bets.",
+        "quotes": [
+          { "author": "cmiles8", "text": "ROI is about how much its costs vs the value of the “help.” That’s where the present crisis is.", "commentId": 49361825 },
+          { "author": "kyllo", "text": "On the value capture question, it's really not clear that the ability to write code at superhuman speed actually translates to an increase in the speed with which we can create new, better technology products that customers will pay more money for, vs. just enabling layoffs.", "commentId": 49361787 }
+        ]
+      },
+      {
+        "title": "Generating code fast, reviewing it slowly",
+        "synthesis": "A one-line complaint about 20 minutes of generation and an hour of reading drew the longest thread. A hobbyist running a local model described hours of debugging and was told local models are far weaker than frontier ones like Fable. hypfer argued agents can't write great code because great code needs intent. wongarsu and lukebitts disagreed, saying intent is a set of goals that can be written down and that the user supplies it. lukebitts described leaving Claude for three hours to fix a Godot particle-collision bug after first having it build its own instrumentation.",
+        "quotes": [
+          { "author": "jdw64", "text": "These days, my work has become: generate code for 20 minutes, then spend an hour reading it.", "commentId": 49354577 },
+          { "author": "hypfer", "text": "Fundamentally though, an agent cannot produce great code, because great code requires intent, which is the opposite of the statistical mean.", "commentId": 49357795 }
+        ]
+      },
+      {
+        "title": "Publishing customers' usage data",
+        "synthesis": "sebiandev called the report theft of customer data and said it was a reason never to recommend Linear. Others replied that the numbers are aggregated, that economic data is often collected this way, or that publishing beats quietly selling. giraffe_lady took a middle position, comparing it to Matt Levine's framing of insider trading. The data has business value that belongs to the customers who produced it, which makes this a contract question rather than a moral one.",
+        "quotes": [
+          { "author": "sebiandev", "text": "I think its a bad paradigm that just because you use a platform's service, they get intimate details about your usage.", "commentId": 49356391 },
+          { "author": "giraffe_lady", "text": "So it roughly comes down to \"that data is valuable and rightfully belongs to the originating company.\" Which then makes this a contract diligence type situation.", "commentId": 49357391 }
+        ]
+      },
+      {
+        "title": "What the numbers can't see",
+        "synthesis": "Several commenters pointed to gaps in the method. Linear made its own product much more AI-heavy during the period and didn't control for that. Most AI coding and research happens in other tools, so it never shows up in Linear's data. The founders leading the adoption charts may reflect pressure from the top rather than usefulness.",
+        "quotes": [
+          { "author": "jmtulloss", "text": "Linear didn't control for their platforms AI changes over the past year. The platform has become much more AI integrated, so a lot of numbers will move.", "commentId": 49357527 },
+          { "author": "Mugshelf", "text": "Founders topping the usage chart says more about org pressure than product value. Adoption driven from the top looks different from adoption driven by results.", "commentId": 49369455 }
+        ]
+      }
+    ],
+    "consensus": "Rising PR and issue counts show more activity, not proof of value, and the report says little about outcomes. Linear's own admission that PRs measure motion was the part commenters took most seriously.",
+    "dissent": "A minority said the productivity gain is obvious in daily work. They argued the open question is who captures the value, not whether AI helps, and that a doubling of PRs is believable once small changes get cheap.",
+    "contrarian": {
+      "author": "0xbadcafebee",
+      "text": "With my tools, a human never has to touch a ticket, so we could use any ticketing system with an API or CLI. Linear is a great product because they made a great interface. What happens when I replace their interface with a chat bot?",
+      "commentId": 49354715,
+      "why": "Instead of doubting the numbers, it takes the trend at face value and points out that agents filing and closing tickets make Linear's main advantage, its interface, matter less."
+    }
+  },
+  "digestedAt": "2026-10-11T16:53:12.000Z"
+}

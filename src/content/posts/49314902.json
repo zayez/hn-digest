@@ -1,0 +1,118 @@
+{
+  "hnId": 49314902,
+  "title": "Software Engineering fundamentals matter more",
+  "url": "https://rhonabwy.com/2026/08/15/software-engineering-fundamentals-matter-more-than-ever/",
+  "domain": "rhonabwy.com",
+  "kind": "article",
+  "author": "ingve",
+  "postedAt": "2026-08-15T22:31:09.000Z",
+  "points": 325,
+  "commentCount": 247,
+  "readingMinutes": 5,
+  "tldr": "Coding agents can now reliably produce code that works and passes tests, the author argues, but they still can't decide how software should fit together. Clean seams, debuggability and maintainability take judgment the models lack, so engineering fundamentals matter more now than before.",
+  "article": {
+    "keyPoints": [
+      "In the past year agent harnesses crossed the \"can it be done\" line. The big providers' economics look unviable to him, but the capability won't go away, because open-weight models on a strong personal computer trail the frontier by only a small margin.",
+      "Agents get you to \"it works\" and, with a prompt like \"develop with red/green TDD\", to \"it's testable\". Above that it gets shaky. A component's API and how it fits with other software are subjective calls that depend on experience and on how long you'll live with the code.",
+      "He compares this to learning to weld in his 20s. He quickly built things too heavy to lift or get out of the shop door, and learned that how the parts go together makes the difference.",
+      "LLMs predict rather than reason, so they can only echo reasoning that was in their training text. Debuggable, layered, composable design needs sustained reasoning, and that is where even frontier models fall short. He points to the paper \"The Illusion of Thinking\" and to LeCun's JEPA work for alternatives.",
+      "The wins he sees come from feeding the model concise data at the right moment and giving it deterministic validation tools whose plain-language output it can use to correct itself. Tool calling and instruction following impress him more than the code generation.",
+      "Instruction following cuts both ways. Models can't tell good instructions from bad ones, so Simon Willison's \"lethal trifecta\" and prompt injection remain open holes that sandboxes and alignment only narrow. He hopes post-training will start rewarding clean interfaces and maintainability."
+    ],
+    "whyItMatters": "The post is short and personal, closer to a position statement than an argument with evidence. Read it for the links (the reasoning paper, JEPA, the lethal trifecta) and for one experienced engineer's view of where agents stop being useful. It has no benchmarks or worked examples."
+  },
+  "comments": {
+    "overview": "A heated, sprawling thread. The top comment's IKEA analogy pulled dozens of replies into an argument about furniture quality, and one commenter's claim to maintain a 150k-line app without reading the code drew the angriest exchange. Underneath both ran the article's question of whether agents can do design work or only implementation.",
+    "themes": [
+      {
+        "title": "Agents implement but don't design",
+        "synthesis": "Many working engineers agreed with the article. Generated code works at the function level, but directory layout, interfaces and state management come out a mess, and the model quietly makes product decisions nobody asked for. Others called this a usage problem. Write a fuller spec, feed it a reference repo, start from a configured test suite with red/green TDD. Critics answered that defining the requirements is the job, and that a spec complete enough to remove guessing is the code. One commenter put the architecture failures down to context length, since a model can't hold the whole codebase in mind.",
+        "quotes": [
+          {
+            "author": "mortalapeman",
+            "text": "But what really gets me is the model often tries to make assumptions for me that I didn't specify in the prompt. Subtle things like which error states are \"oh shit we need to bail\" vs \"this isn't a deal breaker.\"",
+            "commentId": 49317049
+          },
+          {
+            "author": "Anoian",
+            "text": "But a big part of software engineering is literally defining the requirements.",
+            "commentId": 49319077
+          }
+        ]
+      },
+      {
+        "title": "The no-review app",
+        "synthesis": "One commenter said he stopped reading the code of his iOS app two months ago and the agent still maintains all 150k lines, half of them tests, without trouble. He spends his 300 hours on QA, UX and product taste instead. Replies called four months with zero users far too early to judge maintainability, which only shows once requirements change and other developers arrive. They also pointed to the major agent harnesses, which are largely vibe-coded and full of regressions. A few defended him, arguing that the split in experiences comes from people not putting in the time to learn the tools.",
+        "quotes": [
+          {
+            "author": "user43928",
+            "text": "150k LOC, around half of that in tests, and the AI still has no problem maintaining the code on my behalf.",
+            "commentId": 49317694
+          },
+          {
+            "author": "sethammons",
+            "text": "You don't get to know if your code is maintainable until the use cases have expanded and usually other devs will come on board, and what guarantee is there that they will direct the ai the same way?",
+            "commentId": 49319555
+          }
+        ]
+      },
+      {
+        "title": "AI code as IKEA furniture",
+        "synthesis": "The top comment predicted AI code will be like IKEA, consistently good enough, and cut demand for engineers to perhaps 1% of today's. Critics said the analogy breaks because IKEA sells identical items, while AI produces bespoke software full of hidden decisions that still needs expert supervision. Supporters countered that most software really is standard fittings joined together, and that AI is finally delivering what scripting tools promised office workers. Much of the subthread then turned into an argument about whether IKEA furniture lasts.",
+        "quotes": [
+          {
+            "author": "quietbritishjim",
+            "text": "AI gives software that is bespoke with hundreds of decisions made, hidden from you, in the background.",
+            "commentId": 49318124
+          },
+          {
+            "author": "nameless912",
+            "text": "Every other engineering discipline coalesced on standard operating procedures decades ago, maybe we software engineers have to swallow our pride a bit and start accepting them in our discipline too.",
+            "commentId": 49319798
+          }
+        ]
+      },
+      {
+        "title": "Is prompt injection solved?",
+        "synthesis": "Citing a third-party evaluation in which none of 720 injection attempts beat Anthropic's latest models in auto mode, one commenter called the problem largely solved. Others said passing a fixed benchmark shows fitting to the benchmark, not robustness. A security researcher who trusts the research still got an injection through Opus 5 in his own experiments. Another argued that any nonzero rate is unacceptable when an agent has broad permissions.",
+        "quotes": [
+          {
+            "author": "chmod775",
+            "text": "You do not solve \"losing russian roulette\" by adding more empty chambers. One bullet in 600 chambers is still one bullet too much.",
+            "commentId": 49329335
+          },
+          {
+            "author": "veganmosfet",
+            "text": "In general, there are almost infinite possibilities for the prompt injection payloads, it's a matter of creativity and trial and error.",
+            "commentId": 49341789
+          }
+        ]
+      },
+      {
+        "title": "Do LLMs reason?",
+        "synthesis": "The article's line that LLMs \"predict\" rather than reason set off a philosophical subthread. One side said prediction is only the training objective and reasoning can emerge from it, and that the definitions used to deny it would also rule out humans. The other said looking like reasoning isn't reasoning, comparing it to a photocopier fed a maths paper. Several commenters found the debate circular and suggested talking about concrete failures like context rot and the reversal curse.",
+        "quotes": [
+          {
+            "author": "theteapot",
+            "text": "Prediction is the training objective. The ability to reason can be, and very arguably is, an emergent property of that.",
+            "commentId": 49317220
+          },
+          {
+            "author": "nsingh2",
+            "text": "Calling it a \"simulation\" is assuming the conclusion.",
+            "commentId": 49322040
+          }
+        ]
+      }
+    ],
+    "consensus": "Agents write working code quickly when the task is scoped and backed by tests, but someone still has to decide structure, interfaces and requirements. Experienced engineers mostly see that as their job for now.",
+    "dissent": "A vocal minority said design judgment is a training problem that will be solved like any other. They expect AI to beat the average engineer, who they said writes poor code anyway, and to shrink the profession sharply.",
+    "contrarian": {
+      "author": "spacemanspiff01",
+      "text": "My thesis in this is that the cost of a refactor has dropped precipitously, LLMs are really good at doing translations, and are pretty good at finding good abstractions if you work them a bit.",
+      "commentId": 49321583,
+      "why": "Where the thread treats maintainability as something you build in up front, this commenter suggests cheap rewrites change the order. Vibe-code a prototype, then rewrite around carefully chosen interfaces, and another commenter confirmed that week-long refactors now take an afternoon plus a day of review."
+    }
+  },
+  "digestedAt": "2026-10-11T16:53:07.000Z"
+}

@@ -1,0 +1,118 @@
+{
+  "hnId": 49312845,
+  "title": "AI isn’t outthinking mathematicians, it’s out-remembering them",
+  "url": "https://davidepiffer.com/p/ai-isnt-outthinking-mathematicians",
+  "domain": "davidepiffer.com",
+  "kind": "article",
+  "author": "rzk",
+  "postedAt": "2026-08-15T18:13:02.000Z",
+  "points": 634,
+  "commentCount": 522,
+  "readingMinutes": 13,
+  "tldr": "Davide Piffer argues that much of AI's recent success in mathematics comes from a huge written workspace, not deeper reasoning. A model can keep every assumption, equation and dead end in its context window, while human working memory holds only a handful of unfamiliar items. Math rewards exactly that kind of bookkeeping.",
+  "article": {
+    "keyPoints": [
+      "Human working memory is tiny, which is why multiplying two three-digit numbers in your head is hard even though each step is easy. Paper doesn't make you smarter. It extends your working memory, and expert chunking only compresses what fits under the same limit.",
+      "Working memory predicts math performance beyond IQ. Piffer cites Alloway and Alloway (2010), where working memory at age five predicted numeracy six years later better than the IQ measure did, plus Blankenship (2015) and a 2013 meta-analysis, while warning that the two traits overlap heavily.",
+      "A context window is a giant external notebook rather than true working memory. Models are weak at holding a private, changing mental state, so their reasoning happens in the text they write. For math, where every assumption and eliminated case can be written down, this weakness turns into a strength.",
+      "Math suits this setup because symbols stay fixed and answers can be checked by substitution, code or proof assistants. Social or historical questions depend on hidden facts and loose concepts, and a bigger notebook can't supply facts nobody observed.",
+      "The hypothesis makes predictions. AI should gain most on long calculations, case analysis and dense constraints, and least on problems hinging on one short conceptual leap. Cutting a model's usable context should hurt it most on long tasks, and giving humans better external memory should narrow the gap.",
+      "Piffer closes with Eugene Wigner's comparison of von Neumann and Einstein. Today's AI resembles a machine-amplified von Neumann, fast and broad with an unlimited notebook, but not yet Einstein's ability to reframe a problem entirely."
+    ],
+    "whyItMatters": "Worth reading for anyone who wants a concrete framing of where AI math gains come from, and for the list of testable predictions near the end, which the summary only sketches. The cited working-memory studies are also listed in full with DOIs."
+  },
+  "comments": {
+    "overview": "A large, mostly skeptical-of-the-framing thread. Many readers turned the question on themselves and traded stories about weak memory and strong on-the-fly reasoning, while others argued that memory, persistence and search simply are parts of intelligence. Long side fights broke out over string theory and whether AI could produce proofs no human can understand, and a few commenters flagged the author's history and the article's AI-sounding prose.",
+    "themes": [
+      {
+        "title": "Is intelligence mostly memory?",
+        "synthesis": "The top thread opened with a developer saying his best work came from recombining knowledge others lacked, which is what LLMs do too. Dozens of replies pushed back with their own experience. They have poor factual memory but good conceptual memory, and they derive formulas instead of memorizing them. Others split the difference by citing fluid versus crystallized intelligence, or by calling compression the real skill.",
+        "quotes": [
+          {
+            "author": "hibikir",
+            "text": "I don't think I've had a truly original idea in my life. Combine A + B, when it's rare for people to know A and B at the same time. So from that perspective, what LLMs are doing is basically the same thing.",
+            "commentId": 49314025
+          },
+          {
+            "author": "grahamburger",
+            "text": "I had a thought when I was fairly young that the only reason I was (maybe, sometimes) outperforming others intellectually is that I was habitually compensating for my poor memory by working things out on the fly, while others could rely more on rote memorization.",
+            "commentId": 49314087
+          }
+        ]
+      },
+      {
+        "title": "Tireless brute force, and moving goalposts",
+        "synthesis": "Many added that AI also out-works mathematicians, trying direction after direction without discouragement. Others noted that mathematicians already spend years on single problems, and one commenter claimed frontier models now sometimes say a task will take hours and suggest stopping. Some read the whole genre as goalpost-moving, peeling off memory, persistence and search one by one until nothing called intelligence is left. Skeptics answered that speed and stamina are things computers always had, and that understanding and real novelty are still missing.",
+        "quotes": [
+          {
+            "author": "ComplexSystems",
+            "text": "This thing just does not ever get tired or discouraged or care; it's just onto the next thing until something ends up working.",
+            "commentId": 49312956
+          },
+          {
+            "author": "ralusek",
+            "text": "We're just going to slowly deconstruct every element that could be a factor of intelligence.",
+            "commentId": 49313370
+          }
+        ]
+      },
+      {
+        "title": "Proofs no human can follow",
+        "synthesis": "One commenter predicted AI will soon produce mathematics too intricate for people to understand, ending the age of human comprehension. Opponents said a proof is a finite chain of rule applications that anyone can check given time, and cited Terence Tao's point that shared understanding, not the proof itself, is what mathematics produces. The exchange turned into a long argument over what \"incomprehensible\" means, with examples like the 5G spec and high-temperature superconductors offered and rejected.",
+        "quotes": [
+          {
+            "author": "chongli",
+            "text": "As to your second point, Terry Tao already has an answer [1]: the proof isn’t the contribution, shared understanding is.",
+            "commentId": 49313053
+          },
+          {
+            "author": "logicchains",
+            "text": "A mathematician could understand any proof given enough time to study it; the only way for AI to make proofs that a human couldn't understand is by making really, really long proofs.",
+            "commentId": 49313023
+          }
+        ]
+      },
+      {
+        "title": "Why math and code, not law and medicine",
+        "synthesis": "Commenters agreed with the article that checkability explains why labs keep showcasing math and code. Compilers, solvers and Lean let a model fail thousands of times and keep only what passes, which medicine and law can't offer. A mathematician added that outside Lean the standard of proof is still what other mathematicians accept, and that they sometimes disagree, as with Mochizuki's claimed abc proof.",
+        "quotes": [
+          {
+            "author": "AngryData",
+            "text": "With code and math you can have failures 1000 times for every success and still get rewarded.",
+            "commentId": 49313692
+          },
+          {
+            "author": "dgellow",
+            "text": "That makes it possible and worth it for them to spend 1 week of compute on a problem until the validator passes, then publish marketing pieces.",
+            "commentId": 49313145
+          }
+        ]
+      },
+      {
+        "title": "Big context and bloated code",
+        "synthesis": "Programmers saw the article's thesis in their own codebases. Because models can hold a lot at once, they skip the abstractions humans need, and the result is duplicated logic, such as eleven separate date-math helpers in one generated project. Some argued clean abstractions still pay off for models by saving tokens, and others reported that a huge context makes models worse at close, focused review of a single method.",
+        "quotes": [
+          {
+            "author": "Animats",
+            "text": "It's also why LLMs don't need abstractions or parsimony as much as humans. They can work on something complicated without simplifying it first.",
+            "commentId": 49313089
+          },
+          {
+            "author": "smj-edison",
+            "text": "They're really bad at noticing when a helper function is needed, when some structure they repeated five times slightly differently can become a struct, when a whole section of code can be encapsulated in a simpler design.",
+            "commentId": 49315150
+          }
+        ]
+      }
+    ],
+    "consensus": "Memory and recombination matter a great deal, and AI's ability to keep vast amounts of material in view gives it a real edge in math and code, both of which can be checked by machine. Most also agreed that this edge falls short of the conceptual reframing the article attributes to Einstein.",
+    "dissent": "A sizable group rejected the framing outright. Some called it cope that redraws intelligence to exclude AI, and argued that bigger working memory simply is more intelligence. Others dismissed the piece as AI-polished prose or pointed to the author's record of race-science writing and a claim of ESP.",
+    "contrarian": {
+      "author": "keeda",
+      "text": "I would not consider referencing working memory during thinking as “remembering” but as a part of thinking itself. Working memory is the RAM to the much larger but higher latency indexed database that is our long-term memory. As such I would say AI *is* out-thinking us, even if in a brute force sort of way.",
+      "commentId": 49313559,
+      "why": "It accepts the article's mechanism and still shows its title is wrong, since working memory is part of reasoning rather than a separate store of facts."
+    }
+  },
+  "digestedAt": "2026-10-11T16:53:57.000Z"
+}

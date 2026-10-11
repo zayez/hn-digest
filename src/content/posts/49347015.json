@@ -1,0 +1,86 @@
+{
+  "hnId": 49347015,
+  "title": "AI doesn’t solve Work Theater",
+  "url": "https://think-twice.me/?p=102",
+  "domain": "think-twice.me",
+  "kind": "article",
+  "author": "zug_zug",
+  "postedAt": "2026-08-18T15:21:29.000Z",
+  "points": 45,
+  "commentCount": 8,
+  "readingMinutes": 2,
+  "tldr": "Big companies fail by building the wrong thing, not by building too slowly, so AI coding speed won't save them. The author predicts firms with more than four management levels will see little or negative gain from agentic work, while flatter ones speed up.",
+  "article": {
+    "keyPoints": [
+      "Work theater is the pattern at large companies where projects that look meaningful in Jira crowd out work that delivers something real to customers.",
+      "\"Think less, act more\" only works once you have product-market fit and know what to build. The rest of the time you should slow down, ask more questions and hear from more people.",
+      "AI speeds up the 0-to-1 build but does nothing for deciding where to take a product next, and it makes it easier to fake progress with a flood of tickets and changes.",
+      "The author can't name a failed big company, Yahoo included, that was building the right thing 20% too slowly. Failure almost always came from picking the wrong direction, often while employees and customers said so.",
+      "Citing \"Recursive Middle Manager Hell\" and a dozen jobs of his own, the author predicts companies with more than four management levels will get small or negative returns from AI, since it lets optics-driven engineers pile tech debt on everyone else.",
+      "Companies with three or fewer levels should speed up a lot, and the author welcomes the competition that forces incumbents like Meta to improve or be replaced."
+    ],
+    "whyItMatters": "It's a two-minute opinion piece with no data beyond the author's own experience. Read it for the specific prediction about management depth, which is easy to check against your own company."
+  },
+  "comments": {
+    "overview": "A small, mostly agreeable thread. Commenters bought the premise that AI feeds work theater, and several thought it will make things worse. The pushback went to the article's second half, which blames middle managers.",
+    "themes": [
+      {
+        "title": "AI will make work theater worse",
+        "synthesis": "The most-replied comment predicted a golden era of work theater, and one reply said it has already started. Others joked about winning a token-burning award or hoped that building faster would at least walk companies into a dead end sooner and make them stop to think. Even that commenter expected more doubling down in practice. One reply argued that theater was never about profit anyway. It runs on make-believe, pressure and ego.",
+        "quotes": [
+          {
+            "author": "pjm331",
+            "text": "If anything I’d guess that AI would usher in a Golden Era of Work Theater the likes of which we have never seen",
+            "commentId": 49353573
+          },
+          {
+            "author": "Otterly99",
+            "text": "In reality, I have a feeling that it would lead to even more encroachement, more doubling down and less useful work.",
+            "commentId": 49358085
+          }
+        ]
+      },
+      {
+        "title": "Blaming middle managers misses the point",
+        "synthesis": "Two commenters rejected the management-layers argument. One said good managers are what keep a team on work that matters, and bad ones build empires. Another liked the opening but found the turn to middle managers as the root of all evil jarring.",
+        "quotes": [
+          {
+            "author": "alfalfasprout",
+            "text": "If anything, good management incentivize the right things and focus a team on work that matters. Bad managers only try to empire build and incentivize the wrong things in their engineers.",
+            "commentId": 49352733
+          },
+          {
+            "author": "0x500x79",
+            "text": "I think that the start of the article was interesting, then it goes down the path of middle managers being the root of all evil, just seems a bit like whiplash.",
+            "commentId": 49353451
+          }
+        ]
+      },
+      {
+        "title": "Cheap building removes the reason to say no",
+        "synthesis": "One commenter agreed that building the wrong thing causes most failures, and said AI has made it worse. Cost used to be the reason to turn down a feature, and now teams say yes to everything. Another added that AI overengineers by default, so the bloat piles up.",
+        "quotes": [
+          {
+            "author": "0x500x79",
+            "text": "Historically, that answer was ROI - why spend days/weeks/months on something that might not be valuable. Now I see people just saying \"Yes, and\" to all feature requests.",
+            "commentId": 49353451
+          },
+          {
+            "author": "alfalfasprout",
+            "text": "If anything, AI tends to vastly overengineer things (in a bad way) which makes bloat inevitable.",
+            "commentId": 49352733
+          }
+        ]
+      }
+    ],
+    "consensus": "AI speed doesn't fix building the wrong thing, and it probably adds to the busywork.",
+    "dissent": "Management layers aren't the cause. Good managers are what keep teams pointed at work that matters.",
+    "contrarian": {
+      "author": "alfalfasprout",
+      "text": "I've seen orgs that try to flatten too much end up with ICs basically left in the ether without meaningful direction which causes them to 'build to survive'.",
+      "commentId": 49352733,
+      "why": "It turns the article's fix around: flattening the org can produce the same theater, because engineers with no direction build things to justify their jobs."
+    }
+  },
+  "digestedAt": "2026-10-11T16:53:22.000Z"
+}

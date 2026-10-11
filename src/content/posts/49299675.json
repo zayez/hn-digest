@@ -1,0 +1,118 @@
+{
+  "hnId": 49299675,
+  "title": "Seven books I keep close because I love them",
+  "url": "https://blog.plover.com/2026/08/02/",
+  "domain": "blog.plover.com",
+  "kind": "article",
+  "author": "surprisetalk",
+  "postedAt": "2026-08-14T15:03:26.000Z",
+  "points": 386,
+  "commentCount": 188,
+  "readingMinutes": 17,
+  "tldr": "Mark Dominus walks through the seven books on the shelf within reach of his desk: a 4th-edition Roget's Thesaurus, Thomas Browne's prose, the Decameron, van Heijenoort's From Frege to Gödel, Comenius's Orbis Pictus, an NIV Bible and the Belles Heures of the Duc de Berry. For each he explains why he keeps it close and what it has fed into his writing.",
+  "article": {
+    "keyPoints": [
+      "Roget's Thesaurus is a classification of ideas into about a thousand sections, not a list of synonyms. Leafing through neighbouring sections like Priority, Posteriority and Simultaneity helps a writer work out what they meant to say, which only works if they already know what the words mean.",
+      "He kept the 4th edition over the fatter 8th because the extra material wasn't anything he needed. He also prefers it to an online version, even though an online one would be more convenient.",
+      "Thomas Browne's Pseudodoxia Epidemica, from 1646, catalogues popular beliefs Browne thought were wrong. Dominus reads Browne as the Renaissance's brave curiosity, set against medieval thought he finds frightened and cramped.",
+      "The Decameron, written soon after the 1348 plague and only decades after Dante, is about people eating, arguing and making love while God stays in the background. He keeps the Ó Cuilleanáin translation and compares its word choices with older ones.",
+      "From Frege to Gödel collects the founding papers of mathematical logic, including Frege's Begriffsschrift, Russell's letter breaking Frege's system, Peano's axioms and Ackermann's function. He uses it as a reference and also just browses it.",
+      "Orbis Pictus, published in 1658 as the first illustrated children's book published in Europe, pairs numbered engravings with facing English and Latin text. The NIV Bible is there because he says nobody can understand 21st-century America without the Bible, and he prints his unfinished notes on Samson lying to Delilah over and over."
+    ],
+    "whyItMatters": "Read the original for the asides the summary drops: the Roget walkthrough of how the index splits senses of \"immediate\", Browne on four-eyed snails, the abbess with her lover's trousers on her head, and a dozen links into twenty years of Dominus's blog. It is personal and digressive, and that is most of its appeal."
+  },
+  "comments": {
+    "overview": "Most commenters liked the post, but the thread spent most of its energy on the Bible, which was one book of the seven. People argued over the NIV translation, Samson's last words in Hebrew, Greek and Latin, how charitably to read the Samson story, and whether the Bible really is the \"cornerstone of Western culture.\" Dominus, posting as mjd, joined in often, answering questions about editions and listing the non-Western books on his other shelves.",
+    "themes": [
+      {
+        "title": "The NIV and other translations",
+        "synthesis": "The top thread attacked the NIV as theologically slanted, citing Romans 7:18, where it renders sarx as \"sinful nature\" instead of \"flesh\". Others recommended the NRSV for scholarship, the NLT for readability, the ESV for how evangelicals read today, and the KJV for its language, though its words have shifted meaning since 1611. A minority defended the choice: the NIV is still the best-selling English version, which suits the author's stated goal of understanding America.",
+        "quotes": [
+          {
+            "author": "ntdef",
+            "text": "The NIV has so many inexcusable translations that reinforce a theological worldview that matched the conversation on atonement and justification that was happening in the 90s and 2000s.",
+            "commentId": 49302791
+          },
+          {
+            "author": "burkaman",
+            "text": "It is still the most popular English-language version according to https://christianbookexpo.com/bestseller/translations.php?id=BO23, so for his goal (\"there is no way to understand 21st-century America without understanding the Bible\") I think it's the right choice.",
+            "commentId": 49303946
+          }
+        ]
+      },
+      {
+        "title": "Samson's last words and reading the original",
+        "synthesis": "One commenter noted that Samson's last line is almost never translated literally. Several people worked through the Hebrew, Greek and Latin and agreed it reads closer to \"let my soul die with the Philistines\", with nephesh closer to \"life\" or \"self\", while the Septuagint swaps the Philistines for \"foreigners\". A Hebrew reader said translations lose a great deal, which drew a sharp reply asking why they knew better than the NIV committee. Others answered that all translation loses something and that translators admit as much.",
+        "quotes": [
+          {
+            "author": "schoen",
+            "text": "The original Hebrew has\n\nתָּמוֹת נַפְשִׁי עִם-פְּלִשְׁתִּים\n\nwhich is *also* third person \"may *my soul*\" (נַפְשִׁי) \"die with (the) Philistines\".",
+            "commentId": 49302050
+          },
+          {
+            "author": "rurp",
+            "text": "Translations are inherently lossy, especially for cases like the bible that use less common dialects and have conflicting source versions.",
+            "commentId": 49302896
+          }
+        ]
+      },
+      {
+        "title": "Is Samson a fool, or is the reading shallow?",
+        "synthesis": "Dominus mocks Samson for lying to Delilah again and again while knowing she will betray him. One commenter replied that the text never shows Samson knows the Philistines are waiting, and that terse ancient narrative rewards a slower reading. Others read Samson as blinded by lust or longing for love, which is the lesson theologians usually draw. An atheist countered that this charitable reading assumes the text must be deep because it is sacred, and a believer answered that its authors thought it sacred, so taking that seriously is part of reading it well.",
+        "quotes": [
+          {
+            "author": "cvoss",
+            "text": "It is not clear from the text that Samson is aware of the presence of Philistines the first three times. We are told they are lying in ambush in an inner chamber.",
+            "commentId": 49301391
+          },
+          {
+            "author": "judah",
+            "text": "Samson is blinded by sex. He's recorded multiple times going outside of his community, even to enemy territory, to seek out attractive women and prostitutes.",
+            "commentId": 49302034
+          }
+        ]
+      },
+      {
+        "title": "\"Cornerstone of Western culture\"",
+        "synthesis": "Several commenters objected to Dominus's claim that no well-educated person can be without knowing the Bible. One said Greek philosophy and Indian, Chinese and Islamic thought are the real foundation. An atheist said to read the anti-colonial history Settlers instead, which set off a long, off-topic quarrel about whether life in the US is good. Another commenter mocked the gatekeeping by demanding that readers also know Canaanite cults and Zoroastrianism, then admitted the bit. Most replies still granted that the Bible shaped Western culture, for better or worse.",
+        "quotes": [
+          {
+            "author": "vehemenz",
+            "text": "My convictions are pretty hollow because I'm demonstrating the pointlessness--or arbitrariness, if you like--of gatekeeping the ranks of the \"well-educated,\" as the author tries to do here.",
+            "commentId": 49302604
+          },
+          {
+            "author": "magarnicle",
+            "text": "The fact you used \"cornerstone\" like this somewhat undermines your point, since its figurative use originated from the Bible.",
+            "commentId": 49341976
+          }
+        ]
+      },
+      {
+        "title": "Roget's and the rest of the shelf",
+        "synthesis": "Many readers learned for the first time that Roget's is arranged by concept. They asked which edition to buy, and Dominus pointed them to Harper versions, since in the US anyone can call a thesaurus \"Roget's\". The developer of OneLook said its concept clusters come straight from Roget. Others traded memories of the Decameron, Orbis Pictus and paper dictionaries. Asked for something outside the Western canon, Dominus listed books on his other shelves, among them the Egyptian Book of the Dead and the travels of Ibn Battutah.",
+        "quotes": [
+          {
+            "author": "dougb5",
+            "text": "The concept clusters on the site are directly inspired by Roget's work. Like the author, I see a thesaurus less as a synonym dictionary and more as what the word literally means, a storehouse of treasure.",
+            "commentId": 49302223
+          },
+          {
+            "author": "mjd",
+            "text": "I think some people might see my reading habits as those of a dilettante with a lack of serious focus, and I don't think I would care to dispute that.",
+            "commentId": 49307575
+          }
+        ]
+      }
+    ],
+    "consensus": "The post is a pleasure to read, and Roget's is far more useful once you know it is organized by idea. On the Bible, most agreed that translation choice matters a great deal and that the KJV's archaic words now mislead readers.",
+    "dissent": "A sizeable group rejected the claim that the Bible is the cornerstone of Western culture or required reading for the well-educated. Others questioned the NIV in particular, and a few pushed back on Dominus's dismissal of medieval thinkers, blaming Aristotle for the cramped science or calling Scotus and Aquinas fascinating.",
+    "contrarian": {
+      "author": "aaroninsf",
+      "text": "Sometimes a crude story succeeds on some merits and fails on others; when it is enshrined and glorified it creates a frankly dangerous social pressure to praise the emperor's clothes.",
+      "commentId": 49302236,
+      "why": "While others competed to find depth in Samson, this comment questioned the habit itself, arguing that sacred status, not the text, produces the subtlety readers find."
+    }
+  },
+  "digestedAt": "2026-10-11T16:53:21.000Z"
+}

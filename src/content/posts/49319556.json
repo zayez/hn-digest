@@ -1,0 +1,117 @@
+{
+  "hnId": 49319556,
+  "title": "Claude: System Prompts",
+  "url": "https://platform.claude.com/docs/en/release-notes/system-prompts",
+  "domain": "platform.claude.com",
+  "kind": "article",
+  "author": "tosh",
+  "postedAt": "2026-08-16T12:48:21.000Z",
+  "points": 762,
+  "commentCount": 284,
+  "readingMinutes": 1,
+  "tldr": "Anthropic publishes the system prompts behind claude.ai and its mobile apps, one page per model from Claude Haiku 3 to Opus 5.5. Readers found the prompts have grown from about 300 words to over 3,000, and argued over whether that bulk helps the model or just eats context.",
+  "article": {
+    "keyPoints": [
+      "The claude.ai web interface and the mobile apps send Claude a system prompt at the start of every conversation, with facts like the current date and behavior rules such as putting code snippets in Markdown.",
+      "Anthropic updates the prompt from time to time, and the updates do not apply to the Claude API.",
+      "Older models can have several dated prompt versions. From the Claude 4.6 generation on, each model ID is one fixed snapshot with a single entry.",
+      "The page links 22 per-model prompt pages, from Claude Haiku 3 and Opus 3 up to Haiku, Sonnet and Opus 5.5 and Fable 5.1."
+    ],
+    "whyItMatters": "The index itself is a table of contents. The per-model pages hold the actual prompts, and anyone who wants to see how Anthropic steers the consumer chat product, or what changed between models, should read those. Simon Willison keeps them as a git history so the diffs are easy to follow."
+  },
+  "articleNote": "Index page listing per-model prompt pages; the key points describe the index, and the digest leans on the HN discussion of the prompts themselves.",
+  "comments": {
+    "overview": "Commenters read the linked prompts closely and quoted lines from them, mostly to mock instructions the model ignores or to complain about length. The biggest single thread, though, was off topic: a user's claim that HN buries AI-critical stories drew 85 replies, most of them explaining flagging and the comment-to-upvote penalty instead.",
+    "themes": [
+      {
+        "title": "The prompts are too long",
+        "synthesis": "Many said the prompts have bloated, with early ones around 300 words and the latest past 3,000, about 22k characters before tool definitions. Critics called much of it a legal cover document that wastes the most-attended part of the context and may hurt results, pointing to a benchmark where the minimal Pi harness beat Claude Code. Others replied that a shared prefix is cached, so the cost is small, and compared the growth to building codes that accrete after each accident.",
+        "quotes": [
+          {
+            "author": "simjnd",
+            "text": "Pi with its 300 words system prompt outperforms Claude Code and Codex both in token usage and passing rate, when using the same model + effort configuration [1].",
+            "commentId": 49322061
+          },
+          {
+            "author": "SwellJoe",
+            "text": "It feels like a CYA document. Which, I guess a company of their size and influence has to do.",
+            "commentId": 49324954
+          }
+        ]
+      },
+      {
+        "title": "Why not train it into the weights",
+        "synthesis": "Several asked why users pay for these tokens instead of Anthropic baking the behavior in. The answers were practical. A prompt can change overnight, while retraining is slow and expensive; one model serves chat, API, coding and government customers with different needs; and Opus cannot be trained to know about a Fable handoff that did not exist yet. Simon Willison added that these prompts only apply to the consumer apps, not the API, though others noted chat and Claude Code share one usage allowance.",
+        "quotes": [
+          {
+            "author": "dragonwriter",
+            "text": "Because it is cheaper to have different behavior for internal use, special (e.g., government) customers, etc. if they are differentiated by things like system prompts and external guardrails than if they are different model versions with their own final training regime",
+            "commentId": 49324592
+          },
+          {
+            "author": "simonw",
+            "text": "These system prompts don't affect the API, they are for the Claude consumer chat products. We aren't charged extra for them.",
+            "commentId": 49319982
+          }
+        ]
+      },
+      {
+        "title": "Rules the model ignores",
+        "synthesis": "The line banning \"genuinely\", \"honestly\" and \"straightforward\" got laughed at in several separate threads, and so did the instruction to be brief and concise. Users said Claude still does both. Some guessed the model reads the line as a description of itself rather than an order, others that verbosity is trained in for benchmarks and a prompt cannot undo it. One user said Claude's answers are not too long but too dense.",
+        "quotes": [
+          {
+            "author": "tdeck",
+            "text": "Seems to have had no effect. It said \"honestly\" again within 2 minutes.",
+            "commentId": 49329408
+          },
+          {
+            "author": "hungryhobbit",
+            "text": "Prompts don't matter when you've heavily trained the model for verbosity (because that's what gets you the best benchmark scores).",
+            "commentId": 49321429
+          }
+        ]
+      },
+      {
+        "title": "What the prompts reveal",
+        "synthesis": "Readers dug out news buried in the text. The Opus 5 prompt explains the June 2026 suspension of Fable 5 and Mythos 5 under export controls, and tells Opus that some Fable requests get routed to it by safeguards. Older prompts hardcode the 2024 US election result. Some joked that telling Opus it ranks below Mythos explains an \"Opus 5 nerf\", and others pointed out stale claims about Mythos availability. Simon Willison regretted that Anthropic omits the tool definitions and the Claude Code prompts, which others extract with a logging proxy.",
+        "quotes": [
+          {
+            "author": "simonw",
+            "text": "One frustrating note about this page is that they share the system prompts used for https://claude.ai and the Claude mobile apps regular chat, but they omit the tool definitions. Those are much more interesting if you want to understand what Claude can actually do for you.",
+            "commentId": 49319926
+          },
+          {
+            "author": "wrs",
+            "text": "A lot of people wanted to talk about this at the time, and the election result was after the training cutoff, so I’d guess they threw this in there to reduce waste due to hallucinations and/or web searches.",
+            "commentId": 49321401
+          }
+        ]
+      },
+      {
+        "title": "Wellbeing and self-respect clauses",
+        "synthesis": "The instruction to put a distressed user's wellbeing ahead of the task split readers. Some want tools that do what they are told, and blamed it for agents announcing they will stop and take a break. One user credited the same behavior with breaking a burnout spiral that was hurting their family. The clause telling Claude not to grovel at rude users read to some as sensible handling of frustrated people and to others as anthropomorphism.",
+        "quotes": [
+          {
+            "author": "trjordan",
+            "text": "In particular, when I’m coding, outlining docs, or otherwise trying to work, I want my tools to do work. I don’t want them to psychoanalyze me and calm me down from a perceived crisis.",
+            "commentId": 49321858
+          },
+          {
+            "author": "cruffle_duffle",
+            "text": "So weirdly… that little bit they add to the prompt (plus a bunch of model training we can’t see) saved my sanity, marriage and family.",
+            "commentId": 49322379
+          }
+        ]
+      }
+    ],
+    "consensus": "The prompts have grown a lot, and several of their style rules, on brevity and on words like \"honestly\", visibly fail to change how Claude writes. Most also agreed the system prompt is one layer among several, with training and separate classifiers doing the real safety work.",
+    "dissent": "A minority defended the length: the prefix is cached so the cost is small, nobody has shown it hurts quality, and some commenters found the behavioral clauses useful in practice.",
+    "contrarian": {
+      "author": "y1zhou",
+      "text": "Maybe these longer system prompts are part of the reason why we can give the models shorter AGENTS.md files? A lot of what people commonly write in their *.md instructions may be already covered.",
+      "commentId": 49325668,
+      "why": "It turns the complaint around: the advice to keep project instruction files short may only work because the vendor prompt already covers the basics."
+    }
+  },
+  "digestedAt": "2026-10-11T16:53:07.000Z"
+}
