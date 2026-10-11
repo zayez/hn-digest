@@ -2,7 +2,7 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://zayez.github.io',
+  site: 'https://www.zayez.xyz',
   base: '/hn-digest',
   trailingSlash: 'always',
 });
