@@ -1,0 +1,12 @@
+/* OOCSS object: a centered column with a max width and side gutters. Structure only. */
+.center {
+  box-sizing: content-box;
+  --center-measure: var(--measure-page);
+  max-inline-size: var(--center-measure);
+  margin-inline: auto;
+  padding-inline: var(--space-s);
+}
+
+.prose {
+  --center-measure: var(--measure-prose);
+}

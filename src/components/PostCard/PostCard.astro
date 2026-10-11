@@ -1,0 +1,23 @@
+---
+import type { Post } from '../../lib/content';
+import { postPath } from '../../lib/content';
+import box from '../../styles/objects/box.module.css';
+import stack from '../../styles/objects/stack.module.css';
+import PostMeta from '../PostMeta/PostMeta.astro';
+import styles from './PostCard.module.css';
+
+interface Props {
+  post: Post;
+}
+
+const { post } = Astro.props;
+---
+
+<article class:list={[box.box, stack.stack, stack.gap2xs, styles.card]}>
+  <slot name="eyebrow" />
+  <h3 class={styles.title}>
+    <a href={postPath(post)}>{post.data.title}</a>
+  </h3>
+  <PostMeta post={post} />
+  <p class={styles.tldr}>{post.data.tldr}</p>
+</article>

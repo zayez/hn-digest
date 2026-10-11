@@ -1,0 +1,63 @@
+---
+import type { GetStaticPaths } from 'astro';
+import PostCard from '../../components/PostCard/PostCard.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import {
+  getIssuePosts,
+  getIssues,
+  issuePath,
+  sectionSlug,
+  type Issue,
+  type Post,
+} from '../../lib/content';
+import { formatCount, formatDate } from '../../lib/format';
+import stack from '../../styles/objects/stack.module.css';
+import page from '../../styles/pages/page.module.css';
+
+interface Entry {
+  post: Post;
+  issue: Issue;
+}
+
+export const getStaticPaths = (async () => {
+  const bySection = new Map<string, { section: string; entries: Entry[] }>();
+  for (const issue of await getIssues()) {
+    for (const { post, section } of await getIssuePosts(issue)) {
+      const slug = sectionSlug(section);
+      const group = bySection.get(slug) ?? { section, entries: [] };
+      group.entries.push({ post, issue });
+      bySection.set(slug, group);
+    }
+  }
+  return [...bySection].map(([slug, group]) => ({ params: { section: slug }, props: group }));
+}) satisfies GetStaticPaths;
+
+interface Props {
+  section: string;
+  entries: Entry[];
+}
+
+const { section, entries } = Astro.props;
+---
+
+<BaseLayout title={`#${section}`} description={`Digested posts from the #${section} section.`}>
+  <div class:list={[stack.stack, stack.gapXl]}>
+    <header class:list={[stack.stack, stack.gap2xs]}>
+      <p class={page.eyebrow}>
+        <a href="/">Issues</a> › Section
+      </p>
+      <h1>#{section}</h1>
+      <p class={page.eyebrow}>{formatCount(entries.length, 'post')} across all issues</p>
+    </header>
+    <div class:list={stack.stack}>
+      {entries.map(({ post, issue }) => (
+        <PostCard post={post}>
+          <p slot="eyebrow" class={page.eyebrow}>
+            <a href={issuePath(issue)}>Issue #{issue.data.number}</a> ·{' '}
+            {formatDate(issue.data.date)}
+          </p>
+        </PostCard>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,9 @@
+/* OOCSS object: padded container. Skin (border, background) comes from the module using it. */
+.box {
+  --box-padding: var(--space-m);
+  padding: var(--box-padding);
+}
+
+.paddingS {
+  --box-padding: var(--space-s);
+}

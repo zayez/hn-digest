@@ -1,0 +1,78 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Pager from '../../components/Pager/Pager.astro';
+import PostCard from '../../components/PostCard/PostCard.astro';
+import SectionTag from '../../components/SectionTag/SectionTag.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import {
+  getIssuePosts,
+  getIssues,
+  groupBySection,
+  issuePath,
+  sectionSlug,
+  type Issue,
+} from '../../lib/content';
+import { formatCount, formatDate, isoDate } from '../../lib/format';
+import cluster from '../../styles/objects/cluster.module.css';
+import stack from '../../styles/objects/stack.module.css';
+import page from '../../styles/pages/page.module.css';
+
+export const getStaticPaths = (async () => {
+  const issues = await getIssues(); // newest first
+  return issues.map((issue, i) => ({
+    params: { number: String(issue.data.number) },
+    props: { issue, newer: issues[i - 1], older: issues[i + 1] },
+  }));
+}) satisfies GetStaticPaths;
+
+interface Props {
+  issue: Issue;
+  newer?: Issue;
+  older?: Issue;
+}
+
+const { issue, newer, older } = Astro.props;
+const posts = await getIssuePosts(issue);
+const groups = groupBySection(posts);
+const link = (i?: Issue) =>
+  i && { href: issuePath(i), title: `Issue #${i.data.number} · ${formatDate(i.data.date)}` };
+---
+
+<BaseLayout
+  title={`Issue #${issue.data.number}`}
+  description={`Hacker Newsletter #${issue.data.number}, digested.`}
+>
+  <div class:list={[stack.stack, stack.gapXl]}>
+    <header class:list={[stack.stack, stack.gap2xs]}>
+      <p class={page.eyebrow}>
+        <a href="/">Issues</a>
+      </p>
+      <h1>Issue #{issue.data.number}</h1>
+      <p class:list={[cluster.cluster, page.eyebrow]}>
+        <time datetime={isoDate(issue.data.date)}>{formatDate(issue.data.date)}</time>
+        <span>{formatCount(posts.length, 'post')}</span>
+        {issue.data.url && (
+          <a href={issue.data.url} rel="noopener">
+            Read the newsletter ↗
+          </a>
+        )}
+      </p>
+      {issue.data.intro && <p class={page.lede}>{issue.data.intro}</p>}
+    </header>
+
+    {groups.map(({ section, posts }) => (
+      <section class:list={stack.stack} aria-labelledby={`section-${sectionSlug(section)}`}>
+        <h2 class={page.sectionHeading} id={`section-${sectionSlug(section)}`}>
+          <SectionTag section={section} />
+        </h2>
+        <div class:list={stack.stack}>
+          {posts.map((post) => (
+            <PostCard post={post} />
+          ))}
+        </div>
+      </section>
+    ))}
+
+    <Pager label="Other issues" prev={link(older)} next={link(newer)} />
+  </div>
+</BaseLayout>

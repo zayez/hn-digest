@@ -1,0 +1,19 @@
+.quote {
+  padding-inline-start: var(--space-s);
+  border-inline-start: 3px solid var(--color-accent);
+}
+
+.text {
+  font-family: var(--font-prose);
+  font-style: italic;
+}
+
+.text p + p {
+  margin-block-start: var(--space-2xs);
+}
+
+.caption {
+  margin-block-start: var(--space-3xs);
+  color: var(--color-text-muted);
+  font-size: var(--step--1);
+}

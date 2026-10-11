@@ -1,0 +1,138 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getCollection } from 'astro:content';
+import CommentTheme from '../../components/CommentTheme/CommentTheme.astro';
+import Pager from '../../components/Pager/Pager.astro';
+import PostMeta from '../../components/PostMeta/PostMeta.astro';
+import Quote from '../../components/Quote/Quote.astro';
+import SectionTag from '../../components/SectionTag/SectionTag.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import {
+  getAppearances,
+  issuePath,
+  postPath,
+  postSlug,
+  type Appearance,
+  type Post,
+} from '../../lib/content';
+import box from '../../styles/objects/box.module.css';
+import cluster from '../../styles/objects/cluster.module.css';
+import grid from '../../styles/objects/grid.module.css';
+import stack from '../../styles/objects/stack.module.css';
+import page from '../../styles/pages/page.module.css';
+import styles from '../../styles/pages/post.module.css';
+
+export const getStaticPaths = (async () => {
+  const appearances = await getAppearances();
+  const posts = await getCollection('posts');
+  return posts.map((post) => ({
+    params: { slug: postSlug(post) },
+    props: { post, appearances: appearances.get(post.id) ?? [] },
+  }));
+}) satisfies GetStaticPaths;
+
+interface Props {
+  post: Post;
+  appearances: Appearance[];
+}
+
+const { post, appearances } = Astro.props;
+const { data } = post;
+const primary = appearances[0];
+const link = (p?: Post) => p && { href: postPath(p), title: p.data.title };
+---
+
+<BaseLayout title={data.title} description={data.tldr}>
+  <article class:list={[stack.stack, stack.gapXl, styles.post]}>
+    <header class:list={[stack.stack, stack.gapXs]}>
+      {appearances.length > 0 && (
+        <p class:list={[cluster.cluster, page.eyebrow]}>
+          {appearances.map(({ issue, section }) => (
+            <span class:list={[cluster.cluster, cluster.gap3xs]}>
+              <a href={issuePath(issue)}>Issue #{issue.data.number}</a>
+              <SectionTag section={section} />
+            </span>
+          ))}
+        </p>
+      )}
+      <h1>{data.title}</h1>
+      <PostMeta post={post} links />
+    </header>
+
+    <section class:list={[box.box, stack.stack, stack.gap3xs, styles.tldr]} aria-labelledby="tldr">
+      <h2 id="tldr" class={styles.label}>
+        TL;DR
+      </h2>
+      <p>{data.tldr}</p>
+    </section>
+
+    {(data.article || data.articleNote) && (
+      <section class:list={stack.stack} aria-labelledby="article">
+        <h2 id="article" class={page.sectionHeading}>
+          {data.kind === 'discussion' ? 'The post' : 'The article'}
+        </h2>
+        {data.articleNote && <p class={styles.note}>{data.articleNote}</p>}
+        {data.article && (
+          <>
+            <ul class:list={[stack.stack, stack.gap2xs, styles.points]}>
+              {data.article.keyPoints.map((point) => (
+                <li>{point}</li>
+              ))}
+            </ul>
+            <div class:list={[stack.stack, stack.gap3xs]}>
+              <h3 class={styles.label}>Why it matters</h3>
+              <p class={styles.prose}>{data.article.whyItMatters}</p>
+            </div>
+          </>
+        )}
+      </section>
+    )}
+
+    {data.comments && (
+      <section class:list={[stack.stack, stack.gapM]} aria-labelledby="discussion">
+        <h2 id="discussion" class={page.sectionHeading}>
+          The discussion
+        </h2>
+        <p class={styles.prose}>{data.comments.overview}</p>
+
+        <div class:list={[stack.stack, stack.gapM]}>
+          {data.comments.themes.map((theme) => (
+            <CommentTheme {...theme} />
+          ))}
+        </div>
+
+        <div class={grid.grid}>
+          <div class:list={[box.box, box.paddingS, stack.stack, stack.gap3xs, styles.panel]}>
+            <h3 class={styles.label}>Consensus</h3>
+            <p class={styles.prose}>{data.comments.consensus}</p>
+          </div>
+          <div class:list={[box.box, box.paddingS, stack.stack, stack.gap3xs, styles.panel]}>
+            <h3 class={styles.label}>Dissent</h3>
+            <p class={styles.prose}>{data.comments.dissent}</p>
+          </div>
+        </div>
+
+        {data.comments.contrarian && (
+          <aside
+            class:list={[box.box, stack.stack, stack.gapXs, styles.contrarian]}
+            aria-labelledby="contrarian"
+          >
+            <h3 id="contrarian" class={styles.label}>
+              Best contrarian take
+            </h3>
+            <Quote {...data.comments.contrarian} />
+            <p class={styles.prose}>{data.comments.contrarian.why}</p>
+          </aside>
+        )}
+      </section>
+    )}
+
+    {primary && (
+      <Pager
+        label={`More from issue #${primary.issue.data.number}`}
+        prev={link(primary.prev)}
+        next={link(primary.next)}
+      />
+    )}
+  </article>
+</BaseLayout>

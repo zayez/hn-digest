@@ -1,0 +1,21 @@
+---
+import stack from '../../styles/objects/stack.module.css';
+import Quote from '../Quote/Quote.astro';
+import styles from './CommentTheme.module.css';
+
+interface Props {
+  title: string;
+  synthesis: string;
+  quotes: { author: string; text: string; commentId: number }[];
+}
+
+const { title, synthesis, quotes } = Astro.props;
+---
+
+<section class:list={[stack.stack, stack.gapXs, styles.theme]}>
+  <h3 class={styles.title}>{title}</h3>
+  <p class={styles.synthesis}>{synthesis}</p>
+  {quotes.map((quote) => (
+    <Quote {...quote} />
+  ))}
+</section>

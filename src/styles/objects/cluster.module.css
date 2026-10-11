@@ -1,0 +1,18 @@
+/* OOCSS object: inline items that wrap, e.g. metadata and tags. Structure only. */
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  --cluster-row-gap: var(--space-2xs);
+  --cluster-column-gap: var(--space-xs);
+  gap: var(--cluster-row-gap) var(--cluster-column-gap);
+}
+
+.spread {
+  justify-content: space-between;
+}
+
+.gap3xs {
+  --cluster-row-gap: var(--space-3xs);
+  --cluster-column-gap: var(--space-3xs);
+}

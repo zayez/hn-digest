@@ -1,0 +1,36 @@
+---
+import cluster from '../../styles/objects/cluster.module.css';
+import styles from './Pager.module.css';
+
+interface Link {
+  href: string;
+  title: string;
+}
+
+interface Props {
+  label: string;
+  prev?: Link;
+  next?: Link;
+}
+
+const { label, prev, next } = Astro.props;
+---
+
+{(prev || next) && (
+  <nav class:list={[cluster.cluster, cluster.spread, styles.pager]} aria-label={label}>
+    {prev ? (
+      <a class={styles.link} href={prev.href} rel="prev">
+        <span class={styles.direction}>← Previous</span>
+        {prev.title}
+      </a>
+    ) : (
+      <span />
+    )}
+    {next && (
+      <a class:list={[styles.link, styles.next]} href={next.href} rel="next">
+        <span class={styles.direction}>Next →</span>
+        {next.title}
+      </a>
+    )}
+  </nav>
+)}

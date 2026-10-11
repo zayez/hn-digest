@@ -1,0 +1,45 @@
+---
+import type { Post } from '../../lib/content';
+import { hnThreadUrl } from '../../lib/content';
+import { formatCount } from '../../lib/format';
+import cluster from '../../styles/objects/cluster.module.css';
+import styles from './PostMeta.module.css';
+
+interface Props {
+  post: Post;
+  /** Show links to the original and the HN thread. */
+  links?: boolean;
+}
+
+const { post, links = false } = Astro.props;
+const { data } = post;
+
+const kindLabel = {
+  article: data.readingMinutes ? `${data.readingMinutes} min read` : undefined,
+  pdf: data.readingMinutes ? `PDF · ${data.readingMinutes} min read` : 'PDF',
+  video: 'Video',
+  discussion: 'HN discussion',
+  unavailable: undefined,
+}[data.kind];
+---
+
+<ul class:list={[cluster.cluster, styles.meta]} aria-label="Post details">
+  {data.domain && <li class={styles.domain}>{data.domain}</li>}
+  <li>{formatCount(data.points, 'point')}</li>
+  <li>{formatCount(data.commentCount, 'comment')}</li>
+  {kindLabel && <li>{kindLabel}</li>}
+  {links && data.url && (
+    <li>
+      <a href={data.url} rel="noopener">
+        Original ↗
+      </a>
+    </li>
+  )}
+  {links && (
+    <li>
+      <a href={hnThreadUrl(data.hnId)} rel="noopener">
+        HN thread ↗
+      </a>
+    </li>
+  )}
+</ul>

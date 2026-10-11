@@ -1,0 +1,15 @@
+---
+import { sectionPath } from '../../lib/content';
+import styles from './SectionTag.module.css';
+
+interface Props {
+  section: string;
+}
+
+const { section } = Astro.props;
+const current = Astro.url.pathname === sectionPath(section);
+---
+
+<a class={styles.tag} href={sectionPath(section)} aria-current={current ? 'page' : undefined}>
+  #{section}
+</a>

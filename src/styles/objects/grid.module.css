@@ -1,0 +1,7 @@
+/* OOCSS object: responsive columns that collapse without media queries. Structure only. */
+.grid {
+  --grid-min: 18rem;
+  display: grid;
+  gap: var(--space-m);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--grid-min)), 1fr));
+}

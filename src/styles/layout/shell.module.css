@@ -1,0 +1,23 @@
+/* SMACSS layout: the page frame — header, main, footer. */
+.shell {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+.header {
+  border-block-end: 3px solid var(--color-accent);
+  background: var(--color-surface);
+  padding-block: var(--space-xs);
+}
+
+.main {
+  padding-block: var(--space-l) var(--space-2xl);
+}
+
+.footer {
+  border-block-start: var(--border);
+  padding-block: var(--space-m);
+  color: var(--color-text-muted);
+  font-size: var(--step--1);
+}

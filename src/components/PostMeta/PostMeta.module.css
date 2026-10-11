@@ -1,0 +1,16 @@
+.meta {
+  list-style: none;
+  padding: 0;
+  color: var(--color-text-muted);
+  font-size: var(--step--1);
+}
+
+.meta > li + li::before {
+  content: '·';
+  margin-inline-end: var(--space-xs);
+  color: var(--color-border);
+}
+
+.domain {
+  font-family: var(--font-mono);
+}

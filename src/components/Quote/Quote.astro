@@ -1,0 +1,26 @@
+---
+import { hnThreadUrl } from '../../lib/content';
+import styles from './Quote.module.css';
+
+interface Props {
+  author: string;
+  text: string;
+  commentId: number;
+}
+
+const { author, text, commentId } = Astro.props;
+---
+
+<figure class={styles.quote}>
+  <blockquote cite={hnThreadUrl(commentId)} class={styles.text}>
+    {text.split(/\n{2,}/).map((paragraph) => (
+      <p>{paragraph}</p>
+    ))}
+  </blockquote>
+  <figcaption class={styles.caption}>
+    —{' '}
+    <a href={hnThreadUrl(commentId)} rel="noopener">
+      @{author}
+    </a>
+  </figcaption>
+</figure>

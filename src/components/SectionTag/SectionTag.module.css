@@ -1,0 +1,20 @@
+.tag {
+  display: inline-block;
+  padding: 0 var(--space-2xs);
+  border-radius: var(--radius-s);
+  background: var(--color-accent-soft);
+  color: var(--color-accent-strong);
+  font-size: var(--step--1);
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.tag:hover {
+  text-decoration: underline;
+}
+
+.tag[aria-current='page'] {
+  background: var(--color-accent);
+  color: #fff;
+}

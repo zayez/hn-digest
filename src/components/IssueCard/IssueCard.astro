@@ -1,0 +1,33 @@
+---
+import type { Issue, Post } from '../../lib/content';
+import { issuePath, postPath } from '../../lib/content';
+import { formatCount, formatDate, isoDate } from '../../lib/format';
+import cluster from '../../styles/objects/cluster.module.css';
+import stack from '../../styles/objects/stack.module.css';
+import styles from './IssueCard.module.css';
+
+interface Props {
+  issue: Issue;
+  posts: Post[];
+}
+
+const { issue, posts } = Astro.props;
+---
+
+<article class:list={[stack.stack, stack.gapXs, styles.issue]}>
+  <header class:list={[cluster.cluster, styles.header]}>
+    <h2 class={styles.title}>
+      <a href={issuePath(issue)}>Issue #{issue.data.number}</a>
+    </h2>
+    <time datetime={isoDate(issue.data.date)}>{formatDate(issue.data.date)}</time>
+    <span>{formatCount(posts.length, 'post')}</span>
+  </header>
+  <ol class:list={[stack.stack, stack.gap3xs, styles.posts]}>
+    {posts.map((post) => (
+      <li>
+        <a href={postPath(post)}>{post.data.title}</a>
+        {post.data.domain && <span class={styles.domain}> {post.data.domain}</span>}
+      </li>
+    ))}
+  </ol>
+</article>

@@ -1,0 +1,68 @@
+/*
+ * SMACSS theme: design tokens. Everything visual (color, type, space) comes
+ * from these custom properties; modules never hard-code values.
+ */
+:root {
+  color-scheme: light dark;
+
+  /* Color */
+  --color-accent: #ff6600;
+  --color-accent-strong: #d95700;
+  --color-accent-soft: #fff1e6;
+  --color-bg: #fbfaf8;
+  --color-surface: #ffffff;
+  --color-text: #1d1c1a;
+  --color-text-muted: #6b6760;
+  --color-border: #e6e2db;
+  --color-link: #b84700;
+  --color-focus: #ff6600;
+
+  /* Type */
+  --font-ui: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-prose:
+    'Iowan Old Style', 'Charter', 'Bitstream Charter', 'Sitka Text', Cambria, Georgia, serif;
+  --font-mono: ui-monospace, 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
+
+  --step--1: clamp(0.83rem, 0.8rem + 0.15vw, 0.9rem);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.1rem);
+  --step-1: clamp(1.2rem, 1.13rem + 0.35vw, 1.38rem);
+  --step-2: clamp(1.44rem, 1.32rem + 0.6vw, 1.72rem);
+  --step-3: clamp(1.73rem, 1.53rem + 1vw, 2.15rem);
+
+  --leading-tight: 1.25;
+  --leading-body: 1.6;
+
+  /* Space */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-s: 1rem;
+  --space-m: 1.5rem;
+  --space-l: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4.5rem;
+
+  /* Shape */
+  --radius-s: 4px;
+  --radius-m: 8px;
+  --border: 1px solid var(--color-border);
+
+  /* Measure */
+  --measure-prose: 68ch;
+  --measure-page: 52rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-accent: #ff7a1f;
+    --color-accent-strong: #ff9447;
+    --color-accent-soft: #2e1f14;
+    --color-bg: #151413;
+    --color-surface: #1d1c1a;
+    --color-text: #ebe7e1;
+    --color-text-muted: #a39e96;
+    --color-border: #34312d;
+    --color-link: #ff9447;
+    --color-focus: #ff9447;
+  }
+}

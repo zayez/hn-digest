@@ -1,0 +1,35 @@
+---
+import IssueCard from '../components/IssueCard/IssueCard.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getIssuePosts, getIssues } from '../lib/content';
+import stack from '../styles/objects/stack.module.css';
+import page from '../styles/pages/page.module.css';
+
+const issues = await Promise.all(
+  (await getIssues()).map(async (issue) => ({
+    issue,
+    posts: (await getIssuePosts(issue)).map(({ post }) => post),
+  })),
+);
+---
+
+<BaseLayout>
+  <div class:list={[stack.stack, stack.gapXl]}>
+    <header class:list={[stack.stack, stack.gap2xs]}>
+      <h1>Issues</h1>
+      <p class={page.lede}>
+        The Hacker Newsletter stories worth a closer look: what each article says, and what Hacker
+        News made of it.
+      </p>
+    </header>
+    {issues.length > 0 ? (
+      <div class:list={[stack.stack, stack.gapL]}>
+        {issues.map(({ issue, posts }) => (
+          <IssueCard issue={issue} posts={posts} />
+        ))}
+      </div>
+    ) : (
+      <p class={page.empty}>No issues digested yet.</p>
+    )}
+  </div>
+</BaseLayout>

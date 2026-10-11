@@ -1,0 +1,41 @@
+.issue {
+  padding-block-end: var(--space-l);
+  border-block-end: var(--border);
+}
+
+.header {
+  color: var(--color-text-muted);
+  font-size: var(--step--1);
+}
+
+.title {
+  font-size: var(--step-2);
+}
+
+.title a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.title a:hover {
+  color: var(--color-accent-strong);
+}
+
+.posts {
+  padding-inline-start: var(--space-m);
+}
+
+.posts a {
+  color: var(--color-text);
+}
+
+.posts li::marker {
+  color: var(--color-accent);
+  font-size: var(--step--1);
+}
+
+.domain {
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+}

@@ -1,0 +1,54 @@
+---
+import '../styles/theme.css';
+import '../styles/base.css';
+import center from '../styles/objects/center.module.css';
+import cluster from '../styles/objects/cluster.module.css';
+import shell from '../styles/layout/shell.module.css';
+import styles from './BaseLayout.module.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = 'Hacker Newsletter issues, digested: article and comment summaries.',
+} = Astro.props;
+const fullTitle = title ? `${title} · HN Digest` : 'HN Digest';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>{fullTitle}</title>
+  </head>
+  <body class={shell.shell}>
+    <header class={shell.header}>
+      <div class:list={[center.center, cluster.cluster, cluster.spread]}>
+        <a class={styles.brand} href="/">
+          <span class={styles.logo} aria-hidden="true">
+            Y
+          </span>
+          HN Digest
+        </a>
+        <span class={styles.tagline}>Hacker Newsletter, digested</span>
+      </div>
+    </header>
+    <main class={shell.main}>
+      <div class={center.center}>
+        <slot />
+      </div>
+    </main>
+    <footer class={shell.footer}>
+      <div class={center.center}>
+        Summaries are generated from each article and its Hacker News thread; quotes link to the
+        original comments.
+      </div>
+    </footer>
+  </body>
+</html>

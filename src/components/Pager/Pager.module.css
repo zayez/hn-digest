@@ -1,0 +1,25 @@
+.pager {
+  padding-block-start: var(--space-m);
+  border-block-start: var(--border);
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  max-inline-size: 45%;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.link:hover {
+  color: var(--color-accent-strong);
+}
+
+.next {
+  text-align: end;
+}
+
+.direction {
+  color: var(--color-text-muted);
+  font-size: var(--step--1);
+}

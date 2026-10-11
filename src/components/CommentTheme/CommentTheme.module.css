@@ -1,0 +1,12 @@
+.theme + .theme {
+  padding-block-start: var(--space-m);
+  border-block-start: var(--border);
+}
+
+.title {
+  font-size: var(--step-1);
+}
+
+.synthesis {
+  font-family: var(--font-prose);
+}
