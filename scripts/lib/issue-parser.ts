@@ -23,10 +23,13 @@ export interface ParsedIssue {
   items: IssueItem[];
 }
 
-const IGNORED_SECTIONS = new Set(['sponsor']);
+/** Paid placements, not HN stories. */
+const IGNORED_SECTIONS = new Set(['sponsor', 'classifieds']);
 const SECTION_RE = /^#([A-Za-z][\w &'./-]*?)\s*$/;
 const END_RE = /^__END__\s*$/;
-const DOMAIN_RE = /(?:^|\s)\/\/([a-z0-9-]+(?:\.[a-z0-9-]+)+)\b/i;
+// Newer issues print the domain without its TLD (`//seths`, `//platform.claude`).
+const DOMAIN_RE = /(?:^|\s)\/\/([a-z0-9-]+(?:\.[a-z0-9-]+)*)(?=\s|$)/i;
+const SPONSORED_RE = /^sponsored$/i;
 const URL_RE = /https?:\/\/[^\s<>()[\]"']+/g;
 const HN_ITEM_RE = /news\.ycombinator\.com\/item\?id=(\d+)/;
 
@@ -61,6 +64,13 @@ export function parseIssue(paste: string): ParsedIssue {
       continue;
     }
     if (!section || isNoise(line)) continue;
+
+    if (SPONSORED_RE.test(line)) {
+      // The marker follows the ad it labels.
+      flush();
+      if (result.items.at(-1)?.section === section) result.items.pop();
+      continue;
+    }
 
     if (isDomainOnly(line)) {
       // Two-line layout: title on the previous line, `//domain comments→` here.
@@ -97,7 +107,7 @@ function isDomainOnly(line: string): boolean {
   const text = stripUrls(line)
     .replace(/comments\s*(→|->)?/i, '')
     .trim();
-  return /^\/\/[a-z0-9-]+(?:\.[a-z0-9-]+)+$/i.test(text);
+  return /^\/\/[a-z0-9-]+(?:\.[a-z0-9-]+)*$/i.test(text);
 }
 
 function buildItem(rawLines: string[], section: string): IssueItem | undefined {

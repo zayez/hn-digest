@@ -105,6 +105,67 @@ describe('parseIssue — paste that kept its links', () => {
     ]);
   });
 
+  it('reads dotless domains (newer issues print //seths), in both layouts', () => {
+    const parsed = parseIssue(
+      [
+        '#Favorites',
+        '[The Amazon tax](https://seths.blog/2026/08/the-amazon-tax/?utm_term=fav)',
+        '//seths [comments→](http://news.ycombinator.com/item?id=49345263&utm_term=comment)',
+        '#Show HN',
+        '[OpenLogi](https://openlogi.org/en?utm_term=show_hn) //openlogi [comments→](http://news.ycombinator.com/item?id=49355606&utm_term=comment)',
+      ].join('\n'),
+    );
+    expect(parsed.items).toEqual([
+      {
+        title: 'The Amazon tax',
+        section: 'Favorites',
+        domain: 'seths',
+        url: 'https://seths.blog/2026/08/the-amazon-tax/',
+        hnId: 49345263,
+      },
+      {
+        title: 'OpenLogi',
+        section: 'Show HN',
+        domain: 'openlogi',
+        url: 'https://openlogi.org/en',
+        hnId: 49355606,
+      },
+    ]);
+  });
+
+  it('drops the sponsored item at the top of a section', () => {
+    const parsed = parseIssue(
+      [
+        '#Favorites',
+        '[The AI Conference 2026](https://aiconference.com/?utm_source=hackernewsletter)',
+        '',
+        '//aiconference',
+        'sponsored',
+        '',
+        '[The Amazon tax](https://seths.blog/the-amazon-tax/)',
+        '//seths [comments→](http://news.ycombinator.com/item?id=49345263)',
+      ].join('\n'),
+    );
+    expect(parsed.items.map((i) => i.title)).toEqual(['The Amazon tax']);
+  });
+
+  it('skips the classifieds block', () => {
+    const parsed = parseIssue(
+      [
+        '#Ask HN',
+        '[Alternatives to GitHub](https://news.ycombinator.com/item?id=49331033)',
+        '#Classifieds',
+        '[Your calls never leave your Mac](https://www.echo99.app/)',
+        '//echo99',
+        '#Code',
+        '[A parser](https://example.com/parser)',
+        '//example.com',
+      ].join('\n'),
+    );
+    expect(parsed.sections).toEqual(['Ask HN', 'Code']);
+    expect(parsed.items.map((i) => i.title)).toEqual(['Alternatives to GitHub', 'A parser']);
+  });
+
   it('takes the HN id from Ask HN items that link straight to the thread', () => {
     const parsed = parseIssue(
       '#Ask HN\n[How to store passwords?](https://news.ycombinator.com/item?id=41417659&utm_source=hackernewsletter)',
