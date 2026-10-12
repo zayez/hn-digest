@@ -2,6 +2,7 @@ import { Readability } from '@mozilla/readability';
 import { parseHTML } from 'linkedom';
 import { extractText, getDocumentProxy } from 'unpdf';
 import { decodeEntities } from './comments.ts';
+import { renderPage } from './render.ts';
 
 export type Kind = 'article' | 'discussion' | 'pdf' | 'video' | 'unavailable';
 
@@ -21,7 +22,13 @@ const MIN_WORDS = 150;
 const USER_AGENT =
   'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0 Safari/537.36';
 
-export async function fetchArticle(url: string): Promise<ArticleResult> {
+/** Fetches the HTML of a page after its scripts have run. */
+export type Render = (url: string, userAgent: string) => Promise<string>;
+
+export async function fetchArticle(
+  url: string,
+  render: Render = renderPage,
+): Promise<ArticleResult> {
   if (VIDEO_HOSTS.test(new URL(url).hostname)) return { kind: 'video' };
 
   let res: Response;
@@ -45,16 +52,29 @@ export async function fetchArticle(url: string): Promise<ArticleResult> {
   }
 
   const body = await res.text();
-  const result = type.includes('text/plain')
-    ? { kind: 'article' as const, text: body }
-    : readHtml(body);
-  if (result.text && wordCount(result.text) < MIN_WORDS) {
-    return {
-      kind: 'unavailable',
-      error: `only ${wordCount(result.text)} words extracted (paywall or JS-rendered page?)`,
-    };
+  if (type.includes('text/plain')) {
+    const result: ArticleResult = { kind: 'article', text: body };
+    return isThin(result) ? unavailable(result) : result;
   }
-  return result;
+
+  const result = readHtml(body);
+  if (!isThin(result)) return result;
+  // An empty shell is usually a page built by JavaScript: read it again once rendered.
+  try {
+    const rendered = readHtml(await render(res.url, USER_AGENT));
+    return isThin(rendered) ? unavailable(result, 'still too thin once rendered') : rendered;
+  } catch (err) {
+    return unavailable(result, `rendering failed: ${(err as Error).message}`);
+  }
+}
+
+const isThin = (result: ArticleResult) => !result.text || wordCount(result.text) < MIN_WORDS;
+
+function unavailable(result: ArticleResult, note?: string): ArticleResult {
+  const reason = result.text
+    ? `only ${wordCount(result.text)} words extracted (paywall or JS-rendered page?)`
+    : (result.error ?? 'no article text found');
+  return { kind: 'unavailable', error: note ? `${reason}; ${note}` : reason };
 }
 
 export function readHtml(html: string): ArticleResult {

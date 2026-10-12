@@ -16,6 +16,7 @@ import { parseIssue, type ParsedIssue } from './lib/issue-parser.ts';
 import { fetchFullCommentTree, fetchStory, parseHnId } from './lib/hn.ts';
 import { CONFIDENT_SCORE, domainOf, matchStory } from './lib/match.ts';
 import { mapPool } from './lib/pool.ts';
+import { closeRenderer } from './lib/render.ts';
 import {
   EXTRA_SECTION,
   postFile,
@@ -68,7 +69,7 @@ await mkdir(issueDir, { recursive: true });
 await copyFile(pasteFile, join(issueDir, 'paste.txt'));
 if (values.all) await mkdir(scanDir(number), { recursive: true });
 
-const metas = await mapPool(ids, 4, (id) => ingestStory(id, values.refresh));
+const metas = await mapPool(ids, 4, (id) => ingestStory(id, values.refresh)).finally(closeRenderer);
 
 const plan = mergePlan(await readPlan(issueDir), buildPlan(number, date, issue, metas));
 await writeFile(join(issueDir, 'plan.json'), JSON.stringify(plan, null, 2) + '\n');
