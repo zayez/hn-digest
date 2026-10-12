@@ -1,0 +1,113 @@
+{
+  "hnId": 49498095,
+  "title": "No AI Fridays",
+  "url": "https://noaifridays.com/",
+  "domain": "noaifridays.com",
+  "kind": "article",
+  "author": "xendo",
+  "postedAt": "2026-08-30T12:31:05.000Z",
+  "points": 295,
+  "commentCount": 209,
+  "readingMinutes": 2,
+  "tldr": "A one-page campaign site asks developers to switch off AI assistants one day a week and write code by hand. It cites studies linking LLM use to cognitive debt, weaker critical thinking and poorer skill formation, and argues that if AI's productivity gains are real, one day without it costs little.",
+  "article": {
+    "keyPoints": [
+      "The site opens with four studies claiming LLM use builds cognitive debt, lowers engagement, hurts critical thinking and slows skill formation.",
+      "Handing decisions to an AI hides the trade-offs, so a weekly day without it is a chance to review the choices the model made and check they still match your own style.",
+      "If the productivity gains are as large as claimed, giving up one day a week to limit the downsides should be an easy trade.",
+      "Defaulting to AI skips ordinary automation, and a day without tokens can cut token spend over time. The site also appeals to the fun and flow of writing code yourself.",
+      "The setup is to send the link to your boss, turn off assistants for the day, read the docs and think problems through. Review bots like greptile stay allowed, because you learn from their feedback and the LLM doesn't.",
+      "The tone is tongue-in-cheek. The author claims to be \"CEO of HTMX\", a running htmx joke, and the FAQ compares taking a peek at Claude to having a pint while trying to quit."
+    ],
+    "whyItMatters": "The page takes two minutes and is mostly a pitch. The useful part is its links to the four studies, which one commenter checked and found weaker than the site claims, so read the papers before quoting the page to a manager."
+  },
+  "comments": {
+    "overview": "A heated, split thread. Most of it argued whether leaning on AI erodes a developer's skill, with the calculator analogy fought over in several places. One commenter's claim of 10-20x output and a $5M AI film business pulled in a long run of hostility, plus an unusually candid explanation of where that hostility comes from.",
+    "themes": [
+      {
+        "title": "AI lets you build without learning",
+        "synthesis": "The largest group said AI breaks the link between making something and learning how. Students and juniors were the main worry: one commenter's recently graduated brother can't answer first-year CS questions, and another called AI \"eternal tutorial hell\". Hobbyists pushed back that they now finish projects in music, CAD and statistics they could never attempt. When asked whether that knowledge sticks, one admitted it doesn't, and wondered whether the output matters more than the knowledge.",
+        "quotes": [
+          {
+            "author": "caconym_",
+            "text": "If you don't have AI then either you build what you need to build and learn how to do it along the way, or you build nothing and learn nothing. There is no option to build something but learn nothing, but that's *the default outcome* with AI.",
+            "commentId": 49500994
+          },
+          {
+            "author": "tempest_",
+            "text": "I have found in the last year I \"get more done\" but I learn less. Whats even worse is if I burn though my token quota I am less likely(and less able) to \"switch to manual\".",
+            "commentId": 49499482
+          }
+        ]
+      },
+      {
+        "title": "Calculators, compilers and the abstraction ladder",
+        "synthesis": "Skeptics of the site listed every past warning that a new abstraction would rot skills, from slide rules to assembly to garbage collection, and said average developers can accept average output. Replies said those warnings came true: GC languages produced developers who can't reason about memory, hence 1GB form apps. Others said the analogy breaks because a calculator still needs you to know what to enter, while an AI can skip the understanding entirely. A pilot anecdote got some support, since pilots fly manual landings regularly to keep the skill even though autopilot can land.",
+        "quotes": [
+          {
+            "author": "kstenerud",
+            "text": "You don't need to \"keep practicing\" in order to maintain your understanding.",
+            "commentId": 49499836
+          },
+          {
+            "author": "Jcampuzano2",
+            "text": "Big difference is when you use a calculator or other tools, you still have to interpret and know what to enter.",
+            "commentId": 49499828
+          }
+        ]
+      },
+      {
+        "title": "Flow state: lost or found",
+        "synthesis": "Several developers said coding agents killed the flow state, because waiting on an agent invites distraction and staying in the zone needs the whole program in your head. Others said they get flow more often now, from running agents in parallel and working at the planning level. One described a 12-hour session that felt like two. Flow purists answered that constant context switching is by definition not flow. A middle group uses chat AI only for quick syntax questions and says that helps.",
+        "quotes": [
+          {
+            "author": "dom96",
+            "text": "What I've realised I missed the most is feeling in the zone or in a \"flow\" state as some call it. It really feels amazing. Coding agents take that away from you.",
+            "commentId": 49499694
+          },
+          {
+            "author": "wiether",
+            "text": "With AI, I can achieve this state every weekend for personal projects, and every day I'm WFH or when I'm alone in my corner of the office.",
+            "commentId": 49501319
+          }
+        ]
+      },
+      {
+        "title": "The 10x enthusiast and the backlash",
+        "synthesis": "The top thread's longest subthread followed a commenter who claimed 10-20x productivity, several games, and an AI filmmaking tool with $5M ARR. Replies called his product slop, suggested a manic episode, or cast him as a crypto-style True Believer. When he asked why people talk to AI users this way, one reply laid out the reasons: employers mandating LLM use, artists losing paid work, and a long list of social harms. Another said his success rests on expertise built without AI, which newcomers won't get.",
+        "quotes": [
+          {
+            "author": "NateEag",
+            "text": "In my case, my employers have mandated LLM usage and all but banned actually programming, and I can see it rotting my ability to code and understand things.",
+            "commentId": 49500349
+          }
+        ]
+      },
+      {
+        "title": "Who is actually deciding",
+        "synthesis": "The site says offloading decisions hides the trade-offs. Some agreed, and one said picking from options an agent presents isn't the same as deciding, because you never see the option it left out. Others said agentic work is mostly decision-making and only lazy users skip it. A few preferred a daily rule over a weekly ban: do a task by hand when that is easier than explaining it, and use AI as a tutor, not as an intern.",
+        "quotes": [
+          {
+            "author": "WD-42",
+            "text": "Choosing from a set of decisions the agent presents you might feel like you are making a decision, but you’ll never make the one that wasn’t presented.",
+            "commentId": 49499315
+          },
+          {
+            "author": "arw0n",
+            "text": "But if you use it seriously, you're in a constant state of doing requirements engineering, weighing trade-offs, and making architecture decisions.",
+            "commentId": 49501495
+          }
+        ]
+      }
+    ],
+    "consensus": "Learners should build without AI, and anyone who wants to keep hands-on skill needs to practice it on purpose, the way pilots practice manual landings.",
+    "dissent": "Many rejected the premise. Some said every abstraction drew the same warning and the industry adapted. Others objected to any mandate, whichever direction it points, or said a little manual work every day beats a whole day off.",
+    "contrarian": {
+      "author": "kstenerud",
+      "text": "The problem with this site is that the studies it cites don't match the conclusions it draws.",
+      "commentId": 49500443,
+      "why": "He read the four cited papers and found a non-peer-reviewed preprint, a self-report survey that measures no ability, and a skill study in which the best AI users matched the no-AI group, which undercuts the \"study after study\" claim most of the thread took for granted."
+    }
+  },
+  "digestedAt": "2026-10-12T17:19:26.000Z"
+}

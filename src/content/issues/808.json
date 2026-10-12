@@ -1,0 +1,125 @@
+{
+  "number": 808,
+  "date": "2026-09-04",
+  "url": "https://buttondown.com/hacker-newsletter/archive/808/",
+  "posts": [
+    {
+      "post": "49522137",
+      "section": "Code",
+      "tier": "dontSkip",
+      "reason": "A long, demo-backed tour of every way to keep the main thread free, from yielding and batching to FLIP and workers, and the thread pushes back that bundle size and hydration hurt more."
+    },
+    {
+      "post": "49494520",
+      "section": "Favorites",
+      "tier": "dontSkip",
+      "reason": "Dan Luu on why products ship badly broken while internal reviews call them great, and how noticing bugs is a skill people can learn."
+    },
+    {
+      "post": "49550375",
+      "section": "Favorites",
+      "tier": "worthYourTime",
+      "reason": "A detailed account of an LLM rebuilding 68000 assembly byte-for-byte and porting a 1993 game to Godot, including the bugs it introduced, with commenters comparing their own ports."
+    },
+    {
+      "post": "49526069",
+      "section": "Data",
+      "tier": "worthYourTime",
+      "reason": "Dan Luu checks a prominent AI skeptic's dated predictions one by one against what happened, a lesson in judging forecasts on either side, and the thousand-comment thread disputes the scoring."
+    },
+    {
+      "post": "49479837",
+      "section": "Design",
+      "tier": "worthYourTime",
+      "reason": "A short case that keyboard support is a matter of effort, not interface type; the large thread is the real value, with practitioners on focus order, the curb-cut effect and situational disability."
+    },
+    {
+      "post": "49535548",
+      "section": "Learn",
+      "tier": "worthYourTime",
+      "reason": "An fMRI study finding that older brains blend related memories rather than simply losing them, with a neuroscientist in the thread adding context."
+    },
+    {
+      "post": "49524863",
+      "section": "Code",
+      "tier": "ifYouHaveAMinute",
+      "reason": "Three attempts at a browser text editor, built on canvas, contenteditable and textarea, each with a live demo, and a note on why UTF-16 length is not grapheme count."
+    },
+    {
+      "post": "49498095",
+      "section": "Working",
+      "tier": "ifYouHaveAMinute",
+      "reason": "A thin manifesto for one AI-free workday a week, worth it for the polarised thread of first-hand accounts on skill loss and learning."
+    },
+    {
+      "post": "49491714",
+      "section": "Favorites",
+      "tier": "ifYouHaveAMinute",
+      "reason": "On whether to change things early or first understand them in a new role, mostly through a thread of former CTOs' experience and Chesterton's fence."
+    },
+    {
+      "post": "49503601",
+      "section": "Design",
+      "tier": "ifYouHaveAMinute",
+      "reason": "Marcin Wichary on a 17,000-word game guide fully justified in monospace purely by word choice, and readers checking whether TV screenwriters did the same."
+    }
+  ],
+  "nearMisses": [
+    {
+      "title": "Creepy Crawlies",
+      "section": "Favorites",
+      "domain": "people.kernel.org",
+      "url": "https://people.kernel.org/monsieuricon/creepy-crawlies",
+      "hnId": 49491791
+    },
+    {
+      "title": "Three sites made 215,128 “best software” pages for AI. Perplexity cites them",
+      "section": "Favorites",
+      "domain": "trellner.com",
+      "url": "https://trellner.com/reports/manufactured-sources-behind-ai-recommendations/",
+      "hnId": 49536375
+    },
+    {
+      "title": "My experience has nuance, yours is a data point",
+      "section": "Favorites",
+      "domain": "blog.jim-nielsen.com",
+      "url": "https://blog.jim-nielsen.com/2026/nuance-for-me-none-for-you/",
+      "hnId": 49510320
+    },
+    {
+      "title": "Htmx 4.0",
+      "section": "Code",
+      "domain": "four.htmx.org",
+      "url": "https://four.htmx.org/announcements/2026-08-28-htmx-4.0.0-is-released",
+      "hnId": 49478178
+    },
+    {
+      "title": "Intrusive Linked Lists",
+      "section": "Code",
+      "domain": "data-structures-in-practice.com",
+      "url": "https://www.data-structures-in-practice.com/intrusive-linked-lists/",
+      "hnId": 49505257
+    },
+    {
+      "title": "The Rise and Fall of Agent Civilizations",
+      "section": "Data",
+      "domain": "dwarkesh.com",
+      "url": "https://www.dwarkesh.com/p/openai-huggingface",
+      "hnId": 49494301
+    },
+    {
+      "title": "Holden's Lightning Flight",
+      "section": "Learn",
+      "domain": "en.wikipedia.org",
+      "url": "https://en.wikipedia.org/wiki/Holden%27s_Lightning_flight",
+      "hnId": 49508405
+    },
+    {
+      "title": "How Railroad Crossings Work",
+      "section": "Watching",
+      "domain": "practical.engineering",
+      "url": "https://practical.engineering/blog/2023/12/29/how-railroad-crossings-work",
+      "hnId": 49539064
+    }
+  ]
+}

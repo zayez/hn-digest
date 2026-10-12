@@ -1,0 +1,118 @@
+{
+  "hnId": 49524863,
+  "title": "Fine, I'll build my own text editor",
+  "url": "https://dbushell.com/2026/09/01/text-editor/",
+  "domain": "dbushell.com",
+  "kind": "article",
+  "author": "Alephinitesimal",
+  "postedAt": "2026-09-01T17:12:15.000Z",
+  "points": 263,
+  "commentCount": 263,
+  "readingMinutes": 3,
+  "tldr": "David Bushell prototypes a browser code editor three ways. Canvas rendering is fast to start but inaccessible, contenteditable gives free selection and undo but slows down on long files, and a plain textarea with a highlighting layer on top turns out to be the most workable base.",
+  "article": {
+    "keyPoints": [
+      "Bushell starts by drawing everything on a canvas and gets cursor placement, arrow keys, typing and a current-line highlight working, but canvas provides nothing else for free. Selection, undo, multi-line paste and scrolling all have to be built by hand, and screen readers can't see the text at all.",
+      "To avoid writing custom scrollbars he puts a hidden native-scrolling div over the canvas and uses its scroll position to offset the drawing.",
+      "He then switches to a div with contenteditable=\"plaintext-only\", which brings native selection, undo history and accessibility. Spellcheck, autocorrect and similar attributes have to be off, because they caused input latency spikes that took him days to track down.",
+      "Contenteditable slowed down unpredictably past a certain character count, worse in Chromium than in WebKit. A plain textarea handled long text much better, at the cost of a third DOM layer for syntax highlighting, since textarea can't use CSS custom highlights.",
+      "Next steps he lists include Tree-sitter highlighting of only the visible lines and virtualised scrolling. Readers pointed him to the OpaqueRange API (custom highlights in a textarea) and EditContext (better canvas input).",
+      "He ends on UTF-16 pitfalls: one lime emoji has a JavaScript length of 5, spreads into 3 code points, and only Intl.Segmenter counts it as 1 grapheme."
+    ],
+    "whyItMatters": "For anyone weighing canvas, contenteditable or textarea as the base of a web editor. The post has live interactive demos of each stage, plus the exact attribute list that removed his input lag."
+  },
+  "comments": {
+    "overview": "The thread was friendly to the post and spent little time on its technical details. Most of it argued over whether anyone should write an editor at all, whether existing editors are actually fast, and Emacs against VS Code. Two big tangents ate a lot of space. One, set off by a Rob Pike anecdote, turned into a long fight about why Go exists. The other was meta-talk about HN downvotes.",
+    "themes": [
+      {
+        "title": "Rite of passage or wasted effort",
+        "synthesis": "Many saw writing an editor as something every programmer does once, and tzs told of an all-night editor race at Caltech around 1980 that Rob Pike dismissed as \"easy to do and makes them feel important\" shortly before writing his own. Defenders said a personal editor can stay tiny because it only needs features its one user wants. Others, led by anon291, called it not-invented-here syndrome and said to build on Emacs or Vim instead. Asked which of the two, they had no clean answer, and one reply asked why VS Code didn't count as an established base too.",
+        "quotes": [
+          {
+            "author": "vidarh",
+            "text": "it's surprising how little code you can get away with when it's your own and the (many) bugs left in it at any point are the ones that don't annoy you enough for you to spend time on.",
+            "commentId": 49548709
+          },
+          {
+            "author": "anon291",
+            "text": "If you want to make a great editor, the proper thing to do is start from a good base. Start from emacs and make something like doom emacs or spacemacs, etc.",
+            "commentId": 49539572
+          }
+        ]
+      },
+      {
+        "title": "Is text editing solved if editors still lag?",
+        "synthesis": "Against the \"solved problem\" claim, rfgplk said most editors show input lag past about 10 kB and fall apart on multi-megabyte files. self_awareness agreed the speed once existed and was lost, citing CygnusEd on the Amiga 500. tmtvl blamed whole-file parsing for syntax highlighting and said Emacs handles huge files fine in fundamental mode. kqp argued that inefficiency compounds, so slow software never catches up with hardware.",
+        "quotes": [
+          {
+            "author": "rfgplk",
+            "text": "For editing buffers >1MB, 99% of them are unusable due to a) writes taking SECONDS (how?) b) scrolling/using the buffer physically lagging out the editor itself.",
+            "commentId": 49533527
+          },
+          {
+            "author": "kqp",
+            "text": "Inefficiency isn’t a constant, it’s a percentage. You look at software that’s 10x as fast and say yours will run that well in 20 years, and it does, but by then the other guy is 100x as fast",
+            "commentId": 49536438
+          }
+        ]
+      },
+      {
+        "title": "The browser as a base for an editor",
+        "synthesis": "Several found the textarea result unsurprising and asked why build on the web at all. They said a real editor should drop the browser, or at least avoid canvas since custom drawing is easier natively. Isofarro noted that Marijn Haverbeke took the same canvas, contenteditable, DOM path in 2011 and went on to write CodeMirror. Others suggested CodeMirror 6, though one user found its docs hard to follow. Readers also reported the canvas demos drawing the cursor one line below where text actually goes, in Safari and Firefox.",
+        "quotes": [
+          {
+            "author": "akersten",
+            "text": "Yes, who would have guessed that the <textarea> element, designed specifically for this use case and built into browsers for 3 decades, would be the most performant and behaviorally consistent way to implement editable text.",
+            "commentId": 49532213
+          },
+          {
+            "author": "krzyzanowskim",
+            "text": "the Web is probably the most limited platform today to build custom text editor, in terms of text layout, interaction and all the small bits that may matter.",
+            "commentId": 49534220
+          }
+        ]
+      },
+      {
+        "title": "Emacs against VS Code",
+        "synthesis": "Emacs users said it already does what newer editors offer, and iLemming described it as a text orchestrator that wires the browser, OCR and LLM agents into one place. VS Code defenders pointed to good defaults, easy setup, and devtools for anyone already working on the web. Memory claims went both ways: bigstrat2003 measured VS Code at over 1 GB against Sublime's 200-300 MB, while golf1052 opened a 730 MB file and found Sublime using more.",
+        "quotes": [
+          {
+            "author": "kstenerud",
+            "text": "Emacs has a similar problem to Lisp: Infinite configurability and expandability (plus the lack of a \"blessed set\" standard that people actually like enough to use out-of-the-box) means that everyone's environment and tooling ends up becoming incompatible with each other.",
+            "commentId": 49532281
+          },
+          {
+            "author": "iLemming",
+            "text": "Emacs is not \"easy\", it is \"simple\", it pays off only after months of investment, and the ROI from it can be immeasurably bigger in ways that you might have not realized before it.",
+            "commentId": 49571083
+          }
+        ]
+      },
+      {
+        "title": "Editors written by LLMs",
+        "synthesis": "stillpointlab had an LLM wrap KDE's KTextEditor in Rust with a few LSP features in two days, without reading any of the code, and boxed shared an IDE Claude wrote for him that is now his daily editor. Skeptics asked what the point was when editors on the same library already exist, or called it burning tokens to recreate something available a thousand times over.",
+        "quotes": [
+          {
+            "author": "stillpointlab",
+            "text": "So I just said \"do it\" and have been merging everything without reading a single line. It wrote all the specs, wrote all the code, wrote all the tests.",
+            "commentId": 49532372
+          },
+          {
+            "author": "zahlman",
+            "text": "I don't understand why you'd want to get an LLM to wrap up a text-editing library in what sounds like a pretty straightforward way, when there are already text editors using that library.",
+            "commentId": 49533614
+          }
+        ]
+      }
+    ],
+    "consensus": "Building a basic editor is easy and a good way to learn. Making a good one takes years of edge cases, and Unicode, input handling and performance on large files are where the work goes.",
+    "dissent": "A vocal minority said text editing is a solved problem and that new editors are ego projects that should build on Emacs or Vim instead. Others said a browser was the wrong place to start.",
+    "contrarian": {
+      "author": "gushogg-blake",
+      "text": "Having written a canvas-based editor with some non-trivial features like Tree-sitter based multi-language syntax highlighting, performance is actually what impresses me the most about VS Code. Maybe my standards are different but I don't think I've ever noticed it lag even on large files.",
+      "commentId": 49533858,
+      "why": "While the thread blamed web tech for slow editors, someone who built a canvas editor himself rated VS Code's speed as its strongest point."
+    }
+  },
+  "digestedAt": "2026-10-12T17:19:29.000Z"
+}

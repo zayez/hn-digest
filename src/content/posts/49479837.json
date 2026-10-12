@@ -1,0 +1,117 @@
+{
+  "hnId": 49479837,
+  "title": "GUIs should be fully keyboard-driven",
+  "url": "https://ckardaris.com/blog/2026/08/28/keyboard-driven-guis.html",
+  "domain": "ckardaris.com",
+  "kind": "article",
+  "author": "ckardaris",
+  "postedAt": "2026-08-28T15:17:09.000Z",
+  "points": 1055,
+  "commentCount": 528,
+  "readingMinutes": 2,
+  "tldr": "Being keyboard-driven is a weak argument for building TUIs instead of GUIs. Nothing stops a GUI from being fully usable by keyboard, and platform guidelines already ask for it, so a GUI that can't be driven from the keyboard reflects a missing effort by its developer.",
+  "article": {
+    "keyPoints": [
+      "The post answers a recent HN debate over a call to stop building terminal UIs, and takes aim at one pro-TUI argument in particular, that TUIs win because they are keyboard-driven.",
+      "A random TUI is more likely than a random GUI to work fully from the keyboard, but the author reads that as a sign of how poor keyboard support is in many GUIs, not as a reason to pick TUIs.",
+      "GUI frameworks can do keyboard navigation as well as a TUI or better, and the GNOME Human Interface Guidelines say every action possible with a pointer should also be possible with the keyboard.",
+      "The author gave his own first GUI app, Klisi, shortcuts covering its whole range of actions, and argues the work is usually not hard, so the gap comes down to developer will.",
+      "A footnote grants that some tasks still need a mouse's dexterity, and that portability is a stronger argument for TUIs than keyboard control."
+    ],
+    "whyItMatters": "The post takes two minutes to read and adds little beyond this summary besides the GNOME guideline wording and the link to the earlier TUI debate. The thread is where the substance is, especially for anyone building desktop or web apps who wants to know where keyboard and screen-reader support usually breaks."
+  },
+  "comments": {
+    "overview": "The thread mostly agreed and was warm, with a lot of nostalgia for Windows 3.1, AS/400 and DOS-era business apps that office staff drove at full speed. The largest subthread treated keyboard support as an accessibility question. The rest argued over whether average users want any of this, what \"keyboard-driven\" should actually mean, and whether TUIs deserve their reputation for it.",
+    "themes": [
+      {
+        "title": "Keyboard support is accessibility, and accessibility helps everyone",
+        "synthesis": "The top thread started from someone who does ADA work and asked developers to try their app with a screen reader and no mouse. Many replies cited the curb cut effect and \"situational disabilities\" like a broken touchpad or full arms, saying accessible design ends up better for everyone. Xirdus pushed back that accessibility and usability can conflict, with color coding, small fonts and sticky keys as examples, and the thread never settled it. A side argument about using AI to audit accessibility drew the objection that audits employ many disabled people.",
+        "quotes": [
+          {
+            "author": "gramie",
+            "text": "The thing that I consistently found was that, the more accessible a website was, the better the experience for *everyone*, not just people with disabilities.",
+            "commentId": 49483461
+          },
+          {
+            "author": "Xirdus",
+            "text": "There are things that increase usability for fully abled people but decrease it for disabled people. Color-coding is a common one.",
+            "commentId": 49486860
+          }
+        ]
+      },
+      {
+        "title": "Old toolkits gave it for free, new ones dropped it",
+        "synthesis": "Veterans recalled that Win32 and Windows 3.1 apps were keyboard-usable almost by default, through tab order, Alt mnemonics and menus. They blamed Electron, custom-drawn frameworks and phone-style redesigns in Windows 10/11 and Apple's iOS ports for losing it. macOS drew its own complaints, since Tab only reaches every control after you turn on a setting that is off by default. A screen reader user added that frameworks which draw their own widgets can expose nothing at all to assistive tech, naming GTK outside Linux, many Rust toolkits and game-style UIs.",
+        "quotes": [
+          {
+            "author": "Timwi",
+            "text": "In the Windows 3.1 days, it was nearly impossible to make a program that wasn't fully keyboard-usable.",
+            "commentId": 49487637
+          },
+          {
+            "author": "miki123211",
+            "text": "If your framework doesn't expose UI semantics to the OS, a screen reader user gets absolutely nothing, basically a blank window with no visible content or controls.",
+            "commentId": 49487682
+          }
+        ]
+      },
+      {
+        "title": "Power users versus everyone else",
+        "synthesis": "One commenter called the push for keyboard-driven GUIs an HN power-user fixation that average users don't want. Most replies said the article asks for keyboard support as an option, not a requirement. Others said the real power users aren't Arch Linux hackers but clerks, accountants and point-of-sale staff who live in one app all day, and who revolt when a redesign takes their shortcuts away. Skeptics replied that most Excel users are mouse-first and that even smart academics go to the Edit menu to copy.",
+        "quotes": [
+          {
+            "author": "preg_match",
+            "text": "Commercial software is THE power user use case. Your users will be using your software 8 hours a day, 5 days a week, for years.",
+            "commentId": 49483400
+          },
+          {
+            "author": "neutronicus",
+            "text": "My wife is a UX Design consultant and she had an engagement where a bunch of state government accountants were bemoaning how a redesigned procurement platform took away all their keyboard shortcuts.",
+            "commentId": 49483819
+          }
+        ]
+      },
+      {
+        "title": "Shortcuts on buttons are not a keyboard-driven design",
+        "synthesis": "Several commenters argued that giving every button a shortcut makes an app keyboard-compatible, not keyboard-driven, and that the hard part is discoverability. Ideas offered were underlined mnemonics, shortcut hints next to every control, which-key style popups, command palettes and Office's Ribbon key tips. jerf pointed to old mainframe UIs that buffered keystrokes so trained staff could type ahead of slow screens. Others said a good keyboard scheme has to be systematic enough to predict, not a pile of bindings to memorize.",
+        "quotes": [
+          {
+            "author": "YmiYugy",
+            "text": "My counter would be that that is not really keyboard-driven, but merely keyboard-compatible.",
+            "commentId": 49482259
+          },
+          {
+            "author": "wat10000",
+            "text": "Keyboard input can, when designed well, be fully predictable and require no feedback loop with the computer.",
+            "commentId": 49483058
+          }
+        ]
+      },
+      {
+        "title": "TUIs are not more accessible or more consistent",
+        "synthesis": "Commenters who sided with the author said TUIs have no accessibility tree, so screen readers hear the box-drawing characters, and that each TUI invents its own keybindings while GUI frameworks ship common ones. TUI fans replied that terminals guarantee every visible character can be copied by keyboard, which GUIs often don't. Others answered that copying out of modern TUIs breaks on borders and panes, and named Claude Code and OpenCode.",
+        "quotes": [
+          {
+            "author": "tptacek",
+            "text": "for most TUIs, if you close your eyes and have the UI read to you, you're going to hear \"dash dash dash dash dash dash bracket dash\", because the fundamental concept of a TUI is in-band UI signalling.",
+            "commentId": 49485920
+          },
+          {
+            "author": "orbital-decay",
+            "text": "One problem with this argument in particular is that every TUI reinvents the wheel and designs its own schema.",
+            "commentId": 49482211
+          }
+        ]
+      }
+    ],
+    "consensus": "Every action in a GUI should be reachable from the keyboard while mouse use stays fully supported. Native toolkits make this cheap, and the loss of it comes from web-based and custom-drawn UIs.",
+    "dissent": "A minority said the demand reflects HN's own habits more than those of users, who are mostly on phones or mouse-first. Drawing, 3D modeling, games and touch-driven industrial screens were named as places where a keyboard mandate makes no sense, and others called \"should\" an added cost small teams can't always pay.",
+    "contrarian": {
+      "author": "phoghed",
+      "text": "I’ve made a web application at work able to be keyboard driven  one time and exactly 0 users out of thousands made use of it. People just don’t want to pay the upfront cost.",
+      "commentId": 49481446,
+      "why": "It is the only firsthand report of adoption, and it says that building full keyboard support doesn't mean anyone uses it. Discoverability and learning cost decide that."
+    }
+  },
+  "digestedAt": "2026-10-12T17:19:28.000Z"
+}

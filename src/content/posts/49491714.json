@@ -1,0 +1,102 @@
+{
+  "hnId": 49491714,
+  "title": "Calibrate Before You Accelerate: Bias Toward Action in a New Role",
+  "url": "https://tucker.wales/writing/bias-towards-action/",
+  "domain": "tucker.wales",
+  "kind": "unavailable",
+  "author": "tuckerwales",
+  "postedAt": "2026-08-29T17:39:18.000Z",
+  "points": 188,
+  "commentCount": 80,
+  "tldr": "In a new role, a bias toward action pays off only after you have built context. The author lays out phases, learning how things work and why before moving to visible changes, and leans on Chesterton's Fence to argue against tearing out what you don't yet understand.",
+  "articleNote": "The article could not be fetched; the tldr is pieced together from the HN thread, and the digest covers the discussion.",
+  "comments": {
+    "overview": "Most readers agreed with the advice and several called it obvious, boiling it down to Chesterton's Fence. The liveliest arguments were about when a new leader should perturb a system they don't understand, and about the post itself, which commenters flagged as AI-written until the author said he had dictated it and had a model clean it up.",
+    "themes": [
+      {
+        "title": "Wiggling the controls versus learning them first",
+        "synthesis": "One commenter recalled a CTO who changed everything from day one and another who spent months with each team before touching anything, and admired the second. jaggederest argued that when a company is failing and opaque, small deliberate perturbations are the only way to learn how it responds. Others countered that you need to know how to run a business to run one, that a new leader has a limited stock of goodwill to spend on changes, and that metrics visible to the CEO describe last quarter rather than predict what a change will do.",
+        "quotes": [
+          {
+            "author": "jaggederest",
+            "text": "The right way to make those changes, or at least one way and I don't know a better one, is to perturb the system and see how it responds. This is necessarily risky and uncomfortable, and choosing the right things to perturb and the magnitude of those peturbations is a very, very tricky skill.",
+            "commentId": 49494063
+          },
+          {
+            "author": "jmcgough",
+            "text": "Once people get sick of poorly thought-out changes it can be hard to keep changing things and get buy-in, and talented employees (who almost always have someone asking to hire them) can be the first to leave.",
+            "commentId": 49495467
+          }
+        ]
+      },
+      {
+        "title": "What Chesterton's Fence actually asks",
+        "synthesis": "The principle got quoted in full and then argued over. Some read it as a license to leave odd things alone, and pointed out that undocumented processes like Marge calculating penalties by hand are often the problem. Defenders replied that the fence only says to find out why something exists before removing it, and that the answer may well be that it should go. A side thread proposed exceptions, such as a plaintext password in source control, that you remove at once without asking why.",
+        "quotes": [
+          {
+            "author": "wat10000",
+            "text": "The point Chesterton is making isn’t that you leave everything alone. It’s just that you find out why something is there before you take it out.",
+            "commentId": 49494778
+          },
+          {
+            "author": "nswango",
+            "text": "For example if you find a password in plaintext in source control, you don't assume the person who put it there had a good reason, you assume they were deeply misguided.",
+            "commentId": 49496786
+          }
+        ]
+      },
+      {
+        "title": "Was the post written by AI?",
+        "synthesis": "The largest single thread called the prose and the illustrations AI-generated, pointing to garbled labels like \"Witchen\" on a blueprint and the phrase \"load-bearing\". The author said he dictated his thoughts and had a model transcribe and reword them. Critics said polished AI prose no longer signals care and gives readers no reason to trust there is thought behind it; defenders called AI a tool like any other and said the ideas were still the author's. The exchange ended with the author and one critic trading curt goodbyes.",
+        "quotes": [
+          {
+            "author": "tuckerwales",
+            "text": "Author here: I dictated this article into my phone and got a model to transcribe and clean up / reword.",
+            "commentId": 49497226
+          },
+          {
+            "author": "scared_together",
+            "text": "In the 2010s and earlier removing all typos, fixing wording, formatting the text and adding images were all signals that someone put extra care into sending their message. But in the present that just indicates use of AI.",
+            "commentId": 49497374
+          }
+        ]
+      },
+      {
+        "title": "Useful things to do while you calibrate",
+        "synthesis": "Several commenters shared what they actually do in their first months. jedberg runs a listening tour with five fixed questions sent ahead in the invite, then anonymizes the answers into a guide. hinkley starts by fixing documentation, runbooks and CI, since it can't break production and newcomers are the ones who notice what the docs leave out. Others suggested picking up cleanups and small projects nobody else wants, building analysis tools, and announcing small wins so people notice them.",
+        "quotes": [
+          {
+            "author": "hinkley",
+            "text": "So I always start with fixing the documentation, the runbooks, the CI process. It's a deliverable you can engage in without breaking production, it demonstrates mastery, it fixes a pain point that the more professionally mature members of the team care about, which gets you brownie points with the right sort of people.",
+            "commentId": 49493015
+          },
+          {
+            "author": "danpalmer",
+            "text": "Taking on little projects that are already understood, taking on cleanups, things other people aren't volunteering for, is all a great way to find where some of the bodies are buried, understand how the team works, and prove yourself as a team player.",
+            "commentId": 49493813
+          }
+        ]
+      },
+      {
+        "title": "The opposite problem, and the clock",
+        "synthesis": "A few commenters warned against reading the post as permission to stall. One had watched managers who never got past the learning phase lose their peers' faith. Another said corporate developers lean heavily toward inaction out of fear, and a burned-out engineer said pressure to ship features in the learning phase makes calibrating hard to do at all.",
+        "quotes": [
+          {
+            "author": "iSloth",
+            "text": "It’s critical to start showing some Phase 3 impact, even if not with a sledgehammer, before peers quickly loose faith",
+            "commentId": 49492127
+          }
+        ]
+      }
+    ],
+    "consensus": "Learn why things are the way they are before changing them, and spend the first months on low-risk work that builds trust. Many thought this was common sense that shouldn't need a whole essay.",
+    "dissent": "Some argued that a failing, opaque organization can't be understood by watching, so a new leader has to make deliberate changes to learn from. Others warned that waiting too long costs credibility.",
+    "contrarian": {
+      "author": "nlawalker",
+      "text": "I think a bias towards inaction often creates better outcomes for everyone, but a bias towards action creates better career results.",
+      "commentId": 49494153,
+      "why": "It explains why the advice needs repeating: performance reviews reward visible activity, so the incentive to move fast persists even when everyone agrees it's wrong."
+    }
+  },
+  "digestedAt": "2026-10-12T17:19:15.000Z"
+}

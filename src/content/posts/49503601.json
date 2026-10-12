@@ -1,0 +1,112 @@
+{
+  "hnId": 49503601,
+  "title": "“I just chose words carefully”",
+  "url": "https://unsung.aresluna.org/i-just-chose-words-carefully/",
+  "domain": "unsung.aresluna.org",
+  "kind": "article",
+  "author": "zdw",
+  "postedAt": "2026-08-30T22:49:48.000Z",
+  "points": 1255,
+  "commentCount": 353,
+  "readingMinutes": 2,
+  "tldr": "Fully justified monospace text looks bad because spaces can't be split evenly and hyphens stand out. In the late 1990s one Super Metroid guide writer avoided both by picking words so every line ended exactly at the margin, for 17,000 words, by hand.",
+  "article": {
+    "keyPoints": [
+      "Monospace handles left and right alignment fine, but centering has no half space to work with, and full justification leaves gaps too wide to spread evenly.",
+      "Hyphenation, the usual fix in print, looks loud in monospace and breaks copy and paste, so plain-text files rarely use full justification.",
+      "The remaining option is to rewrite the text until each line adds up to the exact width, and rs1n did this through a 17,000-word Super Metroid guide with no doubled spaces anywhere.",
+      "His FAQ says no program was involved: he chose words so everything lined up, working in an ASCII editor.",
+      "Marcin Wichary notes that book editors already rewrite to kill widows and orphans, and that UI writers do a smaller version of this when they trim a button label or tooltip to fit a fixed width."
+    ],
+    "whyItMatters": "The post is two minutes long and mostly pictures. Open it to see the rendered examples of each alignment, set in a VGA-style bitmap font, and a screenshot of the guide itself. The prose alone doesn't show how odd the bad cases look."
+  },
+  "comments": {
+    "overview": "A delighted, rambling thread. Most commenters admired the feat, and many admitted they reword their own code comments, commit messages and papers to tidy the right edge. Long side threads covered an X-Files anecdote, equal-length variable names, whether LLMs could do this, and the guide's misspelling of \"missiles\", which turned into a long argument about English phonetics.",
+    "themes": [
+      {
+        "title": "Chris Carter's widowless X-Files scripts",
+        "synthesis": "The biggest thread started from Gillian Anderson's account of Chris Carter writing dialogue with no widows, which she linked to the show's slightly backwards cadence. Skeptics checked fan-retyped scripts and found nothing. tobr then pulled a scanned shooting script for I Want to Believe and found nearly every dialogue block ending near the right margin. rectang argued that avoiding widows is a page-break fix that can't produce a cadence, while others said the cadence came from bending speech to fit a shape. A side argument over what \"widow\" and \"orphan\" mean got an answer from the author of a TUGboat article on the terms, who said there are dozens of conflicting definitions.",
+        "quotes": [
+          {
+            "author": "tobr",
+            "text": "Just scroll through and look. In almost every paragraph or dialogue block, the last line ends very close to the right margin.",
+            "commentId": 49505683
+          },
+          {
+            "author": "raffael_de",
+            "text": "the distinctive cadence is not a direct consequence from eliminating widows but from the mental process used to achieve this efficiently. language goes from natural fluidity to stacking Lego bricks.",
+            "commentId": 49507645
+          }
+        ]
+      },
+      {
+        "title": "People who already do this",
+        "synthesis": "A long run of confessions. People reflow doc comments to 80 columns and tweak words until the edge looks clean, trim words in grant applications and conference abstracts to win back a line, and justify their email by hand. Other examples came up too: Laravel's three-line comments that each shrink by three characters, the procps top maintainer's justified commit messages, and Project Gutenberg founder Michael Hart's equal-length emails. lproven wrote his replies justified and said it adds about 10% to his typing time. A conference reviewer said messy first-page alignment usually meant the whole paper was rushed.",
+        "quotes": [
+          {
+            "author": "boothby",
+            "text": "I justify (heh) it to myself by catching unclear wording on this last cleanup pass -- and not taking it too far, obstrusifying for the aesthetic.",
+            "commentId": 49504064
+          },
+          {
+            "author": "syllogism",
+            "text": "when I was reviewing I always saw messy alignment on the first page as a sign  the paper was probably rushed, and usually I could see that elsewhere in the paper too.",
+            "commentId": 49507416
+          }
+        ]
+      },
+      {
+        "title": "Constraint as a creative tool, or a tax on clarity",
+        "synthesis": "Many read the guide as constrained writing in the tradition of Oulipo, Perec's novel without the letter \"e\", and Eno's Oblique Strategies. Someone posted Douglas Hofstadter's account of rewriting passages for page breaks and word spacing until the layout shaped the ideas themselves. Others said the constraint optimizes the wrong thing. It forces length rather than readability, it adds or drops commas to make lines fit, and it makes every later edit expensive. One reader of procps found the justified help text clunky enough that he patches it out of his builds.",
+        "quotes": [
+          {
+            "author": "quuxplusone",
+            "text": "In the course of such rewritings — here extracting a word, there using a shorter or a longer one, elsewhere inserting a word where none was — words and phrases that I would otherwise not have thought of pop to mind, suggesting ideas I would not have thought of",
+            "commentId": 49510987
+          },
+          {
+            "author": "rokkamokka",
+            "text": "The good thing about this is that it forces you to think about what to write. The bad thing is that it doesn't force you to think about how to write it so it's easy to read and understand, just so it's exactly the right length...",
+            "commentId": 49508154
+          }
+        ]
+      },
+      {
+        "title": "Equal-length names in code",
+        "synthesis": "One commenter mourned that true/false and left/right differ in length and praised pairs like old/new, head/tail and src/dst that line up vertically. Readers added more: OK/NG in Japan, OK/KO in France and Spain, row/col, min/max, get/put, and a GitHub list of justified variable names. A proportional-font user said nobody ever complained about his unaligned assignments. Others answered that alignment matters in Haskell, Terraform and F#, and some suggested elastic tabstops or editors that align visually without inserting spaces.",
+        "quotes": [
+          {
+            "author": "Kootle",
+            "text": "Maybe semantically “okay” and “not good” are not great opposites, but I always liked how having textual alignment makes the contrast immediately obvious",
+            "commentId": 49506279
+          }
+        ]
+      },
+      {
+        "title": "Could an LLM do it?",
+        "synthesis": "Several pointed to Tom7's BoVeX and its \"Badness 0\" video, where a language model rewrites text for justification. On plain prompting, one commenter said models see tokens rather than columns and so can't count line width. They suggested masking any token that would overflow the line, and wrote their reply justified to show it could be done. Others noted that LLM watermarking also steers word choice toward a hidden target. gkoberger worried that once this is cheap, nobody can tell whether a writer cared or ran a prompt.",
+        "quotes": [
+          {
+            "author": "urams",
+            "text": "The model never sees columns. It sees tokens, and a token can be one character or nine, so \"make this line 80 wide\" asks it to run a hidden tally over pieces it cannot count by looking at them.",
+            "commentId": 49505300
+          },
+          {
+            "author": "gkoberger",
+            "text": "can we distinguish between \"they cared\" and \"they spent 30 seconds on a prompt\".",
+            "commentId": 49504465
+          }
+        ]
+      }
+    ],
+    "consensus": "The guide is an impressive, slightly obsessive piece of craft, and a lot of technical writers quietly do smaller versions of the same thing.",
+    "dissent": "A sizable minority think full justification is bad for reading in the first place, since ragged edges help the eye keep its place. They also argued that word choice bent to fit a width gives clunkier prose, and that in software, localization and accessibility zoom wreck any hand-fitted text anyway.",
+    "contrarian": {
+      "author": "gyomu",
+      "text": "I did, and then I got a customer email about how they were using a display-zoom OS accessibility feature and things were truncated on their device.",
+      "commentId": 49504254,
+      "why": "The article ends by praising the UI writer who trims a label to fit, and this comment shows the cost. A string fitted to one width breaks for users who zoom or read another language."
+    }
+  },
+  "digestedAt": "2026-10-12T17:19:33.000Z"
+}
