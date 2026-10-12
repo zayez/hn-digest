@@ -13,8 +13,9 @@ import { parseArgs } from 'node:util';
 import { fetchArticle, readingMinutes, wordCount } from './lib/article.ts';
 import { flattenComments, htmlToText, renderComments } from './lib/comments.ts';
 import { parseIssue, type ParsedIssue } from './lib/issue-parser.ts';
-import { fetchCommentTree, fetchStory, parseHnId } from './lib/hn.ts';
+import { fetchFullCommentTree, fetchStory, parseHnId } from './lib/hn.ts';
 import { CONFIDENT_SCORE, domainOf, matchStory } from './lib/match.ts';
+import { mapPool } from './lib/pool.ts';
 import {
   EXTRA_SECTION,
   postFile,
@@ -85,7 +86,8 @@ async function ingestStory(id: number, refresh: boolean): Promise<RawMeta> {
   }
   await mkdir(dir, { recursive: true });
 
-  const [story, tree] = await Promise.all([fetchStory(id), fetchCommentTree(id)]);
+  const story = await fetchStory(id);
+  const tree = await fetchFullCommentTree(story);
   const flat = flattenComments(tree, story.kids);
   await writeFile(join(dir, 'comments.json'), JSON.stringify(flat.comments) + '\n');
   await writeFile(join(dir, 'comments.txt'), renderComments(flat));
@@ -197,17 +199,4 @@ function reportThreadless(issue: ParsedIssue) {
   for (const item of threadless) {
     console.log(`  [${item.section}] ${item.title}${item.domain ? `  //${item.domain}` : ''}`);
   }
-}
-
-async function mapPool<T, R>(items: T[], size: number, fn: (item: T) => Promise<R>): Promise<R[]> {
-  const results: R[] = new Array(items.length);
-  let next = 0;
-  const worker = async () => {
-    while (next < items.length) {
-      const i = next++;
-      results[i] = await fn(items[i]);
-    }
-  };
-  await Promise.all(Array.from({ length: Math.min(size, items.length) }, worker));
-  return results;
 }

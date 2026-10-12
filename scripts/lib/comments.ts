@@ -38,7 +38,7 @@ export function flattenComments(story: AlgoliaNode, rankedKids: number[] = []): 
   let thread = 0;
 
   const walk = (node: AlgoliaNode, parentId: number, depth: number) => {
-    const alive = node.author !== null && node.text !== null && node.text.trim() !== '';
+    const alive = isAlive(node);
     if (alive) {
       comments.push({
         id: node.id,
@@ -60,6 +60,15 @@ export function flattenComments(story: AlgoliaNode, rankedKids: number[] = []): 
   }
 
   return { comments, threadCount: thread };
+}
+
+/** Live comments under `story`: the ones flattenComments keeps. Matches Firebase `descendants`. */
+export function countLive(story: AlgoliaNode): number {
+  return story.children.reduce((n, child) => n + (isAlive(child) ? 1 : 0) + countLive(child), 0);
+}
+
+function isAlive(node: AlgoliaNode): boolean {
+  return node.author !== null && node.text !== null && node.text.trim() !== '';
 }
 
 /** Renders flattened comments as indented plain text, one block per comment, for reading in chunks. */
