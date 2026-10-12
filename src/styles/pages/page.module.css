@@ -36,3 +36,8 @@
   flex: 1;
   border-block-start: var(--border);
 }
+
+.plainList {
+  list-style: none;
+  padding: 0;
+}

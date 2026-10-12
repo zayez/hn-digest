@@ -1,0 +1,29 @@
+---
+import { withBase } from '../../lib/content';
+import styles from './SearchForm.module.css';
+
+interface Props {
+  /** Prefills the field; the search page passes the current query. */
+  query?: string;
+  large?: boolean;
+}
+
+const { query, large = false } = Astro.props;
+---
+
+<form
+  class:list={[styles.form, large && styles.large]}
+  action={withBase('/search/')}
+  method="get"
+  role="search"
+>
+  <input
+    class={styles.input}
+    type="search"
+    name="q"
+    value={query}
+    placeholder="Search posts"
+    aria-label="Search posts"
+    autocomplete="off"
+  />
+</form>

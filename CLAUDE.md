@@ -2,6 +2,8 @@
 
 Static Astro site of digested Hacker Newsletter issues: issues → posts, each post an article summary plus a comment-thread summary. Content is produced in Claude sessions with the `digest` skill (`.claude/skills/digest/`); there is no server and no runtime API calls.
 
+The little client JS there is stays in component `<script>`s: search runs on a Pagefind index that `npm run build` writes after `astro build` (post pages are the whole index, via `data-pagefind-body`; `data-pagefind-ignore` keeps chrome out of excerpts), and favorites live in the reader's localStorage (`src/lib/favorites.ts`).
+
 ## Content
 
 - `src/content.config.ts` is the contract for `src/content/{issues,posts}/*.json`; `npm run build` (astro check + build) fails on any drift.

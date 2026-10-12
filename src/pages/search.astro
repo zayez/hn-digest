@@ -1,0 +1,111 @@
+---
+import SearchForm from '../components/SearchForm/SearchForm.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../lib/content';
+import stack from '../styles/objects/stack.module.css';
+import page from '../styles/pages/page.module.css';
+import styles from '../styles/pages/search.module.css';
+---
+
+<BaseLayout title="Search" description="Search every digested post.">
+  <div class:list={[stack.stack, stack.gapL]}>
+    <header class:list={[stack.stack, stack.gap2xs]}>
+      <p class={page.eyebrow}>
+        <a href={withBase('/')}>Issues</a>
+      </p>
+      <h1>Search</h1>
+      <SearchForm large />
+      <p class={page.eyebrow} role="status" data-search-status>
+        <noscript>Search needs JavaScript.</noscript>
+      </p>
+    </header>
+    <ol class:list={[stack.stack, page.plainList]} data-search-results></ol>
+  </div>
+
+  <template data-search-result>
+    <li class:list={[stack.stack, stack.gap3xs, styles.result]}>
+      <p class={page.eyebrow} data-slot="issue"></p>
+      <h2 class={styles.title}>
+        <a data-slot="link"></a>
+      </h2>
+      <p class={styles.excerpt} data-slot="excerpt"></p>
+    </li>
+  </template>
+</BaseLayout>
+
+<script>
+  // The index is written by `pagefind` after `astro build`, so it only exists in built output.
+  interface Pagefind {
+    options(options: { baseUrl?: string }): Promise<void>;
+    debouncedSearch(query: string): Promise<{ results: { data(): Promise<Result> }[] } | null>;
+  }
+  interface Result {
+    url: string;
+    /** HTML: the matched passage, with hits in <mark>. */
+    excerpt: string;
+    meta: { title?: string; issue?: string };
+  }
+
+  const status = document.querySelector<HTMLElement>('[data-search-status]')!;
+  const list = document.querySelector<HTMLOListElement>('[data-search-results]')!;
+  const template = document.querySelector<HTMLTemplateElement>('template[data-search-result]')!;
+  // The header has a search field too; this page's own is the one under the heading.
+  const field = document.querySelector<HTMLInputElement>('main input[name="q"]')!;
+
+  const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+  const pagefind: Pagefind | undefined = await import(
+    /* @vite-ignore */ `${base}pagefind/pagefind.js`
+  ).catch(() => undefined);
+
+  function render(results: Result[]) {
+    list.replaceChildren(
+      ...results.map((result) => {
+        const item = template.content.firstElementChild!.cloneNode(true) as HTMLElement;
+        const slot = (name: string) => item.querySelector<HTMLElement>(`[data-slot="${name}"]`)!;
+        const link = slot('link') as HTMLAnchorElement;
+        link.href = result.url;
+        link.textContent = result.meta.title ?? result.url;
+        slot('issue').textContent = result.meta.issue ?? '';
+        slot('excerpt').innerHTML = result.excerpt;
+        return item;
+      }),
+    );
+  }
+
+  async function search(query: string) {
+    const url = new URL(location.href);
+    if (query) url.searchParams.set('q', query);
+    else url.searchParams.delete('q');
+    history.replaceState(null, '', url);
+
+    if (!pagefind) {
+      status.textContent =
+        'The search index isn’t built here: run `npm run build && npm run preview`.';
+      return;
+    }
+    if (!query.trim()) {
+      status.textContent = '';
+      list.replaceChildren();
+      return;
+    }
+    const response = await pagefind.debouncedSearch(query);
+    if (!response) return; // superseded by a newer keystroke
+    const results = await Promise.all(response.results.slice(0, 30).map((r) => r.data()));
+    render(results);
+    const total = response.results.length;
+    status.textContent =
+      total === 0
+        ? `No posts match “${query}”.`
+        : `${total} ${total === 1 ? 'post' : 'posts'} match “${query}”${total > results.length ? `, showing the best ${results.length}` : ''}.`;
+  }
+
+  await pagefind?.options({ baseUrl: base });
+  field.value = new URLSearchParams(location.search).get('q') ?? '';
+  field.addEventListener('input', () => search(field.value));
+  field.form!.addEventListener('submit', (event) => {
+    event.preventDefault();
+    search(field.value);
+  });
+  field.focus();
+  search(field.value);
+</script>

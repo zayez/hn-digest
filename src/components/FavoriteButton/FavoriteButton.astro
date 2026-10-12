@@ -1,0 +1,49 @@
+---
+import type { Post } from '../../lib/content';
+import styles from './FavoriteButton.module.css';
+
+interface Props {
+  post: Post;
+  /** Star only; the label stays for screen readers. */
+  compact?: boolean;
+}
+
+const { post, compact = false } = Astro.props;
+---
+
+<!-- Favorites live in localStorage, so the button only appears once the script can read them. -->
+<button
+  type="button"
+  class:list={[styles.button, compact && styles.compact]}
+  data-favorite={post.id}
+  aria-pressed="false"
+  title={compact ? 'Favorite' : undefined}
+  data-pagefind-ignore
+  hidden
+>
+  <span class={styles.label}>{compact ? `Favorite: ${post.data.title}` : 'Favorite'}</span>
+</button>
+
+<script>
+  import {
+    loadFavorites,
+    saveFavorites,
+    toggleFavorite,
+    watchFavorites,
+  } from '../../lib/favorites';
+
+  const buttons = document.querySelectorAll<HTMLButtonElement>('[data-favorite]');
+
+  watchFavorites((ids) => {
+    for (const button of buttons) {
+      button.setAttribute('aria-pressed', String(ids.includes(button.dataset.favorite!)));
+    }
+  });
+
+  for (const button of buttons) {
+    button.hidden = false;
+    button.addEventListener('click', () => {
+      saveFavorites(toggleFavorite(loadFavorites(), button.dataset.favorite!));
+    });
+  }
+</script>

@@ -1,6 +1,7 @@
 ---
 import '../styles/theme.css';
 import '../styles/base.css';
+import SearchForm from '../components/SearchForm/SearchForm.astro';
 import center from '../styles/objects/center.module.css';
 import cluster from '../styles/objects/cluster.module.css';
 import shell from '../styles/layout/shell.module.css';
@@ -10,13 +11,17 @@ import styles from './BaseLayout.module.css';
 interface Props {
   title?: string;
   description?: string;
+  /** Open Graph type: posts are articles, everything else is part of the site. */
+  type?: 'website' | 'article';
 }
 
 const {
   title,
   description = 'Hacker Newsletter issues, digested: article and comment summaries.',
+  type = 'website',
 } = Astro.props;
 const fullTitle = title ? `${title} · HN Digest` : 'HN Digest';
+const canonical = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
@@ -27,17 +32,30 @@ const fullTitle = title ? `${title} · HN Digest` : 'HN Digest';
     <meta name="description" content={description} />
     <link rel="icon" href={withBase('/favicon.svg')} type="image/svg+xml" />
     <title>{fullTitle}</title>
+    <link rel="canonical" href={canonical} />
+    <meta property="og:site_name" content="HN Digest" />
+    <meta property="og:type" content={type} />
+    <meta property="og:title" content={title ?? 'HN Digest'} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
   </head>
   <body class={shell.shell}>
     <header class={shell.header}>
       <div class:list={[center.center, cluster.cluster, cluster.spread]}>
-        <a class={styles.brand} href={withBase('/')}>
-          <span class={styles.logo} aria-hidden="true">
-            Y
-          </span>
-          HN Digest
-        </a>
-        <span class={styles.tagline}>Hacker Newsletter, digested</span>
+        <div class={cluster.cluster}>
+          <a class={styles.brand} href={withBase('/')}>
+            <span class={styles.logo} aria-hidden="true">
+              Y
+            </span>
+            HN Digest
+          </a>
+          <span class={styles.tagline}>Hacker Newsletter, digested</span>
+        </div>
+        <nav class:list={[cluster.cluster, styles.nav]} aria-label="Site">
+          <SearchForm />
+          <a href={withBase('/favorites/')}>Favorites</a>
+        </nav>
       </div>
     </header>
     <main class={shell.main}>

@@ -1,0 +1,30 @@
+.share {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+}
+
+.share[hidden] {
+  display: none;
+}
+
+.button {
+  padding: var(--space-3xs) var(--space-2xs);
+  border: var(--border);
+  border-radius: var(--radius-s);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  font: inherit;
+  font-size: var(--step--1);
+  cursor: pointer;
+}
+
+.button:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent-strong);
+}
+
+.status {
+  color: var(--color-text-muted);
+  font-size: var(--step--1);
+}

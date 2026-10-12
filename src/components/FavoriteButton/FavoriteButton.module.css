@@ -1,0 +1,53 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3xs);
+  padding: var(--space-3xs) var(--space-2xs);
+  border: var(--border);
+  border-radius: var(--radius-s);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  font: inherit;
+  font-size: var(--step--1);
+  cursor: pointer;
+}
+
+.button:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent-strong);
+}
+
+.button::before {
+  content: '☆' / '';
+}
+
+.button[aria-pressed='true'] {
+  color: var(--color-accent-strong);
+}
+
+.button[aria-pressed='true']::before {
+  content: '★' / '';
+}
+
+.button[hidden] {
+  display: none;
+}
+
+/* Sits on a whole-card link (see PostCard), so it lifts itself above it. */
+.compact {
+  position: relative;
+  z-index: 1;
+  border-color: transparent;
+  background: none;
+  font-size: var(--step-1);
+  line-height: 1;
+}
+
+.compact .label {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

@@ -79,3 +79,22 @@ export async function getAppearances(): Promise<Map<string, Appearance[]>> {
   for (const [id, list] of missed) byPost.set(id, [...(byPost.get(id) ?? []), ...list]);
   return byPost;
 }
+
+export interface CatalogEntry {
+  post: Post;
+  /** The newest issue that picked the post, if any did. */
+  appearance?: Appearance;
+}
+
+/** Every digested post, newest issue first. */
+export async function getCatalog(): Promise<CatalogEntry[]> {
+  const appearances = await getAppearances();
+  const issueNumber = (entry: CatalogEntry) => entry.appearance?.issue.data.number ?? 0;
+  return (await getCollection('posts'))
+    .map((post) => ({ post, appearance: appearances.get(post.id)?.[0] }))
+    .sort(
+      (a, b) =>
+        issueNumber(b) - issueNumber(a) ||
+        b.post.data.postedAt.getTime() - a.post.data.postedAt.getTime(),
+    );
+}

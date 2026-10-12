@@ -2,7 +2,9 @@
 import type { Post } from '../../lib/content';
 import { postPath } from '../../lib/content';
 import box from '../../styles/objects/box.module.css';
+import cluster from '../../styles/objects/cluster.module.css';
 import stack from '../../styles/objects/stack.module.css';
+import FavoriteButton from '../FavoriteButton/FavoriteButton.astro';
 import PostMeta from '../PostMeta/PostMeta.astro';
 import styles from './PostCard.module.css';
 
@@ -20,7 +22,10 @@ const { post, reason } = Astro.props;
   <h3 class={styles.title}>
     <a href={postPath(post)}>{post.data.title}</a>
   </h3>
-  <PostMeta post={post} />
+  <div class:list={[cluster.cluster, cluster.spread]}>
+    <PostMeta post={post} />
+    <FavoriteButton post={post} compact />
+  </div>
   <p class={styles.tldr}>{post.data.tldr}</p>
   {reason && <p class={styles.reason}>{reason}</p>}
 </article>

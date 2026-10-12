@@ -2,10 +2,12 @@
 import type { GetStaticPaths } from 'astro';
 import { getCollection } from 'astro:content';
 import CommentTheme from '../../components/CommentTheme/CommentTheme.astro';
+import FavoriteButton from '../../components/FavoriteButton/FavoriteButton.astro';
 import Pager from '../../components/Pager/Pager.astro';
 import PostMeta from '../../components/PostMeta/PostMeta.astro';
 import Quote from '../../components/Quote/Quote.astro';
 import SectionTag from '../../components/SectionTag/SectionTag.astro';
+import ShareButton from '../../components/ShareButton/ShareButton.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import {
   getAppearances,
@@ -42,11 +44,15 @@ const primary = appearances[0];
 const link = (p?: Post) => p && { href: postPath(p), title: p.data.title };
 ---
 
-<BaseLayout title={data.title} description={data.tldr}>
-  <article class:list={[stack.stack, stack.gapXl, styles.post]}>
+<BaseLayout title={data.title} description={data.tldr} type="article">
+  <!-- Post pages are the whole search index: see /search. -->
+  <article class:list={[stack.stack, stack.gapXl, styles.post]} data-pagefind-body>
     <header class:list={[stack.stack, stack.gapXs]}>
       {appearances.length > 0 && (
-        <p class:list={[cluster.cluster, page.eyebrow]}>
+        <p
+          class:list={[cluster.cluster, page.eyebrow]}
+          data-pagefind-meta={`issue:Issue #${primary.issue.data.number}`}
+        >
           {appearances.map(({ issue, section }) => (
             <span class:list={[cluster.cluster, cluster.gap3xs]}>
               <a href={issuePath(issue)}>Issue #{issue.data.number}</a>
@@ -56,11 +62,21 @@ const link = (p?: Post) => p && { href: postPath(p), title: p.data.title };
         </p>
       )}
       <h1>{data.title}</h1>
-      <PostMeta post={post} links />
+      <div data-pagefind-ignore>
+        <PostMeta post={post} links />
+      </div>
+      <div class={cluster.cluster}>
+        <FavoriteButton post={post} />
+        <ShareButton
+          title={data.title}
+          text={data.tldr}
+          url={new URL(Astro.url.pathname, Astro.site).href}
+        />
+      </div>
     </header>
 
     <section class:list={[box.box, stack.stack, stack.gap3xs, styles.tldr]} aria-labelledby="tldr">
-      <h2 id="tldr" class={styles.label}>
+      <h2 id="tldr" class={styles.label} data-pagefind-ignore>
         TL;DR
       </h2>
       <p>{data.tldr}</p>

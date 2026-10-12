@@ -1,0 +1,25 @@
+.form {
+  display: flex;
+}
+
+.input {
+  inline-size: 100%;
+  min-inline-size: 12rem;
+  padding: var(--space-3xs) var(--space-2xs);
+  border: var(--border);
+  border-radius: var(--radius-s);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font: inherit;
+  font-size: var(--step--1);
+}
+
+.input:focus-visible {
+  border-color: var(--color-accent);
+  outline-offset: 0;
+}
+
+.large .input {
+  padding: var(--space-2xs) var(--space-s);
+  font-size: var(--step-1);
+}

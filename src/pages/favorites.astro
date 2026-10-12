@@ -1,0 +1,68 @@
+---
+import PostCard from '../components/PostCard/PostCard.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCatalog, issuePath, withBase } from '../lib/content';
+import { formatDate } from '../lib/format';
+import stack from '../styles/objects/stack.module.css';
+import page from '../styles/pages/page.module.css';
+
+// Favorites live in the reader's browser, so every post is rendered hidden and
+// the script reveals the saved ones.
+const catalog = await getCatalog();
+---
+
+<BaseLayout title="Favorites" description="Posts you starred, saved in this browser.">
+  <div class:list={[stack.stack, stack.gapXl]}>
+    <header class:list={[stack.stack, stack.gap2xs]}>
+      <p class={page.eyebrow}>
+        <a href={withBase('/')}>Issues</a>
+      </p>
+      <h1>Favorites</h1>
+      <p class={page.eyebrow}>
+        Star a post to keep it here. Favorites are saved in this browser only.
+      </p>
+    </header>
+    <p class={page.empty} data-favorites-empty>
+      No favorites yet: use the ☆ on any post.
+      <noscript>Favorites need JavaScript.</noscript>
+    </p>
+    <ol class:list={[stack.stack, page.plainList]} data-favorites>
+      {catalog.map(({ post, appearance }) => (
+        <li data-post-id={post.id} hidden>
+          <PostCard post={post}>
+            {appearance && (
+              <p slot="eyebrow" class={page.eyebrow}>
+                <a href={issuePath(appearance.issue)}>Issue #{appearance.issue.data.number}</a> ·{' '}
+                {formatDate(appearance.issue.data.date)}
+              </p>
+            )}
+          </PostCard>
+        </li>
+      ))}
+    </ol>
+  </div>
+</BaseLayout>
+
+<script>
+  import { watchFavorites } from '../lib/favorites';
+
+  const list = document.querySelector<HTMLElement>('[data-favorites]')!;
+  const empty = document.querySelector<HTMLElement>('[data-favorites-empty]')!;
+  const items = new Map(
+    [...list.querySelectorAll<HTMLElement>('[data-post-id]')].map((li) => [li.dataset.postId!, li]),
+  );
+
+  // Most recently saved first. A post unstarred here stays until the next visit, so a
+  // misclick can be undone in place.
+  let shown = new Set<string>();
+  watchFavorites((ids) => {
+    for (const id of ids) {
+      const item = items.get(id);
+      if (!item) continue; // a post since removed from the site
+      if (!shown.has(id)) list.append(item);
+      item.hidden = false;
+    }
+    shown = new Set([...shown, ...ids]);
+    empty.hidden = [...shown].some((id) => items.has(id));
+  });
+</script>
