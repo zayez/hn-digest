@@ -1,15 +1,15 @@
 ---
 name: digest
-description: Digest a Hacker Newsletter issue into the site — pick and tier the stories worth the reader's time, then summarize each article and its HN thread. Use when the user pastes a newsletter issue, asks to change an issue's picks, or asks to redo a post.
+description: Digest a Hacker Newsletter issue into the site — pick and tier the stories worth the reader's time, then summarize each article and its HN thread. Use when the user names or pastes a newsletter issue, asks to change an issue's picks, or asks to redo a post.
 ---
 
-The user pastes a whole Hacker Newsletter issue. You scan every story in it, rank them against the reader's profile (`data/profile.md`, private and gitignored) into three tiers plus a near-miss list, get the user's approval, and digest the picks. Each pick becomes a post (`src/content/posts/<hnId>.json`); the issue becomes `src/content/issues/<number>.json`. The schema in `src/content.config.ts` is the contract; `npm run build` enforces it. Tier names and caps live in `src/lib/tiers.ts`.
+The user names a Hacker Newsletter issue by number, or pastes it whole. You scan every story in it, rank them against the reader's profile (`data/profile.md`, private and gitignored) into three tiers plus a near-miss list, get the user's approval, and digest the picks. Each pick becomes a post (`src/content/posts/<hnId>.json`); the issue becomes `src/content/issues/<number>.json`. The schema in `src/content.config.ts` is the contract; `npm run build` enforces it. Tier names and caps live in `src/lib/tiers.ts`.
 
 Read `data/profile.md` first. If it is missing, stop and tell the user: every pick depends on it.
 
 ## Steps
 
-1. **Save the paste.** Write the issue text verbatim to `data/raw/paste.txt`. Done when the file holds the whole paste, links and all.
+1. **Get the issue.** Given a number, run `npm run fetch-issue -- <n>` (it downloads the Buttondown archive page). Given a paste, write it verbatim to `data/raw/paste.txt`. Done when `data/raw/paste.txt` holds the whole issue, links and all.
 
 2. **Ingest everything.** `npm run ingest -- data/raw/paste.txt --all`. If the number or date is missing from the paste, pass `--number`/`--date` (ask the user if you cannot tell). Sponsor and Classifieds blocks are skipped by the parser. Done when the report lists every item; items under "No HN thread" are near-miss material only.
 

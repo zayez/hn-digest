@@ -25,7 +25,8 @@ export interface ParsedIssue {
 
 /** Paid placements, not HN stories. */
 const IGNORED_SECTIONS = new Set(['sponsor', 'classifieds']);
-const SECTION_RE = /^#([A-Za-z][\w &'./-]*?)\s*$/;
+// Includes special sections like `#Featured: Apple`.
+const SECTION_RE = /^#([A-Za-z][\w &'./:-]*?)\s*$/;
 const END_RE = /^__END__\s*$/;
 // Newer issues print the domain without its TLD (`//seths`, `//platform.claude`).
 const DOMAIN_RE = /(?:^|\s)\/\/([a-z0-9-]+(?:\.[a-z0-9-]+)*)(?=\s|$)/i;

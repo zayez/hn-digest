@@ -8,6 +8,7 @@
 import { existsSync } from 'node:fs';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
+import { archiveUrl } from './lib/archive.ts';
 import { parseIssue } from './lib/issue-parser.ts';
 import { issueFile, postFile, rawIssueDir, selectionFile, type IssuePlan } from './lib/paths.ts';
 import {
@@ -20,7 +21,7 @@ import {
 interface IssueEntry {
   number: number;
   date: string;
-  url?: string;
+  url: string;
   intro?: string;
   posts: IssuePostRef[];
   nearMisses: NearMiss[];
@@ -51,7 +52,7 @@ if (errors.length) {
 const entry: IssueEntry = {
   number,
   date: plan.date,
-  ...((plan.url ?? existing?.url) && { url: plan.url ?? existing?.url }),
+  url: plan.url ?? existing?.url ?? archiveUrl(number),
   ...(existing?.intro && { intro: existing.intro }),
   posts,
   nearMisses,

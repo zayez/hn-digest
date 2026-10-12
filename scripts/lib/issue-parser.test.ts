@@ -149,6 +149,17 @@ describe('parseIssue — paste that kept its links', () => {
     expect(parsed.items.map((i) => i.title)).toEqual(['The Amazon tax']);
   });
 
+  it('reads featured sections with a colon in the name', () => {
+    const parsed = parseIssue(
+      '#Featured: Apple\n[Apple introduces M6](https://www.apple.com/newsroom/m6/) //apple [comments→](http://news.ycombinator.com/item?id=49433292)',
+    );
+    expect(parsed.sections).toEqual(['Featured: Apple']);
+    expect(parsed.items[0]).toMatchObject({
+      title: 'Apple introduces M6',
+      section: 'Featured: Apple',
+    });
+  });
+
   it('skips the classifieds block', () => {
     const parsed = parseIssue(
       [
