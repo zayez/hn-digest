@@ -1,0 +1,118 @@
+{
+  "hnId": 49585627,
+  "title": "Doomscrolling ourselves to death",
+  "url": "https://www.edwest.co.uk/p/doomscrolling-ourselves-to-death",
+  "domain": "edwest.co.uk",
+  "kind": "article",
+  "author": "shubhamjain",
+  "postedAt": "2026-09-06T11:53:40.000Z",
+  "points": 429,
+  "commentCount": 338,
+  "readingMinutes": 13,
+  "tldr": "Ed West reviews James Marriott's The New Dark Ages, which argues that television started a decline in reading that smartphones have sped up, and that a post-literate public drifts back toward the habits of oral cultures: repetitive, conservative culture and cruder politics.",
+  "article": {
+    "keyPoints": [
+      "Marriott traces the decline in reading for pleasure and in student comprehension back past the phone to television, following Neil Postman's 1985 warning in Amusing Ourselves to Death.",
+      "He credits mass literacy, from Protestant Bible reading through the Enlightenment novel, with widening empathy and making democracy possible. Readers of Pamela or Equiano's memoir lived inside lives they would otherwise have ignored.",
+      "Television took over leisure time fast. US ownership went from 1% of homes in 1948 to over half by 1954, Dutch weekly reading fell from five hours to three and a half, and a Norwegian study found conscript IQ fell 0.08 points for each year a hometown had full cable coverage.",
+      "Smartphones made it worse. The average person checks one 144 times a day, a TikTok user may scroll 260 videos in half an hour, and pop songs, TV dialogue and even scientific papers are getting simpler and less disruptive.",
+      "Politics follows. Marriott sets Truman, who read all 2,000 books in his hometown library, against Trump, who reportedly can't finish a one-page memo, and he points to Candace Owens having more YouTube followers than the New York Times has subscribers.",
+      "West ends on the elite. College graduates born after 1969 read less than less-educated people born before 1950, and he suspects distrust of institutions comes partly from a sense that the people running them aren't very smart."
+    ],
+    "whyItMatters": "The review is a fair stand-in for the book's argument, with the Norway cable study and the Truman anecdote intact. Read the original for Marriott's own quoted passages, his account of hiding his phone from himself, and West's openly elitist closing paragraphs, which several commenters read as the real agenda."
+  },
+  "comments": {
+    "overview": "A large, mostly sympathetic thread. Most commenters accepted that something is wrong and argued over where to put the blame: algorithmic feeds, Reddit, the drug comparison, or whether 'kids can't read' holds up as a claim. A vocal minority called the piece a recycled moral panic from a reactionary writer, and dozens of people shared how they cut back.",
+    "themes": [
+      {
+        "title": "The feed is the problem, and Reddit counts",
+        "synthesis": "The top thread started from one reader's confession and turned into a case against algorithmic feeds in general. Several people argued that Reddit, YouTube and X escape the 'social media' label while doing the same damage, with Reddit singled out for doom content and moderator echo chambers. One camp held that anything driven by an algorithm is bad. Others replied that a time-sorted list is also an algorithm, and that the real target is ranking tuned for engagement and profit. Some pointed out that HN has its own ranking and karma.",
+        "quotes": [
+          {
+            "author": "Aurornis",
+            "text": "They would be convinced that they were “off of social media” because they didn’t consider those sites among the bad ones, but they’d open their phones or laptops and feed streams of doom straight into their brains for hours every day.",
+            "commentId": 49587103
+          },
+          {
+            "author": "Tanjreeve",
+            "text": "It's the combination of profitability motivations and manipulation of dopamine responses that are the outcomes people object to.",
+            "commentId": 49598043
+          }
+        ]
+      },
+      {
+        "title": "Moral panic or real decline",
+        "synthesis": "The first skeptic said you can't compare a millennium of literacy with a decade of social media, and that there have always been stupid people. Replies pushed back on two fronts. Literacy data already shows a decline over 20 to 40 years, and technology now changes within a lifetime, so 'wait a few centuries' never arrives. The poster of the story conceded that old panics such as 'calcu-holism' had a point. Others added that past shifts turned out fine partly because critics pushed back. The skeptics cited Plato's distrust of writing and old complaints about young people reading too much.",
+        "quotes": [
+          {
+            "author": "wat10000",
+            "text": "The “check back in a few centuries” doesn’t work, because we’re not going to be using the same stuff in a few centuries. We’re probably not going to be using the same stuff in a few *decades*.",
+            "commentId": 49588806
+          },
+          {
+            "author": "intended",
+            "text": "The issue isn’t that we have stupid people then and now. The issue is that trends of literacy and development now are changing direction.",
+            "commentId": 49586061
+          }
+        ]
+      },
+      {
+        "title": "Can students read, and will AI help",
+        "synthesis": "The Atlantic piece on elite students who can't read books drew a sharp exchange. One commenter called the claim idiotic, saying PISA scores measure something other than long-form reading and that 'worst in generations' comparisons forget the weak students of the past. Others answered that 'can't read' means losing the ability to follow a long argument, and cited OECD data showing more university students scoring at a ten-year-old's level. A side argument on AI split the same way. One commenter described LLMs as the tutor they wished they'd had, and another replied that at scale students use them to skip the work.",
+        "quotes": [
+          {
+            "author": "hannasanarion",
+            "text": "No, professors are not claiming that college students are literally incapable of sounding out words.",
+            "commentId": 49588684
+          },
+          {
+            "author": "intended",
+            "text": "The crux of the matter is that you need to know what “good” looks like to use automation or augmentation tools well. This is why it’s a greater boost to people with experience.",
+            "commentId": 49588003
+          }
+        ]
+      },
+      {
+        "title": "Is it a drug?",
+        "synthesis": "Commenters argued over whether comparing feeds to opium or cocaine helps. One commenter likened it to the era when cocaine was in Coca-Cola, a habit normal until it wasn't, and predicted the same turn against feeds. Another said anyone who has known an opioid addict can see the comparison is false, and that the case against social media doesn't need it. The original poster said they meant the comparison for how urgently governments should act, and pointed to evidence of withdrawal symptoms.",
+        "quotes": [
+          {
+            "author": "Aurornis",
+            "text": "It’s possible to make arguments about social media that don’t depend on obviously false equivalence to powerful drugs.",
+            "commentId": 49587173
+          },
+          {
+            "author": "pj_mukh",
+            "text": "I'm comparing to Opium not for exact chemical effect equivalence but for the level of Government urgency required.",
+            "commentId": 49587360
+          }
+        ]
+      },
+      {
+        "title": "Padded books, edutainment and what counts as reading",
+        "synthesis": "Some commenters said people read less because most nonfiction is a blog post padded to 300 pages. Others said history and serious technical subjects can't be learned without long-form reading. Educational YouTube got the same split. One commenter said watching physics lectures only teaches you to watch YouTube, while others listed cooking, car repair and calculus they had learned from videos. A few defended length itself, saying a novel builds empathy because it takes hundreds of pages to live in someone else's head.",
+        "quotes": [
+          {
+            "author": "Barrin92",
+            "text": "People watch \"education YouTube\" but don't get a tangible education, they learn how to watch YouTube.",
+            "commentId": 49589866
+          },
+          {
+            "author": "robomc",
+            "text": "Like, you can explain to someone in 3-4 sentences that slavery is cruel but that's not the same as inhabiting a characters circumstances for 500 pages.",
+            "commentId": 49591544
+          }
+        ]
+      }
+    ],
+    "consensus": "Engagement-ranked feeds are built to keep people scrolling and do measurable harm, adults included. Most commenters reported their own trouble finishing long books. What worked for them was friction: Pi-hole blocks, dumbphones, e-readers, book clubs and RSS.",
+    "dissent": "A minority called the book a recurring moral panic and Ed West a reactionary who uses history to argue against liberalism. They noted his ideal society looks like the oral culture he criticizes, and that people now read more text than ever, from LLM answers to source code.",
+    "contrarian": {
+      "author": "watwut",
+      "text": "\"The worse in generations\" claim is especially dubious and tend to based on comparison between \"guess performance of imaginary past elite student in undefined historical period\" with low performing student today. Low performing students 3-4 generations ago disappear, because we imagine them to not exist.",
+      "commentId": 49588305,
+      "why": "It names the selection bias under the whole decline story: people compare today's average student with the readers they remember from the past, and the weak readers of earlier generations drop out of the comparison."
+    }
+  },
+  "digestedAt": "2026-10-12T22:25:48.000Z"
+}

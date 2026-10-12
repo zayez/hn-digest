@@ -1,0 +1,97 @@
+{
+  "hnId": 49578280,
+  "title": "Learn Programming with OCaml",
+  "url": "https://usr.lmf.cnrs.fr/lpo/",
+  "domain": "usr.lmf.cnrs.fr",
+  "kind": "unavailable",
+  "author": "elvis70",
+  "postedAt": "2026-09-05T16:45:02.000Z",
+  "points": 318,
+  "commentCount": 139,
+  "tldr": "Sylvain Conchon and Jean-Christophe Filliâtre's French textbook on programming in OCaml is now free in English, translated by Urmila Nair with OCaml Software Foundation funding and released under CC BY-SA 4.0 as PDF and EPUB with code. Readers who worked through it say it moves too fast for true beginners and suits an algorithms course better.",
+  "articleNote": "Landing page with download links only; the tldr describes the book as the page presents it, and the digest covers the discussion.",
+  "comments": {
+    "overview": "Friendly toward the book and OCaml, but most of the thread wandered. The longest branch argued over whether a first language should be an ML or C, and whether C still says anything true about hardware. A second big branch asked why anyone should learn a language at all when LLMs write the code.",
+    "themes": [
+      {
+        "title": "ML or C as the first language",
+        "synthesis": "The top comment says an ML should be every computer scientist's first language. The C camp answers that ML hides memory layout, copying and references, and that C lacks just enough features to force students to learn them. Skeptics, citing Chisnall's \"C Is Not a Low-level Language\", say C's machine model is decades out of date. One embedded veteran calls C a handicap for learning assembly and would rather start with an ML or even Fortran. A Paris-Cité teacher describes a middle path: Java in first year, then C and Caml side by side.",
+        "quotes": [
+          {
+            "author": "tialaramex",
+            "text": "But for a First Language specifically I am in no doubt that an ML should be chosen, and this is despite the fact that the University where I work has taught Java for decades and Python most recently as First Language.",
+            "commentId": 49582156
+          },
+          {
+            "author": "MeetingsBrowser",
+            "text": "C lacks just enough “modern language features”, by design, that students are forced to be vaguely aware of memory layout, memory management, ref vs copy, shallow copy vs deep copy, maybe even calling convention, etc.",
+            "commentId": 49588871
+          }
+        ]
+      },
+      {
+        "title": "Why learn a language when LLMs write code",
+        "synthesis": "One reader asked whether learning OCaml still makes sense now that LLMs already know it. Most replies said yes, for different reasons. Some said you cannot steer or check an LLM's code without a mental model of it. Others compared programming to baking or playing an instrument, where doing it by hand is the reward and makes you better with the machine too. A few pointed out that OCaml jobs were scarce long before LLMs, so people always learned it for the way of thinking. A side fight broke out over phone time and whether people are too stretched to study.",
+        "quotes": [
+          {
+            "author": "zem",
+            "text": "you are eventually going to have a very bad time if you do not have a solid mental model of the code the LLM is writing, and indeed if you cannot steer the LLM so that its code conforms to your mental models.",
+            "commentId": 49580998
+          },
+          {
+            "author": "aaplok",
+            "text": "I still think it worth my time kneading dough by hand. It teaches me the various properties of flour, how external factors like humidity or temperature impact the overall process, and I believe that it makes me a better baker, even when I use a machine",
+            "commentId": 49581207
+          }
+        ]
+      },
+      {
+        "title": "OCaml as a language for coding agents",
+        "synthesis": "Several commenters say LLMs write OCaml better than other languages. Their explanation is the feedback loop. Global type inference holds the model to what it already wrote, compiles are fast, and interface files tell the model what each module must do. Rust and Haskell were said to make the model reason about types too much. Asked for evidence, one commenter said they contributed to an unpublished paper on it, and that the study is limited by the cost of frontier-model tokens.",
+        "quotes": [
+          {
+            "author": "giraffe_lady",
+            "text": "Both force the model to reason about types too much. The more constrained type system plus global inference merely holds them to what they already wrote, with very fast feedback.",
+            "commentId": 49580178
+          },
+          {
+            "author": "yawaramin",
+            "text": "OCaml has an idiomatic approach of using interface files for all modules that can be accessed outside their libraries, and interface files give LLMs a great précis of exactly what is wanted.",
+            "commentId": 49580558
+          }
+        ]
+      },
+      {
+        "title": "Learning to program in OCaml first",
+        "synthesis": "French readers who learned Caml first in prépa or university recall rough opening weeks of type errors, then a payoff. A Haskell-first programmer said functional habits like immutable data and small testable functions stayed for life. Others found the switch from C painful but worth it. Someone noted that OCaml also allows imperative code, so one language can teach several paradigms.",
+        "quotes": [
+          {
+            "author": "nestorD",
+            "text": "The first few weeks were rough: I did not quite know what a type was and the compiler error messages were unforgiving and hard to understand without that context.",
+            "commentId": 49580453
+          }
+        ]
+      },
+      {
+        "title": "Is this book for beginners",
+        "synthesis": "One reader called the book excellent but too brisk for someone who has never programmed. Another pointed out that its introduction targets an algorithms course, so the title oversells it. For newcomers, commenters recommended Cornell's free CS3110 textbook, and others asked whether the 2014 French original had been updated for the translation.",
+        "quotes": [
+          {
+            "author": "jan_m_savage",
+            "text": "This book, while excellent otherwise, is much too harder for beginners, IMO. The pace is too brisk, and it's far from pedagogically useful if you don't already know how to program.",
+            "commentId": 49582795
+          }
+        ]
+      }
+    ],
+    "consensus": "Learning an ML-family language makes people better programmers, and that still holds when an LLM writes most of the code.",
+    "dissent": "The C camp held that a first language should expose memory and copying, which OCaml hides. A few dismissed OCaml outright as strange, with a weak standard library and no Python-sized future.",
+    "contrarian": {
+      "author": "ahefner",
+      "text": "Computers haven't presented an accurate model of how computers actually work for decades. Compare the surface ISA of anything mainstream since the mid 90s versus all of the superscalar and out-of-order execution happening under the hood.",
+      "commentId": 49593700,
+      "why": "The \"C doesn't model the hardware\" complaint applies just as much to assembly, so it can't be a reason to reject C for teaching."
+    }
+  },
+  "digestedAt": "2026-10-12T22:25:59.000Z"
+}

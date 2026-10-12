@@ -1,0 +1,125 @@
+{
+  "number": 809,
+  "date": "2026-09-11",
+  "url": "https://buttondown.com/hacker-newsletter/archive/809/",
+  "posts": [
+    {
+      "post": "49558685",
+      "section": "Favorites",
+      "tier": "dontSkip",
+      "reason": "Argues that simplicity means one braid rather than few lines, using a Unix pipeline, Clojure, Bash and Rust to show where ordering, aggregation and representation get coupled, and the thread traces it back through Worse is Better."
+    },
+    {
+      "post": "49643982",
+      "section": "Favorites",
+      "tier": "worthYourTime",
+      "reason": "Shopify explains why it is rebuilding its React Native apps natively with coding agents doing most of the work, and stops maintaining FlashList, Restyle and React Native Skia."
+    },
+    {
+      "post": "49558302",
+      "section": "Working",
+      "tier": "worthYourTime",
+      "reason": "A former nuclear-plant controls engineer proposes deliberate manual gates in AI-assisted engineering, drawing on the automation paradox and AF 447, and the thread disputes whether lost skills come back."
+    },
+    {
+      "post": "49585627",
+      "section": "Books",
+      "tier": "worthYourTime",
+      "reason": "Ed West on James Marriott's case that television and then smartphones undid mass literacy and reasoned public debate, with the studies behind it."
+    },
+    {
+      "post": "49578280",
+      "section": "Books",
+      "tier": "worthYourTime",
+      "reason": "A free, openly licensed English translation of Conchon and Filliâtre's OCaml textbook, and a thread arguing whether an ML language, C or Python should come first."
+    },
+    {
+      "post": "49623754",
+      "section": "Favorites",
+      "tier": "ifYouHaveAMinute",
+      "reason": "A tiny interactive comedy in which an agent cannot simply make a button blue, and a 450-comment thread of first-hand reports on agents over-engineering trivial changes and how people rein them in."
+    },
+    {
+      "post": "49589914",
+      "section": "Ask HN",
+      "tier": "ifYouHaveAMinute",
+      "reason": "An Ask HN on organising agent skill files, split between people who keep only repo-specific skills and people describing whole skill-driven workflows in detail."
+    },
+    {
+      "post": "49592375",
+      "section": "Watching",
+      "tier": "ifYouHaveAMinute",
+      "reason": "A report on LG TVs recording audio with the screen off, and a thousand-comment thread on whether click-through terms can consent for guests and bystanders under EU and US law."
+    },
+    {
+      "post": "49587121",
+      "section": "Watching",
+      "tier": "ifYouHaveAMinute",
+      "reason": "Douglas Hofstadter's talk on analogy as the core of cognition, with a thread setting it against predictive processing and what LLMs suggest."
+    },
+    {
+      "post": "49614280",
+      "section": "Favorites",
+      "tier": "ifYouHaveAMinute",
+      "reason": "A clear walk-through of what card networks actually do (routing, settlement, interchange and dispute rules) through one $100 transaction, with commenters correcting the debit-versus-credit legal details."
+    }
+  ],
+  "nearMisses": [
+    {
+      "title": "De-Brainrot Vacations",
+      "section": "Favorites",
+      "domain": "devz.cl",
+      "url": "https://devz.cl/posts/i-spent-my-vacations-de-brainrotting/",
+      "hnId": 49597907
+    },
+    {
+      "title": "I-have-ADHD: A skill to stop coding agents from burying the answer",
+      "section": "Code",
+      "domain": "github.com",
+      "url": "https://github.com/ayghri/i-have-adhd",
+      "hnId": 49610631
+    },
+    {
+      "title": "Making a Python interpreter in 1024 bytes",
+      "section": "Code",
+      "domain": "austinhenley.com",
+      "url": "https://austinhenley.com/blog/python1024.html",
+      "hnId": 49591876
+    },
+    {
+      "title": "Bitap: My favorite string matching algorithm",
+      "section": "Code",
+      "domain": "jo3-l.dev",
+      "url": "https://jo3-l.dev/posts/bitap/",
+      "hnId": 49609195
+    },
+    {
+      "title": "Music Theory for the 21st-Century Classroom",
+      "section": "Books",
+      "domain": "musictheory.pugetsound.edu",
+      "url": "https://musictheory.pugetsound.edu/mt21c/MusicTheory.html",
+      "hnId": 49647134
+    },
+    {
+      "title": "Programming is Art",
+      "section": "Working",
+      "domain": "orchidfiles.com",
+      "url": "https://orchidfiles.com/programming-is-art/",
+      "hnId": 49595360
+    },
+    {
+      "title": "Technique for Manipulating Satellite Photos Now Reveals Ancient Images",
+      "section": "Learn",
+      "domain": "spinoff.nasa.gov",
+      "url": "https://spinoff.nasa.gov/Manipulating_Satellite_Photos_Now_Reveals_Ancient_Images",
+      "hnId": 49645437
+    },
+    {
+      "title": "Shopify acquires Tailwind",
+      "section": "Startup News",
+      "domain": "tailwindcss.com",
+      "url": "https://tailwindcss.com/blog/tailwind-is-joining-shopify",
+      "hnId": 49626190
+    }
+  ]
+}

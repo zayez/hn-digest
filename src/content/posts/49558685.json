@@ -1,0 +1,113 @@
+{
+  "hnId": 49558685,
+  "title": "Simple Is Not Small",
+  "url": "https://jyn.dev/simple-is-not-the-same-as-small/",
+  "domain": "jyn.dev",
+  "kind": "article",
+  "author": "zdw",
+  "postedAt": "2026-09-03T23:47:28.000Z",
+  "points": 263,
+  "commentCount": 101,
+  "readingMinutes": 8,
+  "tldr": "Following Rich Hickey, simplicity means parts that aren't braided together, and that is a different property from size. Unix pipelines are small but coupled, and a huge program like Google Drive can still be simple, so programs should aim for simple even when that makes them bigger.",
+  "article": {
+    "keyPoints": [
+      "A word-frequency count is a short Unix pipeline or a short Clojure expression, but asking for the output in original file order takes Clojure a few more lines and turns the shell version into temp files, `nl`, sorts and a `join`.",
+      "The culprit is `sort | uniq --count`: since `uniq` only collapses adjacent lines, counting is tied to ordering, so separating the two forces table joins through text files.",
+      "\"Do one thing and do it well\" is in practice about size, not simplicity, while Google Drive for Desktop is massive inside yet takes three decisions from the user.",
+      "A Rust struct ties type checking to a fixed memory layout, so you can't iterate its fields without a proc-macro. Clojure's Malli schemas check plain maps at runtime and stay inspectable data, which makes things like a homemade doc generator easy.",
+      "Being small is a fair choice when the maintainer has few hours or little support, but coupling is almost never worth it, so programs should be simple always.",
+      "Decoupled tools like SQL and CSS can need enormous effort behind them (SQLite, Blink), and the author's own coverage pipeline got larger after the fix but simpler, with fewer hidden dependencies."
+    ],
+    "whyItMatters": "Worth reading for the side-by-side shell and Clojure code, which makes the coupling visible in a way the summary can't, and for the Rust struct versus Malli schema example. The author flags taste and how to build large systems without complexity as topics for later posts, so the how-to part is thin."
+  },
+  "comments": {
+    "overview": "The thread liked the thesis and Hickey's talk behind it but went hard after the examples. Most of the energy went into proving the Unix pipeline could be written better, arguing over what \"simple\" even means, and one very long exchange on whether Clojure actually decouples types from data.",
+    "themes": [
+      {
+        "title": "The shell example is a straw man",
+        "synthesis": "Many readers posted their own versions: an awk associative array, a pure bash loop, and a pipeline that tags words with line numbers, sorts, and lets `uniq --count` keep the first occurrence. Their argument is that the shell tools work within their own sort-and-accumulate paradigm, which runs in constant memory, and that banning awk is arbitrary. Others noted the comparison mixes a process abstraction with a language macro, and that the Clojure version loads the whole file into memory. A few conceded the core point. `uniq` really does couple counting to sorting, and that has nothing to do with bash versus Clojure.",
+        "quotes": [
+          {
+            "author": "JoachimSchipper",
+            "text": "The generally-useful point is that the classic shell utilities really do work pretty well if you're operating within their paradigm, which *isn't* \"throw everything in a hash table\". (That's the paradigm of later scripting languages.)",
+            "commentId": 49602009
+          },
+          {
+            "author": "adityaathalye",
+            "text": "The post is mixing up a lot of stuff because of a category error: conflating system design (pipelines) with language design (Clojure and Bash).",
+            "commentId": 49608702
+          }
+        ]
+      },
+      {
+        "title": "\"Simple\" has too many meanings",
+        "synthesis": "Several commenters thought the word does too much work. One split it into few tokens, easy to reuse, and easy to understand, three goals that often pull against each other. Another mapped the essay onto \"Worse is Better\", where the split is simple for the user versus simple for the implementer, and developers play both roles. Others pointed out that familiarity distorts the judgment, and that \"small\" is a legitimate sense of simple in formal complexity theory.",
+        "quotes": [
+          {
+            "author": "jerf",
+            "text": "There's at least three concepts we're all trying to stuff into the same word, and they are not only not \"orthogonal\" they are often in conflict with each other.",
+            "commentId": 49600091
+          },
+          {
+            "author": "getnormality",
+            "text": "TFA maps \"simplicity\" to \"MIT/Stanford simplicity\" (simplicity for the user) and \"smallness\" to \"New Jersey simplicity\" (simplicity for the developer).",
+            "commentId": 49599732
+          }
+        ]
+      },
+      {
+        "title": "Does Clojure really decouple types from data?",
+        "synthesis": "The longest exchange, between Twey and weavejester, took the Rust versus Clojure example apart. Twey argued Clojure doesn't remove coupling but moves it, since every value carries runtime type information and GC semantics, and that rules out values Rust can express. weavejester answered with messy medical data, a birthdate recorded as \"before 1980\", and said a Clojure function that only reads white blood cell counts isn't coupled to the rest of the record, unlike one taking a whole Rust struct. Both ended up agreeing Clojure is far more ergonomic for that kind of data and Rust's traits get similar results with more ceremony. Another reader noted Zig can iterate struct fields at compile time anyway.",
+        "quotes": [
+          {
+            "author": "Twey",
+            "text": "This is funny to me because seen from the other side, (this) Clojure couples runtime type information to data structures: you're no longer allowed to define a data structure that doesn't have some runtime type information attached.",
+            "commentId": 49601507
+          },
+          {
+            "author": "weavejester",
+            "text": "This function requires patient to be a Patient struct, and therefore the function is implicitly coupled to every field in the struct, regardless of whether that field is ever actually used.",
+            "commentId": 49637671
+          }
+        ]
+      },
+      {
+        "title": "Pipes are easy, not simple",
+        "synthesis": "Some readers defended pipelines as simple when built well. Others listed what goes wrong underneath: only raw bytes and delimiters, errors hidden unless you remember `set -o pipefail`, no typing, which pushes people to jq and then to Python. Anyone driving pipes from a program has to deal with exit codes, signals, buffering and partial writes.",
+        "quotes": [
+          {
+            "author": "fwlr",
+            "text": "Unix pipes are easy, and they are a very good abstraction, and their choice of abstraction boundaries is superlative, but they are not simple.",
+            "commentId": 49600888
+          },
+          {
+            "author": "unscaled",
+            "text": "But the moment you to do something that's a little different than the happy path it was built for, you need to go for another tool (jq) that has its own built-in pipe and small programming language, because Unix pipes won't cut it.",
+            "commentId": 49605311
+          }
+        ]
+      },
+      {
+        "title": "Large and simple costs a lot",
+        "synthesis": "A few people with firsthand experience agreed simple-but-large is possible and said it is very expensive. One developer building very modular software called it the hardest design job of his career, with 3 to 5 rounds per abstraction, and said this is why vibe coding works for scripts and fails beyond them. Another quoted Brooks on the ninefold cost of a programming systems product, and a maintainer noted that small projects can't afford gigantic software in the first place.",
+        "quotes": [
+          {
+            "author": "hankbond",
+            "text": "Many aspects of this project have taken 3-5 rounds trying-and-trashing to get an abstraction that is uncomplicated.",
+            "commentId": 49559564
+          }
+        ]
+      }
+    ],
+    "consensus": "Simplicity and size are different things and Hickey's talk is worth watching, but the article's examples were weak, especially the shell one, which awk or a better pipeline handles without temp files.",
+    "dissent": "A minority rejected the claim that Unix pipelines aren't simple, calling them simple and powerful for small problems, and some called the whole essay a Clojure advertisement with a flimsy definition of coupling.",
+    "contrarian": {
+      "author": "wredcoll",
+      "text": "Because the real life result isn't actually a choice between \"sloppy but quick to develop\" and \"elegant well engineered but slow\".",
+      "commentId": 49605387,
+      "why": "It answers the article's \"simple, always\" with history: the decoupled design often never ships, and the coupled one wins because it exists."
+    }
+  },
+  "digestedAt": "2026-10-12T22:25:34Z"
+}

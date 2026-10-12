@@ -1,0 +1,102 @@
+{
+  "hnId": 49558302,
+  "title": "Protecting Engineers' Skills in the AI Era",
+  "url": "https://spectrum.ieee.org/ai-engineer-skills",
+  "domain": "spectrum.ieee.org",
+  "kind": "article",
+  "author": "rbanffy",
+  "postedAt": "2026-09-03T23:00:04.000Z",
+  "points": 38,
+  "commentCount": 23,
+  "readingMinutes": 7,
+  "tldr": "A former nuclear and avionics controls engineer argues that companies using AI should build deliberate \"manual gates\" into their workflows, such as debugging with the assistant switched off, so junior engineers still gain the skills they'll need when the automation fails.",
+  "article": {
+    "keyPoints": [
+      "The author's nuclear plant control design left manual steps in sequences the system could run alone, because an operator who only supervises automation loses the skill needed on the day it hands control back.",
+      "A Harvard working paper on 65 million workers found junior employment fell about 9 percent within six quarters of firms adopting generative AI while senior hiring kept growing, and a Stanford study of ADP payroll data shows the same pattern where AI automates rather than augments.",
+      "The New York Fed blames remote work for much of the young-graduate slump, but the author says both explanations describe the same broken apprenticeship channel, and nobody becomes a senior engineer without first being a junior one.",
+      "Aviation shows the cost: Air France 447's crew couldn't hand-fly out of a stall after the autopilot disconnected, and the FAA's 2017 SAFO 17007 responded by treating skill decay as a hazard and encouraging manual flying.",
+      "A \"manual gate\" is a chosen point where a human does the work to keep a skill alive; on a software team, a junior engineer reproduces a bug, finds the root cause and writes a failing test with AI off, then compares that diagnosis with the model's.",
+      "The gates cost money now, so the author expects only founders, private firms, long-horizon institutions or regulators requiring periodic skill checks to pay for them without outside pressure."
+    ],
+    "whyItMatters": "Engineering managers deciding how much entry-level work to hand to AI get a concrete workflow pattern and the aviation precedent behind it. The original adds the author's firsthand control-room and jet-engine-controller background, though several commenters say the prose itself reads as machine-written."
+  },
+  "comments": {
+    "overview": "A small, mostly hostile thread. Most commenters spent their time on whether the article was itself written by AI, which they saw as undercutting a piece about preserving human skill. The smaller substantive part split between people who think skill loss is a real organizational risk and one long reply calling it an irrational fear.",
+    "themes": [
+      {
+        "title": "An AI-written essay about AI risk",
+        "synthesis": "The top thread and several standalone comments say the article reads as generated text, with one linking a Pangram detector result and others pointing at stock phrasings like \"honesty requires saying so\" and the punchy closing sentences. One commenter found the author's company site equally generated and called him a hypocrite for not training a junior to write it. Even those who liked the argument said the AI prose weakened it.",
+        "quotes": [
+          {
+            "author": "matherial",
+            "text": "This appears to be a completely AI-generated article, in which AI is telling us how to protect ourselves against AI.",
+            "commentId": 49558479
+          },
+          {
+            "author": "ddj231",
+            "text": "The second sentence is an ai generation tell. Idk why ai always tries these sort of “wow you” sentences.",
+            "commentId": 49558687
+          }
+        ]
+      },
+      {
+        "title": "Skill loss is bigger than safety-critical work",
+        "synthesis": "Supporters said the article's focus on aviation is too narrow. The deeper risk is that organizations lose the unwritten, social knowledge of why their systems behave as they do, a problem that predates AI and already killed firms that outsourced core functions. Another commenter noted that high turnover makes training juniors a prisoner's dilemma, since the company paying for the training may not keep the engineer.",
+        "quotes": [
+          {
+            "author": "chris_armstrong",
+            "text": "without a continual replacement of labour that understands the system and the reasons for the system's behaviour, the ability to extend it or fix it is lost.",
+            "commentId": 49559065
+          },
+          {
+            "author": "sarjann",
+            "text": "especially with the culture of job hopping a lot and high turnover you can't be sure that you're not just training staff that'll go elsewhere. It's like an industry wide prisoners dilemna.",
+            "commentId": 49558902
+          }
+        ]
+      },
+      {
+        "title": "Corporate text was already mostly waste",
+        "synthesis": "A side argument started from the slop complaint. One commenter said offices have produced low-value documents for decades and AI just made it cheaper, while the useful ones (process docs, manuals, troubleshooting guides) never get budget. The pushback was that human work shouldn't be lumped in with slop, and that documents one team calls useless are often required by another.",
+        "quotes": [
+          {
+            "author": "Xirdus",
+            "text": "Corporate world is obsessed with producing text to unhealthy degree. AI generation is the result, not the cause.",
+            "commentId": 49562925
+          },
+          {
+            "author": "sublinear",
+            "text": "In my experience, what is \"useless\" to me is required by another team.",
+            "commentId": 49566008
+          }
+        ]
+      },
+      {
+        "title": "The handoff problem in practice",
+        "synthesis": "Commenters connected the nuclear operator story to self-driving cars that expect an inattentive human to take over in an emergency, with a cynical reply that the human is there as a scapegoat. A developer posted a parody poem about ceding CI, code writing, then review and merging to AI agents, ending with a week of unreviewed code that he has an hour to debug.",
+        "quotes": [
+          {
+            "author": "SA9G",
+            "text": "A human who is not driving is not paying attention and lacks the spatial awareness to take immediate control in a critical situation...",
+            "commentId": 49558531
+          },
+          {
+            "author": "arcboii92",
+            "text": "until everything breaks and I have 1 hour to find why the million lines of code merged this week don't work anymore.",
+            "commentId": 49558845
+          }
+        ]
+      }
+    ],
+    "consensus": "The prose reads as AI-generated, which most commenters found off-putting in a piece about keeping human skill. Among those who engaged with the argument, most agreed that hollowing out junior work puts long-term capability at risk.",
+    "dissent": "One commenter rejected the premise. When a skill dies out, organizations retrain people or replace the system that needed it, and aviation is too extreme a case to generalize from.",
+    "contrarian": {
+      "author": "0xbadcafebee",
+      "text": "The world doesn't fall apart when very old skills start to disappear. We're humans. We adapt.",
+      "commentId": 49559004,
+      "why": "It points out that the article never shows why AI-driven skill loss differs from the many earlier skills that faded without catastrophe, outside the rare cases where recovery is as hard as a stalled airliner."
+    }
+  },
+  "digestedAt": "2026-10-12T22:25:28.000Z"
+}
