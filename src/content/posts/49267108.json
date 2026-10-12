@@ -21,11 +21,27 @@
     "whyItMatters": "Worth reading if you feel the pull to run many agents at once. The essay is short and candid, and it gets the guilt and compulsion across better than a summary can. Its closing example shows what a well-scoped agent task looks like."
   },
   "comments": {
-    "overview": "A warm thread. Many readers said the post described them. A vocal group said it didn't and tried to work out why. Most of the talk was about attention and multitasking, with a long ADHD tangent, about what AI does to writing and judgment, and about whether near-zero friction just means doing more things nobody needed.",
+    "overview": "A warm thread. Many readers said the post described them, and a vocal group said it didn't and tried to work out why. The longest argument was over keeping AI out of writing and strategy. After that came attention and multitasking, with a long ADHD tangent, and whether near-zero friction just means starting more things nobody needed.",
     "themes": [
       {
+        "title": "Keep AI out of writing and strategy",
+        "synthesis": "The top comment said even light AI touch-ups slowly pull your prose toward the LLM house style, and strategy advice fails because no one can feed a model all the context that matters. Replying to someone who said prose doesn't matter and the model knows more than you, commenters argued that voice is how a reader picks your message out of the noise, and that an LLM has more general knowledge but none of your specific context. Others added that AI pads text rather than clarifying it, so you might as well send the prompt. Suggested fixes were reading human-written books and writing more without help. One reply noted that editing trains you harder than reading, since the model corrects your own sentences. A few thought LLMs can sanity-check a direction but shouldn't set it.",
+        "quotes": [
+          {
+            "author": "swatcoder",
+            "text": "LLM's make your prose easier to *analyze* or *evaluate* but much harder to *hear*.",
+            "commentId": 49271694
+          },
+          {
+            "author": "borski",
+            "text": "Do not fool yourself into thinking it has more context than you. It doesn’t. It has more knowledge. Those are very different.",
+            "commentId": 49271069
+          }
+        ]
+      },
+      {
         "title": "Serial focus versus a dozen agents",
-        "synthesis": "The biggest thread came from commenters with ADHD. They keep only one to four agent sessions on fixed jobs and said they couldn't cope with the context switching the author describes. They guessed that coping strategies built for a scattered mind carry over to managing agents, and wanted someone to study it. Commenters without ADHD said they also stick to one or two tabs. To them, keeping parallel agents running all the time misreads productivity, the agentic version of believing more code means more output. One noted that heavy multitasking puts a non-ADHD brain into a temporary \"adhd-lite\" state.",
+        "synthesis": "The second big thread came from commenters with ADHD. They keep only one to four agent sessions on fixed jobs and said they couldn't cope with the context switching the author describes. They guessed that coping strategies built for a scattered mind carry over to managing agents, and wanted someone to study it. Commenters without ADHD said they also stick to one or two tabs. To them, keeping parallel agents running all the time misreads productivity, the agentic version of believing more code means more output. One said heavy multitasking puts a non-ADHD brain into a temporary \"adhd-lite\" state, and another worried that working serially will look outdated to colleagues racing to parallelize.",
         "quotes": [
           {
             "author": "borski",
@@ -40,24 +56,8 @@
         ]
       },
       {
-        "title": "AI erodes your own writing and judgment",
-        "synthesis": "The top comment said to keep AI out of writing and strategy entirely. Even light AI touch-ups slowly pull your prose toward the LLM house style, and strategic advice fails because no one can feed a model all the context that matters. Replies suggested reading more books by human authors as the fix. Others said editing is different from passive reading, because the model corrects your own writing directly and trains you toward its style. Several agreed LLMs can sanity-check a direction but shouldn't set it.",
-        "quotes": [
-          {
-            "author": "sonink",
-            "text": "Even if you use AI just a little bit to touch up your writing - you start being influenced - And over time it adds up - you start writing like AI just a little bit every now and then.",
-            "commentId": 49270028
-          },
-          {
-            "author": "saltcured",
-            "text": "This can start an ironic reinforcement learning pattern where the writer gets tuned to write in the LLM's \"corrected\" form.",
-            "commentId": 49279789
-          }
-        ]
-      },
-      {
         "title": "Zero friction means saying yes to everything",
-        "synthesis": "Many recognized the pile of half-finished projects. With the friction from idea to MVP near zero, impulses become projects before anyone asks whether they should. One commenter bought a domain for a meal-planner app before he stopped himself. Others said one big project, or the old discipline of saying no, matters more than ever. The common diagnosis was that LLMs create an illusion of free concurrency.",
+        "synthesis": "Many recognized the pile of half-finished projects. With the friction from idea to MVP near zero, impulses become projects before anyone asks whether they should. One commenter bought a domain for a meal-planner app before he stopped himself. Others said one big project, or the old discipline of saying no, matters more than ever, since the edge was always building the right thing. The common diagnosis was that LLMs create an illusion of free concurrency.",
         "quotes": [
           {
             "author": "nicbou",
@@ -100,7 +100,7 @@
       }
     ],
     "consensus": "Running many agents in parallel and starting projects because AI makes them cheap scatters attention and produces little of value. Focused, deliberate use works better, with people setting the direction and writing their own prose.",
-    "dissent": "A sizable minority said the post didn't describe them. Some already work serially. Others said AI really does let them finish things, use fragmented time or learn new skills. Some argued that turning down faster delivery isn't realistic at work.",
+    "dissent": "A sizable minority said the post didn't describe them. Some already work serially. Others said AI really does let them finish things, use fragmented time or learn new skills. A few argued that prose style doesn't matter when you're just delivering a message, and some said turning down faster delivery isn't realistic at work.",
     "contrarian": {
       "author": "nobodywillobsrv",
       "text": "I am much more able to use fragmented bits of time now. Whereas before if I had 20 minutes here and there I would not be able to even read code or notes in order to get context enough to make a change let alone do real work.",
@@ -108,5 +108,5 @@
       "why": "The thread treated parallel sessions as scattering by nature. This comment points out that the agent holds the context, so a 20-minute gap is enough to make a change. The focus-only view misses that."
     }
   },
-  "digestedAt": "2026-10-11T13:52:08.000Z"
+  "digestedAt": "2026-10-12T16:38:01.000Z"
 }
