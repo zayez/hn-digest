@@ -67,11 +67,7 @@ const link = (p?: Post) => p && { href: postPath(p), title: p.data.title };
       </div>
       <div class={cluster.cluster}>
         <FavoriteButton post={post} />
-        <ShareButton
-          title={data.title}
-          text={data.tldr}
-          url={new URL(Astro.url.pathname, Astro.site).href}
-        />
+        <ShareButton title={data.title} url={new URL(Astro.url.pathname, Astro.site).href} />
       </div>
     </header>
 

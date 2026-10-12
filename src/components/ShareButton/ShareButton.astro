@@ -5,39 +5,54 @@ interface Props {
   title: string;
   /** Absolute URL to share. */
   url: string;
-  text?: string;
 }
 
-const { title, url, text } = Astro.props;
+const { title, url } = Astro.props;
 ---
 
-<!-- Shares through the OS sheet where there is one, otherwise copies the link. Needs the script. -->
+<!-- Shares through the OS sheet where there is one, otherwise copies the title and link. Needs the script. -->
 <span class={styles.share} data-share data-pagefind-ignore hidden>
-  <button type="button" class={styles.button} data-title={title} data-url={url} data-text={text}>
+  <button type="button" class={styles.button} data-title={title} data-url={url}>
     Share
   </button>
   <span class={styles.status} role="status"></span>
 </span>
 
 <script>
+  /** Rich editors (Slack, Docs, mail) paste a titled link; plain-text fields get title and URL. */
+  async function copyLink(title: string, url: string) {
+    const plain = `${title}\n${url}`;
+    if (typeof ClipboardItem === 'undefined') return navigator.clipboard.writeText(plain);
+    const anchor = document.createElement('a');
+    anchor.href = url;
+    anchor.textContent = title;
+    await navigator.clipboard.write([
+      new ClipboardItem({
+        'text/plain': new Blob([plain], { type: 'text/plain' }),
+        'text/html': new Blob([anchor.outerHTML], { type: 'text/html' }),
+      }),
+    ]);
+  }
+
   for (const share of document.querySelectorAll<HTMLElement>('[data-share]')) {
     const button = share.querySelector('button')!;
     const status = share.querySelector<HTMLElement>('[role="status"]')!;
-    const { title, url = location.href, text } = button.dataset;
+    const { title = document.title, url = location.href } = button.dataset;
     share.hidden = false;
 
     button.addEventListener('click', async () => {
       if (navigator.share) {
         try {
-          await navigator.share({ title, text, url });
+          // Most targets drop `title` and keep only `text` and `url`, so the title rides in `text`.
+          await navigator.share({ title, text: title, url });
         } catch {
           // Dismissing the share sheet rejects too; there is nothing to report.
         }
         return;
       }
       try {
-        await navigator.clipboard.writeText(url);
-        status.textContent = 'Link copied';
+        await copyLink(title, url);
+        status.textContent = 'Title and link copied';
       } catch {
         status.textContent = 'Couldn’t copy the link';
       }
