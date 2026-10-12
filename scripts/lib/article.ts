@@ -57,10 +57,15 @@ export async function fetchArticle(url: string): Promise<ArticleResult> {
   return result;
 }
 
-function readHtml(html: string): ArticleResult {
-  const { document } = parseHTML(html);
-  const parsed = new Readability(document as unknown as Document).parse();
-  if (!parsed?.content) return { kind: 'unavailable', error: 'readability found no article' };
+export function readHtml(html: string): ArticleResult {
+  let parsed: ReturnType<Readability['parse']> = null;
+  try {
+    // Readability mutates the document, so the fallback parses its own copy.
+    parsed = new Readability(parseHTML(html).document as unknown as Document).parse();
+  } catch {
+    // Some bare pages (no <head>/<body>, e.g. danluu.com) crash it outright.
+  }
+  if (!parsed?.content) return readPlainHtml(html);
   return {
     kind: 'article',
     text: articleHtmlToText(parsed.content),
@@ -68,6 +73,25 @@ function readHtml(html: string): ArticleResult {
     byline: parsed.byline ?? undefined,
     siteName: parsed.siteName ?? undefined,
   };
+}
+
+/**
+ * Fallback for pages Readability can't handle: the page's <main> or <article>,
+ * else everything minus the site chrome. fetchArticle's MIN_WORDS check still
+ * rejects whatever comes out too thin to be an article.
+ */
+function readPlainHtml(html: string): ArticleResult {
+  const { document } = parseHTML(html);
+  let root = document.querySelector('main, article');
+  if (!root) {
+    for (const el of document.querySelectorAll('header, nav, footer, aside')) el.remove();
+    root = document.documentElement;
+  }
+  const text = root ? articleHtmlToText(root.innerHTML) : '';
+  if (!text) return { kind: 'unavailable', error: 'no article text found' };
+  // document.title is empty without a <head>, so read the element itself.
+  const title = document.querySelector('title')?.textContent?.trim();
+  return { kind: 'article', text, title: title || undefined };
 }
 
 async function readPdf(bytes: Uint8Array): Promise<ArticleResult> {
