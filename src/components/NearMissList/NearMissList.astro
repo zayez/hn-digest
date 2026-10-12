@@ -1,0 +1,43 @@
+---
+import { getCollection } from 'astro:content';
+import type { Issue } from '../../lib/content';
+import { hnThreadUrl, postPath } from '../../lib/content';
+import cluster from '../../styles/objects/cluster.module.css';
+import stack from '../../styles/objects/stack.module.css';
+import SectionTag from '../SectionTag/SectionTag.astro';
+import styles from './NearMissList.module.css';
+
+interface Props {
+  misses: Issue['data']['nearMisses'];
+}
+
+const { misses } = Astro.props;
+// A near-miss digested elsewhere (another issue, or an earlier cut) links to its digest.
+const digests = new Map((await getCollection('posts')).map((post) => [post.data.hnId, post]));
+---
+
+<ul class:list={[stack.stack, stack.gapXs, styles.list]}>
+  {misses.map((miss) => {
+    const digest = miss.hnId !== undefined ? digests.get(miss.hnId) : undefined;
+    const href = digest ? postPath(digest) : (miss.url ?? (miss.hnId && hnThreadUrl(miss.hnId)));
+    return (
+      <li class:list={[cluster.cluster, styles.item]}>
+        {href ? (
+          <a href={href} class={styles.title} rel={digest ? undefined : 'noopener'}>
+            {miss.title}
+          </a>
+        ) : (
+          <span class={styles.title}>{miss.title}</span>
+        )}
+        {miss.domain && <span class={styles.domain}>{miss.domain}</span>}
+        <SectionTag section={miss.section} />
+        {digest && <span class={styles.badge}>digested</span>}
+        {miss.hnId !== undefined && (
+          <a href={hnThreadUrl(miss.hnId)} class={styles.thread} rel="noopener">
+            HN thread ↗
+          </a>
+        )}
+      </li>
+    );
+  })}
+</ul>

@@ -6,6 +6,11 @@ export const RAW_DIR = join(ROOT, 'data/raw');
 
 export const rawPostDir = (id: number) => join(RAW_DIR, 'posts', String(id));
 export const rawIssueDir = (number: number) => join(RAW_DIR, 'issues', String(number));
+/** Haiku's per-story scan cards, `<hnId>.md`. */
+export const scanDir = (number: number) => join(rawIssueDir(number), 'scan');
+export const selectionFile = (number: number) => join(rawIssueDir(number), 'selection.json');
+/** The reader's goals and tastes; private, so outside data/raw/ but gitignored too. */
+export const PROFILE_FILE = join(ROOT, 'data/profile.md');
 
 export const postFile = (id: number) => join(ROOT, 'src/content/posts', `${id}.json`);
 export const issueFile = (number: number) => join(ROOT, 'src/content/issues', `${number}.json`);

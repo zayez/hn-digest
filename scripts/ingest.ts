@@ -1,9 +1,10 @@
 /**
- * Ingests one newsletter issue: parses the pasted issue, fetches each selected
- * HN story (metadata, ranked comment tree, article text) into data/raw/, matches
- * stories to newsletter sections and writes the issue plan.
+ * Ingests one newsletter issue: parses the pasted issue, fetches each HN story
+ * (metadata, ranked comment tree, article text) into data/raw/, matches stories
+ * to newsletter sections and writes the issue plan. `--all` takes every item in
+ * the paste that has an HN thread, for scanning before anything is picked.
  *
- *   npm run ingest -- <paste-file> <hn-link-or-id>... [--number N] [--date YYYY-MM-DD] [--refresh]
+ *   npm run ingest -- <paste-file> (--all | <hn-link-or-id>...) [--number N] [--date YYYY-MM-DD] [--refresh]
  */
 import { existsSync } from 'node:fs';
 import { copyFile, mkdir, readFile, writeFile } from 'node:fs/promises';
@@ -19,6 +20,7 @@ import {
   postFile,
   rawIssueDir,
   rawPostDir,
+  scanDir,
   type IssuePlan,
   type PlanPost,
   type RawMeta,
@@ -30,24 +32,27 @@ const { values, positionals } = parseArgs({
     number: { type: 'string' },
     date: { type: 'string' },
     refresh: { type: 'boolean', default: false },
+    all: { type: 'boolean', default: false },
   },
 });
 
 const [pasteFile, ...links] = positionals;
-if (!pasteFile || links.length === 0) {
+if (!pasteFile || values.all === links.length > 0) {
   console.error(
-    'usage: npm run ingest -- <paste-file> <hn-link-or-id>... [--number N] [--date YYYY-MM-DD] [--refresh]',
+    'usage: npm run ingest -- <paste-file> (--all | <hn-link-or-id>...) [--number N] [--date YYYY-MM-DD] [--refresh]',
   );
   process.exit(2);
 }
 
-const ids = links.map((link) => {
-  const id = parseHnId(link);
-  if (!id) throw new Error(`Not an HN item link or id: ${link}`);
-  return id;
-});
-
 const issue = parseIssue(await readFile(pasteFile, 'utf8'));
+
+const ids = values.all
+  ? [...new Set(issue.items.flatMap((item) => item.hnId ?? []))]
+  : links.map((link) => {
+      const id = parseHnId(link);
+      if (!id) throw new Error(`Not an HN item link or id: ${link}`);
+      return id;
+    });
 const number = values.number ? Number(values.number) : issue.number;
 const date = values.date ?? issue.date;
 if (!number || !date) {
@@ -60,6 +65,7 @@ if (!number || !date) {
 const issueDir = rawIssueDir(number);
 await mkdir(issueDir, { recursive: true });
 await copyFile(pasteFile, join(issueDir, 'paste.txt'));
+if (values.all) await mkdir(scanDir(number), { recursive: true });
 
 const metas = await mapPool(ids, 4, (id) => ingestStory(id, values.refresh));
 
@@ -67,6 +73,7 @@ const plan = mergePlan(await readPlan(issueDir), buildPlan(number, date, issue, 
 await writeFile(join(issueDir, 'plan.json'), JSON.stringify(plan, null, 2) + '\n');
 
 report(plan, metas);
+if (values.all) reportThreadless(issue);
 
 // ---------------------------------------------------------------------------
 
@@ -179,6 +186,16 @@ function report(plan: IssuePlan, metas: RawMeta[]) {
         (meta.article ? ` · ${meta.article.words} words` : '') +
         (flags.length ? `\n    ⚠ ${flags.join(' · ')}` : ''),
     );
+  }
+}
+
+/** Items the newsletter links without an HN thread: near-miss material only. */
+function reportThreadless(issue: ParsedIssue) {
+  const threadless = issue.items.filter((item) => item.hnId === undefined);
+  if (!threadless.length) return;
+  console.log(`\nNo HN thread (not fetched; near-miss only):`);
+  for (const item of threadless) {
+    console.log(`  [${item.section}] ${item.title}${item.domain ? `  //${item.domain}` : ''}`);
   }
 }
 

@@ -127,11 +127,11 @@ const link = (p?: Post) => p && { href: postPath(p), title: p.data.title };
       </section>
     )}
 
-    {primary && (
+    {(primary?.prev || primary?.next) && (
       <Pager
-        label={`More from issue #${primary.issue.data.number}`}
-        prev={link(primary.prev)}
-        next={link(primary.next)}
+        label={`More from issue #${primary!.issue.data.number}`}
+        prev={link(primary!.prev)}
+        next={link(primary!.next)}
       />
     )}
   </article>

@@ -3,44 +3,116 @@
   "date": "2026-08-14",
   "posts": [
     {
-      "post": "49222189",
-      "section": "Favorites"
-    },
-    {
-      "post": "49234675",
-      "section": "Favorites"
-    },
-    {
       "post": "49289512",
-      "section": "Favorites"
+      "section": "Favorites",
+      "tier": "dontSkip",
+      "reason": "A 2015 essay that still holds up: a simple framework for weighing new technology against the long-term cost of running it."
     },
     {
-      "post": "49293087",
-      "section": "Favorites"
-    },
-    {
-      "post": "49267108",
-      "section": "Favorites"
-    },
-    {
-      "post": "49209539",
-      "section": "Working"
-    },
-    {
-      "post": "49271994",
-      "section": "Working"
-    },
-    {
-      "post": "49185151",
-      "section": "Working"
-    },
-    {
-      "post": "49288129",
-      "section": "Working"
+      "post": "49222189",
+      "section": "Favorites",
+      "tier": "dontSkip",
+      "reason": "A provocative defence of the craft; the thread mostly calls it a straw man, and that half of the debate is just as useful."
     },
     {
       "post": "49245359",
-      "section": "Learn"
+      "section": "Learn",
+      "tier": "worthYourTime",
+      "reason": "Moves the AI-and-expertise worry from anecdote to a structural argument, framed as a tragedy of the commons."
+    },
+    {
+      "post": "49293087",
+      "section": "Favorites",
+      "tier": "worthYourTime",
+      "reason": "Practical advice on writing to learn, and on staying honest when you are not yet the expert."
+    },
+    {
+      "post": "49185151",
+      "section": "Working",
+      "tier": "worthYourTime",
+      "reason": "A short, humane piece on the emotional side of making things."
+    },
+    {
+      "post": "49267108",
+      "section": "Favorites",
+      "tier": "ifYouHaveAMinute",
+      "reason": "A short, candid first-person account of what heavy agent use did to one developer's curiosity."
+    },
+    {
+      "post": "49271994",
+      "section": "Working",
+      "tier": "ifYouHaveAMinute",
+      "reason": "A pointed take on how AI could split engineering pay, backed by a thread full of first-hand stories."
+    },
+    {
+      "post": "49209539",
+      "section": "Working",
+      "tier": "ifYouHaveAMinute",
+      "reason": "A long essay that looks past the jobs and money angle to what work means."
+    },
+    {
+      "post": "49234675",
+      "section": "Favorites",
+      "tier": "ifYouHaveAMinute",
+      "reason": "A concrete workflow worth borrowing, though the accuracy claims deserve scepticism."
+    }
+  ],
+  "nearMisses": [
+    {
+      "title": "Tailscale Traces Database Corruption to 16y/o SQLite WAL-Reset Bug",
+      "section": "Favorites",
+      "domain": "tailscale.com",
+      "url": "https://tailscale.com/blog/sqlite-wal-reset-bug",
+      "hnId": 49272832
+    },
+    {
+      "title": "Where did the old web go? We followed 657,607 links to find out",
+      "section": "Favorites",
+      "domain": "0.mk",
+      "url": "https://0.mk/blog/link-rot",
+      "hnId": 49289532
+    },
+    {
+      "title": "We replaced Redis with MySQL for inventory reservations and it scaled",
+      "section": "Data",
+      "domain": "shopify.engineering",
+      "url": "https://shopify.engineering/scaling-inventory-reservations",
+      "hnId": 49226536
+    },
+    {
+      "title": "I requested a copy of my data from McDonald’s loyalty program",
+      "section": "Data",
+      "domain": "wired.com",
+      "url": "https://www.wired.com/story/mcdonalds-built-a-515-page-dossier-on-me-it-says-ill-never-leave/",
+      "hnId": 49286662
+    },
+    {
+      "title": "Ancient Library – 1,060 Greek/Latin texts, click any word to parse it",
+      "section": "Books",
+      "domain": "ancientlibrary.net",
+      "url": "https://ancientlibrary.net/",
+      "hnId": 49214770
+    },
+    {
+      "title": "Principia Mathematica is modern and insightful",
+      "section": "Books",
+      "domain": "okmij.org",
+      "url": "https://okmij.org/ftp/Computation/Impressions/PrincipiaMathematica.html",
+      "hnId": 49279928
+    },
+    {
+      "title": "The 37signals Manager Playbook",
+      "section": "Working",
+      "domain": "basecamp.com",
+      "url": "https://basecamp.com/managers",
+      "hnId": 49288129
+    },
+    {
+      "title": "Why Are Rivers So Mathematical?",
+      "section": "Learn",
+      "domain": "quantamagazine.org",
+      "url": "https://www.quantamagazine.org/why-are-rivers-so-mathematical-20260810/",
+      "hnId": 49285461
     }
   ]
 }

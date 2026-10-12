@@ -8,9 +8,11 @@ import styles from './PostCard.module.css';
 
 interface Props {
   post: Post;
+  /** Why the post was picked for its issue. */
+  reason?: string;
 }
 
-const { post } = Astro.props;
+const { post, reason } = Astro.props;
 ---
 
 <article class:list={[box.box, stack.stack, stack.gap2xs, styles.card]}>
@@ -20,4 +22,5 @@ const { post } = Astro.props;
   </h3>
   <PostMeta post={post} />
   <p class={styles.tldr}>{post.data.tldr}</p>
+  {reason && <p class={styles.reason}>{reason}</p>}
 </article>

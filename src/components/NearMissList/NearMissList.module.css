@@ -1,0 +1,30 @@
+.list {
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  padding-block-end: var(--space-xs);
+  border-block-end: var(--border);
+}
+
+.title {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.domain {
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+}
+
+.badge {
+  color: var(--color-accent-strong);
+  font-size: var(--step--1);
+}
+
+.thread {
+  color: var(--color-text-muted);
+  font-size: var(--step--1);
+}

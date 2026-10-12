@@ -1,5 +1,6 @@
 ---
 import type { GetStaticPaths } from 'astro';
+import NearMissList from '../../components/NearMissList/NearMissList.astro';
 import Pager from '../../components/Pager/Pager.astro';
 import PostCard from '../../components/PostCard/PostCard.astro';
 import SectionTag from '../../components/SectionTag/SectionTag.astro';
@@ -7,13 +8,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import {
   getIssuePosts,
   getIssues,
-  groupBySection,
+  groupByTier,
   issuePath,
-  sectionSlug,
   type Issue,
   withBase,
 } from '../../lib/content';
 import { formatCount, formatDate, isoDate } from '../../lib/format';
+import { TIER_LABELS } from '../../lib/tiers';
 import cluster from '../../styles/objects/cluster.module.css';
 import stack from '../../styles/objects/stack.module.css';
 import page from '../../styles/pages/page.module.css';
@@ -34,7 +35,8 @@ interface Props {
 
 const { issue, newer, older } = Astro.props;
 const posts = await getIssuePosts(issue);
-const groups = groupBySection(posts);
+const groups = groupByTier(posts);
+const { nearMisses } = issue.data;
 const link = (i?: Issue) =>
   i && { href: issuePath(i), title: `Issue #${i.data.number} · ${formatDate(i.data.date)}` };
 ---
@@ -61,18 +63,38 @@ const link = (i?: Issue) =>
       {issue.data.intro && <p class={page.lede}>{issue.data.intro}</p>}
     </header>
 
-    {groups.map(({ section, posts }) => (
-      <section class:list={stack.stack} aria-labelledby={`section-${sectionSlug(section)}`}>
-        <h2 class={page.sectionHeading} id={`section-${sectionSlug(section)}`}>
-          <SectionTag section={section} />
+    {groups.map(({ tier, posts }) => (
+      <section class:list={stack.stack} aria-labelledby={`tier-${tier}`}>
+        <h2 class={page.sectionHeading} id={`tier-${tier}`}>
+          {TIER_LABELS[tier]}
         </h2>
         <div class:list={stack.stack}>
-          {posts.map((post) => (
-            <PostCard post={post} />
+          {posts.map(({ post, section, reason }) => (
+            <PostCard post={post} reason={reason}>
+              <p slot="eyebrow">
+                <SectionTag section={section} />
+              </p>
+            </PostCard>
           ))}
         </div>
       </section>
     ))}
+
+    {(nearMisses.length > 0 || issue.data.url) && (
+      <section class:list={stack.stack} aria-labelledby="near-misses">
+        <h2 class={page.sectionHeading} id="near-misses">
+          Also in this issue
+        </h2>
+        {nearMisses.length > 0 && <NearMissList misses={nearMisses} />}
+        {issue.data.url && (
+          <p class={page.eyebrow}>
+            <a href={issue.data.url} rel="noopener">
+              Everything else is in the full newsletter ↗
+            </a>
+          </p>
+        )}
+      </section>
+    )}
 
     <Pager label="Other issues" prev={link(older)} next={link(newer)} />
   </div>

@@ -1,13 +1,16 @@
 import { getCollection, getEntries, type CollectionEntry } from 'astro:content';
 import { slugify } from './slug.ts';
+import { TIERS, type Tier } from './tiers.ts';
 
 export type Issue = CollectionEntry<'issues'>;
 export type Post = CollectionEntry<'posts'>;
 
-/** A post as it appears in an issue: the newsletter section travels with it. */
+/** A post as it appears in an issue: its newsletter section, tier and the reason it was picked. */
 export interface IssuePost {
   post: Post;
   section: string;
+  tier: Tier;
+  reason: string;
 }
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
@@ -27,21 +30,20 @@ export async function getIssues(): Promise<Issue[]> {
   return issues.sort((a, b) => b.data.number - a.data.number);
 }
 
-/** The issue's posts in newsletter order. */
+/** The issue's posts in reading order: tier by tier, best first. */
 export async function getIssuePosts(issue: Issue): Promise<IssuePost[]> {
   const posts = await getEntries(issue.data.posts.map((ref) => ref.post));
-  return posts.map((post, i) => ({ post, section: issue.data.posts[i].section }));
+  return posts.map((post, i) => {
+    const { section, tier, reason } = issue.data.posts[i];
+    return { post, section, tier, reason };
+  });
 }
 
-/** Consecutive runs of posts sharing a section, in order. */
-export function groupBySection(posts: IssuePost[]): { section: string; posts: Post[] }[] {
-  const groups: { section: string; posts: Post[] }[] = [];
-  for (const { post, section } of posts) {
-    const last = groups.at(-1);
-    if (last?.section === section) last.posts.push(post);
-    else groups.push({ section, posts: [post] });
-  }
-  return groups;
+/** The non-empty tiers, best first, each with its posts in rank order. */
+export function groupByTier(posts: IssuePost[]): { tier: Tier; posts: IssuePost[] }[] {
+  return TIERS.map((tier) => ({ tier, posts: posts.filter((p) => p.tier === tier) })).filter(
+    (group) => group.posts.length > 0,
+  );
 }
 
 export interface Appearance {
@@ -52,16 +54,28 @@ export interface Appearance {
   next?: Post;
 }
 
-/** Every issue each post appears in, newest issue first, keyed by post id. */
+/**
+ * Every issue each post appears in, keyed by post id: issues that picked it
+ * first, then issues where a digested post was only a near-miss (no neighbours).
+ * Newest issue first within each.
+ */
 export async function getAppearances(): Promise<Map<string, Appearance[]>> {
-  const byPost = new Map<string, Appearance[]>();
+  const picked = new Map<string, Appearance[]>();
+  const missed = new Map<string, Appearance[]>();
+  const add = (map: Map<string, Appearance[]>, id: string, appearance: Appearance) =>
+    map.set(id, [...(map.get(id) ?? []), appearance]);
+
   for (const issue of await getIssues()) {
     const posts = await getIssuePosts(issue);
     posts.forEach(({ post, section }, i) => {
-      const list = byPost.get(post.id) ?? [];
-      list.push({ issue, section, prev: posts[i - 1]?.post, next: posts[i + 1]?.post });
-      byPost.set(post.id, list);
+      add(picked, post.id, { issue, section, prev: posts[i - 1]?.post, next: posts[i + 1]?.post });
     });
+    for (const { hnId, section } of issue.data.nearMisses) {
+      if (hnId !== undefined) add(missed, String(hnId), { issue, section });
+    }
   }
+
+  const byPost = new Map(picked);
+  for (const [id, list] of missed) byPost.set(id, [...(byPost.get(id) ?? []), ...list]);
   return byPost;
 }

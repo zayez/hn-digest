@@ -7,6 +7,7 @@ Static Astro site of digested Hacker Newsletter issues: issues → posts, each p
 - `src/content.config.ts` is the contract for `src/content/{issues,posts}/*.json`; `npm run build` (astro check + build) fails on any drift.
 - Quotes in posts must be verbatim from the cited comment: `npm run verify` checks them against `data/raw/` (gitignored, refetchable with `npm run ingest`).
 - Summaries are always in English.
+- Each issue ranks its posts into reading tiers plus a near-miss list (`src/lib/tiers.ts`), picked against the reader's profile in `data/profile.md`. The profile is private (gitignored, the repo and site are public): its goals never appear in committed content.
 
 ## CSS: CSS Modules organized by SMACSS + OOCSS
 

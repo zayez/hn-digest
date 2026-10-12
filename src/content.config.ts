@@ -1,6 +1,7 @@
 import { defineCollection, reference } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
+import { isTierOrdered, NEAR_MISS_CAP, TIERS, tierCapErrors } from './lib/tiers.ts';
 
 const quote = z.object({
   author: z.string(),
@@ -61,7 +62,41 @@ const issues = defineCollection({
     date: z.coerce.date(),
     url: z.url().optional(),
     intro: z.string().optional(),
-    posts: z.array(z.object({ post: reference('posts'), section: z.string() })),
+    /** Picked posts, best first, grouped by tier. */
+    posts: z
+      .array(
+        z.object({
+          post: reference('posts'),
+          /** The newsletter section the story came from. */
+          section: z.string(),
+          tier: z.enum(TIERS),
+          /** Why it was picked, in terms anyone could read: the site is public. */
+          reason: z.string().min(1),
+        }),
+      )
+      .superRefine((posts, ctx) => {
+        const tiers = posts.map((p) => p.tier);
+        for (const message of tierCapErrors(tiers)) ctx.addIssue({ code: 'custom', message });
+        if (!isTierOrdered(tiers)) {
+          ctx.addIssue({
+            code: 'custom',
+            message: 'Posts must be listed tier by tier, best first.',
+          });
+        }
+      }),
+    /** Other items from the issue worth a look by title: the ones that missed the cut. */
+    nearMisses: z
+      .array(
+        z.object({
+          title: z.string(),
+          section: z.string(),
+          domain: z.string().optional(),
+          url: z.url().optional(),
+          hnId: z.number().int().optional(),
+        }),
+      )
+      .max(NEAR_MISS_CAP)
+      .default([]),
   }),
 });
 

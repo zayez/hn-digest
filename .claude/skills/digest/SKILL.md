@@ -1,31 +1,43 @@
 ---
 name: digest
-description: Digest a Hacker Newsletter issue into the site — article and comment summaries per HN story. Use when the user pastes a newsletter issue with HN links to digest, adds links to an issue already digested, or asks to redo a post.
+description: Digest a Hacker Newsletter issue into the site — pick and tier the stories worth the reader's time, then summarize each article and its HN thread. Use when the user pastes a newsletter issue, asks to change an issue's picks, or asks to redo a post.
 ---
 
-The user pastes a Hacker Newsletter issue, then the HN item links they want from it. Each link becomes a post (`src/content/posts/<hnId>.json`); the issue becomes `src/content/issues/<number>.json`. The schema in `src/content.config.ts` is the contract; `npm run build` enforces it.
+The user pastes a whole Hacker Newsletter issue. You scan every story in it, rank them against the reader's profile (`data/profile.md`, private and gitignored) into three tiers plus a near-miss list, get the user's approval, and digest the picks. Each pick becomes a post (`src/content/posts/<hnId>.json`); the issue becomes `src/content/issues/<number>.json`. The schema in `src/content.config.ts` is the contract; `npm run build` enforces it. Tier names and caps live in `src/lib/tiers.ts`.
+
+Read `data/profile.md` first. If it is missing, stop and tell the user: every pick depends on it.
 
 ## Steps
 
 1. **Save the paste.** Write the issue text verbatim to `data/raw/paste.txt`. Done when the file holds the whole paste, links and all.
 
-2. **Ingest.** `npm run ingest -- data/raw/paste.txt <link-or-id>...`. Add `--refresh` only for posts being redone. If the number or date is missing from the paste, pass `--number`/`--date` (ask the user if you cannot tell). Done when every link has a line in the report.
+2. **Ingest everything.** `npm run ingest -- data/raw/paste.txt --all`. If the number or date is missing from the paste, pass `--number`/`--date` (ask the user if you cannot tell). Sponsor and Classifieds blocks are skipped by the parser. Done when the report lists every item; items under "No HN thread" are near-miss material only.
 
-3. **Resolve the flags** in the report, each one:
-   - `EXISTS`: skip that post, unless the user said "redo <id>" — then rerun ingest for it with `--refresh` and summarize it again.
-   - `UNSURE MATCH` / `NOT IN ISSUE`: the story landed in `Extra`. If the guessed newsletter item is right (compare titles and domains in the paste), set that post's `section` and `order` in `data/raw/issues/<n>/plan.json` (order = the item's position; copy a neighbour's). Ask the user only when the paste really does not tell.
-   - `ARTICLE: …` (`unavailable` kind): try WebFetch on the URL and, if it yields the real article, write the text to `data/raw/posts/<id>/article.txt`. Otherwise ask the user to paste the article, or accept a comments-only digest with an `articleNote`.
+3. **Scan, with Haiku.** Split the ingested ids into batches of 5 and dispatch one subagent per batch with `model: "haiku"`, all in a single message. Each gets this prompt, with the issue number and ids filled in:
 
-   Done when every post is either cleanly matched or its section is a decision you or the user made.
+   > Write scan cards for Hacker Newsletter issue `<n>`, stories `<id>, <id>, …`. Read `.claude/skills/digest/scan-guide.md` and follow it exactly. Reply with the ids you wrote.
 
-4. **Summarize, one subagent per post**, all dispatched in a single message so they run in parallel. Each gets this prompt, with the id filled in:
+   Done when `npm run scan-sheet -- <n>` ends without a "Missing scan cards" line.
+
+4. **Rank.** Read `.claude/skills/digest/rank-guide.md`, then the whole scan sheet (`npm run scan-sheet -- <n>`), and write `data/raw/issues/<n>/selection.json`. Done when every item on the sheet has been weighed against the profile and the selection obeys the caps and the profile's selection rules.
+
+5. **Propose.** Show the user the picks as the rank guide describes and wait for approval. Skip the wait only when the user said "just go" for this issue. Apply their edits to `selection.json`, and record each lesson in the profile's Calibration section. Done when the user approves.
+
+6. **Fix missing articles** for picks whose ingest line says `ARTICLE: …`: try WebFetch on the URL and, if it yields the real article, write the text to `data/raw/posts/<id>/article.txt`. Otherwise accept a comments-only digest with an `articleNote`. Done when every pick has article text or a decided note.
+
+7. **Digest, one subagent per pick** that the scan sheet does not mark ALREADY DIGESTED, all dispatched in a single message on the session model. Each gets this prompt, with the id filled in:
 
    > Digest HN story `<id>` for the HN Digest site. Read `.claude/skills/digest/post-guide.md` and follow it exactly. Raw data is in `data/raw/posts/<id>/`. Write `src/content/posts/<id>.json`, then run `npm run verify -- <id>` and fix any quote it rejects. Reply with the TL;DR and the verify result.
 
-   Done when every post has a JSON file and a clean verify.
+   Done when every pick has a JSON file and a clean verify.
 
-5. **Write the issue.** `npm run write-issue -- <number>`. It merges with an existing issue entry and leaves out posts without a JSON file. Done when it reports no undigested posts (or only ones the user chose to drop).
+8. **Write the issue.** `npm run write-issue -- <n>`. It rejects a selection that breaks the caps or names items outside the issue. Done when it reports no undigested picks.
 
-6. **Build.** `npm run build`. A schema error names the file and field: fix the JSON (or send it back to that post's subagent) and rebuild. Done when the build is green.
+9. **Build.** `npm run build`. A schema error names the file and field: fix the JSON (or send it back to that post's subagent) and rebuild. Done when the build is green.
 
-7. **Report** to the user: the issue, each post's TL;DR, and anything that came out degraded (comments-only, unsure section, quotes that had to be replaced).
+10. **Report** to the user: the tiers with each pick's TL;DR, the near-misses, anything that came out degraded (comments-only, replaced quotes), and the profile diff if Calibration changed.
+
+## Other requests
+
+- **Change an issue's picks**: edit `data/raw/issues/<n>/selection.json`, record the lesson in Calibration, digest any new pick (step 7), then steps 8–10.
+- **Redo a post**: `npm run ingest -- data/raw/issues/<n>/paste.txt <id> --refresh`, then digest it again (step 7) and rebuild.

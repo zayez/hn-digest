@@ -3,72 +3,128 @@
   "date": "2026-08-21",
   "posts": [
     {
-      "post": "49345263",
-      "section": "Favorites"
-    },
-    {
-      "post": "49336573",
-      "section": "Favorites"
-    },
-    {
-      "post": "49319556",
-      "section": "Favorites"
+      "post": "49314902",
+      "section": "Code",
+      "tier": "dontSkip",
+      "reason": "A short position statement from an experienced engineer on what still needs human judgement once agents write the code."
     },
     {
       "post": "49362689",
-      "section": "Favorites"
-    },
-    {
-      "post": "49340013",
-      "section": "Ask HN"
-    },
-    {
-      "post": "49318906",
-      "section": "Ask HN"
-    },
-    {
-      "post": "49378768",
-      "section": "Code"
-    },
-    {
-      "post": "49314902",
-      "section": "Code"
-    },
-    {
-      "post": "49314744",
-      "section": "Code"
-    },
-    {
-      "post": "49261133",
-      "section": "Code"
-    },
-    {
-      "post": "49361279",
-      "section": "Data"
-    },
-    {
-      "post": "49349984",
-      "section": "Design"
+      "section": "Favorites",
+      "tier": "dontSkip",
+      "reason": "A practical inventory you can apply right away, honest about which native controls are still too buggy to rely on."
     },
     {
       "post": "49299675",
-      "section": "Books"
+      "section": "Books",
+      "tier": "worthYourTime",
+      "reason": "A warm, idiosyncratic reading list that shows how old books keep feeding a writer's craft."
+    },
+    {
+      "post": "49340013",
+      "section": "Ask HN",
+      "tier": "worthYourTime",
+      "reason": "A raw question that drew one of the most thoughtful threads of the week."
+    },
+    {
+      "post": "49361279",
+      "section": "Data",
+      "tier": "worthYourTime",
+      "reason": "A strong \"start with Postgres\" argument; the thread maps where it breaks down."
     },
     {
       "post": "49335292",
-      "section": "Books"
+      "section": "Books",
+      "tier": "worthYourTime",
+      "reason": "Shows how far engineering practice can carry a long piece of writing, docs-as-code taken to its limit."
     },
     {
-      "post": "49353432",
-      "section": "Working"
+      "post": "49314744",
+      "section": "Code",
+      "tier": "ifYouHaveAMinute",
+      "reason": "A short provocation with a reading list attached."
     },
     {
-      "post": "49347015",
-      "section": "Working"
+      "post": "49318906",
+      "section": "Ask HN",
+      "tier": "ifYouHaveAMinute",
+      "reason": "A useful reality check: the thread separates real reversals from layoff rehiring."
     },
     {
-      "post": "49312845",
-      "section": "Learn"
+      "post": "49336573",
+      "section": "Favorites",
+      "tier": "ifYouHaveAMinute",
+      "reason": "A short rule of etiquette for AI-written messages, and a busy thread about it."
+    },
+    {
+      "post": "49378768",
+      "section": "Code",
+      "tier": "ifYouHaveAMinute",
+      "reason": "An unusual take on AI-assisted coding, with a working prototype to look at."
+    },
+    {
+      "post": "49349984",
+      "section": "Design",
+      "tier": "ifYouHaveAMinute",
+      "reason": "Pure fun: naming as a design system with rules."
+    }
+  ],
+  "nearMisses": [
+    {
+      "title": "The Amazon tax",
+      "section": "Favorites",
+      "domain": "seths.blog",
+      "url": "https://seths.blog/2026/08/the-amazon-tax/",
+      "hnId": 49345263
+    },
+    {
+      "title": "Claude: System Prompts",
+      "section": "Favorites",
+      "domain": "platform.claude.com",
+      "url": "https://platform.claude.com/docs/en/release-notes/system-prompts",
+      "hnId": 49319556
+    },
+    {
+      "title": "License plate reader searches should require a warrant",
+      "section": "Favorites",
+      "domain": "andrewpwheeler.com",
+      "url": "https://andrewpwheeler.com/2026/08/12/license-plate-reader-searches-should-require-a-warrant/",
+      "hnId": 49273165
+    },
+    {
+      "title": "Tidal Cycles – Live coding music with Algorithmic patterns",
+      "section": "Show HN",
+      "domain": "tidalcycles.org",
+      "url": "https://tidalcycles.org/",
+      "hnId": 49378950
+    },
+    {
+      "title": "Go is an ideal language for AI-assisted software engineering",
+      "section": "Code",
+      "domain": "developers.googleblog.com",
+      "url": "https://developers.googleblog.com/why-go-is-an-ideal-language-for-ai-assisted-software-engineering/",
+      "hnId": 49261133
+    },
+    {
+      "title": "AI usage patterns in software teams",
+      "section": "Working",
+      "domain": "linear.app",
+      "url": "https://linear.app/data",
+      "hnId": 49353432
+    },
+    {
+      "title": "AI won't solve the work-theater problem",
+      "section": "Working",
+      "domain": "think-twice.me",
+      "url": "https://think-twice.me/?p=102",
+      "hnId": 49347015
+    },
+    {
+      "title": "AI has access to a vastly larger working memory than the human brain",
+      "section": "Learn",
+      "domain": "davidepiffer.com",
+      "url": "https://davidepiffer.com/p/ai-isnt-outthinking-mathematicians",
+      "hnId": 49312845
     }
   ]
 }

@@ -10,6 +10,7 @@
     "test": "vitest run",
     "format": "prettier --write .",
     "ingest": "tsx scripts/ingest.ts",
+    "scan-sheet": "tsx scripts/scan-sheet.ts",
     "write-issue": "tsx scripts/write-issue.ts",
     "verify": "tsx scripts/verify.ts"
   },

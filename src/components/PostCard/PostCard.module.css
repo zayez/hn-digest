@@ -35,3 +35,10 @@
 .tldr {
   font-family: var(--font-prose);
 }
+
+.reason {
+  padding-inline-start: var(--space-xs);
+  border-inline-start: 2px solid var(--color-accent-soft);
+  color: var(--color-text-muted);
+  font-size: var(--step--1);
+}
