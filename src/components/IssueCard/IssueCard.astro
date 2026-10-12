@@ -1,17 +1,19 @@
 ---
-import type { Issue, Post } from '../../lib/content';
-import { issuePath, postPath } from '../../lib/content';
+import type { Issue, IssuePost } from '../../lib/content';
+import { groupByTier, issuePath, postPath } from '../../lib/content';
 import { formatCount, formatDate, isoDate } from '../../lib/format';
+import { TIER_LABELS } from '../../lib/tiers';
 import cluster from '../../styles/objects/cluster.module.css';
 import stack from '../../styles/objects/stack.module.css';
 import styles from './IssueCard.module.css';
 
 interface Props {
   issue: Issue;
-  posts: Post[];
+  posts: IssuePost[];
 }
 
 const { issue, posts } = Astro.props;
+const { nearMisses } = issue.data;
 ---
 
 <article class:list={[stack.stack, stack.gapXs, styles.issue]}>
@@ -22,12 +24,24 @@ const { issue, posts } = Astro.props;
     <time datetime={isoDate(issue.data.date)}>{formatDate(issue.data.date)}</time>
     <span>{formatCount(posts.length, 'post')}</span>
   </header>
-  <ol class:list={[stack.stack, stack.gap3xs, styles.posts]}>
-    {posts.map((post) => (
-      <li>
-        <a href={postPath(post)}>{post.data.title}</a>
-        {post.data.domain && <span class={styles.domain}> {post.data.domain}</span>}
-      </li>
-    ))}
-  </ol>
+  {groupByTier(posts).map(({ tier, posts }) => (
+    <section class:list={[stack.stack, stack.gap3xs]}>
+      <h3 class={styles.tier}>{TIER_LABELS[tier]}</h3>
+      <ol class:list={[stack.stack, stack.gap3xs, styles.posts]}>
+        {posts.map(({ post }) => (
+          <li>
+            <a href={postPath(post)}>{post.data.title}</a>
+            {post.data.domain && <span class={styles.domain}> {post.data.domain}</span>}
+          </li>
+        ))}
+      </ol>
+    </section>
+  ))}
+  {nearMisses.length > 0 && (
+    <p class={styles.more}>
+      <a href={`${issuePath(issue)}#near-misses`}>
+        {formatCount(nearMisses.length, 'more story', 'more stories')} in Also in this issue
+      </a>
+    </p>
+  )}
 </article>

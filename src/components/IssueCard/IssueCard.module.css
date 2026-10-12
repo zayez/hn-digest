@@ -39,3 +39,19 @@
   font-family: var(--font-mono);
   font-size: var(--step--1);
 }
+
+.tier {
+  color: var(--color-accent-strong);
+  font-size: var(--step--1);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.more {
+  font-size: var(--step--1);
+}
+
+.more a {
+  color: var(--color-text-muted);
+}
