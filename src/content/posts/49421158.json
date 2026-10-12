@@ -1,0 +1,118 @@
+{
+  "hnId": 49421158,
+  "title": "MS Paint and Photos inivisibly watermark even locally generated output with GUID",
+  "url": "https://xusheng.dev/posts/reversing/mspaint_invisible_watermark/main/",
+  "domain": "xusheng.dev",
+  "kind": "article",
+  "author": "ComputerGuru",
+  "postedAt": "2026-08-24T15:28:04.000Z",
+  "points": 861,
+  "commentCount": 435,
+  "readingMinutes": 13,
+  "tldr": "Reverse engineering shows that Windows Paint and Photos stamp every AI image they generate, including ones made by a local model on the device, with an invisible pixel watermark. The watermark carries a per-generation GUID that Microsoft's servers issue when they moderate the prompt. Turning off the visible Copilot watermark does not remove it, and Microsoft's disclosures never mention the ID.",
+  "article": {
+    "keyPoints": [
+      "Paint ships local AI models as encrypted .onnxe files, XORed with \"Microsoft_2023\" or a 4,096-byte key, plus a 1.67 MB Watermarker.dll. That is a big DLL for drawing a logo, and the size is what prompted the author to look for a hidden watermark.",
+      "Before Paint runs the local Stable Diffusion model, it POSTs the prompt to an Azure moderation endpoint. The server sends back a revised prompt, a promptGenerationId and a watermarkId. Each request also carries the previous generation's ID, so Microsoft can chain a user's prompts together.",
+      "WmkWriteWatermark embeds the 16-byte watermarkId into the pixels with a block-based, SVD-style scheme that writes each of 144 bits at least three times. In a 512x512 test it changed 193,376 of 262,144 pixels. If watermarking fails, Paint discards the whole generation.",
+      "The saved file also gets a signed C2PA manifest whose soft-binding value is the same GUID, labeled com.microsoft.invismark.1. Saves of AI results are limited to formats that keep C2PA metadata (PNG, JPEG, GIF, .paint), and BMP is not offered.",
+      "Photos uses the same Watermarker.dll for its Image Creator and Restyle features. Unlike Paint, it logs a watermarking failure and returns the image anyway.",
+      "Microsoft discloses remote content filtering and C2PA Content Credentials. It does not say that the manifest names a pixel watermark ID issued during prompt moderation. The EU AI Act asks only that AI output be machine-detectable, not that it carry a prompt-specific ID."
+    ],
+    "whyItMatters": "Read the original for the call graphs, the moderation endpoint's real JSON responses and the C2PA manifest dump. It also discusses whether the cloud endpoint could return images before they are watermarked, and how it might be classified if so."
+  },
+  "comments": {
+    "overview": "A large, angry thread. Most commenters accept a plain \"made by AI\" mark but object to an ID that Microsoft can tie back to an account, and the printer tracking-dot comparison comes up again and again. The biggest side threads argue over whether cameras should sign real photos instead, how Paint and Notepad ended up with AI features at all, and what the EU and US states actually require.",
+    "themes": [
+      {
+        "title": "A unique ID is a fingerprint, not a label",
+        "synthesis": "The top reaction is that the AI part is beside the point. A per-image GUID lets anyone with a subpoena trace an image to a Microsoft account, much like the yellow dots color laser printers add, which one commenter said probably helped the FBI identify NSA leaker Reality Winner. A few pushed back that a GUID is not a user ID and that only AI output gets marked. The article's author then posted that each generation spends his account's AI credits, so Microsoft knows who sent each prompt. Several people found the moderation call worse than the mark, since a model running on their own NPU still reports every prompt to Microsoft.",
+        "quotes": [
+          {
+            "author": "weberer",
+            "text": "The AI aspect of this is a red herring. The real problem is that they're secretly adding in a unique identifier into every image you create.",
+            "commentId": 49421902
+          },
+          {
+            "author": "xushengdev",
+            "text": "when I do an image generation, it deducts my AI credits (yes, MS gives you like 60 free AI credits), so MS surely knows where the prompt is coming from.",
+            "commentId": 49434401
+          }
+        ]
+      },
+      {
+        "title": "Signing real photos instead",
+        "synthesis": "One commenter proposed the reverse, having cameras sign their photos so real images can be proven real. Replies took it apart. Keys can be pulled out of hardware or the signing chip can be fed arbitrary data, a signed camera can still photograph a screen, routine crops and conversions break the signature, and a court would believe signed fakes. Retr0id said he had already forged C2PA signatures with Google's Pixel Camera app, still unpatched after 90 days, and published the writeup during the thread.",
+        "quotes": [
+          {
+            "author": "Retr0id",
+            "text": "I've done this btw. I went for the Pixel Camera app since they were the ones bragging the hardest about their \"security\".",
+            "commentId": 49422398
+          },
+          {
+            "author": "hypfer",
+            "text": "Being signed with something just means that whoever has that key could've done that.",
+            "commentId": 49422237
+          }
+        ]
+      },
+      {
+        "title": "Paint and Notepad are not simple tools anymore",
+        "synthesis": "A long thread mourned Paint and Notepad as lightweight apps that now carry Copilot, autosave and rich text. Notepad keeping old pastes around drew particular complaints, and one commenter recalled a streamer whose saved links surfaced on air. Others like dark mode, tabs and background removal, and say most of it can be switched off. The usual \"just switch to Linux\" advice met pushback from people who run corporate fleets, where Microsoft's cloud stack and engineering software leave little choice.",
+        "quotes": [
+          {
+            "author": "clickety_clack",
+            "text": "It seems like they could have left it as a pure “paint” app and added the fancy stuff to some new image editor or something.",
+            "commentId": 49425940
+          },
+          {
+            "author": "protocolture",
+            "text": "The cost of switching one laptop to linux is quite low. The cost of taking an enterprise using Microsoft everywhere to linux is something else entirely.",
+            "commentId": 49427013
+          }
+        ]
+      },
+      {
+        "title": "What the law requires",
+        "synthesis": "Some called for GDPR enforcement, since Microsoft never asked for consent. Others answered that the EU now requires AI content to be watermarked, and commenters noted that California, Colorado and Texas do too, with California's law in force since August 1. The reply was that the EU rule asks for a mark showing an image is AI-generated, not a per-prompt ID. One commenter linked Microsoft's InvisMark watermarking code on GitHub.",
+        "quotes": [
+          {
+            "author": "jkaplowitz",
+            "text": "As the article explained, the EU does not mandate a prompt-specific GUID, only the ability to identify the content as AI-generated. The highly privacy-invasive level of provenance tracking which Microsoft has added goes beyond the EU’s new mandates.",
+            "commentId": 49423770
+          },
+          {
+            "author": "not_a_bot_4sho",
+            "text": "Scanning the comments, I see some curiosity and outrage but little recognition that this is legally required in places like California and Colorado and Texas and probably some more places.",
+            "commentId": 49436635
+          }
+        ]
+      },
+      {
+        "title": "Stripping the mark, and trusting it too much",
+        "synthesis": "Converting to BMP drops the C2PA metadata but leaves the altered pixels, so people traded ways to scrub those, such as adding faint noise or re-running the image through a denoiser. Others warned that schemes like SynthID survive that. A skeptic replied that once the method is known, which it is here because the code runs locally, anyone can overwrite the mark with noise. That led to two worries. People who trust detectors will treat unmarked deepfakes as real, and the same pixel watermarking could later tag any image or app window, not only AI output.",
+        "quotes": [
+          {
+            "author": "account42",
+            "text": "There is no robust-without-qualifiers watermarking. There is only robustness against common operations but as soon as someone is actually trying to remove the watermark they can at the very least use exactly the same technique to embed random noise instead to overwrite your watermark.",
+            "commentId": 49430842
+          },
+          {
+            "author": "deltoidmaximus",
+            "text": "Imagine the populace getting used to a AI image detector flagging things as fake using this fairly easily defeated GUID marker system.",
+            "commentId": 49423997
+          }
+        ]
+      }
+    ],
+    "consensus": "Marking an image as AI-generated is acceptable, and some think it is needed. Embedding an ID that ties the image to a prompt and an account goes further, and Microsoft did not tell users. Many concluded the practical fix is to avoid Microsoft's AI tools or Windows itself.",
+    "dissent": "A minority said the title overstates things, since only output from the built-in generators gets marked and hand-drawn images do not. Others pointed out that the law now requires such marks and called the slippery-slope arguments overblown.",
+    "contrarian": {
+      "author": "altmanaltman",
+      "text": "They don't need watermarking to know who you are or to get information about you. So why would they work on this really visibile method if their intention was to progress the survelliance state?",
+      "commentId": 49430013,
+      "why": "Microsoft already has accounts, IP addresses and telemetry, so a watermark that one researcher found with a disassembler is an odd surveillance tool, which points to legal compliance as the motive."
+    }
+  },
+  "digestedAt": "2026-10-12T16:33:09.000Z"
+}

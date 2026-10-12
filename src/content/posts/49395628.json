@@ -1,0 +1,118 @@
+{
+  "hnId": 49395628,
+  "title": "There's no reason for software to be slow anymore",
+  "url": "https://danluu.com/perf-opt/",
+  "domain": "danluu.com",
+  "kind": "article",
+  "author": "Jach",
+  "postedAt": "2026-08-22T01:06:17.000Z",
+  "points": 669,
+  "commentCount": 499,
+  "readingMinutes": 20,
+  "tldr": "Dan Luu argues that coding agents have cut the cost of performance work by orders of magnitude, so optimizations that once needed a specialist and weeks of verification now take a few typed sentences. Anyone who uses LLMs competently should now be able to ship software with decent performance, and tuning code to one user's own workload becomes practical.",
+  "article": {
+    "keyPoints": [
+      "Luu had an agent make ripgrep run FRE, his agent-built regex engine, as native code compiled in a background thread and switch over once compilation finished. It took minutes of his time and gave 2x to 4x on a few simple long queries, but about 7% on representative holdout queries.",
+      "With no background in game AI, he built what he says is the strongest Azul AI in the world. It wins mostly on optimization, such as multi-threading the search, and each doubling of speed was worth about 100 Elo. Work like replaying nondeterministic bugs from logs, once days of manual effort, is now something an agent does in a loop.",
+      "From his CPU and search-index background, he describes performance work as weighing a 2% gain against N person-days of verification. Agents shrink N by something like 1000x in human time, so many more of those optimizations, and speculative ones, are now worth trying.",
+      "Jamie Brandon tried Anthropic's performance take-home, then let Claude continue from his work, and Claude scored much better. Luu concludes that on a bounded optimization problem a good performance engineer can't keep up with a decent model, though the model has worse judgment on open-ended problems.",
+      "Following Marc Brooker and Michael Malis of pgrust, he expects software fitted to one workload rather than a class of workloads. Two minutes of setup got an FRE build tuned on his own codex ripgrep queries to 2% faster than stock ripgrep on held-out queries.",
+      "An appendix profiles how codex calls ripgrep on his laptop. Median pattern length is 55 characters, p99 query time is almost a minute, the slowest query approached two hours, and about 94% of patterns occur only once."
+    ],
+    "whyItMatters": "Read the original for the concrete experiment notes, especially the ripgrep query statistics and the caveats about overfitting and agents' weak experimental design, which the summary compresses. Luu says the post is quick and non-rigorous, so treat the numbers as anecdotes from one laptop."
+  },
+  "comments": {
+    "overview": "The thread was skeptical of the headline and mostly argued about why software is slow in the first place, blaming priorities, network round trips and architecture more than the cost of writing optimized code. Practitioners did report real agent-driven speedups, usually with the caveat that they had a benchmark and knew what to ask for. A side argument about Luu's full-width, unstyled blog took up a surprising share of comments.",
+    "themes": [
+      {
+        "title": "Slowness comes from incentives, not missing skill",
+        "synthesis": "The most common reply was that software was never slow because optimization was too hard. Bosses and markets reward features, and cheaper optimization doesn't change what companies value. Some pushed back with data that latency costs engagement and revenue, and the answer was that the market may care but managers rarely do. Several predicted token budgets will face the same tradeoff developer hours did, and a traffic-lane analogy framed the headline as misreading the bottleneck.",
+        "quotes": [
+          {
+            "author": "mortenjorck",
+            "text": "The investment that was previously measured in months of developer time may now be measured in token spend across days, but the underlying dynamics shaping where it’s directed haven’t changed.",
+            "commentId": 49395885
+          },
+          {
+            "author": "paulhebert",
+            "text": "The market cares. In my experience it’s harder to make your boss care.",
+            "commentId": 49396431
+          }
+        ]
+      },
+      {
+        "title": "Network round trips and cloud-first design",
+        "synthesis": "The top thread put most felt slowness on waiting for web requests, worse for anyone far from US servers. Replies split on where the time goes. Some blamed backends that take hundreds of milliseconds, ORMs and microservice fan-out rather than ping time, and others blamed apps that block the UI or wait on timeouts even for data they hold locally. Sonos routing speaker commands through its cloud became the example of choice. One commenter defended the practice, arguing that customer networks are too broken for LAN-only control to work.",
+        "quotes": [
+          {
+            "author": "bob1029",
+            "text": "SSR or SPA doesn't really matter if the server still takes a minimum of 300ms to compose any kind of response due to how its database or other infrastructure is set up. Information theory doesn't care how clever your loading indicator is.",
+            "commentId": 49397729
+          },
+          {
+            "author": "jodrellblank",
+            "text": "Just about the only thing which is used enough to be reasonably trustable on any random customer network is HTTPS to the big CDNs and Cloud providers.",
+            "commentId": 49408841
+          }
+        ]
+      },
+      {
+        "title": "Agents optimize well against a benchmark, less well on novel work",
+        "synthesis": "Firsthand reports backed the article. A Java hot path went from 350ms to 60ms in a couple of hours, a Python hydrology port to Rust ran at least 5x faster, a Rust UI toolkit cut its memory use nearly in half, and a regex engine author found the agent better with profilers than he is. Everyone who succeeded stressed strong tests and a fast benchmark. The skeptics said models reuse known tricks but rarely invent new ones. Diamond-types' author saw a ChatGPT-optimized CRDT that still lost to his library, and others said agents chase loop unrolling and SIMD when the real gains are in memory access. One commenter's autoresearch-tuned site drew a list of obvious misses, like 229 uncompressed HTTP/1.1 requests.",
+        "quotes": [
+          {
+            "author": "eaftan",
+            "text": "The agent is really, really good at using tools like a profiler and disassembler, better than I am (and I've been doing this for 20 years).",
+            "commentId": 49396448
+          },
+          {
+            "author": "josephg",
+            "text": "This is good news for the 95% of slow software out there. But bad news for the 5% of us who write fast code already, but want our code to go even faster.",
+            "commentId": 49396373
+          }
+        ]
+      },
+      {
+        "title": "Finding the problem and the architecture are the hard parts",
+        "synthesis": "Several argued that the article covers only implementation, the cheapest part of performance work. Locating the cause and reworking an architecture take judgment, and a regex engine with a fixed API and a benchmark suite is the exception. Others noted that agents still default to poor allocation and data layout, so getting fast code out of one requires knowing how to write fast code yourself. Some worried that aggressive agent optimizations and per-user bespoke software will be hard to maintain or support.",
+        "quotes": [
+          {
+            "author": "rbehrends",
+            "text": "Most performance bugs are not difficult to fix [1, 2], but can sometimes be hard to identify. Implementation effort is not the driving limitation in those cases.",
+            "commentId": 49397771
+          },
+          {
+            "author": "mccoyb",
+            "text": "The reality is to get performant code (quickly) out of an agent, you need to know how to write performant code",
+            "commentId": 49396038
+          }
+        ]
+      },
+      {
+        "title": "Should agents write lower-level code and skip Electron?",
+        "synthesis": "One camp said that if agents write the code, the case for Python, TypeScript, Electron and heavy frameworks disappears, since convenience for humans was their main benefit. One commenter had an agent replace three.js with plain WebGL and cut load time by about 90%. Others answered that humans still have to read and fix the code, that high-level languages use fewer output tokens, and that agent-written C++ and Rust is often merely okay.",
+        "quotes": [
+          {
+            "author": "Gormo",
+            "text": "Eventually, we might be able to do away with the tradeoff between development velocity and runtime performance.",
+            "commentId": 49401914
+          },
+          {
+            "author": "dkersten",
+            "text": "It writes ok code, it does not write good code. I see it leaving a lot of performance on the table, doing silly things like wrapping everything in a global mutex.",
+            "commentId": 49403223
+          }
+        ]
+      }
+    ],
+    "consensus": "Agents can speed up code when there is a clear benchmark and a strong test suite, and most slow software has easy wins nobody bothered to take. Most commenters agreed the binding constraint is whether anyone with authority cares about performance.",
+    "dissent": "A minority took the headline at face value and said agents now beat most humans at optimization, so the remaining slowness is a skill issue or a choice of language. Others went the opposite way and said agent-written code is making software slower and buggier.",
+    "contrarian": {
+      "author": "59nadir",
+      "text": "Unfortunately I think posts like these are only going to make the problem worse, because now people are going to ask for voodoo solutions to performance issues, when the answer to their problems was usually just \"Maybe stop creating wasteful intermediate structures and just walk an array like a sane person\" in 99% of cases.",
+      "commentId": 49397699,
+      "why": "It argues that agent-driven micro-optimization points teams at the wrong problem, since the large gains in ordinary code come from basic restraint that needs no agent."
+    }
+  },
+  "digestedAt": "2026-10-12T16:09:42.000Z"
+}

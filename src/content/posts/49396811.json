@@ -1,0 +1,85 @@
+{
+  "hnId": 49396811,
+  "title": "Never Be Angry at Work",
+  "url": "https://www.seangoedecke.com/you-should-never-be-angry-at-work/",
+  "domain": "seangoedecke.com",
+  "kind": "article",
+  "author": "vismit2000",
+  "postedAt": "2026-08-22T05:26:11.000Z",
+  "points": 42,
+  "commentCount": 16,
+  "readingMinutes": 8,
+  "tldr": "Sean Goedecke argues that software engineers should never be genuinely angry at work. Anger usually comes from caring, but colleagues start routing decisions around an angry engineer, so it costs more influence than it wins.",
+  "article": {
+    "keyPoints": [
+      "An angry colleague becomes a problem to manage, and healthy teams route around them the way networks route around damage, moving decisions into backchannels that make the engineer angrier still.",
+      "Angry engineers are rarely useless. Their anger usually comes from caring, and Goedecke has never met an engineer who cared about the work and wasn't, or didn't become, competent.",
+      "He pictures caring as an open tube. Too little drains away and you coast, too much overflows into anger, and the fixes are a life outside work or caring about what the company cares about.",
+      "A little visible frustration can build rapport and signal that you care, but only if you can drop back to friendly at will, which genuine anger makes very hard.",
+      "Copying Linus Torvalds or Bryan Cantrill is a mistake. They run the show, so nobody can work around them, and talks and blog posts show people at their peak intensity rather than their everyday mood."
+    ],
+    "whyItMatters": "Worth reading for engineers who notice they get heated in reviews or meetings, and for leads managing someone who does. The original has the author's own account of losing his temper, footnotes that hedge his claims, and a postscript answering Lobste.rs and HN critics, including the Marxist-alienation objection."
+  },
+  "comments": {
+    "overview": "A small thread, and most of it hangs off one combative top comment calling the author a replaceable robot who has embraced Marxist alienation from his work. Replies split over whether paid software work is a craft worth fighting for or a job where perfectionism is self-indulgent. A few standalone comments push back on the claim that anger feels good.",
+    "themes": [
+      {
+        "title": "Craftsperson or paid worker",
+        "synthesis": "The top comment says engineers who shrug off a cancelled project are grey goo, and that real craftspeople can't tolerate others scribbling on their work. Most replies reject the artist framing. The employer owns the IP, the engineer is paid to work with others, and one commenter calls his own past perfectionism embarrassing. A trailer editor of 20 years answers that you can keep control of your process under a client brief, and another commenter notes that most famous paintings were commissions anyway.",
+        "quotes": [
+          {
+            "author": "reply00r123",
+            "text": "engineers who are craftspeople cannot tolerate this. but in modern corporate it is expected. engineers who are NOT craftspeople dont care.",
+            "commentId": 49396905
+          },
+          {
+            "author": "ranguna",
+            "text": "And this idea of perfectionism crumbles even more when you realise your idea of perfect is not objective. There's always someone else who has a better and more perfect idea than yours.",
+            "commentId": 49397743
+          }
+        ]
+      },
+      {
+        "title": "Caring doesn't require anger",
+        "synthesis": "Several commenters separate caring from blowing up. You can defend your projects and voice annoyance without yelling at people, and for most software the stakes are too low to justify more. One commenter trades the demand for perfect software for \"continuous crap reduction\", fixing the biggest problem in reach each day. Another distinguishes being angry at someone's poor work, which he welcomes, from people who arrive aggressive before anything has gone wrong.",
+        "quotes": [
+          {
+            "author": "ipdashc",
+            "text": "There is a wide gulf between not caring about your work at all and getting angry about it. Plenty of us care about our work and the projects we own, we want them to be solid and will stand up to defend them. None of that requires getting angry about it.",
+            "commentId": 49405930
+          },
+          {
+            "author": "liampulles",
+            "text": "I let go of the things that are out of my control, and seek to reduce the biggest problems that are in my control. Then I can get a \"win\" every day",
+            "commentId": 49399635
+          }
+        ]
+      },
+      {
+        "title": "When anger is earned",
+        "synthesis": "A couple of commenters describe anger they consider justified. One senior developer watched a colleague skip stated requirements and get a rubber-stamp review to hit a deadline, and refused to swallow it. Another, stuck with a sluggish ChatGPT interface, suggests an angry engineer warns of angry customers to come. Against the article's line that anger feels good, one commenter says no emotion feels worse to him.",
+        "quotes": [
+          {
+            "author": "hifi",
+            "text": "Turned out he left out a few requirements and had another developer approve the review without looking too closely to meet the deadline. I was super angry and I didn't feel like swallowing my anger because this was really disrespectful.",
+            "commentId": 49436960
+          },
+          {
+            "author": "JohnFen",
+            "text": "I have never been angry and \"felt good\" about it, be it at work or anywhere else, and regardless of whether or not my anger was justified.",
+            "commentId": 49398762
+          }
+        ]
+      }
+    ],
+    "consensus": "Most commenters agree that yelling or throwing fits at coworkers is unprofessional and rarely warranted, and that caring about your work can be expressed calmly.",
+    "dissent": "A minority holds that indifference is the real problem. People who don't get upset when their work is trashed or cancelled have given up ownership, and some anger at sloppy or disrespectful work is justified.",
+    "contrarian": {
+      "author": "eudamoniac",
+      "text": "If I'm painting the ceiling of the Sistine chapel, for money, and my coworker is fucking up his part, I'm going to be pissed yes. We're supposed to do this 40 hours per week and not care about the output quality?",
+      "commentId": 49402755,
+      "why": "It answers the replies' \"it's paid work, not art\" argument by pointing out that great art was paid work too, so being paid doesn't make indifference to quality the healthy default."
+    }
+  },
+  "digestedAt": "2026-10-12T16:09:41.000Z"
+}

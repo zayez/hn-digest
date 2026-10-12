@@ -1,0 +1,131 @@
+{
+  "number": 807,
+  "date": "2026-08-28",
+  "url": "https://buttondown.com/hacker-newsletter/archive/807/",
+  "posts": [
+    {
+      "post": "49411643",
+      "section": "Working",
+      "tier": "dontSkip",
+      "reason": "A first-person method for finding problems worth solving, grounded in one detailed worked example, with a thread full of first-hand accounts of how much autonomy engineers really have."
+    },
+    {
+      "post": "49395628",
+      "section": "Code",
+      "tier": "dontSkip",
+      "reason": "A long argument backed by several small experiments with real numbers, candid about how rough they are, on what cheap agent labour changes about performance work."
+    },
+    {
+      "post": "49445727",
+      "section": "Data",
+      "tier": "worthYourTime",
+      "reason": "A decision framework that walks from the simplest retrieval option to the most complex with rough cost and latency arithmetic, and a thread of practitioners who mostly agree and name the cases where it breaks."
+    },
+    {
+      "post": "49402491",
+      "section": "Data",
+      "tier": "worthYourTime",
+      "reason": "A design wish list with concrete proposed syntax, including sum types with pattern matching and polymorphic foreign keys, and a thread pointing to prior art."
+    },
+    {
+      "post": "49396811",
+      "section": "Working",
+      "tier": "worthYourTime",
+      "reason": "An argued essay on what anger at work actually costs the angry person, with a carefully hedged exception for 'professional anger'."
+    },
+    {
+      "post": "49394496",
+      "section": "Favorites",
+      "tier": "worthYourTime",
+      "reason": "Three realisations from the author's forties: distrust your own narratives, doubt single causes, and treat emotions as information."
+    },
+    {
+      "post": "49409092",
+      "section": "Favorites",
+      "tier": "ifYouHaveAMinute",
+      "reason": "A clear plain-language explainer of the parts of an agent harness, with a worked example and a thread of practitioners comparing notes."
+    },
+    {
+      "post": "49421158",
+      "section": "Design",
+      "tier": "ifYouHaveAMinute",
+      "reason": "Careful reverse engineering, with decompiled call paths and live server responses, showing that locally generated images still carry a server-issued identifier."
+    },
+    {
+      "post": "49405870",
+      "section": "Books",
+      "tier": "ifYouHaveAMinute",
+      "reason": "A working novelist's case for reading as the writer's real training, and a thread full of prose-style recommendations."
+    },
+    {
+      "post": "49387525",
+      "section": "Books",
+      "tier": "ifYouHaveAMinute",
+      "reason": "Real news clippings set beside Ballard and Gibson, and a long literary thread on what the cyberpunk writers got right and wrong."
+    },
+    {
+      "post": "49437069",
+      "section": "Books",
+      "tier": "ifYouHaveAMinute",
+      "reason": "A long short story, told as a memoir, about prediction markets and AI bots taking over a life; many readers took it for true."
+    }
+  ],
+  "nearMisses": [
+    {
+      "title": "Saving 100 terabytes of memory by optimizing 1.1.1.1's DNS cache",
+      "section": "Favorites",
+      "domain": "blog.cloudflare.com",
+      "url": "https://blog.cloudflare.com/dns-cache-memory-optimization-1111/",
+      "hnId": 49468083
+    },
+    {
+      "title": "Queryable Executables",
+      "section": "Favorites",
+      "domain": "fzakaria.com",
+      "url": "https://fzakaria.com/2026/08/24/actually-queryable-executables",
+      "hnId": 49442589
+    },
+    {
+      "title": "Claudette: Make Claude stop talking like a BuzzFeed article",
+      "section": "Show HN",
+      "domain": "github.com",
+      "url": "https://github.com/adnanakil/nobuzz/blob/main/README.md",
+      "hnId": 49388752
+    },
+    {
+      "title": "The load-bearing vocabulary of Claude",
+      "section": "Show HN",
+      "domain": "louisabraham.github.io",
+      "url": "https://louisabraham.github.io/load-bearing/",
+      "hnId": 49461817
+    },
+    {
+      "title": "Software Engineering in the Agentic Era",
+      "section": "Code",
+      "domain": "simonwillison.net",
+      "url": "https://simonwillison.net/2026/Feb/23/agentic-engineering-patterns/",
+      "hnId": 49405117
+    },
+    {
+      "title": "A Citation to Asimov",
+      "section": "Books",
+      "domain": "bookandsword.com",
+      "url": "https://www.bookandsword.com/2026/08/25/a-citation-to-asimov/",
+      "hnId": 49449458
+    },
+    {
+      "title": "507 Mechanical Movements",
+      "section": "Learn",
+      "domain": "507movements.com",
+      "url": "https://507movements.com/",
+      "hnId": 49465169
+    },
+    {
+      "title": "Watching TikTok and Instagram deactivates the cognitive control network: Study",
+      "section": "Learn",
+      "domain": "rathbiotaclan.com",
+      "url": "https://www.rathbiotaclan.com/tiktok-videos-deactivate-key-cognitive-brain-regions/",
+      "hnId": 49378630
+    }
+  ]
+}
