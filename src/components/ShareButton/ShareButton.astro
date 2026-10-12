@@ -20,8 +20,7 @@ const { title, url } = Astro.props;
 
 <script>
   /** Rich editors (Slack, Docs, mail) paste a titled link; plain-text fields get title and URL. */
-  async function copyLink(title: string, url: string) {
-    const plain = `${title}\n${url}`;
+  async function copyLink(title: string, url: string, plain: string) {
     if (typeof ClipboardItem === 'undefined') return navigator.clipboard.writeText(plain);
     const anchor = document.createElement('a');
     anchor.href = url;
@@ -38,20 +37,22 @@ const { title, url } = Astro.props;
     const button = share.querySelector('button')!;
     const status = share.querySelector<HTMLElement>('[role="status"]')!;
     const { title = document.title, url = location.href } = button.dataset;
+    const plain = `${title}\n${url}`;
     share.hidden = false;
 
     button.addEventListener('click', async () => {
       if (navigator.share) {
         try {
-          // Most targets drop `title` and keep only `text` and `url`, so the title rides in `text`.
-          await navigator.share({ title, text: title, url });
+          // No separate `url`: Android hands apps a single text, and with a `url` set apps like
+          // Bluesky got the link alone. With the link inside `text`, they still build a link card.
+          await navigator.share({ title, text: plain });
         } catch {
           // Dismissing the share sheet rejects too; there is nothing to report.
         }
         return;
       }
       try {
-        await copyLink(title, url);
+        await copyLink(title, url, plain);
         status.textContent = 'Title and link copied';
       } catch {
         status.textContent = 'Couldn’t copy the link';
