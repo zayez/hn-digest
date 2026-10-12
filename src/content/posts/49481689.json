@@ -1,0 +1,87 @@
+{
+  "hnId": 49481689,
+  "title": "How I Design with AI",
+  "url": "https://ref.tools/blog/how-i-design-with-ai",
+  "domain": "ref.tools",
+  "kind": "article",
+  "author": "reactiverobot",
+  "postedAt": "2026-08-28T17:18:32.000Z",
+  "points": 24,
+  "commentCount": 12,
+  "readingMinutes": 4,
+  "tldr": "The founder of Ref argues that AI-generated product design comes out looking the same because agents pile on extra elements and teams spot-fix complaints one at a time. His fix is to write down the design constraints first, cut whatever the agent adds that isn't needed, and iterate in a real design tool on several variants before touching the codebase.",
+  "article": {
+    "keyPoints": [
+      "Borrowing from Christopher Alexander's Notes on the Synthesis of Form, he frames design as listing constraints, finding solutions that meet them, and going back to the list whenever a constraint must be added or dropped.",
+      "Skipping that loop leads to 'wackamole design', where each piece of user feedback gets a spot fix like 'make X more prominent'. AI makes this worse, so Ref logs small papercuts in a document and fixes them together at the next redesign.",
+      "Agents add extra copy, lines and icons to UIs the same way they add redundant try-catch blocks to code, so the designer's job is to ask of every element whether it is needed.",
+      "He warns against 'prototype gravity': once an agent builds the first version inside the codebase, it is easier to polish it than to explore alternatives. He iterates in Figma or similar tools and has AI produce 3 to 4 variants of everything.",
+      "Ref has agents build each component on a /showcase page before wiring it into the app, and splits frontend and backend PRs so every frontend PR gets a preview deploy for checking against real data.",
+      "Engineers can tell when a design fails but lack a library of fixes, so he recommends collecting screenshots of products that solve similar problems and building taste through repeated critique."
+    ],
+    "whyItMatters": "Worth a read for engineers without a designer who ship AI-generated UI. The post includes screenshots of Ref's sidebar, its /showcase page and the reference boards it collects, which show the process better than the summary can."
+  },
+  "comments": {
+    "overview": "A small, friendly thread. Most comments either agreed with the point about agents adding clutter or asked how to get Claude Design to produce something other than the same generic look, and people swapped resources in reply.",
+    "themes": [
+      {
+        "title": "Escaping the generic AI look",
+        "synthesis": "Several readers said their AI-designed sites all look alike and put people off. Replies pointed to style resources like impeccable.style and getdesign.md, stripping a design to its essentials before picking colors and fonts by hand, or paying a human designer for a design system and making Claude follow it. One reply noted the author's process assumes design experience that beginners lack.",
+        "quotes": [
+          {
+            "author": "jamesponddotco",
+            "text": "I paid an actual designer to come up with a design system for my project, which I then made Claude follow. Works like a charm.",
+            "commentId": 49484909
+          },
+          {
+            "author": "rfgplk",
+            "text": "When you end up creating something try to strip away all the bloat and only use the essentials (nav bars/menus) and then iterate on that with fonts that you like or pleasing colorschemes.",
+            "commentId": 49483257
+          }
+        ]
+      },
+      {
+        "title": "Agents add too much everywhere",
+        "synthesis": "The 'remove stuff' section drew the most agreement. Commenters said the habit shows up well beyond UI, in architecture with needless guards and edge-case handling and in writing with extra caveats.",
+        "quotes": [
+          {
+            "author": "seizethecheese",
+            "text": "They'll do this for technical architecture, adding unnecessary guards, complexity to cover irrelevant edge cases. They'll do this for writing too, unnecessary caveats, clarifications, etc.",
+            "commentId": 49482068
+          }
+        ]
+      },
+      {
+        "title": "Design tools don't round-trip",
+        "synthesis": "One commenter said AI design tools copy Figma's JSON model without rendering it to real HTML and CSS, so the MCP guesses at the output and never matches it. No tool lets you edit the rendered result and sync it back to code or to Figma.",
+        "quotes": [
+          {
+            "author": "esafak",
+            "text": "Instead, the MCP imagines what the JSON will be, and it is never perfect.",
+            "commentId": 49482186
+          }
+        ]
+      },
+      {
+        "title": "Constraints and prior art",
+        "synthesis": "One reader liked that the post treats constraints as things you only add or remove, never modify, unlike non-functional requirements. Another called the whole method design thinking with AI and extra steps.",
+        "quotes": [
+          {
+            "author": "yipinwong",
+            "text": "Constraints are something you cannot change (and AI should abide to it).",
+            "commentId": 49482166
+          }
+        ]
+      }
+    ],
+    "consensus": "Agents pad their output with things nobody asked for, and left alone they produce designs that look the same. Some human input, whether taste, references or a real design system, has to steer them.",
+    "dissent": "One commenter saw nothing new in the post beyond repackaged design thinking, and another said its process is too bespoke for people with no design background.",
+    "contrarian": {
+      "author": "esafak",
+      "text": "None of them let you edit the 'rendered' visual and reflect it accurately back to code, or sync with Figma.",
+      "commentId": 49482186,
+      "why": "The post treats Figma-plus-AI as the answer, but this points out the tools can't move a design accurately between Figma and code, which undercuts the advice to iterate outside the codebase."
+    }
+  },
+  "digestedAt": "2026-10-12T19:53:29.000Z"
+}

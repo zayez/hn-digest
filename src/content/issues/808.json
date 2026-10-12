@@ -40,6 +40,12 @@
       "reason": "An fMRI study finding that older brains blend related memories rather than simply losing them, with a neuroscientist in the thread adding context."
     },
     {
+      "post": "49481689",
+      "section": "Design",
+      "tier": "ifYouHaveAMinute",
+      "reason": "Seven practical rules from an engineer without a designer, built on Christopher Alexander's idea of settling the constraints before the solutions, with the team's own showcase page and preview deploys as examples."
+    },
+    {
       "post": "49524863",
       "section": "Code",
       "tier": "ifYouHaveAMinute",
