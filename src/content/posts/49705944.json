@@ -1,0 +1,113 @@
+{
+  "hnId": 49705944,
+  "title": "Doing Everyone Else's Job",
+  "url": "https://yosefk.com/blog/doing-everyone-elses-job.html",
+  "domain": "yosefk.com",
+  "kind": "article",
+  "author": "luu",
+  "postedAt": "2026-09-15T00:01:31.000Z",
+  "points": 215,
+  "commentCount": 115,
+  "readingMinutes": 5,
+  "tldr": "Yossi Kreinin argues that being willing to do other people's jobs, by integrating your work into their systems, sending patches instead of waiting on their roadmap, or working with a disengaged manager's staff, is what gets things done in most organizations and usually pays off. Kreinin separates that from building in parallel, like in-house rewrites or per-department copies of a shared service, which managers like because it grows headcount.",
+  "article": {
+    "keyPoints": [
+      "If the people you built something for won't adopt it, integrate it into their system yourself. Intel did this when it had its own engineers add support for its first 32-bit CPU to Microsoft's compiler, and that was for Intel's benefit, not charity.",
+      "When a manager doesn't manage, you can often work directly with their people. Some of them never learn that the hierarchy only wants them to follow orders, and their managers rarely punish them for it.",
+      "Getting a team to merge your patch is often easier than getting your feature into their quarterly planning. LLM-generated patches have made strangers' contributions harder to land, but that fades once maintainers know you.",
+      "Kreinin thinks 20% of people do 80% of the work, and that work only reaches its goal because fewer than 5% do what someone else was supposed to do. Organizations bad enough to need this but healthy enough to notice tend to reward it, and regrets staying out of areas that seemed boring.",
+      "Kreinin warns against two look-alikes that managers love because they add headcount. One is building in-house instead of buying, the other is every department running its own version of a service that could be central. Both are hard calls that should turn on outcomes, not on which choice is easiest for leadership.",
+      "In a closing note on founders, the author agrees that having done a job makes it easier to hire for it. At the scale of hundreds of people, though, the limiting skill becomes managing people whose job you couldn't do."
+    ],
+    "whyItMatters": "Engineers and leads who keep running into teams that won't move should read the original. It is short, dry and funny about planning processes and org politics, and the buy-vs-build and centralization sections carry more nuance than a summary keeps."
+  },
+  "comments": {
+    "overview": "The thread mostly accepted that someone has to do the work nobody owns. It then spent its energy on whether that person ever gets credit for it. Commenters traded stories of under-rewarded glue work, argued over letting neglected things fail, and warned about colleagues who use the essay's logic to offload their own work. The author showed up several times to clarify, including a flat \"don't do this for free.\"",
+    "themes": [
+      {
+        "title": "Glue work rarely gets rewarded",
+        "synthesis": "The most common reply was that the work the essay praises counts for little at review time, especially in companies past about 1,000 people. Several people described load-bearing colleagues whose careers stalled while others did visible projects, and noted that preventing fires is invisible while putting them out earns praise. Kreinin agreed that big companies are worse here and said you should make sure you're rewarded or work less or elsewhere. Others warned that whoever touches an orphaned system last ends up owning it forever.",
+        "quotes": [
+          {
+            "author": "maerF0x0",
+            "text": "Glue work, keeping things tidy, dealing with that annoyance that everyone else has been able to get away with suffering through (and ignoring), all of this will be worth approximately 0 at performance review time",
+            "commentId": 49727872
+          },
+          {
+            "author": "_kb",
+            "text": "There are people doing that invisible work in every org. They normally become visible around a week after they quit.",
+            "commentId": 49735761
+          }
+        ]
+      },
+      {
+        "title": "Let it fail, or keep it running?",
+        "synthesis": "One camp said that if management won't recognize the work, stop doing it and let the thing break so the cost becomes visible. Others pushed back that failure can take years, that the people responsible leave before it lands, and that a mortgage doesn't wait. A middle position came from a commenter who recommended warning management in writing with numbers, then working normal hours until an incident proves the point, since heroics hide a staffing problem.",
+        "quotes": [
+          {
+            "author": "iforgotmypasswo",
+            "text": "Key mistake I see: Don’t work 80 hours a week to be a hero unless you have a specific strategic goal in mind. You’re actually hurting the company by hiding a resource allocation issue.",
+            "commentId": 49738075
+          },
+          {
+            "author": "jjk166",
+            "text": "It can take years for the damn thing to fail even after the key support stops entirely. In that time you and your colleagues will suffer, and the people responsible will jump ship long before the full impact has been felt",
+            "commentId": 49732541
+          }
+        ]
+      },
+      {
+        "title": "Helpers and the people who exploit them",
+        "synthesis": "Going around a manager to work with their staff drew the sharpest objections. One manager said every case they'd seen was a team offloading its own work onto agreeable people, who then fell behind on their real jobs. Kreinin answered that this and teams refusing all outside requests are separate failure modes, and that crediting people is the tell. Others added that saying no is socially harder than claiming you don't know how, and that permission walls in big companies make the whole approach impractical.",
+        "quotes": [
+          {
+            "author": "yosefk",
+            "text": "You can tell a \"workplace shark\" from a more vegetarian workplace animal by whether they credit people for their work.",
+            "commentId": 49753999
+          },
+          {
+            "author": "jampekka",
+            "text": "There's a bit of a weird dynamic that if you could do something that others need help with, saying no can be considered rude, but saying (even if lying) that you don't know how to do it is generally accepted.",
+            "commentId": 49724743
+          }
+        ]
+      },
+      {
+        "title": "Rotations and touring other teams",
+        "synthesis": "Several people described institutions that make cross-training formal. Examples were a Japanese employer moving staff every year or two, medical rotations in Czechia, Austria and the US, the military, and Cisco. Fans said it builds resilience and context, and some engineers make a point of sitting with support, sales and product when they join. Critics said it slows the growth of experts and that managers on three-year terms start big projects and leave before they fail.",
+        "quotes": [
+          {
+            "author": "Eddy_Viscosity2",
+            "text": "This is a strategy you apply when you want organizational resilience, but it comes at the cost of efficiency. You can't have both at the same time.",
+            "commentId": 49866190
+          },
+          {
+            "author": "bionsystem",
+            "text": "Because management know they will be out in 3 years, they spend as much budget as they can to initiate as big projects as they can and have them on their resume",
+            "commentId": 49776604
+          }
+        ]
+      },
+      {
+        "title": "Is centralization better?",
+        "synthesis": "An engineer building a company-wide AI platform objected that one shared service is too generic for everyone and forces users onto its timeline. Kreinin replied that the post never says to always centralize. The point was that leadership avoids centralizing even when it would be better, and that the decision is case by case.",
+        "quotes": [
+          {
+            "author": "RevEng",
+            "text": "By forcing everybody to use the same common platform, you are either forcing them to work around the mismatch between the platform and their needs, or your are forcing the platform to provide for everyone's needs.",
+            "commentId": 49722871
+          }
+        ]
+      }
+    ],
+    "consensus": "Doing work outside your role is useful and often the only way things get done, but you should check early whether your employer will reward it and leave if it won't.",
+    "dissent": "A minority called the idea plain unpaid overtime, or said colleagues who do everyone's job set impossible expectations for the rest of the team and should be kept in check.",
+    "contrarian": {
+      "author": "Aurornis",
+      "text": "Most of the “manager doesn’t manage anything” accusations came from other teams who weren’t even trying to understand what other managers or teams did. If the other manager or team wasn’t actively working for them in some capacity, they thought the manager wasn’t doing anything.",
+      "commentId": 49726842,
+      "why": "While others debated whether the helper gets credit, this questions the essay's premise that the manager is idle, and says the accusation usually comes from someone who never looked at what that team does."
+    }
+  },
+  "digestedAt": "2026-10-14T21:07:15.000Z"
+}

@@ -1,0 +1,125 @@
+{
+  "number": 810,
+  "date": "2026-09-18",
+  "url": "https://buttondown.com/hacker-newsletter/archive/810/",
+  "posts": [
+    {
+      "post": "49654229",
+      "section": "Favorites",
+      "tier": "dontSkip",
+      "reason": "Rare hard evidence on agent-written code: a 35-hour, billion-token run with the actual excerpts it committed, and a thread of practitioners comparing how they keep such code maintainable."
+    },
+    {
+      "post": "49713262",
+      "section": "Design",
+      "tier": "dontSkip",
+      "reason": "A first-hand account of rebuilding a large public site's 70-plus components and 25 templates in plain native CSS, set against the old Zen Garden promise of separating design from markup."
+    },
+    {
+      "post": "49727463",
+      "section": "Working",
+      "tier": "worthYourTime",
+      "reason": "Instead of speculating about a post-work future, it reads it off historical ethnographies of people who already lived without work, and lands on an argument about where dignity comes from."
+    },
+    {
+      "post": "49732513",
+      "section": "Favorites",
+      "tier": "worthYourTime",
+      "reason": "Builds a backup system one failure at a time, naming each trade-off as it appears, and the thread adds expert corrections on snapshot consistency, ACLs and sparse files."
+    },
+    {
+      "post": "49708431",
+      "section": "Learn",
+      "tier": "worthYourTime",
+      "reason": "A vivid long read on the New Guinea highlands and their 1930 first contact, with a thread led by first-hand family accounts and expert corrections."
+    },
+    {
+      "post": "49710903",
+      "section": "Favorites",
+      "tier": "ifYouHaveAMinute",
+      "reason": "A short nudge from a conference speaker and MC, backed by a thread of speakers describing what silence and feedback actually feel like from the stage."
+    },
+    {
+      "post": "49705944",
+      "section": "Favorites",
+      "tier": "ifYouHaveAMinute",
+      "reason": "Argues that stepping into other teams' work can pay off, then separates that from two harmful kinds of empire-building: building in-house instead of buying, and duplicating central services."
+    },
+    {
+      "post": "49746407",
+      "section": "Favorites",
+      "tier": "ifYouHaveAMinute",
+      "reason": "One clear idea, that subtraction is the decision teams most often skip, with two examples of features quietly growing into rebuilt file managers and mail clients."
+    },
+    {
+      "post": "49692844",
+      "section": "Code",
+      "tier": "ifYouHaveAMinute",
+      "reason": "A tiny prompt that sets off a long, concrete thread comparing how languages from Lisp to Elixir name and order fold, filter and reject."
+    },
+    {
+      "post": "49697496",
+      "section": "Design",
+      "tier": "ifYouHaveAMinute",
+      "reason": "Pulls together about two dozen preference surveys since 1979, with their methodological limits, on the gap between what the public likes and what architects build."
+    }
+  ],
+  "nearMisses": [
+    {
+      "title": "OpenAI agents carried out an undisclosed attack on RubyGems",
+      "section": "Favorites",
+      "domain": "rubyhack.ai",
+      "url": "https://www.rubyhack.ai/",
+      "hnId": 49666735
+    },
+    {
+      "title": "Reversing Factorio's RNG",
+      "section": "Favorites",
+      "domain": "gegell.github.io",
+      "url": "https://gegell.github.io/posts/factorio-rng/",
+      "hnId": 49674451
+    },
+    {
+      "title": "Bend – A language that blocks AI mistakes via proof, on CPU and GPU",
+      "section": "Code",
+      "domain": "bend-lang.com",
+      "url": "https://bend-lang.com/",
+      "hnId": 49746163
+    },
+    {
+      "title": "Small programming tricks",
+      "section": "Code",
+      "domain": "will-keleher.com",
+      "url": "https://will-keleher.com/posts/small-programming-tricks-matter/",
+      "hnId": 49729000
+    },
+    {
+      "title": "Training a 4B model to produce 81% faster query plans than Postgres",
+      "section": "Data",
+      "domain": "rohanbansal.com",
+      "url": "https://rohanbansal.com/qorl",
+      "hnId": 49731285
+    },
+    {
+      "title": "New $100k H-1B visa fee pushes tech jobs offshore",
+      "section": "Working",
+      "domain": "spectrum.ieee.org",
+      "url": "https://spectrum.ieee.org/h-1b-visa-us-government",
+      "hnId": 49697171
+    },
+    {
+      "title": "A return to two-pizza culture",
+      "section": "Working",
+      "domain": "allthingsdistributed.com",
+      "url": "https://www.allthingsdistributed.com/2026/06/return-to-two-pizza-culture.html",
+      "hnId": 49737327
+    },
+    {
+      "title": "AWS Says It Can't Restore Some Data from Mideast Facilities Struck by Iran",
+      "section": "Startup News",
+      "domain": "wsj.com",
+      "url": "https://www.wsj.com/world/middle-east/aws-says-it-cant-restore-some-data-from-mideast-facilities-struck-by-iran-ddcb7e5d",
+      "hnId": 49719249
+    }
+  ]
+}

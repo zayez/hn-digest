@@ -1,0 +1,118 @@
+{
+  "hnId": 49746407,
+  "title": "The most important product decision is what you don't build",
+  "url": "https://liamnugent.me/posts/what-you-dont-build/",
+  "domain": "liamnugent.me",
+  "kind": "article",
+  "author": "ChrisArchitect",
+  "postedAt": "2026-09-17T20:52:36.000Z",
+  "points": 161,
+  "commentCount": 54,
+  "readingMinutes": 5,
+  "tldr": "Product teams should refuse generic platforms like in-app document hubs and notification centres and keep deleting features, because the cost that kills you is years of maintenance, not the build. Showing stakeholders that running cost is what gets them to let go.",
+  "article": {
+    "keyPoints": [
+      "In consumer finance apps, a document hub or a bell-icon notification centre starts as a small fix for legacy PDFs and compliance rules, then grows as each stakeholder adds one more thing until the team has rebuilt a bad Google Drive or Gmail.",
+      "The author argues that the build cost doesn't persuade people to drop such projects. Laying out the running cost over years, including breakage from every iOS and Android release, does.",
+      "Killing the platform still leaves the communication problem, so the author takes each use case on its own and usually picks something simple or already existing, even if imperfect. The author has also seen a notification centre get built that couldn't carry the message it was built for.",
+      "Removal is undervalued by organisations and by human cognition alike. Gerry McGovern found that cutting 80 to 90 percent of a site's content raised sales and lowered support calls, and Klotz et al. showed in Nature that people overlook subtractive fixes even when they are better.",
+      "Cheap building with AI agents is no reason to build more. The author would point agents at pruning and maintenance instead.",
+      "Steve Jobs' 1997 cut of Apple down to four products in a two-by-two grid is the author's model: pooling engineers on a few things, not a permanent cap on the product count."
+    ],
+    "whyItMatters": "Short and readable in five minutes. Product managers and engineering leads fighting a document-hub or notification-centre request will get the argument about running costs and the McGovern and Klotz sources to cite, which the summary only names."
+  },
+  "comments": {
+    "overview": "A friendly thread of people who already agree, so most of it is war stories and tactics rather than debate. The live arguments were about why saying no goes unrewarded, how to make a rejected idea stay dead, and whether one of the article's two examples was a bad pick.",
+    "themes": [
+      {
+        "title": "Nobody is on the hook for maintenance",
+        "synthesis": "The most-developed point was that maintenance, not scope creep, eats team capacity, and the people who add features rarely pay for them. alentred compared software to abandoned civic projects in 1960s towns and said rejecting work makes engineering look like a buzzkill. bunderbunder blamed short tenures, which create a moral hazard, and told of a product owner who said outright that the upkeep would be some junior PM's problem after launch. piker and bmitc doubted the town analogy, blaming textile jobs moving to Asia and the decline of small-town America instead.",
+        "quotes": [
+          {
+            "author": "bunderbunder",
+            "text": "They’d have questions to answer if they yanked features that had already been prototyped, and besides, as soon as the product ships they would move on to a new initiative and any ongoing maintenance burden would be some less senior PM’s problem.",
+            "commentId": 49753422
+          },
+          {
+            "author": "alentred",
+            "text": "I had countless occasions of successfully convincing product teams and boards to abandon or rescope the project, and although I am convinced it did good for the companies in the end - the engineering department ends up being a buzzkill :shrug: .",
+            "commentId": 49751158
+          }
+        ]
+      },
+      {
+        "title": "\"Custom reporting\" is the classic vague request",
+        "synthesis": "The biggest subthread took one example: customers asking for \"custom reporting\". Most read it as a sign the app doesn't answer a specific question, so the fix is to ask what the question is and build that. Terr_ added that reporting can become a side door around product design, such as logging a field so support can paste old values back, when the app really needs a revisions feature. Others said it just means \"give us the raw data for Excel\" and suggested an API.",
+        "quotes": [
+          {
+            "author": "tytho",
+            "text": "He said that a majority of the time people are asking for custom reporting tools, it’s because the app’s built-in tools for sorting/filtering/aggregating data aren’t answering the questions they are asking.",
+            "commentId": 49747864
+          },
+          {
+            "author": "gedy",
+            "text": "Once we did all this after a few months, come to find out the PM requesting all this missed that what users wanted was one number in hundreds of rows, and sorting so it would show on top...",
+            "commentId": 49749904
+          }
+        ]
+      },
+      {
+        "title": "Who gets to say no, and how to make it stick",
+        "synthesis": "mmonaghan doubted that any one person knows what \"makes the boat go faster\", while Retric said programmers end up making many of these calls anyway because nobody else cares about the details. A PM asked how to kill an idea that keeps coming back through brainstorms, sales calls and sprints planned while they're on vacation. A former PM's answer was to close it as a ticket with the reasoning attached, merge repeats into it, and offer the cost and blame for the feature to whoever pushes it.",
+        "quotes": [
+          {
+            "author": "ungreased0675",
+            "text": "I can say no, and explain why, but the idea will keep coming back. Brainstorming session? They raise it again.",
+            "commentId": 49760669
+          },
+          {
+            "author": "xquce",
+            "text": "If you as the PM is responsible for the product, it's market fit and its cost, but they want to add something, turn the cost and responsibility over to them.",
+            "commentId": 49763968
+          }
+        ]
+      },
+      {
+        "title": "Build it cheap to find out what not to build",
+        "synthesis": "Several readers argued that fast prototypes, now cheaper with LLMs, are how you learn what to drop. bob1029 builds a deliberately crappy 90-minute version and says it has shrunk multi-month roadmap items to a day. Others saw cheap building as the trap itself and asked what they would actually want to maintain. Timeboxing came up as the fix for never knowing when to stop.",
+        "quotes": [
+          {
+            "author": "bob1029",
+            "text": "If the 90 minute rapid prototype doesn't make sense, you didn't waste that much time. It's a lot easier to prove things to stakeholders this way too.",
+            "commentId": 49751246
+          },
+          {
+            "author": "jimkleiber",
+            "text": "Today, was thinking about 1) what do I actually want to build AND maintain?",
+            "commentId": 49748902
+          }
+        ]
+      },
+      {
+        "title": "User expectations and commodity features",
+        "synthesis": "Some comments complicated the \"just don't build it\" line. pedalpete said sleep-tracking users expect a hypnogram and sleep score that tell them little, so the question is how to change expectations. jillesvangurp said features like sign-in add no value but subtract plenty when done badly, and _the_inflator called \"not building\" a pose unless it serves a product strategy. Pxtl backed the article with outages caused by a hastily added document store, notification system, and once user avatars.",
+        "quotes": [
+          {
+            "author": "Pxtl",
+            "text": "I've literally had to fix outages in products where the failure was a \"document store\" or a \"notification system\" haphazardly slapped on by a student under direct supervision of a PM with no experienced technical leadership.",
+            "commentId": 49750265
+          },
+          {
+            "author": "jillesvangurp",
+            "text": "A good example is sign up and sign in functionality. You have to have it. It doesn't do anything valuable. But if you do it poorly it removes value from your product.",
+            "commentId": 49752245
+          }
+        ]
+      }
+    ],
+    "consensus": "Saying no and removing features pays off, and the main reason is the long tail of maintenance. Organisations reward launches, so the people who cut scope rarely get credit.",
+    "dissent": "Some argued that the problem is building the wrong thing, not building at all, and that a no only works as part of a product strategy. Others said who decides is murkier than the article suggests and that user expectations can't simply be ignored.",
+    "contrarian": {
+      "author": "CoolestBeans",
+      "text": "I agree with the sentiment here but if you are building anything that relates to finance for the love of god please have a page that's just a list of PDFs of every document that is considered formal communication from the institution. It should have the name of the document, the date it was \"sent\", and a download link.",
+      "commentId": 49751094,
+      "why": "It points out that the author's lead example of a feature to refuse, the finance-app document list, is something customers actually need, and that a plain append-only list avoids the Google Drive sprawl the author warns about."
+    }
+  },
+  "digestedAt": "2026-10-14T21:07:05.000Z"
+}

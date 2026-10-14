@@ -1,0 +1,118 @@
+{
+  "hnId": 49732513,
+  "title": "Backups Aren't Simple",
+  "url": "https://filipovski.net/2026/09/16/backups-arent-simple.html",
+  "domain": "filipovski.net",
+  "kind": "article",
+  "author": "afilipovski",
+  "postedAt": "2026-09-16T20:27:16.000Z",
+  "points": 359,
+  "commentCount": 225,
+  "readingMinutes": 9,
+  "tldr": "Rolling your own backups looks like an afternoon's work until each fix exposes another problem. Snapshots, rotation, deduplication, root-owned Docker files, live databases, offsite copies and S3's per-object pricing pile up, so the author concludes you should use Borg or Restic and test restores.",
+  "article": {
+    "keyPoints": [
+      "A second copy is the start, but a mirror like RAID 1 copies ransomware, bad scripts and accidental deletes, so backups need snapshots you can go back to.",
+      "Daily snapshots pile up fast, so the author keeps daily, weekly and monthly sets on separate rotations (GFS), with denser snapshots near today and sparser ones further back.",
+      "Most files never change between snapshots, so rsnapshot-style hard links store each file once and still survive rotation, which also cuts bandwidth to a cloud target.",
+      "Real services break the rsync-and-cron setup. Docker containers write root-owned files a user cronjob can't read, and databases buffer writes in memory, so a file copy can restore as corrupt unless you dump them first.",
+      "The 3-2-1 rule (3 copies, 2 media types, 1 offsite) leads to S3, which drops file metadata and charges heavily for many small objects, pushing you into chunked tarballs that are hard to get right.",
+      "At that point the author gives up and recommends Borg or Restic, which handle encryption, chunk-level dedup and checksums, plus a restore test every six months and no cron jobs in the 2-3 AM daylight-saving hour."
+    ],
+    "whyItMatters": "Anyone running a homelab or a small self-hosted service who still backs up with a script will see where that script breaks. The original walks through each step at a relaxed pace and ends with an addendum covering ZFS and a reader's notes on consistency groups, ACLs and sparse files."
+  },
+  "comments": {
+    "overview": "A friendly, story-heavy thread. People traded data-loss anecdotes and favorite tools, with restic and ZFS snapshots named most often. The real arguments were about what counts as a backup at all: sync and replication versus point-in-time copies, and whether cloud storage you rent can be trusted as one of your copies.",
+    "themes": [
+      {
+        "title": "You're buying restores, not backups",
+        "synthesis": "The most repeated point was that a backup nobody has restored from proves nothing. A former Veritas engineer's line about being in the restoration business set the tone, and people described how they test. One shop restores customers' systems once a year on its own hardware, a SaaS runs an automated weekly restore into a fresh cluster, and others refresh a test environment from production backups. Some found the article's six-month restore interval too lax, and one commenter warned that Glacier makes restore drills hard. Another asked how you would even confirm that 10k photos came back intact, and got no answer.",
+        "quotes": [
+          {
+            "author": "AdieuToLogic",
+            "text": "We are not in the backup business.  We are in the restoration business.",
+            "commentId": 49735152
+          },
+          {
+            "author": "abejora",
+            "text": "We now automatically run a scheduled restore with verifications on a weekly basis. This requirement does shape your environment, so keep that in mind!",
+            "commentId": 49737703
+          }
+        ]
+      },
+      {
+        "title": "Sync and redundancy are not backups",
+        "synthesis": "Every time someone offered Syncthing or geo-replicated storage as their backup, replies pointed out that a delete or a malware run reaches every copy within seconds. Commenters separated redundancy, which keeps a service up, from backups, which roll you back, and from archives, which hold data for decades. The fixes they named were versioning, append-only stores, and object lock enforced by the provider, so a stolen API key can add data but not destroy it. A SaaS operator warned that some providers' retention locks can still be bypassed by a forced delete or by deleting the whole project.",
+        "quotes": [
+          {
+            "author": "offmycloud",
+            "text": "If you accidentally delete something, how long does it take for the delete to propagate to all of your geographically separated datacenters?  You need some sort of point-in-time snapshots to be able to recover from accidents and silent corruption.",
+            "commentId": 49734685
+          },
+          {
+            "author": "Gigachad",
+            "text": "You want to make sure the append only is enforced by the hosting provider rather than duplicity. Your backups should be resistant to having an attacker on the system who can run arbitrary commands with duplicity.",
+            "commentId": 49737668
+          }
+        ]
+      },
+      {
+        "title": "What people actually run",
+        "synthesis": "Restic came up most, often with the Backrest GUI, and users compared it with Kopia. Restic was easier to script and pipe database dumps into, while Kopia's server suited laptops backing up to a home box. One user noted that Backrest stores the repository password in plaintext on Windows. A ZFS camp argued that sanoid/syncoid snapshots with pull-mode offsite replication cover most needs. Others kept it minimal with rsnapshot, plain rsync to a NAS (\"it is just files\"), or GNU tar's incremental index feeding write-only Glacier.",
+        "quotes": [
+          {
+            "author": "Helmut10001",
+            "text": "If you have a good system for organizing ZFS datasets, and separating ephemeral from persistent data (e.g. [2]), then this is 90% of the backup requirements already fullfilled.",
+            "commentId": 49736694
+          },
+          {
+            "author": "VGHN7XDuOXPAzol",
+            "text": "I am thinking of switching to Restic as it seems like it is more suitable for people who want a tool at the complexity level of tar/git CLI with declarative config, rather than something imperatively configured.",
+            "commentId": 49740617
+          }
+        ]
+      },
+      {
+        "title": "Consistency, databases and privileges",
+        "synthesis": "The sharpest technical addition, which the author then folded into the article, was that snapshotting a database apart from the app that writes to it can capture states that don't match. Others suggested filesystem or LVM snapshots to avoid database downtime, and sqlite3-rsync for SQLite. On the article's advice to give the backup job full access to Docker volumes, one commenter flagged the privilege-escalation risk and keeps only restic under a locked-down root systemd timer. The author answered that rootless Podman is the ideal but most software can't run that way, and that they accept the risk for now.",
+        "quotes": [
+          {
+            "author": "crabbone",
+            "text": "If you have multiple programs accessing the storage, s.a. a database (that you are snapshotting) and the application using the database, then you are risking an inconsistent snapshot when the database state you wrote is ahead or behind the application state.",
+            "commentId": 49739678
+          },
+          {
+            "author": "cvhc",
+            "text": "What I do is having a minimal systemd timer under root that only calls restic for backing up files (with some additional systemd seucurity restrictions). App-dependent backup logics, like dumping databases, are done by user/container-level cronjobs separately.",
+            "commentId": 49734992
+          }
+        ]
+      },
+      {
+        "title": "Can you trust the cloud with your copy?",
+        "synthesis": "Data-loss stories often involved a provider. OneDrive cut its \"lifetime\" storage, a Chinese provider throttled exports, and a PBS station risked losing 50TB when its storage vendor went quiet. Getting full-quality originals out of iCloud Photos also proved hard, and people swapped tools and Immich setups for it. One side said online backup should never be your primary method. The other said a cloud copy is fine as long as you control the primary, because the provider vanishing at the same moment your own disk dies is unlikely.",
+        "quotes": [
+          {
+            "author": "BetterThanSober",
+            "text": "online backup should not be your primary method of backup, you're one billing, identity theft, financial issue, or health issue away from getting your backup nuked",
+            "commentId": 49737277
+          },
+          {
+            "author": "Gigachad",
+            "text": "The probability of a hard drive failure or ransomware at the same time as backblaze or aws going out of business is pretty much not worth thinking about.",
+            "commentId": 49737578
+          }
+        ]
+      }
+    ],
+    "consensus": "Use a proven tool like restic, Borg or ZFS snapshots instead of a homemade script. Keep point-in-time history rather than a mirror, keep one copy offsite or unplugged, and test restores, because an untested backup is a guess.",
+    "dissent": "A few said the article overcomplicates it. A household needs a synced copy somewhere else plus a history mechanism, or simply ZFS/btrfs snapshots replicated onsite and offsite, not an \"encrypted, chunk-level\" enterprise setup.",
+    "contrarian": {
+      "author": "flippingheck",
+      "text": "99% of people don't backup, and that's probably the right choice because the risk is low, they can't meaningfully improve their restoration rate themselves and they don't care enough about their data to classify its loss as catastrophic.",
+      "commentId": 49737109,
+      "why": "It questions the thread's assumption that everyone should back up, treating it as a risk trade-off most people reasonably skip. The author answered with failure-rate math (0.99^40 is about 0.67), and others pointed out that cloud services already keep a copy for most people."
+    }
+  },
+  "digestedAt": "2026-10-14T21:07:12.000Z"
+}

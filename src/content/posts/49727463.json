@@ -1,0 +1,97 @@
+{
+  "hnId": 49727463,
+  "title": "We know what a world without work looks like",
+  "url": "https://asteriskmag.substack.com/p/we-already-know-what-a-world-without",
+  "domain": "asteriskmag.substack.com",
+  "kind": "article",
+  "author": "surprisetalk",
+  "postedAt": "2026-09-16T14:20:06.000Z",
+  "points": 51,
+  "commentCount": 26,
+  "readingMinutes": 25,
+  "tldr": "If AI takes over economically necessary labor and life becomes \"relational,\" we can see the result in Versailles courtiers, 1980s Midwestern society women and Boston's working-class West End, groups that drew no status from work and turned clannish, conformist and absorbed in gossip. Clara Collier argues that work's real gift is respect earned for what you do rather than who you know.",
+  "article": {
+    "keyPoints": [
+      "Writers like economist Alex Imas predict a post-AI \"relational sector\" where human connection is what's left to trade, which Collier reads as a return to the pre-industrial idea that people are defined by their social ties, not their jobs.",
+      "Aristocratic memoirs from Saint-Simon at Versailles to Catherine the Great at St. Petersburg show rich, idle, intelligent people spending their lives on gossip, precedence disputes and factional intrigue, and historian Antoine Lilti found that even Enlightenment salons ran mostly on political gossip.",
+      "Susan Ostrander's 1984 study of upper-class Midwestern women found them filling their time with nonprofit board fundraising that they admitted accomplished little (\"It's that illusion of being useful that's satisfying\"), done mainly to mark themselves off from the lower orders inside a narrow, exclusive circle.",
+      "Herbert Gans's study of Boston's West End found a working-class \"peer group society\" that saw no status in jobs, distrusted outsiders and leaders, bullied boys for wanting white-collar work, and so could not organize against its own demolition.",
+      "In all three cases dignity comes from group membership, so people spend their energy defending the group's reputation and policing deviance; Collier concludes that relational societies tend to be restrictive and exclusionary.",
+      "Surveys and oral histories (Pew's roughly 85% job satisfaction, Claudia Strauss's post-COVID interviews, the Federal Writers' Project, Studs Terkel's Working) show people value work for competence and impersonal respect, and Adam Smith's circle argued that commercial society freed friendship from necessity."
+    ],
+    "whyItMatters": "Worth reading in full for anyone thinking about what people would do in a post-work economy. The essay's value is in the case studies, with long passages from Saint-Simon, Ostrander's interviewees and Gans that the summary can only point at, and in Collier's dry, funny voice."
+  },
+  "comments": {
+    "overview": "A small, mixed thread. Several commenters rejected the AI framing, either because they don't believe owners will share the gains or because they found the history interesting but disconnected from the premise. Others argued over whether work can vanish at all and added their own models of post-scarcity life.",
+    "themes": [
+      {
+        "title": "The AI premise undercuts the essay",
+        "synthesis": "calldacopsidc called the essay pollyannaish, since American politics shows contempt for the unemployed and AI labs are lobbying against guardrails. dh2022 added that the premise assumes capital owners will share enough to calm economic anxiety, which dh2022 called fantasy. wduquette and jfil replied that the essay is really a historical study of societies without jobs, and jfil thought the AI framing was unnecessary and that the analysis applies just as well to mass unemployment.",
+        "quotes": [
+          {
+            "author": "dh2022",
+            "text": "One of the premises of the article is that the capital owners (who thus own the economy, and the political system, and the legal system and the law enforcement) will give the rest of the people enough to assuage economic anxieties.",
+            "commentId": 49730858
+          },
+          {
+            "author": "jfil",
+            "text": "This was interesting historical food for thought without tying it to AI. I think its relevant to a mass-unemployment, economic depression scenario too, and others.",
+            "commentId": 49749792
+          }
+        ]
+      },
+      {
+        "title": "Work won't disappear, only its motivation",
+        "synthesis": "em-bee argued that care, child-rearing, art, government and science still need humans, so the real question is how to motivate people once income isn't needed to eat. em-bee held that money is the most egalitarian motivator, because social status breeds prejudice. casey2 called a world without work impossible, since emotional labor can't be automated short of synths indistinguishable from people. fittingopposite asked whether playing with your kids or talking to the elderly even counts as work.",
+        "quotes": [
+          {
+            "author": "em-bee",
+            "text": "money is the most egalitarian way to motivate people to do work that is hard but needs to be done. everything else brings us back to status and class, which is not what we want.",
+            "commentId": 49729066
+          },
+          {
+            "author": "fittingopposite",
+            "text": "I think a lot of things we have outsourced to \"professionals\" is considered work now and was considered \"just normal life\" before.",
+            "commentId": 49733210
+          }
+        ]
+      },
+      {
+        "title": "Other models of post-scarcity life",
+        "synthesis": "aaroninsf described early Burning Man as a temporary post-scarcity experiment where status shifted to charisma and the quality of one's gifts, and suspects people will always find some coin to hoard and envy. erelong pointed to exercise, self-improvement and prayer as things machines can't do for you. A side thread on Calhoun's mouse utopia experiments disputed whether it shows idleness or overcrowding as the cause of collapse.",
+        "quotes": [
+          {
+            "author": "aaroninsf",
+            "text": "My assumption is that human nature (in all layers of its stack) makes social hierarchy inevitable, and if we don't need literal currency, we'll find a coin to trade in, hoard, envy, and pursue.",
+            "commentId": 49729635
+          },
+          {
+            "author": "cattenwallen",
+            "text": "The nuance is it wasn't a utopia because eventually the population of mice were extremely overcrowded: that's when things circled the drain.",
+            "commentId": 49730898
+          }
+        ]
+      },
+      {
+        "title": "Gossip turned into enforcement",
+        "synthesis": "webern777 took the essay's warning further. A leisure society built on gossip and deviance-policing, combined with surveillance, would keep expanding what counts as a crime. mindslight noted the essay skips people who leave or are shut out of these tight circles, and said their angst drives much of the worry about a world without work.",
+        "quotes": [
+          {
+            "author": "webern777",
+            "text": "Most of all though more \"crimes\" because a culture of policing deviant behavior will start to find more and more behavior as \"deviant\".",
+            "commentId": 49729591
+          }
+        ]
+      }
+    ],
+    "consensus": "Most commenters doubted the premise more than the history. Nobody defended the idea that AI will bring a comfortable work-free life soon, and those who engaged with the case studies found them worth reading.",
+    "dissent": "FLeXMurphy dismissed the essay as a string of historical just-so stories with no argument holding them together, and said the scenes describe ordinary life in their own eras rather than a world without work.",
+    "contrarian": {
+      "author": "TFNA",
+      "text": "Some cultures would mind, China for instance: the anthropology of the CCP holds that the ability to labour is what makes us human and separates us from lower primates.",
+      "commentId": 49731863,
+      "why": "Others assumed nobody would mind losing work once survival is secure, and TFNA points out that some states treat labor as part of being human and would create makework jobs before accepting idleness."
+    }
+  },
+  "digestedAt": "2026-10-14T21:07:08.000Z"
+}

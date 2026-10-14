@@ -1,0 +1,111 @@
+{
+  "hnId": 49692844,
+  "title": "Anecdotally, programmers dislike \"reduce\"",
+  "url": "https://evanhahn.com/posts/2026-09-13-programmers-dislike-reduce/",
+  "domain": "evanhahn.com",
+  "kind": "article",
+  "author": "vinhnx",
+  "postedAt": "2026-09-14T06:46:26.000Z",
+  "points": 175,
+  "commentCount": 283,
+  "readingMinutes": 1,
+  "tldr": "Evan Hahn notices that reviewers wave through map and filter but often flag reduce as hard to read. Hahn guesses at why (readability, familiarity, performance, clunky syntax outside Clojure) and asks whether others see the same thing.",
+  "article": {
+    "keyPoints": [
+      "Hahn uses map and filter constantly and rarely gets review comments about them, but patches with reduce often draw a \"this part is hard to read\" note.",
+      "The author also sees reduce in other people's code far less often than map, filter or some.",
+      "Hahn's candidate explanations are that reduce is harder to read, less familiar, sometimes slower than the alternatives, or just awkward in JavaScript, Python and Swift. As a Clojure developer, the author never got this feedback.",
+      "Hahn usually rewrites the reduce and moves on, and admits the pattern might not be real. It has come up less lately, possibly because code review has become less thorough."
+    ],
+    "whyItMatters": "The post is a one-minute prompt with no data, so the summary covers nearly all of it. The value is in the thread, which explains the reaction the author describes."
+  },
+  "comments": {
+    "overview": "The thread mostly agreed with Hahn and spent its energy explaining why. Most of the debate was over whether the trouble is reduce itself or how mainstream languages expose it, with functional programmers pushing back that loops are the messier option. Long side threads covered Python's history with reduce, string-concatenation optimizations and what \"filter\" even means.",
+    "themes": [
+      {
+        "title": "Reduce tells the reader nothing about its result",
+        "synthesis": "The most common explanation is that map and filter constrain their output, so a reader knows the shape of the result before reading the callback. Reduce can return a scalar, a collection, a tree or anything else, so every call has to be read in full. Several people framed this as the principle of least power: use the most specific tool (sum, groupBy, a plain for..of loop) and save reduce for when nothing else fits. One commenter put it in terms of entropy.",
+        "quotes": [
+          {
+            "author": "ema",
+            "text": "Because filter and map are very constrained in what they can do they quickly tell me a lot about the shape of the computation I'm working with. In contrast reduce is much more flexible and so I need to do a much more detailed analysis to just answer a basic question like \"is the result a scalar or another collection?\".",
+            "commentId": 49737274
+          },
+          {
+            "author": "Terr_",
+            "text": "And even when they don't, *you have to spend effort* to determine that they aren't.",
+            "commentId": 49733998
+          }
+        ]
+      },
+      {
+        "title": "Argument order nobody can remember",
+        "synthesis": "The top thread blamed the API. Languages disagree on whether the initial value comes first or last and whether the callback takes (acc, elem) or (elem, acc). Some also offer a form with no initial value that breaks on an empty collection. TypeScript users added the type annotations needed when reducing into an object, and Haskell users traded mnemonics for foldl versus foldr. A few people said renaming the accumulator to \"previous\" helped them.",
+        "quotes": [
+          {
+            "author": "rspeele",
+            "text": "Reduce has an accumulator and a 2-arg function and languages are not very consistent amongst each other as to whether it's reduce(initial_acc, callback(acc,  elem)) or reduce(callback(acc, elem), initial_acc) or reduce(callback(elem, acc), initial_acc) or what.",
+            "commentId": 49707608
+          },
+          {
+            "author": "franey",
+            "text": "In general, I find that if something is hard to describe in plain language, it's hard to code. Reducers are a bit clunky to talk about, which could make them harder to reason about, too.",
+            "commentId": 49731833
+          }
+        ]
+      },
+      {
+        "title": "Quadratic traps in real code",
+        "synthesis": "Several commenters have hit performance problems. In JavaScript the `{...acc, [item.id]: item}` idiom copies the accumulator on every step, enough that one commenter wrote an ESLint rule against it and another pointed to eslint-plugin-unicorn's recommended no-array-reduce rule. chubot recalled Guido van Rossum tracing a 30-second page load in Google's code review tool to a reduce over strings, which chubot links to reduce being moved into functools in Python 3. Others corrected parts of the story with Guido's 2005 post, which complained about readability. A benchmark showed sum and reduce over lists of lists running about 200 times slower than itertools.chain.",
+        "quotes": [
+          {
+            "author": "chubot",
+            "text": "So basically Guido spent a long time debugging a performance problem related to reduce(), and made the decision to eject it, to help users avoid \"footguns\".",
+            "commentId": 49731007
+          },
+          {
+            "author": "RomanKornev",
+            "text": "Like, why? Not only is this ridiculously inefficient O(N^2), it's also longer and less understandable than \"build a new map\" version.",
+            "commentId": 49735088
+          }
+        ]
+      },
+      {
+        "title": "The name is the problem",
+        "synthesis": "Many argued that \"reduce\" gives no hint of what it does, unlike map (familiar jargon) or filter (an everyday word). It also doesn't have to reduce anything, since it can rebuild a list or grow one. Suggested replacements included accumulate, aggregate, combine, fold and squash. A parallel argument broke out over whether filter keeps or drops matching items, with people citing Ruby's select/reject, Kotlin's filterNot and Common Lisp's remove-if-not.",
+        "quotes": [
+          {
+            "author": "bunderbunder",
+            "text": "What `filter` does is consistent with the word's everyday meaning. But if you don't already know what `reduce` does, it's name isn't even enough to hazard an educated guess.",
+            "commentId": 49733460
+          }
+        ]
+      },
+      {
+        "title": "Defenders: loops are the messier option",
+        "synthesis": "A sizable minority likes reduce and blames training, not the function. They argue a for loop mutates outer state, sprawls and invites typos, while a fold with a named callback reads in one line. One commenter failed an interview for using reduce, and another was once told off for using map at all. Others replied that their examples are toy sums and that real callbacks with caching or metrics read better as a loop. Several noted the dislike fades in Clojure, Elixir or Haskell, where reduce is everyday vocabulary and the imperative version is clumsier.",
+        "quotes": [
+          {
+            "author": "KPGv2",
+            "text": "You can read one line and know exactly what's happening in the fold example. In the Python and C++ examples, you have to scan more lines *and* there's way more opportunity for typos.",
+            "commentId": 49741490
+          },
+          {
+            "author": "hibikir",
+            "text": "But we don't train people on functional programming at all, so by the time they've built their instincts, passing functions makes no sense to them, immutability is alien, and the idea of a pure function seems irrelevant to them.",
+            "commentId": 49735257
+          }
+        ]
+      }
+    ],
+    "consensus": "Hahn's observation holds. Outside functional languages, reduce is harder to scan than map or filter because its output can be anything and its argument order varies by language. A named helper (sum, groupBy, join) or a plain loop usually reads better.",
+    "dissent": "Functional programmers counter that the dislike comes from imperative habits. In their view a loop that mutates outer variables is harder to reason about than a fold, and in Clojure, Elixir or Haskell nobody objects to reduce.",
+    "contrarian": {
+      "author": "Zak",
+      "text": "The footgun isn't `reduce` in particular, but failing to use `join`.",
+      "commentId": 49733686,
+      "why": "It points out that the famous Python slowdown came from building strings by concatenation, which a hand-written loop does just as badly, so the perf case against reduce is weaker than the thread assumed."
+    }
+  },
+  "digestedAt": "2026-10-14T21:30:00.000Z"
+}

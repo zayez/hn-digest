@@ -1,0 +1,113 @@
+{
+  "hnId": 49710903,
+  "title": "Tell the speakers that you liked their talks",
+  "url": "https://ohhelloana.blog/tell-the-speakers/",
+  "domain": "ohhelloana.blog",
+  "kind": "article",
+  "author": "whisper2020",
+  "postedAt": "2026-09-15T11:28:19.000Z",
+  "points": 326,
+  "commentCount": 89,
+  "readingMinutes": 3,
+  "tldr": "Conference speaker and MC Ana Rodrigues argues that attendees should go up to speakers and say they liked the talk. Since Twitter stopped being where talk feedback happened, many speakers get silence afterwards and are left wondering whether the talk landed at all.",
+  "article": {
+    "keyPoints": [
+      "At SmashingConf Freiburg, Rodrigues pulled a speaker into a group at the after-party because one attendee wanted to ask a question but felt too intimidated to approach.",
+      "As MC of CSS Day, Rodrigues asked every speaker at the speakers' dinner for permission to invite the audience to come and chat with them, and every one said yes.",
+      "The author joined the speaker circuit after Twitter declined, so they never got the wave of online reactions older speakers describe, and some of their talks drew no feedback at all.",
+      "Other speakers told the author the silence rattles them too. It is less about ego than about not knowing whether the talk went fine or flopped.",
+      "The author admits to forgetting to compliment friends who speak and plans to live-post and blog more about the events they attend.",
+      "The author's ask is small: a quick word or short chat is always worth it, because speakers put a lot of work in and want to know it went alright."
+    ],
+    "whyItMatters": "The post is short and personal. Read it for the speaker's view of the after-talk silence, or to share with someone who is too shy to walk up to a speaker. The argument fits in this summary, so the original adds tone more than content."
+  },
+  "comments": {
+    "overview": "A warm, agreeable thread, mostly speakers confirming that silence after a talk hurts and that one approaching stranger can change their week. The rest traded tips: how to make yourself easy to approach, what kind of feedback helps, and why remote presenting feels like talking into a void.",
+    "themes": [
+      {
+        "title": "Silence after a talk is hard on speakers",
+        "synthesis": "Speakers described days of second-guessing when nobody asks a question, and stony audiences that give no signal at all. Some blamed the setting: stage lighting that hides faces, cultures where attendees treat the session as downtime, corporate crowds that laugh at nothing but write glowing reviews later. One commenter said a single person who came up after a panel became their co-founder.",
+        "quotes": [
+          {
+            "author": "lrvick",
+            "text": "When zero people have any questions or feedback after, my brain tells me in a loop that nothing I said landed, and it is devastating.",
+            "commentId": 49730713
+          },
+          {
+            "author": "lrvick",
+            "text": "One time after a security panel at a big conference a single person came up to me after who told me what they agreed with, what they want to learn more about, and why. That person is my co-founder now.",
+            "commentId": 49730713
+          }
+        ]
+      },
+      {
+        "title": "Specific words and questions beat \"nice talk\"",
+        "synthesis": "Several commenters said to tell speakers why you liked a talk, or ask about the parts you didn't follow, since a generic compliment gives little to work with. A speaker pushed back that even a passing \"nice talk\" makes their day. Others said they would take hostile criticism over indifference, because it proves someone was listening. For unfriendly critics during Q&A, one tip was to visibly write down the point and thank them, which often disarms them.",
+        "quotes": [
+          {
+            "author": "jaffathecake",
+            "text": "As someone who speaks at tech conferences, even someone just saying 'nice talk' as I walk past makes my day.",
+            "commentId": 49737698
+          },
+          {
+            "author": "zitterbewegung",
+            "text": "I learn more from critics than anything else and it definitely gives me evidence that people were actually understanding my talk or even where they misunderstood me.",
+            "commentId": 49735187
+          }
+        ]
+      },
+      {
+        "title": "Speakers can make themselves easy to approach",
+        "synthesis": "A first-time speaker asked how to avoid sitting alone at breaks, and the replies were practical. Put \"come talk to me in the hallway\" on the closing slide, mention a related topic you have no time to cover so people have a ready question, chat with the front row before starting, and stick around afterwards. A side debate on jokes split between using them to pace the talk and warning that they depend on shared culture and should never carry the content.",
+        "quotes": [
+          {
+            "author": "jlev1",
+            "text": "mention one or two well-chosen things in your talk that are interesting and related to your topic, but that you can't go into further detail on (for lack of time). Say you'd be happy to discuss them after the talk with anyone who's interested!",
+            "commentId": 49729629
+          },
+          {
+            "author": "simonw",
+            "text": "\"Hey, I liked your talk\" is a freebie ice-breaker for anyone else, so it's much easier for them to strike up a conversation with you.",
+            "commentId": 49728653
+          }
+        ]
+      },
+      {
+        "title": "Remote presenting is the worst case",
+        "synthesis": "Remote workers said presenting to a webcam with everyone's camera off gives no feedback, and emoji reactions don't fill the gap because they pile up unevenly across presenters. One suggestion was to refuse to present unless a few people agree to respond. One commenter liked cameras-off calls because they can pace and stare at the ceiling while they talk.",
+        "quotes": [
+          {
+            "author": "0xbadcafebee",
+            "text": "At least in person you get the obligatory smattering of claps after the talk. When there's nothing at all, it feels like you did something wrong.",
+            "commentId": 49730879
+          }
+        ]
+      },
+      {
+        "title": "The same goes for any creator who isn't famous",
+        "synthesis": "Commenters extended the advice to authors, musicians, small site owners, open source maintainers and restaurant staff, and reported long, grateful replies to fan mail. One described a TV actor who invited them to dig through the actor's garage for old tapes. The counterexample was a composer who has a copyist send stock replies, because fans don't commission the works that pay the composer.",
+        "quotes": [
+          {
+            "author": "rurp",
+            "text": "My sense is that not many people do this and anyone who is not mega-famous rarely hears from strangers who like their work.",
+            "commentId": 49729357
+          },
+          {
+            "author": "TFNA",
+            "text": "I know a composer (not even that famous, just successful enough) who has his copyist answer all correspondence with stock replies, since fans don't do anything for him and just annoy him; they aren't part of the ecosystem of commissioning works that is how he gets paid.",
+            "commentId": 49731979
+          }
+        ]
+      }
+    ],
+    "consensus": "Speakers want to hear from the audience, and a short compliment or question costs the attendee little and matters a lot to the person who gave the talk.",
+    "dissent": "A few pushed back on the premise. Some said most in-person talks aren't worth much and come from career presenters, one was brushed off by speakers busy courting people from bigger companies, and one composer reportedly finds fan mail an annoyance.",
+    "contrarian": {
+      "author": "jeswin",
+      "text": "While there are exceptions, there's usually very little you'd get from in-person talks. And quite often, the people who are giving these talks are serial presenters - as a lifestyle, or sometimes career building.",
+      "commentId": 49731027,
+      "why": "It questions whether the talks deserve the encouragement at all, which the thread never addresses beyond one reply saying the advice only applies if you liked the talk."
+    }
+  },
+  "digestedAt": "2026-10-14T21:07:13.000Z"
+}

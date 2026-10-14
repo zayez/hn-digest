@@ -1,0 +1,113 @@
+{
+  "hnId": 49708431,
+  "title": "I can't stop thinking about Papua New Guinea",
+  "url": "https://notnottalmud.substack.com/p/why-i-cant-stop-thinking-about-papua",
+  "domain": "notnottalmud.substack.com",
+  "kind": "article",
+  "author": "networked",
+  "postedAt": "2026-09-15T06:16:24.000Z",
+  "points": 1160,
+  "commentCount": 489,
+  "readingMinutes": 17,
+  "tldr": "Until 1930 outsiders thought New Guinea's mountain interior was empty, until an Australian gold prospector walked in, found about a million farmers, and filmed the encounter. The author explains how the highlanders stayed cut off for 10,000 years: crops and pigs could pass from clan to clan, but ideas could not, and the country still runs on clan loyalty today.",
+  "article": {
+    "keyPoints": [
+      "In 1930 Mick Leahy, looking for gold, climbed out of the Markham valley and found roughly a million people in malaria-free highland valleys that colonial officials believed were empty rock. He recorded the contact in thousands of photos and hours of film.",
+      "Highlanders first took the Australians for ghosts of their dead relatives. The Australians then flew in shells, the highlanders' scarce prestige currency, by the planeload to buy food and labour, until shells became worthless.",
+      "New Guinea invented agriculture on its own about 10,000 years ago and domesticated bananas and sugarcane. Taro rots within weeks and there were no draft animals or writing, so no surplus built up and the valleys stayed groups of a few hundred people at constant war, led by non-hereditary \"big men\" who won status by competitive gift giving (moka).",
+      "Goods crossed the barrier but knowledge did not. The sweet potato reached the highlands 300 to 400 years ago when brides carried garden cuttings from clan to clan, and it set off a population boom, while the highlanders never learned the ocean existed.",
+      "Genetics backs up the isolation claim. Coastal people carry 10 to 30% Austronesian ancestry and dense malaria-resistance mutations, and highlanders have neither.",
+      "Papua New Guinea today has almost no roads (the capital connects to nowhere), an uncounted population of 10 to 17 million, and loyalty organized around wantok, the people who speak your language, rather than any national identity."
+    ],
+    "whyItMatters": "Read it for the shell hyperinflation story and the argument for why plants travelled where ideas couldn't. The author also points to the book and documentary First Contact by Bob Connolly and Robin Anderson, which have the actual photos and footage."
+  },
+  "comments": {
+    "overview": "A big and mostly warm thread. The best parts are firsthand accounts from people whose parents worked in the highlands. The rest argues about the 1963 battle footage, about why the article never mentions missionaries, and about Jared Diamond. Smaller fights cover Indonesia's rule over West Papua and some of the article's claims about history and language.",
+    "themes": [
+      {
+        "title": "Ritual battles or lethal raids",
+        "synthesis": "The embedded 1963 battle video started the longest argument. Several commenters, one citing an anthropology class on the highlanders, said the fighting was ritual tit-for-tat that rarely killed anyone and ended at the first serious injury or when it rained. Others answered that pre-state warfare is mostly night raids and massacres, and one cited a figure of over 20% of PNG men dying from enemy action. A few pointed out that guns arrived in the 1970s and 80s and made the old feuds far deadlier.",
+        "quotes": [
+          {
+            "author": "throwup238",
+            "text": "I took an anthropology class that focused heavily on the Papua New Guinea highlanders and they fight a ritualized tit-for-tat warfare where they rarely kill and when they do, it’s essentially tribal revenge for the last kill.",
+            "commentId": 49712524
+          },
+          {
+            "author": "int_19h",
+            "text": "In PNG in particular, as I recall, it gets to the point where >20% of all males die from enemy action.",
+            "commentId": 49732643
+          }
+        ]
+      },
+      {
+        "title": "Missionaries, the missing chapter",
+        "synthesis": "One commenter faulted the article for skipping missionaries, who did much of the later exploration of the interior and still fly bush planes into remote villages to convert people. Others replied that the article covers first contact, which was made by gold prospectors, and that PNG's parliament recently voted 80-4 to declare it a Christian nation. The argument then split into whether isolated people can judge outside ideas for themselves, or whether calling them unequipped is condescending. A doctor's son described secular aid work alongside missions that had finished converting people generations earlier.",
+        "quotes": [
+          {
+            "author": "walrus01",
+            "text": "I did a ctrl-f in the article for \"missionary\" or \"missionaries\" and found nothing.",
+            "commentId": 49710299
+          },
+          {
+            "author": "skissane",
+            "text": "The mission wasn't currently converting the local population – that had already happened generations ago - and much of the local population combined Christianity with elements of their indigenous belief systems.",
+            "commentId": 49710714
+          }
+        ]
+      },
+      {
+        "title": "Stories from people who were there",
+        "synthesis": "The top comment tells of a father who took five donkeys into Simbai in 1960, and of the son who went back 50 years later with prints of the old slides and was given a festival, new songs and a guest house named for the family. Others have parents who lived in the highlands in the 70s and 80s, worked in Lae or Port Moresby, or found that even high school students on Karkar island didn't know about the moon landing. The newer accounts are much darker. Several describe a lawlessness that people who worked there in the 1970s did not see.",
+        "quotes": [
+          {
+            "author": "simoncourage",
+            "text": "It was particularly joyous to be able to hand out pictures of peoples parents or family, who never had any photo of them or had any idea one could even exist, before some random person turned up one day",
+            "commentId": 49715040
+          },
+          {
+            "author": "jamesfinlayson",
+            "text": "It's sad because I know of people who worked there in the 1970s (for Australians it was close to home but a bit of extra money because it was overseas) and it was apparently fine back then, but lawlessness has well and truly taken over.",
+            "commentId": 49722725
+          }
+        ]
+      },
+      {
+        "title": "West Papua under Indonesia",
+        "synthesis": "Several commenters said the article ignores the western half of the island, where they describe Indonesian rule as colonial and the treatment of indigenous Papuans as genocide. Their evidence was a mining economy built around the Grasberg mine, a 2024 torture case, and tight limits on journalists. One commenter disputed the claim that no one can get in, pointing to tourism in the Baliem Valley and Raja Ampat. A side argument covered how much the US was responsible for Suharto taking power.",
+        "quotes": [
+          {
+            "author": "papua_is_being_",
+            "text": "Indigenous West Papuans are being genocided by settlers from Java.",
+            "commentId": 49710837
+          },
+          {
+            "author": "motionlessveloc",
+            "text": "This is not to dismiss the scale of state violence against the OPM and any civilians caught in the net, but Papua is hardly a hermetically sealed off North Korea.",
+            "commentId": 49718686
+          }
+        ]
+      },
+      {
+        "title": "Diamond, geography, and the article's claims",
+        "synthesis": "The article's line about Jared Diamond calling New Guineans genetically smarter pulled in the usual Guns, Germs and Steel fight. One side called environmental determinism racist and sinophobic. The other said explaining history by geography is the opposite of racism. Other readers checked the article itself. They noted that Finnish and Hungarian reached Europe after Indo-European, explained that the genetic and testimony evidence shows isolation rather than causing it, and gave a linguist's count of 862 languages in 43 families and 37 isolates.",
+        "quotes": [
+          {
+            "author": "hermitcrab",
+            "text": "Diamond says that the reasons Europeans colonised South America (rather than vice versa) is largely due to geographic factors, not due to any inherent genetic superiority of European over South Americans. I don't see how that is racist.",
+            "commentId": 49712954
+          }
+        ]
+      }
+    ],
+    "consensus": "Most readers found the first-contact story and the shell hyperinflation episode gripping and recommended the First Contact book and film, which are free on the Internet Archive. They agreed that PNG today is hard to govern, dangerous in places, and held together by clan rather than state.",
+    "dissent": "One group thought the article leaves out too much. It never mentions missionaries or Indonesia's rule over West Papua, it repeats sensational tidbits about cannibalism and Diamond's genetics claim, and saying highlanders \"had no way to evolve\" past their stage of development denies them agency.",
+    "contrarian": {
+      "author": "rembal",
+      "text": "Smartphones, solar panels, FC Barcelona t-shirts and catholic church made their way into the mountains and jungle before any other sort of infrastructure, and so did the tourists and fake attractions: fake cannibals, fake legends and fake customs (even BBC fell for some).",
+      "commentId": 49712169,
+      "why": "The article says PNG still lives its pre-contact life. This traveller says some of that pre-contact life is now staged for visitors, so the exotic picture readers enjoy is partly supply meeting demand."
+    }
+  },
+  "digestedAt": "2026-10-14T21:08:04.000Z"
+}
