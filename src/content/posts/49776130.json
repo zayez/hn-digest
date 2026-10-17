@@ -1,0 +1,118 @@
+{
+  "hnId": 49776130,
+  "title": "The senior engineer death spiral",
+  "url": "https://sunilpai.dev/posts/the-senior-engineer-death-spiral/",
+  "domain": "sunilpai.dev",
+  "kind": "article",
+  "author": "nsavage",
+  "postedAt": "2026-09-20T14:16:14.000Z",
+  "points": 285,
+  "commentCount": 150,
+  "readingMinutes": 4,
+  "tldr": "Engineers new to a senior role often take on an oversized project to prove themselves, go quiet for weeks, and spiral into overwork and burnout. Sunil Pai's fix is to drop a level for a while: do bugs and grunt work for teammates, rebuild daily momentum and trust, and let bigger work come back once people rely on you.",
+  "article": {
+    "keyPoints": [
+      "The spiral starts after a new job, a promotion or a big project, when the engineer decides to act like someone more senior than they are and designs something far more ambitious than needed.",
+      "They then disappear for two or three weeks, give vague \"going well, something to show soon\" updates at standup, and tell themselves they can secretly do a month's work in a week to catch up.",
+      "The overwork costs sleep, meals and relationships, and it ends in burnout, a month off, a PIP, a firing or a resignation. Pai says it has happened to him often enough that he now catches it early.",
+      "Remote work, COVID and coding agents have given engineers more ownership and more isolation, so the risk is colleagues quietly wondering what you have been doing. He wants people to share their work constantly instead.",
+      "The counterintuitive fix is to assume good faith, since they hired you as you are now, and drop a level: fix bugs, take the chores nobody gets to, write things up, and be the best teammate on the team.",
+      "The goal is to swap an outcome mindset for a momentum one. Small daily work adds up to a large volume in a month, builds trust with the team and manager, and that trust is what earns bigger projects. Pai's closing line is that software is downstream of reputation."
+    ],
+    "whyItMatters": "It's a four-minute read, written as a spoken monologue to a friend, in all lowercase and full of \"bro\". Read it if you recognize the early signs in yourself or a new senior hire. The summary covers the argument, and the original adds the self-talk Pai says goes on inside the spiral."
+  },
+  "comments": {
+    "overview": "A busy and fairly cranky thread. Many people recognized the pattern from their own careers, but a large share of comments went after the post's lowercase, stream-of-consciousness style instead of its content. The substantive argument was over who owns the problem: the engineer who goes dark, or companies and managers that hire badly, reward ambition poorly and no longer promote people for good work.",
+    "themes": [
+      {
+        "title": "Whose failure is it?",
+        "synthesis": "One camp agreed with Pai and went further. Going quiet for weeks with vague updates is junior behavior, and a senior's job is to show their work and keep management informed about blockers. Others put the blame on the employer. If new seniors keep leaving within six months, the company is hiring or onboarding them badly, and managers or teammates should notice when a colleague has gone in too deep. A hiring manager explained why it goes unnoticed. Senior work is harder to track than a junior's ticket queue, and msteffen traced the silence to a breakdown of trust in both directions.",
+        "quotes": [
+          {
+            "author": "swiftcoder",
+            "text": "If a junior engineer stops pulling tickets off the queue, somebody is going to notice. If a senior spends a couple of weeks taking cross-functional meetings and writing docs at the start of a new project, nobody really blinks an eye.",
+            "commentId": 49789933
+          },
+          {
+            "author": "watwut",
+            "text": "If every senior you hired left in 6 months, there is something wrong with your company.",
+            "commentId": 49779199
+          }
+        ]
+      },
+      {
+        "title": "Does good work still get you promoted?",
+        "synthesis": "A staff engineer said he never chased promotion and that doing good work and being nice took care of it. Replies pushed back hard. Arainach argued the ladder has collapsed since 2023, with junior hiring and promo budgets gone, and said friends at FAANG companies report the same. Others said it works only at some companies, that \"good work\" has to match what the organization values, and that you often have to ask. A European commenter said promotions are harder but still happen there.",
+        "quotes": [
+          {
+            "author": "Arainach",
+            "text": "If you're lucky, the reward for doing good work and being nice is 'not being laid off', but the promo budget is gone and it's not like your boss gets a say in who's laid off so may the odds be ever in your favor.",
+            "commentId": 49777770
+          },
+          {
+            "author": "StevePrefontain",
+            "text": "A mentor of mine was a VP of Engineering at mid-size companies for ~20 years and told me that he never got a promotion he didn’t ask for.",
+            "commentId": 49786141
+          }
+        ]
+      },
+      {
+        "title": "Boundaries instead of 60-hour weeks",
+        "synthesis": "Several people answered the friend's question about 60 to 80-hour weeks with \"don't\". The only reward for hard work is more work, so seniors learn to say no and trade one project for another. coldpie works 35 to 40 hours, keeps work off personal devices, and still gets raises. Others noted that on-call duty and new 996-style expectations at some companies make that harder. A few burned-out commenters described leaving software altogether, one for apartment maintenance, and said their heads are clearer for it.",
+        "quotes": [
+          {
+            "author": "coldpie",
+            "text": "I work 35-40 hours a week. I do not put work stuff on my personal devices, I do not open my work laptop at home. This isn't something I negotiated or made explicit, it's just what I do.",
+            "commentId": 49787038
+          },
+          {
+            "author": "sajithdilshan",
+            "text": "The senior you get the more you realise that the only reward for hard work is more work.",
+            "commentId": 49778047
+          }
+        ]
+      },
+      {
+        "title": "The lowercase, \"bro\" writing style",
+        "synthesis": "The post's lack of capital letters and its spoken-monologue tone drew one of the biggest threads. Critics said it is hard to parse, disrespectful to readers, and harder still for people with ADHD who rely on visible sentence boundaries. Some doubted that anyone who says \"bro\" this much has the seniority to give advice. Defenders noted that Pai capitalizes \"I\", names and acronyms, so the style is a deliberate choice, and that it's his blog.",
+        "quotes": [
+          {
+            "author": "nchmy",
+            "text": "Moreover, the lack of capitals in this article is accentuated by the stream of consciousness writing style. It requires a very significant amount of effort to parse, so simply isn't worth it.",
+            "commentId": 49780353
+          },
+          {
+            "author": "shrikant",
+            "text": "It's clearly a deliberate affectation that they're putting on because other words are properly capitalise (COVID, PIP, I, his own name, etc.).",
+            "commentId": 49784793
+          }
+        ]
+      },
+      {
+        "title": "Job hopping vs. promotion from within",
+        "synthesis": "One top comment said the fastest way up is to interview elsewhere while still employed, not to claw up one company's ladder. Others said interviewing costs time and stability, that salary is only one factor, and that some European countries make long-tenured staff harder to fire. JeremyNT argued that hopping paid off in the zero-interest-rate years, but a good internal reputation now beats being one more external resume.",
+        "quotes": [
+          {
+            "author": "slowin",
+            "text": "Apply for better positions at other companies while you still have your current role. You'll have maximum leverage and unlimited time to choose the best possible option.",
+            "commentId": 49777780
+          },
+          {
+            "author": "JeremyNT",
+            "text": "If you have a good reputation on your current team, that places you above external candidates as you look to move up in your organization. Don't ignore that.",
+            "commentId": 49779340
+          }
+        ]
+      }
+    ],
+    "consensus": "Most agreed the pattern is real and that the cure is communication. Tell people what you're doing and where you're stuck, and don't try to rescue a slipping project with secret overtime. Many also agreed that 60 to 80-hour weeks are not the answer.",
+    "dissent": "The main pushback was that the post blames the individual for structural problems: bad hiring, title inflation that promotes people past their experience (the Peter principle came up twice), collapsed promotion ladders, and Scrum cultures that punish slow ambitious work. derf_ added that seniors get bigger things done through leverage over other people's work, not through diligence.",
+    "contrarian": {
+      "author": "atom_arranger",
+      "text": "I wouldn't just blame the engineer for not shipping smaller things, being less ambitious, talking more instead of working, I'd blame the company culture for disincentivizing deep work and ambitious goals.",
+      "commentId": 49784991,
+      "why": "It defends the disappearing engineer. Some large work can't ship in sprint-sized pieces, so a few weeks of unimpressive standups can be the price of solving it, and Pai's advice to drop a level trades that ambition away."
+    }
+  },
+  "digestedAt": "2026-10-17T14:38:54.000Z"
+}

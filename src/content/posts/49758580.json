@@ -1,0 +1,113 @@
+{
+  "hnId": 49758580,
+  "title": "Saving another 100TB of RAM",
+  "url": "https://blog.cloudflare.com/saving-100-tb-of-ram-with-math/",
+  "domain": "blog.cloudflare.com",
+  "kind": "article",
+  "author": "f311a",
+  "postedAt": "2026-09-18T18:51:46.000Z",
+  "points": 488,
+  "commentCount": 123,
+  "readingMinutes": 13,
+  "tldr": "Cloudflare cut more than 100TB of RAM from its Pingora load balancer by packing each consistent-hash entry into 6 bytes instead of 8 and generating 90% fewer hashes per server. Its math showed the extra hashes bought almost no extra balance, and 32-bit collisions made them slightly worse.",
+  "article": {
+    "keyPoints": [
+      "Pingora Backend Router routes cacheable requests with consistent hashing (the pingora-ketama crate), and some instances used 6GB on hash rings: 160 base hashes per server, multiplied by a disk-size weight, repeated across dozens of rings for every combination of features like compliance and caching.",
+      "With one hash per server, a server's share of the ring has a coefficient of variation near 99% at 100 servers, so some servers get about double their fair load; 160 hashes per server bring that down to about 8%.",
+      "Shrinking the server index from u32 to u16 saved nothing at first, because Rust's alignment rules padded the struct back to 8 bytes; storing hash and index in a raw 6-byte array with getters cut consistent-hashing memory by 25%.",
+      "The author derived an exact error formula for k hashes per server, CV = sqrt((N-1)/(Nk+1)). At an effective 100,000 hashes per server, the last 90,000 bought only a 0.7% reduction in error, and simulations with 2,048 servers showed 32-bit collisions pushing error back up between 10,000 and 100,000 hashes.",
+      "Changing the ring moves cached content, so PBR held the old and new rings in memory at once and picked one per request hash. The rollout went data center by data center to contain cache churn and origin load, and kept a rollback path that needed no redeploy.",
+      "The compact v2 ring, faster sorting and a tunable base hash count ship in pingora-ketama behind an unadvertised cargo feature, and the v1 ring is unchanged."
+    ],
+    "whyItMatters": "Read it if you run consistent hashing or ketama-style load balancing at scale. The original has the charts for error versus hash count and the collision simulations, plus the link to the full derivation, which you need to pick a hash count for your own fleet."
+  },
+  "comments": {
+    "overview": "A warm thread that mostly praised the write-up, then split into two arguments. The longer one asked whether software should be optimized like this at all or whether shipping fast is the right call. The more technical one asked whether consistent hashing with huge rings was the right design to begin with.",
+    "themes": [
+      {
+        "title": "Optimization versus shipping",
+        "synthesis": "The top comment welcomed expensive RAM as a push back toward lean software. Developers who lived through scarce memory said the craft was fun but they preferred spending their time on customers. Others answered that bloated apps come from careless code, not from a tradeoff, and that budgets force better engineering. locknitpicker called most such savings bean counting, and throw10920 said almost no user cares about memory use at this level.",
+        "quotes": [
+          {
+            "author": "jfengel",
+            "text": "Yes, the challenge was fun, but I really wanted to ship it and get my product in the hands of customers. Now I can spend more time thinking about what they want and less time about what the computer wants.",
+            "commentId": 49762230
+          },
+          {
+            "author": "ffsm8",
+            "text": "The wasteful applications are generally not well reasoned about and half assed implementations. That's why they're guzzling resources",
+            "commentId": 49765235
+          }
+        ]
+      },
+      {
+        "title": "Was consistent hashing the right tool?",
+        "synthesis": "Several readers proposed alternatives that need no big lookup table, such as rendezvous or hierarchical rendezvous hashing, a tournament hash over a partition of servers, Google's jump hash, or a weighted btree. sfink worked through a plain hash-mod-N design in public until procaryote pointed out that hashing the servers keeps requests sticky when servers come and go. sfink then named the missing constraint, that load balancers never share an exact view of which servers are up. Jump hash drew the same objection: it can't drop a server from the middle of the list.",
+        "quotes": [
+          {
+            "author": "procaryote",
+            "text": "You hash the servers because then adding or removing a server doesn't directly affect other servers position on the ring; adding a server just takes some load from som servers.",
+            "commentId": 49764025
+          },
+          {
+            "author": "prirun",
+            "text": "As I recall, one of the main differences is that jump hash doesn't have a mechanism to remove targets, eg, a server dies and you don't want to route requests to it.",
+            "commentId": 49760802
+          }
+        ]
+      },
+      {
+        "title": "Who this is worth it for",
+        "synthesis": "Commenters noted that 100TB is about 1% of Cloudflare's fleet, which pays off only at its scale. A company whose costs are rent and staff would not bother, and would optimize its supply chain instead. A side argument about whether the RAM was freed up for AI inference ended with the point that CPU DRAM is a poor fit for inference.",
+        "quotes": [
+          {
+            "author": "MisterMunchkin",
+            "text": "Cloudflare is unusual in that their product is performance and their costs are primarily hardware and networking.",
+            "commentId": 49764990
+          },
+          {
+            "author": "necovek",
+            "text": "While it's nice to see this focus, while they highlight absolute figures, we are still talking about 1% improvement. For most other software systems, nothing worth putting effort in for.",
+            "commentId": 49764085
+          }
+        ]
+      },
+      {
+        "title": "A human-written Cloudflare post",
+        "synthesis": "Many readers said the post read as human after a run of Cloudflare posts they took for LLM output, and one pointed to the \"Hi, Mom\" aside as something no AI would write. One reader ran it through the Pangram detector and got a human verdict. Others called detectors snake oil, and the original poster said Pangram had rated text they had generated as 100% human.",
+        "quotes": [
+          {
+            "author": "ChoosesBarbecue",
+            "text": "Tried out the first 1000 words in Pangram, and it seemed happy it was human written.",
+            "commentId": 49761135
+          },
+          {
+            "author": "MisterMunchkin",
+            "text": "It’s refreshing to actually read English instead of Claudelish.",
+            "commentId": 49764939
+          }
+        ]
+      },
+      {
+        "title": "Silos and layered complexity",
+        "synthesis": "One reader asked when a company with optimizations this deep turns into silos nobody can see into. Replies blamed layers like TLS, auth and orchestration for making a single boolean hard to flip, and others said those layers exist because networks are hostile. procaryote held up the router as a good silo: small, loosely coupled, and unaware of what its weights mean.",
+        "quotes": [
+          {
+            "author": "procaryote",
+            "text": "The trick is to keep the silos losely coupled and small enough that you can understand it reasonably quickly. A component like the one in the article is pretty good like that.",
+            "commentId": 49763973
+          }
+        ]
+      }
+    ],
+    "consensus": "The post was clear and well written, and at Cloudflare's scale a 1% memory cut is real money worth the engineering time.",
+    "dissent": "A minority found it overhyped: one said the math exposition was showing off and never explained why consistent hashing is used, another summed it up as fixing a poorly designed struct, and several argued that a different algorithm would avoid storing huge hash rings at all.",
+    "contrarian": {
+      "author": "robotresearcher",
+      "text": "Indeed the statistical model described in the article does not model the distribution over server hash allocations you'd get if you allow them to be inconsistent across load balancer hosts, so the model actually models (and thus implies) a single global source of truth that they probably don't have in practice.",
+      "commentId": 49769495,
+      "why": "The article justifies consistent hashing by servers coming and going, yet its error math assumes every balancer sees the same server set, so its error predictions skip the case the design exists for."
+    }
+  },
+  "digestedAt": "2026-10-17T14:39:16.000Z"
+}

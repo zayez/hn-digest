@@ -1,0 +1,131 @@
+{
+  "number": 811,
+  "date": "2026-09-25",
+  "url": "https://buttondown.com/hacker-newsletter/archive/811/",
+  "posts": [
+    {
+      "post": "49757178",
+      "section": "Working",
+      "tier": "dontSkip",
+      "reason": "Dan Luu's long argument, built on concrete examples of LLM-built software failing in practice, that a developer who just relays what the loop produces is doing a job the company could run without them."
+    },
+    {
+      "post": "49794330",
+      "section": "Favorites",
+      "tier": "dontSkip",
+      "reason": "A case against handing colleagues AI-written design docs, PRs and summaries, paired with the author's own line between what he let the model do on a paper and what he wrote himself."
+    },
+    {
+      "post": "49815466",
+      "section": "Working",
+      "tier": "worthYourTime",
+      "reason": "Argues that a postmortem should end with what will change, not with a good explanation, because a satisfying 'why' can kill the urgency to fix anything; the thread pushes back on leaders who skip the specifics."
+    },
+    {
+      "post": "49776130",
+      "section": "Working",
+      "tier": "worthYourTime",
+      "reason": "Names a common failure after promotion to senior (overreach, silence, hidden overwork, burnout) and a way out: become the most helpful person on the team and rebuild trust with steady, visible work."
+    },
+    {
+      "post": "49832938",
+      "section": "Learn",
+      "tier": "worthYourTime",
+      "reason": "A careful, footnoted essay on why most organs barely heal while the liver regrows, built on one idea (regeneration buys cancer risk), and a thread where a pathologist and others dig into vitamin A."
+    },
+    {
+      "post": "49758580",
+      "section": "Code",
+      "tier": "worthYourTime",
+      "reason": "Shows the arithmetic behind a large saving: derived error formulas that justified cutting hash points per server by 90%, and a rollout staged per data center to avoid a global cache flush."
+    },
+    {
+      "post": "49768826",
+      "section": "Ask HN",
+      "tier": "ifYouHaveAMinute",
+      "reason": "A short question that draws concrete interview formats from people who run them: debugging a deliberately broken codebase, pairing without AI, agentic take-homes."
+    },
+    {
+      "post": "49792067",
+      "section": "Code",
+      "tier": "ifYouHaveAMinute",
+      "reason": "Concrete before-and-after timings for each CI change in a large TypeScript monorepo: native TypeScript compiler, lint without type information, leaner installs, Vitest sharding."
+    },
+    {
+      "post": "49747070",
+      "section": "Favorites",
+      "tier": "ifYouHaveAMinute",
+      "reason": "A workable method for treating an LLM as a copyeditor rather than a ghostwriter, with two strict rules, and a thread of developers applying it to commit messages and PR descriptions."
+    },
+    {
+      "post": "49833867",
+      "section": "Show HN",
+      "tier": "ifYouHaveAMinute",
+      "reason": "An open-source desktop tool where coding agents draw sequence, ER and architecture diagrams linked to code, with a decision log, and a thread comparing it with C4 and PlantUML."
+    },
+    {
+      "post": "49768336",
+      "section": "Design",
+      "tier": "ifYouHaveAMinute",
+      "reason": "A long, illustrated essay arguing that classic pixel art owed its look more to dithering, anti-aliasing and palette choices than to CRT blur, with C64, Amiga, SNES and VGA examples."
+    }
+  ],
+  "nearMisses": [
+    {
+      "title": "I am often wrong",
+      "section": "Favorites",
+      "domain": "borischerny.com",
+      "url": "https://borischerny.com/management,/product/2026/09/19/I-am-often-wrong.html",
+      "hnId": 49777467
+    },
+    {
+      "title": "What Zig felt like, coming from Rust",
+      "section": "Code",
+      "domain": "besok.github.io",
+      "url": "https://besok.github.io/posts/what-zig-felt-like-coming-from-rust/",
+      "hnId": 49766637
+    },
+    {
+      "title": "OpenSpec – A lightweight and configurable AI spec framework",
+      "section": "Code",
+      "domain": "openspec.dev",
+      "url": "https://openspec.dev/",
+      "hnId": 49734264
+    },
+    {
+      "title": "Tin: full-text search for Postgres",
+      "section": "Data",
+      "domain": "planetscale.com",
+      "url": "https://planetscale.com/blog/introducing-tin",
+      "hnId": 49766611
+    },
+    {
+      "title": "Can gzip be a language model?",
+      "section": "Data",
+      "domain": "nathan.rs",
+      "url": "https://nathan.rs/posts/gzip-lm/",
+      "hnId": 49797323
+    },
+    {
+      "title": "Japanese used bookstores see 5x sales surge as books are being bought by the ton",
+      "section": "Books",
+      "domain": "tomshardware.com",
+      "url": "https://www.tomshardware.com/tech-industry/artificial-intelligence/japanese-used-bookstores-see-5x-sales-surge-as-books-are-being-bought-by-the-ton-one-50-ton-order-sent-to-the-us-for-ai-scanning-and-destruction-multitude-of-suspicious-bulk-buys-thought-to-end-up-in-foreign-ai-scan-and-shred-facilities",
+      "hnId": 49831456
+    },
+    {
+      "title": "Book Review: Is Parallel Programming Hard, and, If So, What Can You Do About It?",
+      "section": "Books",
+      "domain": "ahelwer.ca",
+      "url": "https://ahelwer.ca/post/2026-09-21-concurrency-textbook/",
+      "hnId": 49787759
+    },
+    {
+      "title": "28% of job postings on company career sites have been open over 90 days",
+      "section": "Working",
+      "domain": "unlisted.careers",
+      "url": "https://unlisted.careers/ghost-jobs/report/2026-09",
+      "hnId": 49818698
+    }
+  ]
+}

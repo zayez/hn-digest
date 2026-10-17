@@ -1,0 +1,118 @@
+{
+  "hnId": 49757178,
+  "title": "There's no point at which turning your brain off will work",
+  "url": "https://danluu.com/brain-off/",
+  "domain": "danluu.com",
+  "kind": "article",
+  "author": "robin_reala",
+  "postedAt": "2026-09-18T17:02:52.000Z",
+  "points": 206,
+  "commentCount": 157,
+  "readingMinutes": 14,
+  "tldr": "Dan Luu argues that acting as a brain-off \"meat proxy\" for an LLM can't pay off for an employee. While the LLM can't do the job alone, the result is bad software, and once it can, the company has no reason to keep the proxy.",
+  "article": {
+    "keyPoints": [
+      "Since early 2025 Luu has watched people hand tasks to an LLM and assume the output works, or sit in a loop pasting failures back to it, which Niklas Gruhn calls being a \"meat proxy\".",
+      "This works better in September 2026 than it did a year earlier, but if LLMs get good enough to make it produce decent software, the company can run the loop itself and lay off the human.",
+      "Agents still do badly on out-of-distribution work. On modern board games like Dominion, a frontier model is worse than a sensible human who has never played, and ChatGPT's advice made a new player worse.",
+      "Software built by people who outsourced the thinking usually doesn't work. A thought leader who said programming was solved had a GitHub where every example Luu checked was broken or weak, and Gary Bernhardt reports cutting agent diffs to 25% of their size.",
+      "LLM fact checks of his posts have poor precision and mediocre recall, and an LLM praising your work is currently a fairly strong sign the work is poor.",
+      "Waiting out a window of corporate inertia is also a bad bet. Companies once took months or years to fire people who stopped showing up, and AI is now their excuse to stop tolerating that."
+    ],
+    "whyItMatters": "The main text is four paragraphs, and almost all the substance sits in long footnotes. Read the original for Luke Burton's account of a months-long Bazel migration that needed constant supervision, the board-game experiments, and Luu's stories about how long it used to take companies to fire people who stopped working."
+  },
+  "comments": {
+    "overview": "The thread mostly agreed with Luu and then argued about what follows. Many developers said the brain-off push comes from management, not from them. Others debated whether a human stays useful as a holder of blame, where in the work the thinking belongs, and whether jobs disappear regardless of how engaged you are. A long side argument over a photography analogy took up the single largest thread.",
+    "themes": [
+      {
+        "title": "Management is forcing it",
+        "synthesis": "The most personal replies said engineers aren't choosing to switch off. Bosses push full automation and get angry when someone questions it. One commenter books a meeting room to code by hand so his lead won't see him working without Claude, and several people said they are resigning over it. Others put it down to executives buying a headcount-reduction pitch, and some thought there's no escaping it by changing jobs because investors want the same thing everywhere.",
+        "quotes": [
+          {
+            "author": "Arainach",
+            "text": "Even if I agree that you have to use your brain, when my boss is literally telling me to stop questioning whether AI automation is the right answer in team meetings/chats I'm just going to shut up and give them what they want.",
+            "commentId": 49757690
+          },
+          {
+            "author": "bunderbunder",
+            "text": "What they care about is that the actual work is being done by humans, and that's out of line with their grand vision of getting rid of humans.",
+            "commentId": 49758837
+          }
+        ]
+      },
+      {
+        "title": "The human as liability sink",
+        "synthesis": "Several people answered Luu's question about why a company would keep the proxy with \"to take the blame\". They called the role \"compliance ablative armor\", an AI patsy, a moral crumple zone, an accountability sink, and compared it to backup drivers in self-driving cars. Nobody called it a good job. Replies called it miserable, and one veteran engineer said he'd rather retire than sign off on generated work he can't review to his own standard.",
+        "quotes": [
+          {
+            "author": "science4sail",
+            "text": "The human's purpose is to keep an eye on the LLM, occasionally intervene/interfere with its work, and most importantly, incur social/legal liability for anything that the LLM does wrong.",
+            "commentId": 49757428
+          },
+          {
+            "author": "saltcured",
+            "text": "When the new plan is to increase throughput via delegation to these generators, I can't possibly review to my standards. So, I refuse to accept any of it as my work.",
+            "commentId": 49758129
+          }
+        ]
+      },
+      {
+        "title": "Where the thinking goes",
+        "synthesis": "The top thread argued about when to use your brain. Arubis said to do the thinking before the prompt, since the loop biases you toward its options, and to stop the loop when a mediocre result isn't good enough. xendo answered with Programming as Theory Building: you only understand software by building it. Others described the same split from practice. Most tasks go through on low effort, a few need real design work, and telling them apart is hard. One commenter said his work has turned into nonstop product decisions and is no less intense.",
+        "quotes": [
+          {
+            "author": "Arubis",
+            "text": "I guess what I'm ultimately getting at is that the loop is useful _and_ a mind-killer, and using your mind is _also_ high value, so do both those things, but don't do them at the same time.",
+            "commentId": 49758060
+          },
+          {
+            "author": "bunderbunder",
+            "text": "So I've been moving away from plan mode and letting the spin away on building large chunks, and back toward working in small increments and typing out the important code with my own hands. That seems to be the sweet spot.",
+            "commentId": 49758661
+          }
+        ]
+      },
+      {
+        "title": "Many shots versus one good one",
+        "synthesis": "dzink compared AI to a tourist firing off thousands of phone photos next to a photographer carefully setting up one shot, and said making many attempts and filtering beats overthinking. Most replies rejected this. Volume without the eye to judge it doesn't win competitions, and a watchmaking contest won by cherry-picking mass-produced movements ended up killing the contest. btrettel added that the users Luu describes don't take thousands of shots at all. They take one or two, say LGTM, and move on.",
+        "quotes": [
+          {
+            "author": "probably_wrong",
+            "text": "I can take as many thousands of pictures as I want but, without taking the time to critically review them to see what works and what doesn't, I will rarely produce a prize-worthy picture.",
+            "commentId": 49757873
+          },
+          {
+            "author": "btrettel",
+            "text": "They take a couple photos at most, say \"LGTM\", and move on to taking a photo of something else, even if their couple of photos of the sunset aren't great.",
+            "commentId": 49758280
+          }
+        ]
+      },
+      {
+        "title": "Will engagement even save the job?",
+        "synthesis": "Some took Luu's logic further than he did. If the stated goal is AI that beats humans at everything, staying engaged won't keep the paycheck either, and whole companies become thin proxies their customers can cut out. One commenter cited a nearly 20% drop in employment for developers aged 22 to 25 since late 2022, and another pushed back that the end of cheap money explains the same drop. Skeptics said AI isn't replacing people at all, and that managers were sold a product they believe can do it.",
+        "quotes": [
+          {
+            "author": "0c3ca83",
+            "text": "Even if you refuse to turn off your brain, the economics of paying you to keep the lights on upstairs aren't going to work out.",
+            "commentId": 49758051
+          },
+          {
+            "author": "rconti",
+            "text": "Anyway, it's just a single occurrence of a hiring drop in a single economic cycle. Unfortunately, it just happens to perfectly line up with the rise of GenAI.",
+            "commentId": 49757564
+          }
+        ]
+      }
+    ],
+    "consensus": "Turning your brain off produces bad work, and the useful human contribution is judgment: deciding what to build, catching the out-of-distribution case, and cutting the diff down. People who keep using their judgment are worth more than proxies.",
+    "dissent": "A sizable minority thought engagement won't protect anyone, because companies are cutting staff and hiring fewer juniors either way. Others said low-effort use is fine for throwaway or creative work where shoddy code doesn't matter.",
+    "contrarian": {
+      "author": "gjsman-1000",
+      "text": "If this is true, turning off the brain... is completely rational. Why burn out the brain for something happening either way?",
+      "commentId": 49757426,
+      "why": "It turns Luu's premise against his conclusion. If the loop will replace the proxy anyway, effort only pays if engaged employees are spared, and the thread never showed that they are."
+    }
+  },
+  "digestedAt": "2026-10-17T14:38:44.000Z"
+}

@@ -1,0 +1,94 @@
+{
+  "hnId": 49768826,
+  "title": "Ask HN: How do you interview devs in a post-AI world?",
+  "kind": "discussion",
+  "author": "mdwelsh",
+  "postedAt": "2026-09-19T18:10:34.000Z",
+  "points": 48,
+  "commentCount": 43,
+  "tldr": "A hiring manager says about 80% of developer candidates now direct coding agents instead of writing code, and asks whether leetcode and design rounds still make sense. Most HN answers say to test judgment rather than typing. Have candidates review flawed code, extend their own submission without AI, or explain every part of what they built.",
+  "comments": {
+    "overview": "A small, practical thread of interviewers swapping formats that worked for them. The main split is between people who keep AI out of the room to see how candidates think, and a smaller group that hires only AI-first developers and grades how they prompt. A few bitter replies show how many developers dislike where hiring is heading.",
+    "themes": [
+      {
+        "title": "Test reasoning with AI out of the loop",
+        "synthesis": "The most detailed formats remove AI at the moment that matters. One interviewer hands senior Java candidates a small CRUD API seeded with bugs like missing auth, no tests and System.out logging. Candidates explain each problem to the interviewer, who plays a junior. Another lets candidates submit a tiny CSV exercise however they like, then has them extend it live without AI writing code. Every candidate who had AI write the submission failed, according to this interviewer, because they could not break the problem down even out loud. A third company found its no-agent take-home gave better signal than an agentic one, where many candidates pasted the whole ticket into Claude and results swung widely.",
+        "quotes": [
+          {
+            "author": "status_quo69",
+            "text": "Every candidate that has submitted an ai submission thus far has failed because they have literally no idea where to go. I've interviewed dozens at this point. I'm not saying \"they're unfamiliar with the structure\", I'm saying \"they cannot actually break down the problem even verbally\".",
+            "commentId": 49770422
+          },
+          {
+            "author": "mnembrini",
+            "text": "When they point out errors, I get them to explain why they are errors by playing the junior engineer to see how they explain technical issues to someone that might not have the same understanding",
+            "commentId": 49771205
+          }
+        ]
+      },
+      {
+        "title": "Let them use AI, then make them explain it",
+        "synthesis": "Several commenters accept that hires will write most code with AI, so the interview should check whether they can tell good output from bad. They let candidates build with any tool and then question them on the design, the alternatives and the tradeoffs. One candidate described a take-home with no code requirement, a color-extraction tool built with any tools, as the most fun interview they had done, because they had to defend what they made. Another interviewer suggests planting a nonsensical requirement that a candidate should push back on and an agent would happily build.",
+        "quotes": [
+          {
+            "author": "wilsprouse",
+            "text": "However, the question becomes: Can they determine if the output is correct/well formed/production quality.",
+            "commentId": 49795354
+          },
+          {
+            "author": "jd7h",
+            "text": "Something nonsensical that the candidate should give a bit of pushback on, and a coding assistant will probably happily implement for you.",
+            "commentId": 49802750
+          }
+        ]
+      },
+      {
+        "title": "Hire AI-first and grade the prompting",
+        "synthesis": "A minority says to stop testing hand coding at all. One commenter's company hires only developers who work AI-first: candidates get an unfamiliar repo and an internal tooling setup with rules and quality gates, and may not write any code by hand for two hours. They still reject about 80% for weak AI interaction patterns. Others suggest grading how a candidate decomposes a problem in the first two prompts, or asking them to build a Claude Code clone as a take-home. Replies called this a developer's hell, and one doubted anyone can keep up with every model's limits.",
+        "quotes": [
+          {
+            "author": "fbrncci",
+            "text": "We still reject about 80% of the people who interview with us, because even though they know how to code with AI, their AI interaction patterns just aren't on par with what we need.",
+            "commentId": 49771533
+          },
+          {
+            "author": "RomanKornev",
+            "text": "Give them a time-constrained challenging problem that is wide in scope and see how well a candidate can decompose it before feeding it to AI. You can get pretty high signal within the first 2 prompts.",
+            "commentId": 49770939
+          }
+        ]
+      },
+      {
+        "title": "Nothing changed, just talk to them",
+        "synthesis": "Some interviewers say AI changed little because they already skipped leetcode. They ask candidates to walk through projects on their CV, what they chose and why, and judge curiosity, product sense and how clearly they explain things. One called it an extended Turing test. Another dropped whiteboard architecture after sitting on the candidate side and finding it stressful and uninformative.",
+        "quotes": [
+          {
+            "author": "karmakaze",
+            "text": "Basically the same as always--an extended interactive Turing test. Can they speak coherently and in-depth about the things they claim to have done on their CV/resume?",
+            "commentId": 49771322
+          }
+        ]
+      },
+      {
+        "title": "Paid work trials",
+        "synthesis": "One commenter runs a conventional technical interview and then a paid one- or two-day trial, and says no candidate has refused. Replies doubted this works for people who already have jobs, citing scheduling, legal limits on side work, and onboarding in so short a window. One argued it shrinks the pool to the unemployed. The author answered that on-site interviews already cost days and that trialists are handled like any contractor.",
+        "quotes": [
+          {
+            "author": "bayarearefugee",
+            "text": "Not sure it benefits the hiring company when they are artificially reducing the pool of applicants to only people who don't already have jobs.",
+            "commentId": 49770968
+          }
+        ]
+      }
+    ],
+    "consensus": "Leetcode tells you little now. The useful signal is whether a candidate can break a problem down, judge code whether they or an AI wrote it, and explain their decisions, and most formats people shared test that through review, live extension or questioning.",
+    "dissent": "A minority wants AI-first hires and grades prompting skill directly, and one company says it works well even for juniors. Others came from the candidate side. One developer who has shipped a year of Python without writing a line by hand asked how to interview at all, and another asked how to find employers that don't force agent work.",
+    "contrarian": {
+      "author": "latentsea",
+      "text": "Basically, the longer you go down this road you realise some people will still actually think about things and some people will just cede cognitive control and stop thinking much at all. If you're the former, working with the latter is exceptionally draining over the long-term.",
+      "commentId": 49772703,
+      "why": "It turns the hiring question around. The risk in an agent-heavy team is less about who can code and more about colleagues who stop thinking, which a prompting test would not catch."
+    }
+  },
+  "digestedAt": "2026-10-17T14:30:00.000Z"
+}
