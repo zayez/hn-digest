@@ -63,6 +63,16 @@ A quote is `{ "author", "text", "commentId" }`, copied from one comment in `comm
 }
 ```
 
+## Plain sentences
+
+The reader may be reading in a second language, so borrow three rules from ASD-STE100 Simplified Technical English for every field you wrote:
+
+- Sentences of 25 words or fewer.
+- One claim per sentence in `tldr` and `keyPoints`. Split a sentence that joins two claims with "so", "but" or "while": each claim then stands where you can check it against the source, and two that contradict each other show.
+- One name for each person or thing across the whole post. Once a post calls someone "the sender", it never calls them "the prompter".
+
+Prefer a plain verb to an idiom or phrasal verb ("ends" over "winds down") when it costs no meaning; a thread synthesis may keep a vivid verb that carries how the thread felt. Done when every field passes the three rules.
+
 ## Unslop the prose
 
 Read `~/.claude/skills/unslop/SKILL.md` and apply it to every field you wrote: `tldr`, `keyPoints`, `whyItMatters`, `articleNote`, `overview`, theme `title` and `synthesis`, `consensus`, `dissent`, `contrarian.why`. A summary reports what others said, so skip its "use I" and "have opinions" advice. Leave `quote.text`, `title` and the other fields copied from `meta.json` exactly as they are, curly quotes and dashes included: verify compares them byte for byte. Done when the self-audit finds no tells.

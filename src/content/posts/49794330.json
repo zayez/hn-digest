@@ -9,7 +9,7 @@
   "points": 1070,
   "commentCount": 460,
   "readingMinutes": 13,
-  "tldr": "Colin Breck argues that AI-generated design docs, PR descriptions and messages are unreadable because the reader lacks the context the prompter had, so he wants people's own words. He still uses AI heavily as a fact-checker, citation filler and copy editor for his own writing, but found its drafted prose useless every time.",
+  "tldr": "Colin Breck argues that AI-written design docs, PR descriptions and messages fail their readers. The reader lacks the context that the sender had when they prompted the AI. Breck uses AI to check facts, add citations and edit his own text. But he found its drafted prose unpleasant and often wrong.",
   "article": {
     "keyPoints": [
       "People increasingly build something with AI and then have AI write the design document after the fact, which turns a tool for building consensus into an exhaustive machine summary nobody wants to read.",
