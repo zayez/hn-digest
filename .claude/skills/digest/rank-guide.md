@@ -35,10 +35,6 @@ Picks are best first.
 - `why` is **private**: how it serves this reader's profile, naming the goal. Stays in `data/raw/`.
 - `wildcard: true` marks the picks taken under the profile's wildcard rule.
 
-## Proposal
-
-Show the user, tier by tier: title, section and the private `why`. Mark wildcards and count the AI pieces in the top two tiers. Then list the near-misses by title. End by asking for edits or a go.
-
 ## Calibration
 
-When the user changes a pick, demotes, promotes or swaps one, work out the lesson behind it: a preference the profile did not capture. Add it to the profile's Calibration section, newest first, tagged with the issue number (e.g. "Prefers practical type-level TypeScript over type-theory papers (#807)"). When a lesson contradicts a line elsewhere in the profile, update that line instead. Show the diff in the final report.
+When the user changes a pick after an issue ships, demotes, promotes or swaps one, work out the lesson behind it: a preference the profile did not capture. Add it to the profile's Calibration section, newest first, tagged with the issue number (e.g. "Prefers practical type-level TypeScript over type-theory papers (#807)"). When a lesson contradicts a line elsewhere in the profile, update that line instead. Show the diff in the final report.
