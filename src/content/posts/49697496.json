@@ -9,24 +9,24 @@
   "points": 372,
   "commentCount": 385,
   "readingMinutes": 15,
-  "tldr": "About twenty properly sampled visual preference surveys since the 1990s all found that most people prefer traditional buildings to modernist ones, by over 60 percent and often over 85, whatever their age, gender, politics or class. Architects are the one group whose taste runs the other way.",
+  "tldr": "About twenty properly sampled visual preference surveys since the 1990s found that most people prefer traditional buildings to modernist ones. Every survey found over 60 percent for traditional, and many found over 85. The preference holds across age, gender, politics and class. Architects and other experts are the one group whose taste often runs the other way.",
   "article": {
     "keyPoints": [
-      "The method is simple. Show people two images and ask which they prefer. Early surveys compared photos that differed in angle, weather and street width, so style alone could not explain the result. Better editing, and lately AI, now lets researchers change only the building treatment.",
-      "Expert and lay taste split from the start. In David Halpern's 1987 study, students agreed on which faces were attractive, but architecture students rated buildings close to the opposite of everyone else. Studies in Canada, Britain, Chile and Portugal found the same gap.",
+      "The method is simple. Show people two images and ask which they prefer. Early surveys compared photos that also differed in angle, weather and street width. So style alone could not explain the result. Better editing, and lately AI, now lets researchers change only the building treatment.",
+      "Expert and lay taste split from the start. In David Halpern's 1987 study, students agreed on which faces were attractive. But architecture students rated buildings close to the opposite of everyone else. Studies in Canada, Britain, Chile and Portugal found the same gap.",
       "The first properly sampled survey, in 1998, found 94 percent of likely new-build buyers wanted one of the traditional house styles. A 2009 test of four real commercial buildings, two of them prize-winning modernist designs, gave the traditional pair 77 percent.",
       "Recent tightly controlled pairs keep giving the same answer. US federal buildings got 72 percent on average, with 70 percent of Democrats and 73 percent of Republicans agreeing. The Bath stadium got 74 percent, the Christ's College library 71, the M&S Oxford Street scheme 79, and Dutch AI-edited pairs averaged 82. Even 18 to 24 year olds chose traditional.",
-      "The author admits the obvious objection. Most surveys were commissioned by groups that favour traditional design, and only about three dozen fully controlled pairs exist, all from Britain, the Netherlands and the US. The author's provisional estimate is that 70 to 90 percent of people prefer traditional styles.",
-      "That leaves a puzzle the author leaves open. Architecture schools teach almost only modernism, more than 99 percent of architects work in it, and Britain has had hardly any traditional public commissions since the 1950s, including where planning rules are neutral on style."
+      "Robert Kwolek admits the obvious objection. Groups that favour traditional design commissioned most of the surveys. Only about three dozen fully controlled pairs exist, all from Britain, the Netherlands and the US. Kwolek's provisional estimate is that 70 to 90 percent of people prefer traditional styles.",
+      "That raises a puzzle Kwolek leaves open. Architecture schools teach almost only modernism, and more than 99 percent of architects work only in it. Britain has had hardly any traditional public commissions since the 1950s. The pattern holds even where planning rules are neutral on style."
     ],
-    "whyItMatters": "Read the original for the image pairs. The argument rests on how controlled each comparison looks, and you can only judge that by seeing them. It also gives the demographic breakdowns survey by survey. The author works at Create Streets, which ran several of the studies, so keep that in mind."
+    "whyItMatters": "Read the original for the image pairs. The argument rests on how controlled each comparison looks, and only the images let you judge that. It also gives the demographic breakdowns survey by survey. Kwolek works at Create Streets, which ran several of the studies, so keep that in mind."
   },
   "comments": {
-    "overview": "A big, heated thread. Few people disputed that the public likes old facades. The fights were over whether the photos were a fair test, whether a building should be judged from the street at all, and what actually stops anyone building traditional today. It slid into culture war twice, once over brutalism and once over who funds the research, and a moderator stepped in.",
+    "overview": "A big, heated thread, though few people disputed that the public likes old facades. The fights were over whether the photos were a fair test, whether to judge a building from the street, and what stops traditional building today. It slid into culture war twice, over brutalism and over who funds the research, and a moderator stepped in.",
     "themes": [
       {
         "title": "Cost, labour and who builds",
-        "synthesis": "One camp says modernism won because it is cheap. Skilled labour costs far more than it did a century ago, and developers build interchangeable units for investors. The other camp says this is a myth. Ornament was mass-produced from moulds by 1900, and modernist buildings were often costlier and less durable. When architects get a free hand and a big budget they still pick the plain look. Others blamed parking minimums, fire codes and lost trades, from plasterers to the craftsmen killed in two world wars.",
+        "synthesis": "One camp says modernism won on cost, because skilled labour now costs far more and developers build interchangeable units for investors. The other camp calls this a myth, since ornament was mass-produced from moulds by 1900 and modernist buildings often cost more and lasted less. And architects with a free hand and a big budget still pick the plain look. Others blamed parking minimums, fire codes and lost trades, including craftsmen killed in two world wars.",
         "quotes": [
           {
             "author": "in_absentia",
@@ -42,7 +42,7 @@
       },
       {
         "title": "Judging a building by its photo",
-        "synthesis": "The top thread argued that a facade photo measures the wrong thing. People who moved from a pretty 19th-century office into a glass tower said the new one was better to work in, with more light and working climate control. Others replied that old style and modern services are separate questions. Gutted and renovated old buildings fetch the highest prices per square metre in Berlin and in one commenter's Spanish city. One commenter worked out that a fully glazed wall has to be coated against so much sun that it barely lets in more light than ordinary windows.",
+        "synthesis": "The top thread argued that a facade photo measures the wrong thing. People who moved from a pretty 19th-century office to a glass tower preferred the tower, for its light and its working climate control. Others replied that old style and modern services are separate questions, and renovated old buildings fetch the top prices per square metre in Berlin. One commenter calculated that a fully glazed wall needs so much sun coating that it lets in barely more light than ordinary windows.",
         "quotes": [
           {
             "author": "Analemma_",
@@ -58,7 +58,7 @@
       },
       {
         "title": "Rigged comparisons and survivorship bias",
-        "synthesis": "Many thought the pairs set luxury traditional against cheap modern. In one image the 'traditional' side was simply newer, cleaner and repaved. Several said the 'traditional' renders were just stone cladding on the same box. Survivorship bias came up repeatedly, since the slums of 1900 are gone. Defenders answered that some studies used award-winning modernist buildings and that whole old villages of ordinary houses still look good. Some said people just like the familiar. Others noted that modernism has been the familiar style for 70 years.",
+        "synthesis": "Many thought the pairs set luxury traditional against cheap modern, and in one image the 'traditional' side was simply newer, cleaner and repaved. Others said the 'traditional' renders were stone cladding on the same box, and that survivorship bias hides the slums of 1900. Defenders answered that some studies used award-winning modernist buildings, and that whole old villages of ordinary houses still look good. Some said people just like the familiar, but others noted that modernism has been the familiar style for 70 years.",
         "quotes": [
           {
             "author": "tensor",
@@ -74,7 +74,7 @@
       },
       {
         "title": "Why architects see it differently",
-        "synthesis": "Explanations for the expert gap ranged from in-group signalling and boredom with the familiar to schools that teach design through massing, which hides ornament from view. rbanffy defended deferring to people who study the field, comparing it to brain surgery. Others said taste is not a skill you can delegate. A long brutalism fight pitted 'material honesty' against the lived experience of UK council estates. Several noted that the well-loved examples, like the Barbican, are exceptions.",
+        "synthesis": "Explanations for the expert gap included in-group signalling, boredom with the familiar, and schools that teach design through massing, which hides ornament. rbanffy defended deferring to experts, comparing it to brain surgery, but others said taste is not a skill you can delegate. A long brutalism fight pitted 'material honesty' against the lived experience of UK council estates. Several noted that well-loved examples like the Barbican are exceptions.",
         "quotes": [
           {
             "author": "AlanYx",
@@ -90,7 +90,7 @@
       },
       {
         "title": "Who is asking, and why",
-        "synthesis": "Some readers saw an agenda. Create Streets and the National Civic Art Society commissioned much of the research and have ties to the right. Another pointed out that Stripe, whose founder donated to Trump's campaign, owns Works in Progress. vintagedave said the preference is real but that the right uses it as a gateway, and that sneering at popular taste only helps them. Others pushed back hard on reading racism into liking nice buildings. The moderator warned the thread against ideological battle.",
+        "synthesis": "Some readers saw an agenda, since Create Streets and the National Civic Art Society commissioned much of the research and have ties to the right. Another pointed out that Stripe, whose founder donated to Trump's campaign, owns Works in Progress. vintagedave said the preference is real but the right uses it as a gateway, and that sneering at popular taste only helps them. Others pushed back hard on reading racism into liking nice buildings, and the moderator warned the thread against ideological battle.",
         "quotes": [
           {
             "author": "janpeuker",
@@ -111,7 +111,7 @@
       "author": "plorkyeran",
       "text": "There is a clear preference for *other people* to build in traditional styles, but as soon as you have to care about more than what the facade looks like from the outside people choose the uglier functional option.",
       "commentId": 49715891,
-      "why": "It offers an answer to the article's closing puzzle about stated versus revealed preference. The survey question costs respondents nothing, while choosing a building to work or live in does."
+      "why": "It suggests why stated and revealed preference differ, since a survey answer costs nothing but choosing a building to live or work in does."
     }
   },
   "digestedAt": "2026-10-14T21:07:37.000Z"

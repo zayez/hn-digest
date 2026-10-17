@@ -19,7 +19,7 @@ Copy these fields from `meta.json` as they are: `hnId` (= `id`), `title`, `url`,
 
 Then the summary fields:
 
-- `tldr` — one or two sentences on what the story _says_ (its claim or finding), standing alone: it is shown in listings without the title context. For a `discussion`, the question and the headline answer.
+- `tldr` — up to four short sentences on what the story _says_ (its claim or finding), standing alone: it is shown in listings without the title context. For a `discussion`, the question and the headline answer.
 - `article` — present when there is text making a case (`article`, `pdf`, or a `discussion` whose `storyText` argues something, like a Tell HN essay). Leave it out for a `discussion` whose body only asks a question — the tldr carries the question.
   - `keyPoints` — 3 to 6 points, each a full sentence carrying a specific claim, number or argument from the text. Ordered as the author builds the case.
   - `whyItMatters` — who should read the original and what they get from it that the summary lacks.

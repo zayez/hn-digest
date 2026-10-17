@@ -9,24 +9,24 @@
   "points": 67,
   "commentCount": 17,
   "readingMinutes": 60,
-  "tldr": "37signals published the playbook its people managers work from. Managers set explicit standards, give fast and specific feedback, coach instead of dictate, and deal with underperformance early. They don't touch pay or profit share, which follow a formula, and they must call every hire a \"hell yeah\" at one year or let them go.",
+  "tldr": "37signals published the playbook its people managers work from. Managers set explicit standards and give fast, specific feedback. They coach instead of dictating and deal with underperformance early. They don't touch pay or profit share, which follow a formula. They must call every hire a \"hell yeah\" at one year or let them go.",
   "article": {
     "keyPoints": [
-      "Managers have no say over pay. An annual benchmark sets salaries at the top 10% of San Francisco tech rates wherever the employee lives, everyone at the same role and level earns the same, and the floor is $77,175. After two years, staff share in 10% of profits, split by tenure.",
-      "Employees tell their manager when they're taking time off. They don't ask. Managers shouldn't refuse it unless a critical event is coming, and shouldn't ask how the time will be spent. Complaints of harassment, discrimination or labor violations go straight to People Ops.",
-      "The company hires only \"when it hurts\". People Ops screens thousands of applicants. The hiring manager writes a take-home exercise that looks like real cycle work, candidates get a couple of weeks for it, and most of the interview digs into that project.",
-      "Performance is judged on one framework, Skills, Engagement and Coachability. Reviews come at 3, 6 and 12 months. A hire stays past one year only as a \"hell yeah\". L1 and L2 staff must reach the next level within two years, and managers check informally after every cycle.",
-      "Managers should name underperformance early, with concrete examples, a plan with benchmarks and a deadline, and People Ops in the loop before the talk. A termination call should take under five minutes. A manager swamped by an underperformer can hand the job to senior leadership.",
-      "Most coaching should be non-directive, so reports learn to decide without the manager. Praise should name a specific win and tie it to a company value, since a 2024 survey scored recognition lowest of any area. Managers should stay positive even about decisions they disagree with. The playbook keeps suggesting AI to stress-test briefs, feedback and promotion cases, never to make the call."
+      "Managers have no say over pay. An annual benchmark sets salaries at the top 10% of San Francisco tech rates, wherever the employee lives. Everyone at the same role and level earns the same. The salary floor is $77,175. After two years, employees share in 10% of profits, split by tenure.",
+      "Employees tell their manager when they're taking time off. They don't ask. Managers shouldn't refuse it unless a critical event is coming. They also shouldn't ask how the time will be spent. Complaints of harassment, discrimination or labor violations go straight to People Ops.",
+      "37signals hires only \"when it hurts\". People Ops screens thousands of applicants. The hiring manager writes a take-home exercise that looks like real cycle work. Candidates get a couple of weeks for it. Most of the interview digs into that project.",
+      "Performance is judged on one framework, Skills, Engagement and Coachability. Reviews come at 3, 6 and 12 months. A hire stays past one year only as a \"hell yeah\". L1 and L2 employees must reach the next level within two years. Managers check progress informally after every cycle.",
+      "Managers should name underperformance early. They bring concrete examples, a plan with benchmarks and a deadline, and People Ops in the loop before the talk. A termination call should take under five minutes. A manager swamped by an underperformer can hand the job to senior leadership.",
+      "Most coaching should be non-directive, so reports learn to decide without the manager. Praise should name a specific win and tie it to a company value. A 2024 survey scored recognition lowest of any area. Managers should stay positive even about decisions they disagree with. The playbook keeps suggesting AI to stress-test briefs, feedback and promotion cases, never to make the call."
     ],
-    "whyItMatters": "Read the original if you manage engineers or designers and want an operating manual with real opinions in it. It has the exact peer-feedback questions, scripts for underperformance and termination calls, the SEC scanning example and the promotion pitch checklist, none of which fit in a summary."
+    "whyItMatters": "Read the original if you manage engineers or designers and want an operating manual with real opinions in it. It has the exact peer-feedback questions and scripts for underperformance and termination calls. It also has the SEC scanning example and the promotion pitch checklist. None of these fit in a summary."
   },
   "comments": {
-    "overview": "A small thread, mostly skeptical, that talked more about 37signals and DHH than about the management advice. People sneered at the \"hell yeah\" bar and one person defended it. A sub-thread turned to DHH's politics and the company's history, and one useful exchange asked how to run take-home exercises now that AI can do them.",
+    "overview": "A small, mostly skeptical thread that talked more about 37signals and DHH than about the management advice. People sneered at the \"hell yeah\" bar, and one person defended it. A sub-thread turned to DHH's politics and 37signals' history. One useful exchange asked how to run take-home exercises now that AI can do them.",
     "themes": [
       {
         "title": "The \"hell yeah\" bar and the playbook's tone",
-        "synthesis": "One commenter quoted the one-year retention line as cringe-worthy and said a company making digital widgets had better pay \"Hell Yeah\" money. A reply said it does pay well for a remote company. A defender said it beats the empty corporate prose of most handbooks and pasted an ex-colleague's LinkedIn bio as proof. Others said the playbook just tries to sound cool, and that the real alternative is plain talk without the idealism.",
+        "synthesis": "One commenter quoted the one-year retention line as cringe-worthy and said a company making digital widgets had better pay \"Hell Yeah\" money. A reply said 37signals does pay well for a remote company. A defender said the playbook beats the empty corporate prose of most handbooks and pasted an ex-colleague's LinkedIn bio as proof. Others said the playbook just tries to sound cool, and that the real alternative is plain talk without the idealism.",
         "quotes": [
           {
             "author": "jen729w",
@@ -42,7 +42,7 @@
       },
       {
         "title": "Practice versus preaching at 37signals",
-        "synthesis": "Critics set the playbook's lines about treating staff as capable adults and staying positive about company decisions against reports that about a third of the company once resigned. They called it a culture of \"their way or the door\". Commenters said DHH's posts on Tommy Robinson's march and on immigration break the company's own ban on discussing politics at work, and several said they'd take no management advice from him. One reply noted the posts are on his personal HEY blog, not a company one.",
+        "synthesis": "Critics set the playbook's lines on treating employees as capable adults and staying positive against reports that about a third of 37signals once resigned. They called it a culture of \"their way or the door\". Commenters said DHH's posts on Tommy Robinson's march and on immigration break 37signals' own ban on discussing politics at work. Several said they'd take no management advice from him, though one reply noted the posts are on his personal HEY blog.",
         "quotes": [
           {
             "author": "Ecstatify",
@@ -58,7 +58,7 @@
       },
       {
         "title": "Take-home exercises in the AI age",
-        "synthesis": "The playbook's multi-week take-home prompted a hiring manager to ask how big an exercise should be now. AI chews through anything small, and anything bigger drags candidates deep into the domain. One reply said to make the follow-up conversation the real test, since someone who let a machine do the work won't understand it. Another said to skip the assignment and have candidates walk through code they already wrote and are proud of.",
+        "synthesis": "The playbook's multi-week take-home exercise prompted a hiring manager to ask how big an exercise should be now. AI chews through anything small, and anything bigger drags candidates deep into the domain. One reply said to make the follow-up conversation the real test, since someone who let AI do the work won't understand it. Another said to skip the exercise and have candidates walk through code they already wrote and are proud of.",
         "quotes": [
           {
             "author": "yjftsjthsd-h",
@@ -84,13 +84,13 @@
         ]
       }
     ],
-    "consensus": "Most commenters judged the playbook by 37signals' reputation and DHH's public persona, not by what it says, and doubted the company as a source of management advice.",
-    "dissent": "A few pushed back. The direct, committed tone beats generic corporate language, the company does pay well, and DHH's political posts are on his personal blog, not the company's.",
+    "consensus": "Most commenters judged the playbook by 37signals' reputation and DHH's public persona, not by what it says. They doubted 37signals as a source of management advice.",
+    "dissent": "A few pushed back. The direct, committed tone beats generic corporate language, and 37signals does pay well. DHH's political posts are on his personal blog, not a company one.",
     "contrarian": {
       "author": "dewey",
       "text": "It's not the company blog, it's his personal blog using the hey.com email services blogging feature.",
       "commentId": 49348430,
-      "why": "The hypocrisy charge in that sub-thread assumed DHH was posting for the company. If the posts are personal, they don't break a company rule about politics at work."
+      "why": "The hypocrisy charge in that sub-thread assumed DHH was posting for 37signals. If the posts are personal, they don't break a company rule about politics at work."
     }
   },
   "digestedAt": "2026-10-11T13:52:26.000Z"

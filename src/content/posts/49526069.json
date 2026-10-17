@@ -9,23 +9,23 @@
   "points": 879,
   "commentCount": 1056,
   "readingMinutes": 56,
-  "tldr": "Dan Luu checks about 30 dated predictions the AI skeptic Ed Zitron made in 2024 and 2025, among them that AI had peaked, that OpenAI's revenue forecasts were near-criminal and that Cursor would die. He scores nearly all of them wrong, and says the numbers Zitron cites decorate anger more than they support an argument.",
+  "tldr": "Dan Luu checks about 30 dated predictions the AI skeptic Ed Zitron made in 2024 and 2025. They include that AI had peaked, that OpenAI's revenue forecasts were near-criminal, and that Cursor would die. Luu scores nearly all of them wrong. He says Zitron's numbers decorate anger more than they support an argument.",
   "article": {
     "keyPoints": [
       "Luu opens with Zitron's November 2024 claim that Meta, Google and Microsoft were dying and pushing AI out of desperation. All three grew revenue and profit by double digits from 2023 through the first half of 2026. The supporting evidence was an outlier Similarweb estimate of Facebook users and a hero-villain story about Google's Prabhakar Raghavan.",
-      "People cite Zitron as \"the guy who looked at the numbers\", but the numbers often don't connect to his claims. Timothy B. Lee found that the spreadsheet behind Zitron's Anthropic revenue estimate counted March 1-10 twice and contained a February 30, and the suspicious gap vanished once the errors were fixed.",
-      "The dated list runs from February 2024 to November 2025. Generative AI has peaked, labs are out of data, OpenAI's $11.6B forecast for 2025 is \"some kind of financial crime\", Gemini reaching 500M users is so unrealistic Sundar Pichai should be fired, Cursor will die, and the bubble pops \"no later than Q2 2026\". OpenAI beat the forecast, Gemini hit 750M, Cursor sold for $60B, and only the Orion-to-GPT-4.5 call rates \"possibly right\".",
-      "Luu stresses confidence. Zitron is wrong at what is rhetorically the highest certainty possible, so his record would score badly under Brier scoring. Luu left out near-tautologies such as \"OpenAI will collapse or raise more money\", which a redditor's earlier tally had counted against him.",
-      "He compares Zitron to Kurzweil, who also uses numbers for an aura of credibility, and to Paul Ehrlich, who never conceded his famine predictions. Following Michał Zalewski, he argues that crisp, angry positions win audiences, and he lists the defenses fans use: \"you didn't address X\", \"he never said that\", \"he's just early\"."
+      "People cite Zitron as \"the guy who looked at the numbers\". But the numbers often don't connect to his claims. Timothy B. Lee found that the spreadsheet behind Zitron's Anthropic revenue estimate counted March 1-10 twice, among other date errors. Another commenter spotted a February 30 in it. Once the errors were fixed, the suspicious gap vanished.",
+      "The dated list runs from February 2024 to November 2025. Zitron said generative AI had peaked, labs were out of data, and Cursor would die. He called OpenAI's $11.6B forecast for 2025 \"some kind of financial crime\". He said Gemini reaching 500M users was so unrealistic that Sundar Pichai should be fired. He put the bubble's pop \"no later than Q2 2026\". OpenAI beat the forecast, Gemini hit 750M, and Cursor sold for $60B. Only the Orion-to-GPT-4.5 call rates \"possibly right\".",
+      "Luu stresses confidence. Zitron is wrong at the highest rhetorical certainty possible. Under Brier scoring, his record would score badly. Luu left out near-tautologies such as \"OpenAI will collapse or raise more money\". A redditor's earlier tally had counted that one against Zitron.",
+      "He compares Zitron to Kurzweil, who also uses numbers for an aura of credibility. He also compares him to Paul Ehrlich, who never conceded his famine predictions. Following Michał Zalewski, he argues that crisp positions that leave no room for doubt win audiences. He lists the defenses fans use: \"you didn't address X\", \"he never said that\", \"he's just early\"."
     ],
-    "whyItMatters": "Worth reading if you cite Zitron or are weighing AI-bubble arguments. The original links every prediction to its source, quotes Juho Snellman and others on Zitron's use of numbers, and has appendices on method. ChatGPT drafted the prediction list, Luu filtered it, and he explains which claims he left out and why. It does not take on the data-center financing case most of his readers follow him for."
+    "whyItMatters": "Worth reading if you cite Zitron or are weighing AI-bubble arguments. The original links every prediction to its source and quotes Juho Snellman and others on Zitron's use of numbers. Its appendices explain the method: ChatGPT drafted the prediction list, Luu filtered it, and he says which claims he left out and why. It does not take on the data-center financing case that most of Zitron's readers follow him for."
   },
   "comments": {
-    "overview": "Over a thousand comments, hot and split roughly into two camps. Most accepted that the dated predictions failed and fought over whether that matters. One side called Zitron a grifter captured by his audience. A loud minority said Luu graded slogans literally, wrote \"Wrong\" without reasons, and skipped the financial argument about circular deals and data-center debt that they read Zitron for.",
+    "overview": "Across over a thousand comments, most commenters accepted that the dated predictions failed and fought hotly over whether that matters. One side called Zitron a grifter captured by his audience. A loud minority said Luu graded slogans literally and wrote \"Wrong\" without reasons. They read Zitron for the financial argument about circular deals and data-center debt, which Luu skipped.",
     "themes": [
       {
         "title": "Wrong, or just early?",
-        "synthesis": "The longest argument was over whether a bubble call with a missed date still has value. Defenders compared Zitron to people who called the dot-com and subprime busts a few years early and said the causal analysis matters more than the timing. Critics answered that he chose the deadlines himself, that \"AI has already peaked\" was a claim about the present that was false when he made it, and that a bubble pop later would not fix the record. One commenter framed the thread as two camps, one that grades predictions strictly and one that cares about direction.",
+        "synthesis": "The longest argument, which one commenter framed as strict graders against people who care about direction, was over whether a missed date still matters. Defenders compared Zitron to those who called the dot-com and subprime busts years early, and said causal analysis matters more than timing. Critics answered that he chose the deadlines himself, and that \"AI has already peaked\" was false when he said it. A later pop, they said, would not fix the record.",
         "quotes": [
           {
             "author": "joshcsimmons",
@@ -41,7 +41,7 @@
       },
       {
         "title": "The financial thesis the post skipped",
-        "synthesis": "Many said Luu dodged Zitron's main case: AI revenue is tiny next to capex, usage is subsidized, and money cycles between hyperscalers, labs and startups. Commenters cited Harvey's token bills, power users running 15 Codex plans, Google booking gains on its Anthropic stake, and off-balance-sheet data-center debt. Others pushed back. Paying customers are real, investment gains sit apart from the revenue lines Luu quoted, and Nathan Tankus argues AI bond issuance is too small to cause a subprime-style crisis.",
+        "synthesis": "Many said Luu dodged Zitron's main case: AI revenue is tiny next to capex, usage is subsidized, and money cycles between hyperscalers, labs and startups. Commenters cited Harvey's token bills, power users running 15 Codex plans, Google booking gains on its Anthropic stake, and off-balance-sheet data-center debt. Others pushed back: paying customers are real, and investment gains sit apart from the revenue lines Luu quoted. Nathan Tankus, they noted, argues AI bond issuance is too small to cause a subprime-style crisis.",
         "quotes": [
           {
             "author": "maxglute",
@@ -57,7 +57,7 @@
       },
       {
         "title": "Critiques of Luu's method",
-        "synthesis": "Several readers found the grading uncharitable. They objected to bare \"Wrong\" verdicts on fuzzy claims like \"peak AI\", to revenue tables as proof a company isn't \"dying\" when Zitron meant enshittification, and to Luu taking Gemini's 750M users at face value after debunking futurists' marketing numbers. Some pointed out that Luu agrees Google degraded search for revenue. Others replied that Zitron made the claims in those words and that rigor is the norm when grading predictions.",
+        "synthesis": "Several readers found the grading uncharitable, with bare \"Wrong\" verdicts on fuzzy claims like \"peak AI\". They said revenue tables can't refute \"dying\" when Zitron meant enshittification, and Luu himself agrees Google degraded search for revenue. They also faulted Luu for taking Gemini's 750M users at face value after debunking futurists' marketing numbers. Others replied that Zitron made the claims in those words, and rigor is the norm when grading predictions.",
         "quotes": [
           {
             "author": "psvv",
@@ -89,7 +89,7 @@
       },
       {
         "title": "Incentives, audience capture and the CEOs",
-        "synthesis": "Many saw a pundit captured by a paying audience that wants AI to fail, and some had firsthand stories. minimaxir stopped helping him over misused technical advice, gregdoesit was mocked and blocked after sharing survey data, and a former PR client found him hard to work with. simonw said Zitron sometimes breaks real news but buries it in commentary too biased to judge. The standard rebuttal was to ask why Altman and Amodei get a pass. The answer from most was that the CEOs also build products, while predictions are Zitron's whole output.",
+        "synthesis": "Many saw a pundit captured by a paying audience that wants AI to fail, and some had firsthand stories. minimaxir stopped helping him over misused advice, gregdoesit was mocked and blocked after sharing survey data, and a former PR client found him difficult. simonw said Zitron sometimes breaks real news but buries it in commentary too biased to judge. Asked why Altman and Amodei get a pass, most answered that the CEOs also build products, while predictions are Zitron's whole output.",
         "quotes": [
           {
             "author": "minimaxir",
@@ -104,7 +104,7 @@
         ]
       }
     ],
-    "consensus": "Zitron's dated calls on capabilities, revenue forecasts, Gemini users and Cursor failed, and his tone and audience make him a poor source. Even many who share his bubble worries wanted a more careful critic.",
+    "consensus": "Zitron's dated calls on capabilities, revenue forecasts, Gemini users and Cursor failed. His tone and audience make him a poor source. Even many who share his bubble worries wanted a more careful critic.",
     "dissent": "A sizable minority held that the core claim is still open: AI revenue can't cover the capex and circular financing. They found Luu's piece as one-sided as he says Zitron is, with \"Wrong\" in place of reasons.",
     "contrarian": {
       "author": "leoc",

@@ -12,21 +12,21 @@
   "tldr": "Colin Breck argues that AI-written design docs, PR descriptions and messages fail their readers. The reader lacks the context that the sender had when they prompted the AI. Breck uses AI to check facts, add citations and edit his own text. But he found its drafted prose unpleasant and often wrong.",
   "article": {
     "keyPoints": [
-      "People increasingly build something with AI and then have AI write the design document after the fact, which turns a tool for building consensus into an exhaustive machine summary nobody wants to read.",
-      "AI-written PR descriptions list every change but skip what a reviewer needs to know: why the work matters, how risky it is, and where to look.",
-      "AI output reads well to the person who prompted it because they hold all the context, while a recipient has none and has to read every line to reconstruct it.",
-      "A cited survey found 78% of developers stop reading when they suspect an article is AI-written and 98% prefer the author's own flawed prose.",
-      "Writing an academic paper, Breck had AI check each paragraph against source code, logs and metrics, fill in BibTeX citations, catch grammar errors and draw TikZ diagrams. It caught a notation error four expert reviewers missed, but every paragraph it drafted was unpleasant and often wrong. The abstract was the one part he kept verbatim.",
-      "He points to ASD-STE100 Simplified Technical English for AI-written manuals and to Pangram, which Oxide now requires public writing to pass as human-authored, and argues that narrative and uncertainty are where summaries lose the most."
+      "People increasingly build something with AI and then have AI write the design document after the fact. That turns a tool for building consensus into an exhaustive machine summary nobody wants to read.",
+      "AI-written PR descriptions list every change. But they skip what a reviewer needs to know: why the work matters, how risky it is, and where to look.",
+      "AI output reads well to the sender because the sender holds all the context. The reader has none and has to read every line to reconstruct it.",
+      "A cited survey found that 78% of developers stop reading when they suspect an article is AI-written. 98% prefer the author's own flawed prose.",
+      "Writing a paper, Breck had AI check paragraphs against code, logs and metrics, fill in BibTeX citations, catch grammar errors and draw TikZ diagrams. It caught a notation error four expert reviewers missed. Paragraphs it drafted from his context were unpleasant to read and often wrong. The one exception was the abstract, which he kept unchanged.",
+      "Breck points to ASD-STE100 Simplified Technical English for AI-written manuals. He also points to Pangram, which Oxide now requires public writing to pass as human-authored. He argues that summaries lose the most in narrative and uncertainty."
     ],
-    "whyItMatters": "Worth reading for anyone setting team norms on AI-written docs or PRs. The original has the concrete workflow Breck used on his paper, plus the long quotes from Simon Sarris, Bryan Cantrill and Iain McGilchrist that carry the essay's case for writing as attention."
+    "whyItMatters": "Worth reading for anyone setting team norms on AI-written docs or PRs. The original has the concrete workflow Breck used on his paper. It also has the long quotes from Simon Sarris, Bryan Cantrill and Iain McGilchrist that carry the essay's case for writing as attention."
   },
   "comments": {
-    "overview": "A huge, mostly sympathetic thread. The top comment's claim that an LLM can't add real information to a 300-bit prompt set off a long information-theory argument, while dozens of developers swapped stories about bloated AI PRs and specs at work. A loud minority called the whole genre elitist toward people who struggle to write.",
+    "overview": "A huge, mostly sympathetic thread, whose top comment set off a long information-theory argument: can AI add real information to a 300-bit prompt? Dozens of developers swapped stories about bloated AI PRs and specs at work. A loud minority called the essay's stance elitist toward people who struggle to write.",
     "themes": [
       {
-        "title": "Can an LLM add information to your prompt?",
-        "synthesis": "hatthew argued that if you give an LLM 300 bits and it fills in 700, those 700 bits were inferable by the reader too, so you should send the 300. Critics answered that inference costs effort the reader may not have, that LLMs know more than either party, and that a sender who checks the output and vouches for it adds real signal. Defenders replied with the data processing inequality and asked why, if the model did the thinking, the reader needs the sender at all.",
+        "title": "Can AI add information to your prompt?",
+        "synthesis": "hatthew argued that if an AI fills in 700 bits around your 300, the reader could infer those 700 too, so send the 300. Critics answered that inference costs the reader effort and that AI knows more than either party. A sender who vouches for checked output adds signal, they said. hatthew's side replied with the data processing inequality, and asked why the reader needs the sender at all if the AI did the thinking.",
         "quotes": [
           {
             "author": "hatthew",
@@ -42,7 +42,7 @@
       },
       {
         "title": "Generation is cheap, review is not",
-        "synthesis": "Many described the same workplace failure. Colleagues produce pages of PR rationale, specs and ticket comments in seconds, and reviewers must read all of it because approval implies they did. One lead described juniors whose confident AI-written PRs had never been run, a marketer handing engineers wrong implementation specs, and teams where AI reviews AI and nobody really reads. One commenter framed the cost as verification capacity falling behind generation capacity, with the burden moved from the writer to everyone else.",
+        "synthesis": "Many described the same workplace failure. Colleagues produce pages of PR rationale, specs and ticket comments in seconds, and reviewers must read all of it because approval implies they did. One lead described juniors whose confident AI-written PRs had never been run, and teams where AI reviews AI and nobody really reads. One commenter said verification capacity falls behind generation capacity, which moves the burden from the sender to everyone else.",
         "quotes": [
           {
             "author": "zmmmmm",
@@ -58,7 +58,7 @@
       },
       {
         "title": "Gatekeeping or a fair demand?",
-        "synthesis": "gfody, dandare and others said AI lets non-native speakers, people on the spectrum and weak writers be heard, and that demanding raw prose is privilege talking. The reply was that an LLM mangles what those writers mean and leaves the reader unable to tell guesses from intent, and fzeroracer, who also finds writing hard, would rather read broken English. A smaller group said only the quality of the text matters, not who produced it.",
+        "synthesis": "gfody, dandare and others said AI lets non-native speakers, people on the spectrum and weak writers be heard, so demanding raw prose is privilege talking. The reply was that AI mangles what those writers mean, so the reader can't tell guesses from intent. fzeroracer, who also finds writing hard, would rather read broken English. A smaller group said only the quality of the text matters, not who produced it.",
         "quotes": [
           {
             "author": "gfody",
@@ -74,7 +74,7 @@
       },
       {
         "title": "What teams are trying",
-        "synthesis": "The most common fix was to ask for the prompt instead of the output, though others countered that a prompt carries less than vetted output. Other fixes people use: a hand-written \"AI;DR\" section at the top of PRs, pair-reviewing huge PRs or text walls with their author, flatly asking coworkers for a non-LLM version, and forcing agents to write in ASD-STE100. One commenter said a firm \"write like a human\" instruction to Claude helps, while one commenter who tried blacklists and prompt evolution said nothing removed the Claude voice.",
+        "synthesis": "The most common fix was to ask for the prompt instead of the output, though others countered that a prompt carries less than vetted output. Others use a hand-written \"AI;DR\" section atop PRs, pair-review huge PRs with the sender, ask coworkers for a non-AI version, or force agents into ASD-STE100. One commenter said a firm \"write like a human\" instruction to Claude helps. Another tried blacklists and prompt evolution, and nothing removed the Claude voice.",
         "quotes": [
           {
             "author": "selcuka",
@@ -90,7 +90,7 @@
       },
       {
         "title": "The \"isn't just difficult, it is punishing\" line",
-        "synthesis": "About a dozen separate threads seized on one early sentence, a not-X-but-Y construction with an em dash, as an AI tell, and some readers said they closed the tab there. Most who looked closer read it as a deliberate joke, Pangram scored the essay as human-written, and others pointed out that humans used both patterns long before LLMs. Several noted that people now strip these constructions from their own writing to avoid suspicion.",
+        "synthesis": "About a dozen separate threads seized on one early sentence, a not-X-but-Y construction with an em dash, as an AI tell. Some readers said they closed the tab there. Most who looked closer read it as a deliberate joke, and Pangram scored the essay as human-written. Others noted humans used both patterns long before AI, and that people now strip them from their own writing to avoid suspicion.",
         "quotes": [
           {
             "author": "almondfestival",
@@ -105,13 +105,13 @@
         ]
       }
     ],
-    "consensus": "Unreviewed AI text sent to colleagues pushes the work onto the reader, and if the sender didn't read it, nobody should have to. Most agreed that the problem is missing context and intent, more than the use of AI as such.",
-    "dissent": "A sizable minority said the stance is elitist toward people who write badly, that judging text by its origin instead of its quality is a mistake, and that a sender who checks the output and vouches for it does add value.",
+    "consensus": "Unreviewed AI text sent to colleagues pushes the work onto the reader. If the sender didn't read it, nobody should have to. Most agreed that the problem is missing context and intent, more than the use of AI as such.",
+    "dissent": "A sizable minority said the stance is elitist toward people who write badly. They added that judging text by its origin instead of its quality is a mistake. And a sender who checks the output and vouches for it does add value.",
     "contrarian": {
       "author": "gfody",
       "text": "there's a say-do gap in play - similar to makeup/no-makeup studies: people claim to prefer natural/no-makeup while behavioral research reveals a preference for subtle/light/professionally-applied makeup",
       "commentId": 49807877,
-      "why": "It questions the survey numbers the essay leans on, noting that AI-assisted posts keep reaching HN's front page while readers claim they never finish them."
+      "why": "It questions the survey numbers the essay leans on. AI-assisted posts keep reaching HN's front page, while readers claim they never finish them."
     }
   },
   "digestedAt": "2026-10-17T14:39:31.000Z"

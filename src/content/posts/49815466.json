@@ -9,23 +9,23 @@
   "points": 466,
   "commentCount": 226,
   "readingMinutes": 4,
-  "tldr": "After an incident, asking why it happened tends to produce a reasonable story and no change. Michael Heap, retelling how an SVP cut off his explanation, argues the useful question is what the team will change so the same class of failure gets less likely.",
+  "tldr": "After an incident, asking why it happened tends to produce a reasonable story and no change. Michael Heap retells how an SVP cut off his explanation. He argues the useful question is what the team will change to make the same class of failure less likely.",
   "article": {
     "keyPoints": [
-      "When Heap started explaining a failure, his SVP of engineering stopped him. The reasons would be perfectly reasonable, the SVP said, everyone would empathise, and then it would happen again, so he wanted to hear what was changing.",
-      "Heap first took this as dismissive, then read it as trust. The SVP assumed the people involved were competent and wanted to skip straight to what happens next.",
-      "A good explanation can make things worse. Once everyone agrees the behaviour was reasonable, nobody feels urgency to change anything, and the same incident returns six months later.",
-      "Postmortem actions like \"communicate better\" or \"be more careful\" are hopes, not fixes. His test is whether the fix would still work if everyone involved left the company tomorrow.",
-      "Not every failure deserves a new process. Accepting a risk is fine when the team decides it on purpose, which is different from promising to try harder."
+      "When Heap started explaining a failure, his SVP of engineering stopped him. The SVP said the reasons would be perfectly reasonable and everyone would empathise. Then it would happen again, so he wanted to hear what was changing.",
+      "Heap first took this as dismissive. He later read it as trust: the SVP assumed the people involved were competent and wanted to skip straight to what happens next.",
+      "A good explanation can make things worse. Once everyone agrees the behaviour was reasonable, nobody feels urgency to change anything. Then the same incident returns six months later.",
+      "Postmortem actions like \"communicate better\" or \"be more careful\" are hopes, not fixes. Heap's test is whether the fix would still work if everyone involved left the company tomorrow.",
+      "Not every failure deserves a new process. Accepting a risk is fine when the team decides it on purpose. That is different from promising to try harder."
     ],
-    "whyItMatters": "It's a four-minute read, and the summary covers nearly all of it. Open the original for the three example excuses paired with the system question each one should prompt, which work as a checklist for reviewing your own postmortem action items."
+    "whyItMatters": "It's a four-minute read, and the summary covers nearly all of it. Open the original for the three example excuses, each paired with the system question it should prompt. They work as a checklist for reviewing your own postmortem action items."
   },
   "comments": {
-    "overview": "Most of the thread pushed back hard. The main objection was that a leader can't judge whether a fix is any good without hearing what broke, and a good share of commenters read the SVP as dismissive or as dodging accountability. Defenders argued that an SVP's job is resourcing and coordination, not the technical replay, and a steady minority dismissed the post as LinkedIn-style or AI-sounding writing.",
+    "overview": "Most of the thread pushed back hard: a leader can't judge whether a fix is any good without hearing what broke. Many read the SVP as dismissive or as dodging accountability. Defenders said an SVP's job is resourcing and coordination, not the technical replay, and a steady minority dismissed the post as LinkedIn-style or AI-sounding.",
     "themes": [
       {
         "title": "You can't evaluate a fix without the problem",
-        "synthesis": "The largest camp said the details are what tell you whether a proposed change fits the failure. The Alice-and-Bob example in the article is itself the details, one commenter noted, and teams working in silos often propose changes that don't hold together across the organization. Defenders replied that the team still does the root-cause work; the SVP just doesn't need to sit through it. Several asked what the SVP was in the meeting for if they wouldn't engage.",
+        "synthesis": "The largest camp said the details are what tell you whether a proposed change fits the failure. The article's Alice-and-Bob example is itself the details, one noted, and siloed teams often propose changes that clash across the organization. Defenders replied that the team still does the root-cause work; the SVP just doesn't need to sit through it. Several asked what the SVP was in the meeting for if they wouldn't engage.",
         "quotes": [
           {
             "author": "rpdillon",
@@ -41,7 +41,7 @@
       },
       {
         "title": "What trust buys a leader, and what the SVP is for",
-        "synthesis": "The top thread opened with a dilemma. If you fully trust the team you don't need the plan either, and if you don't, you can't judge the plan without the details. Replies pulled \"trust\" apart: trusting that people acted reasonably is different from trusting them to fix things alone. Others listed concrete reasons an executive wants the plan but not the timeline: reporting upward, freeing budget or headcount, spotting conflicts with other teams' work. One commenter added that leaders who absorb every detail cap how many teams the organization can run.",
+        "synthesis": "The top thread opened with a dilemma: with full trust you don't need the plan, and without it you need the details to judge it. Replies pulled \"trust\" apart: trusting that people acted reasonably differs from trusting them to fix things alone. Others listed reasons a leader wants the plan but not the timeline: reporting upward, freeing budget or headcount, spotting conflicts with other teams. One added that leaders who absorb every detail cap how many teams the organization can run.",
         "quotes": [
           {
             "author": "dpark",
@@ -57,7 +57,7 @@
       },
       {
         "title": "Efficient or dismissive",
-        "synthesis": "Even commenters who liked the SVP's point thought the wording was poor, since \"I don't want the details\" lands as \"don't waste my time\" and wears on morale. Harsher readings called it a power move, a refusal to hear people out, or a way to shift risk downward, where \"we\" are changing something but you own the decision. A few defended bluntness as respect for everyone's time.",
+        "synthesis": "Even fans of the SVP's point disliked the wording: \"I don't want the details\" lands as \"don't waste my time\" and hurts morale. Harsher readings called it a power move, a refusal to hear people out, or a way to push risk downward. In that reading, \"we\" change something but you own the decision. A few defended bluntness as respect for everyone's time.",
         "quotes": [
           {
             "author": "dofm",
@@ -73,7 +73,7 @@
       },
       {
         "title": "Why versus what is a false choice",
-        "synthesis": "Many said every postmortem they have done already ends in action items, so the article attacks a straw man, and the \"why\" is what tells you what to change. Others went after root-cause analysis itself. Complex failures have many contributing factors, and a team forced to find one root cause will produce one. A CAPA story showed the opposite failure, where a plain typo got pushed up into a form-design flaw because human error wasn't an acceptable root cause.",
+        "synthesis": "Many said every postmortem they have done already ends in action items, so the article attacks a straw man. To them, the \"why\" is what tells you what to change. Others went after root-cause analysis itself: complex failures have many contributing factors, and a team forced to find one root cause will produce one. In one CAPA story, a plain typo became a form-design flaw because human error wasn't an acceptable root cause.",
         "quotes": [
           {
             "author": "scsh",
@@ -89,7 +89,7 @@
       },
       {
         "title": "Changes cost something, and action items rot",
-        "synthesis": "Some faulted the SVP's question for leaving out the cost of the change. Fixes compete for time and money, and for a minor incident the right answer may be no change, which the article concedes only in its last section. Others said improvement processes only ever add rules and checks until work slows to a crawl. And the action items that do get written often sit in a backlog nobody gets to.",
+        "synthesis": "Some faulted the SVP's question for leaving out the cost of the change. Fixes compete for time and money. For a minor incident the right answer may be no change, which the article concedes only at the end. Others said improvement processes only add rules and checks until work crawls, and written action items often rot in a backlog.",
         "quotes": [
           {
             "author": "kevin_nisbet",
@@ -104,13 +104,13 @@
         ]
       }
     ],
-    "consensus": "Postmortems should end in concrete changes to the system rather than promises to be careful, and an executive doesn't need a minute-by-minute replay. The article's line about \"organizational folklore\" drew praise even from its critics.",
-    "dissent": "Most commenters rejected the idea that \"why\" and \"what changes\" are separate questions. In their view a leader who won't hear the problem can't judge the fix, and the SVP's framing, intended or not, came across as dismissive or as pushing risk onto subordinates.",
+    "consensus": "Postmortems should end in concrete changes to the system rather than promises to be careful. A leader doesn't need a minute-by-minute replay. The article's line about \"organizational folklore\" drew praise even from its critics.",
+    "dissent": "Most commenters rejected the idea that \"why\" and \"what changes\" are separate questions. In their view, a leader who won't hear the problem can't judge the fix. The SVP's framing, intended or not, came across as dismissive or as pushing risk onto subordinates.",
     "contrarian": {
       "author": "btilly",
       "text": "The leader in this case trusted the technical person to produce an accurate description of what happened. But didn't trust that same person to arrive at a solution that met the business of having a similar disaster not happen the next time.",
       "commentId": 49826085,
-      "why": "Both the article and its critics treat the exchange as a vote of trust, but this reads it as partial distrust delivered politely, which explains the SVP's behavior better than either."
+      "why": "The article reads the exchange as a vote of trust, and its critics as dismissal. This comment reads it as partial distrust delivered politely, which explains the SVP's behavior better than either."
     }
   },
   "digestedAt": "2026-10-17T14:38:51.000Z"

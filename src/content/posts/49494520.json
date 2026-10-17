@@ -9,24 +9,24 @@
   "points": 407,
   "commentCount": 287,
   "readingMinutes": 30,
-  "tldr": "Dan Luu argues that most people, and especially the teams that build software, hit the same bugs he does and simply stop seeing them, because they learn unconscious workarounds or are fans of the product. He thinks this quality blindness can be cured by pointing bugs out, and that coding agents make curing it more urgent.",
+  "tldr": "Dan Luu argues that most people hit the same bugs he does and stop seeing them. The teams that build software are the worst at it. People learn unconscious workarounds, or they are fans of the product. Luu thinks pointing bugs out cures this quality blindness, and that coding agents make the cure more urgent.",
   "article": {
     "keyPoints": [
-      "Luu notices hundreds to thousands of bugs a week. For years he suspected he was doing something unusual, but products he judged badly broken kept launching and failing on the exact issues he had found, so he now trusts the judgment. He can even have LLMs act as normal users to show the failures reproduce.",
-      "Fans and builders overlook flaws that outsiders find obvious. Kagi users sent him result pages full of SEO spam as proof the results were good, Volvo forums dismiss poor reliability data, a Blackboard employee believed the widely hated product was loved, and Discourse staff praised a performance story while the code delayed real page loads to game LCP.",
-      "Much of computer literacy is a library of habits that route around bugs without conscious thought. His examples are compensating for a dirty mouse ball, waiting before typing a Google Docs title because early typing gets overwritten, and switching WiFi off to log in at Microsoft because a failing login service was skipped when unreachable.",
-      "Dogfooding helps only until developers absorb the workarounds and forget them. When users complain, the usual developer reply is a complex sequence no new user would guess, or a pointer to page 43 of the manual.",
-      "He has cured friends of the blindness by pointing out bugs until they start seeing them too. Teams that think they ship high quality when they don't have launched products with little or no chance, and coding agents make it both easier to churn out junk and easier to fix quality, if someone notices the problem.",
-      "An appendix argues that ads work. Geo-segmented A/B tests he saw showed good return on ad spend, programmers with ad blockers underrate ads, and data from his time at Google suggests most users don't realize a top search result is a paid ad."
+      "Luu notices hundreds to thousands of bugs a week. For years he suspected he was doing something unusual. But products he judged badly broken kept launching and failing on the exact issues he had found. So he now trusts his judgment. He can even have LLMs act as normal users to show the failures reproduce.",
+      "Fans and builders overlook flaws that outsiders find obvious. Kagi users sent him result pages full of SEO spam as proof the results were good. Volvo forums dismiss poor reliability data. A Blackboard employee believed the widely hated product was loved. Discourse staff believed the forum had great performance, while its code delayed real page loads to game LCP.",
+      "Much of computer literacy is a library of habits that work around bugs without conscious thought. One example is compensating for a dirty mouse ball. Another is waiting before typing a Google Docs title, because early typing gets overwritten. At Microsoft he switched WiFi off to log in, because a failing login check was skipped when it couldn't connect.",
+      "Dogfooding helps only until developers learn the workarounds and forget them. When users complain, developers usually reply with a complex sequence no new user would guess, or with a pointer to page 43 of the manual.",
+      "He has cured friends of quality blindness by pointing out bugs until they see them too. He has seen blind teams, sure they shipped high quality, launch products with little or no chance of success. Coding agents make it easier to churn out junk. They also make it easier to fix quality, if someone notices the problem.",
+      "An appendix argues that ads work. Geo-segmented A/B tests he saw showed good return on ad spend. Programmers with ad blockers underrate ads. Data from his time at Google suggests most users don't realize a top search result is a paid ad."
     ],
-    "whyItMatters": "Worth reading for engineers and product leads who dogfood their own software and think that settles quality. The original has the full anecdotes, a footnote on Anthropic's growth while Claude was buggy and Tumblr's claimed moderation fix, and an appendix of readers' own unconscious workarounds that the summary only names."
+    "whyItMatters": "Worth reading for engineers and product leads who dogfood their own software and think that settles quality. The original has the full anecdotes and a footnote on Anthropic's growth while Claude was buggy. It also has Tumblr's claimed moderation fix and an appendix of readers' own unconscious workarounds, which the summary only names."
   },
   "comments": {
-    "overview": "A large, mostly sympathetic thread that drifted fast from Luu's examples to who is at fault when users struggle. The longest branch argued whether ordinary users are confused because software is bad or because some of them can't be helped, and a noisy sideline turned the post's premise on the blog itself, which sets no text width.",
+    "overview": "A large, mostly sympathetic thread that drifted fast from Luu's examples to who is at fault when users struggle. The longest branch argued whether users are confused because software is bad or because some of them can't be helped. A noisy sideline turned the post's premise on the blog itself, which sets no text width.",
     "themes": [
       {
         "title": "Users without a mental model",
-        "synthesis": "The top comment said developers miss bugs because their model of the system matches the system, while lay users have no model at all and just retry, which can be the rational response to badly built software. Designers in the thread said this is why UX is its own discipline. Former support staff pushed back that some users truly can't be helped, and others answered that people of all abilities drive cars, so the failure sits with engineers. codeflo added that designing only for users who never learn has made software hostile to the ones who would.",
+        "synthesis": "The top comment said developers miss bugs because their mental model matches the system, while lay users have none and just retry. With badly built software, retrying can be the rational response. Former support staff said some users truly can't be helped; others answered that people of all abilities drive cars, so engineers are at fault. codeflo added that designing only for users who never learn has made software hostile to the ones who would.",
         "quotes": [
           {
             "author": "sgentle",
@@ -42,7 +42,7 @@
       },
       {
         "title": "Fresh eyes find the bugs",
-        "synthesis": "Many confirmed the operant-conditioning idea with stories. A robotics team reproduced hard bugs by handing the controls to managers who had not learned to avoid them, and one commenter tests by abusing his app with erratic scrolling and frantic resizing. Others listed their own defensive habits, like drafting long comments outside the browser. Two developers who shipped buggy software reported customers were happy anyway, because most users stay on a few well-worn paths.",
+        "synthesis": "Many confirmed the operant-conditioning idea with stories. A robotics team reproduced hard bugs by handing the controls to managers who had not learned to avoid them. One commenter tests his app with erratic scrolling and frantic resizing, and others draft long comments outside the browser. Two developers who shipped buggy software said customers were happy anyway, because most users stay on a few well-worn paths.",
         "quotes": [
           {
             "author": "jakevoytko",
@@ -58,7 +58,7 @@
       },
       {
         "title": "Why organizations stay blind",
-        "synthesis": "Several commenters blamed structure rather than perception. Blackboard and Epic were cast as software bought by people who never use it, so user pain never reaches the vendor. A former Googler said outside users have no channel to report bugs at all, and an SDET described QA being sidelined once the whole product was bad, which in his view means pointing out bugs, Luu's cure, does nothing. Others had been labeled negative for raising problems and learned to stay quiet.",
+        "synthesis": "Blackboard and Epic were cast as software bought by people who never use it, so user pain never reaches the vendor. A former Googler said outside users have no channel to report bugs. An SDET said QA gets sidelined once the whole product is bad, so pointing out bugs does nothing. Others had been labeled negative for raising problems and learned to stay quiet.",
         "quotes": [
           {
             "author": "jdm2212",
@@ -74,7 +74,7 @@
       },
       {
         "title": "Is bad search a bug?",
-        "synthesis": "The second-ranked thread rejected Luu's first example, saying spammy search results are a bad product, not a bug, and that stretching the word makes it meaningless. Defenders replied that users don't care about the distinction and that Luu said up front his public examples were deliberately weak. A related branch split on whether a bug means a mismatch with the spec or with reasonable expectations, with QA people arguing nobody in a company owns fixing bad specs.",
+        "synthesis": "The second-ranked thread rejected Luu's first example: spammy search results are a bad product, not a bug, and stretching the word makes it meaningless. Defenders replied that users don't care about the distinction, and that Luu said up front his public examples were deliberately weak. A related branch split on whether a bug is a mismatch with the spec or with reasonable expectations. QA people said nobody in a company owns fixing bad specs.",
         "quotes": [
           {
             "author": "remus",
@@ -90,7 +90,7 @@
       },
       {
         "title": "The blog's own unstyled layout",
-        "synthesis": "A recurring jab said danluu.com, which sets no max-width or font size, shows the same blindness the post describes. Defenders said browser defaults and window width are the reader's to control, and that forcing a line length takes choice away from people who like long lines. Critics cited readability research and WCAG's 80-character limit, and many just reach for reader mode.",
+        "synthesis": "A recurring jab said danluu.com, which sets no max-width or font size, shows the same quality blindness the post describes. Defenders said browser defaults and window width are the reader's to control. Forcing a line length, they said, takes choice away from people who like long lines. Critics cited readability research and WCAG's 80-character limit, and many just reach for reader mode.",
         "quotes": [
           {
             "author": "lelanthran",
@@ -105,8 +105,8 @@
         ]
       }
     ],
-    "consensus": "Most agreed that people adapt to broken software without noticing, that developers are the worst at seeing their own product's flaws, and that watching a real user, or someone fresh, is the fastest way to find them.",
-    "dissent": "A minority found the post long and thin on concrete examples, said search quality and page styling aren't bugs, and argued the problem is organizational, so pointing out bugs won't help when the people in charge have no reason to listen.",
+    "consensus": "Most agreed that people adapt to broken software without noticing, and that developers are the worst at seeing their own product's flaws. Watching a real user, or someone fresh, is the fastest way to find them.",
+    "dissent": "A minority found the post long and thin on concrete examples, and said search quality and page styling aren't bugs. They argued the problem is organizational. Pointing out bugs won't help when the people in charge have no reason to listen.",
     "contrarian": {
       "author": "bambax",
       "text": "If there's a simple workaround that makes the thing work, then that's good enough; all the rest is irrelevant. This is not bias or benevolence: this is efficiency.",

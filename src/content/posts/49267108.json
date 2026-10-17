@@ -9,23 +9,23 @@
   "points": 200,
   "commentCount": 89,
   "readingMinutes": 5,
-  "tldr": "After a few weeks away from AI, a developer decides most of his agent use was a habit that made him less curious and more anxious. From now on he wants to use AI on purpose. The human should be the loop, tagging in an agent now and then instead of getting stuck inside the agent's loop.",
+  "tldr": "After a few weeks away from AI, a developer decides most of his agent use was a habit. The habit made him less curious and more anxious. From now on he wants to use AI on purpose. The human should be the loop, calling in an agent now and then instead of getting stuck inside the agent's loop.",
   "article": {
     "keyPoints": [
-      "He came back from a vacation without laptop or phone to eleven terminal tabs of paused agents and unread Claude chats about taxes, landscaping ideas and policy docs. He hadn't missed any of it.",
-      "He says the tools fed a belief he had never examined, that he should be able to do more. Old self-pressure turned into a stream of half-baked side projects that help no one and skip the learning, which is where the fun of tinkering used to be.",
-      "Agents had become a buffer between him and stressful tasks. He spent hours talking ideas through with ChatGPT and got back a sycophantic mirror whose output he never trusted for real work.",
-      "Using the tools as much as possible became a goal of its own, a \"productivity ouroboros\". He doubts agents are addictive the way algorithmic feeds are, but he sees real dependency, and points out that current AI valuations rely on mass dependency.",
-      "His alternative is deliberate use. For a work project he gave an agent a narrow task with as much context as he could, searching messy systems he dislikes digging through, and spent his own time writing and reflecting."
+      "He came back from a vacation without laptop or phone to eleven terminal tabs of paused agents. Unread Claude chats about taxes, landscaping ideas and policy docs were waiting too. He hadn't missed any of it.",
+      "He says AI fed a belief he had never examined, that he should be able to do more. Old self-pressure turned into a stream of half-baked side projects that help no one. Those projects skip the learning, which is where the fun of tinkering used to be.",
+      "Agents had become a buffer between him and stressful tasks. He spent hours talking ideas through with ChatGPT. He got back a sycophantic mirror whose output he never trusted for real work.",
+      "Using AI as much as possible became a goal of its own, a \"productivity ouroboros\". He doubts agents are addictive the way algorithmic feeds are. He does see real dependency. Current AI valuations, he points out, rely on mass dependency.",
+      "His alternative is deliberate use. For a work project he gave an agent a narrow task with as much context as he could. The task was searching messy systems he dislikes digging through. He spent his own time writing and reflecting."
     ],
     "whyItMatters": "Worth reading if you feel the pull to run many agents at once. The essay is short and candid, and it gets the guilt and compulsion across better than a summary can. Its closing example shows what a well-scoped agent task looks like."
   },
   "comments": {
-    "overview": "A warm thread. Many readers said the post described them, and a vocal group said it didn't and tried to work out why. The longest argument was over keeping AI out of writing and strategy. After that came attention and multitasking, with a long ADHD tangent, and whether near-zero friction just means starting more things nobody needed.",
+    "overview": "A warm thread. Many readers said the essay described them. A vocal group said it didn't and tried to work out why. The longest argument was over keeping AI out of writing and strategy. Next came attention and multitasking, with a long ADHD tangent. Another argument asked whether near-zero friction just means starting more things nobody needed.",
     "themes": [
       {
         "title": "Keep AI out of writing and strategy",
-        "synthesis": "The top comment said even light AI touch-ups slowly pull your prose toward the LLM house style, and strategy advice fails because no one can feed a model all the context that matters. Replying to someone who said prose doesn't matter and the model knows more than you, commenters argued that voice is how a reader picks your message out of the noise, and that an LLM has more general knowledge but none of your specific context. Others added that AI pads text rather than clarifying it, so you might as well send the prompt. Suggested fixes were reading human-written books and writing more without help. One reply noted that editing trains you harder than reading, since the model corrects your own sentences. A few thought LLMs can sanity-check a direction but shouldn't set it.",
+        "synthesis": "The top comment said light AI touch-ups slowly pull your prose toward the LLM house style, and strategy advice fails without your full context. Against a claim that prose doesn't matter, replies said voice makes your message stand out, and an LLM knows more but not your context. Others said AI pads text rather than clarifying it, so you might as well send the prompt. Suggested fixes were reading human-written books and writing more without help, while a few let LLMs sanity-check a direction but not set it.",
         "quotes": [
           {
             "author": "swatcoder",
@@ -41,7 +41,7 @@
       },
       {
         "title": "Serial focus versus a dozen agents",
-        "synthesis": "The second big thread came from commenters with ADHD. They keep only one to four agent sessions on fixed jobs and said they couldn't cope with the context switching the author describes. They guessed that coping strategies built for a scattered mind carry over to managing agents, and wanted someone to study it. Commenters without ADHD said they also stick to one or two tabs. To them, keeping parallel agents running all the time misreads productivity, the agentic version of believing more code means more output. One said heavy multitasking puts a non-ADHD brain into a temporary \"adhd-lite\" state, and another worried that working serially will look outdated to colleagues racing to parallelize.",
+        "synthesis": "The second big thread came from commenters with ADHD who keep one to four agent sessions on fixed jobs. They guessed that coping strategies built for a scattered mind carry over to managing agents. Commenters without ADHD also stick to one or two tabs, and called constant parallel agents the agentic version of believing more code means more output. One said heavy multitasking puts a non-ADHD brain into an \"adhd-lite\" state, and another worried that working serially will look outdated.",
         "quotes": [
           {
             "author": "borski",
@@ -57,7 +57,7 @@
       },
       {
         "title": "Zero friction means saying yes to everything",
-        "synthesis": "Many recognized the pile of half-finished projects. With the friction from idea to MVP near zero, impulses become projects before anyone asks whether they should. One commenter bought a domain for a meal-planner app before he stopped himself. Others said one big project, or the old discipline of saying no, matters more than ever, since the edge was always building the right thing. The common diagnosis was that LLMs create an illusion of free concurrency.",
+        "synthesis": "With near-zero friction from idea to MVP, many said, impulses become projects before anyone asks whether they should. One commenter bought a domain for a meal-planner app before he stopped himself. Others said one big project, or the old discipline of saying no, matters more than ever, since the edge was always building the right thing. The common diagnosis was that LLMs create an illusion of free concurrency.",
         "quotes": [
           {
             "author": "nicbou",
@@ -73,7 +73,7 @@
       },
       {
         "title": "Is the work worth doing, and by whom?",
-        "synthesis": "Some went further than the author. If an LLM is good at a task, maybe the task never needed doing, and anything worth doing is worth doing yourself. Others objected. Refusing faster delivery is like refusing email, a junior developer coding by hand would be fired, and for parents of young kids lower activation energy is what makes a hobby project happen at all. Skeptics answered that speed doesn't cancel the maintenance burden, and worried about depending on tools they couldn't fix without a model.",
+        "synthesis": "Some went further, saying if an LLM does a task well it may never have needed doing, and anything worth doing is worth doing yourself. Others objected that refusing faster delivery is like refusing email, and a junior developer coding by hand would be fired. For parents of young kids, lower activation energy is what makes a hobby project happen at all. Skeptics answered that speed doesn't cancel the maintenance burden, and worried about depending on tools they couldn't fix without an LLM.",
         "quotes": [
           {
             "author": "veunes",
@@ -89,7 +89,7 @@
       },
       {
         "title": "Where AI pays off",
-        "synthesis": "Several listed where they now get value from it. Research across scattered sources, reconciling accounts, smart-home commands, data checks, and practical skills like plumbing or cooking, which one commenter said AI taught him. Most drew the line between removing tedium and skipping thinking you needed to do yourself. One reader was confused by the ending, where the author says AI frees him to write. The author replied that he meant a deliberate split. The agent gathers and reviews material for work while he does the reflecting and writing.",
+        "synthesis": "Several listed where AI now pays off: research across scattered sources, reconciling accounts, smart-home commands, data checks, and learning practical skills like plumbing or cooking. Most drew the line between removing tedium and skipping thinking you needed to do yourself. One reader was confused by the ending, where the author says AI frees him to write. The author replied that he meant a deliberate split, where the agent gathers and reviews material while he reflects and writes.",
         "quotes": [
           {
             "author": "veunes",
@@ -99,8 +99,8 @@
         ]
       }
     ],
-    "consensus": "Running many agents in parallel and starting projects because AI makes them cheap scatters attention and produces little of value. Focused, deliberate use works better, with people setting the direction and writing their own prose.",
-    "dissent": "A sizable minority said the post didn't describe them. Some already work serially. Others said AI really does let them finish things, use fragmented time or learn new skills. A few argued that prose style doesn't matter when you're just delivering a message, and some said turning down faster delivery isn't realistic at work.",
+    "consensus": "Running many agents in parallel scatters attention and produces little of value. So does starting projects because AI makes them cheap. Focused, deliberate use works better, with people setting the direction and writing their own prose.",
+    "dissent": "A sizable minority said the essay didn't describe them. Some already work serially. Others said AI really does let them finish things, use fragmented time or learn new skills. A few argued that prose style doesn't matter when you're just delivering a message. Some said turning down faster delivery isn't realistic at work.",
     "contrarian": {
       "author": "nobodywillobsrv",
       "text": "I am much more able to use fragmented bits of time now. Whereas before if I had 20 minutes here and there I would not be able to even read code or notes in order to get context enough to make a change let alone do real work.",

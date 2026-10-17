@@ -9,25 +9,25 @@
   "points": 159,
   "commentCount": 113,
   "readingMinutes": 4,
-  "tldr": "A front-end developer who rebuilt Firefox.com with Mozilla and Lincoln Loop says native CSS can now carry a full design system on its own. The team shipped 70+ components and 25 page templates with no preprocessor syntax, which the author calls the CSS Zen Garden promise finally met in production.",
+  "tldr": "Jo Sprague, a front-end developer who rebuilt Firefox.com with Mozilla and Lincoln Loop, says native CSS can now carry a full design system. The team shipped 70+ components and 25 page templates with no preprocessor syntax. Sprague calls it the CSS Zen Garden promise, finally met in production.",
   "article": {
     "keyPoints": [
-      "In 2008 CSS had no variables and inconsistent browser support, so real sites leaned on tables, images, server-side processing and hacks, and Zen Garden's clean separation of design from markup stayed theoretical.",
-      "Custom Properties, Grid and Flexbox now exist and behave the same across modern browsers, so a full-fidelity design no longer needs workarounds.",
-      "The Firefox.com system has more than 70 components and 25 page templates built as Wagtail components, letting the content team build pages in any locale without engineers.",
+      "In 2008, CSS had no variables and browsers rendered it inconsistently. So real sites leaned on tables, images, server-side processing and hacks. Zen Garden's clean separation of design from markup stayed theoretical.",
+      "Custom Properties, Grid and Flexbox now exist and behave the same across modern browsers. So a full-fidelity design no longer needs workarounds.",
+      "The Firefox.com system has more than 70 components and 25 page templates, built as Wagtail components. The content team can build pages in any locale without engineers.",
       "Design tokens go straight from the design files into Custom Properties. The only build step is PostCSS inlining @import statements, because native @import still loads stylesheets serially and slowly.",
-      "Answering critics who say Zen Garden was about many designs over one markup file, the author argues its real point was showing what CSS and browsers could do. Anyone can still restyle Firefox.com with their own stylesheet.",
+      "Critics say Zen Garden was about many designs over one markup file. Sprague argues its real point was showing what CSS and browsers could do. Anyone can still restyle Firefox.com with their own stylesheet.",
       "Legacy browsers get a basic, accessible branded stylesheet instead of hacks."
     ],
     "whyItMatters": "The post is short and partly a job pitch, so it has few technical details. Front-end developers weighing preprocessors or Tailwind against plain CSS will get more from the linked mozmeao/springfield repo (search for \"flare\") than from the essay."
   },
-  "articleNote": "The author rewrote the post by hand after HN flagged it as AI-written. Comments quoting phrases like \"There's one honest footnote\" refer to the earlier version.",
+  "articleNote": "Sprague rewrote the post by hand after HN flagged it as AI-written. Comments quoting phrases like \"There's one honest footnote\" refer to the earlier version.",
   "comments": {
-    "overview": "The thread ran hostile. The largest share of it went after the first version's AI-generated prose, and the author admitted it and rewrote the post. The rest argued whether separating markup from style was ever a good idea, with Tailwind as the stand-in for the other side, and whether a single-design marketing site has anything to do with Zen Garden at all.",
+    "overview": "The thread ran hostile. The largest share went after the first version's AI-written prose, and Sprague admitted it and rewrote the post. The rest argued whether separating markup from style was ever a good idea, with Tailwind standing in for the other side. It also asked whether a single-design marketing site has anything to do with Zen Garden.",
     "themes": [
       {
         "title": "AI-written prose",
-        "synthesis": "Many readers stopped at stock LLM phrases like \"There's one honest footnote\" and called it a waste to build careful CSS and then announce it in generic AI prose. One commenter defended the author's time constraints. Others answered that proofreading takes minutes and that LLM-filled details wipe out the author's voice. A long side argument followed, with matheusmoreira saying ideas matter more than who typed them and nixon_why69 saying outsourced thinking earns no reader's time. The author said they used AI to get past perfectionism and then rewrote the post themselves.",
+        "synthesis": "Many readers stopped at stock AI phrases like \"There's one honest footnote\" and called it a waste to announce careful CSS in generic AI prose. One commenter defended Sprague's time constraints, but others answered that proofreading takes minutes and AI-filled details wipe out a writer's voice. A long side argument followed, with matheusmoreira saying ideas matter more than who typed them and nixon_why69 saying outsourced thinking earns no reader's time. Sprague said they used AI to get past perfectionism, then rewrote the post themselves.",
         "quotes": [
           {
             "author": "mpalmer",
@@ -43,7 +43,7 @@
       },
       {
         "title": "Separation of concerns vs. Tailwind",
-        "synthesis": "vehemenz argued that separate stylesheets map onto the DOM through hidden, implicit structure, while Tailwind keeps that structure explicit in the markup. nonethewiser added that every UI toolkit couples style and structure, and localization alone forces spacing changes. Defenders said separation is what makes alternate views possible for accessibility and user agents, and nine_k called Tailwind the assembly language of CSS, a sign that a product has lost its design vision. Others pointed out that @apply lets you build semantic classes in Tailwind anyway.",
+        "synthesis": "vehemenz argued that separate stylesheets map onto the DOM through hidden, implicit structure, while Tailwind keeps that structure explicit in the markup. nonethewiser added that every UI toolkit couples style and structure, and localization alone forces spacing changes. Defenders said separation enables alternate views for accessibility, and nine_k called Tailwind CSS's assembly language, a sign of lost design vision. Others pointed out that @apply lets you build semantic classes in Tailwind anyway.",
         "quotes": [
           {
             "author": "vehemenz",
@@ -59,7 +59,7 @@
       },
       {
         "title": "Is this the Zen Garden dream?",
-        "synthesis": "chrismorgan saw no link between one stylesheet for one ordinary site and a project built on radically different designs over the same markup, and others asked whether any real site ships several designs for one document. Answers were theme systems, site networks and, oddly, private torrent trackers. Others backed the author's reading. Zen Garden's job in its day was to prove that CSS could beat table layouts on looks, and it settled that argument.",
+        "synthesis": "chrismorgan saw no link between one stylesheet for one ordinary site and a project built on radically different designs over the same markup. Some asked whether any real site ships several designs for one document, and the answers were theme systems, site networks and, oddly, private torrent trackers. Others backed Sprague's reading. Zen Garden's job in its day was to prove that CSS could beat table layouts on looks, and it settled that argument.",
         "quotes": [
           {
             "author": "chrismorgan",
@@ -91,7 +91,7 @@
       },
       {
         "title": "The Firefox.com build itself",
-        "synthesis": "A few readers found the new site plain and too large on desktop, and one reported a cut-off menu item in Chrome on Android. The author linked the open-source repo and explained the PostCSS step. Chained @import calls block rendering one after another, and the author said too many of them crashed some older browsers outright.",
+        "synthesis": "A few readers found the new site plain and too large on desktop, and one reported a cut-off menu item in Chrome on Android. Sprague linked the open-source repo and explained the PostCSS step. Chained @import calls block rendering one after another, and Sprague said too many of them crashed some older browsers outright.",
         "quotes": [
           {
             "author": "bastawhiz",
@@ -106,13 +106,13 @@
         ]
       }
     ],
-    "consensus": "Modern CSS with Custom Properties, Grid and Flexbox can carry a production design system without hacks, and the first version of the post read as unedited AI output.",
-    "dissent": "A sizable group held that markup and style can't be cleanly separated in practice, so Zen Garden was a demo and not a model, and that a single-design marketing site doesn't fulfill it anyway.",
+    "consensus": "Modern CSS with Custom Properties, Grid and Flexbox can carry a production design system without hacks. And the first version of the post read as unedited AI output.",
+    "dissent": "A sizable group held that markup and style can't be cleanly separated in practice, so Zen Garden was a demo and not a model. They added that a single-design marketing site doesn't fulfill it anyway.",
     "contrarian": {
       "author": "MrJohz",
       "commentId": 49720142,
       "text": "If you, for example, were to restructure the links in the Zen Garden footer for some reason, most of the styles would break because they're bound to the current structure of the content. The separation you talk about only exists in one direction.",
-      "why": "It grants the accessibility case for content-first markup but shows that Zen Garden-style CSS still depends on the markup's exact structure, which is a reason to put the two side by side."
+      "why": "It grants the accessibility case for content-first markup, but shows Zen Garden-style CSS still depends on exact markup structure, so the two belong together."
     }
   },
   "digestedAt": "2026-10-14T21:07:13.000Z"

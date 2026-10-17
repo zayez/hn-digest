@@ -9,24 +9,24 @@
   "points": 263,
   "commentCount": 263,
   "readingMinutes": 3,
-  "tldr": "David Bushell prototypes a browser code editor three ways. Canvas rendering is fast to start but inaccessible, contenteditable gives free selection and undo but slows down on long files, and a plain textarea with a highlighting layer on top turns out to be the most workable base.",
+  "tldr": "David Bushell prototypes a browser code editor three ways. Canvas rendering leaves screen readers with nothing. Contenteditable slows down on long files. A plain textarea with a highlighting layer on top is the most workable base.",
   "article": {
     "keyPoints": [
-      "Bushell starts by drawing everything on a canvas and gets cursor placement, arrow keys, typing and a current-line highlight working, but canvas provides nothing else for free. Selection, undo, multi-line paste and scrolling all have to be built by hand, and screen readers can't see the text at all.",
+      "Bushell starts by drawing everything on a canvas. He gets cursor placement, arrow keys, typing and a current-line highlight working. Canvas provides nothing else for free: selection, undo, multi-line paste and scrolling all need building by hand. Screen readers can't see the text at all.",
       "To avoid writing custom scrollbars he puts a hidden native-scrolling div over the canvas and uses its scroll position to offset the drawing.",
-      "He then switches to a div with contenteditable=\"plaintext-only\", which brings native selection, undo history and accessibility. Spellcheck, autocorrect and similar attributes have to be off, because they caused input latency spikes that took him days to track down.",
-      "Contenteditable slowed down unpredictably past a certain character count, worse in Chromium than in WebKit. A plain textarea handled long text much better, at the cost of a third DOM layer for syntax highlighting, since textarea can't use CSS custom highlights.",
+      "He then switches to a div with contenteditable=\"plaintext-only\", which brings native selection, undo history and accessibility. Spellcheck, autocorrect and similar attributes have to be off, because they cause input latency spikes. Finding that fix took him days.",
+      "Contenteditable slowed down unpredictably past a certain character count. It was worse in Chromium than in WebKit. A plain textarea handled long text much better. The cost is a third DOM layer for syntax highlighting, since textarea can't use CSS custom highlights.",
       "Next steps he lists include Tree-sitter highlighting of only the visible lines and virtualised scrolling. Readers pointed him to the OpaqueRange API (custom highlights in a textarea) and EditContext (better canvas input).",
-      "He ends on UTF-16 pitfalls: one lime emoji has a JavaScript length of 5, spreads into 3 code points, and only Intl.Segmenter counts it as 1 grapheme."
+      "He ends on UTF-16 pitfalls. One lime emoji has a JavaScript length of 5. Spread into an array, it gives 3 code points. Only Intl.Segmenter counts it as 1 grapheme."
     ],
     "whyItMatters": "For anyone weighing canvas, contenteditable or textarea as the base of a web editor. The post has live interactive demos of each stage, plus the exact attribute list that removed his input lag."
   },
   "comments": {
-    "overview": "The thread was friendly to the post and spent little time on its technical details. Most of it argued over whether anyone should write an editor at all, whether existing editors are actually fast, and Emacs against VS Code. Two big tangents ate a lot of space. One, set off by a Rob Pike anecdote, turned into a long fight about why Go exists. The other was meta-talk about HN downvotes.",
+    "overview": "The thread was friendly to the post but spent little time on its technical details. Most of it argued over whether anyone should write an editor at all, whether existing editors are fast, and Emacs versus VS Code. Two big tangents were a fight about why Go exists, set off by a Rob Pike anecdote, and meta-talk about HN downvotes.",
     "themes": [
       {
         "title": "Rite of passage or wasted effort",
-        "synthesis": "Many saw writing an editor as something every programmer does once, and tzs told of an all-night editor race at Caltech around 1980 that Rob Pike dismissed as \"easy to do and makes them feel important\" shortly before writing his own. Defenders said a personal editor can stay tiny because it only needs features its one user wants. Others, led by anon291, called it not-invented-here syndrome and said to build on Emacs or Vim instead. Asked which of the two, they had no clean answer, and one reply asked why VS Code didn't count as an established base too.",
+        "synthesis": "Many saw writing an editor as something every programmer does once. At Caltech around 1980, tzs recalled, Rob Pike dismissed an editor race as \"easy to do and makes them feel important\", then wrote his own. Defenders said a personal editor can stay tiny because it only needs features its one user wants. Others, led by anon291, called it not-invented-here syndrome and said to build on Emacs or Vim, but had no clean answer to which.",
         "quotes": [
           {
             "author": "vidarh",
@@ -58,7 +58,7 @@
       },
       {
         "title": "The browser as a base for an editor",
-        "synthesis": "Several found the textarea result unsurprising and asked why build on the web at all. They said a real editor should drop the browser, or at least avoid canvas since custom drawing is easier natively. Isofarro noted that Marijn Haverbeke took the same canvas, contenteditable, DOM path in 2011 and went on to write CodeMirror. Others suggested CodeMirror 6, though one user found its docs hard to follow. Readers also reported the canvas demos drawing the cursor one line below where text actually goes, in Safari and Firefox.",
+        "synthesis": "Several found the textarea result unsurprising and said a real editor belongs outside the browser, where custom drawing is easier. Isofarro noted that Marijn Haverbeke took the same canvas, contenteditable, DOM path in 2011 and went on to write CodeMirror. Others suggested CodeMirror 6, though one user found its docs hard to follow. Readers also reported the canvas demos drawing the cursor a line below the text in Safari and Firefox.",
         "quotes": [
           {
             "author": "akersten",
@@ -74,7 +74,7 @@
       },
       {
         "title": "Emacs against VS Code",
-        "synthesis": "Emacs users said it already does what newer editors offer, and iLemming described it as a text orchestrator that wires the browser, OCR and LLM agents into one place. VS Code defenders pointed to good defaults, easy setup, and devtools for anyone already working on the web. Memory claims went both ways: bigstrat2003 measured VS Code at over 1 GB against Sublime's 200-300 MB, while golf1052 opened a 730 MB file and found Sublime using more.",
+        "synthesis": "Emacs users said it already does what newer editors offer; iLemming called it a text orchestrator wiring the browser, OCR and LLM agents together. VS Code defenders pointed to good defaults, easy setup, and devtools for anyone already working on the web. bigstrat2003 measured VS Code at over 1 GB against Sublime's 200-300 MB. But golf1052 opened a 730 MB file and found Sublime using more.",
         "quotes": [
           {
             "author": "kstenerud",
@@ -90,7 +90,7 @@
       },
       {
         "title": "Editors written by LLMs",
-        "synthesis": "stillpointlab had an LLM wrap KDE's KTextEditor in Rust with a few LSP features in two days, without reading any of the code, and boxed shared an IDE Claude wrote for him that is now his daily editor. Skeptics asked what the point was when editors on the same library already exist, or called it burning tokens to recreate something available a thousand times over.",
+        "synthesis": "stillpointlab had an LLM wrap KDE's KTextEditor in Rust, with a few LSP features, in two days without reading any of the code. boxed shared an IDE Claude wrote for him that is now his daily editor. Skeptics asked what the point was when editors on the same library already exist. Others called it burning tokens to recreate something available a thousand times over.",
         "quotes": [
           {
             "author": "stillpointlab",

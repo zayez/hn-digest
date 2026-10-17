@@ -9,24 +9,24 @@
   "points": 326,
   "commentCount": 89,
   "readingMinutes": 3,
-  "tldr": "Conference speaker and MC Ana Rodrigues argues that attendees should go up to speakers and say they liked the talk. Since Twitter stopped being where talk feedback happened, many speakers get silence afterwards and are left wondering whether the talk landed at all.",
+  "tldr": "Conference speaker and MC Ana Rodrigues argues that attendees should tell speakers they liked the talk. Twitter is no longer where talk feedback happens. So many speakers now get silence afterwards and wonder whether the talk landed.",
   "article": {
     "keyPoints": [
-      "At SmashingConf Freiburg, Rodrigues pulled a speaker into a group at the after-party because one attendee wanted to ask a question but felt too intimidated to approach.",
-      "As MC of CSS Day, Rodrigues asked every speaker at the speakers' dinner for permission to invite the audience to come and chat with them, and every one said yes.",
-      "The author joined the speaker circuit after Twitter declined, so they never got the wave of online reactions older speakers describe, and some of their talks drew no feedback at all.",
-      "Other speakers told the author the silence rattles them too. It is less about ego than about not knowing whether the talk went fine or flopped.",
-      "The author admits to forgetting to compliment friends who speak and plans to live-post and blog more about the events they attend.",
-      "The author's ask is small: a quick word or short chat is always worth it, because speakers put a lot of work in and want to know it went alright."
+      "At SmashingConf Freiburg, one attendee wanted to ask a speaker a question but felt too intimidated to approach. Rodrigues pulled the speaker into the attendee's group at the after-party.",
+      "As MC of CSS Day, Rodrigues asked each speaker at the speakers' dinner for permission to invite the audience to chat with them. Every speaker said yes.",
+      "Rodrigues joined the speaker circuit after Twitter declined. So Rodrigues never got the wave of online reactions that older speakers describe. Some of those talks drew no feedback at all.",
+      "Other speakers told Rodrigues the silence rattles them too. It is less about ego than about not knowing whether the talk went fine or flopped.",
+      "Rodrigues admits to forgetting to compliment friends who speak. Rodrigues plans to live-post and blog more from events.",
+      "Rodrigues's ask is small. A quick word or short chat is always worth it, because speakers put a lot of work in and want to know it went alright."
     ],
     "whyItMatters": "The post is short and personal. Read it for the speaker's view of the after-talk silence, or to share with someone who is too shy to walk up to a speaker. The argument fits in this summary, so the original adds tone more than content."
   },
   "comments": {
-    "overview": "A warm, agreeable thread, mostly speakers confirming that silence after a talk hurts and that one approaching stranger can change their week. The rest traded tips: how to make yourself easy to approach, what kind of feedback helps, and why remote presenting feels like talking into a void.",
+    "overview": "A warm, agreeable thread, mostly speakers confirming that silence after a talk hurts and that one approaching stranger can change their week. The rest traded tips on making yourself easy to approach, on useful feedback, and on why remote presenting feels like talking into a void.",
     "themes": [
       {
         "title": "Silence after a talk is hard on speakers",
-        "synthesis": "Speakers described days of second-guessing when nobody asks a question, and stony audiences that give no signal at all. Some blamed the setting: stage lighting that hides faces, cultures where attendees treat the session as downtime, corporate crowds that laugh at nothing but write glowing reviews later. One commenter said a single person who came up after a panel became their co-founder.",
+        "synthesis": "Speakers described days of second-guessing when nobody asks a question, and stony audiences that give no signal at all. Some blamed the setting, such as stage lighting that hides faces, or cultures where attendees treat the session as downtime. Corporate crowds may laugh at nothing, then write glowing reviews later. One commenter said a single person who came up after a panel became their co-founder.",
         "quotes": [
           {
             "author": "lrvick",
@@ -42,7 +42,7 @@
       },
       {
         "title": "Specific words and questions beat \"nice talk\"",
-        "synthesis": "Several commenters said to tell speakers why you liked a talk, or ask about the parts you didn't follow, since a generic compliment gives little to work with. A speaker pushed back that even a passing \"nice talk\" makes their day. Others said they would take hostile criticism over indifference, because it proves someone was listening. For unfriendly critics during Q&A, one tip was to visibly write down the point and thank them, which often disarms them.",
+        "synthesis": "Several commenters said to say why you liked a talk or ask about a confusing part, since a generic compliment gives little to work with. A speaker pushed back that even a passing \"nice talk\" makes their day. Others said they would take hostile criticism over indifference, because it proves someone was listening. For unfriendly critics during Q&A, one tip was to visibly write down the point and thank them, which often disarms them.",
         "quotes": [
           {
             "author": "jaffathecake",
@@ -58,7 +58,7 @@
       },
       {
         "title": "Speakers can make themselves easy to approach",
-        "synthesis": "A first-time speaker asked how to avoid sitting alone at breaks, and the replies were practical. Put \"come talk to me in the hallway\" on the closing slide, mention a related topic you have no time to cover so people have a ready question, chat with the front row before starting, and stick around afterwards. A side debate on jokes split between using them to pace the talk and warning that they depend on shared culture and should never carry the content.",
+        "synthesis": "A first-time speaker asked how to avoid sitting alone at breaks. Replies said to put \"come talk to me in the hallway\" on the closing slide and to stick around afterwards. Also chat with the front row before starting, and mention a topic you had no time for so people have a ready question. A side debate on jokes split between using them to pace a talk and warning that they rely on shared culture.",
         "quotes": [
           {
             "author": "jlev1",
@@ -74,7 +74,7 @@
       },
       {
         "title": "Remote presenting is the worst case",
-        "synthesis": "Remote workers said presenting to a webcam with everyone's camera off gives no feedback, and emoji reactions don't fill the gap because they pile up unevenly across presenters. One suggestion was to refuse to present unless a few people agree to respond. One commenter liked cameras-off calls because they can pace and stare at the ceiling while they talk.",
+        "synthesis": "Remote workers said presenting to a webcam with everyone's camera off gives no feedback. Emoji reactions don't fill the gap, because they pile up unevenly across presenters. One suggestion was to refuse to present unless a few people agree to respond. One commenter liked cameras-off calls because they can pace and stare at the ceiling while they talk.",
         "quotes": [
           {
             "author": "0xbadcafebee",
@@ -100,13 +100,13 @@
         ]
       }
     ],
-    "consensus": "Speakers want to hear from the audience, and a short compliment or question costs the attendee little and matters a lot to the person who gave the talk.",
-    "dissent": "A few pushed back on the premise. Some said most in-person talks aren't worth much and come from career presenters, one was brushed off by speakers busy courting people from bigger companies, and one composer reportedly finds fan mail an annoyance.",
+    "consensus": "Speakers want to hear from the audience. A short compliment or question costs the attendee little and matters a lot to the speaker.",
+    "dissent": "A few pushed back on the premise. Some said most in-person talks aren't worth much and come from career presenters. One was brushed off by speakers busy courting people from bigger companies. And one composer reportedly finds fan mail an annoyance.",
     "contrarian": {
       "author": "jeswin",
       "text": "While there are exceptions, there's usually very little you'd get from in-person talks. And quite often, the people who are giving these talks are serial presenters - as a lifestyle, or sometimes career building.",
       "commentId": 49731027,
-      "why": "It questions whether the talks deserve the encouragement at all, which the thread never addresses beyond one reply saying the advice only applies if you liked the talk."
+      "why": "It asks whether the talks deserve encouragement at all, a question only one reply touched, by saying the advice assumes you liked the talk."
     }
   },
   "digestedAt": "2026-10-14T21:07:13.000Z"

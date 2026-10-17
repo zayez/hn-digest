@@ -9,24 +9,24 @@
   "points": 116,
   "commentCount": 120,
   "readingMinutes": 6,
-  "tldr": "A developer who works mostly with MySQL and Db2 argues that SQL's relational ideas are sound but its implementations are clumsy enough to push programmers toward NoSQL. A successor should keep the declarative model and add modern syntax, readable query plans, real user-defined types, sum types with pattern matching, and foreign keys that can point at more than one table.",
+  "tldr": "A developer who works mostly with MySQL and Db2 argues that SQL's relational ideas are sound. Its implementations are clumsy, and that pushes programmers toward NoSQL. A successor should keep the declarative model. It should add modern syntax, readable query plans, real user-defined types, sum types with pattern matching, and foreign keys that can point at several tables.",
   "article": {
     "keyPoints": [
-      "The author blames much of NoSQL's rise on SQL being implemented in archaic ways. The ideas behind it are fine, but its PL/I-style syntax is a 1970s IBM choice, and parsers like MySQL's rarely say where an error is. Oracle shows that good error messages are possible.",
-      "SQL's declarative core sits close to functional programming, yet most dialects ship thin standard libraries built for 1980s procedural code. Stored procedures and cursors push users toward mutable state, and since defaults shape habits, most real SQL ends up procedural.",
-      "Query planners stay cryptic unless you are already an optimization expert, which makes it easy to write an expensive query by accident. MySQL's EXPLAIN gets singled out as the worst.",
-      "Domains for user-defined types appear in Codd's relational model, but in practice they are thin sugar over checks and ranges. Postgres supports them, probably thanks to its Ingres and QUEL heritage, and Oracle added them only recently.",
-      "Using IBM i's stack-frame function as the example, the author shows a table full of mutually exclusive column groups, nullable fields and string enums. A sketch in F#-like syntax replaces them with a discriminated union of frame types that queries and functions filter and destructure by pattern matching.",
+      "The author blames much of NoSQL's rise on archaic SQL implementations. The ideas behind SQL are fine. Its PL/I-style syntax is a 1970s IBM choice. Parsers like MySQL's rarely say where an error is. Oracle shows that good error messages are possible.",
+      "SQL's declarative core sits close to functional programming. Yet most dialects ship thin standard libraries built for 1980s procedural code. Stored procedures and cursors push users toward mutable state. Defaults shape habits, so most real SQL ends up procedural.",
+      "Query planners stay cryptic unless you are already an optimization expert. That makes it easy to write an expensive query by accident. The author singles out MySQL's EXPLAIN as the worst.",
+      "Codd's relational model covers domains for user-defined types. In practice, domains are thin sugar over checks and ranges. Postgres supports them, probably thanks to its Ingres and QUEL heritage. Oracle added them only recently.",
+      "The author's example is IBM i's stack-frame function, a table full of mutually exclusive column groups, nullable fields and string enums. A sketch in F#-like syntax replaces them with a discriminated union of frame types. Queries and functions filter and destructure those types by pattern matching.",
       "A foreign key that can reference several tables would let one ObjectPictures table link pictures to Software, Version or Download rows. Today that takes a separate many-to-many table per parent."
     ],
-    "whyItMatters": "Worth opening for the code sketches, which the summary only describes. The IBM i stack-frame schema and the multi-target foreign key are concrete designs that anyone working on a SQL successor or a typed query layer can argue with line by line."
+    "whyItMatters": "Worth opening for the code sketches, which the summary only describes. The IBM i stack-frame schema and the multi-target foreign key are concrete designs. Anyone working on a SQL successor or a typed query layer can argue with them line by line."
   },
   "comments": {
-    "overview": "A busy, opinionated thread that mostly ignored the article's specific proposals. The biggest fight was over whether SQL is actually hard or people just won't learn it, with a second front on whether LLMs lock SQL in or make new languages cheap to try. Many replies were links to alternatives, Datalog above all.",
+    "overview": "A busy, opinionated thread that mostly ignored the article's specific proposals. The biggest fight was over whether SQL is actually hard or people just won't learn it. A second front argued whether LLMs lock SQL in or make new languages cheap to try. Many replies were links to alternatives, Datalog above all.",
     "themes": [
       {
         "title": "Is SQL hard, or just unfamiliar?",
-        "synthesis": "One camp, including a DBA, says SQL's syntax is simple and the complaints come from people who never learned it. The other says syntax is the smallest problem. They list queries that don't compose beyond CTEs, joins as a clumsy way to follow pointers, isolation levels and table locks few engineers understand, and outages when the optimizer switches plans. A long side exchange argued that developers can't be expected to know safe index builds and lock timeouts, and that ORMs default to unsafe DDL. That pushes teams away from stored procedures and toward caches. ORMs got credit for parameterizing queries against injection, though one commenter replied that hand-written parameterized queries are easy.",
+        "synthesis": "One camp, including a DBA, says SQL's syntax is simple and the complaints come from people who never learned it. Others say syntax is the smallest problem: queries don't compose beyond CTEs, few engineers understand isolation levels and locks, and plan switches cause outages. A side exchange added that developers can't be expected to know safe index builds, and that ORMs default to unsafe DDL. ORMs got credit for parameterizing queries against injection, though one commenter said hand-written parameterized queries are easy.",
         "quotes": [
           {
             "author": "mike_hearn",
@@ -42,7 +42,7 @@
       },
       {
         "title": "LLMs: lock-in or a way out",
-        "synthesis": "The top comment predicts SQL becomes like assembly, mostly written by machines, so fewer people will bother designing a successor. Others agree that models trained on decades of SQL will do worse in a new language, citing a Dan Luu post on token counts across languages. The opposing view is that LLMs pick up new syntax from a description and a few examples, and that they lower the cost of switching. One commenter recalled a Datomic startup whose sales team couldn't query leads, which an LLM would now solve. Another gave non-technical staff an LLM-friendly schema document and they now write sophisticated Grafana queries.",
+        "synthesis": "The top comment predicts SQL becomes like assembly, mostly written by machines, so fewer people will bother designing a successor. Others agree that models trained on decades of SQL will do worse in a new language, citing a Dan Luu post on token counts. The opposing view is that LLMs pick up new syntax from a description and a few examples, which lowers the cost of switching. One commenter's non-technical staff now write sophisticated Grafana queries with an LLM and a schema document.",
         "quotes": [
           {
             "author": "scythmic_waves",
@@ -58,7 +58,7 @@
       },
       {
         "title": "Why nothing has replaced SQL",
-        "synthesis": "The people who know a business's data best are SQL experts, so any replacement asks its natural users to give up a skill. One commenter compared this to new music notations, which only experts in the old notation could design and they have no reason to. Others noted that experts have attacked SQL since a 1983 typewritten critique and Stonebraker's call it the COBOL of 2020, and better languages like Datalog have existed all along. One side said SQL won because it was battle-tested; the other said it was a crappy partial implementation of the relational model that nobody managed to dislodge. Vendors can't ship SQL-free databases either, because customers expect every knob from their existing setup.",
+        "synthesis": "The people who know a business's data best are SQL experts, so any replacement asks its natural users to give up a skill. Experts have attacked SQL since a 1983 typewritten critique, Stonebraker called it the COBOL of 2020, and better languages like Datalog have existed all along. Some said SQL won because it was battle-tested, others that it was a crappy partial implementation nobody managed to dislodge. Vendors can't ship SQL-free databases either, because customers expect every knob from their existing setup.",
         "quotes": [
           {
             "author": "tmoertel",
@@ -74,7 +74,7 @@
       },
       {
         "title": "Change the interface, not the syntax",
-        "synthesis": "Several commenters want the database to accept a structured query format, such as a JSON AST or an IR, so any language can compile to it. One built Rad around exactly that, and others pointed to Substrait and Turso's VDBE bytecode. Short of that, people use pipe syntax, PRQL, LINQ or a dataframe library and treat SQL as an IR. One commenter went further and wanted clients to compile their own query plans. Another pushed back with a medical records system whose queries joined over 400 relations, and noted that baked-in plans would break when a view changes or an index is added during an outage. Datalog projects got the most links: Mangle, Datalevin, CodeQL and a C++ engine.",
+        "synthesis": "Several commenters want the database to accept a structured query format, such as a JSON AST or an IR, that any language can compile to. One built Rad around that idea, and others pointed to Substrait, Turso's VDBE bytecode, and Datalog projects such as Mangle, Datalevin and CodeQL. Short of that, people use pipe syntax, PRQL, LINQ or a dataframe library and treat SQL as an IR. One commenter wanted clients to compile their own query plans, and another replied that baked-in plans break when a view or index changes.",
         "quotes": [
           {
             "author": "BrenBarn",
@@ -90,7 +90,7 @@
       },
       {
         "title": "Live queries that stream deltas",
-        "synthesis": "One commenter's wish from 2011 is a query that acts as a subscription, so the database streams changes instead of the client re-running the same query. Replies listed partial versions in Oracle, SQL Server, Snowflake, BigQuery, and Postgres triggers with NOTIFY, plus Materialize and Feldera for incremental queries. Oracle's version came out ahead, though it can't follow something like a COUNT(*). One reply argued that incremental computation is too hard to solve at the language level.",
+        "synthesis": "Since 2011, one commenter has wanted queries that act as subscriptions, with the database streaming changes instead of the client re-running the query. Replies listed partial versions in Oracle, SQL Server, Snowflake, BigQuery, and Postgres triggers with NOTIFY, plus Materialize and Feldera for incremental queries. Oracle's version came out ahead, though it can't follow something like a COUNT(*). One reply argued that incremental computation is too hard to solve at the language level.",
         "quotes": [
           {
             "author": "mikewarot",
@@ -105,13 +105,13 @@
         ]
       }
     ],
-    "consensus": "SQL is not going away soon. Expertise, vendor compatibility and LLM fluency all favor it, so the realistic gains come from layers on top (pipe syntax, PRQL, LINQ-style builders) or a structured interface underneath.",
+    "consensus": "SQL is not going away soon. Expertise, vendor compatibility and LLM fluency all favor it. So the realistic gains come from layers on top, such as pipe syntax, PRQL or LINQ-style builders, or from a structured interface underneath.",
     "dissent": "A vocal minority says SQL is fine and the complaints show a lack of skill, and that \"just syntax\" is no reason to switch. A few others say Datalog has been the better answer for decades and is worth adopting now.",
     "contrarian": {
       "author": "grebc",
       "text": "That SQL is used by different professions and not just IT related ones is testament to a good language. You won't find BA's using C to write reports for instance.",
       "commentId": 49414411,
-      "why": "While the thread grades SQL as a programmer's language, this points out that its users include business analysts, and a redesign aimed at developers could lose them."
+      "why": "The thread grades SQL as a programmer's language. This comment points out that its users include business analysts, and a redesign aimed at developers could lose them."
     }
   },
   "digestedAt": "2026-10-12T16:32:15.000Z"

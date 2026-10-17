@@ -9,25 +9,25 @@
   "points": 114,
   "commentCount": 78,
   "readingMinutes": 1,
-  "tldr": "A conceptual paper argues that professional expertise works like a shared commons. Each firm that hands cognitive work to AI acts rationally, but together they can drain the deep human expertise a profession needs to renew itself. Overseeing AI depends on that same expertise.",
+  "tldr": "A conceptual paper argues that professional expertise works like a shared commons. Each firm that hands cognitive work to AI acts rationally. Together, though, these firms can drain the deep human expertise a profession needs to renew itself. Overseeing AI depends on that same expertise.",
   "article": {
     "keyPoints": [
       "Human Resource Development research has treated AI as a training problem for individual organizations. It has not asked how professions as a whole regenerate expertise.",
-      "The paper's Cognitive Commons framework draws on commons theory, HRD research and distributed cognition to explain how AI adoption that makes sense for each firm can deplete a profession's shared expertise.",
+      "The paper's Cognitive Commons framework draws on commons theory, HRD research and distributed cognition. It explains how AI adoption that makes sense for each firm can deplete a profession's shared expertise.",
       "It separates Internalized Mastery, deep domain knowledge built through sustained practice, from Distributed Mastery, the skill of coordinating human-AI systems.",
       "The authors call the core bind the 'Validation Tether'. Checking AI output well takes the very expertise that AI adoption may erode.",
-      "Early labor-market and clinical evidence suggests the pathways for building expertise may be disrupted in sectors most exposed to AI. The authors caution that adoption is recent and the signals come from leading sectors.",
-      "Five factors decide how vulnerable an occupation is. The paper wants expertise development treated as collective stewardship, governed by organizations, professional associations and policy."
+      "Early labor-market and clinical evidence suggests the pathways for building expertise may be disrupted in sectors most exposed to AI. The authors caution that adoption is recent. They also note that the signals come from leading sectors.",
+      "Five factors decide how vulnerable an occupation is. The paper wants expertise development treated as collective stewardship. Organizations, professional associations and policy should govern it."
     ],
     "whyItMatters": "HR, L&D and workforce-policy readers will need the full paper. The abstract does not spell out the five vulnerability factors, the evidence or the proposed governance."
   },
   "articleNote": "Only the arXiv abstract was available, so the key points summarize the abstract, not the full paper.",
   "comments": {
-    "overview": "A mid-sized, mostly sympathetic thread. Many commenters said they already feel AI eroding their own skills or their juniors' learning. A vocal minority argued it only changes which skills matter. A long side argument went after the paper's use of 'tragedy of the commons', and several readers said it misreads Ostrom and ignores market incentives.",
+    "overview": "A mid-sized, mostly sympathetic thread. Many commenters said they already see skill loss from AI, in themselves or in their juniors' learning. A vocal minority argued it only changes which skills matter. A long side argument went after the paper's use of 'tragedy of the commons'. Several readers said the paper misreads Ostrom and ignores market incentives.",
     "themes": [
       {
-        "title": "Is AI-driven skill decline real?",
-        "synthesis": "Several developers reported real atrophy. They described losing the instinct to dig through logs, freezing in interviews without AI, or no longer writing or reviewing code at all. Others called the decline overstated. People now work across more technologies, they said, and reviewing AI output works the mind harder than writing boilerplate did. A middle view saw a trade of depth for breadth. Some worried less about novices learning little than about experts sliding backwards.",
+        "title": "Is AI-driven skill loss real?",
+        "synthesis": "Several developers reported real skill loss: losing the instinct to dig through logs, freezing in interviews without AI, or no longer writing or reviewing code. Others called it overstated, since people now work across more technologies and reviewing AI output works the mind harder than boilerplate did. A middle view saw a trade of depth for breadth. Some worried less about novices learning little than about experts sliding backwards.",
         "quotes": [
           {
             "author": "mikepurvis",
@@ -43,7 +43,7 @@
       },
       {
         "title": "Lost mentorship and the old 'new tool' analogies",
-        "synthesis": "The top comment argued that each problem AI solves replaces an exchange with a mentor or code reviewer, and those exchanges are how experts get made. Commenters tested this against Socrates on writing, calculators, slide rules, GPS and long division. Skeptics said every tool sparked the same fear. Others said AI differs in scale, since it automates research, debugging and design at once, and in its flattering, slot-machine pull.",
+        "synthesis": "The top comment argued that every problem AI solves replaces an exchange with a mentor or code reviewer, and those exchanges make experts. Commenters tested this against Socrates on writing, calculators, slide rules, GPS and long division. Skeptics said every tool sparked the same fear. Others said AI differs in scale, since it automates research, debugging and design at once, and in its flattering, slot-machine pull.",
         "quotes": [
           {
             "author": "io84",
@@ -59,7 +59,7 @@
       },
       {
         "title": "Does the paper get the commons right?",
-        "synthesis": "Critics called the paper buzzword-heavy and short on examples, and one suspected an LLM wrote it. A long sub-thread argued over whether Ostrom refuted Hardin or extended him. Both sides agreed that managed commons survive and unmanaged ones fail. One commenter argued at length that professional expertise is no commons at all. It has no defined boundaries, firms and individuals hoard it for leverage, and licensed professions are legally enforced enclosures.",
+        "synthesis": "Critics called the paper buzzword-heavy and short on examples, and one suspected an LLM wrote it. A long sub-thread argued over whether Ostrom refuted Hardin or extended him, though both sides agreed that managed commons survive and unmanaged ones fail. One commenter argued at length that professional expertise is no commons at all. It has no defined boundaries, firms and individuals hoard it for leverage, and licensed professions are legally enforced enclosures.",
         "quotes": [
           {
             "author": "sfny",
@@ -75,7 +75,7 @@
       },
       {
         "title": "Leadership is pushing adoption anyway",
-        "synthesis": "Commenters described employers who demand more AI output and ignore the skill erosion, which they likened to eating the seed corn. Some read it as a bet that models will improve faster than staff skills decline. Others said the push continues because heavy AI spending has to show returns, and doubting it in public can hurt a career.",
+        "synthesis": "Commenters described employers who demand more AI output and ignore the skill loss, which they likened to eating the seed corn. Some read it as a bet that models will improve faster than staff skills decline. Others said the push continues because heavy AI spending has to show returns, and doubting it in public can hurt a career.",
         "quotes": [
           {
             "author": "noir_lord",
@@ -102,7 +102,7 @@
       }
     ],
     "consensus": "Most agreed that heavy AI use cuts the hands-on practice that builds and keeps expertise, and that employers have little reason to protect it.",
-    "dissent": "A minority called the skill loss overstated or harmless. New tools always retire old skills, people now do work they could not do before, and the skills that matter, such as architecture and judgment, get more use than before.",
+    "dissent": "A minority called the skill loss overstated or harmless. New tools always retire old skills, and people now do work they could not do before. The skills that matter, such as architecture and judgment, get more use than before.",
     "contrarian": {
       "author": "sushusshs",
       "text": "I am not convinced many developers actually have the skills they think they have. They could wrestle syntax and mess around with tooling, but could they abstract properly?",

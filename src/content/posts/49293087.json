@@ -9,24 +9,24 @@
   "points": 169,
   "commentCount": 49,
   "readingMinutes": 7,
-  "tldr": "Sean Goedecke argues that blogging about a topic while you're still learning it is one of the best ways to learn it. Each post should argue a point someone could disagree with, you should research enough to defend it, and you should be honest with readers about your credentials.",
+  "tldr": "Sean Goedecke argues that blogging about a topic while you're still learning it is one of the best ways to learn it. Each post should argue a point someone could disagree with. You should research enough to defend that point. You should also be honest with readers about your credentials.",
   "article": {
     "keyPoints": [
       "Every post he publishes teaches him at least two things: the idea that prompted it and something he found while writing. If drafting teaches him nothing new, the post isn't worth publishing.",
-      "Each post must argue a point a sensible person could disagree with. He compares this to rhyme and meter in poetry. The constraint makes writing easier, and it forces him to research enough to answer the obvious objections.",
-      "Writing exposes gaps that thinking alone hides. He often changes his mind mid-draft, and his conclusions come out so much sharper than his introductions that he routinely rewrites the opening paragraph.",
+      "Each post must argue a point a sensible person could disagree with. He compares this rule to rhyme and meter in poetry. The constraint makes writing easier. It also forces him to research enough to answer the obvious objections.",
+      "Writing exposes gaps that thinking alone hides. He often changes his mind mid-draft. His conclusions come out so much sharper than his introductions that he routinely rewrites the opening paragraph.",
       "He gives three reasons it's fine to write outside his expertise. Beginners often explain a field better than experts. A little research can debunk a wrong public consensus, such as the \"500ml per prompt\" water figure. And his real name and résumé are public.",
-      "Feedback is a big part of the payoff. Public posts call for a thick skin. LLMs give junk advice and hedge constantly, but they're good at spotting real misunderstandings and far kinder than commenters on Lobsters or HN.",
-      "He offers two checks that the practice is working. You should change your mind often while writing, and a first draft's conclusion should be tighter than its introduction. If it isn't, the draft taught you nothing."
+      "Feedback is a big part of the payoff. Public posts call for a thick skin. LLM feedback is often junk or too hedged. Still, LLMs spot real misunderstandings. They are also far kinder than commenters on Lobsters or HN.",
+      "He offers two checks that the practice is working. You should change your mind often while writing. A first draft's conclusion should also be tighter than its introduction. If it isn't, the draft taught you nothing."
     ],
-    "whyItMatters": "Read the original if you blog or want to. It links to the specific posts where he changed his mind or debunked a popular claim, and those examples show what the method produces better than this summary can."
+    "whyItMatters": "Read the original if you blog or want to. It links to the specific posts where he changed his mind or debunked a popular claim. Those examples show what the method produces better than this summary can."
   },
   "comments": {
     "overview": "A mostly friendly thread. Most commenters accepted that writing helps you think, then argued over the edges. Should novices publish at all? Can AI or conversation replace the work of writing? Does publishing matter when bots are the only readers? A few top-level replies were one-line jokes about the title, which they had read as promising a blog to read rather than advice.",
     "themes": [
       {
         "title": "Should learners publish, and how honestly",
-        "synthesis": "The sharpest split was over whether people should blog about subjects they don't understand yet. Animats said no, because people and LLMs already fill the web with that. Most replies narrowed his objection to pretending to expertise, not learning in public. They pointed to Julia Evans's blog as the model and to the author's public credentials. rramadass and gpjt proposed a middle ground. Write once you've just started to understand something, say how deep your knowledge goes, and avoid both a falsely expert voice and ChatGPT-style hedging.",
+        "synthesis": "The sharpest split was over whether people should blog about subjects they don't understand yet. Animats said no, because people and LLMs already fill the web with that. Most replies narrowed his objection to pretending to expertise, not learning in public. They pointed to Julia Evans's blog as the model and to Goedecke's public credentials. rramadass and gpjt proposed a middle ground. Write once you've just started to understand something, say how deep your knowledge goes, and avoid both a falsely expert voice and ChatGPT-style hedging.",
         "quotes": [
           {
             "author": "tmoertel",
@@ -74,7 +74,7 @@
       },
       {
         "title": "The essay as an attempt, and the argue-a-point rule",
-        "synthesis": "Commenters placed the post in an older tradition. zenoprax noted that \"essay\" literally means attempt, as in Montaigne. b800h recalled that Boris Johnson wrote steelmanned Brexit columns for both sides to make up his mind. CurtMonash recognized the philosophy-student habit of picking an argument to disagree with. MarkSweep objected that requiring every post to argue a point dismisses posts that just share something interesting. HexPhantom replied that the author presents the rule as a constraint on himself, not on other bloggers.",
+        "synthesis": "Commenters placed the post in an older tradition. zenoprax noted that \"essay\" literally means attempt, as in Montaigne. b800h recalled that Boris Johnson wrote steelmanned Brexit columns for both sides to make up his mind. CurtMonash recognized the philosophy-student habit of picking an argument to disagree with. MarkSweep objected that requiring every post to argue a point dismisses posts that just share something interesting. HexPhantom replied that Goedecke presents the rule as a constraint on himself, not on other bloggers.",
         "quotes": [
           {
             "author": "MarkSweep",
@@ -90,7 +90,7 @@
       }
     ],
     "consensus": "Writing for an audience, even a hypothetical one, is a good way to find out what you actually understand. Learning in public is fine as long as you're upfront about how deep your knowledge goes.",
-    "dissent": "A minority said novices shouldn't publish at all, because people and LLMs already fill the web with confident misinformation. Others felt discussion teaches more than writing alone, or objected to the author's rule that every post argue a point.",
+    "dissent": "A minority said novices shouldn't publish at all, because people and LLMs already fill the web with confident misinformation. Others felt discussion teaches more than writing alone, or objected to Goedecke's rule that every post argue a point.",
     "contrarian": {
       "author": "kqr",
       "text": "My secret worry is that one of my readers will meet me in person and quiz me verbally on the subjects of one of my articles. I would end up sounding really dumb compared to the impression made by the article!",

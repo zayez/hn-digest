@@ -9,23 +9,23 @@
   "points": 1119,
   "commentCount": 692,
   "readingMinutes": 2,
-  "tldr": "Rick Manelius adopts \"AI;DR\" (AI; didn't read) as a personal rule. If someone sends him AI output they didn't bother to review and edit, he won't bother to read it. Customer support is the one place he says fully generated text is fine.",
+  "tldr": "Rick Manelius adopts \"AI;DR\", short for \"AI; didn't read\", as a personal rule. If someone sends him AI output they didn't bother to review and edit, he won't bother to read it. He accepts fully generated text in some settings, such as customer support.",
   "article": {
     "keyPoints": [
-      "The phrase isn't his. He credits a tweet by @seclilc from August 15, 2026, which drew about 16.6K likes, and says he has thought about it ever since.",
+      "The phrase isn't his. He credits an August 15, 2026 tweet by @seclilc, which drew about 16.6K likes. He says he has thought about it ever since.",
       "He describes a physical reaction, a flinch or an eye twitch, when someone he respects sends him unfiltered and unedited AI output.",
       "He accepts that by Q3 2026 nearly everyone uses AI somewhere in their process, for sourcing ideas, outlining or refining prose. His line falls at publishing text you haven't reviewed and edited yourself.",
-      "Fully generated copy is acceptable in customer support, where nobody wants artisanal \"did you reset your phone\" dialogue. A colleague who pastes a wall of Claude output into Slack sends a different message than they meant to.",
-      "The same applies to newsletters and social posts. Your name is on them, and if the text is raw model output, a reader could have asked Claude directly. He frames AI;DR as the AI-era counterpart to TL;DR."
+      "Fully generated text is fine in some places, such as customer support, where nobody wants artisanal \"did you reset your phone\" dialogue. A colleague who pastes a wall of Claude output into Slack sends a different message than they meant to.",
+      "The same applies to newsletters and social posts. Your name is on them. If the text is raw AI output, a reader could have asked Claude directly. He frames AI;DR as the AI-era counterpart to TL;DR."
     ],
-    "whyItMatters": "The post takes two minutes and the summary covers its whole argument. The later updates are the main reason to click: they link dontpastetheai.com, which a reader suggested, and the shareable AI;DR graphics he made after the post reached #1 on HN."
+    "whyItMatters": "The post takes two minutes, and the summary covers its whole argument. The later updates are the main reason to click. They link dontpastetheai.com, which a reader suggested, and the shareable AI;DR graphics he made after the post reached #1 on HN."
   },
   "comments": {
-    "overview": "A huge thread, most of it in sympathy with the post. The biggest subthread had little to do with essays. Engineers described codebases and PRs buried in AI-written comments and argued over whether pushing back costs you your job. Elsewhere people fought over whether provenance matters if the content is good, and a commenter who posted his own raw prompt next to Claude's polished version got told, nearly unanimously, that the prompt read better.",
+    "overview": "A huge, mostly sympathetic thread whose biggest subthread had little to do with essays. Engineers described codebases and PRs buried in AI-written comments and argued over whether pushing back costs you your job. Elsewhere people fought over whether provenance matters if the content is good. One commenter posted his own raw prompt next to Claude's essay and was told, nearly unanimously, that the prompt read better.",
     "themes": [
       {
         "title": "AI comments and docs flooding code review",
-        "synthesis": "The top thread opened with LPisGood describing coworkers whose PRs carry hundreds of lines of AI documentation and comments about \"load bearing paths\". Others added their own cases. Models narrate the diff instead of the code, cite plan items and scratch files nobody can see, keep notes about code that was removed, and write tests that check whether a Dockerfile contains the lines just added. Fixes ranged from CLAUDE.md rules and hooks that block comments over two lines to stripping comments out entirely. Several argued the comments hurt the next AI pass too, because a note about what not to do primes the model to do it.",
+        "synthesis": "The top thread opened with LPisGood describing coworkers whose PRs carry hundreds of lines of AI documentation and comments about \"load bearing paths\". Others added that models narrate the diff instead of the code, and cite plan items and scratch files nobody can see. They keep notes about removed code and write tests that check whether a Dockerfile contains the lines just added. Fixes ranged from CLAUDE.md rules and hooks that block comments over two lines to stripping comments out entirely. Several argued the comments hurt the next AI pass too, because a note about what not to do primes the model to do it.",
         "quotes": [
           {
             "author": "LPisGood",
@@ -41,7 +41,7 @@
       },
       {
         "title": "Push back, or approve and stay employed",
-        "synthesis": "BeetleB and tcmart14 said to reject sloppy PRs and become the bottleneck so the team has to talk about it. Review was always the constraint, and LLMs only made that obvious. Many replies called this naive. They described top-down AI mandates, managers who measure velocity, and colleagues who rubber-stamp. Some had been PIPed, threatened (one named Cisco) or retaliated against for raising quality concerns, and 27183 concluded that caring was his biggest career mistake. Others answered that a neutral question in a retro is low risk, and that a workplace where it isn't was already broken before AI.",
+        "synthesis": "BeetleB and tcmart14 said to reject sloppy PRs and become the bottleneck so the team has to talk about it. Review was always the constraint, and LLMs only made that obvious. Many replies called this naive, citing top-down AI mandates, managers who measure velocity, and colleagues who rubber-stamp. Some had been PIPed, threatened or retaliated against for raising quality concerns, and one named Cisco. 27183 concluded that caring was his biggest career mistake. Others answered that a neutral question in a retro is low risk, and that a workplace where it isn't was already broken before AI.",
         "quotes": [
           {
             "author": "BeetleB",
@@ -57,7 +57,7 @@
       },
       {
         "title": "Just send me the prompt",
-        "synthesis": "A popular suggestion was to share the prompt instead of the output, since the prompt holds all of the sender's actual thinking. supermatt tested it in public by posting his rambling prompt beside Claude's essay, and nearly every reply preferred the prompt for its voice, its edge and its visible reasoning. Others suggested asking the model for minimal spelling and paragraph fixes instead of a rewrite, and supermatt, who says a cognitive impairment makes writing slow for him, found that version readable. Skeptics noted that real work often spans dozens of prompts or an agent run over logs and infrastructure, which leaves nothing short to share.",
+        "synthesis": "A popular suggestion was to share the prompt instead of the output, since the prompt holds all of the sender's actual thinking. supermatt tested it by posting his rambling prompt beside Claude's essay, and nearly every reply preferred the prompt's voice and visible reasoning. Others suggested asking the AI only for spelling and paragraph fixes, and supermatt, whose cognitive impairment slows his writing, found that readable. Skeptics noted that real work often spans dozens of prompts or an agent run over logs and infrastructure, which leaves nothing short to share.",
         "quotes": [
           {
             "author": "ryankrage77",
@@ -89,7 +89,7 @@
       },
       {
         "title": "False positives and lost phrases",
-        "synthesis": "Writers complained that em-dashes, \"load bearing\" and well-formatted markdown now get them accused of using AI, and a few had been wrongly accused already. One commenter apologized to an intern he had accused, unsure whether he had been right. Others said the tells are real, listing \"It's not X, it's Y\" and \"The gap is\", and that occasional false positives are a fair price given the volume of slop. A twenty-reply subthread of mock AI phrases (\"You're absolutely right\", \"that's the seam right there\") showed how familiar the style has become.",
+        "synthesis": "Writers complained that em-dashes, \"load bearing\" and tidy markdown now get them accused of using AI, sometimes wrongly. One commenter apologized to an intern he had accused, unsure whether he had been right. Others said tells like \"It's not X, it's Y\" are real, and false positives are a fair price for filtering so much slop. A twenty-reply subthread of mock AI phrases, like \"You're absolutely right\", showed how familiar the style has become.",
         "quotes": [
           {
             "author": "doix",
@@ -105,12 +105,12 @@
       }
     ],
     "consensus": "Pasting unreviewed AI output at a person is rude, because it hands the reading and checking to the recipient. Using AI as an editor or spell checker on your own writing is a different thing and mostly fine.",
-    "dissent": "A sizable minority said judging text by its origin is lazy and that quality is what counts. They warned that AI;DR is turning into a cheap way to dismiss opinions people dislike, and that it penalizes non-native speakers and people who struggle to write.",
+    "dissent": "A sizable minority said judging text by its origin is lazy and that quality is what counts. They warned that AI;DR is turning into a cheap way to dismiss opinions people dislike. It also penalizes non-native speakers and people who struggle to write, they said.",
     "contrarian": {
       "author": "BeetleB",
       "text": "People replying with LLM responses is not really functionally different from lazily responding with a link.",
       "commentId": 49340406,
-      "why": "It treats AI;DR as an old etiquette problem in new clothes, which raises the question of why replying with nothing but a link was tolerated for years."
+      "why": "It treats AI;DR as an old etiquette problem in new clothes. That raises the question of why replying with nothing but a link was tolerated for years."
     }
   },
   "digestedAt": "2026-10-11T16:53:01.000Z"

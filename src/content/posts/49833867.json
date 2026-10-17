@@ -9,24 +9,24 @@
   "points": 424,
   "commentCount": 143,
   "readingMinutes": 4,
-  "tldr": "Whiteboard is an MIT-licensed desktop app, built on a vendored Code OSS, where a coding agent such as Claude Code or Codex draws diagrams of its work that link straight to the code. It adds a semantic diff viewer and a log of the decisions the agent made on its own. The goal is to let developers review agent-written changes without piling up \"cognitive debt\".",
+  "tldr": "Whiteboard is an MIT-licensed desktop app built on a vendored Code OSS. In it, a coding agent such as Claude Code or Codex draws diagrams of its work that link straight to the code. Whiteboard adds a semantic diff viewer and a log of the decisions the agent made on its own. The goal is to let developers review agent-written changes without piling up \"cognitive debt\".",
   "article": {
     "keyPoints": [
-      "Four former tech leads built it after agent-written PRs they had merged without understanding made their own codebase hard to work on, a problem they call \"cognitive debt\" after Geoffrey Litt.",
-      "The agent gets an SDK and MCP server to draw on an in-app canvas. Clicking a sequence diagram, an entity relationship diagram or a quote from the agent's trace jumps to the code, with VS Code keybindings and LSP support.",
-      "A Rust, AST-aware diff viewer cuts noise by default. It summarizes large new functions as pseudocode and collapses tests and documentation changes, and WASM plugins can change those rules.",
-      "A decision log links the agent's own traces to the canvas, so a reviewer can see how each stated requirement was implemented and which choices the agent made without being asked.",
-      "The team vendors Code OSS instead of maintaining patches, because agents handle patch sets badly and much of stock VS Code (they say about 45% is Copilot) is dead weight. The app cannot edit files yet, and shared reviews don't update after sharing.",
+      "Four former tech leads built Whiteboard after they merged agent-written PRs without understanding them. Their own codebase became hard to work on. They call this \"cognitive debt\", after Geoffrey Litt.",
+      "The agent gets an SDK and MCP server to draw on an in-app canvas. Clicking a sequence diagram, an entity relationship diagram or a quote from the agent's trace jumps to the code. Code navigation has VS Code keybindings and LSP support.",
+      "A Rust, AST-aware diff viewer cuts noise by default. It summarizes large new functions as pseudocode and collapses tests and documentation changes. WASM plugins can change those rules.",
+      "A decision log links the agent's own traces to the canvas. A reviewer can see how each stated requirement was implemented. The log also shows which choices the agent made without being asked.",
+      "The founders vendor Code OSS instead of maintaining patches, because agents handle patch sets badly. Much of stock VS Code is dead weight to them; they say about 45% is Copilot. Whiteboard cannot edit files yet, and shared reviews don't update after sharing.",
       "The desktop app stays free and self-hostable. The founders plan to charge companies for a hosted, multiplayer version with trace storage and team reviews."
     ],
     "whyItMatters": "Developers who review a lot of agent-written code should read the README for the example prompts and the list of known limitations. The demo video shows the canvas-to-code navigation better than any description of it."
   },
   "comments": {
-    "overview": "A warm launch thread. Founders answered almost every comment, and several readers said they had built similar tools for themselves. Most of the argument was about naming, about whether a diagram canvas earns a separate app over Markdown plus Mermaid or C4, and about whether humans should still review code or only plans.",
+    "overview": "A warm launch thread: the founders answered almost every comment, and several readers had built similar tools for themselves. Most of the argument was about the name, and whether a diagram canvas earns its own app over Markdown plus Mermaid or C4. A third question was whether humans should still review code or only plans.",
     "themes": [
       {
         "title": "An IDE that can't edit",
-        "synthesis": "The most repeated objection was the word \"IDE\" for an app whose known limitations say it cannot edit files. The founders said they picked it because most people now use VS Code only to browse and review code, and they held editing back because it pulls the product toward an agent orchestrator. Mid-thread they renamed it a \"canvas\" on GitHub and the website. One commenter defended the label as a frame of reference people would actually click on.",
+        "synthesis": "The most repeated objection was the word \"IDE\" for an app whose known limitations say it cannot edit files. The founders said most people now use VS Code only to browse and review code. They held editing back because it pulls Whiteboard toward an agent orchestrator, and mid-thread they renamed it a \"canvas\" on GitHub and the website. One commenter defended the label as a frame of reference people would actually click on.",
         "quotes": [
           { "author": "altmanaltman", "text": "Seems more like IDE is \"I Don't Edit\" in this case", "commentId": 49839216 },
           { "author": "sidharthkmenon", "text": "we ultimately settled on the term 'IDE' because we've found that most people use vscode to review code nowadays, almost exclusively (so it makes it a bit easier to draw the comp in your mind).", "commentId": 49839529 }
@@ -34,7 +34,7 @@
       },
       {
         "title": "A product, or one feature?",
-        "synthesis": "Skeptics asked why this needs its own app when an agent can already write Mermaid into Markdown, when LikeC4 and PlantUML's C4 library are open and text-based, or when a VS Code extension could do the same. One called it \"1 feature (a MCP with a GUI attached to it)\". The founders answered that static diagram tools lack the interactivity that matters: go-to-definition from a diagram node, guided walkthroughs, and a real diff viewer. They also plan to ship it as an MCP UI inside other agent apps. A LikeC4 user replied that LikeC4 already has interactivity and walkthroughs, so adding a code view is a single feature.",
+        "synthesis": "Skeptics asked why this needs its own app when an agent can write Mermaid into Markdown, or LikeC4 and PlantUML's C4 library already exist. One called it \"1 feature (a MCP with a GUI attached to it)\". The founders answered that static tools lack go-to-definition from a node, guided walkthroughs and a real diff viewer, and plan an MCP UI version. A LikeC4 user replied that LikeC4 already has interactivity and walkthroughs, so a code view is a single feature.",
         "quotes": [
           { "author": "2001zhaozhao", "text": "I don't know how much better this is compared to some simple custom Mermaid format, which the agent can write as artifact files and present to users. Zooming out, this app seems like 1 feature (a MCP with a GUI attached to it) rather than an entire product.", "commentId": 49834714 },
           { "author": "ketan_around", "text": "My issue is that those tools are mainly built to render static diagrams (output to svg, png, etc.) … I think a lot of the value of whiteboard comes from the interactivity -- being able to click on a node to see the underlying code, being able to go through a guided walkthrough of a given flow, etc.", "commentId": 49849880 }
@@ -42,7 +42,7 @@
       },
       {
         "title": "Review the plan or the code?",
-        "synthesis": "One commenter said agents plus automated review are already reliable enough during implementation that humans only need to review plans. The founder disagreed: key tradeoffs only show up once code exists, so writing code is a cheap way to improve the spec. Others pushed on both sides. A game developer said weeks of plan-only review left 50K lines of bloat and constant bugs. Another said models get tunnel vision on code they just wrote, so restarting beats revising.",
+        "synthesis": "One commenter said agents plus automated review are already reliable enough that humans only need to review plans. A founder disagreed: key tradeoffs only show up once code exists, so writing code is a cheap way to improve the spec. A game developer said weeks of plan-only review left 50K lines of bloat and constant bugs. Another said agents get tunnel vision on code they just wrote, so restarting beats revising.",
         "quotes": [
           { "author": "jenniferhooley", "text": "I have (like all of us I assume) tried moving forward over weeks of not code reviewing and only plan reviewing, and it's amazing how badly things fell apart, I ended up having to reset weeks of work and ended up knocking out like 50K loc for the exact same features and zero bugs", "commentId": 49848505 },
           { "author": "sippeangelo", "text": "once the LLM has locked down an implementation any reworks I try to do gets it really tunnelvisioned on the current implementation, treating it like the truth even though it JUST wrote it", "commentId": 49840811 }
@@ -50,7 +50,7 @@
       },
       {
         "title": "Diagrams that drift or invent things",
-        "synthesis": "Several readers worried the diagrams become one more source of truth that goes stale, or that the LLM draws things the code doesn't do. One spotted a transition in the demo GIF that wasn't in the diff. The founder said that GIF was a design mockup, swapped in a real session, and said real diagrams are tied to code so drift can be detected. A cofounder conceded the diagrams are ephemeral, and that the lasting result of a session is the developer's own understanding. Some readers were fine with that and plan to use it as a throwaway aid for remembering their own agent-built code.",
+        "synthesis": "Several readers worried the diagrams become one more source of truth that goes stale, or that the agent draws things the code doesn't do. One spotted a transition in the demo GIF that wasn't in the diff. A founder called that GIF a design mockup, swapped in a real session, and said real diagrams are tied to code. A cofounder conceded the diagrams are ephemeral, and some readers were happy to use them as a throwaway memory aid for their own agent-built code.",
         "quotes": [
           { "author": "8organicbits", "text": "I'm pretty wary of LLM development tools hallucinating and wasting my time, is that whats happening in the lease broker example?", "commentId": 49836507 },
           { "author": "cannonpalms", "text": "When using an agent for development, I find that I REALLY miss being able to \"see\" the shape of the code in my head while I work, and I find that I get bombarded with so much information that I cannot keep track of what the code looks like.", "commentId": 49839516 }
@@ -58,14 +58,14 @@
       },
       {
         "title": "Platforms, size and agents",
-        "synthesis": "Many replies were requests: Windows (shipped during the thread), AUR, Nix, .deb, AppImage, Copilot CLI support, light mode. One reader balked at a 736 MB macOS download. The founder blamed the VS Code base, noted the diff viewer alone is 138 MB, and said a native rewrite is planned. A Codex warning about an \"authoring server\" turned out to mean the local stdio MCP server.",
+        "synthesis": "Many replies were requests: Windows (shipped during the thread), AUR, Nix, .deb, AppImage, Copilot CLI support, light mode. One reader balked at a 736 MB macOS download. A founder blamed the VS Code base, noted the diff viewer alone is 138 MB, and said a native rewrite is planned. A Codex warning about an \"authoring server\" turned out to mean the local stdio MCP server.",
         "quotes": [
           { "author": "sidharthkmenon", "text": "we made the choice to build on top of vscode for the mvp so that the code navigation experience would be normal / seamless (and hopefully, devoid of slop).", "commentId": 49835098 }
         ]
       }
     ],
-    "consensus": "Reviewing agent-written code is a real and growing pain, and many commenters had already hacked together their own explainers or walkthrough tools for it. Linking diagrams to code and the pseudocode-summarizing diff viewer got the most praise.",
-    "dissent": "A minority saw the tool as a narrow feature that Markdown, Mermaid, C4 or a VS Code extension could cover. A few read it as one more step toward letting agents write code people no longer understand, though the founder argued it aims at the opposite.",
+    "consensus": "Reviewing agent-written code is a real and growing pain. Many commenters had already hacked together their own explainers or walkthrough tools for it. Linking diagrams to code and the pseudocode-summarizing diff viewer got the most praise.",
+    "dissent": "A minority saw Whiteboard as a narrow feature that Markdown, Mermaid, C4 or a VS Code extension could cover. A few read it as one more step toward letting agents write code people no longer understand. A founder argued it aims at the opposite.",
     "contrarian": {
       "author": "asdev",
       "text": "You could have an agent update based on changes, but that would likely degrade the design doc/artifact into unintelligible slop which wouldn't be useful in the future. This is a behavioral/structural problem of software design in general, which I don't think can be solved by software.",

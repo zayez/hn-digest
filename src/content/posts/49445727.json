@@ -9,24 +9,24 @@
   "points": 516,
   "commentCount": 218,
   "readingMinutes": 9,
-  "tldr": "Most retrieval-augmented generation (RAG) systems are over-built. Rafael Pierre argues that BM25 full-text search plus an LLM rewriting the user's query covers about 60% of cases, and that embeddings, rerankers and vector databases should come only after measured user complaints.",
+  "tldr": "Most retrieval-augmented generation (RAG) systems are over-built. Rafael Pierre argues that BM25 full-text search, plus an LLM that rewrites the user's query, is enough for about 60% of systems. Embeddings, rerankers and vector databases should come only after measured user complaints.",
   "article": {
     "keyPoints": [
-      "Five factors decide the design: how fresh the data must be, how much the corpus churns, whether queries are keyword or conversational, query volume (under 1K a day needs nothing fancy, over 10K justifies full optimization), and whether the team has ML skills.",
-      "Plain BM25 in Elasticsearch or Postgres costs nothing per query, answers in under 10ms, needs no chunking and is easy to debug. It misses synonyms and conversational questions, and the author says most \"semantic search\" problems are really query formulation problems.",
-      "An LLM rewriting queries into keywords costs about $0.001 a query. It can add synonyms, split compound questions and map internal jargon from a glossary, and you tune it by editing a prompt instead of re-embedding the corpus. General embedding models fail on proprietary names like an internal framework called \"Atlas\".",
-      "When embeddings are needed, the author ranks three ways to add them: rerank the top 50 BM25 hits by embedding them per query (around $15 a month at 1K queries a day, but 200 to 500ms of latency), pre-embed only the most-read 20% of documents, or pre-embed everything, which pays off only at Pinterest or Shopify scale.",
-      "Model deprecation is the hidden cost of pre-embedding. Moving off text-embedding-ada-002 means re-embedding and re-testing the whole corpus, while per-query embedding changes one line.",
-      "Multi-intent questions should be split into sub-queries and routed separately, which the author prices at $0.002 versus $0.03 for handling the whole query at once. His split is 60% of systems stop at full-text plus rewriting, 25% need hybrid, 10% full pre-embedding and 5% something custom."
+      "Five factors decide the design: data freshness, corpus churn, keyword or conversational queries, query volume, and the team's ML skills. Under 1K queries a day needs nothing fancy. Over 10K a day justifies full optimization.",
+      "Plain BM25 in Elasticsearch or Postgres costs nothing per query. It answers in under 10ms, needs no chunking and is easy to debug. It misses synonyms and conversational questions. Pierre says most \"semantic search\" problems are really query formulation problems.",
+      "An LLM that rewrites queries into keywords costs about $0.001 a query. It can add synonyms, split compound questions and map internal jargon from a glossary. You tune it by editing a prompt instead of re-embedding the corpus. General embedding models fail on proprietary names, like an internal framework called \"Atlas\".",
+      "When embeddings are needed, Pierre lays out three ways to add them. The first reranks the top 50 BM25 hits by embedding them per query. That costs around $15 a month at 1K queries a day, but adds 200 to 500ms of latency. The second pre-embeds only the most-read 20% of documents. The third pre-embeds everything, which pays off only at Pinterest or Shopify scale.",
+      "Model deprecation is the hidden cost of pre-embedding. Moving off text-embedding-ada-002 means re-embedding and re-testing the whole corpus. With per-query embedding, the switch is a one-line change.",
+      "Multi-intent questions should be split into sub-queries and routed separately. Pierre prices that at $0.002, against $0.03 for handling the whole query at once. His split: 60% of systems stop at full-text plus rewriting, 25% need hybrid, 10% full pre-embedding and 5% something custom."
     ],
-    "whyItMatters": "Worth a skim for anyone scoping a first internal search or RAG project who wants a decision tree and rough per-query costs. Treat the dollar figures as illustrative: commenters noticed the deprecation example quotes $10,000 to re-embed a corpus the same article prices at $10, and the post gives no benchmarks for any recipe."
+    "whyItMatters": "Worth a skim for anyone scoping a first internal search or RAG project who wants a decision tree and rough per-query costs. Treat the dollar figures as illustrative. Commenters noticed the deprecation example quotes $10,000 to re-embed a corpus that the article elsewhere prices at $10. The article also gives no benchmarks for any recipe."
   },
   "comments": {
-    "overview": "Practitioners mostly agreed with the thesis, and the best stories came from people who had replaced vector search with keyword search an LLM drives itself. Pushback came from finance and multilingual deployments where keywords break down. A large share of the thread complained that the article reads as LLM-written, and the author admitted to running the draft through one. A long side argument covered whether \"RAG\" should have been spelled out.",
+    "overview": "Practitioners mostly agreed with the thesis. The best stories came from people who had replaced vector search with keyword search that an LLM drives itself. Pushback came from finance and multilingual deployments, where keywords break down. A large share of the thread complained that the article reads as LLM-written, and Pierre admitted to having an LLM review his draft. A long side argument covered whether \"RAG\" should have been spelled out.",
     "themes": [
       {
         "title": "Full-text search goes further than people expect",
-        "synthesis": "The top comment, from someone who built large RAG systems, said embeddings look magic until you have to re-chunk, re-embed and rerank to make them precise, while a big keyword query just works and is easier to run. Others noted BM25 ships with most databases. Some reported that vector search had leaked into products they use, like Bitwarden's password search, and made it worse. The counterargument came from finance, where jargon and client-specific meanings made BM25 fail even with an agent rewriting queries, and vector search won despite the cost. The author said his team had to build a glossary and \"semantic layer\" for the same reason.",
+        "synthesis": "The top comment, from someone who built large RAG systems, said embeddings look magic until you must re-chunk, re-embed and rerank them for precision. A big keyword query just works and is easier to run, and BM25 ships with most databases. In finance, jargon and client-specific meanings made BM25 fail even with an agent rewriting queries, so vector search won despite the cost. Pierre said his team had to build a glossary and \"semantic layer\" for the same reason.",
         "quotes": [
           {
             "author": "usernametaken29",
@@ -42,7 +42,7 @@
       },
       {
         "title": "Let the agent write its own searches",
-        "synthesis": "Several commenters went past the article's one-shot query rewriting to agents that search iteratively. One indexed thousands of documents in SQLite FTS5 and let a model write its own SQL, and said it beat every commercial product his company had tried. Others pointed to coding agents, which navigate repositories with grep. A coding-agent vendor said his team dropped its retrieval index after finding it had silently returned nothing for a long time with no loss in quality. Skeptics raised text-to-SQL benchmarks with poor accuracy and the risk of letting a hallucinating model write queries; the SQLite user answered that his database file is read-only.",
+        "synthesis": "Several commenters went past one-shot query rewriting to agents that search iteratively, as coding agents do with grep. One let a model write SQL against thousands of documents in SQLite FTS5, and said it beat every commercial product his company tried. A coding-agent vendor dropped its retrieval index after a bug had silently made it return nothing for a long time, and the agent worked better. Skeptics cited poor text-to-SQL benchmarks and the risk of a hallucinating model writing queries; the SQLite user said his database file is read-only.",
         "quotes": [
           {
             "author": "comandillos",
@@ -58,7 +58,7 @@
       },
       {
         "title": "Where keywords fall short",
-        "synthesis": "A commenter whose technicians search a knowledge base written in several languages said full-text search can't cope, while an LLM fed embedding results answers across languages and keeps the original jargon. Replies suggested translating everything into one index or keeping an index per language, and one called embeddings a cleaner form of that translation that is harder to debug. Another hobbyist had needed spelling lists and a Porter stemmer just for English. A linguist replied that embeddings fail too on names absent from training data, so you end up with a translation table anyway. Chunking drew its own argument: pronouns that point across chunk boundaries break retrieval, and embedding models cap chunks at roughly 512 to 1024 tokens.",
+        "synthesis": "A commenter whose technicians search a multilingual knowledge base said full-text search can't cope, but an LLM fed embedding results answers across languages. Replies suggested one translated index or one index per language, and one called embeddings a cleaner but harder-to-debug form of that translation. A linguist replied that embeddings also fail on names absent from training data, so you need a translation table anyway. Chunking drew its own argument: pronouns that point across chunk boundaries break retrieval, and embedding models cap chunks at roughly 512 to 1024 tokens.",
         "quotes": [
           {
             "author": "kaon_2",
@@ -74,7 +74,7 @@
       },
       {
         "title": "Complaints that an LLM wrote it",
-        "synthesis": "Many readers flagged the recipe headings, short punchy lines and phrases like \"The Fresh Data Play\". One said the hybrid recipes look like what Claude produces when it avoids choosing between two options. Another pointed to the GPT-4o-mini reference as a sign of 2024 training data, though a reply said the model is still cheap and capable. The author said he only had an LLM review his draft and that this post drew far more views than his own writing. Separately, one reader checked the numbers and found the $10,000 re-embedding figure contradicts the article's own $10 estimate.",
+        "synthesis": "Many readers flagged the recipe headings, short punchy lines and phrases like \"The Fresh Data Play\". One said the hybrid recipes look like what Claude produces when it avoids choosing between two options. Pierre said he only had an LLM review his draft, and that this article drew far more views than his own writing. Separately, one reader found that the $10,000 re-embedding figure contradicts the article's own $10 estimate.",
         "quotes": [
           {
             "author": "seamossfet",
@@ -90,7 +90,7 @@
       },
       {
         "title": "RAG is retrieval, not vector databases",
-        "synthesis": "Several commenters said RAG is old information retrieval with an LLM issuing the queries, so pre-LLM search work still decides quality: clean input, ETL, structured metadata and relevance testing. One team now writes product docs with RAG in mind, with clearer headings and terms. People also argued over the definition. Some held that any retrieval before generation, a grep included, counts as RAG, and that writers who only covered embeddings taught everyone otherwise. Others noted that vector embeddings predate LLMs by decades.",
+        "synthesis": "Several commenters said RAG is old information retrieval with an LLM issuing the queries, so clean input, ETL, metadata and relevance testing still decide quality. One team now writes product docs with RAG in mind, with clearer headings and terms. Some held that any retrieval before generation, a grep included, counts as RAG, and blamed writers who only covered embeddings for the narrower meaning. Others noted that vector embeddings predate LLMs by decades.",
         "quotes": [
           {
             "author": "jillesvangurp",
@@ -106,7 +106,7 @@
       }
     ],
     "consensus": "Start with keyword search and only add embeddings when users' complaints show you need them. An LLM choosing search terms, or querying the index repeatedly, covers much of what people expect from semantic search.",
-    "dissent": "Domains full of jargon, multilingual corpora and descriptive \"I don't know the name\" queries still favor embeddings, and a sizeable group dismissed the article as LLM-generated with numbers that don't add up.",
+    "dissent": "Domains full of jargon, multilingual corpora and descriptive \"I don't know the name\" queries still favor embeddings. A sizeable group also dismissed the article as LLM-generated, with numbers that don't add up.",
     "contrarian": {
       "author": "7734128",
       "text": "It's very powerful and so easy to implement that you could try it out and discover whether performance would be an issue rather than trying to anticipate it.",

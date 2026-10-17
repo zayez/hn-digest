@@ -9,24 +9,24 @@
   "points": 861,
   "commentCount": 435,
   "readingMinutes": 13,
-  "tldr": "Reverse engineering shows that Windows Paint and Photos stamp every AI image they generate, including ones made by a local model on the device, with an invisible pixel watermark. The watermark carries a per-generation GUID that Microsoft's servers issue when they moderate the prompt. Turning off the visible Copilot watermark does not remove it, and Microsoft's disclosures never mention the ID.",
+  "tldr": "Reverse engineering shows that Windows Paint and Photos stamp every AI image they generate with an invisible pixel watermark. That includes images made by a local model on the device. The watermark carries a unique ID that Microsoft's servers issue for each generation when they moderate the prompt. Turning off the visible Copilot watermark does not remove it. Microsoft's disclosures never mention the ID.",
   "article": {
     "keyPoints": [
-      "Paint ships local AI models as encrypted .onnxe files, XORed with \"Microsoft_2023\" or a 4,096-byte key, plus a 1.67 MB Watermarker.dll. That is a big DLL for drawing a logo, and the size is what prompted the author to look for a hidden watermark.",
-      "Before Paint runs the local Stable Diffusion model, it POSTs the prompt to an Azure moderation endpoint. The server sends back a revised prompt, a promptGenerationId and a watermarkId. Each request also carries the previous generation's ID, so Microsoft can chain a user's prompts together.",
-      "WmkWriteWatermark embeds the 16-byte watermarkId into the pixels with a block-based, SVD-style scheme that writes each of 144 bits at least three times. In a 512x512 test it changed 193,376 of 262,144 pixels. If watermarking fails, Paint discards the whole generation.",
-      "The saved file also gets a signed C2PA manifest whose soft-binding value is the same GUID, labeled com.microsoft.invismark.1. Saves of AI results are limited to formats that keep C2PA metadata (PNG, JPEG, GIF, .paint), and BMP is not offered.",
+      "Paint ships local AI models as encrypted .onnxe files, XORed with \"Microsoft_2023\" or a 4,096-byte key. It also ships a 1.67 MB Watermarker.dll. That is a big DLL for drawing a logo. The size prompted the author to look for a hidden watermark.",
+      "Before Paint runs the local Stable Diffusion model, it POSTs the prompt to an Azure moderation endpoint. The server sends back a revised prompt, a promptGenerationId and a watermark ID. Each request also carries the previous generation's ID, so Microsoft can chain a user's prompts together.",
+      "WmkWriteWatermark embeds the 16-byte watermark ID into the pixels with a block-based, SVD-style scheme. The scheme writes each of 144 bits at least three times. In a 512x512 test it changed 193,376 of 262,144 pixels. If watermarking fails, Paint discards the whole generation.",
+      "The saved file also gets a signed C2PA manifest. Its soft-binding value is the same watermark ID, labeled com.microsoft.invismark.1. Paint saves AI results only in formats that keep C2PA metadata: PNG, JPEG, GIF and .paint. BMP is not offered.",
       "Photos uses the same Watermarker.dll for its Image Creator and Restyle features. Unlike Paint, it logs a watermarking failure and returns the image anyway.",
-      "Microsoft discloses remote content filtering and C2PA Content Credentials. It does not say that the manifest names a pixel watermark ID issued during prompt moderation. The EU AI Act asks only that AI output be machine-detectable, not that it carry a prompt-specific ID."
+      "Microsoft discloses remote content filtering and C2PA Content Credentials. It does not say that the manifest names a watermark ID issued during prompt moderation. The EU AI Act asks only that AI output be machine-detectable. It does not require a per-generation ID."
     ],
-    "whyItMatters": "Read the original for the call graphs, the moderation endpoint's real JSON responses and the C2PA manifest dump. It also discusses whether the cloud endpoint could return images before they are watermarked, and how it might be classified if so."
+    "whyItMatters": "Read the original for the call graphs, the moderation endpoint's real JSON responses and the C2PA manifest dump. It also asks whether the cloud endpoint could return images before watermarking, and how such images might be classified."
   },
   "comments": {
-    "overview": "A large, angry thread. Most commenters accept a plain \"made by AI\" mark but object to an ID that Microsoft can tie back to an account, and the printer tracking-dot comparison comes up again and again. The biggest side threads argue over whether cameras should sign real photos instead, how Paint and Notepad ended up with AI features at all, and what the EU and US states actually require.",
+    "overview": "A large, angry thread. Most commenters accept a plain \"made by AI\" mark but object to an ID that Microsoft can tie back to an account. The printer tracking-dot comparison comes up again and again. The biggest side threads argue over camera-signed photos, how Paint and Notepad got AI features, and what the EU and US states require.",
     "themes": [
       {
         "title": "A unique ID is a fingerprint, not a label",
-        "synthesis": "The top reaction is that the AI part is beside the point. A per-image GUID lets anyone with a subpoena trace an image to a Microsoft account, much like the yellow dots color laser printers add, which one commenter said probably helped the FBI identify NSA leaker Reality Winner. A few pushed back that a GUID is not a user ID and that only AI output gets marked. The article's author then posted that each generation spends his account's AI credits, so Microsoft knows who sent each prompt. Several people found the moderation call worse than the mark, since a model running on their own NPU still reports every prompt to Microsoft.",
+        "synthesis": "The top reaction calls the AI part beside the point, since the ID lets anyone with a subpoena trace an image to a Microsoft account. Commenters compared it to the yellow dots of color laser printers, which probably helped the FBI identify NSA leaker Reality Winner. A few pushed back that the ID is not a user ID, but the author replied that each generation spends his account's AI credits. Several found the moderation call worse than the mark, since a model running on their own NPU still reports every prompt to Microsoft.",
         "quotes": [
           {
             "author": "weberer",
@@ -42,7 +42,7 @@
       },
       {
         "title": "Signing real photos instead",
-        "synthesis": "One commenter proposed the reverse, having cameras sign their photos so real images can be proven real. Replies took it apart. Keys can be pulled out of hardware or the signing chip can be fed arbitrary data, a signed camera can still photograph a screen, routine crops and conversions break the signature, and a court would believe signed fakes. Retr0id said he had already forged C2PA signatures with Google's Pixel Camera app, still unpatched after 90 days, and published the writeup during the thread.",
+        "synthesis": "One commenter proposed the reverse, having cameras sign their photos so real images can be proven real. Replies took it apart: keys can be extracted from hardware, the chip can be fed arbitrary data, and a signed camera can photograph a screen. Routine crops and conversions break the signature, and a court would believe signed fakes. Retr0id said he had already forged C2PA signatures with Google's Pixel Camera app, still unpatched after 90 days, and published the writeup during the thread.",
         "quotes": [
           {
             "author": "Retr0id",
@@ -74,7 +74,7 @@
       },
       {
         "title": "What the law requires",
-        "synthesis": "Some called for GDPR enforcement, since Microsoft never asked for consent. Others answered that the EU now requires AI content to be watermarked, and commenters noted that California, Colorado and Texas do too, with California's law in force since August 1. The reply was that the EU rule asks for a mark showing an image is AI-generated, not a per-prompt ID. One commenter linked Microsoft's InvisMark watermarking code on GitHub.",
+        "synthesis": "Some called for GDPR enforcement, since Microsoft never asked for consent. Others answered that the EU, California, Colorado and Texas now require AI content to be watermarked, California since August 1. The reply was that the EU rule asks for a mark showing an image is AI-generated, not a per-generation ID. One commenter linked Microsoft's InvisMark watermarking code on GitHub.",
         "quotes": [
           {
             "author": "jkaplowitz",
@@ -90,7 +90,7 @@
       },
       {
         "title": "Stripping the mark, and trusting it too much",
-        "synthesis": "Converting to BMP drops the C2PA metadata but leaves the altered pixels, so people traded ways to scrub those, such as adding faint noise or re-running the image through a denoiser. Others warned that schemes like SynthID survive that. A skeptic replied that once the method is known, which it is here because the code runs locally, anyone can overwrite the mark with noise. That led to two worries. People who trust detectors will treat unmarked deepfakes as real, and the same pixel watermarking could later tag any image or app window, not only AI output.",
+        "synthesis": "Converting to BMP drops the C2PA metadata but leaves the altered pixels, so people traded ways to scrub them, like faint noise or a denoiser. Others warned that schemes like SynthID survive that. A skeptic replied that this code runs locally, so its method is known and anyone can overwrite the mark with noise. Two worries followed: trusting detectors makes unmarked deepfakes look real, and the same watermarking could later tag any image or app window.",
         "quotes": [
           {
             "author": "account42",
@@ -111,7 +111,7 @@
       "author": "altmanaltman",
       "text": "They don't need watermarking to know who you are or to get information about you. So why would they work on this really visibile method if their intention was to progress the survelliance state?",
       "commentId": 49430013,
-      "why": "Microsoft already has accounts, IP addresses and telemetry, so a watermark that one researcher found with a disassembler is an odd surveillance tool, which points to legal compliance as the motive."
+      "why": "Microsoft already has accounts, IP addresses and telemetry. A watermark that the author found with a disassembler is an odd surveillance tool. That points to legal compliance as the motive."
     }
   },
   "digestedAt": "2026-10-12T16:33:09.000Z"

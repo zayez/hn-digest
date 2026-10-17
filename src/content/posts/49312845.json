@@ -9,20 +9,20 @@
   "points": 634,
   "commentCount": 522,
   "readingMinutes": 13,
-  "tldr": "Davide Piffer argues that much of AI's recent success in mathematics comes from a huge written workspace, not deeper reasoning. A model can keep every assumption, equation and dead end in its context window, while human working memory holds only a handful of unfamiliar items. Math rewards exactly that kind of bookkeeping.",
+  "tldr": "Davide Piffer argues that much of AI's recent success in math comes from a huge written workspace, not deeper reasoning. A model's context window holds every assumption, equation and dead end, which is the bookkeeping math rewards. Human working memory holds only a handful of unfamiliar items.",
   "article": {
     "keyPoints": [
-      "Human working memory is tiny, which is why multiplying two three-digit numbers in your head is hard even though each step is easy. Paper doesn't make you smarter. It extends your working memory, and expert chunking only compresses what fits under the same limit.",
-      "Working memory predicts math performance beyond IQ. Piffer cites Alloway and Alloway (2010), where working memory at age five predicted numeracy six years later better than the IQ measure did, plus Blankenship (2015) and a 2013 meta-analysis, while warning that the two traits overlap heavily.",
-      "A context window is a giant external notebook rather than true working memory. Models are weak at holding a private, changing mental state, so their reasoning happens in the text they write. For math, where every assumption and eliminated case can be written down, this weakness turns into a strength.",
-      "Math suits this setup because symbols stay fixed and answers can be checked by substitution, code or proof assistants. Social or historical questions depend on hidden facts and loose concepts, and a bigger notebook can't supply facts nobody observed.",
-      "The hypothesis makes predictions. AI should gain most on long calculations, case analysis and dense constraints, and least on problems hinging on one short conceptual leap. Cutting a model's usable context should hurt it most on long tasks, and giving humans better external memory should narrow the gap.",
-      "Piffer closes with Eugene Wigner's comparison of von Neumann and Einstein. Today's AI resembles a machine-amplified von Neumann, fast and broad with an unlimited notebook, but not yet Einstein's ability to reframe a problem entirely."
+      "Human working memory is tiny. That is why multiplying two three-digit numbers in your head is hard, even though each step is easy. Paper doesn't make you smarter. It extends your working memory. Expert chunking only compresses what fits under the same limit.",
+      "Working memory predicts math performance beyond IQ. Piffer cites Alloway and Alloway (2010), where working memory at age five predicted later literacy and numeracy better than the IQ measure did. He also cites Blankenship (2015) and a 2013 meta-analysis. He warns that the two traits overlap heavily.",
+      "A context window is a giant external notebook, not true working memory. Models are weak at holding a private, changing mental state. So their reasoning happens in the text they write. For math, where every assumption and eliminated case can be written down, this weakness turns into a strength.",
+      "Math suits this setup because symbols stay fixed. Answers can also be checked by substitution, code or proof assistants. Social or historical questions depend on hidden facts and loose concepts. A bigger notebook can't supply facts nobody observed.",
+      "The hypothesis makes predictions. AI should gain most on long calculations, case analysis and dense constraints. It should gain least on problems that hinge on one short conceptual leap. Cutting a model's usable context should hurt it most on long tasks. Giving humans better external memory should narrow the gap.",
+      "Piffer closes with Eugene Wigner's comparison of von Neumann and Einstein. Today's AI resembles a machine-amplified von Neumann, fast and broad with an unlimited notebook. It does not yet have Einstein's ability to reframe a problem entirely."
     ],
-    "whyItMatters": "Worth reading for anyone who wants a concrete framing of where AI math gains come from, and for the list of testable predictions near the end, which the summary only sketches. The cited working-memory studies are also listed in full with DOIs."
+    "whyItMatters": "Read the original for a concrete account of where AI math gains come from. It also has the full list of testable predictions near the end, which the summary only sketches. The cited working-memory studies are listed in full with DOIs."
   },
   "comments": {
-    "overview": "A large, mostly skeptical-of-the-framing thread. Many readers turned the question on themselves and traded stories about weak memory and strong on-the-fly reasoning, while others argued that memory, persistence and search simply are parts of intelligence. Long side fights broke out over string theory and whether AI could produce proofs no human can understand, and a few commenters flagged the author's history and the article's AI-sounding prose.",
+    "overview": "A large thread, mostly skeptical of the framing. Many readers traded stories about their own weak memory and strong reasoning, while others argued that memory, persistence and search are parts of intelligence. Long side fights broke out over string theory and over proofs no human can follow. A few commenters flagged Piffer's history and the article's AI-sounding prose.",
     "themes": [
       {
         "title": "Is intelligence mostly memory?",
@@ -42,7 +42,7 @@
       },
       {
         "title": "Tireless brute force, and moving goalposts",
-        "synthesis": "Many added that AI also out-works mathematicians, trying direction after direction without discouragement. Others noted that mathematicians already spend years on single problems, and one commenter claimed frontier models now sometimes say a task will take hours and suggest stopping. Some read the whole genre as goalpost-moving, peeling off memory, persistence and search one by one until nothing called intelligence is left. Skeptics answered that speed and stamina are things computers always had, and that understanding and real novelty are still missing.",
+        "synthesis": "Many added that AI also out-works mathematicians, trying direction after direction without discouragement. Others noted that mathematicians already spend years on single problems. Some read the whole genre as goalpost-moving, peeling off memory, persistence and search until nothing called intelligence is left. Skeptics answered that computers always had speed and stamina, and that understanding and real novelty are still missing.",
         "quotes": [
           {
             "author": "ComplexSystems",
@@ -58,7 +58,7 @@
       },
       {
         "title": "Proofs no human can follow",
-        "synthesis": "One commenter predicted AI will soon produce mathematics too intricate for people to understand, ending the age of human comprehension. Opponents said a proof is a finite chain of rule applications that anyone can check given time, and cited Terence Tao's point that shared understanding, not the proof itself, is what mathematics produces. The exchange turned into a long argument over what \"incomprehensible\" means, with examples like the 5G spec and high-temperature superconductors offered and rejected.",
+        "synthesis": "One commenter predicted AI will soon produce math too intricate for people to understand, ending the age of human comprehension. Opponents said a proof is a finite chain of rule applications that anyone can check given time. They cited Terence Tao's point that shared understanding, not the proof itself, is what math produces. The exchange became a long argument over what \"incomprehensible\" means, with the 5G spec and high-temperature superconductors offered as examples and rejected.",
         "quotes": [
           {
             "author": "chongli",
@@ -74,7 +74,7 @@
       },
       {
         "title": "Why math and code, not law and medicine",
-        "synthesis": "Commenters agreed with the article that checkability explains why labs keep showcasing math and code. Compilers, solvers and Lean let a model fail thousands of times and keep only what passes, which medicine and law can't offer. A mathematician added that outside Lean the standard of proof is still what other mathematicians accept, and that they sometimes disagree, as with Mochizuki's claimed abc proof.",
+        "synthesis": "Commenters agreed with the article that checkability explains why labs keep choosing math and code for demos. Compilers, solvers and Lean let a model fail thousands of times and keep only what passes, which medicine and law can't offer. A mathematician added that outside Lean, the standard of proof is still what other mathematicians accept. They sometimes disagree, as with Mochizuki's claimed abc proof.",
         "quotes": [
           {
             "author": "AngryData",
@@ -90,7 +90,7 @@
       },
       {
         "title": "Big context and bloated code",
-        "synthesis": "Programmers saw the article's thesis in their own codebases. Because models can hold a lot at once, they skip the abstractions humans need, and the result is duplicated logic, such as eleven separate date-math helpers in one generated project. Some argued clean abstractions still pay off for models by saving tokens, and others reported that a huge context makes models worse at close, focused review of a single method.",
+        "synthesis": "Programmers saw the article's thesis in their own codebases. Models can hold a lot at once, so they skip the abstractions humans need and duplicate logic, like eleven date-math helpers in one project. Some argued clean abstractions still pay off for models by saving tokens. Others reported that a huge context makes models worse at close, focused review of a single method.",
         "quotes": [
           {
             "author": "Animats",
@@ -105,13 +105,13 @@
         ]
       }
     ],
-    "consensus": "Memory and recombination matter a great deal, and AI's ability to keep vast amounts of material in view gives it a real edge in math and code, both of which can be checked by machine. Most also agreed that this edge falls short of the conceptual reframing the article attributes to Einstein.",
-    "dissent": "A sizable group rejected the framing outright. Some called it cope that redraws intelligence to exclude AI, and argued that bigger working memory simply is more intelligence. Others dismissed the piece as AI-polished prose or pointed to the author's record of race-science writing and a claim of ESP.",
+    "consensus": "Memory and recombination matter a great deal. AI's ability to keep vast amounts of material in view gives it a real edge in math and code, which machines can check. Most also agreed that this edge falls short of the conceptual reframing the article attributes to Einstein.",
+    "dissent": "A sizable group rejected the framing outright. Some called it cope that redraws intelligence to exclude AI, and argued that bigger working memory simply is more intelligence. Others dismissed the article as AI-polished prose or pointed to Piffer's record of race-science writing and a claim of ESP.",
     "contrarian": {
       "author": "keeda",
       "text": "I would not consider referencing working memory during thinking as “remembering” but as a part of thinking itself. Working memory is the RAM to the much larger but higher latency indexed database that is our long-term memory. As such I would say AI *is* out-thinking us, even if in a brute force sort of way.",
       "commentId": 49313559,
-      "why": "It accepts the article's mechanism and still shows its title is wrong, since working memory is part of reasoning rather than a separate store of facts."
+      "why": "It accepts the article's mechanism and still shows its title is wrong. Working memory is part of reasoning, not a separate store of facts."
     }
   },
   "digestedAt": "2026-10-11T16:53:57.000Z"

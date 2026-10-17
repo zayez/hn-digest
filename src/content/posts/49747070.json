@@ -9,23 +9,23 @@
   "points": 769,
   "commentCount": 420,
   "readingMinutes": 6,
-  "tldr": "Write every word yourself and use an LLM only as a copyeditor that flags problems. Two rules keep it from flattening your voice. Never accept a single word it suggests, and forbid it from praising your draft, because its encouragement talks you out of the rewrites good writing needs.",
+  "tldr": "Write every word yourself, and use an LLM only as a copyeditor that flags problems. Two rules keep it from flattening your voice. First, never accept a single word it suggests. Second, forbid it from praising your draft. Its encouragement talks you out of the rewrites good writing needs.",
   "article": {
     "keyPoints": [
-      "Readers spot LLM prose at tiny concentrations and file it as output rather than writing, so the author says the drafting has to be yours. The model's job starts after the draft exists.",
+      "Readers spot LLM prose at tiny concentrations and file it as output rather than writing. So tptacek says the drafting has to be yours. The model's job starts after the draft exists.",
       "Rule one bans every word and phrase the model suggests, even ones you like. Frontier models write like magazine headlines, and you won't reliably catch the ways that drift into your text.",
-      "Rule two bans encouragement. A first draft is mostly bad, and a model that praises its structure, transitions and metaphors pushes you to keep first-draft choices you would otherwise have rewritten.",
-      "Models are good at the tedious mechanical checks: passive voice, verbs buried in nouns, repeated phrasing, filler words like \"very\" and \"actually\", and paragraphs that belong elsewhere. Joseph Williams's book Style gives a checklist you can turn into prompts and run as separate passes.",
-      "To compare an original paragraph with your rewrite, ask a model that hasn't seen your editing, because one that has will guess you want the new version to win. The author built a small workshop app that runs each editing prompt through the Codex, Claude or Antigravity CLIs."
+      "Rule two bans encouragement. A first draft is mostly bad. A model that praises its structure, transitions and metaphors pushes you to keep choices you would otherwise rewrite.",
+      "Models are good at the tedious mechanical checks. These include passive voice, verbs buried in nouns, repeated phrasing, filler words like \"very\" and \"actually\", and paragraphs that belong elsewhere. Joseph Williams's book Style gives a checklist you can turn into prompts and run as separate passes.",
+      "To compare an original paragraph with your rewrite, ask a model that hasn't seen your editing. One that has will guess you want the new version to win. tptacek built a small workshop app that runs each editing prompt through the Codex, Claude or Antigravity CLIs."
     ],
-    "whyItMatters": "Worth reading for anyone who drafts essays or technical posts and wants faster editing without sounding machine-made. The original has the exact app-building prompt, and in the thread the author posted his system prompt (\"NO ENCOURAGEMENT\", \"DO NOT WRITE COPY FOR ME\") and said he runs 8 to 12 passes and acts on about 60% of the flags."
+    "whyItMatters": "Worth reading for anyone who drafts essays or technical posts and wants faster editing without sounding machine-made. The original has the exact app-building prompt. In the thread, tptacek posted his system prompt, with lines like \"NO ENCOURAGEMENT\" and \"DO NOT WRITE COPY FOR ME\". He said he runs 8 to 12 passes and acts on about 60% of the flags."
   },
   "comments": {
-    "overview": "A large and often heated thread. Many commenters skipped the article's actual advice and argued whether anyone should write with an LLM at all, and a long run of one-word \"Don't\" replies drew the reply that the piece says the same thing. The author, tptacek, was in the thread repeatedly, insisting he asks models for technical flags, not style opinions, and confirming that his use of \"load-bearing\" was a joke.",
+    "overview": "A large and often heated thread, where many commenters skipped the article's advice and argued whether anyone should write with an LLM at all. A long run of one-word \"Don't\" replies drew the reply that the piece says the same thing. The author, tptacek, was in the thread repeatedly, insisting he asks models for technical flags, not style opinions. He confirmed that his use of \"load-bearing\" was a joke.",
     "themes": [
       {
         "title": "Why read what nobody bothered to write",
-        "synthesis": "The biggest thread opened with a reader who now scans everything for AI and asked why anyone should read text the author didn't spend time writing. Defenders said the value is in the ideas and that politicians and professors have long had others polish their words. Critics answered that polishing strips sincerity and that LLMs judge badly what a reader already knows. A side fight over whether repeating that aphorism is itself unoriginal went on for dozens of comments, and several people described AI-written Jira tickets, docs and mailing-list posts they stopped reading.",
+        "synthesis": "The biggest thread opened with a reader who now scans everything for AI, asking why anyone should read text its writer didn't spend time writing. Defenders said the value is in the ideas and that politicians and professors have long had others polish their words. Critics answered that polishing strips sincerity and that LLMs judge badly what a reader already knows. A side fight over the aphorism's own originality ran for dozens of comments, and several described AI-written Jira tickets and docs they stopped reading.",
         "quotes": [
           {
             "author": "S-E-P",
@@ -41,7 +41,7 @@
       },
       {
         "title": "Commit messages and PR descriptions",
-        "synthesis": "The top comment came from someone who went back to writing his own commit messages and PRs and found it made him actually absorb agent-written diffs. Replies split. Some said LLM messages beat the old one-word \"fix\", others said they are bloated jargon that still sends you to the diff. Several agreed the useful part is the why, which a diff summary can't supply, and one team's only AI policy, no AI PR descriptions, got praise for forcing authors to understand their own changes.",
+        "synthesis": "The top commenter went back to writing his own commit messages and PRs, and found it made him actually absorb agent-written diffs. Some replies said LLM messages beat the old one-word \"fix\", while others called them bloated jargon that still sends you to the diff. Several agreed the useful part is the why, which a diff summary can't supply. One team's only AI policy, no AI PR descriptions, got praise for forcing authors to understand their own changes.",
         "quotes": [
           {
             "author": "hannasanarion",
@@ -57,7 +57,7 @@
       },
       {
         "title": "Can a model judge prose at all",
-        "synthesis": "Skeptics said LLMs have bad taste and pick LLM-style writing in A/B tests, so asking which version is better steers you toward their prose even if you wrote both. Others replied that model style isn't the opposite of quality and that a careful reader with different blind spots still helps. Tptacek kept repeating that his prompts flag checkable things like overused words, throat-clearing and buried verbs, and that he decides what to change. Some pointed to existing tools like Hemingway, LanguageTool or iA Writer's style check, and he asked which of them finds nominalizations or weak topic sentences.",
+        "synthesis": "Skeptics said LLMs pick LLM-style writing in A/B tests, so asking which version is better steers you toward their prose, even if you wrote both. Others replied that model style isn't the opposite of quality and that a careful reader with different blind spots still helps. tptacek kept repeating that his prompts flag checkable things like overused words, throat-clearing and buried verbs, and that he decides what to change. Some pointed to existing tools like Hemingway, LanguageTool or iA Writer's style check, and he asked which of them finds nominalizations or weak topic sentences.",
         "quotes": [
           {
             "author": "Retr0id",
@@ -89,7 +89,7 @@
       },
       {
         "title": "Fact-checking and other narrow uses",
-        "synthesis": "Asking a model to fact-check a post drew the least pushback, and simonw said current models with search do it well. One commenter warned that a model had been confidently wrong about a small block of their own code, and the answer was to check what it points out, not trust it. Others shared their own workflows: having the model outline a voice-memo ramble into plain facts, using it as a thesaurus for one hard-to-find word, drafting in another language and rewriting by hand, or asking how a hot take might be misread.",
+        "synthesis": "Asking a model to fact-check a post drew the least pushback, and simonw said current models with search do it well. One commenter warned that a model was confidently wrong about their own code, and the answer was to check what it flags, not trust it. Others outlined voice-memo rambles into plain facts with a model, or used it as a thesaurus for one elusive word. Some drafted in another language and rewrote by hand, or asked how a hot take might be misread.",
         "quotes": [
           {
             "author": "thombles",
@@ -104,13 +104,13 @@
         ]
       }
     ],
-    "consensus": "Unedited LLM prose is easy to spot and tiresome to read. If you write for people, the words and the thinking behind them should be yours, and a model is at most a second pair of eyes.",
-    "dissent": "A sizable group rejected even the editor role. Their reasons were that model feedback has poor taste and pulls you toward its style, that a friend or a night's rest does the job better, and that writing is the thinking, so outsourcing any of it costs you.",
+    "consensus": "Unedited LLM prose is easy to spot and tiresome to read. If you write for people, the words and the thinking behind them should be yours. A model is at most a second pair of eyes.",
+    "dissent": "A sizable group rejected even the editor role. They said model feedback has poor taste and pulls you toward its style. They added that a friend or a night's rest does the job better. And writing is the thinking, so outsourcing any of it costs you.",
     "contrarian": {
       "author": "r0ze-at-hn",
       "text": "\"Rule Number One: You may not use a single word an LLM suggests to you.\" isn't helpful for probably the majority.",
       "commentId": 49757923,
-      "why": "It points out that the advice assumes you already write well, while most people who reach for LLMs don't, and HN readers complain about their unassisted prose too."
+      "why": "It notes the advice assumes you already write well, but most people who reach for LLMs don't, and HN complains about their unassisted prose too."
     }
   },
   "digestedAt": "2026-10-17T14:38:46.000Z"

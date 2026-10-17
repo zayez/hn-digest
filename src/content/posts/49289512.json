@@ -9,24 +9,24 @@
   "points": 438,
   "commentCount": 245,
   "readingMinutes": 8,
-  "tldr": "Dan McKinley says a company gets about three \"innovation tokens\" to spend on unproven technology. Everything outside its core problem should run on \"boring\" tools whose failure modes are already known. Adding a new technology should be a deliberate decision for the whole company, because running many tools costs more over the years than picking the best local fit saves.",
+  "tldr": "Dan McKinley says a company gets about three \"innovation tokens\" to spend on unproven technology. Everything outside its core problem should run on \"boring\" technology whose failure modes are already known. Adding a new technology should be a deliberate decision for the whole company. Over the years, running many technologies costs more than picking the best local fit saves.",
   "article": {
     "keyPoints": [
       "Every company gets roughly three innovation tokens. Choosing NodeJS, MongoDB or year-old service discovery spends one each. Writing your own database spends more than you have.",
-      "Boring does not mean bad. MySQL, Postgres, PHP, Python, Memcached and cron are boring because people know what they can do and, more important, how they fail. New tech carries far more unknown unknowns.",
-      "\"Best tool for the job\" thinking is short-sighted. Every added technology needs its own monitoring, tests and init scripts, plus room in people's heads, and keeping a system running costs far more over its life than any inconvenience while building it.",
-      "Before adopting something new, ask how you would solve the problem with the current stack and write down why that is too hard. Then commit to migrating off whatever the new tool replaces. This exposes the cases where the real goal is just to use the technology.",
-      "Etsy's activity feeds ran on PHP, MySQL, Memcached and Gearman and scaled 20x over several years with nobody dedicated to them, because they sat on the shared platform. An earlier Python middle layer took years to remove.",
+      "Boring does not mean bad. MySQL, Postgres, PHP, Python, Memcached and cron are boring because people know what they can do. More important, people know how they fail. New technology carries far more unknown unknowns.",
+      "\"Best tool for the job\" thinking is short-sighted. Every added technology needs its own monitoring, tests and init scripts, plus room in people's heads. Over a system's life, keeping it running costs far more than any inconvenience while building it.",
+      "Before adopting something new, ask how you would solve the problem with the current stack. Write down why that is too hard. Then commit to migrating off whatever the new technology replaces. This exposes the cases where the real goal is just to use the technology.",
+      "Etsy's activity feeds ran on PHP, MySQL, Memcached and Gearman. They scaled 20x over several years with nobody dedicated to them, because they sat on the shared platform. An earlier Python middle layer took years to remove.",
       "Letting every developer pick their own language is sold as productivity. In practice it buries the team in operational toil. Holding back on technology frees engineers for bigger questions."
     ],
-    "whyItMatters": "Read the original if you make stack decisions. The Etsy war stories live in the footnotes, and the essay lays out a lightweight review process for adding technology that this summary only sketches."
+    "whyItMatters": "Read the original if you make stack decisions. The Etsy war stories live in the footnotes. The essay also lays out a lightweight review process for adding technology that this summary only sketches."
   },
   "comments": {
-    "overview": "A large thread, mostly fond of the essay as a classic. Its longest exchange is a fight over whether \"boring\" is a useful heuristic or a vague slogan that ends discussion. Elsewhere people argued over whether Node and Kubernetes count as boring now, how AI coding agents change the math, and why incentives push engineers toward shiny tools.",
+    "overview": "A large thread, mostly fond of the essay as a classic. Its longest exchange is a fight over whether \"boring\" is a useful heuristic or a vague slogan that ends discussion. People also argued over whether Node and Kubernetes count as boring now and how AI coding agents change the math. Others asked why incentives push engineers toward shiny technology.",
     "themes": [
       {
         "title": "Is \"boring\" a useful heuristic or a vague proxy?",
-        "synthesis": "insanitybit argued across dozens of replies that \"boring\" and \"innovation tokens\" are weak stand-ins for the real criteria, which are whether a tool is well tested, understood by the team and fits the requirements. Engineers should just say those things. simonw, jonahx and others answered that the word exists to push back on engineers' bias toward the new, since it is easy to invent reasons a shiny tool fits. The tokens idea, they said, stops a project from stacking several unproven bets. A few agreed with the critique and said the slogan shuts down more conversations than it opens.",
+        "synthesis": "insanitybit argued across dozens of replies that \"boring\" is a weak stand-in for the real criteria: well tested, understood by the team, fitting the requirements. simonw, jonahx and others answered that the word counters engineers' bias toward the new, since it is easy to invent reasons shiny technology fits. The tokens idea, they said, stops a project from stacking several unproven bets. A few agreed with the critique and said the slogan shuts down more conversations than it opens.",
         "quotes": [
           {
             "author": "insanitybit",
@@ -42,7 +42,7 @@
       },
       {
         "title": "Boring is relative to your team and to time",
-        "synthesis": "Boringness depends on what your team already knows and on when you ask. Node was shiny in 2015 and most now call the runtime boring, but the npm ecosystem and the tooling churn across Bun, Deno, pnpm and linters still feel risky. Kubernetes split the thread between \"boring after 12 years\" and \"a boat anchor for most shops\". One data engineer pointed out that three engineers could each name a different \"most boring\" pick among pandas, PySpark and Polars.",
+        "synthesis": "Boringness depends on your team and on timing: Node was shiny in 2015, and most now call its runtime boring. Its npm ecosystem and the tooling churn across Bun, Deno, pnpm and linters still feel risky. Kubernetes split the thread between \"boring after 12 years\" and \"a boat anchor for most shops\". One data engineer pointed out that three engineers could each name a different \"most boring\" pick among pandas, PySpark and Polars.",
         "quotes": [
           {
             "author": "simonw",
@@ -58,7 +58,7 @@
       },
       {
         "title": "AI agents and the case for in-distribution tech",
-        "synthesis": "Several said agents strengthen the essay's case. Spend your innovation tokens on agents and give them boring stacks that are well represented in training data, because an LLM's fluency in a mainstream language outweighs small technical advantages elsewhere. Others thought AI makes PHP attractive again, a language unpleasant to write but simple to operate, or favours Go for its stable conventions. Skeptics answered that agents lean toward whatever was popular in training data, mostly TypeScript and Next.js, rather than what fits, and that AI-written code brings its own kind of risk.",
+        "synthesis": "Several said agents strengthen the essay's case, so innovation tokens should go to agents, working on boring stacks common in training data. An LLM's fluency in a mainstream language, they argued, outweighs small technical advantages elsewhere. Others thought AI makes PHP attractive again, a language unpleasant to write but simple to operate, or favours Go for its stable conventions. Skeptics answered that agents lean toward whatever was popular in training data, mostly TypeScript and Next.js, rather than what fits, and bring their own risks.",
         "quotes": [
           {
             "author": "theptip",
@@ -74,7 +74,7 @@
       },
       {
         "title": "Simple infrastructure beats cloud complexity",
-        "synthesis": "A cluster of commenters said most businesses could run on a couple of bare-metal servers or a cheap VPS, and that résumés and budgets drive multi-cloud Kubernetes setups more than need does. Developers in large organisations pushed back. For them AWS is mostly a way around internal procurement. One suggested a third machine to avoid split-brain during failover. asa400 blamed Kubernetes adoption on engineers who weigh hardware savings above the cost of their own time.",
+        "synthesis": "A cluster of commenters said most businesses could run on a couple of bare-metal servers or a cheap VPS. Résumés and budgets drive multi-cloud Kubernetes more than need does, they said, and asa400 blamed engineers who weigh hardware savings above their own time. Developers in large organisations pushed back, since for them AWS is mostly a way around internal procurement. One suggested a third machine to avoid split-brain during failover.",
         "quotes": [
           {
             "author": "thelastgallon",
@@ -90,7 +90,7 @@
       },
       {
         "title": "Incentives and war stories",
-        "synthesis": "Commenters blamed career incentives for engineers' dislike of the essay. Novel tech builds a résumé, and nobody sees reliability work until it fails. The firsthand stories cut both ways. One company still struggles to hire for a Scala codebase its authors left behind. Another team pushed its in-house Cassandra cluster onto workloads it never suited, because Cassandra was the \"boring\" choice. Some objected that \"CV-driven development\" assumes bad motives when people are usually just excited to build.",
+        "synthesis": "Commenters blamed engineers' dislike of the essay on career incentives, since new technology builds a résumé and reliability work goes unseen until it fails. Firsthand stories cut both ways: one company still struggles to hire for a Scala codebase its authors left behind. Another team pushed its in-house Cassandra cluster onto workloads it never suited, because Cassandra was the \"boring\" choice. Some objected that \"CV-driven development\" assumes bad motives when people are usually just excited to build.",
         "quotes": [
           {
             "author": "andai",
@@ -105,13 +105,13 @@
         ]
       }
     ],
-    "consensus": "Most agreed the core advice still holds a decade later. Limit the number of unproven bets, prefer tools whose failure modes your team already knows, and weigh operational cost above local fit. The caveat is that what counts as boring shifts over time and from team to team.",
-    "dissent": "A vocal minority held that \"boring\" is a vague proxy, used as a slogan to end discussion and defend familiar tools that fit badly. Teams should justify choices against their requirements instead. Others noted that in research or at startups, betting on new tech is sometimes the point.",
+    "consensus": "Most agreed the core advice still holds a decade later. Limit the number of unproven bets and prefer technology whose failure modes your team already knows. Weigh operational cost above local fit. The caveat is that what counts as boring shifts over time and from team to team.",
+    "dissent": "A vocal minority held that \"boring\" is a vague proxy. They said it works as a slogan to end discussion and defend familiar technology that fits badly. Teams should justify choices against their requirements instead. Others noted that in research or at startups, betting on new technology is sometimes the point.",
     "contrarian": {
       "author": "inigyou",
       "text": "See now, we keep assuming without evidence that the old thing is actually better.",
       "commentId": 49297084,
-      "why": "It cites Tailscale's SQLite corruption, Log4Shell and Heartbleed. Mature dependencies do more than you need and bring their own bugs, so adding any component to a system, old or new, can make it worse."
+      "why": "It cites Tailscale's SQLite corruption, Log4Shell and Heartbleed. Mature dependencies do more than you need and bring their own bugs. So adding any component to a system, old or new, can make it worse."
     }
   },
   "digestedAt": "2026-10-11T13:52:43.000Z"

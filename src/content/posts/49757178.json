@@ -9,24 +9,24 @@
   "points": 206,
   "commentCount": 157,
   "readingMinutes": 14,
-  "tldr": "Dan Luu argues that acting as a brain-off \"meat proxy\" for an LLM can't pay off for an employee. While the LLM can't do the job alone, the result is bad software, and once it can, the company has no reason to keep the proxy.",
+  "tldr": "Dan Luu argues that acting as a brain-off \"meat proxy\" for an LLM can't pay off for an employee. While the LLM can't do the job alone, the result is bad software. Once it can, the company has no reason to keep the proxy.",
   "article": {
     "keyPoints": [
-      "Since early 2025 Luu has watched people hand tasks to an LLM and assume the output works, or sit in a loop pasting failures back to it, which Niklas Gruhn calls being a \"meat proxy\".",
-      "This works better in September 2026 than it did a year earlier, but if LLMs get good enough to make it produce decent software, the company can run the loop itself and lay off the human.",
-      "Agents still do badly on out-of-distribution work. On modern board games like Dominion, a frontier model is worse than a sensible human who has never played, and ChatGPT's advice made a new player worse.",
-      "Software built by people who outsourced the thinking usually doesn't work. A thought leader who said programming was solved had a GitHub where every example Luu checked was broken or weak, and Gary Bernhardt reports cutting agent diffs to 25% of their size.",
-      "LLM fact checks of his posts have poor precision and mediocre recall, and an LLM praising your work is currently a fairly strong sign the work is poor.",
-      "Waiting out a window of corporate inertia is also a bad bet. Companies once took months or years to fire people who stopped showing up, and AI is now their excuse to stop tolerating that."
+      "Since early 2025 Luu has seen people hand tasks to an LLM and assume the output works. Others sit in a loop and paste failures back to it. Niklas Gruhn calls this being a \"meat proxy\".",
+      "Being a meat proxy works better in September 2026 than it did in early 2025. If LLMs improve enough to make it produce decent software, the company can run the loop itself and lay off the human.",
+      "LLMs still do badly on out-of-distribution work. On modern board games like Dominion, a frontier model plays worse than a sensible human who has never played. ChatGPT's advice made a new player worse.",
+      "Software built by people who outsourced the thinking usually doesn't work. A thought leader said programming was solved, but every example Luu checked on his GitHub was broken or weak. Gary Bernhardt reports cutting LLM diffs to 25% of their size.",
+      "LLM fact checks of his posts have poor precision and mediocre recall. Using an LLM's praise to justify your work is a fairly strong sign the work is poor.",
+      "Waiting out a window of corporate inertia is also a bad bet. Companies once took months or years to fire people who stopped showing up. LLMs are now their excuse to stop tolerating that."
     ],
-    "whyItMatters": "The main text is four paragraphs, and almost all the substance sits in long footnotes. Read the original for Luke Burton's account of a months-long Bazel migration that needed constant supervision, the board-game experiments, and Luu's stories about how long it used to take companies to fire people who stopped working."
+    "whyItMatters": "The main text is four paragraphs, and almost all the substance sits in long footnotes. Read the original for Luke Burton's account of a Bazel migration that took months and needed constant supervision. It also has the board-game experiments and Luu's stories about how long companies took to fire people who stopped working."
   },
   "comments": {
-    "overview": "The thread mostly agreed with Luu and then argued about what follows. Many developers said the brain-off push comes from management, not from them. Others debated whether a human stays useful as a holder of blame, where in the work the thinking belongs, and whether jobs disappear regardless of how engaged you are. A long side argument over a photography analogy took up the single largest thread.",
+    "overview": "The thread mostly agreed with Luu, and many developers said the brain-off push comes from management, not from them. Others debated whether a human stays useful as a holder of blame, where the thinking belongs, and whether jobs disappear anyway. A long side argument over a photography analogy took up the single largest thread.",
     "themes": [
       {
         "title": "Management is forcing it",
-        "synthesis": "The most personal replies said engineers aren't choosing to switch off. Bosses push full automation and get angry when someone questions it. One commenter books a meeting room to code by hand so his lead won't see him working without Claude, and several people said they are resigning over it. Others put it down to executives buying a headcount-reduction pitch, and some thought there's no escaping it by changing jobs because investors want the same thing everywhere.",
+        "synthesis": "The most personal replies said engineers aren't choosing to switch off: bosses push full automation and get angry when questioned. One commenter books a meeting room to code by hand, so his lead won't see him working without Claude. Several people said they are resigning over it. Others blamed executives who bought a headcount-reduction pitch, and some saw no escape in changing jobs because investors want the same thing everywhere.",
         "quotes": [
           {
             "author": "Arainach",
@@ -42,7 +42,7 @@
       },
       {
         "title": "The human as liability sink",
-        "synthesis": "Several people answered Luu's question about why a company would keep the proxy with \"to take the blame\". They called the role \"compliance ablative armor\", an AI patsy, a moral crumple zone, an accountability sink, and compared it to backup drivers in self-driving cars. Nobody called it a good job. Replies called it miserable, and one veteran engineer said he'd rather retire than sign off on generated work he can't review to his own standard.",
+        "synthesis": "Several people answered Luu's question about why a company would keep the proxy with \"to take the blame\". They called the role \"compliance ablative armor\", an \"AI patsy\", a moral crumple zone and an accountability sink, like backup drivers in self-driving cars. Nobody called it a good job. One veteran engineer would rather retire than sign off on generated work he can't review to his own standard.",
         "quotes": [
           {
             "author": "science4sail",
@@ -58,7 +58,7 @@
       },
       {
         "title": "Where the thinking goes",
-        "synthesis": "The top thread argued about when to use your brain. Arubis said to do the thinking before the prompt, since the loop biases you toward its options, and to stop the loop when a mediocre result isn't good enough. xendo answered with Programming as Theory Building: you only understand software by building it. Others described the same split from practice. Most tasks go through on low effort, a few need real design work, and telling them apart is hard. One commenter said his work has turned into nonstop product decisions and is no less intense.",
+        "synthesis": "The top thread argued about when to use your brain. Arubis said to think before the prompt, since the loop biases you toward its options, and to stop the loop when mediocre isn't good enough. xendo answered with Programming as Theory Building: you only understand software by building it. Others said from practice that most tasks need little effort, a few need real design, and telling them apart is hard.",
         "quotes": [
           {
             "author": "Arubis",
@@ -74,7 +74,7 @@
       },
       {
         "title": "Many shots versus one good one",
-        "synthesis": "dzink compared AI to a tourist firing off thousands of phone photos next to a photographer carefully setting up one shot, and said making many attempts and filtering beats overthinking. Most replies rejected this. Volume without the eye to judge it doesn't win competitions, and a watchmaking contest won by cherry-picking mass-produced movements ended up killing the contest. btrettel added that the users Luu describes don't take thousands of shots at all. They take one or two, say LGTM, and move on.",
+        "synthesis": "dzink compared LLMs to a tourist firing off thousands of phone photos beside a photographer setting up one shot. Filtering many attempts, dzink said, beats overthinking. Most replies rejected this: volume without the eye to judge it doesn't win, and cherry-picked mass-produced movements killed a watchmaking contest. btrettel added that Luu's brain-off users take one or two shots, say LGTM, and move on.",
         "quotes": [
           {
             "author": "probably_wrong",
@@ -90,7 +90,7 @@
       },
       {
         "title": "Will engagement even save the job?",
-        "synthesis": "Some took Luu's logic further than he did. If the stated goal is AI that beats humans at everything, staying engaged won't keep the paycheck either, and whole companies become thin proxies their customers can cut out. One commenter cited a nearly 20% drop in employment for developers aged 22 to 25 since late 2022, and another pushed back that the end of cheap money explains the same drop. Skeptics said AI isn't replacing people at all, and that managers were sold a product they believe can do it.",
+        "synthesis": "Some took Luu's logic further than he did: if the goal is an LLM that beats humans at everything, engagement won't keep the paycheck either. Whole companies then become thin proxies their customers can cut out. One commenter cited a nearly 20% drop in employment for developers aged 22 to 25 since late 2022; another blamed the end of cheap money. Skeptics said LLMs aren't replacing people at all; managers were only sold a product they believe can.",
         "quotes": [
           {
             "author": "0c3ca83",
@@ -105,8 +105,8 @@
         ]
       }
     ],
-    "consensus": "Turning your brain off produces bad work, and the useful human contribution is judgment: deciding what to build, catching the out-of-distribution case, and cutting the diff down. People who keep using their judgment are worth more than proxies.",
-    "dissent": "A sizable minority thought engagement won't protect anyone, because companies are cutting staff and hiring fewer juniors either way. Others said low-effort use is fine for throwaway or creative work where shoddy code doesn't matter.",
+    "consensus": "Turning your brain off produces bad work. The useful human contribution is judgment: deciding what to build, catching the out-of-distribution case, and cutting the diff down. People who keep using their judgment are worth more than proxies.",
+    "dissent": "A sizable minority thought engagement won't protect anyone, because companies are cutting staff and hiring fewer juniors either way. Others said brain-off use is fine for throwaway or creative work where shoddy code doesn't matter.",
     "contrarian": {
       "author": "gjsman-1000",
       "text": "If this is true, turning off the brain... is completely rational. Why burn out the brain for something happening either way?",

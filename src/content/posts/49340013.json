@@ -6,21 +6,21 @@
   "postedAt": "2026-08-18T01:28:48.000Z",
   "points": 297,
   "commentCount": 175,
-  "tldr": "A developer says AI has made software work feel pointless, like playing a game with cheats switched on. Many HN commenters said they feel the same. The most common answer was to work for the joy of the work and stop tying your worth to a career that AI can now undercut.",
+  "tldr": "A developer says AI has made software work feel pointless, like playing a game with cheats switched on. Many HN commenters said they feel the same. The most common answer was to work for the joy of it and stop tying your worth to a career AI can undercut.",
   "article": {
     "keyPoints": [
-      "Keeping up no longer seems worth it to the author. New releases, CS concepts and interview prep all feel wasted when the job may not exist in a year.",
+      "Keeping up no longer seems worth it to the poster. New releases, CS concepts and interview prep all feel wasted when the job may not exist in a year.",
       "Side projects feel pointless to him too. Anything he builds lands on a \"mountain of slop\" that, in his words, the guy bagging your groceries could also produce with AI.",
-      "He compares it to enabling cheats in a game. You can do anything, so nothing you do means much, and he says that has taken the purpose and joy out of the work."
+      "He compares it to switching on cheats in a game. With cheats you can do anything, and that makes everything meaningless. He says this has taken the purpose and joy out of life."
     ],
-    "whyItMatters": "The post is five sentences long. The thread is the reason to click, since it holds dozens of firsthand accounts from developers who quit, retrained or found another way to keep going."
+    "whyItMatters": "The post is two short paragraphs. The thread is the reason to click. It holds dozens of firsthand accounts from developers who quit, retrained or found another way to keep going."
   },
   "comments": {
-    "overview": "The thread is raw and personal. People describe burnout, a shut-down startup, a move to medical school and a past career lost to illness. Most of the argument is between people who say the loss is real and people who say the meaning was never in the job, and a smaller group doubts AI is as capable as the post assumes.",
+    "overview": "In a raw, personal thread, people describe burnout, a shut-down startup, a move to medical school and a career lost to illness. Most of the argument is between people who say the loss is real and people who say the meaning was never in the job. A smaller group doubts AI is as capable as the post assumes.",
     "themes": [
       {
         "title": "The work itself still belongs to you",
-        "synthesis": "The largest group split motivation in two. If you liked the process, AI takes nothing from personal projects, and several people described coding by hand at 3am or keeping \"tradcode only\" projects for fun. Others answered that AI changes the product itself. Code you only review is code you never internalize, and at work economics forces that mode on you. The chess comparison landed with many: winning with an engine gives no satisfaction, and some colleagues seem to have only ever cared about winning.",
+        "synthesis": "The largest group said that if you liked the process rather than the result, AI takes nothing from personal projects. Several described coding by hand at 3am or keeping \"tradcode only\" projects for fun. Others answered that code you only review is code you never internalize, and at work economics forces that mode on you. Many liked the chess comparison, where winning with an engine gives no satisfaction, though some colleagues seem to have only ever cared about winning.",
         "quotes": [
           {
             "author": "throw-the-towel",
@@ -36,7 +36,7 @@
       },
       {
         "title": "Grief, and the argument over \"just adapt\"",
-        "synthesis": "A former pilot who lost his career to illness said developers are going through the grief he went through, and the only way out is to drop the old identity and adapt. Others called that selfish. One person changing careers is a personal setback, they said, while a whole profession losing its footing is a disaster. A third view held that the hollow feeling comes from the money side of tech, where work now props up the look of value for shareholders, and AI only sped it up.",
+        "synthesis": "A former pilot who lost his career to illness said developers face the grief he faced, and must drop the old identity and adapt. Others called that selfish, since one person changing careers is a setback but a whole profession losing its footing is a disaster. A third view blamed tech's money side, where work props up the look of value for shareholders, and said AI only sped that up.",
         "quotes": [
           {
             "author": "piloto_ciego",
@@ -99,7 +99,7 @@
         ]
       }
     ],
-    "consensus": "The feeling is real and widely shared. Most agreed that the people who loved the craft lost more than those who coded only for a paycheck, and that personal projects done for their own sake still bring satisfaction.",
+    "consensus": "The feeling is real and widely shared. Most agreed that the people who loved the craft lost more than those who coded only for a paycheck. Personal projects done for their own sake still bring satisfaction.",
     "dissent": "A sizable minority rejected the framing. Some were excited about what AI lets them build, including a non-programmer who finally can. Others said the meaning was always misplaced, and some suggested the poster is burnt out or depressed rather than reacting to AI.",
     "contrarian": {
       "author": "zingababba",

@@ -9,14 +9,14 @@
   "points": 436,
   "commentCount": 151,
   "readingMinutes": 29,
-  "tldr": "Web jank usually comes from code holding the browser's single main thread, not from slow code. Lee Sun-Hyoup lays out two families of fixes, each with an interactive demo. One spends the thread's time better by splitting, batching, prioritizing and deferring work. The other moves work to the compositor or a web worker, or drops it entirely.",
+  "tldr": "Web jank usually comes from code holding the browser's single main thread, not from slow code. Lee Sun-Hyoup describes two families of fixes, each with an interactive demo. One spends the main thread's time better by splitting, batching, prioritizing and deferring work. The other moves work to the compositor or a web worker, or drops it entirely.",
   "article": {
     "keyPoints": [
-      "JavaScript, event handling, style, layout and paint all share the main thread, and only compositing runs elsewhere. A 60Hz frame lasts 16.6ms but leaves about 10ms of usable budget, half that at 120Hz, and any task over 50ms counts as a long task. INP and TBT both measure, in effect, how long the thread was blocked.",
-      "Splitting a big job and yielding between pieces makes the total slower but lets input and frames run in the gaps. setTimeout yields hit a 4ms minimum once nested more than five deep, so React's scheduler yields through MessageChannel, and scheduler.yield() resumes ahead of other queued tasks. Time-sliced work should anchor to the rAF frame timestamp and take about 5ms per frame.",
-      "Splitting lowers throughput. When data arrives faster than it renders (backpressure), batching helps: debounce or throttle events, redraw at most once per requestAnimationFrame, and group DOM writes so the pipeline's fixed cost is paid once.",
-      "A hand-built MessageChannel queue lets urgent work jump the line, as when a user clicks a photo whose preview isn't built yet (the idle-until-urgent pattern). Deferral covers code splitting and filling feed items only as IntersectionObserver reports them near the viewport. The author passes on content-visibility: auto because of a Safari bug.",
-      "transform and opacity animate on the compositor and stay smooth while the main thread is blocked, whereas top or left force layout every frame. FLIP turns a real layout change into one layout plus a transform animation, and grouping reads before writes avoids layout thrashing.",
+      "JavaScript, event handling, style, layout and paint all share the main thread. Only compositing runs elsewhere. A 60Hz frame lasts 16.6ms but leaves about 10ms of usable budget, and half that at 120Hz. Any task over 50ms counts as a long task. INP and TBT both measure, in effect, how long the main thread was blocked.",
+      "Splitting a big job and yielding between pieces makes the total slower. But it lets input and frames run in the gaps. setTimeout yields hit a 4ms minimum once nested more than five deep, so React's scheduler yields through MessageChannel. scheduler.yield() resumes ahead of other queued tasks. Time-sliced work should anchor to the rAF frame timestamp and take about 5ms per frame.",
+      "Splitting lowers throughput. When data arrives faster than it renders (backpressure), batching helps. Debounce or throttle events, and redraw at most once per requestAnimationFrame. Group DOM writes so the pipeline's fixed cost is paid once.",
+      "A hand-built MessageChannel queue lets urgent work jump the line. An example is a user clicking a photo whose preview isn't built yet (the idle-until-urgent pattern). Deferral covers code splitting, and filling feed items only when IntersectionObserver reports them near the viewport. The author passes on content-visibility: auto because of a Safari bug.",
+      "transform and opacity animate on the compositor and stay smooth while the main thread is blocked. top and left force layout every frame. FLIP turns a real layout change into one layout plus a transform animation. Grouping reads before writes avoids layout thrashing.",
       "Web workers suit heavy, DOM-free computation such as the seam-carving demo, as long as the work outweighs postMessage's copy cost. Transferring an ArrayBuffer avoids the copy. The biggest wins come from not doing the work at all: dropping stale log entries, merging updates to keep only the latest value, and memoizing."
     ],
     "whyItMatters": "Frontend developers building live-data UIs, editors or heavy animations should read the original for its demos. You can toggle each technique on and off and watch the fps counter, and no summary reproduces that. The code snippets for time-slicing, the priority queue and FLIP are short enough to copy."
@@ -26,7 +26,7 @@
     "themes": [
       {
         "title": "Bundles and hydration, not interactivity",
-        "synthesis": "The top thread argued that most slow sites are slow because they ship huge React or Next.js bundles and spend main-thread time on parsing and hydration, which no amount of yielding fixes. Commenters on slow connections and cheap Amazon-bestseller laptops backed this up, and one described cookie dialogs that freeze a half-loaded page for 20 seconds. That turned into the usual argument over documents and apps. One side said most sites could be plain HTML and CSS. The other answered that the complexity just moves to the server, and that SPAs feel better for checkout-style flows on slow links.",
+        "synthesis": "The top thread blamed huge React and Next.js bundles, whose parsing and hydration take main-thread time no yielding fixes. Commenters on slow connections and cheap laptops agreed; one described cookie dialogs that freeze a half-loaded page for 20 seconds. In the documents-versus-apps argument that followed, one side said most sites could be plain HTML and CSS. The other said the complexity just moves to the server, and SPAs feel better for checkout flows on slow links.",
         "quotes": [
           {
             "author": "martinald",
@@ -42,7 +42,7 @@
       },
       {
         "title": "Corrections to the article's specifics",
-        "synthesis": "chrismorgan wrote the longest critique. Firefox has painted off the main thread since 2017. The markdown editor should use an incremental parser rather than a debounce that makes small documents worse. Batching DOM appends or class toggles barely matters, while avoiding forced layout does. Others added smaller fixes. ArrayBuffers are copied unless explicitly transferred, transferControlToOffscreen() beats shipping pixels for canvas work, and the View Transitions API automates FLIP. On frame rates, some said a steady 60fps beats a missed 120fps target.",
+        "synthesis": "chrismorgan wrote the longest critique: Firefox has painted off the main thread since 2017, and the markdown editor needs an incremental parser, not a debounce. He added that batching DOM writes barely matters, while avoiding forced layout does. Others said ArrayBuffers are copied unless transferred, transferControlToOffscreen() beats shipping pixels, and the View Transitions API automates FLIP. On frame rates, some said a steady 60fps beats a missed 120fps target.",
         "quotes": [
           {
             "author": "chrismorgan",
@@ -57,8 +57,8 @@
         ]
       },
       {
-        "title": "Is the single UI thread a design mistake?",
-        "synthesis": "Some called cooperative multitasking a lesson the industry learned by Windows 3.1 and said frameworks should run libraries on separate threads with actors, since developers never move heavy work off the UI thread on their own. Defenders replied that one thread acts as a single lock that spares web code from data races. Others pointed out that every native UI toolkit is single-threaded too. A side argument asked whether the article should have cited decades of scheduling research. The reply was that the browser gives developers too few controls to apply it.",
+        "title": "Is the single main thread a design mistake?",
+        "synthesis": "Some said the industry learned the lesson of cooperative multitasking by Windows 3.1. They want frameworks to run libraries on separate threads with actors, since developers never move heavy work off the main thread on their own. Defenders replied that one thread acts as a single lock against data races, and every native UI toolkit is single-threaded too. Asked whether the article should have cited decades of scheduling research, one reply said the browser gives developers too few controls to apply it.",
         "quotes": [
           {
             "author": "vbezhenar",
@@ -96,12 +96,12 @@
       }
     ],
     "consensus": "The article explains main-thread scheduling well, and its interactive demos let readers feel the difference each technique makes. Several commenters said they had learned these lessons piecemeal and were glad to see them in one place.",
-    "dissent": "Many argued it optimizes the wrong thing for most sites, where bloated bundles and hydration cost far more main-thread time than interaction does. A detailed critique also said some of its fixes, debounce and DOM-write batching in particular, are weaker than better algorithms or avoiding forced layout.",
+    "dissent": "Many argued the article optimizes the wrong thing for most sites, where bloated bundles and hydration cost far more main-thread time than interaction does. chrismorgan's critique also said some of its fixes are weak: debounce loses to a better algorithm, and DOM-write batching matters less than avoiding forced layout.",
     "contrarian": {
       "author": "Dylan16807",
       "text": "During periods of time where no single chunk of code runs for more than a millisecond, cooperative multitasking should have the exact same performance as preemptive multitasking.",
       "commentId": 49561012,
-      "why": "Others blamed the single thread itself. This comment points out that preemption only helps when long-running code is already isolated, so the article's yielding discipline is the actual fix and threads would not have saved anyone."
+      "why": "Others blamed the single thread itself. This comment points out that preemption only helps when long-running code is already isolated. So the article's yielding discipline is the real fix, and threads would not have saved anyone."
     }
   },
   "digestedAt": "2026-10-12T17:19:16.000Z"

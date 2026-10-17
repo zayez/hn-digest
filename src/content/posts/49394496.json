@@ -9,23 +9,23 @@
   "points": 227,
   "commentCount": 124,
   "readingMinutes": 6,
-  "tldr": "Security researcher Thomas Dullien lists three lessons that changed how he thinks. Your incentives shape your beliefs, so distrust your own heroic narrative. Real-world causes are almost never single or deterministic. And treating reason and emotion as opposites is a cultural habit that makes decisions worse, because emotions carry information.",
+  "tldr": "Security researcher Thomas Dullien lists three lessons that changed how he thinks. Distrust your own heroic narrative, because your incentives shape your beliefs. Real-world causes are almost never single or deterministic. Emotions carry information, so treating them as reason's opposite makes decisions worse.",
   "article": {
     "keyPoints": [
-      "He writes after his father's death, now the oldest generation of his family and working at a company that skews younger than him.",
-      "As a young exploit writer he agonized over what his 0days might enable. He now reads that anxiety as self-flattering. Ideas have a time when they are ripe, history depends less on one person than that person thinks, and the useful habit is asking \"how might I be the villain in this story?\"",
-      "Computer debugging trains people to expect one cause per effect, but that determinism is an illusion maintained by generations of electrical and process engineers. Push hardware with heat, voltage or Rowhammer-style memory access and it breaks. He suspects this is why CS graduates handle probability badly, and why random bit flips make him doubt any hard guarantee about model alignment.",
-      "Science is a classifier deliberately biased against accepting claims, so a large class of true things will never be shown scientifically to be true.",
-      "The Western idea that reason should rule the emotions has no basis in neuroscience. Decision-making breaks when emotional valuation is damaged, and the body (the gut alone has about as many neurons as a dog's cerebral cortex) reports much of what it knows as feelings. Throwing out a source of information can only make decisions worse."
+      "Dullien writes after his father's death. He is now the oldest generation of his family, at a company that skews younger than him.",
+      "As a young exploit writer, Dullien agonized over what his 0days might enable. He now reads that anxiety as self-flattering. Ideas have a time when they are ripe. History depends less on one person than that person thinks. The useful habit is asking \"how might I be the villain in this story?\"",
+      "Computer debugging trains people to expect one cause per effect. That determinism is an illusion that generations of electrical and process engineers built and maintain. Thanks to them, computer scientists could long get away without probability. Push hardware with heat, voltage or Rowhammer-style memory access, and it breaks. Random bit flips make Dullien doubt any hard guarantee about model alignment.",
+      "Science is a classifier deliberately biased against accepting claims. As a result, a large class of true things will never be shown scientifically to be true.",
+      "The Western idea that reason should rule the emotions has no basis in neuroscience. Decision-making breaks when emotional valuation is damaged. The body reports much of what it knows as feelings. The gut alone has about as many neurons as a dog's cerebral cortex. Throwing out a source of information almost certainly makes decisions worse."
     ],
-    "whyItMatters": "The essay is short, so read it whole if any of the three points hooked you. The 0day ethics passage and the aside on bit flips and AI alignment come from someone who has spent a career breaking systems, and the summary flattens both."
+    "whyItMatters": "The essay is short, so read it whole if any of the three points hooked you. The 0day ethics passage and the aside on bit flips and model alignment come from a career spent breaking systems. The summary flattens both."
   },
   "comments": {
-    "overview": "A warm, personal thread. The top comment asked older readers for life advice, and about half the discussion turned into a long exchange about health, money and therapy. The heat came from that comment's claim that most of your problems come from your own choices. The essay's third point drew the most direct criticism, enough that the author showed up to clarify it.",
+    "overview": "In a warm thread, the top comment asked older readers for life advice, and about half the discussion followed into health, money and therapy. The heat came from that comment's claim that most of your problems come from your own choices. The essay's third point drew the most direct criticism, enough that Dullien showed up to clarify it.",
     "themes": [
       {
         "title": "What to do before 40",
-        "synthesis": "Readers in their 40s and 50s swapped advice and nearly all of it was physical: lift weights, sleep, see doctors, drink less, save early, avoid debt. Several said the window is real. Poor health compounds, artery plaque doesn't reverse, and youth lets you push through stress you only notice later. Others said it is never too late to start, and one replied that you can't ask anyone else what you will regret, because you already know.",
+        "synthesis": "Readers in their 40s and 50s swapped advice: lift weights, sleep, see doctors, drink less, save early, avoid debt. Several said the window is real: poor health compounds, artery plaque doesn't reverse, and youth lets you push through stress you only notice later. Others said it is never too late to start. One reply said nobody else can tell you what you will regret, because you already know.",
         "quotes": [
           {
             "author": "InsideOutSanta",
@@ -41,7 +41,7 @@
       },
       {
         "title": "Are your problems your choices?",
-        "synthesis": "The top comment said nearly all of your problems likely come from your own choices, and several readers took it as privilege talking. One described childhood poverty, abuse, homelessness and a planted-evidence conviction. Others pointed to disability and to people whose every attempt at help made things worse. The original commenter reframed it: you don't choose your situation, but good choices mean you suffer less than you otherwise would. Critics called that moving the goalposts.",
+        "synthesis": "The top comment said nearly all of your problems likely come from your own choices, and several readers took it as privilege talking. One described childhood poverty, abuse, homelessness and a planted-evidence conviction, and others pointed to disability and to help that only made things worse. The original commenter reframed it: you don't choose your situation, but good choices mean you suffer less than you otherwise would. Critics called that moving the goalposts.",
         "quotes": [
           {
             "author": "astura",
@@ -57,7 +57,7 @@
       },
       {
         "title": "Therapy for everyone, or meditation instead",
-        "synthesis": "One long exchange asked whether healthy people need therapy. Supporters said the people who most need it are the worst at spotting it, and that therapy builds coping skills before a crisis. A skeptic compared it to physical therapy, which you get when injured, and asked why every mind needs optimizing. A long-time meditator argued that therapy works inside your own narrative, while meditation lets you step outside it. His main use for a therapist was being seen by another person.",
+        "synthesis": "One long exchange asked whether healthy people need therapy. Supporters said the people who most need it are the worst at spotting it, and that therapy builds coping skills before a crisis. A skeptic compared it to physical therapy, which you get when injured, and asked why every mind needs optimizing. A long-time meditator said therapy works inside your own narrative while meditation steps outside it, and valued a therapist mainly for being seen.",
         "quotes": [
           {
             "author": "preg_match",
@@ -73,7 +73,7 @@
       },
       {
         "title": "Reason and emotion are not one thing",
-        "synthesis": "Critics said point 3 goes too far. Reason and emotion run in distinct brain regions, and philosophy from Kant to Kahneman's System 1 and System 2 separates fast intuition from slow deliberation. Others sided with Dullien. Reasoning needs values as inputs, and one recalled studies where the emotional decision comes first and the reasoning is a rationalization after the fact. The author replied that he never denied two systems exist. He objects to treating them as opponents and to ignoring one. A reader added that our instincts were tuned for bands of about 200, not an economy of 8 billion.",
+        "synthesis": "Critics said point 3 goes too far: reason and emotion use distinct brain regions, and thinkers from Kant to Kahneman separate intuition from deliberation. Defenders said reasoning needs values as inputs, and one recalled studies where the emotional decision comes first and reasoning rationalizes it afterward. Dullien replied that he never denied two systems exist, and objects to treating them as opponents or ignoring one. A reader added that our instincts were tuned for bands of about 200, not an economy of 8 billion.",
         "quotes": [
           {
             "author": "TheOtherHobbes",
@@ -89,7 +89,7 @@
       },
       {
         "title": "Uncertainty and self-doubt",
-        "synthesis": "The first two points got less argument and more extension. A trading-firm reader said the software engineers he works with treat markets like code paths and can't reason about uncertainty. Another noted that monocausal determinism often fails inside debugging too. On point 1, one reader drew out a consequence the essay leaves alone. If your own mind is unreliable, you should prefer plans that fail safely. He read pacifism as that lesson, learned from violent people who did great harm while sure of their own virtue.",
+        "synthesis": "The first two points drew extensions: a trading-firm reader said software engineers treat markets like code paths and can't reason about uncertainty. Another noted that monocausal determinism often fails inside debugging too. On point 1, one reader argued that if your mind is unreliable, you should prefer plans that fail safely. He read pacifism as that lesson, learned from violent people who did great harm while sure of their own virtue.",
         "quotes": [
           {
             "author": "ekjhgkejhgk",
@@ -104,13 +104,13 @@
         ]
       }
     ],
-    "consensus": "The essay was worth reading, unusually so for its genre, and taking care of your body early matters more than most people realize in their 20s.",
-    "dissent": "Point 3 drew the most pushback, as an overreach against well-established neuroscience and philosophy. A smaller group objected to the writing itself, calling words like \"monocausal determinism\" performative, while most replies defended them as precise.",
+    "consensus": "The essay was worth reading, unusually so for its genre. Taking care of your body early matters more than most people realize in their 20s.",
+    "dissent": "Point 3 drew the most pushback, as an overreach against well-established neuroscience and philosophy. A smaller group called words like \"monocausal determinism\" performative, and most replies defended them as precise.",
     "contrarian": {
       "author": "xelxebar",
       "text": "I think the world is so vast and our exposure so limited such that any Life Wisdom is hopelessly doomed to be a horrible overfit on the particulars of an individual.",
       "commentId": 49398248,
-      "why": "While the thread traded life lessons, this asked whether any such lesson carries over to another life, and applied the same doubt to the commenter's own wisdom."
+      "why": "While the thread traded life lessons, this comment asked whether any lesson carries over to another life. It applied the same doubt to the commenter's own wisdom."
     }
   },
   "digestedAt": "2026-10-12T16:09:26.000Z"

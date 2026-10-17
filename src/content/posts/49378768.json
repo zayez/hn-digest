@@ -9,24 +9,24 @@
   "points": 384,
   "commentCount": 209,
   "readingMinutes": 4,
-  "tldr": "Daniel Vaughn is worn out by prompting coding agents in long English sentences, so he built Huzzah, an experimental editor where you write freeform pseudocode and an LLM regenerates real code on every save. The pseudocode stays in the repo as a human-written record of intent, and the editor source-maps each line of it to the code it produced.",
+  "tldr": "Daniel Vaughn got tired of prompting coding agents in long English sentences. He built Huzzah, an experimental editor where an LLM regenerates real code from freeform pseudocode on every save. The pseudocode stays in the repo as a human-written record of intent, mapped line by line to the code it produced.",
   "article": {
     "keyPoints": [
-      "After eight months of working almost entirely through coding agents, he is tired of writing longform English for every change, but he doesn't want to go back to writing every line by hand either.",
-      "He names three problems with agent chats. Prompts get thrown away, so nothing records what the human wanted. Chat messages describe changes to the app rather than the app, so the same instructions get repeated and re-billed in tokens. And most natural language carries social padding, not information.",
-      "Huzzah flips each property. Prompts become pseudocode instead of prose, declarative instead of step-by-step, and persistent instead of transient. You write a .hz file in whatever notation you like, and on save the editor sends the diff to the LLM, which regenerates only the affected code.",
-      "His fizz buzz, shopping cart and todo-list examples are a few terse lines each, against a paragraph of prompt plus follow-up messages for the same fizz buzz in a chat agent.",
-      "He claims the pseudocode keeps the developer engaged in designing the code, doubles as documentation written by a human, and could target several languages from one language-agnostic source.",
-      "He lists the caveats himself. It may not hold up at scale, it suits new codebases better than old ones, people without domain expertise are better off with natural language, cross-file dependencies are hard to express, and there is no LSP support."
+      "Coding agents got good enough in early 2026 that Vaughn stopped writing code by hand. By August he was sick of writing longform English for every change. He still doesn't want to go back to writing every line himself.",
+      "Vaughn names three problems with agent chats. Prompts get thrown away, leaving no record of what the human wanted. Chat messages describe changes to the app, not the app itself. The same instructions get repeated and cost tokens each time. Most natural language also carries social padding, not information.",
+      "Huzzah flips each property: prompts become pseudocode instead of prose, declarative instead of step-by-step, and persistent instead of transient. You write a .hz file in whatever notation you like. On save, the editor sends the diff to the LLM, which regenerates only the affected code.",
+      "His fizz buzz, shopping cart and todo-list examples are a few terse lines each. The same fizz buzz in a chat agent took a paragraph of prompt plus follow-up messages.",
+      "Vaughn claims the pseudocode keeps the developer engaged in designing the code. It doubles as documentation written by a human. One language-agnostic source could also target several languages.",
+      "Vaughn lists the caveats himself. The approach may not hold up at scale, and it suits new codebases better than old ones. People without domain expertise are better off with natural language. Cross-file dependencies are hard to express, and there is no LSP support."
     ],
-    "whyItMatters": "Read the original for the demo video and the side-by-side examples, which show what freeform pseudocode looks like in practice. The post doesn't mention the source map. Vaughn only explains it in the comments, and he calls it the part that sets Huzzah apart."
+    "whyItMatters": "Read the original for the demo video and the side-by-side examples, which show what freeform pseudocode looks like in practice. The post doesn't mention the source map. Vaughn explains it only in the comments, and calls it the part that sets Huzzah apart."
   },
   "comments": {
-    "overview": "A busy and split thread. The top thread ignored Huzzah and argued over why agent coding is exhausting and whether it still counts as programming. Most of the rest asked how Huzzah differs from things that already exist, and Vaughn replied dozens of times with the same answer: persisted, source-mapped human intent.",
+    "overview": "A busy and split thread. Its top thread ignored Huzzah and argued over why agent coding is exhausting and whether it still counts as programming. Most of the rest asked how Huzzah differs from existing tools, and Vaughn gave dozens of replies with one answer: persisted, source-mapped human intent.",
     "themes": [
       {
         "title": "Why agent coding wears people out",
-        "synthesis": "The top comment says the problem isn't typing English. Agents take away the thinking that made programming satisfying, and no pseudocode trick will bring it back. Others pushed back, saying agent work is still thinking, just a manager's kind: architecture, review and planning, which many programmers are bad at and find draining. A third camp said fundamentals no longer matter much if you make the agent plan and review its own work, and Vaughn replied that this holds for CRUD apps and breaks badly past a certain complexity.",
+        "synthesis": "The top comment says the problem isn't typing English. Agents take away the thinking that made programming satisfying, and no pseudocode trick will bring it back. Others replied that agent work is still thinking, of a manager's kind: architecture, review and planning, which many programmers are bad at and find draining. A third camp said fundamentals matter less if agents plan and review their own work, and Vaughn said this breaks badly beyond CRUD apps.",
         "quotes": [
           {
             "author": "reticulates",
@@ -42,7 +42,7 @@
       },
       {
         "title": "Isn't this just an old idea?",
-        "synthesis": "Commenters matched Huzzah to spec-driven development, BDD with Gherkin, Code Complete's Program Design Language, literate programming, UML, transpilers and Python itself. The sharper version of the objection: if the pseudocode is precise you want a deterministic compiler, and if it isn't, the LLM is still making decisions for you. Vaughn answered that compilers force authors to write for the machine, while pseudocode lets them choose how precise to be. He said Gherkin specs and spec-driven development failed for him because nothing tied the specs to the code.",
+        "synthesis": "Commenters matched Huzzah to spec-driven development, BDD with Gherkin, Code Complete's Program Design Language, literate programming, UML, transpilers and Python itself. The sharper objection: precise pseudocode calls for a deterministic compiler, and vague pseudocode leaves the LLM making decisions for you. Vaughn answered that compilers force authors to write for the machine, while pseudocode lets them choose how precise to be. He said Gherkin specs and spec-driven development failed for him because nothing tied the specs to the code.",
         "quotes": [
           {
             "author": "Kinrany",
@@ -58,7 +58,7 @@
       },
       {
         "title": "A human-only record of intent",
-        "synthesis": "Vaughn kept pointing to two features: the .hz files persist, and the editor maps each pseudocode line to the code it generated. Commit messages, tickets and PR descriptions record changes, he said, while the pseudocode describes what the app should be now. His rule is that only humans edit it, and he told one commenter not to have an agent rewrite the pseudocode for big changes. Several people liked the idea, and one said they would trust a vibe-coded library more if they could read the human intent behind it. Skeptics expected it to go stale like comments.",
+        "synthesis": "Vaughn kept pointing to two features: the .hz files persist, and the editor maps each pseudocode line to the code it generated. Commit messages, tickets and PR descriptions record changes, he said, while the pseudocode describes what the app should be now. His rule is that only humans edit it, and he told one commenter not to have an agent rewrite the pseudocode for big changes. Several liked it, one would trust a vibe-coded library more with readable intent, and skeptics expected it to go stale like comments.",
         "quotes": [
           {
             "author": "danielvaughn",
@@ -74,7 +74,7 @@
       },
       {
         "title": "Does it scale past fizz buzz?",
-        "synthesis": "The examples are small, and commenters asked about cross-file changes and abstract instructions, such as changing the data flow to bulk-query the DB up front and pass results to every call site.Vaughn said the multi-file case is untested until a desktop version with filesystem access exists. One commenter wanted the reverse direction, distilling a big codebase into pseudocode to edit. Another had tried round-tripping code through an LLM-written spec and got bloated results, which Vaughn said matched his own experience and partly motivated Huzzah.",
+        "synthesis": "Commenters asked about cross-file changes and abstract instructions, such as bulk-querying the DB up front and passing results to every call site. Vaughn said the multi-file case stays untested until a desktop version with filesystem access exists. One commenter wanted the reverse, distilling a big codebase into pseudocode to edit. Another got bloated results round-tripping code through an LLM-written spec, which Vaughn said matched his own experience and partly motivated Huzzah.",
         "quotes": [
           {
             "author": "andai",
@@ -90,7 +90,7 @@
       },
       {
         "title": "Why not just prompt, or just code?",
-        "synthesis": "Many asked why you'd need a dedicated editor when you can paste pseudocode into any agent, or why not write the real code if you can already write pseudocode. Others listed what Huzzah gives up. The agent can no longer propose a better approach or find where a change belongs in a large codebase, and you lose the chat for brainstorming design. Vaughn agreed that chat is still useful for rubber-ducking and that he had done the paste-pseudocode workflow in Cursor. What Huzzah adds, he said, is keeping the prompt and tying it to the exact code.",
+        "synthesis": "Many asked why you'd need a dedicated editor when any agent accepts pasted pseudocode, or why not write real code if you can write pseudocode. Others said Huzzah gives up the agent proposing a better approach, finding where a change belongs in a large codebase, and brainstorming design in chat. Vaughn agreed that chat still helps for rubber-ducking, and said he had pasted pseudocode into Cursor before. What Huzzah adds, he said, is keeping the prompt and tying it to the exact code.",
         "quotes": [
           {
             "author": "hollowturtle",
@@ -105,13 +105,13 @@
         ]
       }
     ],
-    "consensus": "Most agreed the problem is real. Chat prompts disappear, LLM-generated code is hard to read, and something written by a human should say what the code is for. Even the critics mostly liked keeping a durable record of intent.",
-    "dissent": "Many argued that pseudocode adds little. It is either precise enough to compile without an LLM or vague enough that the model still guesses, and prompting, specs, BDD, commit messages and literate programming already cover the same ground.",
+    "consensus": "Most agreed the problem is real. Chat prompts disappear, LLM-generated code is hard to read, and a human should write down what the code is for. Even the critics mostly liked keeping a durable record of intent.",
+    "dissent": "Many argued that pseudocode adds little. Either it is precise enough to compile without an LLM, or vague enough that the LLM still guesses. Prompting, specs, BDD, commit messages and literate programming already cover the same ground.",
     "contrarian": {
       "author": "0xbadcafebee",
       "text": "But another change will undo the fix you made, because whatever hidden AI context was needed for that first fix is gone now.",
       "commentId": 49381774,
-      "why": "Regenerating code from short pseudocode means any fix you got by telling the model something outside the .hz file is lost on the next save, so the persisted intent is always less than the full intent."
+      "why": "Huzzah regenerates code from short pseudocode on every save. Any fix that came from telling the LLM something outside the .hz file is then lost. The persisted intent always falls short of the full intent."
     }
   },
   "digestedAt": "2026-10-11T16:53:11Z"

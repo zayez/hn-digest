@@ -9,24 +9,24 @@
   "points": 1275,
   "commentCount": 957,
   "readingMinutes": 9,
-  "tldr": "Shopify is rewriting all its mobile apps from React Native in Swift and Kotlin, six years after going all-in on React Native. Its reason is that coding agents now do enough of the porting, testing and review that building every feature twice no longer costs what it did in 2020.",
+  "tldr": "Shopify is rewriting all its mobile apps from React Native in Swift and Kotlin. It went all-in on React Native six years ago. Shopify says coding agents now do enough of the porting, testing and review. So building every feature twice no longer costs what it did in 2020.",
   "article": {
     "keyPoints": [
-      "Shopify adopted React Native in 2020 to stop building features twice, let developers work across the stack and stop chasing parity. It says the framework delivered all three and that its React Native apps are fast, so speed is not the reason for leaving.",
-      "Prototypes in late 2025 showed agents could build an Android feature from the iOS version and the reverse, and could keep the platforms in step through shared specs, tests and review checkpoints. Native still means two codebases, but that cost no longer decides the question.",
-      "Shopify chose full rewrites over gradual migration. The Shop app went from proof of concept to a native release in 12 weeks, and the main Shopify app, with more than 300 screens, widgets and an Apple Watch app, ships later this year.",
-      "Pointing an LLM at the React Native code and one-shotting the port produced code it could not ship. Its in-house tool Helix instead splits each screen into small checkpoints, and each one must pass tests, a visual comparison with the running app, two adversarial AI reviewers and a human sign-off.",
-      "Agents took minutes to test each change through simulators, so the new apps keep business logic apart from the UI and run it headlessly on desktop behind a CLI that agents can drive in milliseconds.",
-      "Shopify will sponsor React Native Skia through 2026 before its creator forks it, is looking for a company to take over FlashList, and will archive Restyle at the end of 2026."
+      "Shopify adopted React Native in 2020 to stop building features twice, let developers work across the stack and stop chasing parity. It says the framework delivered all three. Its React Native apps are fast. Speed is not the reason for leaving.",
+      "Prototypes in late 2025 showed agents could build an Android feature from the iOS version, and the reverse. Agents could also keep the platforms in step through shared specs, tests and review checkpoints. Native still means two codebases. But that cost no longer decides the question.",
+      "Shopify chose full rewrites over gradual migration. The Shop app went from proof of concept to a native release in 12 weeks. The main Shopify app, with more than 300 screens, widgets and an Apple Watch app, ships later this year.",
+      "Pointing an LLM at the React Native code and one-shotting the port produced code Shopify could not ship. Its in-house tool, Helix, instead splits each screen into small checkpoints. Each checkpoint must pass tests, a visual comparison with the running app, two adversarial AI reviewers and a human sign-off.",
+      "Agents took minutes to test each change through simulators. So the new apps keep business logic apart from the UI. That logic runs headlessly on desktop, behind a CLI that agents can drive in milliseconds.",
+      "Shopify will sponsor React Native Skia through 2026. Its creator will fork it under a new name in the coming months. Shopify is looking for a company to take over FlashList. It will keep Restyle working through 2026, then stop maintaining it."
     ],
-    "whyItMatters": "Mobile leads weighing their own cross-platform stack should read the original, along with the linked Shop app migration post. The summary drops the full plans for each open-source library, the post's demo clips of Helix and the agent CLI, and the acknowledgements that show how much Shopify put into React Native."
+    "whyItMatters": "Mobile leads weighing their own cross-platform stack should read the original, along with the linked Shop app migration post. The summary drops the full plans for each open-source library and the demo clips of Helix and the agent CLI. It also drops the acknowledgements, which show how much Shopify put into React Native."
   },
   "comments": {
-    "overview": "A huge, split thread. Developers who had already ported apps with agents mostly cheered, mobile veterans asked who will understand and maintain two generated codebases, and many pointed out that the post gives no cost or quality numbers. The top thread went off topic on whether Shopify needs 3,000 engineers at all.",
+    "overview": "A huge, split thread. Developers who had already ported apps with agents mostly cheered. Mobile veterans asked who will understand and maintain two generated codebases, and many pointed out that the post gives no cost or quality numbers. The top thread went off topic on whether Shopify needs 3,000 engineers at all.",
     "themes": [
       {
         "title": "Ports that worked, and code nobody can vouch for",
-        "synthesis": "Several commenters had done the same move. One ported a 15 to 20 screen app overnight with Codex, one company's planned nine-month port shipped in three months with a fifth of the staff, and a patient app was rewritten in two months. Skeptics answered that if you don't know Swift or Kotlin you can't judge what the agent wrote, and that testing by tapping through the app misses race conditions and silent bugs. A professional Android developer gave the sharpest example of agent code that works but shouldn't exist.",
+        "synthesis": "Several commenters had made the same move, one porting a 15 to 20 screen app overnight with Codex. One company shipped a planned nine-month port in three months with a fifth of the staff, and a patient app took two months. Skeptics said you can't judge agent code in Swift or Kotlin without knowing them, and tapping through the app misses race conditions and silent bugs. A professional Android developer gave the sharpest example of agent code that works but shouldn't exist.",
         "quotes": [
           {
             "author": "aenis",
@@ -42,7 +42,7 @@
       },
       {
         "title": "Parity is a long-run cost, and the post has no numbers",
-        "synthesis": "The most-cited critique said Shopify had proven only that rewrites got cheaper. Keeping two apps in sync costs more each year through experiments, accessibility fixes and small decisions, and the post offers no data on hours, defects or agent spend. Others asked why agents couldn't just improve the React Native code or the framework itself, since the CLI and headless business logic would help a React Native app too. Defenders replied that agents can work on both codebases at once and that the two apps shouldn't be identical anyway, since Android and iOS users expect different navigation and design.",
+        "synthesis": "The most-cited critique said Shopify had proven only that rewrites got cheaper. Keeping two apps in sync costs more each year, and the post offers no data on hours, defects or agent spend. Others asked why agents couldn't improve the React Native code instead, since the CLI and headless logic would help there too. Defenders replied that agents can work on both codebases at once, and that Android and iOS users expect different navigation and design anyway.",
         "quotes": [
           {
             "author": "hermitwriter",
@@ -58,7 +58,7 @@
       },
       {
         "title": "The React Native tax was the real reason",
-        "synthesis": "Many read the move as escaping years of painful upgrades, flaky libraries and the forced switch to React Native's New Architecture, which the linked Shop app post says triggered the experiment. That post's numbers came up as the missing evidence: startup 23% faster on iOS and 50% on Android, and ten times fewer crashes. A longtime mobile developer said cross-platform frameworks never cut headcount, they only change what the engineers work on. Some native iOS developers called it vindication, and others answered that Shopify only switched once agents could replace their skills. A side debate pushed shared business logic in Kotlin Multiplatform or Rust with native UIs as a middle path.",
+        "synthesis": "Many read the move as escaping painful upgrades, flaky libraries and the forced switch to React Native's New Architecture. Commenters cited the linked Shop app post as the missing evidence: startup 23% faster on iOS and 50% on Android, and ten times fewer crashes. A longtime mobile developer said cross-platform frameworks never cut headcount but only change what engineers work on. Some native iOS developers called it vindication, while a side debate pushed Kotlin Multiplatform or Rust for shared logic under native UIs.",
         "quotes": [
           {
             "author": "netshade",
@@ -90,7 +90,7 @@
       },
       {
         "title": "Does Shopify need 3,000 engineers?",
-        "synthesis": "The top comment, citing chatbot numbers, set Shopify's 3,000 engineers against Chrome's 60 at launch and GTA 5's credits, and said the company had overcomplicated a simple app. Replies took it apart. Chrome 1.0 was Windows-only and missing basics, most of Shopify's engineers work on payments, tax and compliance across countries rather than the app, and game credits leave out many people who worked on the game. A smaller camp agreed big companies grow headcount for political reasons, and the thread wandered into complaints about Spotify after the top comment brought it up.",
+        "synthesis": "The top comment, citing chatbot numbers, said Shopify had overcomplicated a simple app, setting its 3,000 engineers against Chrome's 60 at launch. Replies noted that Chrome 1.0 was Windows-only and missing basics, and that most Shopify engineers work on payments, tax and compliance, not the app. A smaller camp agreed big companies grow headcount for political reasons, and the thread wandered into complaints about Spotify.",
         "quotes": [
           {
             "author": "dmazzoni",
@@ -105,13 +105,13 @@
         ]
       }
     ],
-    "consensus": "Native apps give a better user experience when a company can afford them, and agents have made that cost much lower, at least for a company with Shopify's resources. Most agreed the move says little about what startups and small teams should do, where React Native, Flutter or a web app still make sense.",
-    "dissent": "A large minority thinks the case is unproven. Shopify shows no cost or defect data, two agent-written codebases will drift apart and pile up bugs nobody understands, and the same agents could have improved the existing React Native apps instead.",
+    "consensus": "Native apps give a better user experience when a company can afford them. Agents have made that cost much lower, at least for a company with Shopify's resources. For startups and small teams, most agreed, React Native, Flutter or a web app still make sense.",
+    "dissent": "A large minority thinks the case is unproven. Shopify shows no cost or defect data. Two agent-written codebases will drift apart and pile up bugs nobody understands. And the same agents could have improved the existing React Native apps instead.",
     "contrarian": {
       "author": "blehn",
       "text": "The existing app code is an unambiguous spec — perfect for agents to build from. Typical design specs, PRDs, and prompts have a lot more ambiguity.",
       "commentId": 49661324,
-      "why": "It explains why a fast port says little about the real test, which is how quickly the team ships new features from vague specs on two native codebases."
+      "why": "It explains why a fast port proves little. The real test is how quickly the team ships new features from vague specs on two native codebases."
     }
   },
   "digestedAt": "2026-10-12T22:25:59.000Z"

@@ -9,24 +9,24 @@
   "points": 589,
   "commentCount": 181,
   "readingMinutes": 7,
-  "tldr": "An agent harness is the software around an AI model that supplies its system prompt, its tools, the loop that lets it act repeatedly, and a layer for swapping models. Earendil, which makes the Pi harness, argues that owning an open, model-neutral harness keeps users in control instead of the AI labs.",
+  "tldr": "An agent harness is the software around an AI model. It supplies the system prompt, the tools, the loop that lets the model act repeatedly, and a layer for swapping models. Earendil, which makes the Pi harness, argues that owning an open, model-neutral harness keeps users in control instead of the AI labs.",
   "article": {
     "keyPoints": [
-      "The post is written for non-specialists and leans on a climbing harness analogy. A climbing harness keeps you safe, carries your gear, and goes with you from one climb to the next, and you can adjust it to suit yourself.",
+      "The post is written for non-specialists. It leans on a climbing harness analogy. A climbing harness keeps you safe, carries your gear, and goes with you from one climb to the next. You can also adjust it to suit yourself.",
       "A harness does four things. It injects a system prompt with every request, which works like first-day instructions for a new employee. It describes and runs tools such as web search, code execution or email. It runs the agentic loop. And it translates between different model providers.",
-      "The harness doesn't tell the model when to use a tool. In the worked example, a model asked to compare local primary schools searches the web, decides on its own whether the results are good enough, writes code to build a spreadsheet, checks it against the request, and emails the answer once it judges the job done.",
-      "The translation layer lets one harness run Anthropic, OpenAI or open-weight models, even several within one loop. The authors say this moves leverage from the labs to users, who can compare answers and costs and keep every session locally in one place.",
-      "Pi is the authors' own minimal harness, free and open source, with a short system prompt and few tools. Its users have shared more than 5,000 extensions that reshape it for their workflows.",
-      "Claude Code was the first popular harness but was built to run Claude models, not to be neutral. Earendil places Pi alongside OpenClaw, OpenCode and Hermes as open alternatives and says it is building Pi to stay neutral."
+      "The harness doesn't tell the model when to use a tool. In the worked example, a model must compare local primary schools. It searches the web and decides on its own whether the results are good enough. It writes code to build a spreadsheet and checks it against the request. It emails the answer once it judges the job done.",
+      "The translation layer lets one harness run Anthropic, OpenAI or open-weight models, even several within one loop. Earendil says this moves leverage from the labs to users. Users can compare answers and costs, and keep every session locally in one place.",
+      "Pi is Earendil's own minimal harness. It is free and open source, with a short system prompt and few tools. Its users have shared more than 5,000 extensions that reshape it for their workflows.",
+      "Claude Code was the first popular harness. It was built to run Claude models, not to be neutral. Earendil places Pi alongside OpenClaw, OpenCode and Hermes as open alternatives. It says it is building Pi to stay neutral."
     ],
-    "whyItMatters": "Read the original if you need to explain agents to someone outside the field. Its four-part breakdown and step-by-step school-ranking walkthrough work as a primer, and several non-technical readers in the thread said it finally made the term click. Practitioners will find little new, and the closing sections pitch Pi, which the authors make."
+    "whyItMatters": "Read the original if you need to explain agents to someone outside the field. Its four-part breakdown and step-by-step school-comparison walkthrough work as a primer. Several non-technical readers in the thread said it finally made the term click. Practitioners will find little new. The closing sections pitch Pi, which Earendil makes."
   },
   "comments": {
-    "overview": "Practitioners mostly skipped the definition and traded notes from building their own agents. The biggest thread was about how little to tell a capable model. A claim that harnesses are \"the next frontier\" set off the hottest fight, over whether harnesses or models hold the value and whether the whole vocabulary is hype. The author dropped in to test other analogies.",
+    "overview": "Practitioners mostly skipped the definition and traded notes from building their own agents. The biggest thread was about how little to tell a capable model. A claim that harnesses are \"the next frontier\" set off the hottest fight, over whether harnesses or models hold the value. Some called the whole vocabulary hype. The post's author dropped in to test other analogies.",
     "themes": [
       {
         "title": "Give the model tools, not scripts",
-        "synthesis": "An engineer building accounting agents found that long, prescriptive skills did worse than a company CLI plus hard guardrails, \"gates\" that block a tool call and tell the agent why. Many agreed that detailed instructions crowd the context and cut off paths the model would have found, and most said even a vague \"why app slow\" works because models profile on their own. The holdouts said real systems often lack the data to profile, and that unsupervised models still make costly small mistakes, so the setup has to make the result cheap to check.",
+        "synthesis": "An engineer building accounting agents found long, prescriptive skills did worse than a company CLI plus \"gates\" that block a tool call and explain why. Many agreed that detailed instructions crowd the context and cut off paths the model would have found. Most replies said even a vague \"why app slow\" works, because models profile on their own. The holdouts said real systems often lack profiling data and unsupervised models make costly small mistakes, so results must be cheap to check.",
         "quotes": [
           {
             "author": "Syntaf",
@@ -58,7 +58,7 @@
       },
       {
         "title": "Hype words and the AGI argument",
-        "synthesis": "The \"frontier\" comment drew mockery as LinkedIn talk and spun into a long argument over whether LLMs could lead to AGI, with a skeptic saying agent scaffolding barely helps and a builder citing weeks-long projects that reverse-engineer arcade games. Elsewhere, commenters tracked the yearly buzzword from \"moat\" to \"agentic\" to \"harness\". One went through the article marking the human-like verbs it uses for software.",
+        "synthesis": "The \"frontier\" comment drew mockery as LinkedIn talk and spun into a long argument over whether LLMs could lead to AGI. A skeptic said agent scaffolding barely helps, and a builder cited weeks-long projects that reverse-engineer arcade games. Elsewhere, commenters tracked the yearly buzzword from \"moat\" to \"agentic\" to \"harness\". One went through the post marking the human-like verbs it uses for software.",
         "quotes": [
           {
             "author": "okamiueru",
@@ -74,7 +74,7 @@
       },
       {
         "title": "Which analogy fits",
-        "synthesis": "The author floated a car version, with the harness as chassis, the model as engine and tokens as fuel. Several argued the word comes from work animals, so the model is the horse. A climber preferred the article's picture because you can reconfigure a climbing harness cheaply and pick a different one per climb. Others offered a motherboard around a CPU and a backpack, where every extra tool and line of prompt slows the walker, so better models need smaller harnesses.",
+        "synthesis": "The post's author floated a car version, with the harness as chassis, the model as engine and tokens as fuel. Several argued the word comes from work animals, so the model is the horse. A climber preferred the post's picture because you can reconfigure a climbing harness cheaply and pick a different one per climb. Others offered a CPU's motherboard, or a backpack where each extra tool or prompt line slows the walker, so better models need smaller harnesses.",
         "quotes": [
           {
             "author": "troyvit",
@@ -101,12 +101,12 @@
       }
     ],
     "consensus": "The harness shapes an agent's behavior a lot, and the same model acts differently across setups. Most also agreed that today's frontier models do better with good tools, context and checks than with step-by-step instructions. Newcomers found the article a clear primer.",
-    "dissent": "A loud minority treated the harness talk as rebranded hype, said LLMs lack the competence that agents assume, and called harnesses thin, replaceable code with the value in the model or the hardware.",
+    "dissent": "A loud minority treated the harness talk as rebranded hype. They said LLMs lack the competence that agents assume. They called harnesses thin, replaceable code, with the value in the model or the hardware.",
     "contrarian": {
       "author": "kmansm27",
       "text": "The point is you shouldn't build a harness, you should use a harness and change its system prompt, the tools it has, MCPs it has, give it skills, etc, to make it work for your usecase.",
       "commentId": 49411174,
-      "why": "While others showed off custom harnesses, this commenter points out that most of that work is configuring an existing one, which is the article's actual pitch."
+      "why": "Others showed off custom harnesses. This commenter points out that most of that work is configuring an existing one, which is the post's actual pitch."
     }
   },
   "digestedAt": "2026-10-12T16:31:55.000Z"

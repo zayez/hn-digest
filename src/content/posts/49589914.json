@@ -6,13 +6,13 @@
   "postedAt": "2026-09-06T19:27:10.000Z",
   "points": 320,
   "commentCount": 299,
-  "tldr": "Someone asks how people find, organize and test the skill files they give coding agents, and whether models will make them obsolete. Most answers say to stop downloading skill packs and write a few of your own for repeated, project-specific work, then keep them in a git repo symlinked into each agent's skills folder.",
+  "tldr": "Someone asks how people find, organize and test the skill files they give coding agents. They also ask whether models will make skills obsolete. Most answers say to stop downloading skill packs. Instead, write a few of your own for repeated, project-specific work. The most common setup keeps them in a git repo, symlinked into each agent's skills folder.",
   "comments": {
-    "overview": "The top comment calls downloaded skills snake oil, and much of the thread argues over that before getting to logistics. Past the argument it turns practical, with dozens of setups for syncing skills across machines and agents, and a long tail of people plugging their own skill managers. A loud minority thinks skills are hype and a README or AGENTS.md does the same job.",
+    "overview": "The top comment calls downloaded skill packs snake oil, and much of the thread argues over that before getting to logistics. Past the argument it turns practical, with dozens of setups for syncing skills across machines and agents. A long tail of people plug their own skill managers. A loud minority thinks skills are hype and a README or AGENTS.md does the same job.",
     "themes": [
       {
         "title": "Write your own, skip the packs",
-        "synthesis": "Most commenters gave up on public skill collections. Influencer packs and marketplaces mostly restate what the model already knows, and they fill the context with descriptions. The skills that last come from your own repeated work. Ask the agent to save a session that went well as a skill, then retest it in a fresh session until it works on the first try. A few people still browse public repos for ideas, and Matt Pocock's skills and obra's superpowers came up as the exceptions worth reading.",
+        "synthesis": "Most commenters dropped skill packs from influencers and marketplaces, which mostly restate what the model knows and fill the context with descriptions. The skills that last come from your own repeated work. Ask the agent to save a good session as a skill, then retest it in fresh sessions until it works on the first try. A few still browse public repos for ideas, and Matt Pocock's skills and obra's superpowers came up as exceptions worth reading.",
         "quotes": [
           {
             "author": "picklenerd",
@@ -28,7 +28,7 @@
       },
       {
         "title": "Where skills pay off",
-        "synthesis": "Defenders say a skill carries knowledge the model can't infer, like which key connects to which server, how a proprietary XML format looks, or how to drive an obscure Jira CLI. Without it the agent spends tokens rediscovering the same facts every session. One company measured 2-4x less output with skills. Several people push the deterministic parts into scripts the skill calls, so the model only handles judgment. Others want the cut stricter and say a skill should only cover behavior the model got wrong on its own.",
+        "synthesis": "Defenders say a skill carries knowledge the model can't infer, like which key connects to which server or how a proprietary XML format looks. Without it the agent spends tokens rediscovering the same facts every session, and one company measured 2-4x less token output with skills. Several people push the deterministic parts into scripts the skill calls, so the model only handles judgment. Others want a stricter cut, with skills only for behavior the model got wrong on its own.",
         "quotes": [
           {
             "author": "serf",
@@ -44,7 +44,7 @@
       },
       {
         "title": "Isn't this just AGENTS.md?",
-        "synthesis": "Many asked how a skill differs from a docs file linked from AGENTS.md. The answer is loading. AGENTS.md is always in context, while the model sees only a skill's one-line description until it decides to read the rest. Several people built that same router by hand before skills existed and see no real difference. One commenter keeps gotchas in AGENTS.md because the model reliably reads it, and treats skills as optional reference.",
+        "synthesis": "Many asked how a skill differs from a docs file linked from AGENTS.md, and the answer is loading. AGENTS.md is always in context, while the model sees only a skill's one-line description until it decides to read the rest. Several people built that same router by hand before skills existed and see no real difference. One commenter keeps gotchas in AGENTS.md because the model reliably reads it, and treats skills as optional reference.",
         "quotes": [
           {
             "author": "jpalomaki",
@@ -60,7 +60,7 @@
       },
       {
         "title": "Git, symlinks and plugins",
-        "synthesis": "The most common setup is a git repo of skills, often inside a dotfiles repo, with a script that symlinks it into ~/.claude/skills, ~/.codex/skills and the rest. Others note that Codex and Claude Code both read ~/.agents/skills. Teams lean on Claude and Codex plugin marketplaces, startup hooks that refresh shared skills, or tools that pin a content hash so a skill can't change under you. Project-specific skills stay in the project repo. At least fifteen commenters linked a sync tool or registry they wrote, and one person said the question looked like a setup for exactly that.",
+        "synthesis": "The most common setup is a git repo of skills, often in dotfiles, symlinked into ~/.claude/skills, ~/.codex/skills and the rest by a script. Others note that Codex and Claude Code both read ~/.agents/skills, and project-specific skills stay in the project repo. Teams use plugin marketplaces, startup hooks that refresh shared skills, or tools that pin a content hash so a skill can't change silently. At least fifteen commenters linked a sync tool or registry they wrote, and one person said the question looked like a setup for exactly that.",
         "quotes": [
           {
             "author": "gregwebs",
@@ -76,7 +76,7 @@
       },
       {
         "title": "Testing and pruning",
-        "synthesis": "One camp writes evals, regression tests that assert a skill still produces the expected behavior. Skeptics reply that evals for anything beyond trivial cases take far longer than the skill did. Most people test by use and notice when the agent does it wrong. Some keep a skill whose job is to diagnose a failure and rewrite the offending skill. Others prune on a schedule, deleting skills now and then to see whether the model does fine without them.",
+        "synthesis": "One camp writes evals, regression tests that assert a skill still produces the expected behavior. Skeptics reply that evals for anything beyond trivial cases take far longer than the skill did. Most people test by use, and some keep a skill that diagnoses a failure and rewrites the offending skill. Others prune on a schedule, deleting skills to see whether the model does fine without them.",
         "quotes": [
           {
             "author": "stingraycharles",
@@ -86,13 +86,13 @@
         ]
       }
     ],
-    "consensus": "Generic downloaded skills rarely help. Write a handful yourself for workflows specific to your team or project, keep them in version control, and delete the ones you stop using.",
+    "consensus": "Downloaded skill packs rarely help. Write a handful yourself for workflows specific to your team or project, keep them in version control, and delete the ones you stop using.",
     "dissent": "A vocal group says skills are a marketing name for a markdown file. To them a README, AGENTS.md or plain prompting does the job, and each model release makes skills less useful. One team dropped skills for code that drives the agent deterministically.",
     "contrarian": {
       "author": "sleepybrett",
       "text": "The skills are starting to become the documentation for these types of things as well as a way to automate it. This is great, but this type of 'documentation' is exactly the type of thing that goes non-updated for years in some dark corner of confluence. So I suspect the little used skills are going to fall to 'context rot'.",
       "commentId": 49605381,
-      "why": "While others argued over whether skills work, this comment noticed that managers now write piles of internal skills, and that a rarely used one fails the way a stale wiki page does, without anyone noticing."
+      "why": "While others argued over whether skills work, this comment noticed that managers now write piles of internal skills. A rarely used one will go stale like a forgotten wiki page, and nobody will notice."
     }
   },
   "digestedAt": "2026-10-12T22:25:45.000Z"

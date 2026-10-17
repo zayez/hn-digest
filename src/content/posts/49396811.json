@@ -9,23 +9,23 @@
   "points": 42,
   "commentCount": 16,
   "readingMinutes": 8,
-  "tldr": "Sean Goedecke argues that software engineers should never be genuinely angry at work. Anger usually comes from caring, but colleagues start routing decisions around an angry engineer, so it costs more influence than it wins.",
+  "tldr": "Sean Goedecke argues that software engineers should never be genuinely angry at work. Anger usually comes from caring about the work. But colleagues start routing decisions around an angry engineer, so anger costs more influence than it wins.",
   "article": {
     "keyPoints": [
-      "An angry colleague becomes a problem to manage, and healthy teams route around them the way networks route around damage, moving decisions into backchannels that make the engineer angrier still.",
-      "Angry engineers are rarely useless. Their anger usually comes from caring, and Goedecke has never met an engineer who cared about the work and wasn't, or didn't become, competent.",
-      "He pictures caring as an open tube. Too little drains away and you coast, too much overflows into anger, and the fixes are a life outside work or caring about what the company cares about.",
-      "A little visible frustration can build rapport and signal that you care, but only if you can drop back to friendly at will, which genuine anger makes very hard.",
-      "Copying Linus Torvalds or Bryan Cantrill is a mistake. They run the show, so nobody can work around them, and talks and blog posts show people at their peak intensity rather than their everyday mood."
+      "An angry engineer becomes a problem to manage. Healthy teams route around them the way networks route around damage. Decisions move into backchannels, and that makes the engineer angrier still.",
+      "Angry engineers are rarely useless. Their anger usually comes from caring. Goedecke has never met an engineer who cared about the work and wasn't, or didn't become, competent.",
+      "Goedecke pictures caring as an open tube. With too little caring, it drains away and you coast. With too much, it overflows into anger. The fixes are a life outside work, or caring about what the company cares about.",
+      "A little visible anger can signal that you care and can build rapport. It only works if you can drop back to friendly at will. Genuine anger makes that very hard.",
+      "Copying Linus Torvalds or Bryan Cantrill is a mistake. They run the show, so nobody can work around them. Talks and blog posts also show people at their peak intensity, not their everyday mood."
     ],
-    "whyItMatters": "Worth reading for engineers who notice they get heated in reviews or meetings, and for leads managing someone who does. The original has the author's own account of losing his temper, footnotes that hedge his claims, and a postscript answering Lobste.rs and HN critics, including the Marxist-alienation objection."
+    "whyItMatters": "Worth reading for engineers who get heated in reviews or meetings, and for leads who manage one. The original has Goedecke's own account of losing his temper and footnotes that hedge his claims. It also has a postscript that answers Lobste.rs and HN critics, including the Marxist-alienation objection."
   },
   "comments": {
-    "overview": "A small thread, and most of it hangs off one combative top comment calling the author a replaceable robot who has embraced Marxist alienation from his work. Replies split over whether paid software work is a craft worth fighting for or a job where perfectionism is self-indulgent. A few standalone comments push back on the claim that anger feels good.",
+    "overview": "A small thread. Most of it hangs off one combative top comment, which calls Goedecke a replaceable robot who has embraced Marxist alienation from his work. Replies split over whether paid software work is a craft worth fighting for or a job where perfectionism is self-indulgent. A few standalone comments reject the claim that anger feels good.",
     "themes": [
       {
         "title": "Craftsperson or paid worker",
-        "synthesis": "The top comment says engineers who shrug off a cancelled project are grey goo, and that real craftspeople can't tolerate others scribbling on their work. Most replies reject the artist framing. The employer owns the IP, the engineer is paid to work with others, and one commenter calls his own past perfectionism embarrassing. A trailer editor of 20 years answers that you can keep control of your process under a client brief, and another commenter notes that most famous paintings were commissions anyway.",
+        "synthesis": "The top comment says engineers who shrug off a cancelled project are grey goo, and that real craftspeople can't tolerate others scribbling on their work. Most replies reject the artist framing, since the employer owns the IP and the engineer is paid to work with others. One commenter calls his own past perfectionism embarrassing, and a trailer editor of 20 years says he keeps control of his process under client briefs. Another notes that most famous paintings were commissions anyway.",
         "quotes": [
           {
             "author": "reply00r123",
@@ -73,12 +73,12 @@
       }
     ],
     "consensus": "Most commenters agree that yelling or throwing fits at coworkers is unprofessional and rarely warranted, and that caring about your work can be expressed calmly.",
-    "dissent": "A minority holds that indifference is the real problem. People who don't get upset when their work is trashed or cancelled have given up ownership, and some anger at sloppy or disrespectful work is justified.",
+    "dissent": "A minority holds that indifference is the real problem. People who don't get upset when their work is trashed or cancelled have given up ownership. And some anger at sloppy or disrespectful work is justified.",
     "contrarian": {
       "author": "eudamoniac",
       "text": "If I'm painting the ceiling of the Sistine chapel, for money, and my coworker is fucking up his part, I'm going to be pissed yes. We're supposed to do this 40 hours per week and not care about the output quality?",
       "commentId": 49402755,
-      "why": "It answers the replies' \"it's paid work, not art\" argument by pointing out that great art was paid work too, so being paid doesn't make indifference to quality the healthy default."
+      "why": "The replies argue \"it's paid work, not art\", and this comment answers that great art was paid work too. So being paid doesn't make indifference to quality the healthy default."
     }
   },
   "digestedAt": "2026-10-12T16:09:41.000Z"

@@ -9,24 +9,24 @@
   "points": 315,
   "commentCount": 129,
   "readingMinutes": 14,
-  "tldr": "CRTs did soften pixel art, but mostly because cheap PAL and NTSC TVs fed by RF or composite signals smeared the image. A good RGB or VGA monitor showed pixels as crisp as a flatscreen. Old art looked good because artists used dithering, anti-aliasing and careful palettes, and modern pixel art that skips those techniques looks blockier than the originals ever did.",
+  "tldr": "Most of the blur people credit to CRTs came from cheap PAL and NTSC TVs fed by RF or composite signals. On a good RGB monitor, pixels stayed plainly visible. Old pixel art looked good because artists used dithering, anti-aliasing and careful palettes. Modern pixel art that skips those techniques looks blockier than the originals ever did.",
   "article": {
     "keyPoints": [
-      "Popular side-by-side images that show sprites melting into smooth shapes on a CRT exaggerate the effect. The author, who uses real CRTs weekly, shows photos where jagged pixels stay plainly visible, such as the 160x200 C64 version of Maniac Mansion on a Commodore 1084S monitor.",
-      "Quality came from technique. Mayhem in Monsterland (1993) ran on the same C64 hardware as Maniac Mansion (1987) and looks far better because it uses dithering, anti-aliasing, a disciplined 16-color palette and sprite overlays. On the Amiga 500, Ruff'n'Tumble (1994) gets its smoothness from complementary colors, white highlights and heavy anti-aliasing.",
-      "Signal quality matters more than the tube. RF is worst, then composite, S-Video and RGB SCART, which on a good TV comes close to a real RGB monitor. A CRT blends dithering together, but the techniques improve an image on any screen. The exception is CGA color blending on IBM PCs, which depends on NTSC composite artifacts and has nothing to do with the CRT.",
-      "Dot pitch is the other factor. VGA monitors from the mid-1990s show 320x200 games like Duke Nukem 3D with clearly visible pixels, and late CRTs make old games look as crisp and blocky as a flatscreen does. The fuzz people remember came from cheap, low dot pitch consumer TVs.",
-      "CRTs also stretched pixels. VGA's 320x200 mode filled a 4:3 screen with non-square pixels, so showing the art 1:1 on a modern display squashes characters like Monkey Island's Governor Marley.",
-      "The author's complaint about modern pixel art is sloppy technique. Many artists skip dithering and anti-aliasing so the art looks deliberately chunky, and nostalgia credits the CRT with smoothing it never did."
+      "Popular side-by-side images that show sprites melting into smooth shapes on a CRT exaggerate the effect. The author uses real CRTs weekly. His photos show jagged pixels plainly, such as the 160x200 C64 version of Maniac Mansion on a Commodore 1084S monitor.",
+      "Quality came from technique. Mayhem in Monsterland (1993) ran on the same C64 hardware as Maniac Mansion (1987). It looks far better because of dithering, anti-aliasing, a disciplined 16-color palette and sprite overlays. On the Amiga 500, Ruff'n'Tumble (1994) gets its smoothness from complementary colors, white highlights and heavy anti-aliasing.",
+      "Signal quality matters more than the CRT itself. RF is worst, then composite, S-Video and RGB SCART. On a good TV, RGB SCART comes close to a real RGB monitor. A CRT blends dithering together. But dithering and anti-aliasing improve an image on any screen. The exception is CGA color blending on IBM PCs, which depends on NTSC composite artifacts and has nothing to do with the CRT.",
+      "Dot pitch is the other factor. VGA monitors from the mid-1990s show 320x200 games like Duke Nukem 3D with clearly visible pixels. Late CRTs make old games look as crisp and blocky as a flatscreen does. The blur people remember came from cheap consumer TVs with a sparse dot pitch.",
+      "CRTs also stretched pixels. VGA's 320x200 mode filled a 4:3 screen with non-square pixels. Showing the art 1:1 on a modern display squashes characters like Monkey Island's Governor Marley.",
+      "The author's complaint about modern pixel art is sloppy technique. Many artists skip dithering and anti-aliasing so the art looks deliberately blocky. Nostalgia credits the CRT with smoothing it never did."
     ],
     "whyItMatters": "Pixel artists and retro players who want to see the effect for themselves should open the original. It has photos of real CRTs, zoomed Deluxe Paint screens showing dithering and anti-aliasing, and a linked follow-up that goes deeper into signal quality."
   },
   "comments": {
-    "overview": "A friendly, technical thread that mostly agreed with the article's main point and then argued over its edges. Did the blur come from the tube or the cable? Is sharp pixel art a nostalgia mistake or a style of its own? And are CRTs worth anything today beyond blur, mainly for motion clarity? A side argument in the top thread went to whether AI image models will take over cheap indie pixel art.",
+    "overview": "A friendly, technical thread that mostly agreed with the article's main point and then argued over its edges. The main questions were whether the blur came from the CRT or the cable, and whether sharp pixel art is a style of its own. Others asked what CRTs offer today beyond blur, mainly motion clarity, and whether AI image models will take over cheap indie pixel art.",
     "themes": [
       {
-        "title": "The cable and the monitor, not the tube",
-        "synthesis": "Many commenters said the fuzz people remember came from RF and composite signals, which would blur an LCD just as much, while RGB, S-Video, SCART and VGA looked sharp. cubefox thought the article contradicted itself by repeating the CRT-blur story before taking it apart. mrob added a second factor. PC CRTs built for high resolutions drew low-resolution games much sharper than TV CRTs, whatever the connection. Others noted that composite NTSC changes colors in ways some console artists may have designed around, and that most households never had the ideal setup that CRT fans now describe.",
+        "title": "The cable and the monitor, not the CRT",
+        "synthesis": "Many commenters said the blur people remember came from RF and composite signals, which would blur an LCD just as much. RGB, S-Video, SCART and VGA looked sharp, and mrob added that PC CRTs drew low-resolution games sharper than TV CRTs over any connection. cubefox thought the article contradicted itself by repeating the CRT-blur story before taking it apart. Others noted that some console artists may have designed around NTSC composite color shifts, and that few households had the ideal setup CRT fans describe.",
         "quotes": [
           {
             "author": "mrob",
@@ -42,7 +42,7 @@
       },
       {
         "title": "Sharp pixel art is a style of its own",
-        "synthesis": "The article's line about \"misdirected, anachronistic nostalgia\" drew pushback. Plenty of readers met pixel art on the Game Boy, GBA or a PC monitor, never on a blurry TV, and several remembered LCDs and CDs as clear upgrades when they arrived. One said neighbors with a sharper SNES picture all agreed it looked better. spankibalt answered that the original Game Boy screen had its own analog-feeling smear, and mrob disputed that. egypturnash thought the blocky look follows from which games modern artists are nostalgic for: early NES and SNES hits, not the late C64 and Amiga games the author admires.",
+        "synthesis": "The article's line about \"misdirected, anachronistic nostalgia\" drew pushback. Plenty of readers met pixel art on a Game Boy, GBA or PC monitor, and remembered LCDs and CDs as clear upgrades. spankibalt answered that the original Game Boy screen had its own analog-feeling smear, and mrob disputed that. egypturnash traced the blocky look to the games modern artists miss: early NES and SNES hits, not late C64 and Amiga games.",
         "quotes": [
           {
             "author": "latexr",
@@ -58,7 +58,7 @@
       },
       {
         "title": "Motion clarity and flicker",
-        "synthesis": "Several commenters said the CRT's real advantage, missing from the article, is motion. A CRT flashes each frame for about a millisecond, so objects the eye tracks stay sharp, while LCDs and OLEDs hold each frame and smear it. mrob put shaders at about 90% of a CRT's still image and none of its motion, short of a roughly 1000Hz display. The cost is flicker. bitwize's sister, who has photosensitive epilepsy, could not play games until flat panels arrived, and others argued over whether 60Hz flicker is visible at all.",
+        "synthesis": "Several commenters said the CRT's real advantage, missing from the article, is motion. A CRT flashes each frame for about a millisecond, so tracked objects stay sharp; LCDs and OLEDs hold each frame and smear it. mrob put shaders at about 90% of a CRT's still image and none of its motion, short of a roughly 1000Hz display. The cost is flicker: bitwize's sister, who has photosensitive epilepsy, could not play games until flat panels arrived.",
         "quotes": [
           {
             "author": "cubefox",
@@ -74,7 +74,7 @@
       },
       {
         "title": "Filters, shaders and new CRTs",
-        "synthesis": "Opinions on CRT filters ran from \"usually too dark\" to praise for a few well-tuned games. WCSTombs pointed out that a filter can only darken pixels, never brighten them. One commenter built a CRT simulator for MacBook Pro XDR screens. Asked why nobody makes CRTs anymore, commenters gave cost, weight, tiny demand and safety. A claim that leaded glass rules them out was corrected: the front glass used barium and strontium. The radiation is X-rays, not gamma rays. Unai, who plays retro games almost exclusively, wouldn't take a CRT for free when RetroArch shaders exist.",
+        "synthesis": "Opinions on CRT filters ran from \"usually too dark\" to praise for a few well-tuned games, and WCSTombs noted a filter can only darken pixels. One commenter built a CRT simulator for MacBook Pro XDR screens, and Unai wouldn't take a CRT for free when RetroArch shaders exist. Asked why nobody makes CRTs anymore, commenters gave cost, weight, tiny demand and safety. A claim that leaded glass rules them out drew corrections: the front glass used barium and strontium, and the radiation is X-rays, not gamma rays.",
         "quotes": [
           {
             "author": "WCSTombs",
@@ -90,7 +90,7 @@
       },
       {
         "title": "How often artists designed for the blur",
-        "synthesis": "ChrisRR doubted that many artists relied on CRT blur, since the same few examples keep coming up. cbolton answered with a video of 30, though shown through filters. ereiamjh pointed to the Atari 2600 Combat tanks, which only look like tanks on a CRT, and wants museums to stop showing retro games on flatscreens. BearOso said both of the author's articles miss how bright pixels spread on a CRT, which a modified bilinear filter can reproduce without scanlines.",
+        "synthesis": "ChrisRR doubted that many artists relied on CRT blur, since the same few examples keep coming up. cbolton answered with a video of 30, though shown through filters. ereiamjh pointed to the Atari 2600 Combat tanks, which only look like tanks on a CRT, and wants museums to drop flatscreens for retro games. BearOso said both of the author's articles miss how bright pixels spread on a CRT, which a modified bilinear filter can reproduce without scanlines.",
         "quotes": [
           {
             "author": "ChrisRR",
@@ -106,12 +106,12 @@
       }
     ],
     "consensus": "The blur people credit to CRTs mostly came from cheap TVs and RF or composite connections. RGB and VGA CRTs showed pixels clearly, as the article says.",
-    "dissent": "Many rejected the claim that modern blocky pixel art is misplaced nostalgia. They said sharp pixels have their own history on Game Boys and PC monitors and are a legitimate style, and a few argued that CRTs still beat any filter on motion clarity.",
+    "dissent": "Many rejected the claim that modern blocky pixel art is misplaced nostalgia. They said sharp pixels have their own history on Game Boys and PC monitors and are a legitimate style. A few argued that CRTs still beat any filter on motion clarity.",
     "contrarian": {
       "author": "GuB-42",
       "text": "Blurry usually doesn't look good, it is as if your eyes can't focus, or that you are looking through a dirty window, it naturally registers as a problem.",
       "commentId": 49785274,
-      "why": "It treats sharp square pixels as a choice that tells the eye nothing is wrong, where most of the thread treated them as either an accident or a loss."
+      "why": "It treats sharp square pixels as a choice that tells the eye nothing is wrong. Most of the thread treated them as either an accident or a loss."
     }
   },
   "digestedAt": "2026-10-17T14:38:47.000Z"

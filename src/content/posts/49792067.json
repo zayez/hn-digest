@@ -9,24 +9,24 @@
   "points": 317,
   "commentCount": 408,
   "readingMinutes": 9,
-  "tldr": "Agents nearly quadrupled Linear's test suite in a year, so CI got slow and expensive. Faster runners, leaner setup and smarter sharding cut PR wait from over 6 minutes to just over 5 and halved runner time per test, where doing nothing would have meant about 11 minutes.",
+  "tldr": "Linear's test suite nearly quadrupled since the start of the year, mostly from agent-written tests. Faster runners, leaner setup and smarter sharding still cut PR wait from over 6 minutes to just over 5. Runner time per test fell by half. Doing nothing would have meant about 11 minutes.",
   "article": {
     "keyPoints": [
-      "Moving off GitHub Actions to third-party runners with faster CPUs and storage made jobs 34% faster on average, and switching to tsgo, the native TypeScript compiler, cut the median typecheck by 73%.",
-      "Rewriting custom lint rules to work on the syntax tree alone let ESLint drop the type checker, cutting full-repo lint time by 55% and making a later port to Oxlint easy.",
-      "The small change-detection jobs that every test shard waits on got shallow or sparse checkouts, a checkout action that retries instead of hanging, and a cache write moved off the merge path, which took about a minute off the required check.",
-      "Per-shard setup fell from 110-140 seconds to about 70 by baking the Postgres client into the CI image, installing only the API package's dependencies, and dropping a node_modules cache that was slower to restore (28 s) than a fresh filtered install (7.5 s). Merging seven tiny jobs into two saved 11.8% of monthly CI minutes.",
-      "Cheap setup made eight shards affordable. Splitting oversized test files fixed Vitest's per-file balancing, and an opt-in `isolate: false` project that shares the module registry was the biggest single win, about 17% of monthly cost, at the price of the most correctness risk.",
-      "Linear adds about 2,000 tests a week, mostly written by agents, so the team also updated its agent skills so generated tests follow the non-isolated test rules by default."
+      "Moving from GitHub-hosted runners to third-party runners with faster CPUs and storage made jobs 34% faster on average. Switching to tsgo, the native TypeScript compiler, cut the median typecheck by 73%.",
+      "Rewriting custom lint rules to work on the syntax tree alone let ESLint drop the type checker. That cut full-repo lint time by 55%. It also made a later port to Oxlint easy.",
+      "Every test shard waits on small change-detection jobs. Those jobs got shallow or sparse checkouts, and a checkout action that retries instead of hanging. A cache write moved off the merge path. Together these took about a minute off the required check.",
+      "Per-shard setup fell from 110-140 seconds to about 70. Linear baked the Postgres client into the CI image and installed only the API package's dependencies. It dropped a node_modules cache that took 28 s to restore, against 7.5 s for a fresh filtered install. Merging seven tiny jobs into two saved 11.8% of monthly CI minutes.",
+      "Cheap setup made eight shards affordable. Splitting oversized test files fixed Vitest's per-file balancing. An opt-in `isolate: false` project that shares the module registry was the biggest single win, about 17% of monthly cost. It also carried the most correctness risk.",
+      "Linear adds about 2,000 tests a week, mostly written by agents. So the team also updated its agent skills, and generated tests now follow the non-isolated test rules by default."
     ],
-    "whyItMatters": "Anyone running a TypeScript monorepo on GitHub Actions can lift these changes directly. The original has the before and after numbers for each one, and the reasoning on when sharding stops paying for itself."
+    "whyItMatters": "Anyone running a TypeScript monorepo on GitHub-hosted runners can lift these changes directly. The original has the before and after numbers for each one. It also explains when sharding stops paying for itself."
   },
   "comments": {
-    "overview": "Most of the 400 comments ignore the CI work and argue the headline instead. If agents make coding so much faster, why aren't products visibly better? That fight fills the giant first thread. The remaining threads stay on topic, covering bloated agent-written tests, self-hosted runners, and whether Bazel is the real fix.",
+    "overview": "Most of the 400 comments ignore the CI work and argue the headline instead. If agents make coding so much faster, why aren't products visibly better? That fight fills the giant first thread, and the rest stay on topic: bloated agent-written tests, self-hosted runners, and Bazel.",
     "themes": [
       {
         "title": "Where are the better products?",
-        "synthesis": "The top thread asks why faster coding hasn't produced better phones, operating systems or a faster Windows context menu. Defenders point to an 84% jump in iOS app submissions, emulator and decompilation projects, and internal wins like paid-down tech debt and fewer outages that never reach a changelog. Skeptics answer that submissions aren't installs or revenue, and that product taste, sales and requirements were the bottleneck all along. A long side argument over macro data ended with no agreement. One camp cites a St. Louis Fed estimate of up to 1.3% extra labor productivity, the other the decades-old Solow paradox.",
+        "synthesis": "The top thread asks why faster coding hasn't produced better phones, operating systems or a faster Windows context menu. Defenders point to an 84% jump in iOS app submissions, emulator and decompilation projects, and internal wins like fewer outages that never reach a changelog. Skeptics answer that submissions aren't installs or revenue, and that product taste, sales and requirements were the bottleneck all along. Macro data settled nothing: one camp cited a St. Louis Fed estimate of up to 1.3% extra productivity, the other the Solow paradox.",
         "quotes": [
           {
             "author": "perrygeo",
@@ -42,7 +42,7 @@
       },
       {
         "title": "The quadrupled test suite",
-        "synthesis": "Many read \"2,000 tests a week\" as the actual cause of the CI load. Commenters describe agents testing string constants, external libraries and language features, and one notes the article never shows whether the old and new pipelines agree or whether the bigger suite catches more bugs. A minority flips it around: with agents writing the code, the tests are the part worth reviewing, and passing end-to-end tests are what make large AI refactors safe.",
+        "synthesis": "Many read \"2,000 tests a week\" as the actual cause of the CI load. Commenters describe agents testing string constants, external libraries and language features, and one notes the article never shows whether the bigger suite catches more bugs. A minority flips it around: with agents writing the code, the tests are the part worth reviewing. Passing end-to-end tests are what make large agent refactors safe.",
         "quotes": [
           {
             "author": "Rapzid",
@@ -58,7 +58,7 @@
       },
       {
         "title": "CI isn't the real bottleneck",
-        "synthesis": "Several people say their constraint is human testing, product judgment, or deploy and rollback, so a faster CI just moves the queue. Dagger's founder argues the reverse, that QA itself will be automated and triggered from CI. An ex-QA engineer pushes back that QA exists to find the problems nobody thought to write a test for, and the two end up agreeing that AI helps with review but doesn't replace a human trying to break the product.",
+        "synthesis": "Several people say their constraint is human testing, product judgment, or deploy and rollback, so a faster CI just moves the queue. Dagger's founder argues the reverse: QA itself will be automated and triggered from CI. An ex-QA engineer pushes back that QA exists to find the problems nobody thought to write a test for. The two end up agreeing that agents help with review but don't replace a human trying to break the product.",
         "quotes": [
           {
             "author": "bluGill",
@@ -74,7 +74,7 @@
       },
       {
         "title": "Self-host the runners",
-        "synthesis": "Nobody was surprised that leaving GitHub's hosted runners gave the first big speedup. Commenters report CI under one or two minutes on their own boxes (OVH machines with warm LXD containers, a spare MacBook, a single beefy server with a persistent node_modules) and recommend hosted alternatives like Blacksmith and RWX. The counterpoint is organizational. Big companies have spent years moving off on-prem and away from the ops staff it needs.",
+        "synthesis": "Nobody was surprised that leaving GitHub-hosted runners gave the first big speedup. Commenters report CI under one or two minutes on their own machines: OVH boxes with warm LXD containers, a spare MacBook, one beefy server. Others recommend hosted alternatives like Blacksmith and RWX. The counterpoint is organizational: big companies have spent years moving off on-prem and away from the ops staff it needs.",
         "quotes": [
           {
             "author": "wereHamster",
@@ -105,13 +105,13 @@
         ]
       }
     ],
-    "consensus": "Leaving GitHub-hosted runners and cutting per-job setup are the obvious first wins, and a test suite growing 4x in a year is a warning sign in its own right.",
+    "consensus": "Leaving GitHub-hosted runners and cutting per-job setup are the obvious first wins. A test suite growing 4x in a year is a warning sign in its own right.",
     "dissent": "A sizable group says agent-driven speed hasn't made software better for users, so making CI faster for it is optimizing the wrong thing. Others answer that the gains are real but land in internal quality and reliability, where nobody outside sees them.",
     "contrarian": {
       "author": "miki123211",
       "text": "Accessibility work (on somebody else's product) is a lot of demotivating and extremely difficult reverse engineering drudge work with a verifiable success criterion, and this is what AI excels at. Large-scale software dev is all about judgment and taste, and here, AI is not doing so well.",
       "commentId": 49798155,
-      "why": "Rather than arguing whether AI helps, it names the kind of work it helps with, verifiable drudgery, which explains why blind users and emulator projects see big gains while flagship products don't."
+      "why": "Rather than arguing whether agents help, it names the work they help with: verifiable drudgery. That explains why blind users and emulator projects see big gains while flagship products don't."
     }
   },
   "digestedAt": "2026-10-17T14:38:44.000Z"

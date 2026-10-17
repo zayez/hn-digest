@@ -9,24 +9,24 @@
   "points": 161,
   "commentCount": 54,
   "readingMinutes": 5,
-  "tldr": "Product teams should refuse generic platforms like in-app document hubs and notification centres and keep deleting features, because the cost that kills you is years of maintenance, not the build. Showing stakeholders that running cost is what gets them to let go.",
+  "tldr": "Liam Nugent argues that product teams should refuse generic platforms like in-app document hubs and notification centres. They should also keep deleting features. The cost that kills you is years of maintenance, not the build. Showing stakeholders that running cost is what gets them to let go.",
   "article": {
     "keyPoints": [
-      "In consumer finance apps, a document hub or a bell-icon notification centre starts as a small fix for legacy PDFs and compliance rules, then grows as each stakeholder adds one more thing until the team has rebuilt a bad Google Drive or Gmail.",
-      "The author argues that the build cost doesn't persuade people to drop such projects. Laying out the running cost over years, including breakage from every iOS and Android release, does.",
-      "Killing the platform still leaves the communication problem, so the author takes each use case on its own and usually picks something simple or already existing, even if imperfect. The author has also seen a notification centre get built that couldn't carry the message it was built for.",
-      "Removal is undervalued by organisations and by human cognition alike. Gerry McGovern found that cutting 80 to 90 percent of a site's content raised sales and lowered support calls, and Klotz et al. showed in Nature that people overlook subtractive fixes even when they are better.",
-      "Cheap building with AI agents is no reason to build more. The author would point agents at pruning and maintenance instead.",
-      "Steve Jobs' 1997 cut of Apple down to four products in a two-by-two grid is the author's model: pooling engineers on a few things, not a permanent cap on the product count."
+      "In consumer finance apps, a document hub or a bell-icon notification centre starts as a small fix for legacy PDFs and compliance rules. It grows as each stakeholder adds one more thing. Soon the team has rebuilt a bad Google Drive or Gmail.",
+      "Nugent argues that the build cost doesn't persuade people to drop such projects. Laying out the running cost over years does, including breakage from every iOS and Android release.",
+      "Killing the platform still leaves the communication problem. So Nugent takes each use case on its own. He usually picks something simple or already existing, even if imperfect. He has also seen a notification centre get built that couldn't carry the message it was built for.",
+      "Organisations and human cognition both undervalue removal. Gerry McGovern found that cutting 80 to 90 percent of a site's content raised sales and lowered support calls. In Nature, Klotz et al. showed that people overlook subtractive fixes even when they are better.",
+      "Cheap building with AI agents is no reason to build more. Nugent would point agents at pruning and maintenance instead.",
+      "Nugent's model is Steve Jobs' 1997 cut of Apple down to four products in a two-by-two grid. The point was pooling engineers on a few things, not a permanent cap on the product count."
     ],
-    "whyItMatters": "Short and readable in five minutes. Product managers and engineering leads fighting a document-hub or notification-centre request will get the argument about running costs and the McGovern and Klotz sources to cite, which the summary only names."
+    "whyItMatters": "Short and readable in five minutes. Product managers and engineering leads fighting a document-hub or notification-centre request will get the running-cost argument. They also get the McGovern and Klotz sources to cite, which the summary only names."
   },
   "comments": {
-    "overview": "A friendly thread of people who already agree, so most of it is war stories and tactics rather than debate. The live arguments were about why saying no goes unrewarded, how to make a rejected idea stay dead, and whether one of the article's two examples was a bad pick.",
+    "overview": "A friendly thread of people who already agree, so most of it is war stories and tactics rather than debate. The live arguments were about why saying no goes unrewarded and how to make a rejected idea stay dead. Some also asked whether one of the article's two examples was a bad pick.",
     "themes": [
       {
         "title": "Nobody is on the hook for maintenance",
-        "synthesis": "The most-developed point was that maintenance, not scope creep, eats team capacity, and the people who add features rarely pay for them. alentred compared software to abandoned civic projects in 1960s towns and said rejecting work makes engineering look like a buzzkill. bunderbunder blamed short tenures, which create a moral hazard, and told of a product owner who said outright that the upkeep would be some junior PM's problem after launch. piker and bmitc doubted the town analogy, blaming textile jobs moving to Asia and the decline of small-town America instead.",
+        "synthesis": "The most-developed point was that maintenance, not scope creep, eats team capacity, and the people who add features rarely pay for them. alentred compared software to abandoned civic projects in 1960s towns and said rejecting work makes engineering look like a buzzkill. bunderbunder blamed short tenures, citing a product owner who said outright that upkeep would be some junior PM's problem after launch. piker and bmitc doubted the town analogy, blaming textile jobs moving to Asia and the decline of small-town America instead.",
         "quotes": [
           {
             "author": "bunderbunder",
@@ -42,7 +42,7 @@
       },
       {
         "title": "\"Custom reporting\" is the classic vague request",
-        "synthesis": "The biggest subthread took one example: customers asking for \"custom reporting\". Most read it as a sign the app doesn't answer a specific question, so the fix is to ask what the question is and build that. Terr_ added that reporting can become a side door around product design, such as logging a field so support can paste old values back, when the app really needs a revisions feature. Others said it just means \"give us the raw data for Excel\" and suggested an API.",
+        "synthesis": "The biggest subthread took one example, customers asking for \"custom reporting\", which most read as a sign the app misses a specific question. The fix is to ask what the question is and build that. Terr_ said reporting can stand in for product design, like logging a field so support can restore old values instead of building revisions. Others said it just means \"give us the raw data for Excel\" and suggested an API.",
         "quotes": [
           {
             "author": "tytho",
@@ -58,7 +58,7 @@
       },
       {
         "title": "Who gets to say no, and how to make it stick",
-        "synthesis": "mmonaghan doubted that any one person knows what \"makes the boat go faster\", while Retric said programmers end up making many of these calls anyway because nobody else cares about the details. A PM asked how to kill an idea that keeps coming back through brainstorms, sales calls and sprints planned while they're on vacation. A former PM's answer was to close it as a ticket with the reasoning attached, merge repeats into it, and offer the cost and blame for the feature to whoever pushes it.",
+        "synthesis": "mmonaghan doubted any single person knows what \"makes the boat go faster\", and Retric said programmers make these calls anyway, since nobody else cares. A PM asked how to kill an idea that keeps coming back through brainstorms, sales calls and sprints planned while they're on vacation. A former PM said to close it as a ticket with the reasoning attached, and merge repeats into it. Then offer the feature's cost and blame to whoever pushes it.",
         "quotes": [
           {
             "author": "ungreased0675",
@@ -90,7 +90,7 @@
       },
       {
         "title": "User expectations and commodity features",
-        "synthesis": "Some comments complicated the \"just don't build it\" line. pedalpete said sleep-tracking users expect a hypnogram and sleep score that tell them little, so the question is how to change expectations. jillesvangurp said features like sign-in add no value but subtract plenty when done badly, and _the_inflator called \"not building\" a pose unless it serves a product strategy. Pxtl backed the article with outages caused by a hastily added document store, notification system, and once user avatars.",
+        "synthesis": "Some comments complicated the \"just don't build it\" line. pedalpete said sleep-tracking users expect a hypnogram and sleep score that tell them little, so the question is how to change expectations. jillesvangurp said features like sign-in add no value but subtract plenty when done badly, and _the_inflator called \"not building\" a pose without a product strategy. Pxtl backed the article with outages caused by a hastily added document store, notification system, and once user avatars.",
         "quotes": [
           {
             "author": "Pxtl",
@@ -106,12 +106,12 @@
       }
     ],
     "consensus": "Saying no and removing features pays off, and the main reason is the long tail of maintenance. Organisations reward launches, so the people who cut scope rarely get credit.",
-    "dissent": "Some argued that the problem is building the wrong thing, not building at all, and that a no only works as part of a product strategy. Others said who decides is murkier than the article suggests and that user expectations can't simply be ignored.",
+    "dissent": "Some argued that the problem is building the wrong thing, not building at all. They added that a no only works as part of a product strategy. Others said who decides is murkier than the article suggests, and that user expectations can't simply be ignored.",
     "contrarian": {
       "author": "CoolestBeans",
       "text": "I agree with the sentiment here but if you are building anything that relates to finance for the love of god please have a page that's just a list of PDFs of every document that is considered formal communication from the institution. It should have the name of the document, the date it was \"sent\", and a download link.",
       "commentId": 49751094,
-      "why": "It points out that the author's lead example of a feature to refuse, the finance-app document list, is something customers actually need, and that a plain append-only list avoids the Google Drive sprawl the author warns about."
+      "why": "It notes that Nugent's lead example, the finance-app document list, is something customers need, and a plain append-only list avoids the Google Drive sprawl."
     }
   },
   "digestedAt": "2026-10-14T21:07:05.000Z"

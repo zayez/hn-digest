@@ -8,14 +8,14 @@
   "postedAt": "2026-09-07T00:22:04.000Z",
   "points": 940,
   "commentCount": 1012,
-  "tldr": "A Gamers Nexus investigation of LG's webOS smart TVs finds content recognition that fingerprints whatever is on screen, scans that catalog other devices on the home network, and several microphones the owner can't fully switch off, while LG ad executives tell advertisers they \"own the glass\" and the living room. What it doesn't clearly show is the TV recording the room on its own. Most of the microphone captures came after the team rooted the set.",
+  "tldr": "A Gamers Nexus investigation of LG's webOS smart TVs finds content recognition that fingerprints whatever is on screen. The TVs also scan and catalog other devices on the home network. They have several microphones the owner can't fully switch off. LG ad executives tell advertisers they \"own the glass\" and the living room. The video doesn't clearly show the TV recording the room on its own. Most of the microphone captures came after the team rooted the TV.",
   "articleNote": "Video (about 2 h 15 min); not summarized. The digest covers the HN discussion, which leans on the video and on a Notebookcheck write-up of it.",
   "comments": {
-    "overview": "A huge, angry thread. Most of it agrees LG crossed a line and argues over three things: whether a terms-of-service clause can make an owner responsible for wiretapping their guests, whether keeping the TV offline is enough, and why fines haven't stopped this. A smaller group pushes back that the video and the coverage blur what LG does by default with what a rooted TV can be made to do.",
+    "overview": "A huge, angry thread. Most of it agrees LG crossed a line and argues over three questions. Can a terms-of-service clause make an owner responsible for wiretapping their guests? Is keeping the TV offline enough? Why haven't fines stopped this? A smaller group says the video and the Notebookcheck write-up blur LG's default behavior with what a rooted TV can do.",
     "themes": [
       {
         "title": "Can a ToS make you responsible for wiretapping your guests?",
-        "synthesis": "The top thread opens on LG's terms, which make the owner get consent from everyone whose voice the device might pick up. One commenter pointed out that clause covers LG's appliances, but another found the smart TV terms say the same thing, plus six months of voice retention. Most commenters think the clause is unenforceable: guests, children and neighbors never agreed to anything, and in all-party-consent states recording them without consent is a crime. A minority said pushing consent onto whoever controls the room is reasonable, the way a Zoom host answers for who walks into the frame, and that the real problem is how much data LG collects.",
+        "synthesis": "The top thread opens on LG's terms, which make the owner get consent from everyone whose voice the device might pick up. One commenter said that clause covers LG's appliances, but another found the same rule in the smart TV terms, plus six months of voice retention. Most think the clause is unenforceable, since guests, children and neighbors never agreed, and recording them is a crime in all-party-consent states. A minority found it reasonable for whoever controls the room to get consent, as a Zoom host does, and blamed how much data LG collects.",
         "quotes": [
           {
             "author": "Animats",
@@ -31,7 +31,7 @@
       },
       {
         "title": "Is keeping it offline enough?",
-        "synthesis": "The most common advice is to never give the TV a network and to stream from an Apple TV or another box. Many replies say that won't hold, because the set could store logs and upload them later through a neighbor's open Wi-Fi, an ISP hotspot like xfinitywifi, Amazon Sidewalk, or a cellular modem added in some future model. Skeptics answer that nobody has shown an LG doing this and that it's easy to test. One owner runs an open guest network and has never seen his LG on it, and others say most buyers connect the TV anyway, so LG has no reason to sneak around. The firmest risk anyone named is a delayed upload, once someone connects the set years later.",
+        "synthesis": "The most common advice is to keep the TV off the network and stream from an Apple TV or another box. Many replies say the TV could store logs and upload them later, through a neighbor's open Wi-Fi, xfinitywifi, Amazon Sidewalk or a future cellular modem. Skeptics answer that nobody has shown an LG doing this, and one owner with an open guest network has never seen his LG on it. The firmest risk anyone named is a delayed upload, once someone connects the TV years later.",
         "quotes": [
           {
             "author": "Hamuko",
@@ -47,7 +47,7 @@
       },
       {
         "title": "Did the video overstate the microphone story?",
-        "synthesis": "Several viewers who watched the full video say the strongest claim, that the TV logs room audio while it looks switched off, isn't what it shows. In their reading, the audio recordings come after the team rooted the TV and ran the recording tool themselves, or after someone started voice search, and the Notebookcheck article stretched that further. Defenders answer that the video set out to show capability, not proof of upload. They point out that the microphone switch covers only one of the microphones, that LG blocks inspection of its encrypted traffic, and that its ad executives brag on camera about knowing who is in an \"LG household.\" Even the critics say the content recognition and network scanning shown before the rooting are bad on their own.",
+        "synthesis": "Several viewers of the full video say it doesn't show the strongest claim, that the TV logs room audio while it looks switched off. The audio recordings came after the team rooted the TV and ran the recording tool, or after someone started voice search. Defenders say the video set out to show capability, that the switch covers only one microphone, and that LG blocks inspection of its traffic. Even the critics say the content recognition and network scanning shown before the rooting are bad on their own.",
         "quotes": [
           {
             "author": "ptx",
@@ -63,7 +63,7 @@
       },
       {
         "title": "Working around it: firewalls, surgery, dumb screens",
-        "synthesis": "Owners trade setups. They put the TV on an isolated VLAN with egress blocked, redirect DNS (though hardcoded IPs and DNS-over-HTTPS get around Pi-hole), root it with rootmy.tv or OpenLGTV, or open the case and unplug the Wi-Fi and Bluetooth board. Going without a smart TV costs something. Commercial signage displays with no radios cost about twice as much, and the cheap dumb brands like Sceptre have worse panels, so the best OLEDs only come with the spyware attached. A side fight asked why anyone connects a TV at all. Others answered that ordinary buyers follow the setup screen and never hear any of this.",
+        "synthesis": "Owners trade setups: an isolated VLAN with egress blocked, DNS redirects, rooting with rootmy.tv or OpenLGTV, or unplugging the Wi-Fi and Bluetooth board. Commercial signage displays with no radios cost about twice as much, and cheap dumb brands like Sceptre have worse panels. So the best OLEDs only come with the spyware attached. A side fight asked why anyone connects a TV at all, and others answered that ordinary buyers follow the setup screen.",
         "quotes": [
           {
             "author": "dillutedfixer",
@@ -79,7 +79,7 @@
       },
       {
         "title": "Why nothing happens to LG",
-        "synthesis": "Many commenters ask why a company can do at scale what would get a person arrested for bugging a house. The usual answer is that fines are priced in as a cost of business, so proposals include fines tied to revenue or market cap and jail time for the executives who signed off. Europeans expect GDPR and the Cyber Resilience Act to bite. Americans are gloomier, citing forced arbitration and weak enforcement, though a few hope LG's own wealthy customers and their lawyers will force action.",
+        "synthesis": "Many commenters ask why a company can do at scale what would get a person arrested for bugging a house. The usual answer is that fines are a cost of business, so commenters proposed fines tied to revenue and jail for executives who signed off. Europeans expect GDPR and the Cyber Resilience Act to bite. Americans are gloomier, citing forced arbitration and weak enforcement, though a few hope LG's own wealthy customers and their lawyers will force action.",
         "quotes": [
           {
             "author": "account42",
@@ -94,13 +94,13 @@
         ]
       }
     ],
-    "consensus": "LG's ad business, which fingerprints what's on screen, maps devices on the home network and has executives boasting that they \"own the living room,\" is indefensible. The practical defense is to keep the TV offline and stream from a separate box. Because the best panels come only in smart TVs, buyers can't solve this by choosing another product. Most commenters want regulation with criminal penalties.",
-    "dissent": "A vocal minority says the video and the Notebookcheck write-up mix LG's default behavior with what a rooted TV can be made to do, and that no one has shown audio leaving the TV unprompted. Others call the fear of TVs sneaking onto open Wi-Fi or Sidewalk a rumor nobody has tested, since most owners connect the set anyway.",
+    "consensus": "LG's ad business is indefensible. It fingerprints what's on screen, maps devices on the home network, and has executives boasting that they \"own the living room.\" The practical defense is to keep the TV offline and stream from a separate box. Because the best panels come only in smart TVs, buyers can't solve this by choosing another product. Most commenters want regulation with criminal penalties.",
+    "dissent": "A vocal minority says the video and the Notebookcheck write-up mix LG's default behavior with what a rooted TV can do. No one, they say, has shown audio leaving the TV unprompted. Others call the fear of TVs sneaking onto open Wi-Fi or Sidewalk a rumor nobody has tested, since most owners connect the TV anyway.",
     "contrarian": {
       "author": "hunter2_",
       "text": "If I buy a device that can record audio, and place it in my home where unsuspecting guests are recorded by it, whether that recording is transmitted to the manufacturer or stays within my home seems irrelevant.",
       "commentId": 49605953,
-      "why": "The thread treats on-device processing or an offline TV as the fix, but under all-party consent laws the recording itself may be the offense, and the person in legal trouble would be the owner."
+      "why": "The thread treats on-device processing or an offline TV as the fix. But under all-party consent laws the recording itself may be the offense, and the owner would be the one in legal trouble."
     }
   },
   "digestedAt": "2026-10-12T22:26:08.000Z"

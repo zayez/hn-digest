@@ -9,23 +9,23 @@
   "points": 762,
   "commentCount": 284,
   "readingMinutes": 1,
-  "tldr": "Anthropic publishes the system prompts behind claude.ai and its mobile apps, one page per model from Claude Haiku 3 to Opus 5.5. Readers found the prompts have grown from about 300 words to over 3,000, and argued over whether that bulk helps the model or just eats context.",
+  "tldr": "Anthropic publishes the system prompts behind claude.ai and its mobile apps, with one page for each of 22 models. Readers found the prompts have grown from about 300 words to over 3,000. They argued over whether that bulk helps the model or just eats context.",
   "article": {
     "keyPoints": [
-      "The claude.ai web interface and the mobile apps send Claude a system prompt at the start of every conversation, with facts like the current date and behavior rules such as putting code snippets in Markdown.",
-      "Anthropic updates the prompt from time to time, and the updates do not apply to the Claude API.",
+      "The claude.ai web interface and the mobile apps send Claude a system prompt at the start of every conversation. It gives facts like the current date. It also sets behavior rules, such as putting code snippets in Markdown.",
+      "Anthropic updates the prompt from time to time. The updates do not apply to the Claude API.",
       "Older models can have several dated prompt versions. From the Claude 4.6 generation on, each model ID is one fixed snapshot with a single entry.",
-      "The page links 22 per-model prompt pages, from Claude Haiku 3 and Opus 3 up to Haiku, Sonnet and Opus 5.5 and Fable 5.1."
+      "The index links 22 per-model prompt pages, from Claude Haiku 3 and Opus 3 up to Haiku, Sonnet and Opus 5.5 and Fable 5.1."
     ],
-    "whyItMatters": "The index itself is a table of contents. The per-model pages hold the actual prompts, and anyone who wants to see how Anthropic steers the consumer chat product, or what changed between models, should read those. Simon Willison keeps them as a git history so the diffs are easy to follow."
+    "whyItMatters": "The index itself is a table of contents. The per-model pages hold the actual prompts. Read those to see how Anthropic steers the consumer apps, or what changed between models. Simon Willison keeps them as a git history, so the diffs are easy to follow."
   },
-  "articleNote": "Index page listing per-model prompt pages; the key points describe the index, and the digest leans on the HN discussion of the prompts themselves.",
+  "articleNote": "Index page listing per-model prompt pages. The key points describe the index. The digest leans on the HN discussion of the prompts themselves.",
   "comments": {
-    "overview": "Commenters read the linked prompts closely and quoted lines from them, mostly to mock instructions the model ignores or to complain about length. The biggest single thread, though, was off topic: a user's claim that HN buries AI-critical stories drew 85 replies, most of them explaining flagging and the comment-to-upvote penalty instead.",
+    "overview": "Commenters read the linked prompts closely and quoted lines from them, mostly to mock instructions Claude ignores or to complain about length. The biggest single thread was off topic, though. A user's claim that HN buries AI-critical stories drew 85 replies, most of them explaining flagging and the comment-to-upvote penalty.",
     "themes": [
       {
         "title": "The prompts are too long",
-        "synthesis": "Many said the prompts have bloated, with early ones around 300 words and the latest past 3,000, about 22k characters before tool definitions. Critics called much of it a legal cover document that wastes the most-attended part of the context and may hurt results, pointing to a benchmark where the minimal Pi harness beat Claude Code. Others replied that a shared prefix is cached, so the cost is small, and compared the growth to building codes that accrete after each accident.",
+        "synthesis": "Many said the prompts have bloated, with early ones around 300 words and the latest past 3,000, about 22k characters before tool definitions. Critics called much of it a legal cover document that wastes the most-attended part of the context and may hurt results. They pointed to a benchmark where the minimal Pi harness beat Claude Code. Others replied that a shared prefix is cached, so the cost is small, and compared the growth to building codes that accrete after each accident.",
         "quotes": [
           {
             "author": "simjnd",
@@ -41,7 +41,7 @@
       },
       {
         "title": "Why not train it into the weights",
-        "synthesis": "Several asked why users pay for these tokens instead of Anthropic baking the behavior in. The answers were practical. A prompt can change overnight, while retraining is slow and expensive; one model serves chat, API, coding and government customers with different needs; and Opus cannot be trained to know about a Fable handoff that did not exist yet. Simon Willison added that these prompts only apply to the consumer apps, not the API, though others noted chat and Claude Code share one usage allowance.",
+        "synthesis": "Several asked why users pay for these tokens instead of Anthropic training the behavior into the weights. The answers were practical: a prompt changes overnight, retraining is slow and expensive, and one model serves chat, API, coding and government customers. Nor can Opus be trained to know about a Fable handoff that did not exist yet. Simon Willison noted the prompts apply only to the consumer apps, and others replied that chat and Claude Code share one usage allowance.",
         "quotes": [
           {
             "author": "dragonwriter",
@@ -57,7 +57,7 @@
       },
       {
         "title": "Rules the model ignores",
-        "synthesis": "The line banning \"genuinely\", \"honestly\" and \"straightforward\" got laughed at in several separate threads, and so did the instruction to be brief and concise. Users said Claude still does both. Some guessed the model reads the line as a description of itself rather than an order, others that verbosity is trained in for benchmarks and a prompt cannot undo it. One user said Claude's answers are not too long but too dense.",
+        "synthesis": "Several threads laughed at the line banning \"genuinely\", \"honestly\" and \"straightforward\", and at the order to be brief, which users say Claude still ignores. Some guessed Claude reads the line as a description of itself, not an order. Others guessed that benchmark training builds in verbosity, which a prompt cannot undo. One user said Claude's answers are not too long but too dense.",
         "quotes": [
           {
             "author": "tdeck",
@@ -73,7 +73,7 @@
       },
       {
         "title": "What the prompts reveal",
-        "synthesis": "Readers dug out news buried in the text. The Opus 5 prompt explains the June 2026 suspension of Fable 5 and Mythos 5 under export controls, and tells Opus that some Fable requests get routed to it by safeguards. Older prompts hardcode the 2024 US election result. Some joked that telling Opus it ranks below Mythos explains an \"Opus 5 nerf\", and others pointed out stale claims about Mythos availability. Simon Willison regretted that Anthropic omits the tool definitions and the Claude Code prompts, which others extract with a logging proxy.",
+        "synthesis": "The Opus 5 prompt explains the June 2026 suspension of Fable 5 and Mythos 5 under export controls. It also tells Opus that safeguards route some Fable requests to it. Older prompts hardcode the 2024 US election result. Some joked that telling Opus it ranks below Mythos explains an \"Opus 5 nerf\", and others pointed out stale claims about Mythos availability. Simon Willison regretted that Anthropic omits the tool definitions and the Claude Code prompts, which others extract with a logging proxy.",
         "quotes": [
           {
             "author": "simonw",
@@ -104,13 +104,13 @@
         ]
       }
     ],
-    "consensus": "The prompts have grown a lot, and several of their style rules, on brevity and on words like \"honestly\", visibly fail to change how Claude writes. Most also agreed the system prompt is one layer among several, with training and separate classifiers doing the real safety work.",
-    "dissent": "A minority defended the length: the prefix is cached so the cost is small, nobody has shown it hurts quality, and some commenters found the behavioral clauses useful in practice.",
+    "consensus": "The prompts have grown a lot. Several of their style rules, on brevity and on words like \"honestly\", visibly fail to change how Claude writes. Most also agreed the system prompt is one layer among several, with training and separate classifiers doing the real safety work.",
+    "dissent": "A minority defended the length. The prefix is cached, so the cost is small, and nobody has shown it hurts quality. Some commenters also found the behavioral clauses useful in practice.",
     "contrarian": {
       "author": "y1zhou",
       "text": "Maybe these longer system prompts are part of the reason why we can give the models shorter AGENTS.md files? A lot of what people commonly write in their *.md instructions may be already covered.",
       "commentId": 49325668,
-      "why": "It turns the complaint around: the advice to keep project instruction files short may only work because the vendor prompt already covers the basics."
+      "why": "It turns the complaint around. The advice to keep project instruction files short may only work because the system prompt already covers the basics."
     }
   },
   "digestedAt": "2026-10-11T16:53:07.000Z"

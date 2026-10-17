@@ -9,23 +9,23 @@
   "points": 1255,
   "commentCount": 353,
   "readingMinutes": 2,
-  "tldr": "Fully justified monospace text looks bad because spaces can't be split evenly and hyphens stand out. In the late 1990s one Super Metroid guide writer avoided both by picking words so every line ended exactly at the margin, for 17,000 words, by hand.",
+  "tldr": "Fully justified monospace text looks bad because spaces can't be split evenly and hyphens stand out. In the late 1990s, rs1n avoided both in a Super Metroid guide by picking words so every line ended exactly at the margin. He did it by hand, for 17,000 words.",
   "article": {
     "keyPoints": [
-      "Monospace handles left and right alignment fine, but centering has no half space to work with, and full justification leaves gaps too wide to spread evenly.",
-      "Hyphenation, the usual fix in print, looks loud in monospace and breaks copy and paste, so plain-text files rarely use full justification.",
-      "The remaining option is to rewrite the text until each line adds up to the exact width, and rs1n did this through a 17,000-word Super Metroid guide with no doubled spaces anywhere.",
-      "His FAQ says no program was involved: he chose words so everything lined up, working in an ASCII editor.",
-      "Marcin Wichary notes that book editors already rewrite to kill widows and orphans, and that UI writers do a smaller version of this when they trim a button label or tooltip to fit a fixed width."
+      "Monospace handles left and right alignment fine. Centering has no half space to work with. Full justification leaves gaps too wide to spread evenly.",
+      "Hyphenation is the usual fix in print. In monospace the hyphens stand out and break copy and paste. So plain-text files rarely use full justification.",
+      "The remaining option is to rewrite the text until each line adds up to the exact width. rs1n did this through a 17,000-word Super Metroid guide, with no doubled spaces anywhere.",
+      "His FAQ says no program was involved. He chose words so everything lined up, working in an ASCII editor.",
+      "Marcin Wichary notes that book editors already rewrite text to avoid widows and orphans. UI writers do a smaller version of this when they trim a button label or tooltip to fit a fixed width."
     ],
     "whyItMatters": "The post is two minutes long and mostly pictures. Open it to see the rendered examples of each alignment, set in a VGA-style bitmap font, and a screenshot of the guide itself. The prose alone doesn't show how odd the bad cases look."
   },
   "comments": {
-    "overview": "A delighted, rambling thread. Most commenters admired the feat, and many admitted they reword their own code comments, commit messages and papers to tidy the right edge. Long side threads covered an X-Files anecdote, equal-length variable names, whether LLMs could do this, and the guide's misspelling of \"missiles\", which turned into a long argument about English phonetics.",
+    "overview": "Most commenters were delighted by the feat, and many admitted they reword their own code comments, commit messages and papers to tidy the right edge. Side threads covered an X-Files anecdote, equal-length variable names and whether LLMs could do this. The guide's misspelling of \"missiles\" set off a long argument about English phonetics.",
     "themes": [
       {
         "title": "Chris Carter's widowless X-Files scripts",
-        "synthesis": "The biggest thread started from Gillian Anderson's account of Chris Carter writing dialogue with no widows, which she linked to the show's slightly backwards cadence. Skeptics checked fan-retyped scripts and found nothing. tobr then pulled a scanned shooting script for I Want to Believe and found nearly every dialogue block ending near the right margin. rectang argued that avoiding widows is a page-break fix that can't produce a cadence, while others said the cadence came from bending speech to fit a shape. A side argument over what \"widow\" and \"orphan\" mean got an answer from the author of a TUGboat article on the terms, who said there are dozens of conflicting definitions.",
+        "synthesis": "The biggest thread started from Gillian Anderson's account of Chris Carter writing dialogue with no widows, which she linked to the show's slightly backwards cadence. Skeptics found nothing in fan-retyped scripts, but tobr found nearly every dialogue block ending near the margin in a scanned I Want to Believe script. rectang said avoiding widows is a page-break fix that can't produce a cadence; others said bending speech to fit a shape did. Asked what \"widow\" even means, the author of a TUGboat article on the terms said there are dozens of conflicting definitions.",
         "quotes": [
           {
             "author": "tobr",
@@ -41,7 +41,7 @@
       },
       {
         "title": "People who already do this",
-        "synthesis": "A long run of confessions. People reflow doc comments to 80 columns and tweak words until the edge looks clean, trim words in grant applications and conference abstracts to win back a line, and justify their email by hand. Other examples came up too: Laravel's three-line comments that each shrink by three characters, the procps top maintainer's justified commit messages, and Project Gutenberg founder Michael Hart's equal-length emails. lproven wrote his replies justified and said it adds about 10% to his typing time. A conference reviewer said messy first-page alignment usually meant the whole paper was rushed.",
+        "synthesis": "People confessed to reflowing doc comments until the edge looks clean, and to trimming grant applications and abstracts to win back a line. Examples included Laravel's three-line comments, each three characters shorter, the procps top maintainer's justified commit messages, and Michael Hart's equal-length emails. lproven justifies his replies by hand and says it adds about 10% to his typing time. A conference reviewer said messy first-page alignment usually meant the whole paper was rushed.",
         "quotes": [
           {
             "author": "boothby",
@@ -57,7 +57,7 @@
       },
       {
         "title": "Constraint as a creative tool, or a tax on clarity",
-        "synthesis": "Many read the guide as constrained writing in the tradition of Oulipo, Perec's novel without the letter \"e\", and Eno's Oblique Strategies. Someone posted Douglas Hofstadter's account of rewriting passages for page breaks and word spacing until the layout shaped the ideas themselves. Others said the constraint optimizes the wrong thing. It forces length rather than readability, it adds or drops commas to make lines fit, and it makes every later edit expensive. One reader of procps found the justified help text clunky enough that he patches it out of his builds.",
+        "synthesis": "Many read the guide as constrained writing in the tradition of Oulipo, Perec's novel without the letter \"e\", and Eno's Oblique Strategies. Someone posted Douglas Hofstadter's account of rewriting passages for page breaks and word spacing until the layout shaped the ideas themselves. Others said the constraint forces length over readability, adds or drops commas to make lines fit, and makes every later edit expensive. One reader of procps found the justified help text clunky enough that he patches it out of his builds.",
         "quotes": [
           {
             "author": "quuxplusone",
@@ -84,7 +84,7 @@
       },
       {
         "title": "Could an LLM do it?",
-        "synthesis": "Several pointed to Tom7's BoVeX and its \"Badness 0\" video, where a language model rewrites text for justification. On plain prompting, one commenter said models see tokens rather than columns and so can't count line width. They suggested masking any token that would overflow the line, and wrote their reply justified to show it could be done. Others noted that LLM watermarking also steers word choice toward a hidden target. gkoberger worried that once this is cheap, nobody can tell whether a writer cared or ran a prompt.",
+        "synthesis": "Several pointed to Tom7's BoVeX and its \"Badness 0\" video, where a language model rewrites text for justification. One commenter said models see tokens, not columns, and suggested masking any token that would overflow; their reply was itself justified. Others noted that LLM watermarking also steers word choice toward a hidden target. gkoberger worried that once this is cheap, nobody can tell whether a writer cared or ran a prompt.",
         "quotes": [
           {
             "author": "urams",
@@ -100,7 +100,7 @@
       }
     ],
     "consensus": "The guide is an impressive, slightly obsessive piece of craft, and a lot of technical writers quietly do smaller versions of the same thing.",
-    "dissent": "A sizable minority think full justification is bad for reading in the first place, since ragged edges help the eye keep its place. They also argued that word choice bent to fit a width gives clunkier prose, and that in software, localization and accessibility zoom wreck any hand-fitted text anyway.",
+    "dissent": "A sizable minority think full justification hurts reading in the first place, since ragged edges help the eye keep its place. They argued that word choice bent to fit a width gives clunkier prose. In software, they added, localization and accessibility zoom wreck any hand-fitted text anyway.",
     "contrarian": {
       "author": "gyomu",
       "text": "I did, and then I got a customer email about how they were using a display-zoom OS accessibility feature and things were truncated on their device.",

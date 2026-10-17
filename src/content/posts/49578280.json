@@ -8,14 +8,14 @@
   "postedAt": "2026-09-05T16:45:02.000Z",
   "points": 318,
   "commentCount": 139,
-  "tldr": "Sylvain Conchon and Jean-Christophe Filliâtre's French textbook on programming in OCaml is now free in English, translated by Urmila Nair with OCaml Software Foundation funding and released under CC BY-SA 4.0 as PDF and EPUB with code. Readers who worked through it say it moves too fast for true beginners and suits an algorithms course better.",
-  "articleNote": "Landing page with download links only; the tldr describes the book as the page presents it, and the digest covers the discussion.",
+  "tldr": "Sylvain Conchon and Jean-Christophe Filliâtre's French textbook on programming in OCaml is now free in English. Urmila Nair translated it, with funding from the OCaml Software Foundation. It is out under CC BY-SA 4.0, as PDF and EPUB with code. Commenters say it moves too fast for true beginners. Its own introduction aims it at an algorithms course.",
+  "articleNote": "Landing page with download links only. The tldr describes the book as the page presents it, and the digest covers the discussion.",
   "comments": {
-    "overview": "Friendly toward the book and OCaml, but most of the thread wandered. The longest branch argued over whether a first language should be an ML or C, and whether C still says anything true about hardware. A second big branch asked why anyone should learn a language at all when LLMs write the code.",
+    "overview": "The thread was friendly toward the book and OCaml, but most of it wandered. The longest branch argued over whether a first language should be an ML or C. It also asked whether C still says anything true about hardware. A second big branch asked why anyone should learn a language at all when LLMs write the code.",
     "themes": [
       {
         "title": "ML or C as the first language",
-        "synthesis": "The top comment says an ML should be every computer scientist's first language. The C camp answers that ML hides memory layout, copying and references, and that C lacks just enough features to force students to learn them. Skeptics, citing Chisnall's \"C Is Not a Low-level Language\", say C's machine model is decades out of date. One embedded veteran calls C a handicap for learning assembly and would rather start with an ML or even Fortran. A Paris-Cité teacher describes a middle path: Java in first year, then C and Caml side by side.",
+        "synthesis": "The top comment says an ML should be every computer scientist's first language. The C camp answers that C lacks just enough features to force students to learn memory layout, copying and references. Skeptics, citing Chisnall's \"C Is Not a Low-level Language\", say C's machine model is decades out of date, and one embedded veteran prefers even Fortran. A Paris-Cité teacher describes a middle path, with Java in first year, then C and Caml in second year.",
         "quotes": [
           {
             "author": "tialaramex",
@@ -31,7 +31,7 @@
       },
       {
         "title": "Why learn a language when LLMs write code",
-        "synthesis": "One reader asked whether learning OCaml still makes sense now that LLMs already know it. Most replies said yes, for different reasons. Some said you cannot steer or check an LLM's code without a mental model of it. Others compared programming to baking or playing an instrument, where doing it by hand is the reward and makes you better with the machine too. A few pointed out that OCaml jobs were scarce long before LLMs, so people always learned it for the way of thinking. A side fight broke out over phone time and whether people are too stretched to study.",
+        "synthesis": "One reader asked whether learning OCaml still makes sense now that LLMs already know it, and most replies said yes. Some said you cannot steer or check an LLM's code without a mental model of it. Others compared it to kneading dough by hand, which teaches the craft and makes you better with the machine too. A few noted that OCaml jobs were scarce long before LLMs, so people always learned it for the way of thinking.",
         "quotes": [
           {
             "author": "zem",
@@ -47,7 +47,7 @@
       },
       {
         "title": "OCaml as a language for coding agents",
-        "synthesis": "Several commenters say LLMs write OCaml better than other languages. Their explanation is the feedback loop. Global type inference holds the model to what it already wrote, compiles are fast, and interface files tell the model what each module must do. Rust and Haskell were said to make the model reason about types too much. Asked for evidence, one commenter said they contributed to an unpublished paper on it, and that the study is limited by the cost of frontier-model tokens.",
+        "synthesis": "Several commenters say LLMs write OCaml better than other languages, thanks to the feedback loop. Global type inference holds the LLM to what it already wrote, compiles are fast, and interface files tell it what each module must do. Rust and Haskell, they said, make the LLM reason about types too much. Asked for evidence, one commenter said they contributed code to an unpublished paper, and that frontier-model token costs limit the study.",
         "quotes": [
           {
             "author": "giraffe_lady",
@@ -74,7 +74,7 @@
       },
       {
         "title": "Is this book for beginners",
-        "synthesis": "One reader called the book excellent but too brisk for someone who has never programmed. Another pointed out that its introduction targets an algorithms course, so the title oversells it. For newcomers, commenters recommended Cornell's free CS3110 textbook, and others asked whether the 2014 French original had been updated for the translation.",
+        "synthesis": "One reader called the book excellent but too brisk for someone who has never programmed. A reply noted that its introduction targets an algorithms course, so the title oversells it. For newcomers, commenters recommended Cornell's free CS3110 textbook. Others asked whether the 2014 French original had been updated for the translation.",
         "quotes": [
           {
             "author": "jan_m_savage",

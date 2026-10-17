@@ -9,24 +9,24 @@
   "points": 325,
   "commentCount": 247,
   "readingMinutes": 5,
-  "tldr": "Coding agents can now reliably produce code that works and passes tests, the author argues, but they still can't decide how software should fit together. Clean seams, debuggability and maintainability take judgment the models lack, so engineering fundamentals matter more now than before.",
+  "tldr": "Coding agents can now write code that works and passes tests, the author argues. They still can't judge how software should fit together, or make it debuggable and maintainable. That makes engineering fundamentals matter more than before.",
   "article": {
     "keyPoints": [
-      "In the past year agent harnesses crossed the \"can it be done\" line. The big providers' economics look unviable to him, but the capability won't go away, because open-weight models on a strong personal computer trail the frontier by only a small margin.",
-      "Agents get you to \"it works\" and, with a prompt like \"develop with red/green TDD\", to \"it's testable\". Above that it gets shaky. A component's API and how it fits with other software are subjective calls that depend on experience and on how long you'll live with the code.",
-      "He compares this to learning to weld in his 20s. He quickly built things too heavy to lift or get out of the shop door, and learned that how the parts go together makes the difference.",
-      "LLMs predict rather than reason, so they can only echo reasoning that was in their training text. Debuggable, layered, composable design needs sustained reasoning, and that is where even frontier models fall short. He points to the paper \"The Illusion of Thinking\" and to LeCun's JEPA work for alternatives.",
-      "The wins he sees come from feeding the model concise data at the right moment and giving it deterministic validation tools whose plain-language output it can use to correct itself. Tool calling and instruction following impress him more than the code generation.",
-      "Instruction following cuts both ways. Models can't tell good instructions from bad ones, so Simon Willison's \"lethal trifecta\" and prompt injection remain open holes that sandboxes and alignment only narrow. He hopes post-training will start rewarding clean interfaces and maintainability."
+      "In the past year, agent harnesses crossed the \"can it be done\" line. The big providers' economics don't look viable to him. But the capability won't go away. Open-weight models on a strong personal computer trail the frontier by only a small margin.",
+      "Agents get you to \"it works\". A prompt like \"develop with red/green TDD\" also gets you to \"it's testable\". Above that, the results get shaky. A component's API and how it fits with other software are subjective calls, shaped by experience and by how long you'll live with the code.",
+      "He compares this to learning to weld in his 20s. He quickly built things too heavy to lift or to get out the shop door. He learned that how the parts go together makes the difference.",
+      "LLMs predict rather than reason. They can only echo reasoning that was in their training text. Debuggable, layered, composable design needs sustained reasoning. Even frontier models fall short there. He cites the paper \"The Illusion of Thinking\" on how poorly LLMs reason. For a different approach, he points to LeCun's JEPA work.",
+      "The wins he sees come from feeding the model concise data at the right moment. They also come from deterministic validation tools whose plain-language output the model can use to correct itself. Tool calling and instruction following impress him more than the code generation.",
+      "Instruction following cuts both ways. Models can't tell good instructions from bad ones. So Simon Willison's \"lethal trifecta\" and prompt injection remain open holes. Sandboxes and alignment only narrow them. He hopes post-training will start rewarding clean interfaces and maintainability."
     ],
-    "whyItMatters": "The post is short and personal, closer to a position statement than an argument with evidence. Read it for the links (the reasoning paper, JEPA, the lethal trifecta) and for one experienced engineer's view of where agents stop being useful. It has no benchmarks or worked examples."
+    "whyItMatters": "The article is short and personal, closer to a position statement than an argument with evidence. It has no benchmarks or worked examples. Read it for its links to The Illusion of Thinking, JEPA and the lethal trifecta. It also gives one veteran engineer's view of where agents stop helping."
   },
   "comments": {
-    "overview": "A heated, sprawling thread. The top comment's IKEA analogy pulled dozens of replies into an argument about furniture quality, and one commenter's claim to maintain a 150k-line app without reading the code drew the angriest exchange. Underneath both ran the article's question of whether agents can do design work or only implementation.",
+    "overview": "A heated, sprawling thread. The top comment's IKEA analogy pulled dozens of replies into an argument about furniture quality. One commenter's claim to maintain a 150k-line app without reading the code drew the angriest exchange. Underneath both ran the article's question of whether agents can do design work or only implementation.",
     "themes": [
       {
         "title": "Agents implement but don't design",
-        "synthesis": "Many working engineers agreed with the article. Generated code works at the function level, but directory layout, interfaces and state management come out a mess, and the model quietly makes product decisions nobody asked for. Others called this a usage problem. Write a fuller spec, feed it a reference repo, start from a configured test suite with red/green TDD. Critics answered that defining the requirements is the job, and that a spec complete enough to remove guessing is the code. One commenter put the architecture failures down to context length, since a model can't hold the whole codebase in mind.",
+        "synthesis": "Many working engineers agreed with the article that generated code works at the function level. Directory layout, interfaces and state management come out a mess, and the model quietly makes product decisions nobody asked for. Others called this a usage problem, fixed by a fuller spec, a reference repo or a configured test suite with red/green TDD. Critics answered that defining the requirements is the job, and that a spec complete enough to remove guessing is the code. One commenter blamed the architecture failures on context length, since a model can't hold the whole codebase in mind.",
         "quotes": [
           {
             "author": "mortalapeman",
@@ -42,7 +42,7 @@
       },
       {
         "title": "The no-review app",
-        "synthesis": "One commenter said he stopped reading the code of his iOS app two months ago and the agent still maintains all 150k lines, half of them tests, without trouble. He spends his 300 hours on QA, UX and product taste instead. Replies called four months with zero users far too early to judge maintainability, which only shows once requirements change and other developers arrive. They also pointed to the major agent harnesses, which are largely vibe-coded and full of regressions. A few defended him, arguing that the split in experiences comes from people not putting in the time to learn the tools.",
+        "synthesis": "One commenter stopped reading his iOS app's code two months ago, and says the agent still maintains all 150k lines, half of them tests. His 300 hours went into QA, UX and product taste instead. Replies called four months with zero users far too early to judge maintainability, which only shows once requirements change and other developers arrive. They also pointed to the major agent harnesses, which are largely vibe-coded and full of regressions. A few defended him, arguing that the split in experiences comes from people not putting in the time to learn the tools.",
         "quotes": [
           {
             "author": "user43928",
@@ -90,7 +90,7 @@
       },
       {
         "title": "Do LLMs reason?",
-        "synthesis": "The article's line that LLMs \"predict\" rather than reason set off a philosophical subthread. One side said prediction is only the training objective and reasoning can emerge from it, and that the definitions used to deny it would also rule out humans. The other said looking like reasoning isn't reasoning, comparing it to a photocopier fed a maths paper. Several commenters found the debate circular and suggested talking about concrete failures like context rot and the reversal curse.",
+        "synthesis": "On the article's claim that LLMs \"predict\", one side said prediction is only the training objective and reasoning can emerge from it. The definitions used to deny it, they added, would also rule out humans. The other side said looking like reasoning isn't reasoning, comparing it to a photocopier fed a maths paper. Several commenters found the debate circular and suggested talking about concrete failures like context rot and the reversal curse.",
         "quotes": [
           {
             "author": "theteapot",
@@ -105,13 +105,13 @@
         ]
       }
     ],
-    "consensus": "Agents write working code quickly when the task is scoped and backed by tests, but someone still has to decide structure, interfaces and requirements. Experienced engineers mostly see that as their job for now.",
+    "consensus": "Agents write working code quickly when the task is scoped and backed by tests. But someone still has to decide structure, interfaces and requirements. Experienced engineers mostly see that as their job for now.",
     "dissent": "A vocal minority said design judgment is a training problem that will be solved like any other. They expect AI to beat the average engineer, who they said writes poor code anyway, and to shrink the profession sharply.",
     "contrarian": {
       "author": "spacemanspiff01",
       "text": "My thesis in this is that the cost of a refactor has dropped precipitously, LLMs are really good at doing translations, and are pretty good at finding good abstractions if you work them a bit.",
       "commentId": 49321583,
-      "why": "Where the thread treats maintainability as something you build in up front, this commenter suggests cheap rewrites change the order. Vibe-code a prototype, then rewrite around carefully chosen interfaces, and another commenter confirmed that week-long refactors now take an afternoon plus a day of review."
+      "why": "Where the thread treats maintainability as something you build in up front, this commenter suggests cheap rewrites change the order. Vibe-code a prototype, then rewrite it around carefully chosen interfaces. Another commenter confirmed that week-long refactors now take an afternoon plus a day of review."
     }
   },
   "digestedAt": "2026-10-11T16:53:07.000Z"

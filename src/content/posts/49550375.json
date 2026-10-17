@@ -9,24 +9,24 @@
   "points": 381,
   "commentCount": 133,
   "readingMinutes": 21,
-  "tldr": "The author of Babylonian Twins, an Amiga game he wrote in 68000 assembly in sanctions-era Baghdad in 1993, had Claude Fable 5 port both the 72,758-line original and his 2010 C++ remake to Godot. It reverse-engineered undocumented level, object and sprite formats on its own, mostly in an evening each, and the bugs it left were subtle ones he only found by playing.",
+  "tldr": "The author of Babylonian Twins wrote the Amiga game in 68000 assembly in sanctions-era Baghdad in 1993. He had Claude Fable 5 port both the 72,758-line original and his 2010 C++ remake to Godot. It reverse-engineered undocumented level, object and sprite formats on its own, mostly in an evening each. The bugs it left were subtle ones he found only by playing.",
   "article": {
     "keyPoints": [
-      "Running in Claude Code with a terminal, the model gave the game command-line flags to load levels, script button presses, dump state and take screenshots, so it could test jumps and doors without a human. Moving the 34,000-line 2010 C++ engine into Godot 4 took one night, with a playable character 21 minutes after the empty project.",
-      "It kept each original fixed tick rate, 60 Hz for the 2010 game and 50 Hz for the Amiga one, because drag is applied multiplicatively per frame, and skipped Godot's CharacterBody2D so the hand-tuned collision code, fudge numbers included, carried over line for line.",
-      "Before porting the assembly, it made the 1993 sources build again with vasm, bridging five ASM-One dialect differences, until the output matched the shipped binaries. About 108 leftover bytes were, by its account, variables in a memory snapshot saved after the game had run, a claim the author says he never checked himself.",
-      "It decoded the level maps on the first try, a format an earlier model needed several rounds of hints to crack a year before. It then matched its renders pixel for pixel against 2020 captures after adding back two copper effects, the sky gradient and the water cycle. It also found that doors are stamped in by code at runtime and were never in the map data.",
-      "The errors were quiet ones. A dropped upper bound let a doorman guard hit the player thirteen tiles below through solid rock, rendering a hidden tile layer opened every secret passage, and a trampoline bounced too high because the 2010 build ignored held buttons as a side effect of an old tvOS workaround.",
+      "Running in Claude Code with a terminal, the model gave the game command-line flags to load levels, script button presses, dump state and take screenshots. With them it could test jumps and doors without a human. Moving the 34,000-line 2010 C++ engine into Godot 4 took one night. A character was playable 21 minutes after the empty project.",
+      "It kept each original fixed tick rate: 60 Hz for the 2010 game and 50 Hz for the Amiga one. The reason is that drag is applied multiplicatively per frame. It skipped Godot's CharacterBody2D, so the hand-tuned collision code carried over line for line, fudge numbers included.",
+      "Before porting the assembly, it made the 1993 sources build again with vasm. It bridged five ASM-One dialect differences until the output matched the shipped binaries. It said the last 108 mismatched bytes were variables in a memory snapshot saved after the game had run. The author says he never checked that claim himself.",
+      "It decoded the level maps on the first try. A year earlier, an older model needed several rounds of hints to crack the same format. It then matched its renders pixel for pixel against 2020 captures, after adding back two copper effects: the sky gradient and the water cycle. It also found that code stamps the doors in at runtime. They were never in the map data.",
+      "The errors were quiet ones. A dropped upper bound let a doorman guard hit the player thirteen tiles below him, through solid rock. Rendering a hidden tile layer opened every secret passage. A trampoline bounced too high because Godot reported a held jump button. The 2010 build had read it as released, a side effect of an old tvOS workaround.",
       "The model also did the release work, rendering store screenshots from the game in eleven languages and filling Steam forms through the browser. It combed fifteen years of reviews. One misspelled one-star review exposed a missing door prompt on the last free level that no tester had caught."
     ],
-    "whyItMatters": "Worth reading in full for anyone attempting an LLM-driven port or reverse-engineering job. The original has the actual 68000 listings, the map-cell bit layout, the timestamps and the screenshots of the 1993 map editor, which show how the model worked from the code that reads each format."
+    "whyItMatters": "Worth reading in full for anyone attempting an LLM-driven port or reverse-engineering job. The original has the actual 68000 listings, the map-cell bit layout, the timestamps and screenshots of the 1993 map editor. They show how the model worked from the code that reads each format."
   },
   "comments": {
     "overview": "A warm, busy thread, with the author answering nearly every question. Most of it was other people trading their own LLM retro ports and methods. The main friction was over the article's AI-drafted prose, plus a smaller argument about whether a rewrite in Godot counts as a port at all.",
     "themes": [
       {
         "title": "Everyone is porting old games now",
-        "synthesis": "Commenters listed their own LLM ports: Syndicate, Populous, Red Baron, Dragon Strike, Stunt Car Racer, a ZX81 memory dump rebuilt in Go, and recompilation frameworks for the NES through the PlayStation. The author said a 16 KB MSX ROM ports in under an hour, with half a day of follow-up to get it playable. Others described a more structured method of spec files per topic, asset extraction and manual unpacking, and some said their ports took a lot of steering. One noticed the model cheating by looking up the original game online. On cost, one porter put a near one-shot port at about half a weekly Claude Max limit, and the author said he never hit his limit.",
+        "synthesis": "Commenters listed their own LLM ports, such as Syndicate, Populous, Stunt Car Racer and a ZX81 memory dump rebuilt in Go. The author said a 16 KB MSX ROM ports in under an hour, plus half a day of follow-up to make it playable. Others used spec files per topic and manual unpacking, needed a lot of steering, or caught the model looking up the original game online. On cost, one porter put a near one-shot port at half a weekly Claude Max limit; the author never hit his limit.",
         "quotes": [
           {
             "author": "rabahs",
@@ -41,8 +41,8 @@
         ]
       },
       {
-        "title": "The AI-written article",
-        "synthesis": "The top comment in its thread said the AI prose made the post unreadable and the author should have used his own words. Others pointed to specific tells like \"Step one, the safe ask\". The author said he edited every line over a week from his own notes. dang said he had raised the same point by email but the story was too good to block, and explained that non-native speakers get the same advice to write in their own voice, since mistakes now read as authenticity. Several readers said the content was worth it regardless, and that the story might not have been written at all without the help.",
+        "title": "The AI-drafted prose",
+        "synthesis": "The top comment in its thread called the AI-drafted prose unreadable, and others pointed to tells like \"Step one, the safe ask\". The author said he edited every line over a week; several readers said the content was worth it, and might not exist without the help. dang had raised the point by email but found the story too good to block. He gives non-native speakers the same advice, since mistakes now read as authenticity.",
         "quotes": [
           {
             "author": "mattbruv",
@@ -58,7 +58,7 @@
       },
       {
         "title": "How faithful is the port",
-        "synthesis": "One commenter asked whether the port had ever been run against the original in UAE with the same inputs. The author said no, he judged it by feel from thousands of hours of play, and credited the decision to skip Godot's physics. Another suggested the 108-byte mismatch could be assemblers picking different but equivalent instruction encodings, which drew the reply that a byte diff then proves nothing and only a behaviour check would. People also asked for the Claude session transcripts, and were told they are deleted after 30 days by default.",
+        "synthesis": "Asked whether the port had been run against the original in UAE with the same inputs, the author said no. He judged it by feel from thousands of hours of play, and credited the decision to skip Godot's physics. Another suggested the 108-byte mismatch could come from equivalent instruction encodings; a reply said only a behaviour check would then prove anything. People also asked for the Claude session transcripts, and were told they are deleted after 30 days by default.",
         "quotes": [
           {
             "author": "Lerc",
@@ -74,7 +74,7 @@
       },
       {
         "title": "Why not just emulate",
-        "synthesis": "A few commenters called the project pointless or slop. They argued an Amiga game belongs in UAE or on an FPGA, and that an AI rewrite is not a real port. Replies said the alternative was no remaster at all, since nobody would hand-port 72,758 lines of assembly, and that the original disk image is free anyway. One noted you can't really ask the model that did the work, because a fresh instance lacks the session context.",
+        "synthesis": "Some called the project slop, arguing an Amiga game belongs in UAE or on an FPGA, and an AI rewrite is no real port. Replies said the alternative was no remaster at all, since nobody would hand-port 72,758 lines of assembly. The original disk image is free anyway, they added. One noted you can't really ask the model that did the work, because a fresh instance lacks the session context.",
         "quotes": [
           {
             "author": "cstrahan",
@@ -90,7 +90,7 @@
       },
       {
         "title": "Amiga development in 1993",
-        "synthesis": "Readers asked about the original work. The author described profiling by having the copper draw a white line from the start of vertical blank, and spreading object updates across frames whenever the line crept into the visible area. Others noted that switching off interrupts by hand was crude next to exec's Disable(), that 50 Hz was a PAL figure since NTSC Amigas ran at 60, and the author named the MSX game The Maze of Galious as his main inspiration.",
+        "synthesis": "The author profiled the 1993 game by having the copper draw a white line from the start of vertical blank. Whenever the line crept into the visible area, he spread object updates across frames. Others noted that switching interrupts off by hand was crude next to exec's Disable(), and that NTSC Amigas ran at 60 Hz, not 50. The author named the MSX game The Maze of Galious as his main inspiration.",
         "quotes": [
           {
             "author": "rabahs",
@@ -100,8 +100,8 @@
         ]
       }
     ],
-    "consensus": "Most found the project impressive and moving, and many took it as proof that LLMs can now reverse-engineer obscure, undocumented retro code that seemed out of reach a year ago.",
-    "dissent": "A vocal minority disliked the AI-drafted prose, and a few dismissed an AI rewrite as no real port compared with running the original in an emulator.",
+    "consensus": "Most found the project impressive and moving. Many took it as proof that LLMs can now reverse-engineer obscure, undocumented retro code that seemed out of reach a year ago.",
+    "dissent": "A vocal minority disliked the AI-drafted prose. A few dismissed an AI rewrite as no real port, compared with running the original in an emulator.",
     "contrarian": {
       "author": "coder-pm",
       "text": "Hmm did you ever run the game port against the original one in UAE? With the same inputs? Or is it just \"it plays right when I play it\"?",

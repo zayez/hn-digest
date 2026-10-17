@@ -9,24 +9,24 @@
   "points": 579,
   "commentCount": 294,
   "readingMinutes": 20,
-  "tldr": "Most of the body heals poorly because regeneration means cell division, and cell division feeds cancer. Organs that face the environment, like the liver, skin and gut, pay a cancer tax to stay repairable. The small intestine gets high turnover with low cancer, but it costs a lot of energy, so the real trade-off has three sides.",
+  "tldr": "Most of the body heals poorly because regeneration means cell division, and cell division feeds cancer. Organs that face the environment, like the liver, skin and colon, pay a cancer tax to stay repairable. The small intestine renews fast with little cancer. It pays in energy instead, which makes the trade-off three-sided.",
   "article": {
     "keyPoints": [
-      "Shrinking telomeres are a deliberate anti-cancer brake. Cells carry the gene for telomerase but switch it off after development, so a mutated lineage runs out of divisions before it can grow large, at the price of slow aging.",
-      "The same logic explains missing limb regrowth and fragile kidneys. A body that can restart rapid growth keeps every cell closer to cancer, so the liver is the odd one out because it sits downstream of the gut and gets damaged as part of its job.",
-      "Skin and intestines also turn over constantly and have common cancers, while neurons and heart muscle never divide and almost never become cancer. Structured organs like the heart and brain may not have a regeneration option at all.",
-      "The lungs combine low regeneration with high cancer because their fractal surface, about 100 square meters in 5 liters, is hard to rebuild and breathes in toxins. The author admits the pancreas does not fit the theory.",
-      "The small intestine breaks the rule. Protected stem cells feed a conveyor belt of cells that die at the villus tip within days, so mutations get flushed out, but the gut sheds about 40 billion cells a day and uses roughly 20% of the body's energy.",
-      "For the modern world, the author guesses the body tries too hard to recover from injuries, calls telomeres and brains about right, and has no answer for the liver or menopause."
+      "Shrinking telomeres are a deliberate anti-cancer brake. Cells carry the gene for telomerase but switch it off after development. A mutated lineage then runs out of divisions before it can grow large. The price is one of the clocks of aging.",
+      "The same logic explains missing limb regrowth and fragile kidneys. A body that can restart rapid growth keeps every cell closer to cancer. The liver is the odd one out because it sits downstream of the gut and gets damaged as part of its job.",
+      "Skin and colon also turn over constantly. Their cancers are common. Neurons and heart muscle never divide and almost never become cancer. Structured organs like the heart and brain may not have a regeneration option at all.",
+      "The lungs combine low regeneration with high cancer. Their fractal surface, about 100 square meters in 5 liters, is hard to rebuild and breathes in toxins. The author admits the pancreas does not fit the theory.",
+      "The small intestine breaks the rule. Protected stem cells feed a conveyor belt of cells that die at the villus tip within days, so mutations get flushed out. The price is energy: it sheds about 40 billion cells a day and uses roughly 20% of the body's energy.",
+      "For the modern world, the author guesses the body tries too hard to recover from injuries. He calls telomeres and brains about right. He has no answer for the liver or menopause."
     ],
-    "whyItMatters": "Read the original for the organ-by-organ table of regeneration against cancer risk, the footnote answering biologists who object that 90% of cancers turn telomerase back on, and the author's jokey tone, which several commenters praised. Treat it as a speculative essay; commenters flagged several outdated claims."
+    "whyItMatters": "Read the original for the organ-by-organ table of regeneration against cancer risk. A footnote answers biologists who object that 90% of cancers turn telomerase back on. Several commenters also praised the author's jokey tone. Treat it as a speculative essay; commenters flagged several outdated claims."
   },
   "comments": {
-    "overview": "A busy thread that liked the writing more than the biology. Doctors, patients and amateur biologists corrected specific claims, argued over whether regeneration really raises cancer risk, and fought about the essay's habit of saying evolution 'decides' things. Long side threads covered vitamin A toxicity, liver myths in Greek and Persian culture, and why human bodies reject transplants.",
+    "overview": "A busy thread that liked the writing more than the biology. Doctors, patients and amateur biologists corrected claims, argued over whether regeneration really raises cancer risk, and attacked the essay's talk of evolution 'deciding' things. Long side threads covered vitamin A toxicity, liver myths in Greek and Persian culture, and why human bodies reject transplants.",
     "themes": [
       {
         "title": "Does regeneration really cost cancer?",
-        "synthesis": "Some commenters took the essay's core trade-off as obvious, since cancer is just growth that has lost its controls. Others said limb regrowth never paid off for humans anyway, because losing a limb used to mean death, and regrowing one would take years. A separate camp argued the hard part is complexity, not cancer. A blob of cells can patch any hole, but rebuilding bones, nerves and tendons in the right places needs machinery mammals never evolved. One commenter noted that the simplest animal branches can all regrow whole bodies, so bilaterians probably lost the trait.",
+        "synthesis": "Some commenters took the essay's core trade-off as obvious, since cancer is just growth that has lost its controls. Others said limb regrowth never paid off for humans: losing a limb used to mean death, and regrowing one takes years. A separate camp said the hard part is complexity, not cancer, because rebuilding bones, nerves and tendons in place needs machinery mammals never evolved. One noted that the simplest animal branches can all regrow whole bodies, so bilaterians probably lost the trait.",
         "quotes": [
           {
             "author": "fc417fc802",
@@ -42,7 +42,7 @@
       },
       {
         "title": "Claims the essay got wrong",
-        "synthesis": "Several readers fixed specific facts. Adult neurogenesis exists, with a 2026 review cited as evidence, and heart muscle turns over at about 1% a year in young adults. A Science blog post argues the lack of heart cancer has a more involved cause than the essay's. Type 1 diabetes mostly strikes young people, while age-related diabetes is Type 2 and not autoimmune, though several commenters knew adults diagnosed with Type 1 in their 20s and 30s. A wound-care commenter disputed the idea that skin over-invests in healing, since surgery itself depends on it.",
+        "synthesis": "Readers fixed specific facts: adult neurogenesis exists, per a 2026 review, and heart muscle turns over about 1% a year in young adults. A Science blog post gives a more involved cause for the lack of heart cancer than the essay's. Type 1 diabetes mostly strikes the young; age-related diabetes is Type 2 and not autoimmune. A wound-care commenter disputed that skin over-invests in healing, since surgery itself depends on it.",
         "quotes": [
           {
             "author": "usernametaken29",
@@ -58,7 +58,7 @@
       },
       {
         "title": "Evolution does not decide anything",
-        "synthesis": "The essay's framing of 'design decisions' irritated many readers. Some objected only to the wording, which they said teaches people that evolution follows a plan. A longer critique said reasoning down from organ function misses constraints set two billion years ago at the cell level, such as why DNA became linear. The harshest replies called the piece unscientific garbage. A moderator answered that speculation and curiosity belong on the site even when they turn out wrong.",
+        "synthesis": "The essay's framing of 'design decisions' irritated many readers. Some objected only to the wording, which they said teaches people that evolution follows a plan. A longer critique said reasoning from organ function misses cell-level constraints set two billion years ago, such as why DNA became linear. The harshest replies called the essay unscientific garbage, and a moderator answered that speculation belongs on the site even when wrong.",
         "quotes": [
           {
             "author": "randomImmigrant",
@@ -74,7 +74,7 @@
       },
       {
         "title": "Why the liver, and what it's like to need one",
-        "synthesis": "One explanation was structural. The liver works like a battery pack of interchangeable cells, so a new cell can go almost anywhere, unlike in a kidney. Others pointed to ancestors who ate spoiled food and toxic plants because food was scarce. A transplant recipient described a donated half-liver that regrew within months but grew down his side instead of across. He added that repeat living donation does not work, because the regrown liver lacks the vessel and bile duct layout surgeons need.",
+        "synthesis": "One explanation was structural: the liver works like a battery pack of interchangeable cells, so a new cell fits almost anywhere, unlike in a kidney. Others pointed to ancestors who ate spoiled food and toxic plants because food was scarce. A transplant recipient described a donated half-liver that regrew within months, but down his side instead of across. Repeat living donation does not work, he added, because the regrown liver lacks the vessel and bile duct layout surgeons need.",
         "quotes": [
           {
             "author": "Rury",
@@ -90,7 +90,7 @@
       },
       {
         "title": "Menopause and transplant rejection",
-        "synthesis": "Commenters offered the grandmother hypothesis for menopause, and others pointed out that the essay already shows most social mammals don't have it. Alternatives included the danger to human infants and the fact that humans raise several children at once, so a late pregnancy takes from the ones already born. On transplant rejection, a kidney transplant patient and others explained that the immune system cannot tell harmful cells from harmless ones by what they do, so it attacks anything not present before.",
+        "synthesis": "Commenters offered the grandmother hypothesis for menopause, and others pointed out that the essay already shows most social mammals don't have it. Alternatives included the danger to human infants, and humans raising several children at once, so a late pregnancy takes from the ones already born. On transplant rejection, a kidney transplant patient and others said the immune system can't judge cells by what they do. So it attacks anything not present before.",
         "quotes": [
           {
             "author": "Mali-",
@@ -105,13 +105,13 @@
         ]
       }
     ],
-    "consensus": "The essay is fun and well written, and its regeneration versus cancer idea explains some things, but biology is messier than any single trade-off and several of its facts are out of date.",
-    "dissent": "A vocal minority called the piece unscientific, saying its 'design' language and engineering lens misrepresent how evolution works and that it shouldn't be treated as education.",
+    "consensus": "The essay is fun and well written, and its regeneration-versus-cancer idea explains some things. But biology is messier than any single trade-off, and several of its facts are out of date.",
+    "dissent": "A vocal minority called the essay unscientific. They said its 'design' language and engineering lens misrepresent how evolution works, and that it shouldn't be treated as education.",
     "contrarian": {
       "author": "inglor_cz",
       "text": "We humans are capable of regrowing our fingernails and toenails for our entire life and we indeed regrow them all the time, proliferation taking place 24/7, nonstop. And yet cancer of the nailbed is quite rare, much rarer than other cancers, though not completely unheard of.",
       "commentId": 49855377,
-      "why": "It tests the premise both the essay and the thread took for granted, pointing to nails, fast-growing children and long-lived axolotls with little cancer as cases where constant growth does not bring cancer."
+      "why": "It tests the premise both the essay and the thread took for granted. Nails, fast-growing children and long-lived axolotls with little cancer are cases where constant growth does not bring cancer."
     }
   },
   "digestedAt": "2026-10-17T14:38:57.000Z"

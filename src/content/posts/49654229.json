@@ -9,14 +9,14 @@
   "points": 456,
   "commentCount": 342,
   "readingMinutes": 15,
-  "tldr": "Armin Ronacher let GPT 6 Astra run an unsupervised \"software factory\" for 35 hours and got 75k lines of unusable code. Ronacher argues the model is trained to finish long tasks and save tokens, not to write code a human can read, so it stops paying off for working software engineers.",
+  "tldr": "Armin Ronacher let GPT 6 Astra run an unsupervised \"software factory\" for 35 hours. He got 75k lines of unusable code. Ronacher argues the model is trained to finish long tasks and save tokens, not to write code a human can read. For working software engineers, he says, the extra cost no longer pays off.",
   "article": {
     "keyPoints": [
-      "Ronacher calls Astra impressive at computer use, images and long tasks, and borrows the Chinese idea of involution (neijuan) for AI engineering, where more and more effort goes in without more output per person.",
-      "Ronacher gave Astra one prompt, to build a Python with virtual threads and lexical scoping, and let it run its own workflow and subagents. After 35 hours, about 1B tokens, roughly $1,200 in API cost, 79 commits and 75k added lines, it had produced nothing of value and it never stopped on its own.",
-      "Astra skips the harness's edit tool and patches files, including C source in CPython, with dense one-line Python heredocs, and it chains Bash into Python into Node.js into PowerShell. A human can't follow these edits as they happen.",
-      "The same code-golf style leaks into committed code. The author shows tests with no whitespace discipline, several C macro calls on one line, magic integer indexes into a function table, and a probe function switching over 70 numbered cases that non-test code began to depend on.",
-      "Ronacher's theory is that training rewards task completion, token efficiency and simple metrics like cyclomatic complexity, with little penalty for unreadable code. Code that is bad by human standards may suit a codebase only agents read, which is why the author doubts these pricier models are aimed at software engineers at all."
+      "Ronacher calls Astra impressive at computer use, images and long tasks. He calls AI engineering involution, the Chinese neijuan, where more and more effort goes in without more output per person.",
+      "Ronacher gave Astra one prompt: build a Python with virtual threads and lexical scoping. He let it run its own workflow and subagents. The 35-hour run used about 1B tokens, roughly $1,200 in API cost. It made 79 commits and added 75k lines. It produced nothing of value. It never stopped on its own.",
+      "Astra skips the harness's edit tool. It patches files, including C source in CPython, with dense one-line Python heredocs. It also chains Bash into Python into Node.js into PowerShell. A human can't follow these edits as they happen.",
+      "The same code-golf style leaks into committed code. Ronacher shows tests with no whitespace discipline, several C macro calls on one line, and magic integer indexes into a function table. One probe function switches over 70 numbered cases. Non-test code began to depend on it.",
+      "Ronacher's theory is that training rewards task completion, token efficiency and simple metrics like cyclomatic complexity, with little penalty for unreadable code. Code that is bad by human standards may suit a codebase only agents read. He suspects these pricier models are increasingly built for other people, such as lawyers and 3D artists, not software engineers."
     ],
     "whyItMatters": "Anyone running long agent sessions or weighing Astra or Fable against cheaper models should look at the original for the code samples. The summary can describe the Python heredoc edits and the 70-case C switch, but seeing them makes the readability argument better than any description."
   },
@@ -25,7 +25,7 @@
     "themes": [
       {
         "title": "Can you stop reading the code?",
-        "synthesis": "The top comment said bad code makes models slower to change it until progress stops, and that the people who claim they no longer read code rarely get past a proof of concept. Defenders described what works for them: small projects, clients who want speed over quality, strict module boundaries, heavy testing and review by more agents. Critics answered that this concedes the point, since those setups still catch bad patterns only when a human looks, and that the cost of the slowdown lands later and on teammates.",
+        "synthesis": "The top comment said bad code makes models slower to change it until progress stops. It added that people who claim they no longer read code rarely get past a proof of concept. Defenders described what works for them: small projects, clients who want speed over quality, strict module boundaries, heavy testing and review by more agents. Critics said those setups still catch bad patterns only when a human looks, and the cost of the slowdown lands later, on teammates.",
         "quotes": [
           {
             "author": "taurath",
@@ -41,7 +41,7 @@
       },
       {
         "title": "The Python edits come from the harness",
-        "synthesis": "Several people had seen Opus, Fable and Astra edit files through Python scripts too. Some blamed the harness. Commenters said Claude Code's auto mode prompt pushes the model toward Bash and Python, and that scripts save tokens when every tool call re-reads a large cached context. Others found scripted bulk edits less reliable than many plain edits, because the agent then spends time debugging its own script. A user who had asked Sol for scripted code moves saw Astra apply it to every edit, which makes the change harder to read.",
+        "synthesis": "Several people had seen Opus, Fable and Astra edit files through Python scripts too, and some blamed the harness. Claude Code's auto mode prompt pushes the model toward Bash and Python, and scripts save tokens when each tool call re-reads a large context. Others found scripted bulk edits less reliable than many plain edits, because the agent then spends time debugging its own script. A user who had asked Sol for scripted code moves saw Astra apply it to every edit, which makes the change harder to read.",
         "quotes": [
           {
             "author": "klibertp",
@@ -57,7 +57,7 @@
       },
       {
         "title": "Trained to finish, not to collaborate",
-        "synthesis": "Many backed Ronacher's training theory. The guess was that labs shifted reinforcement learning from human ratings toward long-horizon task completion, giving agents that finish more but talk and cooperate worse. Users reported Astra running full test suites over and over, writing its own tools instead of asking for a command, and taking six hours on a rebase Sol did in one. Some said it burned their subscription several times faster than Sol for no visible gain. A few suspected labs have little reason to make models write less code, while others replied that switching providers is easy enough to keep that in check.",
+        "synthesis": "Many backed Ronacher's training theory, guessing labs shifted reinforcement learning toward long-horizon task completion and got agents that finish more but communicate worse. Users reported Astra rerunning full test suites, writing its own tools instead of asking, and taking six hours on a rebase Sol did in one. Some said it burned their subscription several times faster than Sol for no visible gain. A few suspected labs have little reason to make models write less code, while others said easy provider switching keeps that in check.",
         "quotes": [
           {
             "author": "nojs",
@@ -73,7 +73,7 @@
       },
       {
         "title": "The compiler analogy doesn't hold",
-        "synthesis": "One commenter compared LLM output to compiled assembly that nobody reads. Most replies rejected it. A compiler is deterministic and works from a formally specified language, while a prompt is ambiguous English. Unlike a compiler, an agent also has to read its own output back and edit it, so the generated source is what it works in. A minority said the analogy works for throwaway build scripts and frontends where you only check the result.",
+        "synthesis": "One commenter compared LLM output to compiled assembly that nobody reads, and most replies rejected it. A compiler is deterministic and works from a formally specified language, while a prompt is ambiguous English. An agent also has to read its own output back and edit it, so the generated source is what it works in. A minority said the analogy works for throwaway build scripts and frontends where you only check the result.",
         "quotes": [
           {
             "author": "recursivecaveat",
@@ -84,7 +84,7 @@
       },
       {
         "title": "Short, specified tasks in a good codebase",
-        "synthesis": "People reporting good results described the opposite of Ronacher's experiment. They gave detailed specs, worked feature by feature and reviewed each step, often inside an established codebase whose patterns the agent copies. Others warned that bad code in context pulls the model toward more of it, and that writing specs that detailed costs almost as much as writing the code. Critics of the article added that a factory left to design its own workflow tests little that matters.",
+        "synthesis": "People reporting good results described the opposite of Ronacher's experiment. They gave detailed specs, worked feature by feature and reviewed each step, often inside an established codebase whose patterns the agent copies. Others warned that bad code in context breeds more of it, and that specs that detailed cost almost as much as the code. Critics of the article added that a factory left to design its own workflow tests little that matters.",
         "quotes": [
           {
             "author": "0xpgm",
@@ -105,7 +105,7 @@
       "author": "ACCount37",
       "text": "Unlike the usual causes of code rot (cheap replaceable developers, outsourcing to India), AI might actually get out of the pit - by getting good enough at refactoring to be able to beat the code back into shape. There's nothing about refactoring in particular that demands a meatbag when the rest of the coding tasks don't.",
       "commentId": 49655293,
-      "why": "The thread treated unmaintainable code as a new AI problem, while this comment points out that code rot is old and asks whether the same tools could also be the ones that clean it up."
+      "why": "The thread treated unmaintainable code as a new AI problem. This comment points out that code rot is old, and asks whether the same tools could clean it up."
     }
   },
   "digestedAt": "2026-10-14T21:07:12.000Z"
