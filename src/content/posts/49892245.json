@@ -1,0 +1,113 @@
+{
+  "hnId": 49892245,
+  "title": "How Delhi cut electricity loss from 50 to 5 percent",
+  "url": "https://spectrum.ieee.org/delhi-electricity-loss",
+  "domain": "spectrum.ieee.org",
+  "kind": "article",
+  "author": "rbanffy",
+  "postedAt": "2026-09-29T12:43:29.000Z",
+  "points": 593,
+  "commentCount": 340,
+  "readingMinutes": 15,
+  "tldr": "Delhi's power grid lost more than half its electricity in 2002. Today it loses 5 to 6 percent, about the same as France and Belgium. Grid reliability rose from about 70 percent to over 99.9 percent. Two private distribution companies fixed both the hardware and the theft, billing and collection.",
+  "article": {
+    "keyPoints": [
+      "Technical losses came from too much reactive current, which heated the lines and dropped the voltage. Lower voltage made devices draw even more current.",
+      "Theft was common at every level of society.",
+      "Old meters, manual billing and long payment queues meant the utilities collected payment for less than half the power they supplied.",
+      "The Electricity Act, 2003 split generation, transmission and distribution into separate entities and opened the sector to private companies. In 2002 Delhi gave distribution to Tata Power-DDL and BSES, which inherited losses of 51 to 63 percent.",
+      "The companies installed SCADA monitoring and hundreds of capacitor banks, and replaced bare wires with insulated cable. Transformer failures fell from 11 percent to under 1 percent.",
+      "In slums with losses up to 83 percent, Tata paid local women to collect bills from neighbors. Payment rates there now match the rest of Delhi."
+    ],
+    "whyItMatters": "Read the original for the plain explanation of reactive power and line loss, and for the author's own account of life during the outages. It also lists the other regions the author thinks could copy Delhi."
+  },
+  "comments": {
+    "overview": "The thread is warm toward the result and full of memories of outages across India. Many commenters credit privatization, and others say accountability mattered more. Large side threads turned into flamewars about Modi, the 2002 Gujarat riots, colonialism and India's birth rate.",
+    "themes": [
+      {
+        "title": "Memories of daily power cuts",
+        "synthesis": "Indian commenters describe outages several times a day, published load-shedding schedules, hand-cranked diesel generators and inverters in every home. Some argued about whether \"load shedding\" means planned or unplanned cuts. Others noted that Gujarat and Mumbai had few cuts, and that Bangalore, Chennai and Kerala still have them. Water cuts, they say, remain a problem across India.",
+        "quotes": [
+          {
+            "author": "motionlessveloc",
+            "text": "It was not uncommon for the power to go out several times a day and you had to rush to unplug expensive appliances (TV, laptop), because when the power came back it was often accompanied by a surge.",
+            "commentId": 49892638
+          },
+          {
+            "author": "ghm2180",
+            "text": "Every second house had a diesel generator back then.",
+            "commentId": 49895137
+          }
+        ]
+      },
+      {
+        "title": "Privatization or accountability",
+        "synthesis": "Several commenters say the fix began when private companies took over and had a reason to bill customers. Others reply that privatization without oversight fails, and point to privatized railway catering and London rail. One commenter said competition matters, not ownership, because a private monopoly is no better than the state.",
+        "quotes": [
+          {
+            "author": "a11r",
+            "text": "Switching to private distribution immediately aligns the incentives of the distributor to actually bill their customers for the electricity they are using.",
+            "commentId": 49901502
+          },
+          {
+            "author": "Gangway0829",
+            "text": "Part of accountability is the possibility for failure and the associated consequences.",
+            "commentId": 49893236
+          }
+        ]
+      },
+      {
+        "title": "What the loss numbers mean",
+        "synthesis": "Some readers thought 5 to 6 percent loss in France and Belgium meant blackouts. Others explained that it is energy lost as heat over distance and in transformers. Estonians disputed being listed with high-loss countries. One commenter traced the World Bank figure to a formula that ignores Estonia's imported power. Singapore's near-zero loss, others said, comes from being a small city.",
+        "quotes": [
+          {
+            "author": "inglor_cz",
+            "text": "Within a single compact city, like Singapore, you can get under 1 per cent easily. One the distances grow to hundreds of kilometers, some non-negligible loss is inevitable.",
+            "commentId": 49893700
+          },
+          {
+            "author": "rebuilder",
+            "text": "But Estonia imports a lot of its electricity, and that imported electricity is not included on the generation side of the equation.",
+            "commentId": 49894324
+          }
+        ]
+      },
+      {
+        "title": "Theft is political",
+        "synthesis": "Commenters say theft survives where politicians protect it. In Hyderabad, local leaders threaten bill collectors, and farmers across India get free power. One commenter asked why the government did not just raise prices fivefold. Others answered that voters would revolt and rich users would bribe linemen to bypass the meter. In Greece, a commenter said, losses appear as a line item on every bill.",
+        "quotes": [
+          {
+            "author": "devsda",
+            "text": "Bill collectors are openly threatened by local elected leaders even in the presence of police.",
+            "commentId": 49893555
+          },
+          {
+            "author": "newyankee",
+            "text": "Also IIRC 30-40% waste in some places is almost always politically sanctioned theft.",
+            "commentId": 49894725
+          }
+        ]
+      },
+      {
+        "title": "Rooftop solar as the next step",
+        "synthesis": "Commenters report rooftop solar spreading fast in smaller Indian cities. Some proposed requiring gated communities to produce their own power and leaving villages off-grid. Critics said homes are only a third of demand, and that self-supply rules could let the state stop serving everyone. Owners of 5 kW systems report that they cover most of their use.",
+        "quotes": [
+          {
+            "author": "pbmonster",
+            "text": "Most of India has a solar capacity factor >0.2 and low seasonality. That means even 5kW peak rooftop panels and a 10 kWh battery will get you over 95% almost always.",
+            "commentId": 49895301
+          }
+        ]
+      }
+    ],
+    "consensus": "Most commenters agree the result is real and that people who lived through the outages notice it. They also agree that theft and billing, not physics, caused most of the 50 percent loss.",
+    "dissent": "Some readers doubted the article's comparisons. They said Brazil and Estonia do not have Delhi's old problems and that the World Bank data is misleading.",
+    "contrarian": {
+      "author": "sirtaj",
+      "text": "The problem was not the privatisation or lack thereof, it was the complete lack of accountability.",
+      "commentId": 49892981,
+      "why": "This commenter lived in Delhi during the change and saw that privatized railway food did not improve. Ownership alone does not explain the result."
+    }
+  },
+  "digestedAt": "2026-10-18T14:21:01.000Z"
+}

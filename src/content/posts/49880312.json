@@ -1,0 +1,118 @@
+{
+  "hnId": 49880312,
+  "title": "The problem is not AI code, but not knowing about system architecture or intent",
+  "url": "https://www.ssp.sh/brain/the-problem-is-not-the-ai-code-but-nobody-knows-anything-anymore/",
+  "domain": "ssp.sh",
+  "kind": "article",
+  "author": "zazuke",
+  "postedAt": "2026-09-28T16:11:42.000Z",
+  "points": 388,
+  "commentCount": 240,
+  "readingMinutes": 4,
+  "tldr": "AI-generated code is not the main danger. The danger is that teams stop knowing how their systems work and why choices were made. People ask Claude instead of building a plan. Maintenance then gets harder as generated code piles up.",
+  "article": {
+    "keyPoints": [
+      "Simon Späti thinks AI writes roughly average code. In Späti's view, AI can lift a below-average codebase to average.",
+      "Späti's real concern is that nobody on the team knows the system anymore. Everyone just asks Claude, and there is no plan.",
+      "Späti quotes an engineer at a big company where Claude Code writes the specs, code, tests and tickets. People there work 12 to 13 hours a day pressing enter.",
+      "A product manager who cannot code can now build a product. The foundation is likely to be bad and hard to maintain.",
+      "Data engineers who started before AI had to learn the business. Newcomers who only prompt never get that knowledge.",
+      "Maintenance is the hardest part. The easier it is to generate an app or pipeline, the more there is to maintain."
+    ],
+    "whyItMatters": "The original is a short, unfinished note made mostly of quoted tweets. Read it for the full tweet from the overwhelmed engineer and the author's links to related notes."
+  },
+  "comments": {
+    "overview": "The thread was large, gloomy and personal. Many commenters described workplaces where AI writes the tickets, the memos and the code, and nobody can say who decided anything. A strong minority answered that companies never understood their own systems and AI only made that visible.",
+    "themes": [
+      {
+        "title": "Nobody owns the decisions",
+        "synthesis": "The top comment traced one feature back through Claude-written code, an AI-generated ticket, AI docs and AI strategy memos, and could not find who chose it. Others named the pattern \"commitment laundering\" or responsibility laundering. Some said AI lets managers spread blame, and others saw the market as the real driver. A few replied that corporate decisions were always this murky.",
+        "quotes": [
+          {
+            "author": "zero_shift",
+            "text": "We were not building the feature because we wanted it. We were building it because we thought other people expected it.",
+            "commentId": 49880564
+          },
+          {
+            "author": "RGS1811",
+            "text": "People pass around AI artifacts that nobody has necessarily read or considered, and the invented assumptions and tagalong commitments just keep piling up. They look like they’ve got real provenance but nobody can say what is being done or why.",
+            "commentId": 49881216
+          }
+        ]
+      },
+      {
+        "title": "Incentives reward speed over understanding",
+        "synthesis": "Many commenters blamed management, not the tools. They described KPIs that reward volume, mandates to put AI into every process, and doubled feature quotas. People who work carefully fall behind and expect to be laid off first. Engineers are still held accountable for outages, yet they have no say over what gets merged.",
+        "quotes": [
+          {
+            "author": "augment_me",
+            "text": "If you try to do good work, you won't be able to keep the pace with the slopmaxxers, which will mean you get laid off earlier.",
+            "commentId": 49881039
+          },
+          {
+            "author": "Paul-E",
+            "text": "Where AI changes are merged in quickly without review and without my input, how can I be responsible for understanding the system? I can't.",
+            "commentId": 49882504
+          }
+        ]
+      },
+      {
+        "title": "Understanding comes from writing the code",
+        "synthesis": "Several engineers said you only learn a system by refactoring it and debugging it yourself. They gave firsthand accounts of shipping for months on a codebase they still did not understand. Others answered that you can learn top-down by asking AI to explain the layers, though that costs the time AI was meant to save. Simon Willison said you need to describe the system, not read every line. Critics replied that without the code you only think you understand it.",
+        "quotes": [
+          {
+            "author": "vld_chk",
+            "text": "But after 2 months it starts to backfire me. I still know nothing.",
+            "commentId": 49881066
+          },
+          {
+            "author": "vividfrier",
+            "text": "when we asked for knowledge sharing to prep for the handover the answer we got was \"do we still do that? Just ask Claude\".",
+            "commentId": 49880998
+          }
+        ]
+      },
+      {
+        "title": "This problem predates AI",
+        "synthesis": "A large group said companies always lacked anyone who knew the whole system. They cited consultant-driven strategy, 20-year-old codebases nobody understands, and team turnover. Some argued AI tools help here, because they can explain old code no human remembers. Others pushed back that the claim excuses handing decisions to AI.",
+        "quotes": [
+          {
+            "author": "tarsinge",
+            "text": "The motivation was equally dubious, and many developers already had problem with management and product direction, but many didn’t bother to question it. AI just makes it obvious.",
+            "commentId": 49882457
+          },
+          {
+            "author": "chasd00",
+            "text": "In real life software there is no single person with a mental model of how the system works end to end.",
+            "commentId": 49881301
+          }
+        ]
+      },
+      {
+        "title": "Is coding \"solved\"?",
+        "synthesis": "One commenter claimed LLMs have solved coding but not systems or collaboration, and the thread split over it. Supporters said good specs, tests and adversarial review let agents write code as well as most teams. Critics said the hard part was always the messy requirements, and that passing a test suite is what outsourcing already did. One commenter said LLM code fails on security, performance and maintainability.",
+        "quotes": [
+          {
+            "author": "yetanotherjosh",
+            "text": "I call that \"solved\" but only if you meet those context requirements. Which is still hard, not solved, at that layer.",
+            "commentId": 49881023
+          },
+          {
+            "author": "everforward",
+            "text": "Producing software that complies with a test suite isn't really novel.  You've been able to outsource that forever.",
+            "commentId": 49885694
+          }
+        ]
+      }
+    ],
+    "consensus": "Most commenters agreed that someone must still understand the system's structure and own its decisions. They also agreed that current workplace pressure makes that hard.",
+    "dissent": "A sizable minority said the article describes old problems with a new label. They said modern models already handle architecture and maintenance well, and that critics keep moving the goalposts.",
+    "contrarian": {
+      "author": "joshAg",
+      "text": "For developers the second bit is actually why reviewing AI output is a fool's errand - it will give you the false confidence in your understanding of the system.",
+      "commentId": 49881594,
+      "why": "The thread mostly prescribed more human review, and this comment argues review cannot rebuild the knowledge that writing code gave."
+    }
+  },
+  "digestedAt": "2026-10-18T14:20:43.000Z"
+}

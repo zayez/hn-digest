@@ -1,0 +1,118 @@
+{
+  "hnId": 49877988,
+  "title": "Coding is not solved",
+  "url": "https://blog.alexewerlof.com/p/coding-is-not-solved",
+  "domain": "blog.alexewerlof.com",
+  "kind": "article",
+  "author": "firstSpeaker",
+  "postedAt": "2026-09-28T13:52:57.000Z",
+  "points": 585,
+  "commentCount": 547,
+  "readingMinutes": 41,
+  "tldr": "Alex Ewerlöf argues that LLMs make code cheap to write but do not remove the need to read it. AI cannot be held accountable, so a human must understand what ships. Ewerlöf limits hands-off AI coding to personal tools, prototypes and throwaway automation. Paid production software in fields like finance, healthcare and aviation still needs engineers who read the code.",
+  "article": {
+    "keyPoints": [
+      "Most of the cost of production software is maintenance, reliability, security and scaling, not writing the first version.",
+      "Only personal tools, proofs of concept and throwaway automation can skip code review, because they tolerate high risk.",
+      "AI cannot be fined or jailed, so the human who ships its code is accountable and must understand that code.",
+      "LLMs produce working code mainly because a harness feeds compiler and test errors back to them in a loop.",
+      "A model can fail on a task it solved before, which Ewerlöf calls jagged intelligence and answers with jagged trust.",
+      "Software vendors charge human prices for AI-made software, and Ewerlöf expects them to cut prices or compete on quality."
+    ],
+    "whyItMatters": "The post is long, about 41 minutes. It rewards engineers and managers deciding how far to trust coding agents. The original adds a list of tasks where AI does and does not fit. It rebuts slogans like \"taste is leverage\" and \"English is the new programming language\". It also predicts new engineering roles and quotes Ewerlöf's public exchange with DHH."
+  },
+  "comments": {
+    "overview": "The thread was large and mostly sympathetic to the article. The top threads asked whether LLM-written tests can replace reading code. They also asked whether code review can survive the volume agents produce. A loud minority said the newest models already solve coding, and Ewerlöf joined in to answer critics sharply.",
+    "themes": [
+      {
+        "title": "Testing is not understanding",
+        "synthesis": "The top comment came from a payments engineer who said they never fully understood code anyway. They want LLMs to build fuzzers, property tests and traces instead. Replies said testing shows behavior on sampled inputs, not why code is correct. Others said someone must still check that the generated tests test anything, and that LLMs explore large input spaces badly. A side debate asked whether trusting AI code is like trusting a library you never read. Skeptics said libraries earn trust from years of wide use.",
+        "quotes": [
+          {
+            "author": "efficax",
+            "text": "What LLMs make possible is for me to say: find out all the ways this thing works. Analyze the different ways we can run this software, build a fuzzer, build property tests, and run this software in every scenario possible.",
+            "commentId": 49878532
+          },
+          {
+            "author": "boomlinde",
+            "text": "It seems to me that you have just shifted the problem of verification elsewhere and introduced another potential source of error.",
+            "commentId": 49881359
+          }
+        ]
+      },
+      {
+        "title": "Review cannot keep up with the volume",
+        "synthesis": "Many said AI makes weak developers produce more bad code, faster. Reviewers cannot read thousands of generated lines a day, so review turns into a formality or gets handed to another model. One commenter described a port done by agents that kept every test green and still lost scalability, telemetry and correct output. Other stories covered agents that quietly switched storage to CSV files or rebuilt plumbing that already existed.",
+        "quotes": [
+          {
+            "author": "banannaise",
+            "text": "This makes it very efficient at transforming \"stupid and lazy\" inputs into \"stupid and hardworking\" outputs.",
+            "commentId": 49878633
+          },
+          {
+            "author": "bunderbunder",
+            "text": "What I ended up discovering was that, while it scrupulously kept existing automated tests passing, any behavior that wasn't explicitly covered by a test was free to change any which way.",
+            "commentId": 49879158
+          }
+        ]
+      },
+      {
+        "title": "\"Try the latest model\"",
+        "synthesis": "Several commenters said the article was already out of date and urged readers to try Opus 5.5 or Astra 6 on a big task. Others answered that the same advice has come every few months since 2023, with the turning point always moved forward. Skeptics gave concrete failures with current models, such as ignoring explicit rules in AGENTS.md for C code. One said three months of unreviewed agentic code aged like a 30-month legacy codebase.",
+        "quotes": [
+          {
+            "author": "temp00345",
+            "text": "This article would be 100% correct if it came out 1 year ago, 75% correct 9 months ago, 50% correct 3 months ago and it's probably 25% correct now if not less.",
+            "commentId": 49879660
+          },
+          {
+            "author": "CoolestBeans",
+            "text": "A month ago I was told January of this year was the inflection point. Month before that the inflection point was December of last year.",
+            "commentId": 49881773
+          }
+        ]
+      },
+      {
+        "title": "Software was never that good",
+        "synthesis": "A strong group said the article compares AI to an idealized past. Much human-written code in healthcare, insurance and enterprise systems was brittle and poorly understood long before LLMs. Some also rejected the article's claim that most paid software has low risk tolerance. Others replied that existing black boxes do not justify building bigger ones, and that someone once understood the old code.",
+        "quotes": [
+          {
+            "author": "bdcravens",
+            "text": "there's plenty of \"human slop\" running in production across servers worldwide.",
+            "commentId": 49880219
+          },
+          {
+            "author": "mwwaters",
+            "text": "But I don’t think “Some parts of important codebases are black boxes. Therefore it’s fine if all of that code base becomes a far bigger black box” sounds like a good argument.",
+            "commentId": 49883133
+          }
+        ]
+      },
+      {
+        "title": "Coding versus engineering",
+        "synthesis": "Many split the claim in two. Turning a clear description into code is close to solved, they said, while design, planning and judgment are not. Others called that split a motte-and-bailey, because writing code always involved design decisions. A few said the tests are now the real specification.",
+        "quotes": [
+          {
+            "author": "jasongi",
+            "text": "However, software engineering isn't solved. Which is basically what this article is talking about.",
+            "commentId": 49879300
+          },
+          {
+            "author": "flohofwoe",
+            "text": "The idea that \"coding\" is just turning a spec into source code without any engineering decisions to be made was always laughable, for that to happen the spec would need to be as detailed as the source code",
+            "commentId": 49878444
+          }
+        ]
+      }
+    ],
+    "consensus": "Most agreed that a human must still understand and own what ships. They also agreed that unreviewed agent output hides defects that tests miss. Even many heavy AI users said they still steer, review and fix what agents write.",
+    "dissent": "A sizable group called the article dated or weak. They said the strawberry and carwash examples no longer fail, and that humans are not deterministic either. A few reported months of shipping with no handwritten code. Several readers also disliked the tone and the \"did you notice number 5\" trick.",
+    "contrarian": {
+      "author": "ben_w",
+      "text": "You, me, everyone, we all fail tasks with some non-zero probability, including tasks we've done many times before. … We don't always spot errors in code we write; this was why compiler errors have to exist at one level, why unit tests and integration tests exist at another, and why despite automated tests we have QA departments.",
+      "commentId": 49884027,
+      "why": "Compilers, tests and QA exist because humans also fail at random. That weakens the article's split between consistent humans and unreliable models."
+    }
+  },
+  "digestedAt": "2026-10-18T14:21:04.000Z"
+}

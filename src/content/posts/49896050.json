@@ -1,0 +1,112 @@
+{
+  "hnId": 49896050,
+  "title": "DraftKings is using AI to behaviorally target chronic gamblers",
+  "url": "https://www.eff.org/deeplinks/2026/09/draftkings-using-ai-supercharge-harms-online-behavioral-advertising",
+  "domain": "eff.org",
+  "kind": "article",
+  "author": "paimapi",
+  "postedAt": "2026-09-29T16:30:48.000Z",
+  "points": 571,
+  "commentCount": 432,
+  "readingMinutes": 3,
+  "tldr": "DraftKings trains a machine-learning model on its customers' betting records to find people likely to lose bets. It then sends those people promotions to bring them back. The EFF says the case shows how AI makes behavioral advertising more harmful. It wants all behavioral ads banned, not only third-party data sales.",
+  "article": {
+    "keyPoints": [
+      "According to the New York Times, DraftKings trains a model on betting records to find customers who lose. DraftKings then sends them targeted ads to bring them back for more losing bets.",
+      "Losing gamblers are the customers who make DraftKings money. Problem gamblers are very likely to be in the group the model finds.",
+      "The EFF argues that AI makes behavioral advertising worse. Model builders cannot predict which data points will matter. They keep collecting more data as a result. AI also processes huge data sets faster.",
+      "Ad-tech data also feeds surveillance. Insurers, banks and agencies such as CBP buy it. ICE asked the ad-tech industry this year how it could support investigations.",
+      "DraftKings appears to use only first-party data, collected from its own users. The EFF says this shows that limits on third-party data sales are not enough. Its remedy is a ban on all behavioral advertising."
+    ],
+    "whyItMatters": "The post is a three-minute policy argument, and its facts about DraftKings come from the New York Times report. Read the Times for how the model works. Read the EFF post for the case that first-party data needs regulating too."
+  },
+  "comments": {
+    "overview": "An angry thread, and few commenters were surprised. Several said the method is ordinary machine learning, with nothing new about the AI. The long arguments were about who is to blame, whether gambling is truly addictive, and whether to ban online betting or regulate it.",
+    "themes": [
+      {
+        "title": "Who is to blame",
+        "synthesis": "One camp said nobody should expect a company to act ethically, so rules must make ethical behavior the profitable choice. Others answered that a company is only its people, and each employee can refuse or leave. Some blamed voters, since several states legalized sports betting by ballot. Others blamed the league commissioners and lobbyists who pushed for it. Former industry workers described quitting over what they saw.",
+        "quotes": [
+          {
+            "author": "groestl",
+            "text": "IMHO one shouldn't expect a company to have any ethics to achieve a positive outcome for society. This needs to be baked into the rules (taxes, regulation, ...), so the ethical behavior becomes the rational behavior.",
+            "commentId": 49897034
+          },
+          {
+            "author": "Barrin92",
+            "text": "There's nobody to do ethics for you, there is no ethics fairy to magically imbue your company with ethics",
+            "commentId": 49900395
+          }
+        ]
+      },
+      {
+        "title": "Is gambling addictive, and can DraftKings tell?",
+        "synthesis": "One commenter argued that gambling is not addictive for most people and that no operator can detect addiction. VIP status, in this view, only tracks how much someone spends. Others said betting history makes problem gamblers easy to spot, and UK sites already suspend accounts over income limits. A former rehab patient said gambling addicts there had the same problem as the drug users. A long side debate on whether gambling compares to alcohol, tobacco or video games settled nothing.",
+        "quotes": [
+          {
+            "author": "DharmaPolice",
+            "text": "You certainly wouldn't even AI to spot people who are chasing their losses for example.",
+            "commentId": 49899262
+          },
+          {
+            "author": "UpsideDownRide",
+            "text": "When I was in drug rehab beside people addicted to substances there was a handful of people with gambling problems. And it was very clear that those are the same kind of issue even if delivery mechanism is different.",
+            "commentId": 49904541
+          }
+        ]
+      },
+      {
+        "title": "The business runs on heavy losers",
+        "synthesis": "Commenters agreed that a sportsbook's best customers and its problem gamblers are the same people. One cited a Connecticut study in which 1.8% of problem gamblers made 51% of sports betting revenue. Sportsbooks also limit or ban consistent winners, which commenters called proof that the game is rigged. Others noted that daily fantasy contests take a fixed cut and do not care who wins. A former online casino manager described free trips for big players who tried to take a break.",
+        "quotes": [
+          {
+            "author": "trjordan",
+            "text": "But if you're optimizing your gambling app, you're going to find and create problematic gambling as the core objective.",
+            "commentId": 49897216
+          },
+          {
+            "author": "mrintegrity",
+            "text": "if a big account decides to stop playing (let's say they just want a break from gambling), their personal am will be arranging free trips and vip treatment to keep them on the tables.",
+            "commentId": 49898275
+          }
+        ]
+      },
+      {
+        "title": "Ban it, regulate it, or leave adults alone",
+        "synthesis": "A few commenters defended their right to bet small amounts for fun. They noted that bans only push gambling back to bookies and organized crime. A common middle position kept in-person gambling legal and banned phone betting and gambling ads. Proposals included yearly deposit caps, limits on open bets and ID checks at every login. State lotteries came up often, with critics calling them a tax on the poor that the state also advertises.",
+        "quotes": [
+          {
+            "author": "davewritescode",
+            "text": "What business do you have telling me what I’m allowed to do with my own money for fun?",
+            "commentId": 49899281
+          },
+          {
+            "author": "john_strinlai",
+            "text": "ban the predatory advertising and maximally addictive interfaces and most people will be happy. you can still piss your money away if you want to.",
+            "commentId": 49898769
+          }
+        ]
+      },
+      {
+        "title": "Ads everywhere, starting with kids",
+        "synthesis": "Many described gambling ads in every sports broadcast, podcast, bus and mailbox. Several saw a pipeline from loot boxes, card packs and Roblox to sports betting. Others said legal betting harms sports itself, with death threats to players and fans doubting every referee call. Prediction markets drew the same criticism, though one commenter still defended them in principle.",
+        "quotes": [
+          {
+            "author": "autoexec",
+            "text": "The gambling addicts who got hooked with these games will move on to DraftKings when they're older. DraftKings knows this is their pipeline and has been investing in esports and video games",
+            "commentId": 49896662
+          }
+        ]
+      }
+    ],
+    "consensus": "DraftKings targeting its losing customers surprised almost no one, because those customers are where its profit comes from. Most commenters agreed that phone betting and constant advertising made gambling harm much worse than casinos alone did.",
+    "dissent": "A minority defended adults' right to gamble and said most bettors never get into trouble. Some warned that banning \"addictive\" entertainment has no clear stopping point. One commenter argued that operators have no way to detect addiction at all.",
+    "contrarian": {
+      "author": "cortesoft",
+      "text": "Why regulate the AI bit instead of the behavior itself? If you don’t want people to exploit addiction, then outlaw that, rather than saying you just can’t use AI to exploit addictions.",
+      "commentId": 49896733,
+      "why": "The headline blames AI, but cortesoft notes that a rule against exploiting addiction would cover the same harm whatever tool a company uses."
+    }
+  },
+  "digestedAt": "2026-10-18T14:21:01.000Z"
+}

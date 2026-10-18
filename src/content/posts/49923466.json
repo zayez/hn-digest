@@ -1,0 +1,118 @@
+{
+  "hnId": 49923466,
+  "title": "RIP, vector database",
+  "url": "https://turbopuffer.com/blog/rip-vector-database",
+  "domain": "turbopuffer.com",
+  "kind": "article",
+  "author": "razin",
+  "postedAt": "2026-10-01T16:01:56.000Z",
+  "points": 405,
+  "commentCount": 116,
+  "readingMinutes": 6,
+  "tldr": "Turbopuffer started as a vector database and stored every document under its position in the vector index. Its v3 storage layer drops that layout. Documents get a stable internal ID, and the vector index becomes one secondary index among many. The company expects faster text, regex, vector and SQL-style queries.",
+  "article": {
+    "keyPoints": [
+      "In v1, every document was an ID and a vector. Turbopuffer keyed everything by the vector's cluster and slot, which it calls the ANN address.",
+      "Later features kept that key. Attribute filters, BM25 full-text search, aggregations and regex search all point at ANN addresses.",
+      "The layout works well for vector search on object storage. One index holds over 100B vectors and serves 200 ms p99 reads at more than 1k queries per second.",
+      "It also costs storage. A document with several vectors, as in late interaction, has its full contents copied once per vector.",
+      "It also costs writes. When SPFresh rebalances clusters, it moves whole documents and every index that points at them. One vector update can move hundreds of attributes.",
+      "It caps block size at the cluster size of 100 to 200 documents. Moving full-text postings out of that layout made the index 10x smaller and queries up to 20x faster. v3 already passes all CI tests, and public benchmarks will come before the production rollout."
+    ],
+    "whyItMatters": "Read the original if you build search or storage engines. It shows the key-value layouts for each index with small examples. It also gives the block sizes DuckDB, ClickHouse and Lucene use, as a reference point for vectorized execution."
+  },
+  "comments": {
+    "overview": "The thread was mostly friendly to the engineering and cool on the headline. Database people spent the most words on how closely the change repeats the old Postgres versus MySQL index design. A second camp said vector search belongs inside databases people already run, and long side threads argued about LLM-written comments and LLM-built databases.",
+    "themes": [
+      {
+        "title": "The Postgres versus InnoDB replay",
+        "synthesis": "Several commenters said turbopuffer moved from Postgres-style indexes, which point at a physical row location, to InnoDB-style indexes, which point at a stable primary key. Uber's 2016 post on Postgres write amplification came up twice as the direct precedent. Others debated the real tradeoff. One side said the extra primary-key lookup is cheap next to a disk read, and the other said it is still a B-tree walk. Some commenters asked what that extra hop costs when it is an object storage read.",
+        "quotes": [
+          {
+            "author": "blakeashleyjr",
+            "text": "InnoDB solved this by pointing secondary indexes at the PK and eating an extra lookup on read. Curious what that extra lookup costs you when it's an S3 GET instead of a B-tree hop.",
+            "commentId": 49923806
+          },
+          {
+            "author": "malisper",
+            "text": "Having secondary indexes point the primary key enables things like undo logging, which obviates the need for vacuums - vacuums being the most painful part of Postgres.",
+            "commentId": 49925088
+          }
+        ]
+      },
+      {
+        "title": "Vector search belongs in the database you already have",
+        "synthesis": "Many commenters saw little reason for a standalone vector database. They put vector similarity next to filters, joins and ACLs in CrateDB, ClickHouse, MariaDB or Elasticsearch. The main argument was operational. Syncing a second system whenever data changes is the hardest part to get right. A few compared the moment to NoSQL, when classic SQL databases absorbed the useful features.",
+        "quotes": [
+          {
+            "author": "sreekanth850",
+            "text": "Vector similarity is just one query primitive alongside full text search, filters, joins, ordering and normal relational predicates.",
+            "commentId": 49923786
+          },
+          {
+            "author": "pjmlp",
+            "text": "I have a deja-vu with the NoSQL databases, gladly to keep using classical SQL databases for data, while they get the features that matter after the dust settles.",
+            "commentId": 49931178
+          }
+        ]
+      },
+      {
+        "title": "The headline oversells the change",
+        "synthesis": "Readers pointed out that turbopuffer is not dropping vector search. It is only dropping the vector-keyed storage layout, and the post itself promises faster vector queries. A turbopuffer engineer said the new primary key is an internal (segment ID, doc ID) pair. The user's own `id` field becomes a secondary index. Other commenters wanted the p99 numbers at the same scale after the change, and one found the linked progress dashboard weeks out of date.",
+        "quotes": [
+          {
+            "author": "akras14",
+            "text": "“RIP, vector-primary index” would have been accurate. “RIP, vector database” is marketing.",
+            "commentId": 49934267
+          },
+          {
+            "author": "benesch",
+            "text": "An automatically generated internal ID: (segment ID, doc ID). The user-provided primary key (the field called `id` in the document) turns into a secondary index at the storage layer.",
+            "commentId": 49925252
+          }
+        ]
+      },
+      {
+        "title": "Should LLMs write bespoke databases?",
+        "synthesis": "One commenter proposed replacing general databases with LLM-generated code built for each workload. Most replies mocked the idea with hammer jokes. They said databases are too complex to build yourself and that a new format loses all existing tools. A database engineer replied that they have seen this at two companies and do it themselves. They limit it to search indexes, where data loss is not a risk.",
+        "quotes": [
+          {
+            "author": "dymk",
+            "text": "Databases, like filesystems, are one of those pieces of infrastructure you *do not* want to build yourself unless you have a really good reason. They're complex, and you will not catch all the bugs yourself.",
+            "commentId": 49936018
+          },
+          {
+            "author": "eatonphil",
+            "text": "I have seen this happening already at two different companies. And I'm also doing it as well. Particularly for search indexes where there's no risk of data loss.",
+            "commentId": 49925239
+          }
+        ]
+      },
+      {
+        "title": "Accusations of LLM writing",
+        "synthesis": "One commenter dismissed the post as AI slop, and a turbopuffer employee replied that they still write by hand. Others pointed at single phrasings as proof. Replies said these tics come from human writing in the first place. A long side thread asked why anyone posts LLM comments on HN at all. The answers were marketing, karma for later promotion, and cheaper astroturfing.",
+        "quotes": [
+          {
+            "author": "mediaman",
+            "text": "That's the problem with triggering on one isolated tic. The tic comes from human practice, it's not like they invented it!",
+            "commentId": 49928564
+          },
+          {
+            "author": "matwood",
+            "text": "It's the new way to disagree by not having to engage with the argument at all. Just say that a certain sentence structure or word means it's an LLM and move on.",
+            "commentId": 49931153
+          }
+        ]
+      }
+    ],
+    "consensus": "Most commenters agreed the redesign is sound and well known from relational databases. Pointing indexes at a stable ID instead of a physical location is the standard fix for write amplification.",
+    "dissent": "Many commenters doubted that standalone vector databases should exist at all. They said SQL databases and search engines with built-in vector support already cover the need. They also called the post's title marketing.",
+    "contrarian": {
+      "author": "eatonphil",
+      "text": "They're good general purpose databases but for any specific workload you can do significantly better on your own.",
+      "commentId": 49932822,
+      "why": "The thread called building your own database reckless. Yet turbopuffer's post is exactly a workload-specific engine beating general ones."
+    }
+  },
+  "digestedAt": "2026-10-18T14:20:22.000Z"
+}

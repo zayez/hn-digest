@@ -1,0 +1,78 @@
+{
+  "hnId": 49891295,
+  "title": "Everybody’s home. No one’s coming over",
+  "url": "https://www.derekthompson.org/p/the-death-of-the-american-host",
+  "domain": "derekthompson.org",
+  "kind": "article",
+  "author": "barry-cotter",
+  "postedAt": "2026-09-29T11:14:45.000Z",
+  "points": 840,
+  "commentCount": 741,
+  "readingMinutes": 10,
+  "tldr": "The share of Americans who host friends or family at home at least once a month fell from 42% in 1975 to 12% in 2026. Derek Thompson gets this number by joining Robert Putnam's old survey data to a new replication. Thompson blames dual-earner households, more intensive parenting, fewer friendships and better home entertainment. In Thompson's view, technology has made other people unnecessary for leisure.",
+  "article": {
+    "keyPoints": [
+      "Until 1975, half of Americans entertained guests at home every month. Between 1975 and 1998, the share who gave or attended a monthly dinner party fell by half. The share who never hosted anyone tripled.",
+      "The polling group Data For Progress repeated the old DDB Needham Life Style questions for Thompson. Hosting has dropped about 20% more since 1995. Combined, monthly hosting went from 42% in 1975 to 12% in 2026, a 70% fall.",
+      "Thompson rejects the idea that people moved their socializing to restaurants or new hobbies. Restaurants report more people eating alone. The exercise boom is mostly solo. Time spent at home rose almost two hours a day from 2003 to 2022.",
+      "Thompson's first causes are time pressure and work. Rich societies treat free hours as scarce. A long dinner party is hard to fit in. Women's labor participation passed 50% in 1970 and is near 80% now. Men did not take over the family social calendar.",
+      "Parents now give far more time to fewer children. Mothers added about 200 minutes a week with their kids between 1975 and 1998. Close friendships are also shrinking, most of all among Americans without a degree. Those adults (39%) and political independents (44%) are the most likely to have hosted no one in the past year.",
+      "Thompson ends with a \"Lump of Leisure\" idea. Machines never ran out of work for people to do. They did make other people unnecessary for fun. Next to TikTok, a dinner party needs schedules, cleaning, shopping and the risk of a dull evening."
+    ],
+    "whyItMatters": "Read the original for the charts, which show each survey question year by year. It also has a footnote on why two friends getting busier makes planning together much harder than either change alone."
+  },
+  "comments": {
+    "overview": "A huge, personal thread. Commenters traded childhood memories, hosting routines and confessions far more than they argued about the data. The longest fight was over whether introversion explains the decline or excuses it. A side thread about COVID turned into a long, bitter argument about long COVID.",
+    "themes": [
+      {
+        "title": "Introvert, or out of practice?",
+        "synthesis": "A European who throws parties constantly said non-hosts forget how rewarding it is, and hundreds of replies followed. One side said introversion is a measured Big Five trait, and pushing people to socialize against their nature hurts them. The other side said the label has become an excuse, and social skill weakens without practice. A middle view held that introverts always existed, but Netflix and YouTube now tip mild introverts toward staying home. Several introverts said they like hosting because the host has jobs to do and can step away.",
+        "quotes": [
+          { "author": "munificent", "text": "there is a very large trend right now of people who believe they are introverts when really they are suffering an accumulation of social anxiety that life has freed them from the need to work through.", "commentId": 49900615 },
+          { "author": "Bjartr", "text": "Trying to change your nature, however you came to have it, comes with a cost and can go wrong.", "commentId": 49892906 }
+        ]
+      },
+      {
+        "title": "Duty then, comfort now",
+        "synthesis": "The top comment came from someone reading their mother's 1970s letters. They describe dinner parties as an anxious duty kept on a ledger of who owed whom. Another commenter's mother quit hosting when guests stopped returning the favor. Replies split. One group said many good things feel like a drag in the moment, and that removing all friction leaves people isolated and unhealthy. Others answered that a duty nobody enjoys is not good just because society once required it.",
+        "quotes": [
+          { "author": "vertnerd", "text": "Someone invites you over, then that goes into an unspoken balance sheet, and you are required to reciprocate. She often spoke of \"owing\" dinner to people.", "commentId": 49892091 },
+          { "author": "tshaddox", "text": "And likewise, not everything you don't enjoy that society pressures you to do is somehow good and worth suffering through.", "commentId": 49904071 }
+        ]
+      },
+      {
+        "title": "Lower the bar and make it a habit",
+        "synthesis": "Hosts listed what wears them down. Guests expect a spotless house and lots of good food. People keep score of who hosted whom, work around stacks of diets, and flake. Several put the no-show rate at 50% to 75% and invite three people for every one they want. The fixes that worked were standing events with no planning per round. Examples were a rotating Sunday supper, a monthly open brunch and a casual fire night, with potluck food and whoever shows up.",
+        "quotes": [
+          { "author": "BeetleB", "text": "If hosting was \"simple food, no decoration, not the tidiest home\", it would happen a lot more.", "commentId": 49901689 },
+          { "author": "phil21", "text": "It's basically an open invite for a group of friends, and a standing thing that just happens. If you have no other plans, you basically go.", "commentId": 49902004 }
+        ]
+      },
+      {
+        "title": "Who does the planning now",
+        "synthesis": "Many backed Thompson's point that women used to run the social calendar, but some rejected Thompson's rebuttal that leisure time has grown. Their answer was that hosting is a skill, once passed from mother to daughter, and free hours do not replace it. Another said party planning feels like work, so more leisure does not make it appealing. Parents described kids' practices and travel sports filling the Friday and Saturday evenings that adults once used. Others said school-age kids bring plenty of cookouts and birthday parties.",
+        "quotes": [
+          { "author": "mrguyorama", "text": "The problem isn't the amount of leisure time, but the way that leisure time is used. It's easier for a planning and hosting novice to invite friends out than it is to host.", "commentId": 49897982 },
+          { "author": "alistairSH", "text": "But now that 3 of the couples have kids, 2 of which are in middle-school, it's almost impossible to get the gang together - one of the kids always has some practice or another event.", "commentId": 49892124 }
+        ]
+      },
+      {
+        "title": "Space, money and distance",
+        "synthesis": "Some blamed housing costs, small rentals, roommates and the high price of food. Others replied with data. Home ownership and real disposable income are both higher than in 1975, so they doubted money explains a 70% drop. Distance got more agreement. People in New York and other dense cities said they host and go out often, and suburban friends with long drives do not. In Spain and Japan, commenters said, people simply meet outside the home.",
+        "quotes": [
+          { "author": "titanomachy", "text": "I think the real key is that we are all within walking distance of each other. Friends who live a ten-minute drive away (still close!) are also invited but rarely show up.", "commentId": 49897888 },
+          { "author": "sarchertech", "text": "Home ownership rates are higher than they were in 1975 though and the number of people living in single family homes is close to what it was in 1975", "commentId": 49892107 }
+        ]
+      }
+    ],
+    "consensus": "Most agreed the decline began in the 1970s, before the internet, so social media cannot be the whole cause. Most also agreed that the people who host get few invitations back. Simple, regular gatherings last longer than formal dinner parties.",
+    "dissent": "A minority said little of value was lost, since the old parties were duties and people now choose what they enjoy. Others doubted the data. The survey covered only married households until 1985. The time-at-home chart stops in 2022 and ignores COVID. Hosting at least 12 times a year is a high bar.",
+    "contrarian": {
+      "author": "cm2012",
+      "text": "The evidence suggests that as people get more choice they decide to see people less and they also feel happier for it and less lonely. So I don't think there's a problem here.",
+      "commentId": 49892075,
+      "why": "It treats the decline as a choice people make when they get richer, not a loss. A reply noted that the surveys cm2012 cited covered only older Europeans."
+    }
+  },
+  "digestedAt": "2026-10-18T14:20:44.000Z"
+}

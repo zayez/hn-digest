@@ -1,0 +1,78 @@
+{
+  "hnId": 49878857,
+  "title": "A Staff Engineer's Guide to Inventing Work",
+  "url": "https://sujithjay.com/inventing-work",
+  "domain": "sujithjay.com",
+  "kind": "article",
+  "author": "amortize",
+  "postedAt": "2026-09-28T14:46:07.000Z",
+  "points": 381,
+  "commentCount": 93,
+  "readingMinutes": 8,
+  "tldr": "Internal platform teams rarely get a roadmap from a product manager. Sujith Jay Nair argues that a staff engineer on such a team must decide what to build next. Nair lists eleven signals for that choice, from systems, users, the org and the industry. The favorite is users bending the platform to jobs it was never designed for.",
+  "article": {
+    "keyPoints": [
+      "Platform teams have no revenue line and no market to lose. Work on them exists only when an engineer proposes it.",
+      "System signals include postmortems, the cloud bill and the team's own toil. Postmortems bias a team toward the loudest and most recent failures. Nair says buy-versus-build is a decision to revisit as scope and markets change.",
+      "Nair believes captive users will ask for faster horses. Nair still wants teams to interview a few users every week, month or quarter. Interviews should probe pains and their existing hacks. A pain with no hack is not acute enough.",
+      "Overloaded use-cases are prototypes users built on the platform without being asked. The test for adopting one is whether other users have the same problem. Migration laggards show which users the median solution misses.",
+      "Internal platforms follow industry swings between bundling and unbundling, with a delay. Nair says that delay lets a team import the industry's evidence without paying for it.",
+      "Nair ranks the signals by how much argument they bring and whether they lead or lag. Postmortems, costs and OKRs come pre-argued but lag. Repeated manager concerns are the weakest signal, because they rest on the highest-paid person's opinion."
+    ],
+    "whyItMatters": "Staff engineers on platform or infrastructure teams who own the team's backlog get the most from the original. It has the user interview script and the closing ranking of the signals, which the summary only outlines."
+  },
+  "comments": {
+    "overview": "The thread was mostly hostile to the framing. Many commenters read \"inventing work\" literally and said platform teams already produce too much unwanted work. A smaller group defended the article as tongue in cheek and its signals as sound practice.",
+    "themes": [
+      {
+        "title": "Platform teams should act like a product",
+        "synthesis": "The top comment rejected Nair's premise that platform teams have no market. It said they should behave as if internal users could leave, and many agreed. Commenters described platforms that only survived by mandate, and said good documentation and stable APIs should be the way to win users. Others replied that product managers also invent work, and that PMs often lack the depth for platform work.",
+        "quotes": [
+          { "author": "dabedee", "text": "The fix for having no market is to act like the teams you serve could leave. This whole article lists signals, and none of them is that.", "commentId": 49898093 },
+          { "author": "WorldMaker", "text": "If you can't sell your platform on its documentation and its stability and you must sell your platform on mandate and top-down control, you probably aren't doing as much to help your engineering culture as you think you are.", "commentId": 49911006 }
+        ]
+      },
+      {
+        "title": "\"Inventing work\" is the wrong name",
+        "synthesis": "Many commenters disliked the title. They offered \"discovery\", \"requirements engineering\" or \"defining work\" instead, and several expected satire or a guide to slacking off. Defenders said the phrase is tongue in cheek and that finding the team's scope is part of a staff engineer's job description. One commenter claimed the post read as LLM output.",
+        "quotes": [
+          { "author": "gloryjulio", "text": "But for staff engineers, they need to to discover the scope themselves. That's where \"inventing\" coming from.", "commentId": 49897488 },
+          { "author": "devmor", "text": "The OP isn't saying there aren't things to be done, they are saying that no one is going to tell them what needs to be done, so they must discover and formalize it.", "commentId": 49901033 }
+        ]
+      },
+      {
+        "title": "Platform work needs evidence to get approved",
+        "synthesis": "A staff platform engineer said knowing what to fix is easy and getting approval is hard. A PM blocked their data model work for almost a year, until database load charts showed the risk of an incident. A PM replied from the other side, describing a tech lead who refuses to justify their work. Others argued that metrics also set KPIs and help justify promotions.",
+        "quotes": [
+          { "author": "dirtbag__dad", "text": "Even technical people probably don’t know wtf is going on in your domain, and metrics gets everyone on the same page, because numbers and charts are easy to understand.", "commentId": 49903304 },
+          { "author": "Gareth321", "text": "His justifications are usually some combination of \"it's too complicated to explain,\" and \"this code is a mess.\" Problem is, I need to account for their hours.", "commentId": 49905696 }
+        ]
+      },
+      {
+        "title": "Platforms built without real customers",
+        "synthesis": "Several commenters described generic platforms that no project wanted. One left a job after being made a test team for a fragile, monolithic authorization system. Others said a platform needs at least one real project to test it, and ideally three. A commenter blamed staffing platform teams with skilled engineers who have no interest in how other developers work.",
+        "quotes": [
+          { "author": "carlmr", "text": "If you don't have a project-0 to test those assumptions against, you don't need to start that platform.", "commentId": 49905115 },
+          { "author": "hibikir", "text": "So even when they were sent in the general direction of a useful problem to solve, things rarely pan out, because they don't like to talk to their users. Therefore they write the tools they would want to use and are interesting to build instead.", "commentId": 49903104 }
+        ]
+      },
+      {
+        "title": "Cost as the signal to follow",
+        "synthesis": "One commenter called the article lazy for saying there is no revenue line and then discussing cost. A reply said memory and data structure savings improve the bottom line without touching revenue. A newly promoted staff engineer said cutting costs is their strategy for job security and for avoiding doomed moonshot projects.",
+        "quotes": [
+          { "author": "Traubenfuchs", "text": "If I regularly reduce costs by 2, 3 times what I cost my company, I will be left alone with the moonshot projects, won't be targeted by RIF and get my above inflation salary increase.", "commentId": 49931584 },
+          { "author": "skrtskrt", "text": "There's always a cost line to follow, just because there's \"not a revenue line\" means absolutely nothing it just sounds pithy.", "commentId": 49899451 }
+        ]
+      }
+    ],
+    "consensus": "Most commenters agreed that platform teams must stay close to their internal users and treat them as customers. A platform no team wants is a failure, whatever its technical quality.",
+    "dissent": "A minority defended the article. They said users rarely know what a system needs technically, and finding that work is what platform engineers are hired for. Some said product managers in charge of platforms produce worse results than engineers.",
+    "contrarian": {
+      "author": "oldnewthing",
+      "text": "should we build the resiliency capability that hurts multiple customers and who have asked for it because it reduces their toil or the AI feature that nobody has asked for that our PM wants?",
+      "commentId": 49955079,
+      "why": "The thread demanded product leadership, and this platform lead gives a concrete case where the PM chose the unrequested feature over the one users asked for."
+    }
+  },
+  "digestedAt": "2026-10-18T14:20:25.000Z"
+}

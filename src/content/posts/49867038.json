@@ -1,0 +1,118 @@
+{
+  "hnId": 49867038,
+  "title": "Tells of a Slop UI",
+  "url": "https://hereticpleb.vercel.app/blog/10-tells-of-slop",
+  "domain": "hereticpleb.vercel.app",
+  "kind": "article",
+  "author": "theanonymousone",
+  "postedAt": "2026-09-27T14:41:26.000Z",
+  "points": 386,
+  "commentCount": 244,
+  "readingMinutes": 4,
+  "tldr": "A student lists ten visual signs that an AI agent built a user interface. They include gradients, random colors, pulsing badges and accent-striped cards. Others are emoji, misalignment, stock fonts, glassmorphism and hype taglines. The author vibe-codes too, and blames people who ship the first result without effort.",
+  "article": {
+    "keyPoints": [
+      "Pranav Desai's college app got \"minor UI improvements\" from an AI agent. Desai calls the result the most slop-coded interface they have seen.",
+      "Desai defines slop UI as AI-made interface that looks off, serves no purpose or is too generic. It makes apps look cheap, Desai says.",
+      "The loudest signs are gradients everywhere, often purple, and colors that carry no meaning. These break the 70-30-10 color rule.",
+      "Badges often state things that are always true. Desai's digital ID pulses \"active\", but the app logs the user out when it is inactive.",
+      "Chat context leaks into the copy. One site said \"Built with Hugo. Written from Neovim\" because Desai had told the agent about writing in Neovim.",
+      "Desai also lists fingernail cards, emoji, Inter and JetBrains Mono, \"//\" separators and glassmorphism. The list adds words like \"Elevate\" and \"Seamless\" that treat every screen as a landing page."
+    ],
+    "whyItMatters": "The original has screenshots of each tell, from the college app and from a Cloudflare page. The text alone does not show what a fingernail card or the brutalist style looks like. It is a short, ranty read."
+  },
+  "comments": {
+    "overview": "A busy, mostly agreeing thread that spent much of its energy adding tells to the list. The main argument was whether these patterns are AI's fault or just old web habits. Commenters also asked whether ordinary users care at all. Several mocked the author's own site for its Fraktur heading font.",
+    "themes": [
+      {
+        "title": "The prompt leaks into the page",
+        "synthesis": "The tell commenters found most new was copy that echoes the conversation with the agent. Examples were test comments saying \"Real services, no mocks\" and sites that announce \"Your files never leave your browser\". Several said a \"don't do X\" rule makes the model mention X. One developer said a page went from \"no extra copy\" to \"just your UI, no copy\". Others said the same leak puts backend details, like inactive student status, in front of users.",
+        "quotes": [
+          {
+            "author": "JoshTriplett",
+            "text": "You tell them not to do a thing, they make a point of saying they didn't do the thing.",
+            "commentId": 49867605
+          },
+          {
+            "author": "WorldMaker",
+            "text": "These prompt writers kept getting surprised that I'd delete all their negative examples and harshly worded \"Don't do X\" and \"Never Y\" and \"NO: Z\" sections they spend so much time on and got better results with smaller more focused positive example only prompts.",
+            "commentId": 49868813
+          }
+        ]
+      },
+      {
+        "title": "Old patterns, now with worse defaults",
+        "synthesis": "Many said glassmorphism, brutalism, fade-ins and colored cards existed before LLMs, so the model learned them from people. Some compared the wave to Bootstrap's look-alike sites and called it a fair trade for consistency. Others replied that Bootstrap shipped good contrast and accessibility defaults. LLM output, they said, often fails WCAG, uses thin Inter weights and brings back all caps.",
+        "quotes": [
+          {
+            "author": "WorldMaker",
+            "text": "LLMs aren't starting from sensible defaults and don't have to meet WCAG scores unless you tell them to (and even then might hallucinate checks they didn't actually make).",
+            "commentId": 49868926
+          },
+          {
+            "author": "hnlmorg",
+            "text": "The problem with AI slop is that it’s trained on good code as well as bad. This is like the arguments against the Oxford comma and em dash all over again.",
+            "commentId": 49867821
+          }
+        ]
+      },
+      {
+        "title": "Bad, or only overused?",
+        "synthesis": "One camp said most of these styles are fine on their own and read as cheap only because every side project uses them, as with the em dash. A critic called the article elitist, since the author admits some styles look cool until overused. Others answered that disliking repetition is natural. A musician said the slop feeling comes from fifty small flaws adding up, not one big one.",
+        "quotes": [
+          {
+            "author": "mjr00",
+            "text": "Nothing in here is an obviously major problem on its own. But when you add up 50 of these on a website, users get hit with that \"this is slop\" feeling.",
+            "commentId": 49867870
+          },
+          {
+            "author": "socializer",
+            "text": "It's that everyone gets the same LLM, and if you just ask \"hey LLM, make me a website\", you get a very similar product. Eventually, people learn to recognize and hate that aesthetic because it's overused.",
+            "commentId": 49867658
+          }
+        ]
+      },
+      {
+        "title": "The human who ships it is the problem",
+        "synthesis": "Many blamed lazy prompting and missing taste, not the models. Fixes offered were a fixed palette, rules in agents.md, copy drafted in Markdown first, and a component design system checked by linters. Skeptics said that hours of telling the agent what not to do makes the user the designer. Others doubted that models see misalignment well enough to fix it.",
+        "quotes": [
+          {
+            "author": "mrweasel",
+            "text": "Sure the clanker designed and built the UI, but someone looked at it and went \"Hell yeah! Ship it!\".",
+            "commentId": 49867407
+          },
+          {
+            "author": "itsdavesanders",
+            "text": "But in short: if the LLM keeps screwing it up, build tools and define it once - stop trying to prompt your way out of it every time.",
+            "commentId": 49880112
+          }
+        ]
+      },
+      {
+        "title": "Do users care?",
+        "synthesis": "Some said ordinary visitors only want to reach their goal, and AI design beats the median human site. One maintainer said an AI redesign of an old Bootstrap 2 portal got only praise. Others said meaningless badges and misalignment do hurt usability. They added that people with money already notice cheap-looking AI images.",
+        "quotes": [
+          {
+            "author": "elaus",
+            "text": "Aligning content is not just to please a designer's eye, it helps users understand which parts of the UI belong together.",
+            "commentId": 49868163
+          },
+          {
+            "author": "_rwo",
+            "text": "I think engineers have very different bar for slop than most of the people",
+            "commentId": 49868258
+          }
+        ]
+      }
+    ],
+    "consensus": "Most agreed the tells are real and easy to spot. They traced them to people shipping the agent's first draft without care. The model was not the main culprit for them.",
+    "dissent": "A sizable minority said the patterns predate AI and that \"slop\" just means bad design by anyone. For them, average users do not care which tool made a page.",
+    "contrarian": {
+      "author": "Mawr",
+      "text": "The problem, really, is assuming that the alternative to a slop website is a non-slop website. But the alternative is often no website at all.",
+      "commentId": 49868224,
+      "why": "It compares slop to what would exist without AI, not to good design."
+    }
+  },
+  "digestedAt": "2026-10-18T14:20:23Z"
+}

@@ -1,0 +1,118 @@
+{
+  "hnId": 49901973,
+  "title": "How our vibe coded website looks like a designer made it",
+  "url": "https://railcode.dev/blog/vibe-coded-website",
+  "domain": "railcode.dev",
+  "kind": "article",
+  "author": "yakkomajuri",
+  "postedAt": "2026-09-29T22:59:28.000Z",
+  "points": 138,
+  "commentCount": 77,
+  "readingMinutes": 9,
+  "tldr": "Yakko Majuri built the Railcode website with coding agents and no designer. Visitors still asked which designer made it. Majuri credits a long loop of wide exploration, borrowed inspiration and forked variants. Most of the iterations were dead ends.",
+  "article": {
+    "keyPoints": [
+      "Majuri says they cannot invent design concepts from scratch. They start from websites they like and from batches of agent-generated designs.",
+      "Majuri asks an agent for 4 to 10 versions of each idea, spread from minimal to outlandish. They tell it to \"go wild\" on about half of them.",
+      "An ugly \"go wild\" neon rollercoaster reminded Majuri of the game Rollercoaster Tycoon. That game became the theme of the site.",
+      "A lone rollercoaster looked out of place on the page. Majuri grew it into a strip of park rides that fades into the color of the next section.",
+      "Majuri keeps the whole design in one HTML file until it is nearly done. This makes it fast to fork a variant and compare it side by side. They also have the agent build throwaway \"playground\" pages to tune colors and fonts live.",
+      "Majuri uses only Anthropic models for design, and says OpenAI models struggle even with specific directions."
+    ],
+    "whyItMatters": "Non-designers who build sites with coding agents get the most from the original. It shows each prototype next to the prompt that made it. That trail of dead ends is the useful part, and a summary cannot show it."
+  },
+  "comments": {
+    "overview": "The thread was mostly warm, and it argued mainly about the title. Many said Majuri's loop of iteration simply is design work. A loud minority said the site still looks AI-made.",
+    "themes": [
+      {
+        "title": "The process is design",
+        "synthesis": "The most common reply was that Majuri is the designer, and the agent only wrote the code. One commenter matched Majuri's steps to the process taught in design schools. A former HCI student said that list misses the core step, which is showing the work to users. A skeptic compared the method to scrolling a template store until something looks good enough.",
+        "quotes": [
+          {
+            "author": "fiatpandas",
+            "text": "OP, you accidentally invented the design process that they teach in design school. You can officially call yourself a designer.",
+            "commentId": 49902178
+          },
+          {
+            "author": "Gualdrapo",
+            "text": "At that point it just sounds like going to a website template store and scrolling endlessly through options until you find a template you'd say \"meh, this will do\".",
+            "commentId": 49902177
+          }
+        ]
+      },
+      {
+        "title": "It still looks AI-made",
+        "synthesis": "Several commenters said the site still has LLM tells. One self-described UI person named the glass-style panels and tabs, and Majuri agreed. Another commenter could not find any glass and called the site clean and tasteful. Others criticized the sections below the hero, the page-load animation, a JavaScript shell with no static content, and 26 W3C validator warnings.",
+        "quotes": [
+          {
+            "author": "slopinthebag",
+            "text": "Now there is an actually easy fix: just replace the glass panels and tabs with something that actually fits the rest of the aesthetic.",
+            "commentId": 49902164
+          },
+          {
+            "author": "yakkomajuri",
+            "text": "Doing this is really time-consuming so certainly there were some corners cut -- need to also focus on product after all!",
+            "commentId": 49902121
+          }
+        ]
+      },
+      {
+        "title": "Control costs speed",
+        "synthesis": "One commenter argued that keeping creative control slows AI work to near human speed. Meanwhile, people who do not care about quality flood feeds with slop. Others replied that the time spent is the design work itself. A side debate asked whether models can handle UX psychology. One answer was that most models never click through the page they generate.",
+        "quotes": [
+          {
+            "author": "socializer",
+            "text": "In the time it takes someone to produce excellent results using AI without giving up control, people unconcerned with quality or style can produce 100x as much.",
+            "commentId": 49902566
+          },
+          {
+            "author": "strangecasts",
+            "text": "Clicking through the website with computer use isn't currently part of the website generation chain for most models",
+            "commentId": 49905903
+          }
+        ]
+      },
+      {
+        "title": "A zero-effort copy",
+        "synthesis": "One commenter had Gemini describe the site as prompts, then fed them to an image-to-code pipeline with no further input. Readers split on whether the copy beat the original. Critics said the copy lacks the original's attention to detail. Others mocked both animations, with riders standing up, people on the tracks and an unbanked turn.",
+        "quotes": [
+          {
+            "author": "jjcm",
+            "text": "I had gemini describe this webpage as prompts, then fed it into an image -> code pipeline. Note that this is with 0 input from me",
+            "commentId": 49902542
+          },
+          {
+            "author": "spoiler",
+            "text": "Yes, you can mimic something (with or without AI) but you wouldn't have made _this_.",
+            "commentId": 49904827
+          }
+        ]
+      },
+      {
+        "title": "Tips readers took",
+        "synthesis": "The playground idea was the most praised tip. Readers added their own methods. One starts from design tokens and typography. Another runs a subagent that plays an HN reader who hates AI slop and strips it from the UI.",
+        "quotes": [
+          {
+            "author": "quicklywilliam",
+            "text": "Best tip in here: when tweaking details like colors and fonts, just ask Claude to make you throwaway picker tools right in the site.",
+            "commentId": 49902703
+          },
+          {
+            "author": "MisterMunchkin",
+            "text": "My current strategy is to have a sub agent pretend to be a hackernews reader who hates AI slop. It then goes through the whole UI and removes all the slop.",
+            "commentId": 49906526
+          }
+        ]
+      }
+    ],
+    "consensus": "Most agreed that taste and patient iteration made the site, not the model. In that sense, Majuri did the design himself.",
+    "dissent": "A steady minority said the site still looks vibe coded. They pointed at the panels, the tabs and the sections below the hero.",
+    "contrarian": {
+      "author": "jjcm",
+      "text": "I think the point I'm trying to make is that \"vibecoded\" landing pages can actually be quite high quality these days, and the author was sandbagging a bit for their point that 0->1 results are bad",
+      "commentId": 49912605,
+      "why": "After rebuilding the site with no human input, jjcm argues that Majuri's slop example understates what a first prompt can produce."
+    }
+  },
+  "digestedAt": "2026-10-18T14:20:41.000Z"
+}

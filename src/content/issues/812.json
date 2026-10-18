@@ -1,0 +1,135 @@
+{
+  "number": 812,
+  "date": "2026-10-02",
+  "url": "https://buttondown.com/hacker-newsletter/archive/812/",
+  "posts": [
+    {
+      "post": "49878857",
+      "section": "Working",
+      "tier": "dontSkip",
+      "reason": "A staff engineer's framework for finding the next project when no product manager sets the roadmap, sorting the sources into system, user, org and industry signals with concrete examples and a ranking of which to trust."
+    },
+    {
+      "post": "49877988",
+      "section": "Working",
+      "tier": "dontSkip",
+      "reason": "A long, experience-based argument that code still needs human reading for maintenance, reliability and accountability, with a concrete list of where AI tools work well and where they don't, and a thread split on whether LLM-built software is getting worse."
+    },
+    {
+      "post": "49891295",
+      "section": "Favorites",
+      "tier": "dontSkip",
+      "reason": "Derek Thompson uses replicated survey data to show monthly home hosting falling from 42 percent in 1975 to 12 percent today and weighs the causes, from time pressure to fewer close friendships; the thread argues that hosting is worth the effort."
+    },
+    {
+      "post": "49901973",
+      "section": "Design",
+      "tier": "worthYourTime",
+      "reason": "A step-by-step account of building a tasteful site with coding agents: a theme, forked prototypes, colour playgrounds and collected inspiration, with the actual working methods and example prompts."
+    },
+    {
+      "post": "49923466",
+      "section": "Data",
+      "tier": "worthYourTime",
+      "reason": "turbopuffer explains why it moved its primary index off the vector address, walking through three versions of its storage layout and the write and storage amplification the original design caused."
+    },
+    {
+      "post": "49890732",
+      "section": "Learn",
+      "tier": "worthYourTime",
+      "reason": "Argues that cheap, locally smeltable iron, not an outside catastrophe, broke the Bronze Age order, and backs it with trade routes, a skeletal-trauma study, a battle database and reign-length data."
+    },
+    {
+      "post": "49880036",
+      "section": "Favorites",
+      "tier": "worthYourTime",
+      "reason": "A long feature on how fan preservationists and boutique labels restore films that studios altered or neglected, with The Good, the Bad and the Ugly as the main case and the DMCA's anti-circumvention rule in the background."
+    },
+    {
+      "post": "49880312",
+      "section": "Code",
+      "tier": "ifYouHaveAMinute",
+      "reason": "A short essay arguing that the real risk of AI-written code is teams losing track of architecture and intent, and a thread full of first-hand stories about AI-written specs and memos inside large companies."
+    },
+    {
+      "post": "49867038",
+      "section": "Design",
+      "tier": "ifYouHaveAMinute",
+      "reason": "Ten recurring tells of AI-generated web UIs, and a thread that pushes back with evidence that many of them predate AI."
+    },
+    {
+      "post": "49858513",
+      "section": "Show HN",
+      "tier": "ifYouHaveAMinute",
+      "reason": "A text diagram language where you place nodes by relative position instead of coordinates or auto-layout, with a thread comparing it to D2 and other tools."
+    },
+    {
+      "post": "49896050",
+      "section": "Startup News",
+      "tier": "ifYouHaveAMinute",
+      "reason": "EFF's short case for banning behavioral advertising, built on reporting that a betting company used machine learning to target customers likely to lose; the thread adds a ProPublica investigation and a comparison with state lotteries."
+    },
+    {
+      "post": "49892245",
+      "section": "Learn",
+      "tier": "ifYouHaveAMinute",
+      "reason": "An engineering professor explains how Delhi cut grid losses from over 50 percent to about 5, covering the reactive-power physics, meters and monitoring, and the theft and billing reforms."
+    }
+  ],
+  "nearMisses": [
+    {
+      "title": "Does Georgism Work? Five Years Later",
+      "section": "Favorites",
+      "domain": "astralcodexten.com",
+      "url": "https://www.astralcodexten.com/p/does-georgism-work-five-years-later",
+      "hnId": 49844657
+    },
+    {
+      "title": "What are you reading?",
+      "section": "Ask HN",
+      "hnId": 49893157
+    },
+    {
+      "title": "Before pixels: Modular industrial dashboards",
+      "section": "Design",
+      "domain": "unsung.aresluna.org",
+      "url": "https://unsung.aresluna.org/before-pixels-modular-industrial-dashboards/",
+      "hnId": 49912792
+    },
+    {
+      "title": "OpenAI Feared \"Optics\" of what might appear on Hacker News",
+      "section": "Books",
+      "domain": "authorsguild.org",
+      "url": "https://authorsguild.org/news/ag-v-openai-top-execs-knew-mass-book-piracy-was-illegal/",
+      "hnId": 49863864
+    },
+    {
+      "title": "We're gonna need a lot more mathematicians",
+      "section": "Working",
+      "domain": "terrytao.wordpress.com",
+      "url": "https://terrytao.wordpress.com/2026/09/24/were-gonna-need-a-lot-more-mathematicians/",
+      "hnId": 49852717
+    },
+    {
+      "title": "Surprisingly complex waves reveal the brain's inner workings",
+      "section": "Learn",
+      "domain": "quantamagazine.org",
+      "url": "https://www.quantamagazine.org/surprisingly-complex-waves-reveal-the-brains-inner-workings-20260930/",
+      "hnId": 49912955
+    },
+    {
+      "title": "Divide by Depth for Instant 3D",
+      "section": "Learn",
+      "domain": "gabrieloc.com",
+      "url": "https://gabrieloc.com/2026/09/15/perspective.html",
+      "hnId": 49769561
+    },
+    {
+      "title": "Deterministic Concurrency",
+      "section": "Watching",
+      "domain": "youtube.com",
+      "url": "https://www.youtube.com/watch?v=25x0UuSCKuU",
+      "hnId": 49851795
+    }
+  ]
+}

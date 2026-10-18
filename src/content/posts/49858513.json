@@ -1,0 +1,113 @@
+{
+  "hnId": 49858513,
+  "title": "Show HN: Reladraw – A diagram language where you decide where to place things",
+  "url": "https://github.com/reladraw/reladraw",
+  "domain": "github.com",
+  "kind": "article",
+  "author": "jpwalsh234",
+  "postedAt": "2026-09-26T17:10:40.000Z",
+  "points": 415,
+  "commentCount": 119,
+  "readingMinutes": 3,
+  "tldr": "Reladraw is a text language for diagrams in which you state where each box goes relative to the others. It sits between auto-layout tools like Mermaid and Graphviz and hand-placed tools like draw.io. The author built it for both people and coding agents. It renders to SVG from a CLI or a web element and ships a skill for agents.",
+  "article": {
+    "keyPoints": [
+      "Mermaid, Graphviz and D2 choose positions for you, so they fail when you already have a picture in mind.",
+      "draw.io and Excalidraw allow absolute placement. That costs people a lot of dragging. It costs agents a lot of coordinate math and verbose XML edits.",
+      "In Reladraw you write statements like `node store \"Database\" right of app level with app`. The tool computes the coordinates from those relations.",
+      "A CLI turns a `.reladraw` file into SVG, and a `<reladraw-diagram>` element does the same inside a web page. One `npx skills add` command installs a skill that teaches agents the syntax.",
+      "The project is at version 0.16.0, written in TypeScript with zero runtime dependencies. The syntax is not stable yet.",
+      "The author accepts issues but not pull requests. The most useful issue is a diagram that Reladraw cannot express."
+    ],
+    "whyItMatters": "Anyone who keeps diagrams as text or has an agent draw them should open the repo for the playground and SYNTAX.md. The summary cannot show how the relative statements look next to the draw.io original."
+  },
+  "comments": {
+    "overview": "A friendly launch thread. The author answered nearly every comment and shipped fixes for themes and edge routing during the discussion. Most of the substance was about how Reladraw differs from D2, Pikchr, PlantUML and tikz, and what the language still lacks.",
+    "themes": [
+      {
+        "title": "How it differs from existing tools",
+        "synthesis": "Commenters named D2 with its TALA engine, Pikchr, pic, PlantUML, schemdraw and tikz as near relatives. The author's reply was the same each time. TALA and Graphviz hints nudge an auto-layout engine, and Pikchr and pic move a cursor with coordinate offsets. Reladraw states relations directly. One Pikchr user pushed back with a container example, and the author conceded the point and called the rest a matter of taste.",
+        "quotes": [
+          {
+            "author": "tonnydourado",
+            "text": "Graphviz's dot has rank and head/tail ports, and Plantuml's class diagram has some support for relative position, but both are more hints for the layout engine, not deterministic declarations.",
+            "commentId": 49865601
+          },
+          {
+            "author": "jpwalsh234",
+            "text": "I think it's less a matter of \"reladraw can do it, but pikchr cannot\". It's more like, \"both can get to the same destination, but how you get there is a matter of taste and how you express your intent\".",
+            "commentId": 49869648
+          }
+        ]
+      },
+      {
+        "title": "Gaps in the language",
+        "synthesis": "The longest critique asked for line continuations and multiline strings, and for a better line-break character than `/`. It also asked for reusable node definitions so sequence-diagram lanes are defined once. Others asked to load nodes from CSV or JSON, to keep a C4 model separate from layout, and to export computed positions as JSON for other renderers. The author said the no-multiline rule was not fixed and that functions, variables and custom attributes are next.",
+        "quotes": [
+          {
+            "author": "tonnydourado",
+            "text": "line continuations (i.e., some distinction between physical and logical lines) can make or break the user experience, IMHO",
+            "commentId": 49865601
+          },
+          {
+            "author": "Garlef",
+            "text": "We recently generated a big C4 model of the whole company. Good and informative since you can click through it! But it doesn't look nice and doesn't tell a coherent picture visually.",
+            "commentId": 49864044
+          }
+        ]
+      },
+      {
+        "title": "Diagrams as a channel to agents",
+        "synthesis": "Several readers use diagrams to check that an agent shares their mental model. They found that agents fight auto-layout engines the same way people do. The author argued that agents should state relations and leave the arithmetic to the tool. Skeptics said a frontier model already draws decent SVG, or that a draw.io skill is enough. One commenter argued that translating between text and visuals will not last.",
+        "quotes": [
+          {
+            "author": "aktenlage",
+            "text": "When I made copilot write a script that creates a .dot diagram, I found it funny that it had the same problems with placement that I have when doing it manually.",
+            "commentId": 49860209
+          },
+          {
+            "author": "fallingmeat",
+            "text": "great work. but at this point prompting a frontier model to make a svg diagram works so well..",
+            "commentId": 49865711
+          }
+        ]
+      },
+      {
+        "title": "Errors instead of silent guesses",
+        "synthesis": "The author explained that statements which can all hold all apply. A real contradiction, such as a node both left and right of A, gives an error that names the clashing lines. One commenter praised this as the type-safe choice. Another said fighting a compiler over a diagram is too much and wanted warnings. The author proposed errors for true contradictions and overridable defaults for unspecified details.",
+        "quotes": [
+          {
+            "author": "jpwalsh234",
+            "text": "If they all can't hold, you'll get an error naming the clashing statements (e.g., something both left and right of A). Nothing silently wins.",
+            "commentId": 49860015
+          },
+          {
+            "author": "asqueella",
+            "text": "I think this should be a warning. Fighting the compiler when trying to draw a diagram is maybe a bit too much...",
+            "commentId": 49869646
+          }
+        ]
+      },
+      {
+        "title": "Getting it into daily workflows",
+        "synthesis": "Readers asked whether a reladraw code block renders in Markdown like Mermaid does. The author said GitHub supports Mermaid natively, so GitHub needs a rendered SVG instead. Editors like VS Code, IntelliJ and Obsidian can use plugins, and one commenter had already published a VS Code extension. A request for fewer dependencies led the author to test scriptc, which failed, and Deno, which works but produces a binary of about 100MB.",
+        "quotes": [
+          {
+            "author": "jpwalsh234",
+            "text": "I believe Github simply built in support for Mermaid as just something they natively support. That means getting reladraw to \"just work\" in Github markdown files is sorta not possible.",
+            "commentId": 49863814
+          }
+        ]
+      }
+    ],
+    "consensus": "Most commenters agreed that a gap exists between auto-layout languages and drag-and-drop editors. Many had fought Mermaid or Graphviz over placement. They welcomed a tool that keeps diagrams as text and still lets them decide the layout.",
+    "dissent": "One thread dismissed the project because the README and code looked LLM-written. Others replied that how the code was written matters less than whether it is useful. A few asked why the constraints were not added to Mermaid or D2 instead of creating a new language.",
+    "contrarian": {
+      "author": "recroad",
+      "text": "This is just for me, but I don't think I want to get into the business of specifying placement in that much detail. It would too cumbersome and I'd rather focus on what I want the diagram to convey, rather than how.",
+      "commentId": 49867623,
+      "why": "The comment questions the premise itself. Each new routing control adds detail the user must write, and that can cost more than auto-layout saves."
+    }
+  },
+  "digestedAt": "2026-10-18T14:20:28.000Z"
+}

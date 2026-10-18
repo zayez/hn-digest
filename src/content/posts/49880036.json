@@ -1,0 +1,108 @@
+{
+  "hnId": 49880036,
+  "title": "Pirating the Pirates",
+  "url": "https://mubi.com/en/notebook/posts/pirating-the-pirates",
+  "domain": "mubi.com",
+  "kind": "article",
+  "author": "piotrgrabowski",
+  "postedAt": "2026-09-28T15:54:15.000Z",
+  "points": 712,
+  "commentCount": 405,
+  "readingMinutes": 14,
+  "tldr": "Official home video releases of classic films are often altered or badly made. Amateur preservationists fix them by combining ripped discs, LaserDisc audio and scans of old prints. Under US law this work is piracy. Boutique labels like Arrow now quietly use it in their own releases.",
+  "article": {
+    "keyPoints": [
+      "MGM's early-2000s restoration of The Good, the Bad and the Ugly added back cut scenes and stretched the film from 161 to 179 minutes.",
+      "That restoration also replaced the mono soundtrack with a surround mix that has modern gunshot effects.",
+      "Studios often scrub grain, oversaturate color, remix audio or change the aspect ratio on reissues. Living directors such as Wong Kar-wai also rework their old films.",
+      "Fans work under fewer limits than labels. Project 4K77, a Star Wars reconstruction from 35mm prints, has dozens of audio tracks and exceeds 100GB.",
+      "Breaking a disc's lock is a federal violation under Section 1201 of the DMCA. The law ignores the purpose of the rip.",
+      "Arrow's James Flower checks what fan restorers have fixed before each release. The author's own bootleg team later consulted on Arrow's 2025 Dollars trilogy release."
+    ],
+    "whyItMatters": "Read the original for the author's firsthand story. It runs from a guerrilla screening of a homemade cut to anonymous forum lobbying of Kino Lorber and then official consulting for Arrow. It also has long interview quotes from Flower and from YouTube reviewer Spencer Draper on the pirates' informal code."
+  },
+  "comments": {
+    "overview": "The thread was large and mostly sympathetic to the preservationists. The longest fight was about whether copyright law or preservation should win, carried mostly by one commenter against several. Readers also shared many examples of shows and games ruined by lost music rights.",
+    "themes": [
+      {
+        "title": "Does preservation justify piracy?",
+        "synthesis": "Most commenters said copyright terms are so long that legal archiving is pointless, since physical media decays first. Abandonware veterans said fan sites kept old games playable when rights holders kept nothing. One persistent commenter said preservation is often a cover for piracy and that losing some works is acceptable. Others noted that most pirates just download what they like, while a small minority does real archiving.",
+        "quotes": [
+          {
+            "author": "rpdillon",
+            "text": "copyright seeks to create a mechanism to compensate creators by creating scarcity. They succeeded.",
+            "commentId": 49893627
+          },
+          {
+            "author": "charcircuit",
+            "text": "I care about preservation, but my care for preservation does not place it above the law.",
+            "commentId": 49894116
+          }
+        ]
+      },
+      {
+        "title": "Directors who revise their own films",
+        "synthesis": "George Lucas drew the most scorn, but Ridley Scott's green grade on the Blade Runner Final Cut and James Cameron's heavy noise reduction came up too. A former Star Wars effects software developer argued that directors may revise, but the original release should stay available. One commenter defended the artist's right to change or discard a work. Others replied that a released work also belongs to its audience and to history.",
+        "quotes": [
+          {
+            "author": "mrandish",
+            "text": "It's fine to later release his 'perfect vision' but in today's digital media era, there's zero reason or justification to make the originals unavailable.",
+            "commentId": 49886101
+          },
+          {
+            "author": "kulahan",
+            "text": "If I make something, I can change it however I want, as many times as I want, and throw away old copies - even if you *really really* liked those old copies. It's my art, not yours.",
+            "commentId": 49888126
+          }
+        ]
+      },
+      {
+        "title": "Music rights break re-releases",
+        "synthesis": "Many readers listed shows whose DVD or streaming versions swapped the original songs for stock music: Daria, WKRP in Cincinnati, The Wonder Years, Scrubs and Tour of Duty. Games suffer the same way, from GTA radio stations to the music cut from Mafia on GOG. Some said the old contracts only licensed songs for broadcast, and finding every rights holder again costs too much. Several said shorter copyright terms would fix most cases.",
+        "quotes": [
+          {
+            "author": "xp84",
+            "text": "Replaced with muzak in the DVD releases, and a bunch of pirates have cobbled together best-effort mash-ups based on audio from TV rips",
+            "commentId": 49883364
+          },
+          {
+            "author": "mopsi",
+            "text": "Games and movies make almost all of their lifetime earnings in the first few years, and the dribble that's left afterwards is less important than preservation and public access.",
+            "commentId": 49882973
+          }
+        ]
+      },
+      {
+        "title": "Remuxes and fan edits",
+        "synthesis": "Several commenters said the article misused \"remux\". A remux copies a disc's streams into a new container without re-encoding. People who make remuxes then argued over what a \"hybrid remux\" is, and the argument never settled. Others shared fan edits they liked, such as the Despecialized Star Wars, a 4-hour Hobbit cut and a Blade Runner restoration.",
+        "quotes": [
+          {
+            "author": "softskunk",
+            "text": "A remux is the original data from, for instance, a Blu-ray disc, transferred into a new container without re-encoding. What the author is referring to would be called a “hybrid remux”.",
+            "commentId": 49881132
+          }
+        ]
+      },
+      {
+        "title": "Buying discs instead of streaming",
+        "synthesis": "A side thread weighed dropping subscriptions for physical media. Fans pointed to cheap thrift-store and estate-sale discs, public libraries and home servers like Jellyfin. Others warned that big US retailers are dropping discs and that many streaming originals never get a disc release.",
+        "quotes": [
+          {
+            "author": "WorldMaker",
+            "text": "Target, Best Buy, and other big US chains have given up on physical media for movies.",
+            "commentId": 49884230
+          }
+        ]
+      }
+    ],
+    "consensus": "Original theatrical versions should stay available, and studios and rights holders often fail to keep them. Fan preservationists have saved films and games that the owners lost or altered.",
+    "dissent": "A minority said preservation is often a cover for piracy. They argued that most people who pirate never archive anything, and that copyright law still applies.",
+    "contrarian": {
+      "author": "account42",
+      "text": "Unlike movies, TV shows (and this includes TNG) have an additional problem that they were often only mastered in SD with a lot of the digital effects never rendered in higher resolution.",
+      "commentId": 49963820,
+      "why": "Most of the thread blamed studio apathy for missing remasters, but this comment explains that many TV shows have no high-resolution source to restore."
+    }
+  },
+  "digestedAt": "2026-10-18T14:20:38.000Z"
+}
