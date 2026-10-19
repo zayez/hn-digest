@@ -1,0 +1,118 @@
+{
+  "hnId": 50003796,
+  "title": "Yes, and",
+  "url": "https://htmx.org/essays/yes-and/",
+  "domain": "htmx.org",
+  "kind": "article",
+  "author": "Michelangelo11",
+  "postedAt": "2026-10-08T09:48:18.000Z",
+  "points": 794,
+  "commentCount": 309,
+  "readingMinutes": 10,
+  "tldr": "Carson Gross, a CS professor and the creator of htmx, still tells students to become programmers. He says juniors must write code by hand, because only writing teaches them to read it. AI is fine as a tutor that explains concepts. He expects communication, business knowledge and architecture to grow in value as raw coding loses value.",
+  "article": {
+    "keyPoints": [
+      "Gross defines programming as solving problems with computers and controlling the complexity of the solutions. He cannot picture a future where those two skills are worth less than today.",
+      "He rejects the comparison between prompting and the move from assembly to high-level languages. Compilers are mostly deterministic. LLMs often add accidental complexity, and you need to read code to notice it.",
+      "He tells his students that writing code is the only way to learn to read it. He gives them an AGENTS.md file that makes coding agents act as a teaching assistant instead of a code generator.",
+      "Seniors should use LLMs for analysis, small pieces of code, throwaway demos and code they dislike writing, such as regular expressions and CSS. Gross never lets an LLM design the APIs of his systems.",
+      "He expects companies to learn that fast vibe coding causes worse complexity problems than deliberate work. He asks them to let juniors write at least some of the code.",
+      "He calls online job sites a lottery. He tells students to find jobs through family, friends and family of friends, even in non-tech roles at large companies like Costco."
+    ],
+    "whyItMatters": "Students and parents weighing a CS degree get the full argument and the job-search advice. Teachers get a link to the AGENTS.md file Gross gives his students, which the summary only describes."
+  },
+  "comments": {
+    "overview": "The thread was large and mostly civil. Gross joined it and said the best vibe coders he sees are already excellent developers. Most of the debate went to his compiler analogy, to whether hand-written code still pays off, and to a bleak job market.",
+    "themes": [
+      {
+        "title": "Determinism is the wrong word",
+        "synthesis": "Many readers agreed that compilers and LLMs differ, but said determinism is not the reason. An LLM with fixed randomness would still be unpredictable. The real gap is that you can reason from source code to behavior, and you cannot reason from a prompt to output. Others called LLMs \"chaotic\" instead. C++ developers said undefined behavior already makes compilers feel like guesswork.",
+        "quotes": [
+          {
+            "author": "layer8",
+            "text": "To repeat, the difference is how you can reason about a compiler’s behavior versus an LLM’s behavior. Programming languages are designed such that you can reason about it. With LLMs it’s always an experiment.",
+            "commentId": 50012822
+          },
+          {
+            "author": "fxwin",
+            "text": "The problem isn't that LLMs themselves are nondeterministic, it's that language is imprecise, and language models themselves are (for the most part) black box text processors.",
+            "commentId": 50018297
+          }
+        ]
+      },
+      {
+        "title": "Hand-made rugs and the demand for software",
+        "synthesis": "One commenter compared coders to rug weavers whose market shrank after machines arrived. Replies said cheap rugs went to buyers who never owned hand-made ones, so the old market may not have shrunk at all. Others argued cheaper software will create demand for custom tools. One freelancer said small firms pay him for bespoke tools that replace $70-100k software suites. Skeptics said those firms can now build the tools in-house.",
+        "quotes": [
+          {
+            "author": "fpaf",
+            "text": "But most people now are content with resting their feet on a cheap Ikea thing that they can replace every few years, so that market has shrunk to almost nothing.",
+            "commentId": 50019033
+          },
+          {
+            "author": "mediaman",
+            "text": "As soon as this industry lost the inscrutability of the syntax of the work product, it began catastrophizing about the total end of any commercial demand at all.",
+            "commentId": 50027207
+          }
+        ]
+      },
+      {
+        "title": "Is hand-written code still worth it?",
+        "synthesis": "Some developers still write everything by hand and say they ship as fast as their peers. Others answered that LLMs write more tests and catch missed changes, though several said those tests are too many and mock too much. One skeptic changed his mind after an LLM built a full game engine in two weeks. Critics said that story is always a greenfield rewrite of something that already exists. One commenter predicted hand-written code will need a reason, like assembly today.",
+        "quotes": [
+          {
+            "author": "Vegenoid",
+            "text": "It’s definitely getting better, but this isn’t the kind of thing that is going to change the world. It needs to be good at things that are much more entangled with the world for that.",
+            "commentId": 50028653
+          },
+          {
+            "author": "gregwebs",
+            "text": "It's not that delivering hand-written code will just decline, it's that it will be like writing assembly- something that's unsafe and needs to be justified.",
+            "commentId": 50015378
+          }
+        ]
+      },
+      {
+        "title": "Does writing teach reading?",
+        "synthesis": "Gross's claim that you must write code to read it drew pushback. Several developers said school improved their writing but not their reading, which only grew on the job in large codebases. Others said both skills come from formal thinking and cannot be split. A related branch asked if AI removes the useful struggle of being stuck, which some called character building.",
+        "quotes": [
+          {
+            "author": "tengbretson",
+            "text": "Maybe it's possible to learn to read code without learning to write it. It certainly feels like its possible to learn to write it without learning to read it.",
+            "commentId": 50011535
+          },
+          {
+            "author": "skydhash",
+            "text": "Both learning to write and learning to read is merely a proxy of learning to think.",
+            "commentId": 50014192
+          }
+        ]
+      },
+      {
+        "title": "The job market and the network advice",
+        "synthesis": "Many readers said Gross underrates how bad the market is. Students without industry contacts said the family-and-friends advice leaves them out. Gross replied that they should build people skills before reaching out. Some read the advice as a professor protecting his field. Others called the analyst-who-codes path the most useful idea in the essay.",
+        "quotes": [
+          {
+            "author": "righthand",
+            "text": "I’ve been working almost 20 years and the last 6-7 have been brutal job market but the last year has been extra-brutal.",
+            "commentId": 50020334
+          },
+          {
+            "author": "Baguette5242",
+            "text": "A bit of JS, Ruby, or Python here and there, layered on top of an existing corporate skill, is so valuable to a company it's crazy.",
+            "commentId": 50019473
+          }
+        ]
+      }
+    ],
+    "consensus": "Understanding how code and systems work still matters, at least for now. Domain knowledge combined with programming skill is a strong position.",
+    "dissent": "A loud minority said programming as a career is over. They expect LLMs to take over architecture and judgment soon, and they read the essay as academic cope.",
+    "contrarian": {
+      "author": "rspeele",
+      "text": "That being said AI is a lot better at reading code than I am, as demonstrated by its ability to find incredibly subtle bugs in huge codebases. So I'm not even sure those code reading skills are all that useful now.",
+      "commentId": 50014254,
+      "why": "The thread argued about how humans learn to read code, and this commenter asked if humans need to read it at all."
+    }
+  },
+  "digestedAt": "2026-10-19T21:39:20.000Z"
+}

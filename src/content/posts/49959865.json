@@ -1,0 +1,76 @@
+{
+  "hnId": 49959865,
+  "title": "A tribute to one of the best games on the Atari 2600",
+  "url": "https://plicerin.github.io/riverraid-rom-port/",
+  "domain": "plicerin.github.io",
+  "kind": "article",
+  "author": "plicerin",
+  "postedAt": "2026-10-05T01:54:00.000Z",
+  "points": 21,
+  "commentCount": 11,
+  "readingMinutes": 3,
+  "tldr": "A playable browser port of River Raid, Carol Shaw's 1982 Activision game for the Atari 2600. The author rewrote every routine of the cartridge in JavaScript, one 6502 instruction at a time. A real 6502 core runs the original ROM beside the port and compares every frame. The page reports zero differences in 45,000 compared frames.",
+  "article": {
+    "keyPoints": [
+      "The game never stores the river, because the whole cartridge is only 4,096 bytes.",
+      "A 16-bit random number generator builds each 32-line block of river just before it scrolls into view.",
+      "The generator starts from the same seed, $A814, every game, so the river is the same every time.",
+      "After a crash, the river replays the current section exactly, because the cartridge saved its random numbers at the section start.",
+      "The port runs on the same 128 bytes of RAM, at the same addresses, as the cartridge.",
+      "The ROM keeps no score in memory, only pointers to the digit graphics."
+    ],
+    "whyItMatters": "Read the original to play the game in the browser and to see the full list of ROM quirks the summary leaves out. It also links developer pages with live RAM readouts and the scripts that compare the port against the real ROM."
+  },
+  "comments": {
+    "overview": "A small, friendly thread. One commenter suspected the port was written with an LLM. Most of the rest argued about whether Atari 2600 games still hold up, and where younger players stop caring.",
+    "themes": [
+      {
+        "title": "Do Atari 2600 games hold up?",
+        "synthesis": "glimshe thinks the game's fans have mostly stopped playing games, and that younger players lose interest within minutes. sublinear disagrees and says well-made early games have a control feel that is hard to find elsewhere. pupppet found most 2600 games too shallow even as a kid, except two-player Combat.",
+        "quotes": [
+          {
+            "author": "sublinear",
+            "text": "These older games that implement their controls well have a \"feel\" distinct to their respective console that's hard to get anywhere else.",
+            "commentId": 49960373
+          },
+          {
+            "author": "pupppet",
+            "text": "As a kid I found the gameplay for most Atari 2600 games so shallow I could barely stand to play a game more than a few minutes… except for Combat.",
+            "commentId": 49960629
+          }
+        ]
+      },
+      {
+        "title": "The NES as the dividing line",
+        "synthesis": "sixothree says the NES is the oldest console that younger people will play. vunderba agrees from showing old games to younger siblings. vunderba adds that the NES got extra power from chips inside its cartridges, such as the MMC3.",
+        "quotes": [
+          {
+            "author": "vunderba",
+            "text": "the NES sort of cheats in a sense, because the cartridges themselves could include onboard chips like the MMC3/5 [1] that extended the capabilities of the original NES, stretching its lifetime far further.",
+            "commentId": 49961006
+          }
+        ]
+      },
+      {
+        "title": "Suspicion of LLM use",
+        "synthesis": "The author's own top comment repeats the claim that the cartridge was rebuilt one instruction at a time. DroneBetter replied with a wish for a tag that marks LLM-written work. Nobody answered, and the author did not say how the port was made.",
+        "quotes": [
+          {
+            "author": "DroneBetter",
+            "text": "if only there were a tag for llmery so that undisclosed use of it couud be a punishable offence",
+            "commentId": 49960474
+          }
+        ]
+      }
+    ],
+    "consensus": "Most commenters agreed that the 2600 is primitive next to later consoles, and that the NES is where younger players start to care.",
+    "dissent": "sublinear argued that good early games still hold up, and that people ignore them because nobody shows them the best ones.",
+    "contrarian": {
+      "author": "dole",
+      "text": "The Atari cheated too; Pitfall II used a David Crane-designed DPC chip [0], Atari's SARA Superchip on a number of the later carts like Crystal Castles and Jr. Pac-Man",
+      "commentId": 49967192,
+      "why": "It shows that the cartridge chips credited to the NES started on the 2600, so the two consoles differ less than the thread assumed."
+    }
+  },
+  "digestedAt": "2026-10-19T21:45:00.000Z"
+}

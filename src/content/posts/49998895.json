@@ -1,0 +1,113 @@
+{
+  "hnId": 49998895,
+  "title": "Margaret Hamilton has died",
+  "url": "https://news.mit.edu/2026/margaret-hamilton-computing-pioneer-dies-1007",
+  "domain": "news.mit.edu",
+  "kind": "article",
+  "author": "muglug",
+  "postedAt": "2026-10-07T21:16:18.000Z",
+  "points": 2123,
+  "commentCount": 259,
+  "readingMinutes": 7,
+  "tldr": "Margaret Hamilton died on September 30 at 90. She led software work for the Apollo command module at MIT's Instrumentation Lab. She pushed the term \"software engineering\" to win respect for the field. Her team's priority-driven software let Apollo 11 land despite the 1202 alarm.",
+  "article": {
+    "keyPoints": [
+      "Hamilton started programming in 1959 on weather prediction software for Edward Lorenz at MIT. She then wrote code for the SAGE air defense system at Lincoln Laboratory.",
+      "In 1965 she became the first programmer hired for the Apollo project at the Instrumentation Lab. By 1968 she ran the command and service module software team, and more than 400 people worked on Apollo software.",
+      "Her four-year-old daughter crashed a simulator by starting the pre-launch program P01 in mid-flight. Managers rejected Hamilton's fix because astronauts would never make that mistake.",
+      "Jim Lovell made that exact mistake on Apollo 8 and erased the navigation data. After that, NASA added her fix to the software.",
+      "During the Apollo 11 descent, the computer raised a 1202 overload alarm. The software dropped low-priority tasks and kept the critical ones running, so Houston let the landing go ahead.",
+      "She later founded Higher Order Software in 1976 and Hamilton Technologies a decade later. Both built on her ideas of error prevention and fault tolerance."
+    ],
+    "whyItMatters": "Read the original for Hamilton's own words on Apollo and on coining \"software engineering\". It also lists her awards and the people she leaves behind. The summary drops the tributes from MIT and Draper."
+  },
+  "comments": {
+    "overview": "The thread is mostly mourning, with many short tributes and memories of her photo beside the code printouts. Under that sits a long fight over two questions. Should anyone who writes code be called an engineer? And how much of the Apollo software credit does Hamilton deserve?",
+    "themes": [
+      {
+        "title": "Who gets to be called an engineer",
+        "synthesis": "Commenters agree she pushed the term \"software engineering\", and several quote her interviews on it. The talk then turns into a long argument about protected titles. Some want \"engineer\" kept for people bound by licenses and legal liability, as in Canada and France. Others reply that the US licensing exam for software died because no law requires a license to write software.",
+        "quotes": [
+          {
+            "author": "Dylan16807",
+            "text": "Terminology can help elevate something that's often overlooked, but if every programmer gets called a \"software engineer\" there's no way to distinguish the special stuff.",
+            "commentId": 50001832
+          },
+          {
+            "author": "EDC9599190",
+            "text": "the reason nobody took the exam is that, unlike other PE disciplines, there are no jurisdictions with legal requirement to hold a PE license to write software.",
+            "commentId": 50006229
+          }
+        ]
+      },
+      {
+        "title": "How much credit she deserves",
+        "synthesis": "A flagged comment linked a 2023 tweet claiming Hamilton joined late in an entry-level role and was promoted by the manager she married. Others answered with source code signed by her in 1966, her name in 1967 management minutes and a 1968 org chart. A footnote from Apollo programmer Don Eyles adds a fair point. Hal Laning designed the priority scheduling, and Hamilton led lunar module software only from 1970.",
+        "quotes": [
+          {
+            "author": "ChickeNES",
+            "text": "I think there's truth she gets too much credit for the priority task system (Hal Laning designed it in 62-63, Hamilton did not join until '65), but as far as I can tell the twitter poster is simply wrong",
+            "commentId": 50002873
+          },
+          {
+            "author": "zanderwohl",
+            "text": "She was interviewed in 1969 about the software, wrote a letter in 1971 explaining the computer failure mode on Apollo 11, and is mentioned as important in several memoirs from decades before these people claim she was \"retroactively\" lionized.",
+            "commentId": 50002694
+          }
+        ]
+      },
+      {
+        "title": "What really saved the Apollo 11 landing",
+        "synthesis": "One commenter credited Hamilton with inventing error handling, and others called that a myth. The common story says the computer could run seven tasks and dropped an eighth. One reply pointed to a more complex cause on Wikipedia. Others stressed the limits, with 4KB of RAM and about 0.043 MIPS. One commenter said the alarm came from a radar workload the simulators never modeled.",
+        "quotes": [
+          {
+            "author": "codewritinfool",
+            "text": "Certainly that could be described as \"error handling\", but I would describe what saved the landing as priority scheduling combined with restart protection.",
+            "commentId": 50005434
+          },
+          {
+            "author": "rbanffy",
+            "text": "The thing is the alarm elegantly - and correctly - handled a situation that should never have happened in the operation…",
+            "commentId": 50006166
+          }
+        ]
+      },
+      {
+        "title": "Sexism, flagging and speaking ill of the dead",
+        "synthesis": "Many saw the \"she slept her way to the top\" claims as the usual attack on any woman in power. A few said a nepotism claim is not the same thing and deserves a factual answer. One commenter noted HN let criticism stand on other memorial threads. Others said flagged comments are still visible and a memorial is the wrong place for the fight.",
+        "quotes": [
+          {
+            "author": "culi",
+            "text": "The comments are lazy sexism and provide no sources for their claims.",
+            "commentId": 50007109
+          },
+          {
+            "author": "GaryBluto",
+            "text": "I think it's also important not to conflate an accusation somebody of benefiting from a partner's nepotism as equivalent to accusing them of sleeping their way to the top just because they're a woman.",
+            "commentId": 50001956
+          }
+        ]
+      },
+      {
+        "title": "Was she a hacker?",
+        "synthesis": "Many asked for a black bar on the HN front page. Some said Hamilton was a hacker in the explorer sense. Kragen argued she disliked the MIT hackers, who once broke her weather simulation runs. Steven Levy's book \"Hackers\" tells that story and names her. Others called it rude to speak for her at a memorial.",
+        "quotes": [
+          {
+            "author": "kragen",
+            "text": "But she had to share computing resources with the original \"hackers\", the ones who gave us the word, and I don't think she was very fond of them, or of the hacking approach in general; her ingenuity was great but not especially playful.",
+            "commentId": 50000320
+          }
+        ]
+      }
+    ],
+    "consensus": "Hamilton was a real pioneer of reliable software. The tweet that called her an entry-level hire is wrong on the dates.",
+    "dissent": "A minority says the popular story inflates her role. In this view, Hal Laning designed the priority scheduler and others led much of the software before 1970.",
+    "contrarian": {
+      "author": "setr",
+      "text": "Handling an expected error condition under normal operation is not, in my mind, a good example of man-rated robustness. It might be a good example of other things.",
+      "commentId": 50002524,
+      "why": "It separates hard engineering from real fault tolerance and asks which one the 1202 story shows. The replies then explain that the overload was never supposed to happen."
+    }
+  },
+  "digestedAt": "2026-10-19T21:39:13.000Z"
+}

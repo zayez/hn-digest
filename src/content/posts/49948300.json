@@ -1,0 +1,97 @@
+{
+  "hnId": 49948300,
+  "title": "We ported the original Doom to SQL",
+  "url": "https://cedardb.com/blog/sqldoom/",
+  "domain": "cedardb.com",
+  "kind": "article",
+  "author": "Vaslo",
+  "postedAt": "2026-10-03T22:14:00.000Z",
+  "points": 339,
+  "commentCount": 55,
+  "readingMinutes": 23,
+  "tldr": "A CedarDB engineer ported the game logic and renderer of the 1993 Doom to SQL queries that run inside the database. A Python client only reads input, keeps time and shows the frames. The game logic runs at Doom's original 35 tics per second. The renderer returns full 320x200 frames at up to 60 FPS on a laptop.",
+  "article": {
+    "keyPoints": [
+      "Doom's WAD file format is already close to relational. About 1,000 lines of Python load all of Doom 1 into tables in about 18 seconds.",
+      "The game logic is about 5,900 lines of SQL. The original C does the same work in about 9,000 lines.",
+      "A typical tic with 6 awake monsters takes 2.15 ms, or 8% of the 28.6 ms budget. The slowest tic the author found took 10.45 ms with 46 awake monsters.",
+      "The renderer is one query of about 1,300 lines in 89 CTEs. It orders the BSP tree by packing each root-to-leaf path into a bigint and sorting on it.",
+      "Doom fills floors and ceilings by changing per-column arrays in a loop. SQLDoom gets the same result with window functions over wall panels sorted near to far.",
+      "SQLDoom does not copy Doom's exact draw order. It emits every candidate pixel and picks the nearest with a packed MIN key, which costs 8.2 ms per frame on average."
+    ],
+    "whyItMatters": "Read the original if you write complex SQL. It has the full queries for the BSP sort, the window-function floor fill and the depth resolve, plus videos of each stage. It also covers the multiplayer design, where transactions make each tic atomic and roles limit players to one input function. A public deathmatch server is linked."
+  },
+  "comments": {
+    "overview": "The thread was warm toward the hack and short on criticism of it. The longest argument was about whether business logic belongs in SQL and stored procedures at all. Smaller threads compared SQL to other relational and functional languages, and a few commenters called the post marketing or easy work for LLMs.",
+    "themes": [
+      {
+        "title": "Business logic in the database",
+        "synthesis": "The top comment took the 5,900-line figure as proof that SQL is underused. A former semiconductor engineer said their factory ran on stored procedures that hundreds of users could inspect and test against a daily copy of production. Others had bad memories of stored procedures with no source control, stringly typed code and poor tooling. A middle camp kept complex logic in the application and used database constraints as a final check. One commenter argued that constraints matter more now that AI writes so much of the code that touches the database.",
+        "quotes": [
+          {
+            "author": "bob1029",
+            "text": "There was no gap between the information of the business and its logic. Most shops are not ran this way. They treat the database like some CRUD retrieval engine instead of the nexus of both the data and logic.",
+            "commentId": 49963076
+          },
+          {
+            "author": "beachy",
+            "text": "In the age of AI and a massive explosion of code touching the database, maybe it makes even more sense to embed logic and constraints inside the database where there's no way to get around them.",
+            "commentId": 49968533
+          }
+        ]
+      },
+      {
+        "title": "SQL and relational algebra as general computation",
+        "synthesis": "Several commenters asked how far relational ideas go outside databases. One suggested Prolog as a more concise relational language, and another called SQL almost functional. A side thread on running LLM inference in SQL noted that matrix multiplication is an aggregate sum over a join. A reply linked a VLDB paper that optimizes linear algebra by converting it to relational algebra and back.",
+        "quotes": [
+          {
+            "author": "Sharlin",
+            "text": "Matrix multiplication is after all nothing but an aggregate sum over a cross join.",
+            "commentId": 49963944
+          },
+          {
+            "author": "thesz",
+            "text": "They converted linear algebra expressions into relational algebra expressions, optimized them using equality saturation and converted back into linear algebra. With some noticeable speedups.",
+            "commentId": 49974711
+          }
+        ]
+      },
+      {
+        "title": "Game state in SQL tables",
+        "synthesis": "One commenter had built a casino in 2010 with every game state in SQL tables as the source of truth. Deadlocks and scaling were painful, but no state was ever lost. That commenter thought the pattern suits turn-based multiplayer games and not action games. A reply pointed to the chapter on transactions in Designing Data-Intensive Applications. Another commenter praised the separate EU and US multiplayer servers.",
+        "quotes": [
+          {
+            "author": "noduerme",
+            "text": "Looking back it seems like not a terrible design pattern for multiplayer turn-based games, if you can work out the kinks. Atomicity guarantees at least that there *is* a  consistent state that won't get lost.",
+            "commentId": 49962015
+          }
+        ]
+      },
+      {
+        "title": "Art, advertising or LLM bait",
+        "synthesis": "Most short replies called the project pure fun and the kind of post HN should have more of. A few were cooler. One commenter called it a clever advertisement for CedarDB, and another found it a useful pointer to a database that LLMs did not yet suggest. One commenter said ports like this no longer impress now that LLMs exist. Another said Doom and SQL are both so common in training data that the post was AI engagement bait.",
+        "quotes": [
+          {
+            "author": "pavlov",
+            "text": "“We did [thing extremely present in training data] in [language extremely present in training data]” is the peak form of AI engagement, it seems.",
+            "commentId": 49970237
+          },
+          {
+            "author": "teelinger",
+            "text": "This is the kind of content I want to see on HN! Pure art.",
+            "commentId": 49963033
+          }
+        ]
+      }
+    ],
+    "consensus": "Most commenters enjoyed the port as a hack and took it as evidence that modern SQL can express more than people assume.",
+    "dissent": "Commenters who had maintained stored procedures said complex logic in SQL is hard to write, debug and version. A few saw the post as marketing or as an easy job for an LLM.",
+    "contrarian": {
+      "author": "_heimdall",
+      "text": "I can count on one hand the number of people I've worked with that really know SQL well enough to pick up complex business logic at that layer and work with it easily.",
+      "commentId": 49964425,
+      "why": "The debate was about what SQL can do, and this comment points out that the real limit is who can maintain the code."
+    }
+  },
+  "digestedAt": "2026-10-19T21:39:27.000Z"
+}

@@ -1,0 +1,107 @@
+{
+  "hnId": 49961057,
+  "title": "Anthropic reported diary entry to police, woman faces felony charge",
+  "url": "https://www.techspot.com/news/114091-florida-woman-used-claude-diary-anthropic-reported-shoot.html",
+  "domain": "techspot.com",
+  "kind": "unavailable",
+  "author": "emptybits",
+  "postedAt": "2026-10-05T05:37:40.000Z",
+  "points": 840,
+  "commentCount": 680,
+  "tldr": "A Florida woman used Claude as a diary and wrote that she would 'shoot up' the Lee County sheriff's office. Anthropic reported the entries to police. She now faces a second-degree felony charge under Florida Statute 836.10. That law covers threats sent or posted in any manner in which another person may view them.",
+  "articleNote": "The TechSpot article could not be fetched. The tldr relies on the passages that commenters quoted from it and from local news reports. The digest covers the discussion.",
+  "comments": {
+    "overview": "The thread is large and angry, and most of the anger falls on the felony charge more than on the report itself. Commenters argued over three questions. Does a private chat with a bot count as a sent threat? Should Anthropic read chats at all? Are local models the only safe option?",
+    "themes": [
+      {
+        "title": "Does the Florida statute fit a diary?",
+        "synthesis": "Most commenters read Statute 836.10 as a law against threats sent to people, not notes to oneself. They argued that the woman had no intent for anyone to read her words, so the mens rea for a threat is missing. A minority read the text literally. In that reading, typing into a hosted service is transmitting, and 'may be viewed' means any human could see it. Others pointed out that the same reading would make a draft email or a synced notes file a felony.",
+        "quotes": [
+          {
+            "author": "Wowfunhappy",
+            "text": "If I write something down on a piece of paper, and someone else goes through my garbage and finds it, is my note \"communication made in a manner in which another person may view it\"? It was clearly intended to be a private note!",
+            "commentId": 49972216
+          },
+          {
+            "author": "sandworm101",
+            "text": "A threat sent by mail is still a sent threat even if nobody ever opens the envelope to read it.",
+            "commentId": 49968776
+          }
+        ]
+      },
+      {
+        "title": "Was reporting the right call?",
+        "synthesis": "Many accepted the report and rejected the charge. The arrest report quotes a second message saying she had bought a new gun, and several commenters said that met their own threshold for calling police. The pending lawsuit against OpenAI came up often. It alleges that OpenAI leaders overruled a review team that wanted to report the Tumbler Ridge shooter. Critics answered that 'damned if you do' only exists because Anthropic scans chats in the first place. One commenter added that sending the report to the sheriff she was angry at, not the FBI, invited an overreaction.",
+        "quotes": [
+          {
+            "author": "ceejayoz",
+            "text": "At a certain point, intervention seems appropriate. This meets my personal threshold, and I'd hope a friend would do something if they came across that in my journal.",
+            "commentId": 49977910
+          },
+          {
+            "author": "davkan",
+            "text": "Sure but you wouldn’t expect your filling cabinet to call the cops on you. Because your filling cabinet doesn’t read your papers. The problem is the spying not the acting on credible threats of violence.",
+            "commentId": 49975214
+          }
+        ]
+      },
+      {
+        "title": "What users expect versus what the terms say",
+        "synthesis": "One side said Anthropic's terms disclose human review of flagged chats, so this is not spying in any legal sense. The other side said a clause in a long EULA is not real consent. On that view, the products are marketed as private tools for personal writing. Commenters agreed that ordinary users do not know where their data goes, and that software now blurs local and remote storage. Several wanted a visible warning in the chat window, not a clause in the terms.",
+        "quotes": [
+          {
+            "author": "autoexec",
+            "text": "Our devices, even Anthropic in this case, set an expectation that doesn't match reality. The software and devices we use are marketed and sold to us to be used for our private documents, photos, and conversations.",
+            "commentId": 49972115
+          },
+          {
+            "author": "Aurornis",
+            "text": "Spying is not the right analogy because the information was given to the police by a third party which had a EULA saying they would do this.",
+            "commentId": 49968950
+          }
+        ]
+      },
+      {
+        "title": "Run a local model",
+        "synthesis": "The second-largest thread started with a call to pool money for H200s and run uncensored open models. Replies said that is far too much hardware for a diary. An old 8GB GPU or a laptop with a small Qwen model is enough to chat about your day. Some said frontier quality still costs too much to run at home, and one commenter would pay about $20 a month more for private cloud chat instead. Others called local models a technical patch for a political problem that needs privacy law.",
+        "quotes": [
+          {
+            "author": "janalsncm",
+            "text": "Because it’s a bit transgressive these days to say you don’t need a big centralized service that spies on you and requires a subscription. It’s not the absolute best, but it’s yours.",
+            "commentId": 49972304
+          },
+          {
+            "author": "Avicebron",
+            "text": "It's effectively untrustworthy, like being charged a felony for walking across a bridge incorrectly. That's not a \"I'll host a small model in my garage\" problem. It's a we need the government to do its job problem.",
+            "commentId": 49972147
+          }
+        ]
+      },
+      {
+        "title": "Thought crime and where the line moves next",
+        "synthesis": "Many called the case thought crime and compared it to Minority Report. They noted that US law needs an overt act or a second party before planning becomes conspiracy. One commenter pushed back hard: a detailed written plan to kill someone should justify an arrest even if nobody else saw it. Others warned that automated scanning will widen. A period-tracker example showed how rules can change after the data already exists.",
+        "quotes": [
+          {
+            "author": "saulpw",
+            "text": "If you rob the bank that can be used as evidence against you, but in no way is it acceptable for private reflections alone to be used to arrest you.",
+            "commentId": 49970338
+          },
+          {
+            "author": "lores",
+            "text": "If a million people fantasise about shooting the sheriff, and one ever goes on to do it, I don't believe avoiding it warrants creating an apparatus of mass surveillance.",
+            "commentId": 49964760
+          }
+        ]
+      }
+    ],
+    "consensus": "Most commenters agreed that a chat with a cloud AI is not private, whatever users believe. They also agreed that a felony threat charge for words nobody was meant to read stretches the statute.",
+    "dissent": "A sizeable minority backed both the report and the prosecution. In their view, she wrote that she would shoot deputies and then that she had a new gun. The terms allow human review, and a therapist or bartender who heard the same words would call police too.",
+    "contrarian": {
+      "author": "seanhunter",
+      "text": "The reaction of the tech community to this story is extremely strange. If you type some sort of serious credible threat into a Saas platform … your threat will very likely be reported to the police.",
+      "commentId": 49983416,
+      "why": "It treats the report as ordinary platform policy since at least 2001, not a new AI danger. The only difference with AI is that labs read more of what users type."
+    }
+  },
+  "digestedAt": "2026-10-19T21:40:03.000Z"
+}

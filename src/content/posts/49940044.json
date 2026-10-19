@@ -1,0 +1,108 @@
+{
+  "hnId": 49940044,
+  "title": "Demystifying Tufte's data-ink ratio",
+  "url": "https://tuftesrazor.scienceux.org/",
+  "domain": "tuftesrazor.scienceux.org",
+  "kind": "article",
+  "author": "s4074433",
+  "postedAt": "2026-10-02T23:55:17.000Z",
+  "points": 78,
+  "commentCount": 48,
+  "readingMinutes": 13,
+  "tldr": "An interactive guide measures Edward Tufte's data-ink ratio on a simple five-bar chart. It counts each pixel as data-ink, redundant data-ink or non-data ink. Cutting backgrounds, bar width and duplicate labels raises the ratio from 3.2% to 8.8%. The guide argues you should aim for a middle range, because cutting further removes information readers need.",
+  "article": {
+    "keyPoints": [
+      "Tufte defined the data-ink ratio as data-ink divided by all the ink in a graphic. Data-ink is the part you cannot erase without losing information.",
+      "The guide splits ink into three kinds. Data-ink says something nothing else says. Redundant data-ink repeats it. Non-data ink, like gridlines and borders, says nothing about the numbers.",
+      "Most of a bar's ink is redundant, because only its height encodes the value. Bars at 42 px score 7.2%, and hairline bars score 55%. Hairline bars are hard to see and compare.",
+      "Paper colour does not count as ink, so a pale blue page leaves the ratio at 11%. A shaded box painted behind the bars drops it to 2.7%.",
+      "Bigger type raises the ratio from 10% to 18%, because labels count as data-ink. The guide still says to size type for the reader, since big type pulls attention from the bars.",
+      "The guide ends with a ten-item checklist. It covers titles that state the finding, units, direct labels, sorting, full bar heights and one or two highlights."
+    ],
+    "whyItMatters": "People who make charts should open the guide for its interactive parts. A bar-width slider shows the ratio at every width, and a cluttered chart lets you fix it against seven goals. The summary cannot reproduce those controls."
+  },
+  "comments": {
+    "overview": "A skeptical thread. Most commenters doubted the data-ink ratio as a metric, and several doubted Tufte as a source of rules. The submitter, who wrote the research article behind the guide, replied in almost every thread. Each reply said to optimize the ratio for the audience, not maximize it.",
+    "themes": [
+      {
+        "title": "The ratio counts ink, but readers see complexity",
+        "synthesis": "Two long comments argued that ink is the wrong unit. One commenter said noise comes from changes in colour, so a better metric would measure the gradient of ink. Another said the eye sees shapes, so extra ink like boxes or full axes can make a chart simpler. That commenter later praised the submitter's article but said it stops short of this conclusion.",
+        "quotes": [
+          {
+            "author": "quietbritishjim",
+            "text": "Or brains don't process black pixels, one at a time, spending mental energy on each one. They see different visual fragments… The thing you actually need to minimise is visual complexity. Often, *adding* ink (for no information) helps with that.",
+            "commentId": 49963462
+          },
+          {
+            "author": "gjm11",
+            "text": "It's the transitions that feel like noise, much more than patches of constant colour. But \"data-ink ratio\" is easier to say and easier to read than \"ratio of integral of norm of gradient of colour\".",
+            "commentId": 49962548
+          }
+        ]
+      },
+      {
+        "title": "Tufte gives taste, not evidence",
+        "synthesis": "Several commenters said Tufte's book frames aesthetic judgement as objective rules without testing them. They pointed to William Cleveland's perception studies and to a 2021 review of visualization research. The submitter quoted that review. It finds mixed evidence that decluttering improves preference and little evidence that it improves task performance. One commenter added that Tufte's fans copy his book typography because the books give few rules they can apply.",
+        "quotes": [
+          {
+            "author": "BrenBarn",
+            "text": "I'm willing to accept the general concept that many graphs are too cluttered.  But there's no particular reason to suppose that quantifying the proportion of \"data ink\" and trying to optimize it is the best way to handle that.",
+            "commentId": 49960928
+          },
+          {
+            "author": "AlanYx",
+            "text": "I think this is why every Tufte-inspired CSS framework or LaTeX style ends up just cargo-culting the style of his books… Few people are really confident after reading the books to stake out their own approach.",
+            "commentId": 49962230
+          }
+        ]
+      },
+      {
+        "title": "Thin bars and missing gridlines",
+        "synthesis": "Commenters disputed the guide's specific cuts. One said the bars are the data and should stay thick, the way you bold text you want to stress. Another found the version with two light grey gridlines the easiest for comparing heights. The submitter answered that direct labels and sorting remove the need to scan across. That commenter replied that a chart exists for visual comparison, not for reading numbers.",
+        "quotes": [
+          {
+            "author": "CGMthrowaway",
+            "text": "Narrowing the bars is not reducing non-data ink ratio imo and against the spirit. The bars are the data. And they therefore should be maximally visible",
+            "commentId": 49964772
+          },
+          {
+            "author": "anon48293",
+            "text": "The point of the graph is a visual inspection of the differences. I feel like adding the one thing actually showing this relative comparison is therefore almost mandatory",
+            "commentId": 49993627
+          }
+        ]
+      },
+      {
+        "title": "The guide's own writing",
+        "synthesis": "A number of commenters called the page repetitive and machine-written, and one posted a parody of its prose. Others found the opening question confusingly worded. One commenter noted that part 4 seems to contradict the opening question about backgrounds. A side argument followed about whether a parody belongs in quotation marks.",
+        "quotes": [
+          {
+            "author": "hanibrel",
+            "text": "There should be a similar metric for information density in an article. This one is so repetitive that it's hard to keep reading since the whole point was already contained in the first section.",
+            "commentId": 49963324
+          }
+        ]
+      },
+      {
+        "title": "A bar chart may be the wrong example",
+        "synthesis": "Some commenters said five numbers need no chart at all. A table would do, and Tufte himself advises tables for small data sets. Others said the ratio matters most in dense plots, where ink can show more dimensions. The submitter agreed that chart type comes first and promised more examples.",
+        "quotes": [
+          {
+            "author": "gjm11",
+            "text": "You could just remove the bars and present the numbers in a table. *In this case* I think that would be a considerable improvement",
+            "commentId": 49962565
+          }
+        ]
+      }
+    ],
+    "consensus": "Less clutter is usually good, but the ratio is one heuristic among many. Clarity for the reader is the goal, and chasing a number does not reach it.",
+    "dissent": "The strongest critics went further and called the metric invalid. They said Tufte's own examples, like range-frame axes and Playfair's shaded trade chart, look worse or would get worse under the rule.",
+    "contrarian": {
+      "author": "wiredfool",
+      "text": "The key with the data/ink ratio is to densify the amount of data shown so that the ink that is used can show additional dimensions or statistics -- such as using a 2 dimensional plot, turning the axes into box plot equivalents, or other relationships.",
+      "commentId": 49962340,
+      "why": "The thread mostly argued about removing ink, and this comment says the ratio's real use is to show more data with the same ink."
+    }
+  },
+  "digestedAt": "2026-10-19T21:39:26.000Z"
+}

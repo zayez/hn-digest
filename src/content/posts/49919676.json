@@ -1,0 +1,118 @@
+{
+  "hnId": 49919676,
+  "title": "To grieve, or not to grieve?",
+  "url": "https://xenaproject.wordpress.com/2026/10/01/to-grieve-or-not-to-grieve/",
+  "domain": "xenaproject.wordpress.com",
+  "kind": "article",
+  "author": "stabbles",
+  "postedAt": "2026-10-01T09:47:46.000Z",
+  "points": 186,
+  "commentCount": 157,
+  "readingMinutes": 12,
+  "tldr": "Mathematician Kevin Buzzard sees many colleagues grieving as AI starts to prove hard theorems. He argues that defending math as human understanding will fail once AI also explains its proofs. He wants OpenAI to publish its unreleased theorems. He expects AI progress in math to stop at a natural boundary, where humans can take over.",
+  "article": {
+    "keyPoints": [
+      "Buzzard maps colleagues' reactions to AI onto four stages of grief. Examples include an AI-free pledge, angry essays, a senior advisory group asking labs to stop, and despairing students.",
+      "Mathematicians now defend the field with Thurston's view that prizes reward deep understanding, not the theorem count. Buzzard says AI proofs so far come with little explanation, such as the rank 30 and 31 elliptic curves.",
+      "He thinks the understanding defense will backfire. If AI starts explaining its proofs within a year, the field has nowhere left to retreat.",
+      "He doubts anyone fully understands high-level math. As a PhD student he never read Deligne's construction, which his own thesis depended on. He says he is in it for the theorem tally.",
+      "He calls on OpenAI to release its secret results now. Humans may be working on theorems a company has already proved, which he calls akin to censorship.",
+      "He sees AI as strong at problem solving. It has shown little at theory building or conjecture. He notes that math is infinite and resources are finite. He expects machines to stop somewhere. Humans then continue from there."
+    ],
+    "whyItMatters": "Read the original if you do research math or follow AI in math. It links the open letters, the advisory group's statement and Scholze's remarks, and it shows how a leading Lean advocate frames the dispute in first person."
+  },
+  "comments": {
+    "overview": "The thread drifted fast from math to AI and labor. The largest subthread argued over whether AI opponents think it fails or fear it works. The math-specific comments asked who will pay mathematicians now, and how much of the proving the language model really does.",
+    "themes": [
+      {
+        "title": "Labor, not philosophy",
+        "synthesis": "The top comment says essays like this come from people safe from the labor market. For workers, the commenter says, AI is a question of survival. Others argued over whether opponents think AI doesn't work or fear that it does. Several said both can be true, since AI that is only good enough can still cut wages.",
+        "quotes": [
+          {
+            "author": "zaptheimpaler",
+            "text": "Most of these idealistic pieces about AI seem to come from senior, established or wealthy people who aren't very exposed to the labor market.",
+            "commentId": 49930321
+          },
+          {
+            "author": "kombookcha",
+            "text": "A chimp with a gun is not dangerous because of how good a shot he is.",
+            "commentId": 49930589
+          }
+        ]
+      },
+      {
+        "title": "Who pays for mathematics now",
+        "synthesis": "Several commenters said proofs were how mathematicians earned jobs, and that currency is gone. Funders will need a new reason to pay. One commenter put the question to Buzzard directly, since Lean is helping bring this about. Another said academic math was never paid for its proofs anyway, and that teaching and research remain.",
+        "quotes": [
+          {
+            "author": "youoy",
+            "text": "Mathematitians exchanged proofs for employment. That was the currency. Now they cannot use that currency anymore",
+            "commentId": 49930763
+          },
+          {
+            "author": "GPerson",
+            "text": "why will the world fund mathematicians? Genuine question. I’d like to hear your view since you’re one of the main reasons this is going to happen",
+            "commentId": 49940300
+          }
+        ]
+      },
+      {
+        "title": "How much the model does, and how much Lean does",
+        "synthesis": "One commenter asked whether random guessing plus Lean would give the same result. Others answered that the search space is too large for that. Some said models only copy patterns of human logic. Others replied that this works anyway. Commenters also noted that a human must still check the theorem statement, and that skipping failed attempts loses what they used to teach.",
+        "quotes": [
+          {
+            "author": "piker",
+            "text": "Swap the LLM for an RNG and insert unlimited sampling. Don't we get the same result thanks to Lean?",
+            "commentId": 49931808
+          },
+          {
+            "author": "sifar",
+            "text": "Historically, the failed paths on the way to proving a theorem led to newer avenues. When this is cognitively offloaded to an llm we are missing out on those developments which the process generated.",
+            "commentId": 49938685
+          }
+        ]
+      },
+      {
+        "title": "The grief framing",
+        "synthesis": "Some commenters said programmers are going through the same grief stages. One said he reached depression before he noticed it was grief. A critic called the framing disrespectful and Buzzard biased as Lean's main promoter. The moderator rejected that as a shallow dismissal and said the post goes out of its way to be fair.",
+        "quotes": [
+          {
+            "author": "ramesh31",
+            "text": "I reached the depression stage before even realizing that what we are all going through now is indeed grief.",
+            "commentId": 49936412
+          },
+          {
+            "author": "dang",
+            "text": "Everyone is biased in the sense of having their own view, I don't see anything disrespectful in the post—he goes out of his way to avoid that",
+            "commentId": 49940372
+          }
+        ]
+      },
+      {
+        "title": "Painting after photography",
+        "synthesis": "Commenters compared human work after AI to painting after the camera. One programmer expects a market for handmade code, as painting survived by changing. Another replied that human code will only matter in art circles, because AI writes better code. A third disputed that, calling current AI an LLM in a loop that loses context.",
+        "quotes": [
+          {
+            "author": "bitwize",
+            "text": "There will emerge a market for code written by humans. This *has* to happen: I can't prove it, but I can feel it.",
+            "commentId": 49933261
+          },
+          {
+            "author": "doug_durham",
+            "text": "I don't think such a market for \"human code\" will emerge except in narrow art circles.  That will not be code that people run for useful purposes.",
+            "commentId": 49937742
+          }
+        ]
+      }
+    ],
+    "consensus": "Most commenters accepted that AI now does real work, in proofs and in code. The open questions were who gains from it, and who will keep paying humans to do the same work.",
+    "dissent": "A minority denied the premise. They said AI is not solving hard problems, that the hype is overblown, or that some of the money behind the optimism comes from AI boosters.",
+    "contrarian": {
+      "author": "slowking2",
+      "text": "These are both totally circular and give no one else a reason to care.",
+      "commentId": 49946592,
+      "why": "It says both Buzzard's theorem tally and Thurston's understanding defense fail outsiders. Usefulness to other fields is the case that justifies public funding."
+    }
+  },
+  "digestedAt": "2026-10-19T21:39:19.000Z"
+}

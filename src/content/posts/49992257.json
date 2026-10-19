@@ -1,0 +1,118 @@
+{
+  "hnId": 49992257,
+  "title": "Anti-patterns in software blogging",
+  "url": "https://refactoringenglish.com/blog/anti-patterns-software-blogging/",
+  "domain": "refactoringenglish.com",
+  "kind": "article",
+  "author": "ilreb",
+  "postedAt": "2026-10-07T13:08:26.000Z",
+  "points": 343,
+  "commentCount": 149,
+  "readingMinutes": 9,
+  "tldr": "Michael Lynch lists the mistakes he sees most often from beginner software bloggers. The worst is a meandering intro. A post should say who it is for and what the reader gains within the title and first three sentences. He also warns against assuming the reader's knowledge, leaning on links, writing sequels, stiff formality and pages that break on phones.",
+  "article": {
+    "keyPoints": [
+      "Meandering is the most common mistake. A reader decides from the title and first three sentences whether the post is for them and what they will gain. Subtitles, bios, images and quotes before the point use up that attention too.",
+      "Many posts assume the reader knows everything the author knows except one thing. Lynch suggests picturing a real colleague, listing the terms they would know, and checking each technical term in the draft against that list.",
+      "A link is not an explanation. Linking a term to a 20,000-word FreeBSD firewall chapter hands the reader hours of work. The post should explain the minimum itself. A reader should understand it without clicking anything.",
+      "Most readers have not read part one. Sequel posts should summarize what matters from earlier posts. Most could stand alone with about 3% more effort.",
+      "Formal prose like \"several static analysis tools were utilized\" helps nobody. Lynch says to write the way you talk. He names Joel Spolsky as the model of a casual, personal style.",
+      "The HTML basics matter. About 25% of this post's readers use phones, so wide code blocks and images must not force sideways scrolling. Low-contrast gray text should go, and browser tools can flag it."
+    ],
+    "whyItMatters": "Bloggers who want to edit their own drafts should read the original. It has before-and-after rewrites for each mistake, such as the Docker and firewall explanations, which show the fix better than a list of rules."
+  },
+  "comments": {
+    "overview": "The thread was friendly to the advice but argued about where it stops applying. The longest debate was whether stories help teaching or just delay the point. A steady minority said the rules are one person's taste, and that a personal blog owes the reader nothing.",
+    "themes": [
+      {
+        "title": "Stories or the point first",
+        "synthesis": "The top thread opened with the claim that education is not storytelling and should state its point first, then repeat it. Academics backed this with advice from their advisors that papers are not murder mysteries. Others said a story is a good way to teach, as long as it leads the student to the next question and does not hide a twist. Several readers said it depends on the reader's state, since someone learning a task wants the answer and someone browsing has time for a story.",
+        "quotes": [
+          {
+            "author": "DonaldPShimoda",
+            "text": "the purpose is to help the audience reach understanding of where you ended up, *not* to replicate the epiphany you had yourself.",
+            "commentId": 49995680
+          },
+          {
+            "author": "godelski",
+            "text": "But when teaching one of my goals is to get students to be trying to ask a question that I'm about to answer. That's the story part.",
+            "commentId": 49999643
+          }
+        ]
+      },
+      {
+        "title": "Why Graham and Spolsky get away with it",
+        "synthesis": "Lynch admitted in the thread that Paul Graham and Joel Spolsky often take their time and still hold readers. His answer is that their prose is good enough to be the reward. Others said those writers built their audience in an era with longer attention spans, or that their posts are opinion pieces and not teaching. Lynch added that readers who find a post on HN or RSS have no urgent goal, so the author has more room.",
+        "quotes": [
+          {
+            "author": "mtlynch",
+            "text": "I've come to think it's actually that writers like Graham and Spolsky are so good that the quality of the writing itself is the thing of value that keeps you interested even if you don't know what point they're going to make.",
+            "commentId": 49995689
+          },
+          {
+            "author": "pchristensen",
+            "text": "I just don't think writers today have access to the attention that tech bloggers of an earlier era built up.",
+            "commentId": 49995970
+          }
+        ]
+      },
+      {
+        "title": "The rules depend on the audience",
+        "synthesis": "Several commenters pushed back on specific rules. Some prefer a neutral tone to a casual one, and a non-native speaker may not write the way they talk. Others like posts that link out to better sources, and one commenter said researchers want citations next to the summary. The common position was that each rule fits the typical HN reader, and a writer should check their own audience before following it.",
+        "quotes": [
+          {
+            "author": "layer8",
+            "text": "I actually don’t like when technical blogging/writing is too casual, that’s distracting to me, the author isn’t my pal. It shouldn’t be *excessively* formal (as you’ve titled it) either, but neutral and matter-of-fact.",
+            "commentId": 49996737
+          },
+          {
+            "author": "dspillett",
+            "text": "If you refer to something, yes give a summary of it so a reader not familiar can understand the context of what comes next without going elsewhere, but also include a link to deeper information where possible",
+            "commentId": 50004557
+          }
+        ]
+      },
+      {
+        "title": "Writing for yourself",
+        "synthesis": "Some bloggers said their posts break every rule because they write for themselves. One showed off his long posts with preambles, footnotes and a table that overflows on phones. Lynch asked why he then submits them to HN. The blogger answered that he shares them in case others had the same confusion, and to practice discussing things in public. Others said a blog is a personal journal, so anti-patterns do not apply.",
+        "quotes": [
+          {
+            "author": "adityaathalye",
+            "text": "So it is very much written for my own benefit, and incidentally shared because well why not. Surely I'm not the only one who was confused, or ignorant, or just curious about $Topic...",
+            "commentId": 49998007
+          },
+          {
+            "author": "mtlynch",
+            "text": "Honest question: if you truly only write for yourself, why submit the posts to HN and prominently display social sharing shortcuts at the top of each post?",
+            "commentId": 49997789
+          }
+        ]
+      },
+      {
+        "title": "LLMs and padded text",
+        "synthesis": "Many commenters said LLM-written posts now fill software blogs, and that they use far more words than they need. One commenter said slop wastes the effort a reader spends imagining the writer's mind. A side thread argued that LLMs have replaced Stack Overflow. Others asked whether blogging still pays off, and one blogger quit after his traffic became almost all bots.",
+        "quotes": [
+          {
+            "author": "Terr_",
+            "text": "That's part of what makes the modern epidemic of LLM slop so frustrating: The correctly-formed words make us waste effort trying to reconstruct a mind that was never really there.",
+            "commentId": 49997589
+          },
+          {
+            "author": "ogou",
+            "text": "Now, the traffic has evaporated and is 99% bot traffic. Most of that is from China and Indonesia. I have no doubt that it is scraping for LLM model training.",
+            "commentId": 50002051
+          }
+        ]
+      }
+    ],
+    "consensus": "Most commenters agreed that a post should show its point and its intended reader early. They also agreed that assuming too much about the reader's knowledge is a real and common failure.",
+    "dissent": "A large minority said the list is the author's preference. They argued that casual tone, inline explanations and getting to the point fast suit some audiences but not researchers, formal readers or a personal journal.",
+    "contrarian": {
+      "author": "xpct",
+      "text": "Perhaps, rephrased: I seldom drop pieces because of the prose, more often I do so because it lacks substance.",
+      "commentId": 49996647,
+      "why": "The thread treated prose style as the reason readers leave, and this reader says the content decides it."
+    }
+  },
+  "digestedAt": "2026-10-19T21:39:08.000Z"
+}

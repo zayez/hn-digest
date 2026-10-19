@@ -1,0 +1,97 @@
+{
+  "hnId": 50002494,
+  "title": "The people holding up the internet",
+  "url": "https://sheets.works/data-viz/holding-up-the-internet",
+  "domain": "sheets.works",
+  "kind": "article",
+  "author": "simjue",
+  "postedAt": "2026-10-08T06:41:35.000Z",
+  "points": 217,
+  "commentCount": 73,
+  "readingMinutes": 12,
+  "tldr": "A data story counted who did the regular work on 23 open source projects that phones, browsers and servers depend on. In 11 of them, one or two people did it. Many of these projects get no public grant. Most of their maintainers work unpaid or close to it.",
+  "article": {
+    "keyPoints": [
+      "The authors counted everyone who made ten or more changes to each project between October 2025 and October 2026. They then checked which projects ship on Android, iPhone and Windows.",
+      "Paul Eggert, a UCLA lecturer, keeps the time zone database in his spare time. More than 4 billion phones use it, and he made 218 of its 251 changes last year.",
+      "The xz story shows the risk of one tired maintainer. Lasse Collin gave the contributor Jia Tan more access, and Jia Tan's 2024 releases carried a hidden backdoor into Linux servers.",
+      "Denis Pushkarev's core-js runs on about half of the thousand busiest websites. His donation appeal raised $57 a month, and he still writes 95 percent of its changes.",
+      "Money follows disasters only sometimes. After Heartbleed, OpenSSL grew from six regular contributors to 32 in 2026. After the xz backdoor, the authors found no new money for xz, which still has one.",
+      "Germany's Sovereign Tech Agency funds projects like curl and OpenSSL. The authors found no public grant for the time zone database, SQLite, zlib, libjpeg-turbo, HarfBuzz, xz, bash or nghttp2."
+    ],
+    "whyItMatters": "Open the original for the charts. They plot every change to xz, core-js, curl and libxml2, so you can see one person carrying a project week by week. The page also guesses your device and lists the maintainers whose code runs on it. Its data table and script are linked for anyone who wants to check the counts."
+  },
+  "comments": {
+    "overview": "The thread was sympathetic to the maintainers but split on whose problem this is. The longest exchange argued about permissive licenses and whether companies owe anything for free code. A loud minority said the page's scroll animations made it hard to read.",
+    "themes": [
+      {
+        "title": "Licenses and who owes what",
+        "synthesis": "One camp blamed MIT and BSD licenses for letting large companies take the code without paying. They said a revenue-limited or AGPL license would have shared the gains. Others said maintainers chose those licenses and can relicense or dual-license if they want money. A reply argued the real gap is maintenance, since companies expect bug fixes nobody pays for and a license change would only drive users away or start a fork.",
+        "quotes": [
+          {
+            "author": "graemep",
+            "text": "People choose to use these licences. They explicitly say the companies can use it free with no obligation.",
+            "commentId": 50010836
+          },
+          {
+            "author": "em-bee",
+            "text": "projects aren't short on money because they give away their code for free. they are short on money because those users demand support without paying for that.",
+            "commentId": 50029157
+          }
+        ]
+      },
+      {
+        "title": "Are these maintainers replaceable?",
+        "synthesis": "Skeptics said Google and Microsoft could take over a project like tzdb or SQLite within days if its team quit. A few added that AI now makes forking and rebuilding software cheap. Others answered that the hard part is the knowledge, not the code. The time zone database holds decades of historical research that a company rewrite would not have.",
+        "quotes": [
+          {
+            "author": "bob1029",
+            "text": "The reality is that if 100% of the tzdb and SQLite teams disappeared today, Microsoft and Google would have these projects back under stable operation before the weekend.",
+            "commentId": 50003118
+          },
+          {
+            "author": "hdrz",
+            "text": "Apple/Google can create something that works somehow, but they can’t replace the knowledge that went into making tzdb. And whatever they make won’t be universally accepted.",
+            "commentId": 50011218
+          }
+        ]
+      },
+      {
+        "title": "Asking companies and governments to pay",
+        "synthesis": "Some suggested a state stipend for maintainers, paid from the taxes that companies built on open source already pay. Others asked who would qualify, how to stop abuse, and why the public should cover private savings. One commenter suggested maintainers simply ask big companies for money. Another recalled an XML library maintainer who asked dozens of companies for help with a critical bug and got two to pay.",
+        "quotes": [
+          {
+            "author": "alpaca128",
+            "text": "I remember when the maintainer of an open source XML library contacted dozens of companies for support to fix a critical vulnerability, and most of them didn't even respond and aside from two the rest went basically \"not our problem, get lost\".",
+            "commentId": 50002942
+          },
+          {
+            "author": "thefz",
+            "text": "Why should the public make up for private savings?",
+            "commentId": 50003029
+          }
+        ]
+      },
+      {
+        "title": "The page itself",
+        "synthesis": "Several readers liked the research but found the scroll-driven animation hard to follow on both phone and desktop. One closed the tab after a few screens. Others said browser Reader View fixed the layout, though it drops the charts.",
+        "quotes": [
+          {
+            "author": "georgemcbay",
+            "text": "None of it felt like it was in service of anything other than screaming \"look how neat this is!\" which is just terribly distracting.",
+            "commentId": 50002699
+          }
+        ]
+      }
+    ],
+    "consensus": "Most commenters agreed that critical projects run on very few people and that large companies give back little. The xz case, where the only helper was the attacker, came up as the clearest warning.",
+    "dissent": "A sizable minority said nobody forces maintainers to work for free. They argued that companies would replace an abandoned project quickly. Some also said the title overlooks the paid engineers at backbone providers and big tech firms.",
+    "contrarian": {
+      "author": "cadamsdotcom",
+      "text": "Writing software isn't the same as running it. Software maintenance work doesn't scale with the size of the user base.",
+      "commentId": 50003436,
+      "why": "It questions the article's main measure, since a count of 4 billion devices says nothing about how much work a maintainer actually carries."
+    }
+  },
+  "digestedAt": "2026-10-19T21:39:30.000Z"
+}

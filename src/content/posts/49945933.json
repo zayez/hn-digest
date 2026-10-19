@@ -1,0 +1,118 @@
+{
+  "hnId": 49945933,
+  "title": "Agents don't need memory, they need documentation",
+  "url": "https://liao.gg/blog/agents-dont-need-memory",
+  "domain": "liao.gg",
+  "kind": "article",
+  "author": "kmeh",
+  "postedAt": "2026-10-03T17:03:37.000Z",
+  "points": 392,
+  "commentCount": 312,
+  "readingMinutes": 7,
+  "tldr": "Memory plugins for coding agents store chat snippets in a vector database and fetch them by similarity. The author says this cannot give an agent a real understanding of a project. Agents need a structured set of Markdown documents instead. The agent reads these documents before each task and updates them after it. The post promotes the author's open-source plugin, Operator Memory.",
+  "article": {
+    "keyPoints": [
+      "Every memory plugin follows one pattern: it turns past sessions into snippets and injects the top five similar snippets into each prompt.",
+      "Similarity search cannot tell which snippet is correct or current, and a snippet loses the context it came from.",
+      "An agent cannot search for a fact that it does not know exists, and nobody can audit thousands of embeddings.",
+      "The author's fix is a folder of specs, decisions, constraints and code indexes that the agent reads before work and updates after it.",
+      "A lean catalog goes into each session and tells the agent which document to open for which task.",
+      "The working agent must rewrite facts in place when they change, because appended notes cause bloat and stale references."
+    ],
+    "whyItMatters": "Read it if you are choosing a memory setup for a coding agent and want the case against vector-store memory. The GitHub repo shows the catalog and index formats, which several commenters found clearer than the post."
+  },
+  "comments": {
+    "overview": "A large and often heated thread. One commenter, kaydub, argued in dozens of replies that the code is the documentation and that most agent docs are waste. Others defended docs for the reasons code cannot hold. Many also doubted that Operator differs much from the memory systems it attacks.",
+    "themes": [
+      {
+        "title": "Is the code the documentation?",
+        "synthesis": "kaydub says current models read code well enough, and that his large doc sets went stale and confused the agent. He keeps only a short AGENTS.md and puts the reasons for changes in commit messages. Many replies say code shows how a system works but not why, for example customer requests, hardware pins or architecture rules. JohnBooty argues with token math: a short note costs less than rediscovery in every session.",
+        "quotes": [
+          {
+            "author": "mgfist",
+            "text": "All code is written under constraints, and most constraints live outside the code.",
+            "commentId": 49957725
+          },
+          {
+            "author": "JohnBooty",
+            "text": "If you're burning 5000 tokens to rediscover the same thing in every session, and it would take only 500 tokens to just put the thing in your AGENTS.md, it's an easy decision.",
+            "commentId": 49964273
+          }
+        ]
+      },
+      {
+        "title": "Agent-written docs bloat and rot",
+        "synthesis": "People on both sides agree that agents write too much and rarely delete. An agent marks an old decision as replaced and keeps it, so the old rule stays in context. One commenter's agent invented numbered decision rules and then cited them in code review. crazygringo fixed staleness with firm instructions to replace text, never append. Others keep specs human-written in folders the agent cannot edit.",
+        "quotes": [
+          {
+            "author": "kaydub",
+            "text": "LLM generated docs are some of the worst because like I said, the LLM never trims, only amends.",
+            "commentId": 49959682
+          },
+          {
+            "author": "crazygringo",
+            "text": "So my instructions are pretty clear in having it always be aggressive in maintaining current state only, always replace rather than append.",
+            "commentId": 49954556
+          }
+        ]
+      },
+      {
+        "title": "Operator is memory under another name",
+        "synthesis": "Several readers say Operator has the problems the author lists. An index of documents is still retrieval, and documents go stale like snippets. Others called it RAG with a custom retriever, or Karpathy's LLM wiki pattern. CapitalistCartr found the GitHub repo better designed than the post suggests. A few readers saw the post as an ad for the plugin.",
+        "quotes": [
+          {
+            "author": "CapitalistCartr",
+            "text": "The sharpest critique he makes of RAG is that agents can't search for what they don't know. A markdown \"brain\" has the same problem.",
+            "commentId": 49953780
+          },
+          {
+            "author": "yesb",
+            "text": "This markdown system I'd argue is RAG as well. You're just doing the retrieval in a way customized for the problem at hand.",
+            "commentId": 49956174
+          }
+        ]
+      },
+      {
+        "title": "Agents ignore written rules",
+        "synthesis": "A long side thread started from agents that write Python scripts to parse JSON after being told to use jq. Several people say a rule in a doc or skill is only a suggestion to the agent. Their answer is deterministic checks: hooks that fail the turn, and lint rules whose error messages explain the fix. One commenter warns that these ad-hoc scripts train users to approve code without reading it.",
+        "quotes": [
+          {
+            "author": "locknitpicker",
+            "text": "This means AI coding assistants and coding agents treat agent skills as mere suggestions of using a alternative option that more often than not the choose to ignore.",
+            "commentId": 49951546
+          },
+          {
+            "author": "Garlef",
+            "text": "Lint rules where the error messages contain an explanation on how to deal with the issue.",
+            "commentId": 49950815
+          }
+        ]
+      },
+      {
+        "title": "Where are the evals?",
+        "synthesis": "Many asked for measurements, and almost nobody had any. kaydub ran one test of code-review setups. Plain Claude with a short prompt found more issues, faster and cheaper, than a large custom skill. chaostheory cited 2023 and 2024 papers on repository context. kaydub dismissed them as tests of old models.",
+        "quotes": [
+          {
+            "author": "stbenjam",
+            "text": "If someone has good A/B evals of this being more effective I'll eat my hat, but the reason no one is publishing them is because well, evals are hard, and this is likely just magical thinking.",
+            "commentId": 49950536
+          },
+          {
+            "author": "kaydub",
+            "text": "The MR tool didn't even catch some of the stuff in our domain that the others caught and it took 45minutes, cost $20 vs 4mins for vanilla (<$1) and 7mins for the agent ($3ish)",
+            "commentId": 49984797
+          }
+        ]
+      }
+    ],
+    "consensus": "Most commenters agree that vector-store memory and large agent-written doc sets go stale and fill context with noise. Short, current, human-reviewed docs that hold what code cannot show are worth keeping.",
+    "dissent": "A loud minority says almost all docs are waste because current models learn enough from the code. Others say Operator is just another memory system and that nobody has evidence it works better.",
+    "contrarian": {
+      "author": "panarky",
+      "text": "So if you clone a repo or review a PR where a bad actor put malicious instructions in these files, now your agent executes those instructions automatically and silently.",
+      "commentId": 49955799,
+      "why": "Operator injects shared repo files into the agent's instructions at session start, so a hostile pull request becomes a prompt injection with high priority."
+    }
+  },
+  "digestedAt": "2026-10-19T21:39:28.000Z"
+}

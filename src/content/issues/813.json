@@ -1,0 +1,137 @@
+{
+  "number": 813,
+  "date": "2026-10-09",
+  "url": "https://buttondown.com/hacker-newsletter/archive/813/",
+  "posts": [
+    {
+      "post": "50003796",
+      "section": "Favorites",
+      "tier": "dontSkip",
+      "reason": "The creator of htmx argues from his teaching experience that juniors must still write code by hand to learn to read and control complexity, with AI as a teaching assistant, and the author joins a thread of career changers, parents and a teacher."
+    },
+    {
+      "post": "49980346",
+      "section": "Code",
+      "tier": "dontSkip",
+      "reason": "A dated, first-person history of how Zotero grew out of earlier tools and prototypes, used to argue that slow, collaborative design is what makes software last."
+    },
+    {
+      "post": "50002494",
+      "section": "Working",
+      "tier": "dontSkip",
+      "reason": "Commit-history counts for 23 widely deployed open-source projects show that 11 depend on one or two maintainers, set against tallies of the public money each one receives."
+    },
+    {
+      "post": "49945933",
+      "section": "Data",
+      "tier": "worthYourTime",
+      "reason": "Argues that coding agents need structured, maintained documentation with freshness rules rather than similarity-based memory plugins, and the long thread fights over whether docs go stale faster than they help."
+    },
+    {
+      "post": "49948300",
+      "section": "Fun",
+      "tier": "worthYourTime",
+      "reason": "A walkthrough of running Doom's game logic and renderer inside a database, with the schema, query listings, per-stage timings and a comparison with the original C, and a thread of engineers debating stored procedures from experience."
+    },
+    {
+      "post": "49940044",
+      "section": "Data",
+      "tier": "worthYourTime",
+      "reason": "An interactive guide that recomputes Tufte's data-ink ratio as you change a chart, and argues the ratio should fit the audience rather than be maximized; the thread brings in Cleveland and perception research and the author replies."
+    },
+    {
+      "post": "49992257",
+      "section": "Favorites",
+      "tier": "worthYourTime",
+      "reason": "A checklist of common mistakes in technical blog posts, each with a concrete example and a fix, and a thread arguing over whether storytelling helps or hurts teaching."
+    },
+    {
+      "post": "49978333",
+      "section": "Code",
+      "tier": "ifYouHaveAMinute",
+      "reason": "Armin Ronacher shows, with real tool invocations, why his agent harness has the model write sandboxed JavaScript to call tools instead of calling them one by one, and lists what tool servers need to support it."
+    },
+    {
+      "post": "49919676",
+      "section": "Working",
+      "tier": "ifYouHaveAMinute",
+      "reason": "A mathematician sorts colleagues' reactions to AI results into the stages of grief and defends, with Thurston and Hardy, the view that understanding is the point of mathematics."
+    },
+    {
+      "post": "49961057",
+      "section": "Startup News",
+      "tier": "ifYouHaveAMinute",
+      "reason": "A story about an AI provider reporting a user's chat to police, and a long thread on whether LLM chats are private, which brings in a Canadian lawsuit over flagged chats."
+    },
+    {
+      "post": "49998895",
+      "section": "Favorites",
+      "tier": "ifYouHaveAMinute",
+      "reason": "MIT's obituary of Margaret Hamilton traces her path from SAGE to leading Apollo's flight software, including the 1202 alarm, and the thread adds memories and a debate on the title 'software engineer'."
+    },
+    {
+      "post": "49959865",
+      "section": "Fun",
+      "tier": "ifYouHaveAMinute",
+      "reason": "A short write-up of rebuilding River Raid for the browser instruction by instruction, with a core that checks every frame against the original cartridge and notes on the ROM's seeded river generator and quirks."
+    }
+  ],
+  "nearMisses": [
+    {
+      "title": "We're going to need default hard budget caps on pretty much everything",
+      "section": "Favorites",
+      "domain": "simonwillison.net",
+      "url": "https://simonwillison.net/2026/Oct/3/default-hard-budget-caps/",
+      "hnId": 49949235
+    },
+    {
+      "title": "Beauty in DVD Menus",
+      "section": "Design",
+      "domain": "vale.rocks",
+      "url": "https://vale.rocks/posts/dvd-menus",
+      "hnId": 50005527
+    },
+    {
+      "title": "Anne Carson wins Nobel Prize in literature 2026",
+      "section": "Books",
+      "domain": "theguardian.com",
+      "url": "https://www.theguardian.com/books/2026/oct/08/wins-the-nobel-prize-in-literature-2026",
+      "hnId": 50004777
+    },
+    {
+      "title": "Reasons I didn't become an EMT, ranked",
+      "section": "Working",
+      "domain": "ben.stolovitz.com",
+      "url": "https://ben.stolovitz.com/posts/reasons-not-emt-ranked/",
+      "hnId": 49947631
+    },
+    {
+      "title": "Forever junior: Skills AI can't develop for you",
+      "section": "Working",
+      "domain": "tech.criteo.com",
+      "url": "https://tech.criteo.com/blog/human-skills-ai-cant-develop-junior-engineers/",
+      "hnId": 49989684
+    },
+    {
+      "title": "Brownian Motion",
+      "section": "Learn",
+      "domain": "gregorygundersen.com",
+      "url": "https://gregorygundersen.com/blog/2026/04/22/brownian-motion/",
+      "hnId": 49976818
+    },
+    {
+      "title": "Greg Kroah-Hartman – Security in the LLM Age",
+      "section": "Watching",
+      "domain": "youtube.com",
+      "url": "https://www.youtube.com/watch?v=NnV_cWeoo5Q",
+      "hnId": 49929391
+    },
+    {
+      "title": "Trump administration is suspending Microsoft from a green card program",
+      "section": "Startup News",
+      "domain": "apnews.com",
+      "url": "https://apnews.com/article/h1b-visa-program-vance-microsoft-e7b3a407f822702b269ee277d21343ea",
+      "hnId": 50006832
+    }
+  ]
+}

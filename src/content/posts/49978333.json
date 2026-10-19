@@ -1,0 +1,118 @@
+{
+  "hnId": 49978333,
+  "title": "What is Codemode",
+  "url": "https://lucumr.pocoo.org/2026/10/6/codemode/",
+  "domain": "lucumr.pocoo.org",
+  "kind": "article",
+  "author": "Tomte",
+  "postedAt": "2026-10-06T13:41:03.000Z",
+  "points": 159,
+  "commentCount": 78,
+  "readingMinutes": 12,
+  "tldr": "Codemode lets an LLM agent call its tools from a small JavaScript program instead of one tool call at a time. Armin Ronacher explains why the Pi agent harness now ships it with MCP support. The program runs in a locked-down sandbox inside the harness, not where bash runs. That lets the agent loop over tools, run calls in parallel, and keep large outputs out of its context.",
+  "article": {
+    "keyPoints": [
+      "Bash composes programs well, and models learn its file-system effects in training. It cannot compose tools that only the harness can perform, such as reading an image into the model or spawning sub agents.",
+      "Pi splits the agent in two. The harness is the trusted brain on one machine. The execution environment is the hands, where bash runs, often sandboxed and sometimes on another machine.",
+      "Codemode runs on the harness side in QuickJS inside WASM, with no network, no file system, no timers and limited RAM. Its only way to act is to call more tools.",
+      "Inside Codemode, tool results arrive as structured data instead of the trailing 2000 lines of text. Scripts can also save state to the transcript for a later call to read back.",
+      "Real session examples show the agent generating images, classifying 100 GitHub issues in parallel with the Jev classifier, driving a tank game for 30 steps, and querying Sentry over MCP.",
+      "MCP servers rarely target Codemode yet. Ronacher asks them for structured output, consistent result shapes, large binary support and tool search that spans several servers."
+    ],
+    "whyItMatters": "Read the original if you build agent harnesses or MCP servers. It has the full code of each Codemode session and the reasoning behind the brain and hands split. It also explains why Cloudflare's server-side Codemode nests badly inside a harness that already has it."
+  },
+  "comments": {
+    "overview": "The thread was split and often irritated. Many readers said a post titled \"What is Codemode\" never says plainly what it is, and they traded shorter definitions. The technical replies argued about JavaScript versus bash, and how Codemode differs from an agent writing its own scripts.",
+    "themes": [
+      {
+        "title": "The post does not define its subject",
+        "synthesis": "The largest group of comments said the article assumes readers already know Codemode. They pointed to the line \"If you are not familiar with Codemode\" deep in a post with that title. The author replied in the thread that the idea is hard to convey. Others offered one-sentence versions and linked Cloudflare's original post as the clearer introduction.",
+        "quotes": [
+          {
+            "author": "troupo",
+            "text": "You article is supposed to say what it is without anyone being familiar with it.",
+            "commentId": 49989556
+          },
+          {
+            "author": "agentdev001",
+            "text": "So, TLDR; Codemode allows for composing at the harness level, rather than just at the inner-tool level.",
+            "commentId": 49991584
+          }
+        ]
+      },
+      {
+        "title": "Why JavaScript and not bash",
+        "synthesis": "One commenter built a Codemode agent on bash and said models need no teaching to use it. Others said tools could appear as virtual bash commands that call back to the agent. The author said models are already trained on JavaScript Codemode, and promises express concurrency well. His main point was location. Bash runs on the hands, and reaching back into the brain needs a socket channel that models handle poorly.",
+        "quotes": [
+          {
+            "author": "ylxdzsw",
+            "text": "I prototyped an agent[1] to use bash as the language for codemode, which in my opinion worked equally well and requires no teaching",
+            "commentId": 49988381
+          },
+          {
+            "author": "the_mitsuhiko",
+            "text": "It is not from my perspective because Codemode runs in the brain, and bash necessarily runs where the hands are.",
+            "commentId": 49990022
+          }
+        ]
+      },
+      {
+        "title": "How it differs from scripts an agent writes",
+        "synthesis": "Several readers asked how Codemode differs from Claude or Pi writing a Python script. The answers said those scripts run outside the harness and cannot call its MCP tools or models directly. In Codemode, one program can loop over many calls and return only the final result. One commenter said this cuts the number of turns by about ten times.",
+        "quotes": [
+          {
+            "author": "odo1242",
+            "text": "Because the scripts run outside the harness, they would have to create their own MCP clients and manually connect to the same servers to run MCP tools.",
+            "commentId": 50000090
+          },
+          {
+            "author": "gf000",
+            "text": "You can iterate over them one by one, potentially doing many turns for each and execute it in 40*n turns and a huge context, or you can just let the LLM write a script that is executed \"in the brain\" and has access to LLM calls itself.",
+            "commentId": 49991925
+          }
+        ]
+      },
+      {
+        "title": "Small models struggle with it",
+        "synthesis": "Users of local models reported that Codemode cost them more tokens. When one nested tool call failed, the whole script failed, and the model rewrote large parts of it. Another user said that Sol 6.1 wrote worse sub agent prompts the more it used Codemode. The article itself lists small models as an open problem.",
+        "quotes": [
+          {
+            "author": "lemontheme",
+            "text": "The problem was that when any of those embedded tool calls failed (e.g. on parameter validation) the parent code execution tool call also failed. In response, the LLM kept rewriting large parts of the original code block.",
+            "commentId": 49989208
+          },
+          {
+            "author": "hamandcheese",
+            "text": "It works fantastically with Opus and Sol but I've always wondered how well it scales down.",
+            "commentId": 49989267
+          }
+        ]
+      },
+      {
+        "title": "Trust and old computer science ideas",
+        "synthesis": "Some readers valued the trust split. They block network access from bash and expose only narrow tools that run outside the sandbox. Others framed harnesses as a new kind of operating system. They pointed to Lisp, actor models and object capabilities as ideas Codemode is rediscovering.",
+        "quotes": [
+          {
+            "author": "mijoharas",
+            "text": "I block all network access from bash calls, but want to provide certain tools that can call certain services in a specific way.",
+            "commentId": 49990595
+          },
+          {
+            "author": "ssivark",
+            "text": "\"Code mode\" or whatever is basically rediscovering this by hacking outward from LLM token streams, instead of from system design principles based on decades of computer science.",
+            "commentId": 49989387
+          }
+        ]
+      }
+    ],
+    "consensus": "Most commenters agreed on the core idea once someone stated it plainly. Letting the model compose tool calls in code saves turns and context. Most also agreed the article explains it poorly.",
+    "dissent": "A minority saw Codemode as extra machinery for little gain. They said bash plus virtual commands already covers it, or that the problem is not worth solving.",
+    "contrarian": {
+      "author": "CuriouslyC",
+      "text": "they're executed left to right, in the same order the tokens are generated. Python/Javascript can execute out of token order (e.g. foo(bar(baz(bak(bat))))), which is more error prone.",
+      "commentId": 49992337,
+      "why": "It gives a reason based on how models generate tokens for why shell may suit agents better than JavaScript, against the thread's lean toward JavaScript."
+    }
+  },
+  "digestedAt": "2026-10-19T21:39:10.000Z"
+}

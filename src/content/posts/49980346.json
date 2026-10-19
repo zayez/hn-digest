@@ -1,0 +1,118 @@
+{
+  "hnId": 49980346,
+  "title": "The Slow Formation of Durable Software",
+  "url": "https://newsletter.dancohen.org/archive/the-slow-formation-of-durable-software/",
+  "domain": "newsletter.dancohen.org",
+  "kind": "article",
+  "author": "benbreen",
+  "postedAt": "2026-10-06T15:54:24.000Z",
+  "points": 299,
+  "commentCount": 116,
+  "readingMinutes": 16,
+  "tldr": "Zotero took five years to reach a rough first prototype. Over 20 million people now use it. Co-creator Dan Cohen says AI could not have sped up that phase. His team of historians did not yet know what they wanted. Years of talk at a shared table produced the design that made the software last.",
+  "article": {
+    "keyPoints": [
+      "Cohen argues that AI could not have sped up Zotero's early years. The team did not know what it wanted, so it could not have written a coherent prompt.",
+      "Zotero grew from two tools at George Mason's Center for History and New Media. Cohen's Web Scrapbook was a PHP web app that captured pages through a bookmarklet.",
+      "The second tool was Elena Razlogova's Scribe, a FileMaker desktop app for notes and citations. Historians used it as a free replacement for EndNote.",
+      "By 2003 the team wanted one tool that lived in the browser and understood scholarly metadata. Nobody on the team knew how to build it yet.",
+      "Firefox shipped on November 9, 2004, with XUL for writing browser extensions. That night Cohen proposed a Firefox extension that pulled book data from an Amazon API.",
+      "A grant from the Institute of Museum and Library Services funded the work, first called SmartFox. The 1.0 beta shipped on October 5, 2006. It had 60,000 users within a month."
+    ],
+    "whyItMatters": "Read the original for the primary sources. It reprints Razlogova's 2003 wish list for Scribe, the late-night 2004 emails about Firefox and the grant abstract. It also names the people who built Zotero and tells how an Albanian dictionary supplied the name."
+  },
+  "comments": {
+    "overview": "The thread was warm toward Zotero and split on the AI claim. Most of the argument was about whether coding agents can help a team discover what to build, or only build it faster. A long side debate asked whether LLMs can reason past what people have already published.",
+    "themes": [
+      {
+        "title": "Can AI help you find out what to build?",
+        "synthesis": "One camp said Cohen undersells AI. They said LLMs are good at research, prototypes and digesting user feedback, so the five years might have been five months. The other camp said the hard part was the design itself. An agent asked in 2003 to merge Scribe and Web Scrapbook would have copied the PHP tools that existed then. Several commenters added that fast prototypes also lead teams down wrong roads at speed.",
+        "quotes": [
+          {
+            "author": "scruple",
+            "text": "\"Build a tool based on Scribe and Web Scrapbook\" in 2003 would've made a fragile PHP wrapper because that's what the existing landscape looked like.",
+            "commentId": 50006001
+          },
+          {
+            "author": "kstenerud",
+            "text": "LLMs are great at research, and great at prototypes. Once you have your design, they're good at coding as well. They're also good at distilling user feedback.",
+            "commentId": 50005121
+          }
+        ]
+      },
+      {
+        "title": "Small steps still work with agents",
+        "synthesis": "A commenter said good software starts small and grows, while LLM projects build too much at once. A reply called that a false choice, since nothing stops a developer from using agents slowly and carefully. The first commenter agreed it can be done but said the hype rewards commit counts and churn. Another agent user described a quiet middle ground with careful architecture and less typing.",
+        "quotes": [
+          {
+            "author": "skydhash",
+            "text": "LLM projects usually rush the building part and do too big of a job and it’s become cumbersome to design (sunken cost) and evaluate (too many variables). If you want to build shelters, you start with a small hut, not with a cathedral.",
+            "commentId": 50006660
+          },
+          {
+            "author": "epihelix",
+            "text": "There is a middle ground, where rigorous software project management and careful architectural guidance and oversight continues, but agentic coding takes away much of the coding drudgery.",
+            "commentId": 50010054
+          }
+        ]
+      },
+      {
+        "title": "Do LLMs only remix known work?",
+        "synthesis": "Some commenters said LLMs only pattern-match on what humans have written and cannot derive missing rules. One gave the example of ChatGPT getting a poorly documented grammar wrong until it found a published source. A reply said LLMs are interesting because they work in semantic space. The first commenter answered that embeddings measure word co-occurrence and pointed to hallucinated CLI flags as proof.",
+        "quotes": [
+          {
+            "author": "scruple",
+            "text": "Tokens that are hallucinated are semantically \"close\" in that vector space but they're completely false in reality. If LLMs operated in a true semantic space they wouldn't hallucinate CLI flags that don't exist.",
+            "commentId": 50009142
+          },
+          {
+            "author": "TeMPOraL",
+            "text": "We can only define concepts, and we can only learn them, *through generalizing from examples*. Which is conceptually (pun not intended) regression - finding a vector along which examples live.",
+            "commentId": 50010636
+          }
+        ]
+      },
+      {
+        "title": "Zotero as software people trust",
+        "synthesis": "The top comment praised Zotero as an app that just works and explained it to readers outside academia. Others pointed to its open source code, local-first storage, exports and nonprofit owner as reasons to trust it. Critics said self-hosting the sync server is hard, since WebDAV only covers attachments. A long-time user said Zotero has flaws and has become harder to build and contribute to.",
+        "quotes": [
+          {
+            "author": "drdexebtjl",
+            "text": "it is owned by a non-profit who hasn’t made a single controversial update in 20 years, so it’s got a pretty decent track record.",
+            "commentId": 50010457
+          },
+          {
+            "author": "cxr",
+            "text": "It works kind of reasonably okay most of the time, and you get a feel for where and how you have to give a thump the times when it's not working the way it's supposed to, but it has its flaws.",
+            "commentId": 50029019
+          }
+        ]
+      },
+      {
+        "title": "Speed is not the enemy",
+        "synthesis": "One commenter said nothing good can be made fast. Others pushed back with songs written in an afternoon, though a reply said those rest on years of built-up taste. Some said academics can take five years because they do not face market pressure, while engineers must balance quality against time to market. Others added that cheap features tempt vibe coders into feature creep, and that LLMs rarely delete code.",
+        "quotes": [
+          {
+            "author": "jkhdigital",
+            "text": "The difference between an academic and an engineer is that the engineer understands that time spent in research and design does not magically justify itself.",
+            "commentId": 50010634
+          },
+          {
+            "author": "josephg",
+            "text": "If you ask them to add a feature, then later take it out again, the codebase still grows. It always grows.",
+            "commentId": 50004927
+          }
+        ]
+      }
+    ],
+    "consensus": "Most commenters agreed that knowing what to build is the hard part, and that typing speed was never the limit on Zotero. Many also agreed Zotero earned its place through open formats, a nonprofit owner and years of steady work.",
+    "dissent": "A sizable minority called the essay a romantic, ivory-tower story. They said LLMs speed up exactly the vague, exploratory phase Cohen describes, and that academics can ignore time to market in ways companies cannot.",
+    "contrarian": {
+      "author": "TeMPOraL",
+      "text": "The best, high quality, slow-developed software isn't the best because programmers knew when to stop. It's because *the scope and timeline were bounded up front*.",
+      "commentId": 50008511,
+      "why": "It credits fixed scope rather than patience, and Zotero's grant-funded fall 2006 release target fits that reading."
+    }
+  },
+  "digestedAt": "2026-10-19T21:40:09.000Z"
+}
