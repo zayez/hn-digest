@@ -1,0 +1,118 @@
+{
+  "hnId": 50073633,
+  "title": "Redesigning source control at Anthropic",
+  "url": "https://www.anthropic.com/engineering/redesigning-source-control",
+  "domain": "anthropic.com",
+  "kind": "article",
+  "author": "Philpax",
+  "postedAt": "2026-10-13T15:49:56.000Z",
+  "points": 894,
+  "commentCount": 1012,
+  "readingMinutes": 16,
+  "tldr": "Anthropic built Scion, its own version control system, and moved its monorepo off git in five months. Daily merges had grown from about 2,500 in May 2026 to over 30,000 in September, more than its git mirrors could serve. In Scion, servers do the commits, merges and history queries, and always-online clients fetch only the files they read. Anthropic says the new setup uses 200x less CPU and memory than the old git mirrors.",
+  "article": {
+    "keyPoints": [
+      "Anthropic's merges grew from about 2,500 a day in May 2026 to over 30,000 a day in September.",
+      "With 25 million CI checkouts a day of a 25 GB working copy, naive git fetching would move over 600 PB a day.",
+      "Scion's server does commits, merges, history and blame, because nearly every client is an agent or job that is always online.",
+      "Each commit is a changeset that lists only the changed files, with pointers to their contents in blob storage.",
+      "Tiered caches serve these immutable objects with a hit rate above 99%, and checkouts now take seconds instead of minutes.",
+      "The seven engineers who built Scion say their main job was often to tell Claude no."
+    ],
+    "whyItMatters": "Read the original if you run a large monorepo or a git platform. It explains the cache tiers, the derived-data indexes and the fetch protocol in more detail than this summary. Its last section lists changes Anthropic thinks git servers could adopt without leaving git."
+  },
+  "comments": {
+    "overview": "A huge and mostly hostile thread. Most commenters argued about what 30,000 merges a day says about Anthropic's code, and whether it needed a new version control system at all. An Anthropic engineer, nickg-anthropic, answered technical questions throughout.",
+    "themes": [
+      {
+        "title": "Is the code any good?",
+        "synthesis": "The top thread asks how Anthropic avoids bad code when nobody reads every line. Many answer that it doesn't, and point to Claude Code's memory use, its UI bugs and its leaked source. Others reply that all software ships with bugs and that speed beat polish in Claude Code's market. Daily agent users add that unreviewed agent code piles up into designs the agent itself can no longer follow.",
+        "quotes": [
+          {
+            "author": "xenadu02",
+            "text": "All of the models will code themselves into local maxima then spend more and more time chasing their tails as every change introduces new bugs, the agent adds more complexity, and the code base just spirals.",
+            "commentId": 50095480
+          },
+          {
+            "author": "tgsovlerkhgsel",
+            "text": "If Anthropic instead spent its resources on making the UI not janky and code reviewing everything, the overall product would have likely been *worse* because they couldn't build and improve features as quickly.",
+            "commentId": 50083305
+          }
+        ]
+      },
+      {
+        "title": "What are 30,000 merges a day for?",
+        "synthesis": "Many readers doubt the merge count measures anything useful. They note that Anthropic's public products look much the same and read the volume as churn, with agents redoing each other's work. nickg-anthropic says the code covers training and serving systems, internal tools, research and new projects. simonw lines up the growth with the dates when Mythos- and Fable-class models would have reached Anthropic's own engineers.",
+        "quotes": [
+          {
+            "author": "horsawlarway",
+            "text": "Lots of activity is not necessarily synonymous with productivity, and it carries real cost.",
+            "commentId": 50076054
+          },
+          {
+            "author": "nickg-anthropic",
+            "text": "Building all of the systems to train and serve our models, internal tools and infrastructure, (lots and lots of) research, our product and API surfaces, and more.",
+            "commentId": 50081892
+          }
+        ]
+      },
+      {
+        "title": "Subversion and Perforce again",
+        "synthesis": "Dozens of replies call Scion Subversion or Perforce with a new name. Critics say an online-only design gives up git's local commits and stops all work when the server goes down. nickg-anthropic answers that Claude is Scion's heaviest user and needs the network anyway. A long side debate asks whether a Perforce license would have been cheaper. mike_hearn argues that AI labs spend like Google but compete on price like airlines.",
+        "quotes": [
+          {
+            "author": "amluto",
+            "text": "A big part of the theses of git and, even more so, jujitsu, is that you can build up a history entirely locally, making it reasonable to make tiny commits locally and then rework them, push them, or throw them away.",
+            "commentId": 50075586
+          },
+          {
+            "author": "mike_hearn",
+            "text": "Quite surprisingly to those of us who got used to the FAANG and SaaS era, AI firms look more like airlines than tech firms.",
+            "commentId": 50100931
+          }
+        ]
+      },
+      {
+        "title": "The monorepo and git's real limits",
+        "synthesis": "Some commenters say the real fix was to split the monorepo. nickg-anthropic replies that one repo lets a sweeping change land in a single atomic commit. Others call the 600 PB figure a straw man, because no sane CI clones the repo fresh for each run. nickg-anthropic agrees and says the usual caching setups also stopped working as the repo grew. steveklabnik, who works on a git alternative, expects any big monorepo with agents to hit the same wall.",
+        "quotes": [
+          {
+            "author": "nickg-anthropic",
+            "text": "we can make a sweeping change in one atomic commit rather than have to run a campaign across hundreds or thousands of repos, all with their own norms and tools.",
+            "commentId": 50080247
+          },
+          {
+            "author": "ulrikrasmussen",
+            "text": "Who in their right mind would fetch that naively? For starters, CI runners should of course not do a fresh clone on each run.",
+            "commentId": 50082044
+          }
+        ]
+      },
+      {
+        "title": "Telling Claude no",
+        "synthesis": "The post's line that engineers often had to tell Claude no drew both recognition and worry. vessenes sees the same overbuilt fixes for unlikely edge cases in their own work with Claude. Others doubt that reviewing a change's intent instead of its code can catch much, since bugs live in the gap between the two. crakhamster01 reads the whole post as proof that domain experts still have to direct the model.",
+        "quotes": [
+          {
+            "author": "vessenes",
+            "text": "the models currently will speculate a (valid, but unlikely/out of our design space/deep edge case) problem, and then cheerfully triple the codebase size and cut speed by 10x in order to fix it.",
+            "commentId": 50086630
+          },
+          {
+            "author": "duttish",
+            "text": "The difference between intent and implementation seems like a very common source of bugs?",
+            "commentId": 50086478
+          }
+        ]
+      }
+    ],
+    "consensus": "Scion's architecture is not new. It follows Google's Piper, Meta's Sapling and the central server of Perforce and Subversion. The new part is how fast seven people built it. Most commenters also doubted that 30,000 merges a day means 30,000 useful changes.",
+    "dissent": "A minority defended the project. They said agent swarms break git's scaling assumptions, that atomic changes across one repo are worth keeping, and that the post gives git servers ideas to adopt. A few daily users of Fable-class models said these models write better code than they do.",
+    "contrarian": {
+      "author": "wclausen",
+      "text": "A large part of the nice operational features of the system is downstream of making core data structures immutable. File contents are immutable, content-addressed blobs. WAL entries are immutable records.",
+      "commentId": 50077832,
+      "why": "The rest of the thread argued about churn and Subversion. This comment names why the design scales, since immutable data lets any cache answer any request without coordination."
+    }
+  },
+  "digestedAt": "2026-10-20T02:05:59.000Z"
+}

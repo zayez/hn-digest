@@ -1,0 +1,74 @@
+{
+  "hnId": 50084969,
+  "title": "Ask HN: What is the current trajectory of a senior engineer?",
+  "kind": "discussion",
+  "author": "guitarlimeo",
+  "postedAt": "2026-10-14T09:54:23.000Z",
+  "points": 45,
+  "commentCount": 82,
+  "tldr": "The poster asks what stops AI labs from training models on good and bad software architecture. They predict that 90% of the need for programming skill goes away in a few years. Hacker News mostly disagreed. Commenters expect fewer engineers. They said someone still has to decide what to build, own the risk and take the blame.",
+  "article": {
+    "keyPoints": [
+      "Labs already train LLMs with reinforcement learning on anything that has a right or wrong answer, such as code and maths.",
+      "The poster asks why Anthropic, OpenAI and others could not build datasets of good and bad architecture and train on those too.",
+      "In 2024 LLMs were a fancy autocomplete, and now people talk about agent-run \"software factories\".",
+      "The poster thinks developers who say humans will still guide agents and design architecture are ignoring this trend.",
+      "They predict that in a few years businesses will need 90% less programming skill and will favor product leads with people skills."
+    ],
+    "whyItMatters": "The post is short and the summary covers it. The thread is the reason to visit, for the firsthand reports from consultants, solo founders and engineers already doing review work."
+  },
+  "comments": {
+    "overview": "A calm thread, with an undercurrent of dread. Most answers named one thing machines will not take soon, such as consensus, liability or knowing what users want. A smaller group traded exit plans like beekeeping and pest control, or said they would wait and see.",
+    "themes": [
+      {
+        "title": "Deciding what to build stays human",
+        "synthesis": "The largest group said the senior job was never mostly about code. They named driving consensus in large organizations, knowing what to build next and judging what makes a product fun. One commenter said current models write good architecture documents but cannot yet design an interface humans understand. Another said models are too agreeable to kill bad ideas, a skill seniors use when they cannot push back openly.",
+        "quotes": [
+          { "author": "accurrent", "text": "IMO senior software engineer is someone who drives consensus in a large organization. I dont think LLMs are going to solve that problem any time soon.", "commentId": 50085649 },
+          { "author": "zeryx", "text": "Knowing what to build intuitively to maximise fun, or any other illogical human experience won't be RLable ever.", "commentId": 50085949 }
+        ]
+      },
+      {
+        "title": "Will everyone build their own software?",
+        "synthesis": "The top thread argued that most people do not want to talk to a computer, so anyone who does stays ahead. One commenter compared it to kitchens. Everyone has one, and people still eat out. Others replied that schools now teach coding from primary school and that teachers would happily prompt for double their salary. Another said competition decides it, because new firms built on agents will force older ones to cut staff.",
+        "quotes": [
+          { "author": "joshstrange", "text": "But I have a feeling that even with more people \"building\" instead of \"buying\" there will always exist a majority of people who don't want to bother with \"building\".", "commentId": 50087844 },
+          { "author": "trimethylpurine", "text": "So, if it's possible to run with fewer people, competition pressures everyone to do the same. You won't really be able to prefer humans soon.", "commentId": 50086457 }
+        ]
+      },
+      {
+        "title": "Someone has to carry the liability",
+        "synthesis": "Several commenters said safety-critical software will keep expert humans checking code before release, because someone must be liable. A consultant said the job exists because clients need a person to blame. A solo SaaS founder pointed out that no LLM will drive to the colocation center and plug in the founder's server. Replies said robots and remote-hands services could do it, and the founder answered that small firms cannot pay for that. One commenter rejected the airline-pilot example and said they would fly with an AI pilot that crashes less than humans.",
+        "quotes": [
+          { "author": "rvz", "text": "Someone will always be held liable if an LLM runs autonomously and out of control which will cost them a lot of money for damages.", "commentId": 50085880 },
+          { "author": "papa-smurf", "text": "Main moat of the (consultancy) job is that a customer will always need a human person to put the blame on. That's me.", "commentId": 50086964 }
+        ]
+      },
+      {
+        "title": "Architecture is hard to train on",
+        "synthesis": "Commenters answered the poster's training question directly. One said good and bad architecture are usually labeled after the fact, so any dataset would be very noisy. Another said the wrong architecture is sometimes the right call, as with DOOM, and that AI defaults to textbook enterprise designs. A third said code quality mostly matters to humans, who lack the patience to work in bad code for long.",
+        "quotes": [
+          { "author": "joshka", "text": "A lot of \"good and bad architecture\" is really post-hoc rationalization of decisions that worked, and it's likely super noisy.", "commentId": 50114699 },
+          { "author": "apimade", "text": "Because sometimes bad architecture is the correct architecture, and good architecture is the wrong choice.", "commentId": 50088211 }
+        ]
+      },
+      {
+        "title": "Cleanup work is growing",
+        "synthesis": "A fractional engineer said more companies without in-house experts now ask for reviews of what they built. Another commenter compared this to the 1990s, when Visual Basic and Delphi apps worked well at first and then became unmaintainable. A senior engineer said part of each day goes to undoing messy generated code.",
+        "quotes": [
+          { "author": "robgough", "text": "I've been doing some fractional work and I've been getting more and more outreach from organisations that don't have much development knowledge internally and have come to understand the limitations of what they've been building and want expert review.", "commentId": 50087314 },
+          { "author": "smackeyacky", "text": "I spend some of my days undoing the unholy mess that generated code is.", "commentId": 50085428 }
+        ]
+      }
+    ],
+    "consensus": "There will be fewer software engineers. The ones who remain will act more like technical leads who own outcomes, judge quality and answer for failures.",
+    "dissent": "A gloomier group said the profession is finished. One wrote that developers who use AI are training their own replacements. Another said to wait and see, because the AI companies are not financially healthy.",
+    "contrarian": {
+      "author": "akoboldfrying",
+      "text": "Architecture, in the sense of applying/enforcing organising principles like modularity and levels of abstraction, is something we currently do largely to manage complexity -- so that we can fit as much of the system into our limited brains as we can.",
+      "commentId": 50086486,
+      "why": "The rest of the thread treats architecture as a human skill AI must learn, but this comment asks if AI needs it at all. One reply's answer was that modular code still saves tokens."
+    }
+  },
+  "digestedAt": "2026-10-20T02:05:29.000Z"
+}

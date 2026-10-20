@@ -1,0 +1,118 @@
+{
+  "hnId": 50048312,
+  "title": "Passkeys are a trap",
+  "url": "https://nonfunctional.substack.com/p/passkeys-are-a-trap-do-not-use-them",
+  "domain": "nonfunctional.substack.com",
+  "kind": "article",
+  "author": "laurex",
+  "postedAt": "2026-10-11T21:59:48.000Z",
+  "points": 1146,
+  "commentCount": 577,
+  "readingMinutes": 23,
+  "tldr": "Passkeys are safer than passwords. The author still calls them a trap because of remote attestation, an option in the WebAuthn standard. Attestation lets a website check that you use an approved device, operating system and password manager. The author fears sites will require it step by step and lock out Linux users, custom phone systems and self-made tools.",
+  "article": {
+    "keyPoints": [
+      "The FIDO Alliance created passkeys. Its members include Big Tech, banks, governments and intelligence agencies. No consumer advocacy group is a member.",
+      "TOTP is an open standard, RFC 6238. Any software can generate the codes, even a Game Boy. The user decides where the TOTP secret lives and who gets it.",
+      "One name, \"passkey\", covers many kinds of credential. A passkey can be copyable or not, hardware-backed or software-backed, and user-verified or not. The author believes the FIDO Alliance chose one name to hide these differences.",
+      "The standard makes the password manager report some of these properties to the website as flags. Software can lie about the flags. It cannot lie under remote attestation, which uses the device's secure chip to prove the whole software stack is approved.",
+      "Few websites require attestation today. The author expects them to require it in small steps once most users have passkeys. Users of Linux, LineageOS or an unapproved password manager would then fail the check.",
+      "The footnotes admit that passkeys resist phishing and are more secure than TOTP. The author recommends hardware security keys such as YubiKeys, because their attestation does not reach the whole operating system."
+    ],
+    "whyItMatters": "Readers who run Linux or a custom phone system get the clearest case for why attestation matters to them. The original also has the full list of passkey properties. Its footnotes correct earlier errors and link rebuttals from Scott Helme and Apple passkey engineer Ricky Mondello."
+  },
+  "comments": {
+    "overview": "The thread was large and heated. Most commenters shared the author's fear of attestation but rejected the advice to use TOTP, because phishing defeats it. The rest argued about whether consumer sites will ever demand attestation, and whether users can take their passkeys with them.",
+    "themes": [
+      {
+        "title": "Will sites ever demand attestation?",
+        "synthesis": "agwa, who has implemented WebAuthn, said a site can only demand attestation when a passkey is created. Browsers then show a permission prompt. Apple removed attestation from consumer devices, so a site that required it would lock out every iPhone user. Others answered that Apple could add it back at any time. They described the usual path of a feature from optional to default to mandatory.",
+        "quotes": [
+          {
+            "author": "agwa",
+            "text": "Note that attestation can only be required during credential registration; at login time it's not possible to retroactively require attestation if it wasn't obtained during registration.",
+            "commentId": 50048830
+          },
+          {
+            "author": "throwawayffffas",
+            "text": "You have not been paying attention, that scenario is where this whole thing is building towards.",
+            "commentId": 50049153
+          }
+        ]
+      },
+      {
+        "title": "TOTP is no answer to phishing",
+        "synthesis": "Security engineers objected most to the TOTP advice. A fake site can collect a TOTP code and use it within seconds, while a passkey only signs for the real domain. A server breach also leaks only a public key. A minority said password managers already refuse to fill passwords on the wrong domain, and others replied that users override that refusal all the time.",
+        "quotes": [
+          {
+            "author": "tgma",
+            "text": "If you write a long article about the merit of passkeys and there is no occurrence of the string \"phish\" in your article, I am afraid I cannot take your rant seriously.",
+            "commentId": 50049083
+          },
+          {
+            "author": "danpalmer",
+            "text": "Passkeys aren't solving for security nerds who like portability and have 30 character long passwords, they're solving for grandpa who will happily read their bank's 2FA SMS to the \"bank\" over the phone.",
+            "commentId": 50049178
+          }
+        ]
+      },
+      {
+        "title": "Export, backup and lock-in",
+        "synthesis": "The FIDO credential exchange spec moves passkeys only from one password manager vendor to another, never to a file the user holds. 1Password follows the spec, and Bitwarden exports passkeys to JSON anyway. Commenters cited a KeePassXC GitHub issue where FIDO developers warned that sites could block the app for allowing plain-text export. To many, that issue showed how attestation could be used against open tools.",
+        "quotes": [
+          {
+            "author": "tennysont",
+            "text": "Bitwarden does it[3] via the magic of \"ignoring the part of the specification that says not to give users their data.\"",
+            "commentId": 50052988
+          },
+          {
+            "author": "secabeen",
+            "text": "Note who is excluded from this list: the End User.",
+            "commentId": 50059524
+          }
+        ]
+      },
+      {
+        "title": "Banks and apps already restrict choice",
+        "synthesis": "Several readers said the restriction already exists. Japan's financial regulator made brokerages adopt passkeys, and one brokerage accepted only Windows Hello or iOS Passwords, not hardware security keys. Others cited banking apps that fail on rooted phones, while lxgr noted that those app checks are a separate system from passkeys. An industry insider said companies rarely force a login change, because each change risks losing customers.",
+        "quotes": [
+          {
+            "author": "koito17",
+            "text": "I consistently use these hardware keys through WebAuthn, so I was surprised when my brokerage explicitly told me my hardware key is unsupported and I must use either Windows Hello or the iOS Passwords app.",
+            "commentId": 50054554
+          },
+          {
+            "author": "unscaled",
+            "text": "Forcing users to do something that might confuse them, break their account or frustrate them is risky, since you may lose a very real chunk of your customer base.",
+            "commentId": 50050554
+          }
+        ]
+      },
+      {
+        "title": "A real risk, badly argued",
+        "synthesis": "Even critics of attestation faulted the article. lxgr said WebAuthn always requires user presence and has no transferable property, so half of the listed kinds do not exist in the spec. Others rejected the claim that the FIDO Alliance picked a confusing name on purpose, and many disliked the headline. The author replied in the thread that the standard lets websites take control away, and that most users would never notice.",
+        "quotes": [
+          {
+            "author": "lxgr",
+            "text": "Generally, I really do agree that there are many possibilities for user-hostile traps in WebAuthN, but if we want to successfully navigate them, critics need to step up their epistemology.",
+            "commentId": 50052900
+          },
+          {
+            "author": "nonfunctional",
+            "text": "It's that the standard readily allows for websites to prevent you from being allowed to exercise that control, and the unclear messaging and UX around passkeys means most users will not even notice should this happen.",
+            "commentId": 50048663
+          }
+        ]
+      }
+    ],
+    "consensus": "Passkeys resist phishing far better than passwords or TOTP. Remote attestation is the one part of the standard that could harm users if consumer sites adopted it.",
+    "dissent": "A large minority said the harm is already here. They pointed to banks, brokerages and FIDO developers pressuring KeePassXC, and saw no reason to trust that sites will hold back.",
+    "contrarian": {
+      "author": "jeroenhd",
+      "text": "There is no intent to kill FOSS, not even from Microsoft anymore. The reality is much worse: nobody really cares about FOSS, except for the parts that make money.",
+      "commentId": 50051784,
+      "why": "It swaps the plot the article implies for indifference, which better explains why Linux users already lose access to DRM video and banking apps."
+    }
+  },
+  "digestedAt": "2026-10-20T02:05:06.000Z"
+}

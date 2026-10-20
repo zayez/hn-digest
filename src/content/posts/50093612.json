@@ -1,0 +1,98 @@
+{
+  "hnId": 50093612,
+  "title": "Fancy Curl Sites",
+  "url": "https://nytpu.com/gemlog/2026-03-18",
+  "domain": "nytpu.com",
+  "kind": "article",
+  "author": "adunk",
+  "postedAt": "2026-10-14T19:29:12.000Z",
+  "points": 149,
+  "commentCount": 30,
+  "readingMinutes": 3,
+  "tldr": "A blogger serves a colored terminal version of their whole site to anyone who fetches it with curl. The pages use ANSI escape codes for styling. The author wrote the index and about pages by hand. Their own markup language already had an ANSI output, so every blog post got a curl version almost for free.",
+  "article": {
+    "keyPoints": [
+      "Running curl on nytpu.com returns pages styled with ANSI escape codes instead of HTML.",
+      "The idea came from the curl sites of trinkey and strongsand, which the author says no longer work as of 2026-10-14.",
+      "The author wrote the index and about pages by hand, with the escape sequence in a Vim register and Wikipedia's table of graphics codes open.",
+      "Blog posts get curl versions automatically because the author's markup language, Gemroff, has emitted ANSI text for over four years.",
+      "The static site generator already supported several output formats, because the site is also served over Gemini and Gopher.",
+      "A few Nginx rules send the ANSI version to any user agent containing curl, and an X-Original: true header returns the normal HTML."
+    ],
+    "whyItMatters": "Read the original if you want to build one of these. It gives the exact curl commands to try, the setup history, and a short footnote defending the author's em dashes. Running the commands shows the result better than any summary can."
+  },
+  "comments": {
+    "overview": "A small, friendly thread. Most replies share the commenter's own curl site or a related trick. The one real argument is about how the server should pick the terminal version.",
+    "themes": [
+      {
+        "title": "Use the Accept header, not the user agent",
+        "synthesis": "Several commenters say HTTP already has a standard way to pick a format. The client sends an Accept header, and the server could answer text/x-ansi for terminals and text/html for browsers. Then plain curl would still get the HTML, and wget or other tools could ask for the ANSI version too. One commenter does this with Markdown and a link rel=\"alternate\" hint, which also helps screen readers and LLM agents.",
+        "quotes": [
+          {
+            "author": "jayknight",
+            "text": "It seems like \"Accept: text/html\" would be more standard",
+            "commentId": 50094314
+          },
+          {
+            "author": "lightandlight",
+            "text": "Yeah, I like this more. I want curl/wget to get the canonical representation by default.",
+            "commentId": 50095124
+          }
+        ]
+      },
+      {
+        "title": "A static trick with alternate screen buffers",
+        "synthesis": "One commenter shows a way to do this with no server logic. The HTML sits inside an alternate terminal buffer that the terminal clears at once, and the ANSI version follows it. Browsers hide the escape codes inside HTML comments. This works on static hosts like GitHub Pages, where nobody can edit the server config.",
+        "quotes": [
+          {
+            "author": "colewilson",
+            "text": "When you curl it, it still writes the HTML to your terminal, but immediately clears that buffer and writes the ANSI version to your real screen. In browsers, this ANSI stuff is hidden in an HTML comment.",
+            "commentId": 50095529
+          }
+        ]
+      },
+      {
+        "title": "Other curl-friendly sites",
+        "synthesis": "Many replies are show-and-tell. People list curl sites for recent music and reading, weather, IP address lookups, and a site that runs as a shell script. wttr.in comes up as the classic example. Another commenter points to the old Finger protocol, which served plain text profiles long before this.",
+        "quotes": [
+          {
+            "author": "abound",
+            "text": "I just set up wthr.dev (a domain I've had for a while) like this, modeled off of wttr.in, but with simpler output.",
+            "commentId": 50099058
+          }
+        ]
+      },
+      {
+        "title": "Escape codes as a security risk",
+        "synthesis": "One commenter uses curl to inspect sites they think are malicious. A site that sends ANSI codes worries them, because terminal escape codes have had vulnerabilities. Another commenter notes that curl had just fixed a bug where a malicious server attacks the client. Nobody answered either comment.",
+        "quotes": [
+          {
+            "author": "____tom____",
+            "text": "I do this sometimes, when I want to check a website that I suspect might be malicious. There have been vulnerabilities associated with ANSI control codes, so I really DON'T want those to be included in a display.",
+            "commentId": 50115218
+          }
+        ]
+      },
+      {
+        "title": "Windows support",
+        "synthesis": "The author apologizes to Windows users, since cmd.exe turns ANSI codes off by default. One commenter says it works fine in Windows Terminal outside PowerShell mode. Another still could not open it on Windows.",
+        "quotes": [
+          {
+            "author": "Rohansi",
+            "text": "FYI it works just fine on Windows if you run it from Terminal instead. As long as you don't use PowerShell mode in it.",
+            "commentId": 50094740
+          }
+        ]
+      }
+    ],
+    "consensus": "Commenters like the idea and want more sites to offer a terminal version.",
+    "dissent": "The main pushback is about method. Several commenters would rather the server read the Accept header than sniff the user agent, so that plain curl gets the HTML by default.",
+    "contrarian": {
+      "author": "ximm",
+      "text": "But it is really up to the author to decide what \"canonical\" is. I serve my blog in markdown by default and only switch to html when it is explicitly requested.",
+      "commentId": 50100157,
+      "why": "The standards argument assumes HTML is the real page, and this commenter points out that the site owner decides that."
+    }
+  },
+  "digestedAt": "2026-10-20T02:05:02.000Z"
+}

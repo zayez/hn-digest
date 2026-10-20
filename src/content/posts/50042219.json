@@ -1,0 +1,118 @@
+{
+  "hnId": 50042219,
+  "title": "I paid people to try and follow my README",
+  "url": "https://shkspr.mobi/blog/2026/10/i-paid-people-to-try-and-follow-my-readme/",
+  "domain": "shkspr.mobi",
+  "kind": "article",
+  "author": "edent",
+  "postedAt": "2026-10-11T11:47:29.000Z",
+  "points": 431,
+  "commentCount": 206,
+  "readingMinutes": 3,
+  "tldr": "Terence Eden paid testers €25 each to follow the README of the ActivityBot project on a video call. The testers shared their screens and spoke aloud as they worked. Eden fixed the README after each session and spent about €150 in total. Eden says developers cannot see their own assumptions and need real people to show them.",
+  "article": {
+    "keyPoints": [
+      "Eden says developers cannot test their own READMEs well. They already know which commands need sudo and which steps the text leaves out.",
+      "Eden's NLnet grant for ActivityBot included money to test the install with real users. Eden found volunteers on Mastodon and offered each one €25 for an hour.",
+      "Each volunteer shared their screen and said aloud what they did, what confused them and what pleased them. Eden took notes by hand.",
+      "The sessions found a broken demo link, confusing section order and jokes that confused readers. Testers also found unexplained terms, and the README never said what the software does.",
+      "Eden changed the README after each session and tested the new version with the next person. The total cost was about €150.",
+      "Eden rejects asking an LLM to simulate users. Eden wants to hear real frustration in a person's voice, as with the human editors at GOV.UK."
+    ],
+    "whyItMatters": "Maintainers of small open-source projects get a cheap test method they can copy, with the real costs. The original also has the full list of problems the testers found, which works as a checklist for any README."
+  },
+  "comments": {
+    "overview": "The thread was friendly and full of README pet peeves. Many readers said Eden had reinvented usability testing. The main debate was whether an LLM agent could do the same job for free. Eden joined to answer questions about prerequisites, emojis and the project's AGENTS.md file.",
+    "themes": [
+      {
+        "title": "Your own notes stop making sense",
+        "synthesis": "The largest thread started from Eden's point about bias. Readers said their own notes become unreadable after a few weeks, once the context leaves their head. Several now write for a tired, older version of themselves. One commenter said their notes from 2009 were clearer than recent ones. More expertise now hides more steps from that commenter.",
+        "quotes": [
+          {
+            "author": "bambax",
+            "text": "It's surprising how much they become incomprehensible after just a couple of weeks; when everything's in our head it's all clear, fluid and self-explanatory; but once we have forgotten the context, nothing makes sense anymore.",
+            "commentId": 50043643
+          },
+          {
+            "author": "dofm",
+            "text": "You may still be the audience. But you will be four or five years older, shit will have gone on in your life, you will have more to remember, you will be tired, you will have less patience",
+            "commentId": 50046176
+          }
+        ]
+      },
+      {
+        "title": "Could an LLM do the testing?",
+        "synthesis": "Some readers said an agent in a fresh container can follow a README and report every point of friction. One commenter runs 20 sub-agents with different identities and sees them fail where humans fail. Others said agents miss what people notice, such as boredom, bad jokes or a missing explanation of the product. The sharpest point was that an agent does not say it is confused. It does the wrong thing with confidence.",
+        "quotes": [
+          {
+            "author": "tilemarch",
+            "text": "now where the AI tests start to fall apart is that an agent doesn’t tell you the doc is confusing, it just does something wrong with full confidence. A person on a call says “wait, what?” and that’s worth the 25 euros :)",
+            "commentId": 50044041
+          },
+          {
+            "author": "amirkhanian",
+            "text": "Agents and people catch different things. My agent reviewers find real bugs, like pinch-zoom breaking while a finger is on the joystick. But none of them said \"this is boring\".",
+            "commentId": 50043800
+          }
+        ]
+      },
+      {
+        "title": "How much should a README assume?",
+        "synthesis": "One reader said the ActivityBot README never says to install and configure php-fpm. Eden asked how far back in the stack a README should go. Most replies said to list every prerequisite, even without install steps. One commenter wants a list of commands that works in order on a clean machine, `git clone` included. Others joked about starting with how silicon becomes a transistor.",
+        "quotes": [
+          {
+            "author": "edent",
+            "text": "It's a tricky problem. How far back in the stack do you go? The README assumes that you know how to use git to check out the files - or that you can easily save them from the repository.",
+            "commentId": 50042519
+          },
+          {
+            "author": "BoppreH",
+            "text": "My rule of thumb for my READMEs: there should be a list of commands, that when executed in order and in a clean machine, result in the software doing something useful. Yes, this includes `git clone`.",
+            "commentId": 50042658
+          }
+        ]
+      },
+      {
+        "title": "READMEs that never say what the software does",
+        "synthesis": "This finding from the article got the most agreement. Readers listed READMEs that start with install commands, buzzwords or \"an alternative to X\" and never explain the product. Marketing home pages got the same complaint. One commenter said those vague pages are written for the finance team that approves the purchase, not for developers.",
+        "quotes": [
+          {
+            "author": "extralongdivisi",
+            "text": "I cannot tell you how many READMEs I've read that follow the pattern: \"<uninformative-name> is a <buzzword> <buzzword> written in <language>.\"",
+            "commentId": 50044146
+          },
+          {
+            "author": "epistasis",
+            "text": "The best explanation I have heard is that these pages exist for the finance team that has to go try to understand what the product is that they are being asked to authorize a purchase for.",
+            "commentId": 50045671
+          }
+        ]
+      },
+      {
+        "title": "Jokes and emojis",
+        "synthesis": "Most readers agreed that jokes do not belong in manuals, because they confuse readers from other cultures. The glibc abort() joke came up as an example. Emojis in the README drew the same criticism, and some readers took them as a sign of LLM writing. Eden said about half the testers liked the emojis, and Eden kept them. Eden also said no AI wrote the code or the docs.",
+        "quotes": [
+          {
+            "author": "fmx",
+            "text": "Even those who understood it would - IMHO - most likely not appreciate it being in the glibc manual. People don't read manuals to be entertained - they read them to find out as quickly as possible how to get their work done.",
+            "commentId": 50045364
+          },
+          {
+            "author": "edent",
+            "text": "That's interesting. In my testing, about half the participants liked them, one didn't, and the rest didn't express a strong preference.",
+            "commentId": 50042469
+          }
+        ]
+      }
+    ],
+    "consensus": "Watching real users follow your instructions works, and this is ordinary usability testing. UX readers cited Nielsen Norman Group research that five or six testers find most problems. Most readers agreed that a README must first say what the software does.",
+    "dissent": "Some readers said an LLM could test the instructions for free, so Eden paid mostly for human contact. One commenter said the bias excuse is weak. If you copy and paste every command from your own document on a clean system, you find these mistakes yourself.",
+    "contrarian": {
+      "author": "_clark_kent",
+      "text": "I think the problem is that this doesn't simulate for people who can't or won't read the manual",
+      "commentId": 50043390,
+      "why": "Paid testers read every line on a call, but many real users skip the README, so the software itself must need less explanation."
+    }
+  },
+  "digestedAt": "2026-10-20T02:05:00.000Z"
+}

@@ -1,0 +1,102 @@
+{
+  "hnId": 50047825,
+  "title": "A Remote Employee Refused 160 Webcam Photos a Day. Her Employer Fired Her",
+  "url": "https://www.inc.com/chloe-rosenberg/a-remote-employee-refused-160-webcam-photos-a-day-her-employer-fired-her/91415963",
+  "domain": "inc.com",
+  "kind": "unavailable",
+  "author": "bhrlady",
+  "postedAt": "2026-10-11T21:07:20.000Z",
+  "points": 288,
+  "commentCount": 195,
+  "tldr": "A remote employee was fired after she refused about 160 webcam photos a day. According to commenters, the employer was Sutherland Healthcare Solutions. They say she had worked there over a decade, with eight years of good reviews. They also say she asked for fewer photos on her doctor's advice, and the company ignored the request.",
+  "articleNote": "The article returned HTTP 403 and could not be fetched. The tldr comes from details in the HN thread, and the digest covers the discussion.",
+  "comments": {
+    "overview": "The thread was angry and almost one-sided against the employer. Most commenters read the photo rule as a manager's failure to measure real work, or as a way to push out a remote worker. A long side debate covered whether to keep work and personal devices apart.",
+    "themes": [
+      {
+        "title": "Watching faces because managers can't measure work",
+        "synthesis": "The top thread asked why a company needs a face photo every three minutes if it has any real metrics. Commenters blamed managers who distrust staff and judge by presence because hours are easier to count than output. One manager described remote staff who met every quota and still got told leaders could not \"feel their presence\". A few said this is not only a tech problem, and ordinary firms have ordinary managers.",
+        "quotes": [
+          {
+            "author": "da_chicken",
+            "text": "Why does it require a photograph of the employee's face every 3 minutes in order to determine if they're completing their work? Why does that make any sense at all?",
+            "commentId": 50048197
+          },
+          {
+            "author": "preg_match",
+            "text": "The reality is that an employee working 35 hours a week but getting 10x more done is liable to be fired as compared to someone working 40 hours but mostly twiddling their thumbs. Measuring stuff you do is hard, measuring hours is easy.",
+            "commentId": 50057155
+          }
+        ]
+      },
+      {
+        "title": "Paying for output or paying for hours",
+        "synthesis": "Some commenters said employers pay for time, so a salaried worker who finishes early still owes the hours. Others answered that salaried, exempt staff are paid to do a job and not to sit in a seat. One commenter called a sudden change to a long-standing deal constructive dismissal. Several suspected the rule was a cheap way to cut remote staff without calling it a layoff.",
+        "quotes": [
+          {
+            "author": "what",
+            "text": "Companies usually pay you for your time and have an expectation that your butt is in a seat for a certain number of hours. Completing your work early generally does not mean that you can fuck off for the rest of the day or week.",
+            "commentId": 50048836
+          },
+          {
+            "author": "SR2Z",
+            "text": "Your company can't just suddenly drastically change them on you without it being a constructive dismissal.",
+            "commentId": 50049786
+          }
+        ]
+      },
+      {
+        "title": "Keep work and personal devices apart",
+        "synthesis": "One commenter saw their full activity log in Zscaler, including their AI prompts, and now avoids using the work laptop for anything personal. A suggestion to do work tasks on a personal laptop instead drew strong pushback as data exfiltration. Most agreed on strict separation. Personal devices used for work can end up in lawsuit discovery, and company device management can wipe them remotely. One commenter described a BYOD job that never installed anything on staff machines.",
+        "quotes": [
+          {
+            "author": "firefoxd",
+            "text": "Yes, we use zscaler. It even included the list of AI prompts I've written and in-app activities.",
+            "commentId": 50048295
+          },
+          {
+            "author": "jjav",
+            "text": "I used to mix all the time but in these days of completely monitoring of work devices, I do strictly all work activity on work devices. Then I don't really care about the monitoring because anything I type on a work devices is strictly work stuff, nothing that is personal to me.",
+            "commentId": 50050969
+          }
+        ]
+      },
+      {
+        "title": "Law, leverage and the power gap",
+        "synthesis": "One commenter cited a European case where a worker won under Article 8 of the European Convention on Human Rights. Others noted that US employers have far more leeway, and asked whether the ADA covers a medical request like the one commenters described. \"Just work somewhere else\" met the reply that the power imbalance makes that unrealistic. Some called for a law against this kind of monitoring.",
+        "quotes": [
+          {
+            "author": "markus92",
+            "text": "There's been a lawsuit about this in Europe, couple years back. Employee won, breach of privacy according to Article 8 the European Convention of Human Rights.",
+            "commentId": 50048734
+          },
+          {
+            "author": "cferry",
+            "text": "Or make this kind of intrusive monitoring illegal? Preventing this kind of abuse is exactly the reason there are labor codes.",
+            "commentId": 50051593
+          }
+        ]
+      },
+      {
+        "title": "Rules for staff, not for executives",
+        "synthesis": "Commenters noted that executives are rarely watched this way. An engineering manager said the same rules always applied to them, and others replied that line managers sit on the labor side of the divide. Several joked that executives are the easiest people to replace with AI.",
+        "quotes": [
+          {
+            "author": "ndsipa_pomu",
+            "text": "Isn't it strange how this kind of monitoring is only used for the lowest level of employees when surely it'd make far more sense to monitor that the various executives are putting in sufficient hours to \"earn\" their highly paid salaries?",
+            "commentId": 50056907
+          }
+        ]
+      }
+    ],
+    "consensus": "Photographing a remote worker every few minutes is invasive and measures presence, not work. Most commenters read the firing as bad management or a pretext to cut remote staff.",
+    "dissent": "A minority said salaried jobs often do require set hours, so employers can expect people to be at their desks. Others said cameras on calls help remote teams feel like real people.",
+    "contrarian": {
+      "author": "dghlsakjg",
+      "text": "The chances of a leak or a camera capturing something that should not be on my server is high enough, and completely unnecessary to running the business, that I would not want anything to do with it. It takes one naked toddler and a CSAM filter to absolutely destroy a company.",
+      "commentId": 50049811,
+      "why": "It argues against the practice from the employer's own risk, since an archive of photos from inside homes is a legal liability."
+    }
+  },
+  "digestedAt": "2026-10-20T02:05:26.000Z"
+}

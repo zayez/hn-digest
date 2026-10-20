@@ -1,0 +1,108 @@
+{
+  "hnId": 50020533,
+  "title": "'Wallace and Gromit,' 90% Alone",
+  "url": "https://animationobsessive.substack.com/p/wallace-and-gromit-90-alone",
+  "domain": "animationobsessive.substack.com",
+  "kind": "article",
+  "author": "vinhnx",
+  "postedAt": "2026-10-09T13:49:31.000Z",
+  "points": 307,
+  "commentCount": 48,
+  "readingMinutes": 14,
+  "tldr": "Nick Park made A Grand Day Out, the first Wallace and Gromit film, almost entirely by himself. It began in 1982 as his student graduation film and took about seven years. Park says he did around 90% of the work. That long, lonely project formed the style that later defined Aardman.",
+  "article": {
+    "keyPoints": [
+      "Park started A Grand Day Out in 1982 at the National Film and Television School, with a small budget that let him hire almost no one.",
+      "Gromit lost his dialogue in the first week of the shoot because it was too hard to animate. Park found he could do everything with the eyes.",
+      "The script gave the rocket-building sequence one paragraph. That paragraph took Park a year and a half to animate.",
+      "By 1985 his student grant had run out and only seven minutes were done. Aardman then hired him and let him finish the film in his spare hours.",
+      "Park drew on Hitchcock, Welles and Eastern European puppet films. He shot the clay film like a small live-action feature, with slow camera drift.",
+      "A second section profiles Asians in Animation, a program where 14 mentors guided 104 crew members through a short film called Unboxed."
+    ],
+    "whyItMatters": "Read the original for Park's long first-hand quotes, the early test footage and his concept sketches. Animators and anyone stuck on a long solo project will find the details of his working conditions useful."
+  },
+  "comments": {
+    "overview": "The thread is warm and nostalgic, with almost no argument. Most commenters praised Park's dedication and traded favorite moments from the films. The one real debate was whether The Wrong Trousers train chase was original.",
+    "themes": [
+      {
+        "title": "The Wrong Trousers train chase",
+        "synthesis": "Commenters called the train chase in The Wrong Trousers, Park's next film, one of the best action sequences ever made. One commenter linked a roundtable where Danny Boyle, Tarantino and Ridley Scott all agree. Another claimed a Winnie the Pooh cartoon did the same gag two years earlier. Replies answered that the idea of laying track is obvious, and the direction and camera work are what make Park's version great.",
+        "quotes": [
+          {
+            "author": "codeulike",
+            "text": "What makes the Wallace and Gromit scene so classic is the direction - by which I mean camera angles, camera movement, edits, and the 'acting' which are all akin to a hollywood action sequence but (somewhat absurdly) set in a claymation world.",
+            "commentId": 50032887
+          },
+          {
+            "author": "vanderZwan",
+            "text": "Danny Boyle mentions it's one of the greatest action sequences of all time and everyone else (Quentin Tarantino, Ridley Scott, Alejandro Inarrito, Tom Hooper, David O. Russel) immediately agree.",
+            "commentId": 50029392
+          }
+        ]
+      },
+      {
+        "title": "One person, years of work",
+        "synthesis": "Many readers had assumed a full professional team made A Grand Day Out. They were surprised to learn it was mostly one student over several years. Several connected this to Aardman still animating clay by hand in 2026, when cheaper methods exist. Others found the one-paragraph rocket scene that took 18 months very relatable.",
+        "quotes": [
+          {
+            "author": "davnicwil",
+            "text": "There's no way I'd imagined it wasn't done in a professional setup by a full team.",
+            "commentId": 50024752
+          },
+          {
+            "author": "charles_f",
+            "text": "Reflecting over how in 2026 they are still animating frame by frame with clay puppets, how they still embrace their craft while a cheap and easy solution exists, and how good the results look.",
+            "commentId": 50033983
+          }
+        ]
+      },
+      {
+        "title": "Favorite gags",
+        "synthesis": "Commenters traded favorite jokes. These included Wallace pressing a buzzer for breakfast, Gromit reading \"Electronics for Dogs\" and the reveal \"Good grief, it's you!\". One commenter said the best gags work because the film anticipates how the viewer will react.",
+        "quotes": [
+          {
+            "author": "motbus3",
+            "text": "I find it extremely funny the meta idea that the author is steps ahead of you anticipating how you are going to react to the gag.",
+            "commentId": 50044701
+          }
+        ]
+      },
+      {
+        "title": "What \"3D animation\" meant in the 1960s",
+        "synthesis": "A reader asked what Park meant by a childhood \"diet of children's 3D animation\", since he grew up in the 1960s. Replies said he meant stop motion and puppet shows. British readers listed Bagpuss, The Clangers, Postman Pat and Aardman's own Morph. Another reply explained that cel animation is flat, and stop motion uses real objects in three dimensions.",
+        "quotes": [
+          {
+            "author": "posh_somme",
+            "text": "Bagpuss, The Clangers, Ivor The Engine, Trumpton, Camberwick Green. The UK was full of this stuff in the late 60s and early 70s",
+            "commentId": 50026510
+          },
+          {
+            "author": "ButlerianJihad",
+            "text": "Cel animation was vaguely limited to 2D scenes due to the flatness of their canvas, while stop-motion could be actually 3D, even if it wasn't filmed with that effect.",
+            "commentId": 50028862
+          }
+        ]
+      },
+      {
+        "title": "Wallace and Park's father",
+        "synthesis": "One commenter thought Wallace was a self-portrait, because Park's mouth moves like Wallace's when he talks. A reply quoted an interview where Park says Wallace is really his father. Park's father was always making things in a shed. The reply suggested both are true. Park took the character from his father and the gestures from himself.",
+        "quotes": [
+          {
+            "author": "amiga386",
+            "text": "I can believe Wallace's *gestures* (and mouth movements) are Park himself, as that's likely the only reference material he had to hand.",
+            "commentId": 50032095
+          }
+        ]
+      }
+    ],
+    "consensus": "Park's films are masterpieces of direction and comedy. Making A Grand Day Out mostly alone took extraordinary dedication.",
+    "dissent": "One commenter argued that a Winnie the Pooh cartoon used the train-track gag first. Another said the later films lost the quiet, isolated mood of the first three when they added more characters.",
+    "contrarian": {
+      "author": "Animats",
+      "text": "It's a one-person effort, by a former Disney animator. He's using both AI and Unreal Engine.",
+      "commentId": 50037608,
+      "why": "It turns the thread's praise for solo craft toward the present, where AI tools may let one person do a studio's work."
+    }
+  },
+  "digestedAt": "2026-10-20T02:04:46Z"
+}

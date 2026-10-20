@@ -1,0 +1,118 @@
+{
+  "hnId": 50058528,
+  "title": "A Modern Web App in C",
+  "url": "https://prophitt.me/writing/a-modern-web-app-in-c",
+  "domain": "prophitt.me",
+  "kind": "article",
+  "author": "prophittcorey",
+  "postedAt": "2026-10-12T16:13:10.000Z",
+  "points": 715,
+  "commentCount": 326,
+  "readingMinutes": 6,
+  "tldr": "The post's author shipped a paid web product written entirely in C and served through CGI. It runs on OpenBSD, its httpd server and SQLite, with only three extra libraries. The author argues that CGI's old weakness, forking a process per request, no longer matters on modern kernels. The main cost is writing your own cookie, form and escaping code.",
+  "article": {
+    "keyPoints": [
+      "The product, marketyour.games, has accounts, a search dashboard, Stripe payments and Postmark email, yet every request runs a fresh C process under CGI.",
+      "The stack is BCHS, which is OpenBSD, C, httpd and SQLite. OpenBSD's pledge, unveil and chroot sandbox the binary.",
+      "The only build dependencies are libcurl and libsodium. The project vendors SQLite and libcjson as single source files. The build compiles all assets into the binary.",
+      "A deploy is one file replacement with no restart, and a rebuild takes under half a second.",
+      "The author claims a small supply chain, plain-Vim tooling and HTML written directly in C as wins. SQLite also removes the database server that Postgres needs.",
+      "The weak spot is that CGI gives you almost nothing. The author wrote custom parsing and escaping code in one header. The author wants shared drop-in utilities like the stb libraries."
+    ],
+    "whyItMatters": "Read it if you run small sites and want to see how far a no-framework stack goes in production. The original lists the exact libraries and the build setup. It contains no code samples, and the source is not public."
+  },
+  "comments": {
+    "overview": "The thread was large and split. Many old hands shared nostalgic CGI stories and liked the minimalism. A loud group called C on the open internet reckless, and that argument grew into a long Rust-versus-C fight about supply chains and AI-written code.",
+    "themes": [
+      {
+        "title": "Memory safety against supply-chain risk",
+        "synthesis": "Critics said any C code that faces the internet will have exploitable bugs, and one asked how often the SQLite file gets backed up. Others replied that Linux, nginx and most databases are C already, and DJB's publicfile has had no RCE in 27 years. A long subthread argued that Rust fixes memory safety but brings large, fast-changing dependency trees. Rust users answered that you can vendor crates or use only the standard library. Several people noted that the custom parsers in the app are exactly where web code usually goes wrong.",
+        "quotes": [
+          {
+            "author": "nostrademons",
+            "text": "C introduces the possibility of memory-safety issues, which are deadly in server software that's exposed to the Internet.",
+            "commentId": 50063249
+          },
+          {
+            "author": "joshheitzman",
+            "text": "The typical C project has far fewer dependencies than the typical Rust project.",
+            "commentId": 50064390
+          }
+        ]
+      },
+      {
+        "title": "Is a process per request still a problem?",
+        "synthesis": "The author of a 1996 CGI book agreed that speed killed CGI and said that reason probably no longer holds. Several people said serverless functions and Lambda are the same model under a new name. Skeptics still called a fresh process per request an inefficient design, and they pointed to FastCGI or a server built into the binary. Others defended the reverse proxy the author dislikes, because it handles TLS, load balancing and DoS protection.",
+        "quotes": [
+          {
+            "author": "DannyBee",
+            "text": "The main reason CGI died in large part is because it wasn't fast enough.",
+            "commentId": 50070663
+          },
+          {
+            "author": "Retr0id",
+            "text": "The inefficient part is execing a fresh process on every incoming request. The article alludes to FastCGI etc. as alternatives but they're still workarounds for a fundamentally inefficient architecture.",
+            "commentId": 50071037
+          }
+        ]
+      },
+      {
+        "title": "Why C and not C++, Go or Zig",
+        "synthesis": "The author left out the reasons for choosing C on purpose to avoid a language war. A C compiler developer said C++ with plain structs costs nothing and is safer. Others replied that C++ features creep in until you write modern C++ anyway, and the author agreed. Go users said a static Go binary gives the same single-file deploy with memory safety. One commenter said the libraries are in C, so calling them directly avoids a second runtime.",
+        "quotes": [
+          {
+            "author": "glouwbug",
+            "text": "So people obsess over C because you’re hard limited by the upper feature bound.",
+            "commentId": 50062437
+          },
+          {
+            "author": "prophittcorey",
+            "text": "I generally like \"C-style C++\", but I find it difficult to draw the line between C and C++. It's too easy to keep reaching into C++ for \"just one more thing.\"",
+            "commentId": 50060846
+          }
+        ]
+      },
+      {
+        "title": "Strings and HTML in C",
+        "synthesis": "Many doubted the claim that writing HTML in C is not too bad, since string handling in C is painful. The author said the standard functions are the problem. The author wrote a custom fixed-size string view and builder. Others agreed that emitting text is easy and parsing it is hard. One reply said the author's editor complaints about templates have nothing to do with C.",
+        "quotes": [
+          {
+            "author": "prophittcorey",
+            "text": "The standard string functionality is painful. I wrote my own string view and string builder that work with fixed size strings. No memory allocations, etc.",
+            "commentId": 50059540
+          },
+          {
+            "author": "PhilipRoman",
+            "text": "Emitting strings is fine, it's the parsing that sucks.",
+            "commentId": 50059594
+          }
+        ]
+      },
+      {
+        "title": "The site's design and the post's prose",
+        "synthesis": "Several visitors found marketyour.games hard to read. They said its gray monochrome text, Courier New font and unclear buttons were the problem. The author said the design aimed for AAA contrast. The author plans to add an accent color. A separate group said the blog post reads as AI-written. Others found the prose fine, and AI detectors gave mixed results.",
+        "quotes": [
+          {
+            "author": "noduerme",
+            "text": "it's impossible on desktop or mobile to tell what buttons are active or disabled.",
+            "commentId": 50070258
+          },
+          {
+            "author": "skrrtww",
+            "text": "It has headers like AI blogposts, and features a lot of parallel structure like AI blogposts (\"there's no <blank>. you <blank>\"), but if you actually read it none of it reads like slop.",
+            "commentId": 50059269
+          }
+        ]
+      }
+    ],
+    "consensus": "Most agreed that CGI is simple and that process creation is far cheaper than it was in the 1990s. Many also agreed that a small dependency list is a real benefit. SQLite in WAL mode was accepted as fine for this load, because writes take turns but finish fast.",
+    "dissent": "A large minority said hand-written C parsers on the open internet are a security risk, whatever the sandbox. They would use Go, Rust, Fil-C or mature CGI libraries instead.",
+    "contrarian": {
+      "author": "GuB-42",
+      "text": "What you gain by rolling your own instead of using a battle tested solution is a reduced attack surface.",
+      "commentId": 50070490,
+      "why": "It argues that code you write yourself can rule out whole bug classes, such as a server that never calls open(). The thread mostly assumed mature libraries are always safer."
+    }
+  },
+  "digestedAt": "2026-10-20T02:05:22.000Z"
+}

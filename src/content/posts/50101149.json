@@ -1,0 +1,108 @@
+{
+  "hnId": 50101149,
+  "title": "The cost of getting a job today",
+  "url": "https://weli.dev/blog/the-cost-of-getting-a-job-today/",
+  "domain": "weli.dev",
+  "kind": "article",
+  "author": "weli",
+  "postedAt": "2026-10-15T09:13:20.000Z",
+  "points": 48,
+  "commentCount": 66,
+  "readingMinutes": 4,
+  "tldr": "A startup head of engineering expects candidates to use AI in coding challenges. Good coding models cost money, and job seekers often have no income. The author rules out handing candidates a company account or paying them back. Instead the author moves the challenge later, makes it smaller, runs it as a live session on the company's own machine, and weighs the code less.",
+  "article": {
+    "keyPoints": [
+      "The author says that above a baseline of skill, a candidate's attitude and willingness to work matter as much as technical ability, and often more.",
+      "The author's company expects candidates to use LLMs in interviews and technical challenges, because the author sees LLM use as an essential part of software engineering.",
+      "A job seeker may face five such challenges in one week. Each one needs a paid subscription or API credits.",
+      "The author argues that this cost differs from clothes or housing, because LLM credits are used up and exist only to get the job.",
+      "The author rejects a company account for candidates as a liability. The author also rejects paying candidates back, because it is hard to justify as a business expense.",
+      "The author's fixes are a later and smaller challenge, a live session on the company's machine, and more weight on an architecture conversation that costs the candidate nothing."
+    ],
+    "whyItMatters": "Short and readable in four minutes. Hiring managers who require AI in take-homes get a concrete list of process changes and the trade-offs the author accepts for each one."
+  },
+  "comments": {
+    "overview": "The thread was friendly toward the author's concern but impatient with the author's answer. Most replies argued that a company can easily pay for candidate tokens. A second camp asked whether $20 a month is a real burden, and a third asked whether LLMs belong in interviews at all.",
+    "themes": [
+      {
+        "title": "Just give candidates a budget",
+        "synthesis": "Many commenters proposed ways to pay. These included a capped API key, a proxy with per-candidate keys, a virtual card, a gift card, or plain cash for the assignment. One commenter had interviewed at a company that gave a $500 virtual card for tokens. The author replied in the thread that every option still means an arbitrary limit, possible misuse and manual key handling. Critics called that view oddly risk averse for a company that pays salaries.",
+        "quotes": [
+          {
+            "author": "petesergeant",
+            "text": "If you can't give qualified candidates who request it an OpenRouter key with $50 on it how are you affording to pay salaries?",
+            "commentId": 50101713
+          },
+          {
+            "author": "weli",
+            "text": "Whatever limit I put needs to be completely arbitrary. 5$? 10$?",
+            "commentId": 50101715
+          }
+        ]
+      },
+      {
+        "title": "Is $20 a month really a burden?",
+        "synthesis": "One commenter called the worry LinkedIn drivel. Another said a senior engineer without 20€ for a subscription has different priorities. Others answered that every expense counts when you have no income. The author said the issue is the ethics of asking people to spend their own money just for a chance at a job. Another commenter argued that an LLM subscription will soon be as basic as phone service. Then it will not count as an interview cost.",
+        "quotes": [
+          {
+            "author": "rhdunn",
+            "text": "If you're looking for a job without a stable source of income *every* expenditure matters.",
+            "commentId": 50101513
+          },
+          {
+            "author": "sokoloff",
+            "text": "My point is that LLMs will soon be seen as “things you just have” *not* as \"solely for the purpose of the interview\".",
+            "commentId": 50102401
+          }
+        ]
+      },
+      {
+        "title": "Should LLMs be in the interview at all?",
+        "synthesis": "Some commenters did not see why a company would test LLM use, since you are not interviewing the LLM. Others said take-homes make even less sense now and a conversation shows more. Defenders said bad LLM users are a real problem at work, so the skill needs some test. Suggestions included asking candidates to review prepared LLM output or explain how they would use an agent.",
+        "quotes": [
+          {
+            "author": "pjc50",
+            "text": "I suspect LLMs make the \"take home coding challenge\" even more useless than it already was.",
+            "commentId": 50101740
+          },
+          {
+            "author": "EliRivers",
+            "text": "I would definitely like some way to know if they can be trusted with an LLM or if someone is going to be hard reviewing everything they submit forever.",
+            "commentId": 50101895
+          }
+        ]
+      },
+      {
+        "title": "Location limits on remote jobs",
+        "synthesis": "The author's line about visas and other cities started a side thread on remote work. A commenter in Japan found good jobs open only in the US. A commenter in Latin America said about 90% of remote jobs at US companies in HN's hiring thread are US only. Another commenter's analysis of those threads found the US-only share rising for as long as remote jobs have existed.",
+        "quotes": [
+          {
+            "author": "soneca",
+            "text": "Go check the “Who is hiring?” thread. About 90% of jobs at US companies that are remote, are “Remote (US)”.",
+            "commentId": 50102414
+          }
+        ]
+      },
+      {
+        "title": "Attitude over skill",
+        "synthesis": "A commenter with 15+ years of hiring experience fully agreed with the author's claim that attitude beats extra skill. This commenter also backed the idea that candidates should talk to the company before doing any work. Another commenter agreed with the claim but said no interview can measure decency. They suggested a written conduct policy and a willingness to fire instead.",
+        "quotes": [
+          {
+            "author": "Peroni",
+            "text": "Finding people who are technically capable of doing the job isn't hard. Finding people who can do the job well, that actively make doing the job more rewarding is much more difficult and no technical assessment on earth can screen for that.",
+            "commentId": 50101800
+          }
+        ]
+      }
+    ],
+    "consensus": "Most commenters agreed that a company which requires AI in its interviews should pay for it. They saw the cost as small and the tools to cap it as common.",
+    "dissent": "A minority said $20 a month is a normal cost for a software engineer, like owning a computer. They argued that no company needs to pay it.",
+    "contrarian": {
+      "author": "solatic",
+      "text": "As much as I agree with this, I don't think that the whole rest of the post (about how best to examine LLM usage in an interview loop) coheres with this.",
+      "commentId": 50101547,
+      "why": "It points out that the post values attitude most, yet spends its whole fix on a better coding test."
+    }
+  },
+  "digestedAt": "2026-10-20T02:04:47.000Z"
+}

@@ -1,0 +1,113 @@
+{
+  "hnId": 49980626,
+  "title": "How machines learned precision",
+  "url": "https://glinscott.github.io/how-machines-learned-precision/",
+  "domain": "glinscott.github.io",
+  "kind": "article",
+  "author": "glinscott",
+  "postedAt": "2026-10-06T16:14:42.000Z",
+  "points": 250,
+  "commentCount": 71,
+  "readingMinutes": 28,
+  "tldr": "In the 1770s, the finest mark on a workshop rule was a sixteenth of an inch. By the 1850s, Joseph Whitworth's machine could detect a millionth of an inch. Gary Linscott's interactive article shows how workshops made accurate cylinders, flat plates and screws without accurate parts to copy. Each new tool then helped build a more accurate one.",
+  "article": {
+    "keyPoints": [
+      "Watt's dry piston packing needed a round, straight bore. His 1769 test cylinder was off by about 3/8 inch. Around 1775, John Wilkinson supported the boring bar at both ends and bored a fifty-inch cylinder to within a worn shilling's thickness.",
+      "Henry Maudslay made the slide rest rigid enough for heavy cuts in iron. The tool sat in an iron carriage that slid on rails. The cutting force went into the iron instead of the turner's arms.",
+      "Fitters made a flat reference from three rough plates. They scraped each pair until all three fit in every pairing, which is only possible when all three are flat. Toolmakers still use this method.",
+      "Maudslay cut his first screws with a knife set at an angle against a turning cylinder, without copying an existing screw. He then cut better screws guided by two imperfect ones. Each guide passed on only half its error.",
+      "Change gears let one lead screw cut many pitches. Maudslay's bench micrometer, the Lord Chancellor, read to a thousandth of an inch and settled disputes between workmen.",
+      "Whitworth's measuring machine used a split nut, a worm gear and a 250-division wheel to move one millionth of an inch per division. It compared parts with steel end standards. The warmth of a finger on a bar was enough to change the reading."
+    ],
+    "whyItMatters": "Anyone curious about machining or industrial history should open the original for its interactive figures. Readers can rotate the lathe, watch chatter, scrape the three plates and try Whitworth's blind test. The footnotes add sources, numbers and the history of who invented what."
+  },
+  "comments": {
+    "overview": "The thread was warm and full of praise for the animations. The author answered questions about sources, tools and the use of AI. Commenters added metallurgy history, book suggestions and a few corrections, which the author promised to add to the article.",
+    "themes": [
+      {
+        "title": "Iron was not one material",
+        "synthesis": "Several commenters stressed that this was the age of iron, not steel. Mass production of steel came only in the 1880s, and early iron rails wore out within years. One commenter said a \"cast iron\" part could be many different alloys, because nobody controlled the process. Another said the Bessemer converter took about 10,000 trials and better chemistry before it worked reliably.",
+        "quotes": [
+          {
+            "author": "xenadu02",
+            "text": "But in those days every single ring might vary significantly entirely due to the ore load the foundry happened to get, how they melted/cast it, how it was cooled, etc.",
+            "commentId": 50001282
+          },
+          {
+            "author": "Animats",
+            "text": "Bessemer only got good steel because he accidentally had the right composition of inputs. He had to refund some customers who bought converters and got nothing useful out.",
+            "commentId": 50015717
+          }
+        ]
+      },
+      {
+        "title": "Corrections and gaps",
+        "synthesis": "One commenter showed that Leonardo da Vinci had drawn a screw-copying machine that averaged two guide screws, long before Maudslay. The author promised to correct the article. One commenter passed on an engineer friend's objection that the title mixes up \"precision\" and \"accuracy\". The author agreed to add a footnote. Others said the article leaves out precision grinding, or asked whether a lead screw in the animation turns the wrong way.",
+        "quotes": [
+          {
+            "author": "hexapus",
+            "text": "As this article seems aimed at laypeople, clearing up the difference upfront by defining them might be helpful, as they are not interchangeable.",
+            "commentId": 49999776
+          },
+          {
+            "author": "djriley",
+            "text": "Something I feel was sort of left out here was precision grinding which began to come in to play right around the same time period this article focuses on.",
+            "commentId": 50001021
+          }
+        ]
+      },
+      {
+        "title": "How the article was made",
+        "synthesis": "Asked about AI, the author said they wrote the text by hand and let AI review it. They built the interactive figures with Claude, and the article took about four months. The animations come from rigged CAD models in Onshape, so the motions are physically real. The author plans each figure with storyboards first.",
+        "quotes": [
+          {
+            "author": "glinscott",
+            "text": "The text was hand written, but reviewed by AI and light edits were made.",
+            "commentId": 49997978
+          },
+          {
+            "author": "glinscott",
+            "text": "Using fully rigged CAD models is a huge help, it ensure physically realistic motions. Then, I built a custom exporter / renderer to render them realistically in CAD style.",
+            "commentId": 49999055
+          }
+        ]
+      },
+      {
+        "title": "Lathes that build better lathes",
+        "synthesis": "Hobby and family machinists said the article matched their own experience. A lathe can make the parts that improve it, so even a crude one can climb toward better accuracy. One hobbyist said a small import lathe can hold a ten-thousandth of an inch with care. Another commenter described their father's lathe shop in north India, which closed when imported CNC machines arrived.",
+        "quotes": [
+          {
+            "author": "xenadu02",
+            "text": "Even a relatively crude home-made lathe can be enough to machine better parts to install onto the lathe to keep improving it.",
+            "commentId": 50001355
+          }
+        ]
+      },
+      {
+        "title": "Books and older power systems",
+        "synthesis": "Readers recommended Simon Winchester's \"The Perfectionists\", Wayne Moore's \"Foundations of Mechanical Accuracy\" and Joseph Roe's history of tool builders. One reader found Winchester's book padded and without a clear story. A side thread covered early mills that used steam engines to pump water back over a water wheel, because the wheel gave smoother power. Early electric mills kept the same layout, with one big motor and leather belts.",
+        "quotes": [
+          {
+            "author": "rossng",
+            "text": "Felt that it spent a lot of time waffling about irrelevant detail[1] and failed to really present a coherent narrative about how precision engineering was developed.",
+            "commentId": 49999855
+          },
+          {
+            "author": "m4rtink",
+            "text": "electric motors were expensive so it made perfect sense to just have one big motor and transfer the power using leather transmission belts.",
+            "commentId": 50000939
+          }
+        ]
+      }
+    ],
+    "consensus": "Most commenters called the article excellent teaching, and several compared it to Bartosz Ciechanowski's interactive essays. They agreed that bootstrapping precision from rough parts is one of the great stories in engineering.",
+    "dissent": "The pushback was small and specific. Commenters questioned the precision and accuracy wording, the missing history of grinding, and Maudslay's credit for the screw-averaging machine. One reader wanted a way to pause the animations while reading.",
+    "contrarian": {
+      "author": "mitthrowaway2",
+      "text": "Actually, this invention is Leonardo Da Vinci's! Here's what his screw-copying machine looked like.",
+      "commentId": 49999956,
+      "why": "It shows the averaging trick is centuries older than Maudslay, and adds that flipping the screws end over end cancels even more error."
+    }
+  },
+  "digestedAt": "2026-10-20T02:05:27.000Z"
+}

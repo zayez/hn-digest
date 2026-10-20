@@ -1,0 +1,118 @@
+{
+  "hnId": 50093568,
+  "title": "Things to know when you get cancer",
+  "url": "https://jjmaxwell4.com/writing/things-to-know-when-you-get-cancer/",
+  "domain": "jjmaxwell4.com",
+  "kind": "article",
+  "author": "jjmaxwell4",
+  "postedAt": "2026-10-14T19:26:30.000Z",
+  "points": 1970,
+  "commentCount": 478,
+  "readingMinutes": 3,
+  "tldr": "A patient diagnosed with mouth cancer in May 2026 lists what they learned. Patients must push hard for early appointments, genetic tests and follow-ups. A second opinion at a top cancer center is worth the travel. For a while, AI chatbots told the author it was probably not cancer.",
+  "article": {
+    "keyPoints": [
+      "The author faced a four-week wait for an ENT appointment, then called back at their wife's urging and got in that week through a cancellation.",
+      "Most of the AI models the author asked pushed toward \"you don't have cancer\" for a while.",
+      "The author's surgeon promised genetic testing and then referred the author to an oncologist instead, which delayed the genetic results by months.",
+      "Anyone can make an account with NCCN and read its standard-of-care flow charts for every cancer type.",
+      "The author regrets not talking to someone who had the same surgery, because it was rougher on their body than the surgeon's description suggested.",
+      "At MD Anderson a doctor called the pathologist and answered the author's question within 20 minutes, which the author says a local hospital would not have done."
+    ],
+    "whyItMatters": "Read the original if you or someone close to you was just diagnosed. It is short, and it names the resources the author used, including the NCCN guidelines, the US News cancer rankings and the Sijbrandij Foundation. The thread adds many patient and caregiver stories the post does not have."
+  },
+  "comments": {
+    "overview": "A long, personal and often painful thread. Many commenters are patients, caregivers or bereaved family, and most of them agree with the post. The arguments are about when a second opinion helps, how far to trust AI, and whether clinical trials are worth chasing.",
+    "themes": [
+      {
+        "title": "Get the second opinion, and get it early",
+        "synthesis": "The top thread is full of stories where a second opinion changed the diagnosis or the treatment. In one, a single extra test at Dana-Farber found that a stage 1 cancer was really stage 4. A caregiver warns that two top centers would not comment once treatment had started, so this caregiver says to get the opinion before any plan exists. Others ask what to do when two opinions conflict. One commenter's ex-wife took the milder second plan and later needed a second surgery, though another commenter says that outcome is common for thyroid cancer.",
+        "quotes": [
+          {
+            "author": "stochastician",
+            "text": "They said everything in Idaho was standard of care but suggested one extra test, which Idaho team then reluctantly did, which revealed distant metastasis (stage 4! ), dramatically changing her treatment trajectory.",
+            "commentId": 50094930
+          },
+          {
+            "author": "jcims",
+            "text": "Get it BEFORE you have a treatment plan from the initial diagnosis.",
+            "commentId": 50096154
+          }
+        ]
+      },
+      {
+        "title": "You have to manage your own care",
+        "synthesis": "Dozens of commenters say the system only works for patients who push. One commenter was told it was a pinched nerve until they asked for a second neurologist, whose MRI found a brain tumor. Others describe sitting in a nurses' station until a doctor listened, or inventing a family history to get a referral. A hospital patient says doctors rarely talk to each other, so the patient has to carry information between them. Several people point out that sick people often cannot make all those calls, so a family member or a hospital patient advocate has to do it.",
+        "quotes": [
+          {
+            "author": "baggachipz",
+            "text": "Only when I specifically requested for a referral to a second neurologist did he order the head MRI which exposed a brain tumor in my motor cortex.",
+            "commentId": 50094836
+          },
+          {
+            "author": "brooke2k",
+            "text": "Your doctors likely WILL NOT communicate and plan with each other -- treat yourself as the project manager. You are the go-between for everybody.",
+            "commentId": 50097823
+          }
+        ]
+      },
+      {
+        "title": "Big cancer centers versus the local hospital",
+        "synthesis": "Many commenters say to drive to an NCI-designated or top-ranked center if one is within a few hours. Their reason is volume, because big centers have doctors who treat only one narrow cancer type. Others push back. One commenter says Penn never returned their calls, so a local surgeon removed their melanoma in three weeks. Another lost a sibling to leukemia at MD Anderson and says care there was worse than at Duke. A UK commenter adds that the local emergency room matters too, because patients with weak immune systems end up there.",
+        "quotes": [
+          {
+            "author": "steveBK123",
+            "text": "Your local hospital might have \"the skin cancer doctor\" but MSK has ~20 sub categories of skin cancer with different doctors specializing in each.",
+            "commentId": 50102871
+          },
+          {
+            "author": "trashface",
+            "text": "Sure if you can get into Penn, or a similarly extremely well known place, they are generally great, but can you get seen in time?",
+            "commentId": 50126411
+          }
+        ]
+      },
+      {
+        "title": "How much to trust AI",
+        "synthesis": "Some commenters explain the author's experience with base rates. Most people who ask a chatbot about cancer do not have it. A geneticist reports the opposite bias, with models calling harmless gene variants dangerous. Several people credit AI with catching real errors, such as a misread radiology report, a wrong medication schedule and a mesothelioma guess that a biopsy later confirmed. Skeptics say a model has no clinical judgment or legal liability, and one warns that chatbots are not bound by HIPAA. The author replied that the point was to check what the AI says against doctors, and what doctors say against the AI.",
+        "quotes": [
+          {
+            "author": "dekhn",
+            "text": "Statistically, it makes sense- most people asking AI if they have cancer don't have cancer, so a model that is lacking detailed information should basically be returning based on the basal rate of cancer in the population with a threshold applied.",
+            "commentId": 50094775
+          },
+          {
+            "author": "kube-system",
+            "text": "But an LLM is guaranteed to have neither judgement nor experience.",
+            "commentId": 50097311
+          }
+        ]
+      },
+      {
+        "title": "What clinical trials can and cannot do",
+        "synthesis": "A long sub-thread argues about whether trials are worth chasing. One side cites failure rates near 50% for phase 3 cancer drugs and says a trial is an experiment for others, not a treatment. Another commenter estimates about a 1% chance that a trial drug beats existing care. A caregiver whose wife had ovarian cancer answers that risk looks different when standard care offers no hope. Others share cases where a trial saved a life. In one, a treatment with 65% success became available 30 days after the patient died.",
+        "quotes": [
+          {
+            "author": "timr",
+            "text": "They're an experiment that you do with your body when you reach the end of the road and there are no more options.",
+            "commentId": 50101460
+          },
+          {
+            "author": "jcims",
+            "text": "I would just say that ‘dangerous’ is relative and when the standard of care leaves effectively no hope, your tolerance for risk can change.",
+            "commentId": 50099921
+          }
+        ]
+      }
+    ],
+    "consensus": "Patients should push for fast appointments, keep their own records and bring someone to visits. Commenters also agree that a second opinion is worth asking for, and that no good doctor takes offense at one.",
+    "dissent": "Some commenters reject the premise. Patients in Ireland, Sweden and India say they never had to chase doctors, so they read the list as advice for the US. One commenter calls second opinions false comfort, because every center follows the same NCCN guidelines. Diet and alternative-cure suggestions for a commenter's dying wife drew sharp replies from patients.",
+    "contrarian": {
+      "author": "wux",
+      "text": "In that scenario, if a patient lives down the street from center A and travels hundreds of miles to see me for a second opinion at center B, I would almost always agree with getting treatment A at center A.",
+      "commentId": 50098305,
+      "why": "An oncologist at a cancer center explains that a second opinion often confirms a valid local plan, and that traveling does not always beat staying."
+    }
+  },
+  "digestedAt": "2026-10-20T02:06:02.000Z"
+}

@@ -1,0 +1,131 @@
+{
+  "number": 814,
+  "date": "2026-10-16",
+  "url": "https://buttondown.com/hacker-newsletter/archive/814/",
+  "posts": [
+    {
+      "post": "50048312",
+      "section": "Favorites",
+      "tier": "dontSkip",
+      "reason": "A long, footnoted walk through WebAuthn's authenticator flags and remote attestation that builds the case for platform lock-in on the spec itself, and a thread that corrects and tests the attestation scenario."
+    },
+    {
+      "post": "50073633",
+      "section": "Favorites",
+      "tier": "dontSkip",
+      "reason": "An engineering account of replacing git for a large monorepo in five months, covering the data model, server-side changesets, derived data and a cache-tiered checkout protocol, with scale and cost figures."
+    },
+    {
+      "post": "50058528",
+      "section": "Code",
+      "tier": "worthYourTime",
+      "reason": "A first-person report on shipping a paid product as C over CGI on OpenBSD with SQLite, honest about the hand-rolled parsing it costs, and a large thread trading minimal-stack experience."
+    },
+    {
+      "post": "50042219",
+      "section": "Code",
+      "tier": "worthYourTime",
+      "reason": "Terence Eden paid people to screen-share while following his README, rewrote it between sessions from what tripped them up, and argues docs need testing with real people."
+    },
+    {
+      "post": "50101149",
+      "section": "Working",
+      "tier": "worthYourTime",
+      "reason": "A Berlin engineering lead weighs the options for hiring challenges now that LLM use costs candidates real money, admits none is clean, and the thread adds reimbursement and sandboxed-key ideas."
+    },
+    {
+      "post": "50093568",
+      "section": "Favorites",
+      "tier": "worthYourTime",
+      "reason": "A patient's short, practical list on navigating a cancer diagnosis, from NCCN guideline flowcharts to second opinions, carried by a large thread of clinicians and caregivers who argue about trials from experience."
+    },
+    {
+      "post": "50020533",
+      "section": "Design",
+      "tier": "ifYouHaveAMinute",
+      "reason": "A sourced history, built on interview quotes, of Nick Park making A Grand Day Out mostly alone over years at film school, and how that single project led to Aardman."
+    },
+    {
+      "post": "50093612",
+      "section": "Favorites",
+      "tier": "ifYouHaveAMinute",
+      "reason": "How one author serves hand-made ANSI pages to curl from a static site via a user-agent rule, and a thread that proposes Accept headers and a text/x-ansi MIME type and raises terminal-injection risk."
+    },
+    {
+      "post": "50084969",
+      "section": "Ask HN",
+      "tier": "ifYouHaveAMinute",
+      "reason": "An Ask HN on where senior engineering goes once models get better at design, with replies that see the role moving toward technical leadership, product work and consensus-building."
+    },
+    {
+      "post": "50047825",
+      "section": "Working",
+      "tier": "ifYouHaveAMinute",
+      "reason": "A remote employee with years of good reviews was fired for refusing webcam photos every three minutes, and the thread argues what that says about managers and how remote teams should be measured."
+    },
+    {
+      "post": "49980626",
+      "section": "Learn",
+      "tier": "ifYouHaveAMinute",
+      "reason": "A history of how 18th- and 19th-century workshops bootstrapped precision, from scraped reference plates to Whitworth's measuring machine, with interactive lathe models, footnotes and the author answering in the thread."
+    }
+  ],
+  "nearMisses": [
+    {
+      "title": "How Amazon pushes up prices all across the Internet",
+      "section": "Favorites",
+      "domain": "not-ship.com",
+      "url": "https://www.not-ship.com/how-amazon-pushes-up-prices-all-across-the-internet/",
+      "hnId": 50084757
+    },
+    {
+      "title": "AI is a tool and using it well takes skill",
+      "section": "Favorites",
+      "domain": "yyhh.org",
+      "url": "https://yyhh.org/blog/2026/10/ai-is-a-tool/",
+      "hnId": 50063427
+    },
+    {
+      "title": "Jev meets the Trolley Problem",
+      "section": "Data",
+      "domain": "zachlandes.com",
+      "url": "https://zachlandes.com/trolley-problem/",
+      "hnId": 50106023
+    },
+    {
+      "title": "The Origin Story of Kid Pix",
+      "section": "Design",
+      "domain": "red-green-blue.com",
+      "url": "http://red-green-blue.com/kid-pix-the-early-years",
+      "hnId": 50064673
+    },
+    {
+      "title": "I know why the mathematicians weep",
+      "section": "Working",
+      "domain": "derekthompson.org",
+      "url": "https://www.derekthompson.org/p/i-know-why-the-mathematicians-weep",
+      "hnId": 50103630
+    },
+    {
+      "title": "The baffling intelligence of a single cell",
+      "section": "Learn",
+      "domain": "jsomers.net",
+      "url": "https://jsomers.net/e-coli-chemotaxis/",
+      "hnId": 50041866
+    },
+    {
+      "title": "Sound",
+      "section": "Learn",
+      "domain": "ciechanow.ski",
+      "url": "https://ciechanow.ski/sound/",
+      "hnId": 50045147
+    },
+    {
+      "title": "Martin Odersky – Keynote: The End of Programming?",
+      "section": "Watching",
+      "domain": "youtube.com",
+      "url": "https://www.youtube.com/watch?v=jlJyuJhDnlc",
+      "hnId": 50062025
+    }
+  ]
+}
