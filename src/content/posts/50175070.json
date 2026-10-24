@@ -1,0 +1,118 @@
+{
+  "hnId": 50175070,
+  "title": "The Future of CSS",
+  "url": "https://www.joshwcomeau.com/css/interop-2027/",
+  "domain": "joshwcomeau.com",
+  "kind": "article",
+  "author": "soheilpro",
+  "postedAt": "2026-10-21T01:47:28.000Z",
+  "points": 628,
+  "commentCount": 278,
+  "readingMinutes": 12,
+  "tldr": "Josh Comeau lists the ten CSS features he voted for in Interop 2027, where browser vendors pick features to support everywhere. His picks include CSS functions, corner-shape, reading-flow and animating to height: auto. Most work only in Chrome and Edge today. He says many are safe to use now as progressive enhancements.",
+  "article": {
+    "keyPoints": [
+      "Interop works well. Firefox shipped subgrid in 2019. After subgrid joined Interop 2023, every modern browser supported it within the year.",
+      "Mozilla has a public ranking page where developers vote on features, and the Interop team will use the votes to plan 2027.",
+      "The @function rule lets authors define reusable CSS functions with parameters and a result, such as a helper that converts polar coordinates to a translate().",
+      "The corner-shape and border-shape properties change the real border box, so borders, outlines and shadows follow bevels, squircles and custom curves.",
+      "Other picks fix long-standing gaps: anchored container queries, scroll-triggered animations, reading-flow for tab order, interpolate-size for height: auto, gap decorations and stuck-state container queries.",
+      "The author argues developers still need to learn new CSS in the LLM era, because models train on old code and will not use these features unless told to."
+    ],
+    "whyItMatters": "Front-end developers should read the original for its interactive playgrounds and demos, which show each feature running. The summary cannot show them. It also links to the voting page and to the author's longer posts on anchor positioning and scroll-driven animations."
+  },
+  "comments": {
+    "overview": "The thread is lively and split. Fans of modern CSS praise how much JavaScript it now replaces. Skeptics say the language keeps getting more complex, that the features are cosmetic, and that a Chrome-only list is a strange way to sell Interop.",
+    "themes": [
+      {
+        "title": "Vanilla HTML and CSS versus frameworks",
+        "synthesis": "The top thread starts as praise for how good plain HTML, CSS and JavaScript have become. It turns into a long fight about reactivity and state. One side says hand-written code stays small and fast for a given site. The other side says large apps always grow a homegrown framework, and that moving to React made their sites faster.",
+        "quotes": [
+          {
+            "author": "abanana",
+            "text": "What you end up creating is a relatively tiny, fast, piece of code that is specific to that site's needs.",
+            "commentId": 50180311
+          },
+          {
+            "author": "satvikpendem",
+            "text": "I've worked in companies with vanilla JS only and made parts of those frameworks they ended up building. It is absolutely not \"relatively tiny, fast, piece of code that is specific to that site's needs\" and once we switched to React we actually saw improvements in many parts of the sites' loading speeds.",
+            "commentId": 50180694
+          }
+        ]
+      },
+      {
+        "title": "Functions and growing complexity",
+        "synthesis": "CSS functions drew the most direct criticism. Some readers see feature creep that makes CSS a second JavaScript and raises the cost of building a new browser engine. Defenders reply that the functions are closer to macros or Sass mixins and run faster than the JavaScript they replace. Several people on both sides agreed that the name \"functions\" invites the wrong comparison.",
+        "quotes": [
+          {
+            "author": "lioeters",
+            "text": "To me it feels like \"programming in YAML\", the way a declarative language/format acquires more and more features until you're writing functions in an awkward syntax that was never designed for it.",
+            "commentId": 50175742
+          },
+          {
+            "author": "afavour",
+            "text": "I almost wonder if they would have been better off calling them “templates”, or something. “Functions” is going to make people think it’s just like JS.",
+            "commentId": 50175795
+          }
+        ]
+      },
+      {
+        "title": "Eye candy instead of date pickers",
+        "synthesis": "One commenter complained that standards bodies add bevels while native date pickers and on-screen keyboard handling stay broken. Others answered that the CSS Working Group does not own form controls. They also said date pickers are hard to standardize because of ranges, disabled days, time zones and locales. A separate thread mocked how every site already looks the same, with rounded corners everywhere.",
+        "quotes": [
+          {
+            "author": "fodkodrasz",
+            "text": "This is why the web is a terrible platform compared to Windows Forms for getting stuff done. Because those making the standards only work on creating gimmicks.",
+            "commentId": 50176887
+          },
+          {
+            "author": "afavour",
+            "text": "The stuff in this article is created by the CSS Working Group. The stuff you want would not be handled by them.",
+            "commentId": 50180081
+          }
+        ]
+      },
+      {
+        "title": "Chrome-only features and Interop politics",
+        "synthesis": "Several readers found it odd that a post about browsers working together lists features that only Chrome ships. Others pointed out that this is the reason for the vote. A cynical group said Chrome now steers Interop. Some said vendors keep the web complex to protect their native app stores, and others called that a conspiracy theory.",
+        "quotes": [
+          {
+            "author": "troupo",
+            "text": "It feels like Interop was created to curb Chrome's bulldozing various processes with their own internal APIs and development, and to show that there's more to the web than yet another shitty Javascript API.",
+            "commentId": 50178293
+          },
+          {
+            "author": "Rapzid",
+            "text": "Safari will take 2 years to implement and the releases to work their way out in MacOS/iOS updates.",
+            "commentId": 50182474
+          }
+        ]
+      },
+      {
+        "title": "Learning CSS when AI writes it",
+        "synthesis": "A few threads asked whether these features matter if models write the styles. One backend developer argued that the frontend is the last part to vibecode, because users judge the product by it. Others reported building apps with Claude without reading the CSS, which drew pushback and a joke that CSS is best when you never look at it.",
+        "quotes": [
+          {
+            "author": "markasoftware",
+            "text": "I actually think that frontends are the last thing that should be vibecoded. It's the part that faces the user.",
+            "commentId": 50177013
+          },
+          {
+            "author": "dsego",
+            "text": "CSS was never that great with just describing what you want, it was always more like arcane spells and tricks you learn to achieve a specific goal.",
+            "commentId": 50178289
+          }
+        ]
+      }
+    ],
+    "consensus": "Most commenters agree that modern CSS is far better than it was. Flexbox, grid, nesting, layers and :has() now replace many old hacks and much small JavaScript.",
+    "dissent": "A loud minority says CSS is already complex enough and should stop growing. Some want features like functions dropped, and a few want CSS replaced by a new layout language altogether.",
+    "contrarian": {
+      "author": "DarkUranium",
+      "text": "I don't recall why it went nowhere (though I do remember the reasons were more political than technical), but imagine CSS without all of the float/flexbox/grid/subgrid/etc crap, but just: `#table-a[width] == #table-b[width];` and so on.",
+      "commentId": 50193668,
+      "why": "The thread argues over which layout modes to keep. This comment recalls a 1999 constraint-based proposal that would have made them all unnecessary."
+    }
+  },
+  "digestedAt": "2026-10-24T21:35:52Z"
+}

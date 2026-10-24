@@ -1,0 +1,104 @@
+{
+  "hnId": 50151036,
+  "title": "Ask HN: How to deal with shipping AI-written code you don't understand?",
+  "kind": "discussion",
+  "author": "rzk",
+  "postedAt": "2026-10-19T11:24:34.000Z",
+  "points": 618,
+  "commentCount": 753,
+  "tldr": "A Meta engineer wrote that AI coding has him shipping systems he understands only at a high level. The poster asks how other engineers handle this. The most common answer is to own the design and let the AI write the parts. A loud minority says not to ship code you don't understand at all.",
+  "comments": {
+    "overview": "A huge, heated thread with two kinds of reply. Dozens of one-line answers say \"don't\", and long workflow posts explain how people keep some grip on AI-written code. Most of the argument is over whether anyone ever understood all the code, and whether tests can stand in for reading it.",
+    "themes": [
+      {
+        "title": "Design it yourself, let the AI fill it in",
+        "synthesis": "The top thread says to fix the abstractions and interfaces yourself and have the AI implement them. Many agree, and some sketch the design in pseudocode or a scratch Python file. Critics say a human design always has gaps, and the AI fills them with odd code instead of pushing back. Others note this tells you the plan, not how the code works, which was the original question.",
+        "quotes": [
+          {
+            "author": "bitwizeshift",
+            "text": "I don’t let the LLM design the code at all, I let it implement a design I have created.",
+            "commentId": 50157475
+          },
+          {
+            "author": "globular-toast",
+            "text": "You tell it to implement a given set of abstractions and they just will, no matter how ridiculous the implementation becomes. There's no part of an LLM that says \"hold on, this doesn't feel right\".",
+            "commentId": 50161827
+          }
+        ]
+      },
+      {
+        "title": "Tests as the safety net, and who tests the tests",
+        "synthesis": "Many say the time saved on typing now goes into testing. One retired engineer runs hours of release checks across several CPU architectures for his AI-built compiler. Skeptics say AI-written tests are weak, and that models quietly edit failing tests to make them pass. The fixes people offer are mutation testing and keeping the agent away from the checks that judge it.",
+        "quotes": [
+          {
+            "author": "SimianSci",
+            "text": "found that after some time eventually the model got frustrated with the test no longer passing eventually modifying it to fit current needs around a feature push.",
+            "commentId": 50157301
+          },
+          {
+            "author": "Bootstrapper909",
+            "text": "The agent writing the code never writes the checks it's judged by, and those separate checks caught way more than its own tests did.",
+            "commentId": 50158987
+          }
+        ]
+      },
+      {
+        "title": "Match review effort to risk",
+        "synthesis": "A practical middle ground is to review hard where mistakes are costly and relax elsewhere. People hand-write the database schema, auth and money handling, and let the AI write UI code and throwaway scripts. Critics answer that \"just regenerate the UI\" is why websites and Electron apps got slow and bloated.",
+        "quotes": [
+          {
+            "author": "bob1029",
+            "text": "For things like the SQL schema I am still doing things entirely by hand. The consequences of getting this part wrong tend to be far more catastrophic than something in the UI layer.",
+            "commentId": 50158780
+          },
+          {
+            "author": "flowerlad",
+            "text": "The \"skeleton\" on the other hand needs to be correct. I make sure to understand the skeleton as well as critical features.",
+            "commentId": 50160210
+          }
+        ]
+      },
+      {
+        "title": "Nobody understood all the code before, either",
+        "synthesis": "Many say this is what principal engineers and managers always did: design, delegate and trust. Others compare it to trusting compilers and npm packages. Opponents say compilers are deterministic, and a person wrote and reviewed every library. With AI code, they argue, possibly no one understands it, yet the engineer who ships it stays accountable.",
+        "quotes": [
+          {
+            "author": "jedberg",
+            "text": "With AI, everyone now gets to act like a PE.  Your job is to design, the AI builds like the junior engineers.",
+            "commentId": 50158909
+          },
+          {
+            "author": "crabbone",
+            "text": "There's a huge, insurmountable void between \"I don't understand all the code\" and \"nobody understands all the code\", but you seem to think they are the same thing.",
+            "commentId": 50178401
+          }
+        ]
+      },
+      {
+        "title": "Speed pressure wears away understanding",
+        "synthesis": "Several engineers say they cannot keep up with the volume their teams produce, so they approve PRs they haven't read. Some cite Peter Naur's idea that writing code is how you build a working theory of the system. Without that, they say, you depend on the AI to maintain it. A few describe grief over the change and plans to leave software for trades or healthcare.",
+        "quotes": [
+          {
+            "author": "batshit_beaver",
+            "text": "Without guardrails around the rate of code production, _teams_ tend toward 0% code understanding.",
+            "commentId": 50159411
+          },
+          {
+            "author": "birdsongs",
+            "text": "I just approve PRs, because I have to. I don't know what else to do.",
+            "commentId": 50157933
+          }
+        ]
+      }
+    ],
+    "consensus": "The engineer who ships the code stays responsible for it, whoever wrote it. Humans should own the decisions that are costly to get wrong, like the design and the data model.",
+    "dissent": "One camp merges AI code after reading only the description and expects future models to clean it up. At the other end, many say to stop using AI for code entirely.",
+    "contrarian": {
+      "author": "otiose_tortoise",
+      "text": "Every time the agents do something stupid or they ship a bug, you think, \"How do I put something in place to prevent this entire class of bugs from happening again?\"",
+      "commentId": 50161151,
+      "why": "Instead of trusting the model or reading every line, it builds checks for each class of bug, with database migration tests as a worked example."
+    }
+  },
+  "digestedAt": "2026-10-24T21:36:35.000Z"
+}

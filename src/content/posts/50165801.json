@@ -1,0 +1,78 @@
+{
+  "hnId": 50165801,
+  "title": "Publish fake stats, get cited in LLMs",
+  "url": "https://peec.ai/blog/publish-stats-get-cited-the-tactic-that-put-my-data-all-over-the-web",
+  "domain": "peec.ai",
+  "kind": "article",
+  "author": "robtherobber",
+  "postedAt": "2026-10-20T13:06:22.000Z",
+  "points": 369,
+  "commentCount": 208,
+  "readingMinutes": 11,
+  "tldr": "An SEO researcher used GPT-4.1 to generate a site of 50,000 invented statistics for about $50. Google dropped the site within weeks. ChatGPT kept fetching its pages to answer users for seven months. The fake numbers now appear in an academic paper, a bank's investment research and pages on more than 330 other sites.",
+  "article": {
+    "keyPoints": [
+      "In March 2026 the author bought the domain stateglobe.com and generated 50,000 statistics pages in one day with GPT-4.1. He never checked a single number. He later added 15,000 listicles, for a total cost of about $50.",
+      "Two Google updates soon after launch removed the site from Google results. Its indexed pages now get between 5 and 20 impressions.",
+      "In the last 30 days the site received about 72,000 requests from ChatGPT-User. ChatGPT uses this agent to open a page in real time while it answers a question. GA4 shows more than 10,000 sessions referred by ChatGPT since March.",
+      "The made-up numbers were cited in an academic paper, in investment research by Qatar's largest financial group and in an Indian economics publication. The author calls this citation laundering. Each citation makes the fake number look more trustworthy to the next reader or model.",
+      "The author explains the effect with how LLM search works. A model writing an article searches for queries like \"remote work statistics 2026\". A specific number looks like evidence. Rerankers score relevance. No step checks whether the number is true.",
+      "He then built a statistics page with verified, sourced numbers at Peec AI. Sites that seem to use AI for writing soon linked to it. His advice for real pages is one claim per sentence, a source and year beside each number, and headings that match model queries."
+    ],
+    "whyItMatters": "Writers, researchers and analysts who use LLM output should read the original to see how cheaply a fake source entered real citations. SEO and GEO practitioners get the full checklist for statistics pages and the tools the author uses to track AI bot traffic. Note that the author works for a company that sells AI visibility tracking."
+  },
+  "comments": {
+    "overview": "The thread was alarmed and often angry. Many commenters condemned the author for publishing lies, even as an experiment. The larger debate was about trust. Commenters asked whether LLMs make an old misinformation problem worse by hiding where a claim came from, and whether anyone can fix that.",
+    "themes": [
+      {
+        "title": "LLMs hide the source",
+        "synthesis": "Many commenters said a human who visits a site can judge it. A product page reads as marketing, and an extremist site sets off alarms. An LLM strips that context and presents every source in the same confident voice. One commenter described Gemini calling a Reddit post verified, when its \"news\" sources were AI summaries of the same post. Others replied that the average human is not very discerning either.",
+        "quotes": [
+          { "author": "latexr", "text": "When you ask an LLM, every source is treated as equally valid. You may have gotten an answer from the utmost professional on the subject or an obvious (to you) scam, they are presented the same.", "commentId": 50171179 },
+          { "author": "imzadi", "text": "These \"legitimate\" news agencies were an AI aggregator that just had a direct summary of the post with a disclaimer that it wasn't independently verified and a yahoo news \"article\" that was just the same AI summary.", "commentId": 50168113 }
+        ]
+      },
+      {
+        "title": "Was the experiment ethical?",
+        "synthesis": "A large group said the author simply lied on the internet and then wrote about it as if it were research. One commenter pointed out that the site \"now carries a disclaimer\", so it had none while the fake numbers spread. Defenders said someone had to show the problem publicly. Critics answered that everyone already knew people lie online.",
+        "quotes": [
+          { "author": "scoofy", "text": "We all pay a non-trivial cost because someone thinks that other people taking their lies seriously is somehow remarkable. It's not.", "commentId": 50172154 },
+          { "author": "maltelandwehr", "text": "Still it needs to be done once publicly to prove and document this is possible.", "commentId": 50166751 }
+        ]
+      },
+      {
+        "title": "How to fix it, if anyone can",
+        "synthesis": "Some proposed technical fixes. Models could query first-party data such as BLS datasets, use curated sources only, or weight sources with something like PageRank. Others expected the AI companies to settle for crude allowlists. A long sub-thread argued about regulation. One side compared fake data to fake medication, and the other said governments should not decide what is true. Several commenters said the only fix is for people to stop trusting what they read online.",
+        "quotes": [
+          { "author": "fwip", "text": "So instead, the model providers will probably do something silly like wire up rules like \"NYT=Reliable;my.blog.forbes.com=Unreliable\" and they'll say the issue is solved.", "commentId": 50167329 },
+          { "author": "dogleash", "text": "Any increase in how much people blindly trust random stuff from the internet only serves to increase the blast radius when it is wrong.", "commentId": 50168198 }
+        ]
+      },
+      {
+        "title": "An old problem at a lower cost",
+        "synthesis": "Many commenters saw nothing new here. They cited Wikipedia's citogenesis, SEO spam that degraded Google results years before LLMs, and low-end outlets whose claims become \"facts\" after serious outlets repeat them. Map makers' trap streets came up as a way to catch copiers. The common view was that LLMs make the old problem cheaper and faster.",
+        "quotes": [
+          { "author": "pessimizer", "text": "A lot of \"facts\" get created this way. You end up with hundreds of citations, but nobody seems to know (or care about) the original source.", "commentId": 50171680 },
+          { "author": "nitwit005", "text": "The marketers and spammers effectively won that fight. They'll presumably win this one too.", "commentId": 50171786 }
+        ]
+      },
+      {
+        "title": "Poisoning the web on purpose",
+        "synthesis": "One commenter welcomed the result and wanted people to flood the web with bad data to damage AI. Others called this reckless. Fake data misleads humans using ordinary search as much as it misleads models. They also doubted it would slow AI development at all.",
+        "quotes": [
+          { "author": "10111001", "text": "I *think* you misunderstand me: I want people to shit in the sea until it stinks *so bad* that everyone gets out of the water.", "commentId": 50167384 },
+          { "author": "kalkin", "text": "A few people putting misinformation on the Internet - which isn't restricted to AI crawlers in any way, even the new disclaimer is something an AI model is likely going to notice more easily than a human since they read faster - is not going to stop AI capabilities from advancing.", "commentId": 50172204 }
+        ]
+      }
+    ],
+    "consensus": "Most commenters agreed that LLMs do not check facts in their sources. They also agreed that LLMs hide the context humans use to judge a source. Most saw the problem as old but now much cheaper to exploit.",
+    "dissent": "A minority said the article proves little. They said humans have always repeated lies, that models can be told to cross-check sources, and that AI companies have strong reasons to filter junk. Others defended the experiment as a needed public warning.",
+    "contrarian": {
+      "author": "m0rde",
+      "text": "Someone posted fake stats online and saw ChatGPT visit their page. Then they immediately assume that ChatGPT is falling for those fake stats and using it in chat responses or analysis input? Where's the proof?",
+      "commentId": 50174924,
+      "why": "The article shows that ChatGPT fetched the pages, not that it used the numbers in its answers. It also does not show how the stats reached the paper and the bank report."
+    }
+  },
+  "digestedAt": "2026-10-24T21:35:33.000Z"
+}

@@ -1,0 +1,118 @@
+{
+  "hnId": 50169707,
+  "title": "What shall I teach my son?",
+  "url": "https://stevekrouse.com/ends",
+  "domain": "stevekrouse.com",
+  "kind": "article",
+  "author": "Curiositry",
+  "postedAt": "2026-10-20T17:25:07.000Z",
+  "points": 489,
+  "commentCount": 648,
+  "readingMinutes": 4,
+  "tldr": "A programmer who is about to become a father asks what education is for when AI can do his job. Technologists have predicted the end of schools for over a century and have been wrong each time. Schools last because they serve many purposes at once, childcare among them. He plans to work out the purpose of his son's education together with his son.",
+  "article": {
+    "keyPoints": [
+      "Steve Krouse is expecting his first child. He feels that programming, his economically valuable skill, is suddenly worth less.",
+      "In 1913 Thomas Edison said books would soon be obsolete in public schools. In 2013 Krouse predicted that MOOCs would upend education. Both predictions failed.",
+      "Harvard, Yale and Princeton were founded to train clergy. Schools outlived religion's central role. Krouse says the real forces behind schools are endowments, prestige and the need for someone to watch the kids.",
+      "Krouse once named \"resourceful\" as the single purpose of education. He now sees that skill in an AI agent that loops over its tools.",
+      "The market used to judge who was good, as with the dropouts Jobs and Gates. Krouse writes that recent AI progress in mathematics threatens that path too.",
+      "Neil Postman showed that people can invent new purposes for education, such as \"Spaceship Earth\" or making the tools that then shape us. Krouse, citing Postman and Alfie Kohn, wants to set those purposes with his child, not for him."
+    ],
+    "whyItMatters": "The essay is short and personal, so read it for the voice and the Edison poem it quotes. It points to Postman's The End of Education and Clara Collier's essay on life after work for the longer arguments."
+  },
+  "comments": {
+    "overview": "The thread was large, warm toward the author and full of one-line advice like \"kindness\" or \"curiosity\". Most commenters said parents should pass on character and the habit of learning, not a career. The long fights were about whether school subjects like calculus still matter, and whether any education is worth much if AI succeeds.",
+    "themes": [
+      {
+        "title": "Teach character and how to learn, not a trade",
+        "synthesis": "The top comment set the tone: your children are not you, and no one can predict which jobs will exist in 20 years. Dozens of replies listed curiosity, resilience, kindness, reading and learning how to learn. Many added that children copy what parents do more than what they say, so the parent has to live these values first. A side thread argued about naming a toddler's feelings out loud. bonoboTP called it pampering, and several parents described it working with their own children.",
+        "quotes": [
+          {
+            "author": "dijit",
+            "text": "Our jobs as parents is to teach values and make sure they're good people and have the tools to make good decisions too, not to set them on a particular path",
+            "commentId": 50170060
+          },
+          {
+            "author": "weatherlite",
+            "text": "You can't really teach/enable any of that stuff for real without living it yourself and being an example - which is very difficult because most of us weren't really raised that way ourselves, so we're not like that.",
+            "commentId": 50180298
+          }
+        ]
+      },
+      {
+        "title": "Do calculus and other school subjects still matter?",
+        "synthesis": "A mention of unschooling parents who ask \"when did you need calculus?\" started the longest sub-thread. Defenders said calculus is the base of science and engineering, and that school knowledge protects people from being lied to. win311fwg argued that curious children learn what they need on their own, and that forced teaching does not stick. Others cited adult innumeracy data and the many adults who regret quitting music or languages as children. Some suggested teaching statistics instead.",
+        "quotes": [
+          {
+            "author": "AnonymousPlanet",
+            "text": "For most people it's there to prevent them from being lied to. If you did something as a kid, even if you wouldn't be able to do so now, you know it can't be that hard.",
+            "commentId": 50177922
+          },
+          {
+            "author": "win311fwg",
+            "text": "Those born most likely to do something with calculus already voluntarily choose to learn about it. You don't have to make them.",
+            "commentId": 50175304
+          }
+        ]
+      },
+      {
+        "title": "Is education worth anything if AI succeeds?",
+        "synthesis": "0c3ca83 claimed that education is only a hedge against AI stalling, and that people will simply ask the AI what to do. Replies were angry. gspr said reasoning skills are what make us human, and others compared it to giving up exercise because forklifts exist. kunai warned that if people stop learning the principles, no one will be able to fix systems when they fail. A few commenters predicted that only social skills, capital or physical trades would keep their value.",
+        "quotes": [
+          {
+            "author": "0c3ca83",
+            "text": "Education and intellectual work isn't really worth anything if AI succeeds, so keep in mind that anything you're teaching is a hedge against AI stalling or collapsing.",
+            "commentId": 50171740
+          },
+          {
+            "author": "gspr",
+            "text": "Good education teaches you how the (natural and human) world works, and how to think and reason systematically. Intellectual work is your own exercise in maintenance of those skills.",
+            "commentId": 50176534
+          }
+        ]
+      },
+      {
+        "title": "Money, precarity and privilege",
+        "synthesis": "A strong minority said values are a luxury when rent comes first. scottLobster plans to teach his children that any passion must come with a way to earn money, and others argued about whether hobbies like music are affordable for poor families. Several parents admitted they no longer know what career advice to give. Karrot_Kream noted that a parent's real advantage is connections and knowledge of the system, and that this does not depend on programming.",
+        "quotes": [
+          {
+            "author": "mitthrowaway2",
+            "text": "But right now I know almost nothing at all for what to tell them. I don't know if any moticum of the experience I have that put me on a successful path will be valuable in the future at all.",
+            "commentId": 50173116
+          },
+          {
+            "author": "Karrot_Kream",
+            "text": "Generally speaking the privilege you can offer your kids is the knowledge and access to highly qualified individuals.",
+            "commentId": 50173847
+          }
+        ]
+      },
+      {
+        "title": "What schools are really for",
+        "synthesis": "Many commenters agreed with the author's aside that schools survive as daycare, and some said that is their main job. Others disputed his claim that schools survived the internet: phones and TikTok have already hurt them, and the curriculum is thinner than it was a century ago. kragen explained why education is not \"solved\": student quality matters most, and good tutors are rare and hard to identify. procaryote added that access to information has never made people educated.",
+        "quotes": [
+          {
+            "author": "Aperocky",
+            "text": "It's so you, the children's parents, can go about your business for the day and the kids can stay somewhere safe and where they can interact with their peers. If they happened to learn something, that's pure bonus.",
+            "commentId": 50175472
+          },
+          {
+            "author": "procaryote",
+            "text": "Access to information isn't the same thing as competency or skill. Giving someone access to google does not make them educated.",
+            "commentId": 50172203
+          }
+        ]
+      }
+    ],
+    "consensus": "Parents cannot predict the job market, so they should give children values, curiosity, reading and the ability to learn. They teach these best by example.",
+    "dissent": "Some readers found the essay privileged and low-stakes, since the author runs an AI startup while others worry about food and housing. Others corrected its facts: Einstein had top grades, and Gates had strong grades and a well-connected family. A few said it mixes up education, schooling and parenting.",
+    "contrarian": {
+      "author": "nearbuy",
+      "text": "If future AI can do everything, the extrinsic motivation is going to disappear. People will naturally tend towards easy learning.",
+      "commentId": 50177695,
+      "why": "Most of the thread assumed people will keep learning because learning is fun. nearbuy notes that people do hard learning, like advanced calculus, only when they need to."
+    }
+  },
+  "digestedAt": "2026-10-24T21:36:02Z"
+}

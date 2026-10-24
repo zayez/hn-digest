@@ -1,0 +1,118 @@
+{
+  "hnId": 50120224,
+  "title": "JPEG XL vs. AVIF for web use-cases",
+  "url": "https://jakearchibald.com/2026/jpeg-xl-vs-avif/",
+  "domain": "jakearchibald.com",
+  "kind": "article",
+  "author": "farlight",
+  "postedAt": "2026-10-16T16:12:02.000Z",
+  "points": 332,
+  "commentCount": 216,
+  "readingMinutes": 42,
+  "tldr": "Jake Archibald benchmarked today's JPEG XL and AVIF encoders on web images. AVIF gives smaller lossy files for most photos, screenshots and transparent images. AVIF also decodes faster. JPEG XL wins on lossless images and on shrinking existing JPEGs without further loss.",
+  "article": {
+    "keyPoints": [
+      "For lossy photos, the best JPEG XL file is usually 15 to 25% larger than AVIF at default effort. At maximum effort the gap is 6 to 20%. A weasel photo is the outlier where JPEG XL wins.",
+      "Screenshots and illustrations favor AVIF more strongly. The JPEG XL file is 30 to 90% larger at default effort. Archibald argues that lossy AVIF is good enough here, so lossless formats are rarely needed.",
+      "The JPEG XL encoder matters a lot. jixel, a newer encoder, usually makes smaller files than the reference libjxl. On some images jixel scores well on SSIMULACRA2 but looks visibly worse.",
+      "Higher effort settings pay off for AVIF and jixel. They rarely pay off for libjxl, which gets much slower and sometimes makes larger files.",
+      "AVIF decodes faster, and JPEG XL takes 2 to 3 times as long at medium quality. AVIF also supports HDR gain maps in browsers. JPEG XL does not.",
+      "JPEG XL can recompress existing JPEGs 9 to 20% smaller with no further loss. For lossless images, lossless AVIF files are 30 to 120% larger than JPEG XL. Archibald's default is AVIF 4:4:4 at high effort, with jixel as a second try."
+    ],
+    "whyItMatters": "Read the original if you choose image formats or encoder settings for a site. It has per-image charts for file size, encode time, memory and decode time in each browser. It also has interactive comparisons and data on progressive loading and HDR that the summary leaves out."
+  },
+  "comments": {
+    "overview": "The thread was mostly friendly to the article but split along old lines. JPEG XL supporters argued that the benchmark measures encoders, not formats, and blamed Google's earlier refusal to ship JPEG XL in Chrome for the gap. Archibald answered dozens of replies himself, often to correct claims about the formats or his demo.",
+    "themes": [
+      {
+        "title": "Encoders, not formats",
+        "synthesis": "Many commenters said AVIF leads because AV1 encoders kept improving for video, while JPEG XL work slowed after Chrome dropped it. A 2024 Cloudinary benchmark found the opposite result, and commenters offered newer libavif and different test images as reasons. One commenter showed an unreleased encoder that made lossless JPEG XL files 30 to 39% smaller than in the article. Archibald pointed to an AV1 developer's post arguing that JPEG XL has hard limits, and others noted that developer's commercial interest.",
+        "quotes": [
+          {
+            "author": "F3nd0",
+            "text": "So for a good while, AVIF was steadily improving and approaching its full potential, while JPEG XL was not. The article compares the current state of the current encoders; in no way does it indicate how good the formats themselves are.",
+            "commentId": 50128802
+          },
+          {
+            "author": "linolevan",
+            "text": "I think people are really forgetting that JXL's encoders are bad right now.",
+            "commentId": 50124160
+          }
+        ]
+      },
+      {
+        "title": "Web delivery versus high-end photos",
+        "synthesis": "Several commenters split the use cases: AVIF for small web images, JPEG XL for archives and photography. They cited JPEG XL's higher bit depth, larger maximum size and better results at very high quality. Archibald pushed back that the article's comparisons already target high quality on SSIMULACRA2. Jyrki Alakuijala, a JPEG XL author, replied that a score of 85 is only about median internet quality. Commenters also corrected an AVIF size claim: the baseline profile caps at 8192 by 4352, while the format allows 64k by 64k.",
+        "quotes": [
+          {
+            "author": "Gigachad",
+            "text": "JPEG XL is the ideal high end photography format. AVIF seems better for a space efficient web format.",
+            "commentId": 50127248
+          },
+          {
+            "author": "JyrkiAlakuijala",
+            "text": "ssimulacra2 85 is rather close to median quality in the internet",
+            "commentId": 50124567
+          }
+        ]
+      },
+      {
+        "title": "Lossless JPEG recompression",
+        "synthesis": "Commenters liked that JPEG XL can shrink existing JPEGs without a second lossy pass, which converting to AVIF would add. It keeps the JPEG's quantized DCT data and swaps in a better entropy coder, like Dropbox's Lepton. Several confirmed that decoding the JPEG XL gives back the original JPEG bit for bit. One commenter whose team stores terabytes of scanned books wants this for archives.",
+        "quotes": [
+          {
+            "author": "pwg",
+            "text": "JPEG -> AVIF adds a second loss operation.  JPEG to JPEG-XL is lossless but with a smaller file size.",
+            "commentId": 50121957
+          },
+          {
+            "author": "farlight",
+            "text": "That's actually the default behavior for libjxl cli: encoding and then decoding jpeg via jxl produces a file bit identical to the original jpeg file.",
+            "commentId": 50129080
+          }
+        ]
+      },
+      {
+        "title": "Demo images and quality metrics",
+        "synthesis": "One commenter said AVIF erased highlights on the F1 car, then found he meant the image from Archibald's 2020 article. Archibald found that browsers without JPEG XL fell back to a WASM renderer that resized images differently. Firefox had shipped JPEG XL only three days earlier, and some readers had older versions. Others asked for large blind A/B studies, since SSIMULACRA2 does not fully match human judgment.",
+        "quotes": [
+          {
+            "author": "jaffathecake",
+            "text": "You're looking at it in a browser that doesn't support JPEG XL, so it's falling back to a WASM renderer, and I think it handles resizing differently.",
+            "commentId": 50121658
+          },
+          {
+            "author": "jaffathecake",
+            "text": "But yes, you can see this with jixel, which I'm really impressed by, but it's so tuned to SSIMU2 that it looks really bad to human eyes in some cases compared to libjxl.",
+            "commentId": 50121769
+          }
+        ]
+      },
+      {
+        "title": "Animation and containers",
+        "synthesis": "Archibald's line that animated images are dumb drew some agreement and some pushback. One commenter said GIF-like clips carry different expectations than video, such as no player controls. Archibald said animated AVIF performs so badly in Chrome and Safari that it is not worth using. A separate argument held that AVIF's container would let sites adopt AV2 without new work. Others rejected this, because a browser still needs the new codec.",
+        "quotes": [
+          {
+            "author": "fngjdflmdflg",
+            "text": "Even <video muted autoplay> doesn't encode the full expected behavior because GIFs are not expected to have controls like pause, play and scrub.",
+            "commentId": 50121475
+          },
+          {
+            "author": "pornel",
+            "text": "The container is useless. Files based on a newer codec won't display anyway.",
+            "commentId": 50121157
+          }
+        ]
+      }
+    ],
+    "consensus": "Most commenters accepted that AVIF is the better choice for typical lossy web images today. They also agreed that JPEG XL is stronger for lossless images and for recompressing old JPEGs. Both encoders are still improving, so the result may change.",
+    "dissent": "JPEG XL supporters said the comparison judges immature encoders, not the format. They blamed Google's earlier Chrome decision for slowing JPEG XL development. A smaller group said AVIF's smoothing removes real detail that photographers care about.",
+    "contrarian": {
+      "author": "andrewaylett",
+      "text": "My experience was that AVIF was too slow for on-the-fly encoding, while JXL was absolutely fine and JPEGLI was also pretty useful.",
+      "commentId": 50125858,
+      "why": "The article encodes once at maximum effort for a blog, and a server that encodes on each request faces a different cost."
+    }
+  },
+  "digestedAt": "2026-10-24T21:36:00.000Z"
+}

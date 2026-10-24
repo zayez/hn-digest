@@ -1,0 +1,102 @@
+{
+  "hnId": 50139873,
+  "title": "How employment is changing at Anthropic",
+  "url": "https://www.anthropic.com/research/employment-at-anthropic",
+  "domain": "anthropic.com",
+  "kind": "article",
+  "author": "theanonymousone",
+  "postedAt": "2026-10-18T10:49:26.000Z",
+  "points": 162,
+  "commentCount": 256,
+  "readingMinutes": 22,
+  "tldr": "Anthropic economists studied the company's own staff data. Junior hires fell from 27% to 9% of technical hiring. Output per person rose sharply as employees adopted AI agents. Human attention to agent output is now the main limit on work.",
+  "article": {
+    "keyPoints": [
+      "Junior staff fell from 21% to 14% of Anthropic's technical departments since early 2025. Junior technical hires fell faster, from 27% to 9%.",
+      "By August 2026, agents that employees ran worked six times as many hours as the employees. Commits per engineer rose to 5 times their level of six months earlier.",
+      "The authors followed 192 engineers who adopted coding agents and 74 who did not. Code added rose sharply after adoption. Agent-written code was removed or reverted no more often than human code.",
+      "About 80% of interactive agent session time is spent waiting for a human. Reading all agent output would fill over half the work week, even for non-technical staff. Work on managing agents rose from 10% to 22% of sessions.",
+      "Hiring managers now mention a candidate's AI tool use three to four times as often as in 2024. Comments on autonomy and judgment grew. Comments on domain expertise shrank.",
+      "The authors credit broad stock ownership, an early warning system for at-risk jobs, and internal transfers. Staff were 50% more likely to change departments in 2026. The authors admit none of this helps juniors who were never hired."
+    ],
+    "whyItMatters": "Read the original for the charts and the method notes behind each number. It also has employee interview quotes on what managing agents feels like day to day. These matter because the thread's main doubts are about how Anthropic measured output."
+  },
+  "comments": {
+    "overview": "The thread was hostile and mostly doubted the report. Most comments attacked the metrics, the missing junior-to-senior pipeline, or the report's timing before an IPO. A smaller group argued about whether people can stay in control of systems that agents mostly run.",
+    "themes": [
+      {
+        "title": "Commits measure activity, not value",
+        "synthesis": "The largest group said commits, queries and contracts per person count busywork, not business results. Some said code is a liability, so more code is a warning sign. Others noted that the outcome metrics, deals and hires, rose far less. A few pushed back: even the smallest reported gain, 40%, equals about 17 years of normal US productivity growth.",
+        "quotes": [
+          {
+            "author": "djoldman",
+            "text": "AI can make it very easy to do more and more busywork that doesn't move the needle.",
+            "commentId": 50144465
+          },
+          {
+            "author": "T-A",
+            "text": "Even if the overall productivity boost due to AI \"only\" turns out to be 40%, the lowest among your numbers, it's equivalent to 17 years of growth at 2% per year.",
+            "commentId": 50150399
+          }
+        ]
+      },
+      {
+        "title": "No juniors means no future seniors",
+        "synthesis": "Many commenters asked who will become senior if nobody hires juniors. Some answered that Anthropic expects AI to replace seniors too. One commenter said every industry already pushes training costs onto workers, like AAA game studios. Others said seniority is the wrong line, and curiosity and judgment matter more. Critics replied that judgment without technical knowledge means office politics.",
+        "quotes": [
+          {
+            "author": "aquentinn",
+            "text": "Those seniors were juniors once too. If you don't train the juniors, who will become seniors?",
+            "commentId": 50148497
+          },
+          {
+            "author": "eszed",
+            "text": "Regardless, the entire cost and risk of training has been pushed onto individual employees.",
+            "commentId": 50156974
+          }
+        ]
+      },
+      {
+        "title": "Research or IPO marketing",
+        "synthesis": "Many readers treated the report as advertising from a company that sells the tool and plans an IPO. Others said Anthropic is a poor model for anyone else. It has fast revenue growth, few staff, and easy access to top talent. One commenter added that cutting R&D staff while growing sales is a normal startup cycle, with or without AI.",
+        "quotes": [
+          {
+            "author": "pyrale",
+            "text": "There simply is no way to separate what’s reporting and what’s advertising.",
+            "commentId": 50140137
+          },
+          {
+            "author": "skybrian",
+            "text": "It might be hard to reproduce that sort of productivity outside the tech industry, though. We can’t all be Anthropic.",
+            "commentId": 50153162
+          }
+        ]
+      },
+      {
+        "title": "Who understands the system",
+        "synthesis": "The longest single thread feared that agent-run systems will grow beyond human understanding. Commenters described power grids and healthcare that no person can fix. Others replied that no one has understood large systems for a long time. The original poster answered that a human workforce could once replace another one. A few AI vendors cannot be replaced that way.",
+        "quotes": [
+          {
+            "author": "gb2d_hn",
+            "text": "With agents, if capability is consolidated with a single organisation and that organisation changes it's terms of business, you cannot replace the army of AGI-agents with a human workforce. It's a single and total point of failure.",
+            "commentId": 50150336
+          },
+          {
+            "author": "ffsm8",
+            "text": "people just know their small part and hope for the best - so from a devils advocate pov, its already been proved that its sustasinable.",
+            "commentId": 50140742
+          }
+        ]
+      }
+    ],
+    "consensus": "Most commenters agreed that commit counts are a poor measure of productivity. They also agreed that results from Anthropic say little about ordinary companies.",
+    "dissent": "A minority took the numbers seriously. They said even modest gains are large by historical standards. Some hobbyists and developers with little free time reported real gains on personal projects.",
+    "contrarian": {
+      "author": "SpicyLemonZest",
+      "text": "If even Anthropic is seeing only a 2-4x revenue multiplier from AI adoption, I’m intensely skeptical of the people who run around saying they produce 10x or 100x more valuable output",
+      "commentId": 50140184,
+      "why": "It uses the report as an upper limit instead of dismissing it. A company with every advantage still shows only modest gains, which weakens the bigger claims."
+    }
+  },
+  "digestedAt": "2026-10-24T21:35:53.000Z"
+}

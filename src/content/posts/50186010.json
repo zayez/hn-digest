@@ -1,0 +1,118 @@
+{
+  "hnId": 50186010,
+  "title": "Rust Style Guide",
+  "url": "https://google.github.io/styleguide/rustguide.html",
+  "domain": "google.github.io",
+  "kind": "article",
+  "author": "kaycebasques",
+  "postedAt": "2026-10-21T19:11:57.000Z",
+  "points": 389,
+  "commentCount": 256,
+  "readingMinutes": 37,
+  "tldr": "Google published a Rust style guide for its codebases, among them Android, Chromium and Fuchsia. It covers API and implementation design, not only formatting. It asks for small crates, no glob imports, few macros and #[non_exhaustive] on public enums. Many of its rules exist to make large automated refactors across the codebase easier.",
+  "article": {
+    "keyPoints": [
+      "The guide follows the public Rust style guide and API guidelines wherever they do not conflict with it. Its extra goal is to make tool-assisted Large-Scale Changes (LSCs) across Google's code easier.",
+      "API design rules are binding for library code. For application code they are a strong recommendation, and the guide warns against premature generalization.",
+      "Chromium code should use small crates, ideally one file each, kept in one flat directory. The guide says fine-grained targets help parallel compilation and build caching in a very large codebase.",
+      "The guide bans glob imports and asks for module-qualified function calls and unqualified type names. It says several of these import rules exist mainly to avoid reviewer disagreements.",
+      "Code should prefer borrows over Rc, Arc and deep copies with .clone(). Libraries should accept generics instead of dyn Trait. The guide ranks plain functions above macro_rules! and proc macros.",
+      "Public enums and structs used by other teams should be #[non_exhaustive], so a new variant or field does not break callers. Chromium forbids async/.await. First-party code must not call panic::catch_unwind."
+    ],
+    "whyItMatters": "Rust developers on large or multi-team codebases should read the original. Each rule comes with its exceptions and a rationale, and many have code examples for assertions, iterator chains, getters and error handling. Teams writing their own guide can also copy its rustfmt settings."
+  },
+  "comments": {
+    "overview": "The thread was mostly friendly to the guide but argued hard over a few rules. The #[non_exhaustive] rule drew the most technical debate, and the Chromium small-crate rule drew questions. The largest subthread left the guide behind to argue whether anyone still writes new C or C++.",
+    "themes": [
+      {
+        "title": "#[non_exhaustive] on public enums",
+        "synthesis": "The top comment called the rule crazy because it gives up the compiler error that flags every match needing a new case. Defenders said exhaustive enums do not scale across teams or services. A change to a widely used enum breaks other teams' code. Old clients also still receive new variants from newer servers. Critics answered that a wildcard arm turns a real breaking change into a silent runtime bug. Some pointed to the upcoming non_exhaustive_omitted_patterns lint as a middle path.",
+        "quotes": [
+          {
+            "author": "demurgos",
+            "text": "It did not prevent runtime issues as older clients could receive responses with new variants from newer servers.",
+            "commentId": 50193318
+          },
+          {
+            "author": "hmry",
+            "text": "With #[non_exhaustive], adding a variant is not a breaking change, *but only* if that variant can safely be ignored. If it can't be, then it's *still* a breaking change, BUT you don't get a compiler error.",
+            "commentId": 50194179
+          }
+        ]
+      },
+      {
+        "title": "Is anyone still writing new C or C++?",
+        "synthesis": "A question about C and C++ being sunset languages grew into the largest subthread. Many commenters listed fields that still write a lot of new C++, such as games, HPC, finance, defense and compilers like LLVM. Others listed Rust in production at Cloudflare, AWS, Chrome font handling, Windows and Firefox. One commenter claimed almost no software anyone uses is Rust, and several replies challenged that claim with examples. A side argument asked whether Rust's memory model gets in the way of performance-tuned, data-oriented code.",
+        "quotes": [
+          {
+            "author": "aero_code",
+            "text": "Chrome currently uses https://github.com/googlefonts/fontations to implement its font handling, and text is the main thing on most web pages.",
+            "commentId": 50187734
+          },
+          {
+            "author": "skohan",
+            "text": "There's no point in using Rust when 90% of your work is deactivating the benefits Rust provides and working around its default behavior.",
+            "commentId": 50194864
+          }
+        ]
+      },
+      {
+        "title": "Do style guides matter when agents write the code?",
+        "synthesis": "One commenter said style guides now only matter as input for a coding model. Most replies disagreed. They said humans still have to review and operate the code, and a guide makes that easier. One commenter whose company gives guidelines to its model reported that the model often ignores them and AI auto-approves much of the code. Others said rules belong in a linter so agents and people cannot skip them.",
+        "quotes": [
+          {
+            "author": "monocasa",
+            "text": "The point of style guides is to optimize for readability despite a cognitively diverse workforce coding in the same repos.",
+            "commentId": 50186614
+          },
+          {
+            "author": "yodsanklai",
+            "text": "Unfortunately, the model isn't always following them and it's impossible to enforce them manually. There's too much code to review, the code is generally low quality, and is more often than not auto-approved by AI.",
+            "commentId": 50186765
+          }
+        ]
+      },
+      {
+        "title": "Why Chromium wants tiny crates",
+        "synthesis": "A commenter compared the small-crate rule to the era of one-line functions. Replies explained that the crate is Rust's unit of compilation and build parallelism. In Google's build systems a crate costs little, unlike a Cargo crate with its own directory and Cargo.toml. Others added that crate boundaries forbid dependency cycles and enforce a declared public API, which modules do not.",
+        "quotes": [
+          {
+            "author": "evmar",
+            "text": "Given that a crate is the unit of build parallelization in Rust, there's a benefit to more crates especially when they don't cost much cognitive overhead.",
+            "commentId": 50187119
+          },
+          {
+            "author": "pornel",
+            "text": "You get stricter enforcement of public APIs and dependencies. You can't import anything you haven't declared as a dep, and cycles are impossible.",
+            "commentId": 50187945
+          }
+        ]
+      },
+      {
+        "title": "Disputes over smaller rules",
+        "synthesis": "Several rules got their own short arguments. One commenter wanted Rc and Arc for any reference that lives outside the call stack, and others said strict ownership forces better design. Another said importing type names unqualified pushes people toward redundant names like IoError. A framework author preferred plain setters and get_ getters, and replies said that pattern fits builders, not records.",
+        "quotes": [
+          {
+            "author": "slaymaker1907",
+            "text": "Don't do weird crap with lifetimes to try and convince the compiler that what you're doing is ok, just throw Rc/Arc on it and be done with it.",
+            "commentId": 50187239
+          },
+          {
+            "author": "epage",
+            "text": "A builder type like `Command` will have unqualified setters and `get_` qualified getters.",
+            "commentId": 50187763
+          }
+        ]
+      }
+    ],
+    "consensus": "Most commenters found the guide useful and close to existing Rust practice. They agreed that several rules make the most sense at Google's scale, with a monorepo, many teams and Bazel-style builds.",
+    "dissent": "A vocal minority said smaller organizations should not copy Google's rules, the #[non_exhaustive] rule above all. In their view a compile error on a new enum variant is exactly what Rust is for.",
+    "contrarian": {
+      "author": "dathinab",
+      "text": "the style guides which work best for \"blindly uniformly applied across all kind of projects/teams/people\" are not the same as \"my preferred style\" _in a lot of ways_",
+      "commentId": 50195232,
+      "why": "Others judged each rule by taste, but a company guide must work without judgment calls and so loses to personal style in single cases."
+    }
+  },
+  "digestedAt": "2026-10-24T21:35:50.000Z"
+}

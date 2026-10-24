@@ -1,0 +1,113 @@
+{
+  "hnId": 50178455,
+  "title": "Whatever Happened to Fire Escapes",
+  "url": "https://practical.engineering/blog/2026/10/20/whatever-happened-to-fire-escapes",
+  "domain": "practical.engineering",
+  "kind": "article",
+  "author": "sohkamyung",
+  "postedAt": "2026-10-21T10:14:43.000Z",
+  "points": 202,
+  "commentCount": 163,
+  "readingMinutes": 10,
+  "tldr": "Bolt-on iron fire escapes spread in US cities because an 1860 New York law applied to existing buildings. Experts doubted them from 1881 on. They failed badly in the 1911 Triangle Shirtwaist fire. Enclosed interior stairwells replaced them, and New York banned them on new buildings in 1968.",
+  "article": {
+    "keyPoints": [
+      "Owners rarely pay for safety against rare events on their own. Building codes set the line between no safety and overkill.",
+      "After a tenement fire killed ten people in 1860, New York required a fireproof stairway or an exterior escape on all tenements, including existing ones.",
+      "Rebuilding an interior stair in an existing building was costly. Owners who complied mostly bolted escapes to the outside.",
+      "The Franklin Institute judged external escapes of comparatively little value in 1881. It recommended enclosed, incombustible stairways in daily use instead.",
+      "At the Triangle Shirtwaist fire in 1911, the exterior escape buckled under fleeing workers. More than 140 people died.",
+      "The author gives US elevators as a second example of code momentum. One unscrutinized stretcher rule made them bigger and costlier. Many owners then skipped elevators, leaving fewer accessible buildings."
+    ],
+    "whyItMatters": "Read or watch the original for the history and the period quotes, including the parachute hat and the NFPA calling fire escapes a pitiful delusion. Its main lesson is about building codes: a rule that covers existing buildings can set designs for a century."
+  },
+  "comments": {
+    "overview": "The thread barely talked about fire escapes. Its largest branch started from one claim that fires are now rare and Ontario firefighters are bored. Most replies defended firefighters as all-purpose emergency responders. A second debate asked whether buildings still need two exits, and whether the US two-stair rule is hurting housing.",
+    "themes": [
+      {
+        "title": "What firefighters do now",
+        "synthesis": "One commenter said fewer fires leave firefighters idle and sent to fender benders. Most replies said fire crews are now general emergency responders who carry patients, cut people out of cars and fill gaps in underfunded ambulance services. Others argued the staff count must match the rare big fire, not the average day. A minority, led by mhb, kept asking whether cheaper medical responders would do the non-fire work at lower cost.",
+        "quotes": [
+          {
+            "author": "rcxdude",
+            "text": "Firefighting is a a task with a pretty intrinsically bursty demand. You're employing them for the very peak of that demand and otherwise you want them working on relatively low priority things that can be dropped in an emergency.",
+            "commentId": 50181174
+          },
+          {
+            "author": "schiffern",
+            "text": "On a fundamental level, efficiency and resilience are always a trade-off. A perfectly efficient system also tends to be perfectly brittle!",
+            "commentId": 50181140
+          }
+        ]
+      },
+      {
+        "title": "Do buildings still need a second exit?",
+        "synthesis": "The same opening comment said multiple exits matter less now that fires are rarer and alarms give warning. Some agreed: most fires start inside one unit, and fire-rated walls and sprinklers keep them there long enough to escape. Others called redundancy the whole point. They cited Grenfell Tower, the World Trade Center stairwells and recent nightclub fires where a blocked exit turned a fire into a disaster.",
+        "quotes": [
+          {
+            "author": "CGMthrowaway",
+            "text": "The point is redundancy. If one exit gets blocked, you have another one you can use.",
+            "commentId": 50180696
+          },
+          {
+            "author": "KptMarchewa",
+            "text": "Redundancy matters when it protects from plausible issues.",
+            "commentId": 50181414
+          }
+        ]
+      },
+      {
+        "title": "The two-stair rule and housing",
+        "synthesis": "Several commenters said the North American rule of two stairways forces wide buildings with long central corridors and windows on one side. That rule blocks small apartment buildings on single lots and family-sized units. They pointed to single-stair reform efforts in San Francisco, Massachusetts and Ontario. One commenter accepted the housing cost but still wanted redundancy for buildings too tall for a ladder truck.",
+        "quotes": [
+          {
+            "author": "theluketaylor",
+            "text": "Small apartment buildings on a single parcel can't ever pencil out due to the space required to be dedicated to stairs.",
+            "commentId": 50183178
+          },
+          {
+            "author": "fishtoaster",
+            "text": "Requiring two stairways makes sense from a fire safety perspective, but it's made it incredibly difficult to cost-effectively build medium-size buildings on oddly-shaped lots.",
+            "commentId": 50182677
+          }
+        ]
+      },
+      {
+        "title": "Why three engines show up for a small fire",
+        "synthesis": "A commenter described three engines and about 30 firefighters smashing out the back of his fireplace to reach smoldering embers. He wondered if they were bored. Replies said a hidden fire can grow in minutes and crews cannot judge it from a phone call. One added that the Oakland Hills firestorm of 1991 grew from embers of a fire put out the day before.",
+        "quotes": [
+          {
+            "author": "mindslight",
+            "text": "A fire that can be put out by an extinguisher doesn't stay a fire that can be put out by an extinguisher.",
+            "commentId": 50184817
+          }
+        ]
+      },
+      {
+        "title": "Ladders, harnesses and other countries",
+        "synthesis": "Commenters swapped personal escape gear: chain ladders, and abseiling harnesses boxed in Tokyo apartments. They also compared countries. In Japan the main stairs are often open and outside. Korean apartments keep escape ropes at the window. Germany makes owners of some old buildings add escape ladders when they renovate.",
+        "quotes": [
+          {
+            "author": "walthamstow",
+            "text": "In my 4th floor apartment in Tokyo there was a box containing what seemed to be basically an abseiling harness.",
+            "commentId": 50179322
+          },
+          {
+            "author": "mschuster91",
+            "text": "If you have an old building that was built before fire codes mandated two independent exits for every residential room, and the window cannot be reached by a fire ladder, you are mandated to retrofit an escape ladder if you do a renovation of the building.",
+            "commentId": 50179989
+          }
+        ]
+      }
+    ],
+    "consensus": "Modern fire safety rests on many layers: detectors, sprinklers, fire-rated walls and enclosed stairs. External fire escapes were a retrofit for old single-stair buildings, not a design anyone would choose for new ones.",
+    "dissent": "Some commenters still want an outside way down. They would rather risk a rusty, cluttered fire escape than have no second route if the main stair fails. Some keep ladders or choose buildings with outdoor corridors for that reason.",
+    "contrarian": {
+      "author": "cucumber3732842",
+      "text": "If one can have an entire 20min piece about how bad fire escapes are and how bad they were from the start it kind of begs the question as to why they were allowed on new construction to begin with.",
+      "commentId": 50181907,
+      "why": "The video explains why fire escapes went onto old buildings. It never says who kept allowing them on new buildings for decades, or why."
+    }
+  },
+  "digestedAt": "2026-10-24T21:35:30.000Z"
+}

@@ -1,0 +1,118 @@
+{
+  "hnId": 50122951,
+  "title": "How the Claude Code team does code review",
+  "url": "https://claude.dev/blog/solving-code-review-at-anthropic/",
+  "domain": "claude.dev",
+  "kind": "article",
+  "author": "pretext",
+  "postedAt": "2026-10-16T19:04:47.000Z",
+  "points": 487,
+  "commentCount": 480,
+  "readingMinutes": 14,
+  "tldr": "Anthropic's Claude Code team says Claude writes about 90 percent of the tool's code. Automated checks now do most of the review, with human approval scaled to each change's risk. From June to September, merged pull requests more than doubled. Over the same months, the share of reverted pull requests fell by more than 40 percent.",
+  "article": {
+    "keyPoints": [
+      "Changes landing per day in Anthropic's monorepo grew from about 2,500 in May to more than 30,000 in September. Claude Code lives in a separate repo that faces the same pressure.",
+      "The team's goal is that most pull requests merge with at most one human, who can be the author. Revert and incident rates are the guardrail for that goal.",
+      "Claude verifies its own work before a pull request exists. An AI reviewer and a security reviewer then comment on every pull request. Open findings and failed CI checks block the merge.",
+      "A classifier sets a risk tier from the change itself. Low-risk changes such as docs need no human approval, ordinary changes need one person, and the riskiest paths need two.",
+      "Past incidents form an eval that the reviewer runs against every day. One pull request went through more than fifty review rounds overnight. The team now caps re-review at three rounds.",
+      "Nobody on the team keeps a full mental model of Claude Code. Engineers ask Claude for an explainer of the part they need. The article says this teaches more than reading small diffs."
+    ],
+    "whyItMatters": "Read it if you run a team where agents open pull requests and you want a concrete checklist. The original has the risk-tier table, the REVIEW.md advice and a step-by-step adoption list that the summary only names."
+  },
+  "comments": {
+    "overview": "The thread was hostile. Most commenters doubted that a team with unlimited tokens has lessons for anyone else. The biggest argument was over the explainer passage: can engineers own code that nobody on the team understands? A large side thread said the post itself reads as written by Claude.",
+    "themes": [
+      {
+        "title": "Owning code nobody understands",
+        "synthesis": "Many commenters fixed on the line that nobody keeps a full mental model of Claude Code. Critics said an explainer on demand is search, not knowledge, and that the whole system now depends on Claude always finding the right part of the code. Others answered that large legacy systems, such as decades-old banking code, were never understood by one person either. The critics replied that legacy code at least had human intent behind it. One commenter showed a Claude-written reply on the public repo that misdescribed the repo's own issue bot.",
+        "quotes": [
+          {
+            "author": "jonahx",
+            "text": "The new trust model is: We trust Claude to always understand the system enough to debug anything or make any reasonable change we could want.",
+            "commentId": 50125128
+          },
+          {
+            "author": "dmd",
+            "text": "Large company codebases are very much not like that. … Nobody understands how it works.",
+            "commentId": 50126696
+          }
+        ]
+      },
+      {
+        "title": "What 30,000 changes a day buys",
+        "synthesis": "Dozens of comments asked why a terminal app needs so many changes and read the number as churn or marketing. Several readers pointed out that the 30,000 figure covers the whole monorepo, and the article says Claude Code is not in it. Others said that a count of merged changes, like lines of code, means little without knowing what the changes contain. Users added that the high pace shows up as moving buttons and regressions in the app.",
+        "quotes": [
+          {
+            "author": "cush",
+            "text": "30k PRs is such a meaningless figure though, you can't make anything of it. It entirely depends what's living in that repo.",
+            "commentId": 50126292
+          },
+          {
+            "author": "steveklabnik",
+            "text": "The 30,000 number is across their entire monorepo, which they say in the article Claude Code does not live in.",
+            "commentId": 50126485
+          }
+        ]
+      },
+      {
+        "title": "Line-by-line review still finds problems",
+        "synthesis": "A commenter said they still read every line because they keep finding duplicate code and needless complexity. A long, bitter subthread followed. One side said such issues come from weak agent setup and that the reader should try a low-stakes vibe-coded project. The other side said no linter or prompt fixes duplication or bad architecture. People with large agent-written projects described bugs fixed in one place only and small new code paths that pile up.",
+        "quotes": [
+          {
+            "author": "zeroonetwothree",
+            "text": "The agent will fix a bug when I tell it to, but only in exactly one place. I'll notice that another place has that bug later and have to redo it.",
+            "commentId": 50127426
+          },
+          {
+            "author": "bpeng2000",
+            "text": "The issue is that wheels like these accumulate in the codebase, and they inevitably entangle.",
+            "commentId": 50124256
+          }
+        ]
+      },
+      {
+        "title": "Advice from a team with unlimited tokens",
+        "synthesis": "The top thread compared the post to Google infrastructure blogs that small teams copy to their cost. Commenters said Anthropic pays nothing for its own tokens, so its process tells others little about cost. A side argument about whether Anthropic is profitable took up a whole thread. An engineer on a compiled project added that slow builds and large test machines make fast agent loops too expensive.",
+        "quotes": [
+          {
+            "author": "avinoth",
+            "text": "Similarly, Anthropic can afford to do this because they have virtually unlimited tokens and labs to train models for their specific usecase.",
+            "commentId": 50127080
+          },
+          {
+            "author": "chris_money202",
+            "text": "So outside of unit tests, we can't really merge code fast and test it with high confidence without spending an absolute absurd amount on VMs in order to enable the agents to move quickly.",
+            "commentId": 50131196
+          }
+        ]
+      },
+      {
+        "title": "Gaps in the process",
+        "synthesis": "Some readers went through the process itself and found weak points. One asked who reviews a low-risk change behind a flag at the moment the flag turns on. Others asked how a merge with only the author fits SOC2 rules that need a second human, and who calibrates the risk classifier. A security commenter objected that an author can dismiss a critical finding without AppSec. Another said revert and incident rates miss slow growth in complexity.",
+        "quotes": [
+          {
+            "author": "afro88",
+            "text": "That's low risk when the flag is off. Is there suddenly proper code review before the flag gets turned on? That's when the risk is actualised.",
+            "commentId": 50133715
+          },
+          {
+            "author": "senderista",
+            "text": "If their only metrics are revert/incident rate then they're missing the long-term, cumulative impact of compounding complexity due to poor architectural decisions.",
+            "commentId": 50126327
+          }
+        ]
+      }
+    ],
+    "consensus": "Most commenters agreed that the process fits a lab with free tokens and a low-stakes product. They said it does not transfer to most teams. Many also agreed that skipping human reading leaves no one who understands the code.",
+    "dissent": "A smaller group said large human-built systems were never fully understood either. They argued that layered automated checks are more rigorous than tired humans skimming diffs. Some users said Claude's reviews catch more than their human reviewers do.",
+    "contrarian": {
+      "author": "markbao",
+      "text": "Compare that to the cost of human code review which can take up a third of an engineer’s time. You’re looking at $50-100K a year per engineer fully loaded in code review costs.",
+      "commentId": 50124678,
+      "why": "The thread said AI review needs unlimited tokens. This comment does the math and finds a few thousand dollars a month cheaper than engineer review time."
+    }
+  },
+  "digestedAt": "2026-10-24T21:36:17.000Z"
+}

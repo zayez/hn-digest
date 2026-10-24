@@ -1,0 +1,114 @@
+{
+  "hnId": 50139067,
+  "title": "Parser Combinators",
+  "url": "https://t3.at/blog/2026-10-17-parser-combinators/",
+  "domain": "t3.at",
+  "kind": "article",
+  "author": "schindlabua",
+  "postedAt": "2026-10-18T08:19:53.000Z",
+  "points": 257,
+  "commentCount": 89,
+  "readingMinutes": 2,
+  "tldr": "An animated slideshow teaches parser combinators in TypeScript. A parser is a function that takes a string and returns a value plus the unread rest. Small parsers chain into bigger ones. The last example turns raw ping output into a typed object.",
+  "article": {
+    "keyPoints": [
+      "The article defines a parser of T as a function from an input string to a pair of a T and the rest of the string.",
+      "A parser like pInteger reads \"10\" from \"10 20 30\" and hands the rest, \" 20 30\", to the next parser.",
+      "The combinator pSeq joins pHello, pIgnoreWhitespace and pInteger into one parser that returns the tuple [string, null, number].",
+      "A map combinator turns that tuple into an object with named fields, such as greeting and who.",
+      "Running the same parser again and again on its leftover input reads repeated items like \"10;20;30;\".",
+      "The final example parses full ping output into a header, a list of packets and the summary statistics."
+    ],
+    "whyItMatters": "Read the original for the animations, which show each parser consuming input step by step. The summary only describes them. It is a short first look at the idea, not a guide to errors, performance or real grammars."
+  },
+  "articleNote": "Interactive animated slideshow; key points come from the slide captions and code samples.",
+  "comments": {
+    "overview": "The thread liked the content and argued about two things. One was the slideshow format. The other was whether the article's parser type is correct, which grew into a long type-theory debate.",
+    "themes": [
+      {
+        "title": "The parser type should allow failure",
+        "synthesis": "mrkeen objected that the type promises a T on every input, but real parsers can fail. He argued for an Either of error or result, so an \"or\" combinator can branch on failure. raddan held that T alone is enough because T can be any type, and pyrale and rcxdude pushed back hard. codebje added that the classic list return type gives backtracking and multiple parses, at the risk of blowing up.",
+        "quotes": [
+          {
+            "author": "mrkeen",
+            "text": "This implies that it accepts a string and *will return* a T.  Parsers *might* return a T.",
+            "commentId": 50139895
+          },
+          {
+            "author": "codebje",
+            "text": "Either gives you an error result that might be useful. List gives you backtracking and, depending on your grammar, multiple parses.",
+            "commentId": 50145363
+          }
+        ]
+      },
+      {
+        "title": "Too much mapping and unwrapping code",
+        "synthesis": "ArneCode said combinators force you to unwrap nested tuples and drop whitespace results by hand. He pitched his Rust library, which binds results into named buckets instead. Haskell and OCaml users said do-notation and applicative operators hide most of this. rspeele showed how FParsec gets ugly with nested tuples and shared his own capture-style fix.",
+        "quotes": [
+          {
+            "author": "thedufer",
+            "text": "I think this is because Haskell allows hiding the tuples construction/unwrapping with do-notation. … If you don't have some sort of syntactic sugar like that they do become a lot more unwieldy.",
+            "commentId": 50145630
+          },
+          {
+            "author": "rspeele",
+            "text": "You have to carefully follow a trail of left/right capture/discards to figure out what actually ends up in a function input. It's tree-shaped not linear-list-of-captures.",
+            "commentId": 50156617
+          }
+        ]
+      },
+      {
+        "title": "The slideshow format",
+        "synthesis": "Several readers found the slide layout hard to use. They could not search, scroll back or use the browser's Back button, and the text area was small on laptops. Others liked how each slide isolates one idea. The author said he wanted something between a video and a blog post and promised to tighten the UI.",
+        "quotes": [
+          {
+            "author": "layer8",
+            "text": "Really, inventing a new navigation UI for what is supposed to be a document, on top of a browser and bypassing its navigation conventions, simply isn’t a good idea.",
+            "commentId": 50144537
+          },
+          {
+            "author": "schindlabua",
+            "text": "The idea was to create something between a youtube video and a blog post and something you can consume in bite-sized pieces.",
+            "commentId": 50140557
+          }
+        ]
+      },
+      {
+        "title": "Limits and hidden strengths",
+        "synthesis": "amelius wanted the article to state the limits, such as no left recursion and exponential backtracking on ambiguous grammars. sovrin found string slicing slow in Node.js and switched to passing an index. On the plus side, contificate noted that continuation-passing style makes incremental parsing of streams easy. rixed said such parsers accept syntaxes other parsers find ambiguous.",
+        "quotes": [
+          {
+            "author": "amelius",
+            "text": "For example that they cannot handle left-recursive grammars, and that they tend to backtrack a lot on ambiguous grammars leading to exponentially bad performance.",
+            "commentId": 50140411
+          },
+          {
+            "author": "sovrin",
+            "text": "It appears that string slicing is way slower than just working with an index. Well at least in nodejs that is.",
+            "commentId": 50147082
+          }
+        ]
+      },
+      {
+        "title": "Between regex and a full parser",
+        "synthesis": "BoppreH pointed Python users to re.Scanner, an undocumented tokenizer in the re module that rejects gaps between matches. Another commenter linked the official docs' tokenizer recipe. gebt stressed that regex cannot parse recursive grammars at all. raddan said combinators are easy to use, but hand-written parsers win on speed.",
+        "quotes": [
+          {
+            "author": "BoppreH",
+            "text": "Importantly, it processes the list in one pass and ensures the matches are contiguous, where a naive `re.findall` with capture groups will ignore unmatched characters.",
+            "commentId": 50141554
+          }
+        ]
+      }
+    ],
+    "consensus": "The article made parser combinators easy to grasp, and several readers said the idea finally clicked. Most also agreed the slide layout got in the way of the text.",
+    "dissent": "A few saw nothing new in the idea. To them parsing is just functions calling functions, or standard functional programming. Others said the simplified parser type teaches a wrong model because it leaves out failure.",
+    "contrarian": {
+      "author": "Panzerschrek",
+      "text": "Naturally parsing is just a function, which may call subfunctions, sometimes recursively. … I have written many parsers in such a way and I didn't even require such terms as \"parser combinators\".",
+      "commentId": 50148714,
+      "why": "It notes that hand-written recursive descent already does what combinators do, without the vocabulary or abstraction cost."
+    }
+  },
+  "digestedAt": "2026-10-24T21:45:00.000Z"
+}

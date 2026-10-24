@@ -1,0 +1,125 @@
+{
+  "number": 815,
+  "date": "2026-10-23",
+  "url": "https://buttondown.com/hacker-newsletter/archive/815/",
+  "posts": [
+    {
+      "post": "50186010",
+      "section": "Code",
+      "tier": "dontSkip",
+      "reason": "A full style reference that gives the reasoning and exceptions for every rule, from trait design to error handling, and a technical thread on the non_exhaustive rule where people with large codebases argue forward-compatible enums against exhaustive matches."
+    },
+    {
+      "post": "50122951",
+      "section": "Code",
+      "tier": "dontSkip",
+      "reason": "A concrete description of layered review when an agent writes most of the code, with risk-tiered human approvals, merge queues, flags and REVIEW.md files, and a skeptical thread that asks whether any of it fits a small team."
+    },
+    {
+      "post": "50175070",
+      "section": "Design",
+      "tier": "worthYourTime",
+      "reason": "Short illustrated sections, each with a code sample and its current browser support, and a large thread that turns into an argument over whether plain HTML, CSS and JS can handle state without a framework."
+    },
+    {
+      "post": "50120224",
+      "section": "Design",
+      "tier": "worthYourTime",
+      "reason": "A long benchmark with full method, per-image quality charts and decode time and memory tables, ending in a clear default for the web, and a thread that flags which lossless numbers cannot yet be checked."
+    },
+    {
+      "post": "50169707",
+      "section": "Favorites",
+      "tier": "worthYourTime",
+      "reason": "A programmer expecting his first child works through what education is for, leaning on Neil Postman and Edison's old predictions about schools, and a 600-comment thread of parents arguing over what is still worth teaching."
+    },
+    {
+      "post": "50151036",
+      "section": "Ask HN",
+      "tier": "worthYourTime",
+      "reason": "Practitioners share how they keep shipped code understandable, by designing abstractions first, sketching in pseudo-code and reviewing before every commit."
+    },
+    {
+      "post": "50139873",
+      "section": "Working",
+      "tier": "ifYouHaveAMinute",
+      "reason": "Company telemetry, a comparison of adopting and non-adopting engineers, surveys and interviews, read alongside a thread that doubts commit counts measure anything."
+    },
+    {
+      "post": "50139067",
+      "section": "Code",
+      "tier": "ifYouHaveAMinute",
+      "reason": "A short interactive build-up from tiny parsers to a working one, and a thread that compares the idea across Haskell, Rust and Python."
+    },
+    {
+      "post": "50165801",
+      "section": "Favorites",
+      "tier": "ifYouHaveAMinute",
+      "reason": "One experiment, with traffic and citation counts, tracing invented statistics as a chatbot kept fetching them after the search engine dropped the site and other pages repeated them, and a thread that asks whether fetching proves use and whether regulation can help."
+    },
+    {
+      "post": "50178455",
+      "section": "Watching",
+      "tier": "ifYouHaveAMinute",
+      "reason": "A dated, sourced history of how bolt-on iron fire escapes became the default and were later replaced, and how building codes lock in early choices."
+    }
+  ],
+  "nearMisses": [
+    {
+      "title": "You could have invented transformers from memory",
+      "section": "Favorites",
+      "domain": "alexwang.ai",
+      "url": "https://alexwang.ai/posts/associative-memory/",
+      "hnId": 50122878
+    },
+    {
+      "title": "One Hash Bloom Filters",
+      "section": "Code",
+      "domain": "calabro.io",
+      "url": "https://calabro.io/ohbf",
+      "hnId": 50157865
+    },
+    {
+      "title": "90% of US working hours are spent on tasks not covered well by AI benchmarks",
+      "section": "Data",
+      "domain": "mercor.com",
+      "url": "https://www.mercor.com/research/labor-index/benchmark-map/",
+      "hnId": 50121179
+    },
+    {
+      "title": "No more icons in every menu by default",
+      "section": "Design",
+      "domain": "blog.jim-nielsen.com",
+      "url": "https://blog.jim-nielsen.com/2026/icons-in-every-menu/",
+      "hnId": 50161346
+    },
+    {
+      "title": "Code is clay now",
+      "section": "Working",
+      "domain": "albertodenia.com",
+      "url": "https://www.albertodenia.com/writing/code-is-clay-now",
+      "hnId": 50153531
+    },
+    {
+      "title": "Why do we have so many meetings?",
+      "section": "Working",
+      "domain": "nber.org",
+      "url": "https://www.nber.org/papers/w35706",
+      "hnId": 50167732
+    },
+    {
+      "title": "There's never been a better time to go into math (by: 3blue1brown)",
+      "section": "Watching",
+      "domain": "youtube.com",
+      "url": "https://www.youtube.com/watch?v=LKrwhjOI8Nc",
+      "hnId": 50136150
+    },
+    {
+      "title": "Meta ordered to pay $25B penalty in New Mexico Cambridge Analytica case",
+      "section": "Startup News",
+      "domain": "cnbc.com",
+      "url": "https://www.cnbc.com/2026/10/21/meta-new-mexico-cambridge-analytica-penalty.html",
+      "hnId": 50184820
+    }
+  ]
+}
