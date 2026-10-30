@@ -1,0 +1,25 @@
+{
+  "hnId": 50171438,
+  "title": "Whatever Happened to Fire Escapes?",
+  "url": "https://practical.engineering/blog/2026/10/20/whatever-happened-to-fire-escapes",
+  "domain": "practical.engineering",
+  "kind": "article",
+  "author": "crescit_eundo",
+  "postedAt": "2026-10-20T19:27:48.000Z",
+  "points": 10,
+  "commentCount": 2,
+  "readingMinutes": 10,
+  "tldr": "American cities bolted iron fire escapes onto buildings because an 1860 New York law applied to existing buildings. Fire safety experts doubted them for decades. New York banned them for new construction in 1968. Enclosed interior stairways replaced them, as an 1881 report had recommended.",
+  "article": {
+    "keyPoints": [
+      "Owners rarely pay for safety that may never be used, because tenants don't choose buildings for it. Building codes exist to set the line between no safety and too much.",
+      "After a tenement fire killed ten people in 1860, New York required a fireproof stairway or an exterior escape on tenements. The law covered existing buildings. Rebuilding an inside stairway was costly. Most owners who complied added an outside escape instead.",
+      "For a time New York accepted almost any escape device, including rope ladders, chutes and a parachute hat. The iron ladder-and-balcony design became the default in the early 1900s.",
+      "In 1881 the Franklin Institute judged exterior escapes of comparatively little value. It favored well-built interior stairs. In the 1911 Triangle Shirtwaist fire, the fire escape buckled under fleeing workers. More than 140 people died.",
+      "The list of problems grew long. Exterior escapes cluttered facades and helped burglars. They rusted. People rarely practiced using them. Tenants blocked them with furniture. They did not work for hospitals. New York banned them for new buildings in 1968.",
+      "The article says a code is hard to undo once the industry adapts to it. A US rule that elevators fit a stretcher made them larger. US elevators cost at least three times as much as those in other rich countries. Some owners now build walkups with no elevator, which hurts people with limited mobility."
+    ],
+    "whyItMatters": "Read the original if you care about how building codes shape cities. It quotes the 1881 Franklin Institute recommendation in full and gives more detail on the NFPA and insurance-industry fight over exterior escapes. It is a transcript of a Practical Engineering video, so the video is another way in."
+  },
+  "digestedAt": "2026-10-30T17:08:35.000Z"
+}

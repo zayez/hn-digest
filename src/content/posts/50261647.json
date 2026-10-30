@@ -1,0 +1,108 @@
+{
+  "hnId": 50261647,
+  "title": "Classification of Finite Simple Groups Formalized in Lean",
+  "url": "https://cfsg.axiommath.ai/",
+  "domain": "cfsg.axiommath.ai",
+  "kind": "article",
+  "author": "pfdietz",
+  "postedAt": "2026-10-27T16:29:02.000Z",
+  "points": 243,
+  "commentCount": 78,
+  "readingMinutes": 2,
+  "tldr": "Axiom has formalized the classification of finite simple groups in the Lean proof assistant. The Lean kernel checks every step of the first-generation proof. The formalization is 43.1 million lines of Lean. The work found a flaw in one published argument. The team proved that step another way.",
+  "article": {
+    "keyPoints": [
+      "The classification states that every finite simple group is cyclic of prime order, alternating, of Lie type, or one of 26 sporadic groups. Its first-generation proof fills thousands of journal pages by about a hundred mathematicians.",
+      "Axiom's formalization follows that first-generation proof. Lean's kernel checks every logical step.",
+      "The team found an issue in a published argument for the Unbalanced Group Theorem. An accompanying paper explains the issue and the alternative route the Lean proof takes.",
+      "The result has 43.1 million lines of Lean and 2.05 million declarations. The page lists four core contributors and 27 other contributors.",
+      "The page shows the blueprint given to the AI agents, with 108 milestones. It maps each statement to the paper or book in the source corpus that supplies it."
+    ],
+    "whyItMatters": "This is a short landing page with an interactive proof map. Readers who want the details of the Unbalanced Group Theorem flaw need the linked paper. The linked blog post covers how the agents did the work."
+  },
+  "articleNote": "Landing page with project stats and a proof map; the paper and blog post it links are not summarized.",
+  "comments": {
+    "overview": "The thread was impressed and mostly curious. The largest subthread asked whether AI agents could formalize every math textbook, and why merging formalized results into one library is hard. A second large subthread asked how anyone can trust a 43-million-line proof.",
+    "themes": [
+      {
+        "title": "Can agents formalize all of mathematics?",
+        "synthesis": "The top comment asked whether a frontier model could convert every textbook proof into Lean. An Axiom team member said that is close to what they did, with a swarm of agents working through more than 500 sources. The hard part is joining the results, because one informal concept can get several incompatible formal definitions. Commenters compared this to incompatible software APIs and listed clashing textbook conventions. Others said LLMs make small proof simplifications well but not large ones.",
+        "quotes": [
+          {
+            "author": "jonath_laurent",
+            "text": "One challenge is assembling everything into a coherent whole, since the same informal concept can be formalised in slightly different but incompatible ways.",
+            "commentId": 50262065
+          },
+          {
+            "author": "seanhunter",
+            "text": "LLMs don’t know the difference between steps which are important/easy/hard/intuitive/non-intuitive for human mathematicians, so lots of the proofs they produce are extremely clunky and pedantic in places and dwell for ages over details that are obvious…",
+            "commentId": 50274460
+          }
+        ]
+      },
+      {
+        "title": "Trusting the formal proof",
+        "synthesis": "One commenter asked how anyone knows the formalization has no errors. Replies said only the main theorem statement and the Lean kernel need human checks. The kernel is small by design. Another commenter warned that a formal proof may prove something other than what its authors intended. The answer was that a correct theorem statement rules this out. A divergence inside the proof only means a different route to the same result.",
+        "quotes": [
+          {
+            "author": "pfdietz",
+            "text": "All that needs to be checked to avoid that is the statement of the main theorem.  Any divergence further inside means you proved the main theorem differently than you thought you did -- but you still proved it.",
+            "commentId": 50271901
+          },
+          {
+            "author": "anon291",
+            "text": "The kernel of a theorem prover is meant to be such that a human can check it for correctness. The kernel does not include things like type inference or execution.",
+            "commentId": 50269029
+          }
+        ]
+      },
+      {
+        "title": "Gaps in the original proof",
+        "synthesis": "Several commenters valued the work because the human proof is huge and its experts are aging. One said the knowledge of why the result holds was dying with them. Some were surprised the team reported only one gap. Another commenter pointed to Axiom's blog post, which lists 34 noteworthy deviations from the published record. A third said humans had already found and patched many gaps over forty years.",
+        "quotes": [
+          {
+            "author": "cvoss",
+            "text": "It would seem this proof is too large to be truly known by one person, and the group of people who \"collectively knew\" it grew old and started to die.",
+            "commentId": 50266584
+          },
+          {
+            "author": "bamb008",
+            "text": "However, there were 34 noteworthy deviations from the published record that needed to be resolved, the most substantial of which related to the Unbalanced Group Theorem.",
+            "commentId": 50263183
+          }
+        ]
+      },
+      {
+        "title": "Type theory and foundations",
+        "synthesis": "One commenter was sad that the work uses classical foundations and not homotopy type theory. Others replied that Lean is a type theory, not set theory. A debate followed on whether Martin-Löf would see his type theory in Lean. One side said Lean's impredicative type theory is closer to de Bruijn's AUTOMATH project. A few said stronger AI will make a move to other foundations easier.",
+        "quotes": [
+          {
+            "author": "semolinapudding",
+            "text": "Lean's type theory kinda gives up on that idea: Mathlib gleefully postulates impredicative propositions with the axiom of choice, quotient types, etc.",
+            "commentId": 50272422
+          }
+        ]
+      },
+      {
+        "title": "Cost and business case",
+        "synthesis": "Some asked what the project cost and whether anyone needs a 43-million-line proof. One reply said the real market is formal verification of software and hardware. In that view, Axiom and its competitors must make proof tokens cheap. Others listed uses such as proving a JavaScript optimizer safe or bounding an autopilot's behavior.",
+        "quotes": [
+          {
+            "author": "nilkn",
+            "text": "Formal proofs for verification take 10-20x as many lines as the core functional code being verified. Nobody's going to want to pay for 10-20x as many tokens at frontier pricing for verification unless they have to or it yields tremendous benefits.",
+            "commentId": 50303271
+          }
+        ]
+      }
+    ],
+    "consensus": "Most commenters saw this as a good use of AI. A machine-checked proof removes long-held doubts about a result that no single person could check. Trust then rests on the theorem statement and the small Lean kernel.",
+    "dissent": "A minority doubted the value. They said LLM formalizations are less useful to humans than hand-written ones. They also questioned the cost and Axiom's business model.",
+    "contrarian": {
+      "author": "sebzim4500",
+      "text": "Also don't discount the fact that people would learn how to do this kind of project, currently no one really knows how to decide what definitions work best, what should be reducible, what should be part of a public api and what should be local to a module, etc.",
+      "commentId": 50267208,
+      "why": "Others doubted humans could finish this without AI. This comment notes that the craft of designing large formal libraries is young and would improve."
+    }
+  },
+  "digestedAt": "2026-10-30T17:08:37.000Z"
+}

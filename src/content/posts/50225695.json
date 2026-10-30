@@ -1,0 +1,118 @@
+{
+  "hnId": 50225695,
+  "title": "We should be more ambitious with the software we build",
+  "url": "https://danluu.com/ambitious/",
+  "domain": "danluu.com",
+  "kind": "article",
+  "author": "ltratt",
+  "postedAt": "2026-10-24T21:47:31.000Z",
+  "points": 911,
+  "commentCount": 777,
+  "readingMinutes": 31,
+  "tldr": "Dan Luu argues that programmers should attempt bigger software projects, because coding agents have made them cheap. He built a regex engine, a faster ripgrep fork and a Rust interpreter in a few hours of his own time. He says most people still judge projects by a cost model from before agents. He adds that careful testing and benchmarking separate useful results from the flood of AI slop.",
+  "article": {
+    "keyPoints": [
+      "Luu says most AI-built rewrite projects are slop. He thinks people are right to assume so. His counterexample is pgrust, Michael Malis's Rust rewrite of Postgres. Its testing found real Postgres bugs, including memory-safety bugs in the dictionary loader.",
+      "Luu built a regex engine, a ripgrep fork and a Rust interpreter in a low single-digit number of hours. He estimates they would have taken him a year or more by hand. The interpreter gave a 50x speedup on cold Rust builds and 2x on warm ones.",
+      "He says people complain about slow Rust compiles because they carry a \"pre-agentic cost model\". Ten years ago, writing your own compiler marked a programmer who never shipped. He says it is now a reasonable thing to do.",
+      "Newer models changed what an outsider to a field can build. With GPT-5.1, his Azul board-game AI needed constant correction. Fable 5.1 and Opus 5.5 can read a paper and implement its techniques. GPT-6 Astra wrote a zstd implementation for about $1 that passed all tests more than 99% of the time.",
+      "An appendix quotes Yossi Kreinin's rebuttal. Kreinin says most people should be less ambitious. Many problems lack clear pass/fail checks. AI speedups often produce overfit code. Luu answers that self-checking setups work in more domains than people expect.",
+      "A footnote covers the pgrust ClickBench controversy. Luu says the accusations of deliberate cheating look false. Malis admitted the benchmark submission was premature."
+    ],
+    "whyItMatters": "Read the original for the many small examples, such as Peter Geoghegan's Neovim formatter that runs clang-format and pgindent on a selected block. The footnotes hold Luu's full case for trusting Malis and his notes on model evals. Luu says he wrote the post in about half an hour and barely edited it, and it reads that way."
+  },
+  "comments": {
+    "overview": "The thread was large and split. Many readers agreed with the premise and posted projects they built with agents. Others said a faster ripgrep is not ambition, and a loud group attacked Luu's trust in Malis after pgrust's benchmark controversy.",
+    "themes": [
+      {
+        "title": "A faster ripgrep is not ambition",
+        "synthesis": "Several readers said Luu's examples are developer tooling, not ambitious work. BrenBarn wanted software that helps people outside the field, and weitendorf warned that agents building tools for agents serve no end user. boxed answered that small speedups add up across a day's work. thoughtpeddler compared it to early factory electrification, when owners swapped motors long before they redesigned the floor.",
+        "quotes": [
+          {
+            "author": "BrenBarn",
+            "text": "Ambition is the size of the big thing you are trying to do.",
+            "commentId": 50229427
+          },
+          {
+            "author": "pech0rin",
+            "text": "The thing I learned about myself with AI is that now I have time to work on every idea that pops into my head —- my ideas aren’t that great.",
+            "commentId": 50227990
+          }
+        ]
+      },
+      {
+        "title": "pgrust and the benchmark controversy",
+        "synthesis": "The post landed days after ClickHouse pulled pgrust from ClickBench over claims of benchmark-specific code. anonymous908213 called Luu's trust in Malis unconvincing to outsiders. Malis replied that the hand-written kernels were test code that never ran during the benchmark. verdverm and others wanted the full commit history, since the public repo has commits touching over 400,000 files.",
+        "quotes": [
+          {
+            "author": "anonymous908213",
+            "text": "It mostly reads as \"I know he would never cheat, he's better than that!\", which is not very convincing to other people.",
+            "commentId": 50226382
+          },
+          {
+            "author": "malisper",
+            "text": "We did have hand-rolled code in the binary, but we used it for testing. The code is not used when running the benchmark.",
+            "commentId": 50227869
+          }
+        ]
+      },
+      {
+        "title": "Projects that would not exist otherwise",
+        "synthesis": "Many commenters shared work they would never have started without agents. Examples include a 4X game remake, an apt cache and a C++ compiler that builds 7x faster than gcc. Skeptics said rewrites of existing software are easy, because the original is in the training data and acts as a test oracle. The builders said they still put in 100 to 200 hours, and the \"slop\" label ignores that.",
+        "quotes": [
+          {
+            "author": "linsomniac",
+            "text": "I'm not really sure what to do with people who dismiss AI-assisted projects, while dehumanizing the 100 hours of my time I've put into it.",
+            "commentId": 50227024
+          },
+          {
+            "author": "baq",
+            "text": "Rewrite X in Y is an ideal RL task given you have X as an oracle trivially.",
+            "commentId": 50228733
+          }
+        ]
+      },
+      {
+        "title": "Fast code, shallow understanding",
+        "synthesis": "Many commenters backed Kreinin's warning with their own cases. majormajor described Opus 5.5 capturing a library's logs and matching a warning string to re-throw an error. Karrot_Kream's agent wrote a Python load balancer that beat the old code but lost badly to haproxy. Others said agents start to churn once a codebase passes a complexity threshold, and that tech debt now grows faster than features.",
+        "quotes": [
+          {
+            "author": "Karrot_Kream",
+            "text": "This is the kind of thing that if you're unfamiliar with how networking code works, the models can autopilot into bad decisions that are verifiably correct (higher throughput than the original CPU-bottlenecked implementation) but much short of best practice.",
+            "commentId": 50227149
+          },
+          {
+            "author": "0c3ca83",
+            "text": "Code writing was never the bottleneck. Understanding the system sufficiently to write the code was.",
+            "commentId": 50234052
+          }
+        ]
+      },
+      {
+        "title": "Jobs, process and mood",
+        "synthesis": "The longest subthread was about careers, not code. bluefirebrand, recently laid off, said AI had taken away any job security. otterley urged people to adapt, and jacquesm called that tone-deaf toward people living paycheck to paycheck. On teams, bob1029 argued that slow code review now limits the gains, and others doubted that a cleared backlog keeps a team employed.",
+        "quotes": [
+          {
+            "author": "bibabaloo",
+            "text": "AI has essentially stolen my career from me. I _liked_ having to solve complicated problems with software, I enjoyed having to get into the nitty gritty to get things done.",
+            "commentId": 50227645
+          },
+          {
+            "author": "jacquesm",
+            "text": "People are losing their jobs. This is not a small thing and it will cause a lot of misery for those people.",
+            "commentId": 50227374
+          }
+        ]
+      }
+    ],
+    "consensus": "Agents let one person build personal tools and side projects that were never worth the time before. The results still depend on the builder's expertise, tests and review.",
+    "dissent": "A sizable minority said ambition should mean better quality or solving real-world problems, not more code. SoftTalker argued that software is already beyond our ability to write correctly or secure.",
+    "contrarian": {
+      "author": "TacticalCoder",
+      "text": "I'm dead serious: the value in pgrust is *not* pgrust in itself. It's that, combined with past a implementation in another language, *both* are now stronger.",
+      "commentId": 50234078,
+      "why": "While the thread argued over trusting pgrust, it sees a second implementation as a cross-check, which is how pgrust found Postgres bugs."
+    }
+  },
+  "digestedAt": "2026-10-30T17:09:48.000Z"
+}

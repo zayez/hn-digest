@@ -1,0 +1,118 @@
+{
+  "hnId": 50266719,
+  "title": "Hunger beats tenure: Advice for junior engineers",
+  "url": "https://felixrieseberg.com/hunger-beats-tenure-advice-for-junior-engineers/",
+  "domain": "felixrieseberg.com",
+  "kind": "article",
+  "author": "akavi",
+  "postedAt": "2026-10-27T22:25:23.000Z",
+  "points": 130,
+  "commentCount": 99,
+  "readingMinutes": 5,
+  "tldr": "An Anthropic hiring manager has stopped giving coding interviews because Claude now beats candidates at small coding tasks. He argues that AI makes execution cheap. New engineers can now outpace veterans by building prototypes of ambitious ideas. Their fresh view of the company is the advantage that years of tenure do not give.",
+  "article": {
+    "keyPoints": [
+      "Felix Rieseberg, a hiring manager at Anthropic, stopped asking candidates to do coding interviews this month.",
+      "He says small coding challenges no longer predict success, because Claude is better at them than the candidates are.",
+      "Newcomers notice problems that old-timers stopped seeing. At Notion, staff assumed the CEO would never allow an offline mode. Nobody had checked, and the assumption was wrong.",
+      "Junior engineers have this fresh view but little social capital. Companies usually make them earn status before they back their ideas.",
+      "His advice starts with a goal your manager's manager cares about. Pick one radical idea for that goal. Then build a working prototype over a weekend instead of writing a requirements document.",
+      "He cites Claude Code's graphical app as proof. Two fairly new engineers built a prototype in one weekend. The first public version shipped about eight days later."
+    ],
+    "whyItMatters": "Junior engineers and hiring managers who want the full anecdotes should read the original. It gives the Notion and Stripe stories and Rieseberg's sources, including James March and Patrick McKenzie. It also ends with an open request for better ways to interview people who build with AI."
+  },
+  "comments": {
+    "overview": "The thread was mostly skeptical. The largest thread drifted into an argument about overwork and work-life balance. Others doubted that the advice is safe for juniors at big companies, and argued about what should replace the coding interview.",
+    "themes": [
+      {
+        "title": "Weekend work and work-life balance",
+        "synthesis": "Many readers took \"build it over a weekend\" as a call to work unpaid hours. They said it moves the risk of wasted effort onto the employee. The top thread became a long debate about grinding for recognition. One side said people who love their work should not be told to stop. The other side said overwork costs friends and family, and pays off less than networking or luck.",
+        "quotes": [
+          {
+            "author": "_ink_",
+            "text": "\"work on the weekend for free\" aka move the risk (of wasted resources) to the employee. Excellent advice.",
+            "commentId": 50270066
+          },
+          {
+            "author": "nicbou",
+            "text": "How hard you work seems disconnected from what results you get. Being good at networking, selling yourself and applying effort judiciously helps more.",
+            "commentId": 50271250
+          }
+        ]
+      },
+      {
+        "title": "Risky advice for juniors at big companies",
+        "synthesis": "Several commenters said a prototype alone does not make a product. A junior engineer lacks context on why things are the way they are. Ideas from juniors also meet more skepticism and politics, and projects need staff that only influence can win. One commenter rejected the business-impact advice itself, saying business results are management's job, not a junior's.",
+        "quotes": [
+          {
+            "author": "springtail5",
+            "text": "There are often very good reasons why things are the way they are, and these are hard to identify as a new and junior engineers. Generally, this is the kind of thing bigger companies want from newly hired staff+ engineers, not juniors.",
+            "commentId": 50272735
+          },
+          {
+            "author": "nitwit005",
+            "text": "The problem is, projects generally need staff, and getting that assigned requires influence these people are apparently lacking",
+            "commentId": 50279078
+          }
+        ]
+      },
+      {
+        "title": "What replaces the coding interview",
+        "synthesis": "Commenters offered alternatives. These included building a small app with an AI assistant and then explaining its code, and reviewing a planted-bug code sample. Others defended Leetcode because it gives a pass or fail result that is the same for everyone. That reduces interviewer bias at scale. A proposal to test candidates with a multiplayer game drew sharp pushback as demeaning. One commenter noted that Stripe still runs no-AI coding tests.",
+        "quotes": [
+          {
+            "author": "lubujackson",
+            "text": "Share a spec and have them code it in their own IDE using LLM. Focus on speed. Then have them extended it, adding some features.",
+            "commentId": 50269547
+          },
+          {
+            "author": "ispq",
+            "text": "However, working at a FAANG I have come to realise that the output of machine coding round is not normalizable across tens of thousands of candidates.",
+            "commentId": 50284285
+          }
+        ]
+      },
+      {
+        "title": "Who is giving the advice",
+        "synthesis": "Some readers stopped at the word Anthropic. They said a company selling AI coding tools has a reason to promote building fast with AI. Others replied that every author writes from their own context. They noted that Rieseberg helped build Electron and Claude Code.",
+        "quotes": [
+          {
+            "author": "hypfer",
+            "text": "Before engaging with this content, one should keep in mind the very specific circumstances, that person is working in.",
+            "commentId": 50270747
+          },
+          {
+            "author": "ImaCake",
+            "text": "Maybe the guy who helped invent Electron and Claude Code has something interesting to say.",
+            "commentId": 50272458
+          }
+        ]
+      },
+      {
+        "title": "Slope over intercept",
+        "synthesis": "A senior engineer linked John Ousterhout's talk on how growth rate beats starting point. He said his younger colleagues already learn faster than he does. Another commenter warned that hiring managers may use the same idea as an excuse for ageism.",
+        "quotes": [
+          {
+            "author": "gopalv",
+            "text": "A couple of them have been in the industry for less than 5 years and I feel like their slope is better than mine, which means I'm going to have a good time when they're fully up to speed :)",
+            "commentId": 50269776
+          },
+          {
+            "author": "rbbydotdev",
+            "text": "I cannot help but think hiring managers will read into \"A Little Bit of Slope Makes Up For a Lot of Y-Intercept\" as an excuse for ageism.",
+            "commentId": 50270455
+          }
+        ]
+      }
+    ],
+    "consensus": "Most commenters agreed that AI has weakened the classic Leetcode interview as a signal. They also agreed that no proven replacement exists yet.",
+    "dissent": "Many rejected the core advice. They said weekend prototypes shift unpaid risk onto juniors. They also said juniors lack the context and influence to turn a prototype into a product.",
+    "contrarian": {
+      "author": "munchbunny",
+      "text": "They always did at senior levels, but now juniors need to start picking that up sooner because the ability to get code through the system is no longer a common bottleneck. Now matters of taste are far more obvious, and consequential.",
+      "commentId": 50283012,
+      "why": "A hiring manager backs the article with a concrete reason. Once code is cheap, taste is what separates engineers."
+    }
+  },
+  "digestedAt": "2026-10-30T17:08:42.000Z"
+}

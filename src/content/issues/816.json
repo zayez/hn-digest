@@ -1,0 +1,131 @@
+{
+  "number": 816,
+  "date": "2026-10-30",
+  "url": "https://buttondown.com/hacker-newsletter/archive/816/",
+  "posts": [
+    {
+      "post": "50289162",
+      "section": "Working",
+      "tier": "dontSkip",
+      "reason": "A Thoughtworks lead reports a week-long experiment with no human-written code, and the thread tests her accountability argument against pair programming and TDD."
+    },
+    {
+      "post": "50225695",
+      "section": "Favorites",
+      "tier": "dontSkip",
+      "reason": "Dan Luu backs a contrarian case with his own quick builds and the pgrust rewrite, and the thread answers with concrete reports of fragile AI-written code."
+    },
+    {
+      "post": "50217500",
+      "section": "Data",
+      "tier": "dontSkip",
+      "reason": "Twelve years of first-hand history reduced to a clear framework: consensus, streaming and merge, with the projects that took each path."
+    },
+    {
+      "post": "50241664",
+      "section": "Design",
+      "tier": "worthYourTime",
+      "reason": "A short post with one stylesheet, but the thread digs into whether sites should set font sizes at all and how code reads on paper."
+    },
+    {
+      "post": "50171438",
+      "section": "Watching",
+      "tier": "worthYourTime",
+      "reason": "A sourced history from 1860 to 1968 showing how slowly building codes move, and how the answer recommended in 1881 took decades to win."
+    },
+    {
+      "post": "50266719",
+      "section": "Working",
+      "tier": "worthYourTime",
+      "reason": "Five concrete tactics for earning influence without seniority, from someone who hires, with anecdotes from Stripe, Notion and Anthropic."
+    },
+    {
+      "post": "50223739",
+      "section": "Favorites",
+      "tier": "ifYouHaveAMinute",
+      "reason": "A worked reverse-engineering session with an AI agent, Ghidra and live memory reads, with code excerpts for rendering and scoring."
+    },
+    {
+      "post": "50257325",
+      "section": "Favorites",
+      "tier": "ifYouHaveAMinute",
+      "reason": "One engineer's contribution data from 2019 to 2026 shows cheap implementation pulling in more work, and the thread trades ways to push back."
+    },
+    {
+      "post": "50282454",
+      "section": "Startup News",
+      "tier": "ifYouHaveAMinute",
+      "reason": "The chart is a single number; the value is in long first-hand accounts from former heavy answerers on why they stopped."
+    },
+    {
+      "post": "50274409",
+      "section": "Favorites",
+      "tier": "ifYouHaveAMinute",
+      "reason": "A monastery explains its CNC workflow for Gothic stone, and the thread weighs machine roughing against hand finishing, with Sagrada Familia as a case."
+    },
+    {
+      "post": "50261647",
+      "section": "Learn",
+      "tier": "ifYouHaveAMinute",
+      "reason": "One of the largest proofs in mathematics checked by Lean's kernel, with project engineers answering how incompatible definitions get reconciled."
+    }
+  ],
+  "nearMisses": [
+    {
+      "title": "Emacs Turns 50",
+      "section": "Favorites",
+      "domain": "technologyreview.com",
+      "url": "https://www.technologyreview.com/2026/10/20/1145399/emacs-turns-50/",
+      "hnId": 50273171
+    },
+    {
+      "title": "The Goose Programming Language",
+      "section": "Code",
+      "domain": "aardappel.github.io",
+      "url": "https://aardappel.github.io/goose/",
+      "hnId": 50224100
+    },
+    {
+      "title": "The Mythical Man-Month in the Age of AI",
+      "section": "Code",
+      "domain": "j11g.com",
+      "url": "https://j11g.com/the-mythical-man-month-in-the-age-of-ai",
+      "hnId": 50255298
+    },
+    {
+      "title": "Dolly Parton's Imagination Library",
+      "section": "Books",
+      "domain": "imaginationlibrary.com",
+      "url": "https://imaginationlibrary.com/",
+      "hnId": 50234474
+    },
+    {
+      "title": "I don't understand quantum physics",
+      "section": "Books",
+      "domain": "southampton.ac.uk",
+      "url": "https://www.southampton.ac.uk/~doug/quantum_physics/index.html",
+      "hnId": 50219666
+    },
+    {
+      "title": "Start Doing Graph Theory",
+      "section": "Books",
+      "domain": "vertex.degree",
+      "url": "https://vertex.degree/",
+      "hnId": 50208960
+    },
+    {
+      "title": "[The Exponential Time Hypothesis Is False [pdf]]",
+      "section": "Learn",
+      "domain": "github.com",
+      "url": "https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf",
+      "hnId": 50251661
+    },
+    {
+      "title": "CSS-Tricks has a new owner",
+      "section": "Startup News",
+      "domain": "css-tricks.com",
+      "url": "https://css-tricks.com/css-tricks-has-a-new-owner/",
+      "hnId": 50245831
+    }
+  ]
+}

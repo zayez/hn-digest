@@ -1,0 +1,108 @@
+{
+  "hnId": 50223739,
+  "title": "Decompiling Fast Food Tycoon 2: Drawing the World",
+  "url": "https://healeycodes.com/decompiling-fast-food-tycoon-2-drawing-the-world",
+  "domain": "healeycodes.com",
+  "kind": "article",
+  "author": "healeycodes",
+  "postedAt": "2026-10-24T18:17:57.000Z",
+  "points": 208,
+  "commentCount": 43,
+  "readingMinutes": 6,
+  "tldr": "The author decompiled the 2001 pizza business game Fast Food Tycoon 2 with an AI agent and Ghidra. The renderer repaints only the screen areas that changed. It keeps colour and light separate until the last step, which drives a day-night cycle. The game scores pizzas on topping spread and symmetry. It also detects copied recipes.",
+  "article": {
+    "keyPoints": [
+      "Ghidra turned the game's 4,046 functions into about 9.5MB of C-like code, which the author indexed in SQLite for an agent to search.",
+      "The agent read the live game's memory with ReadProcessMemory. It drove the UI through a patched message handler and left the executable unchanged.",
+      "The renderer repaints only the dirty screen areas, in several passes over the map cells in diagonal order. It draws outlines around people hidden behind walls.",
+      "Each pixel has a 16-bit colour and a separate light byte. Daylight follows a 25-value hourly table from 70 at night to 251 by day.",
+      "Each lamp switches on below a light level of 160 plus its object ID modulo 8. Standard lamps light up in small groups around 18:25.",
+      "The game splits a pizza into 24 regions to score topping spread. A copied recipe loses up to 30 taste points with some customer groups."
+    ],
+    "whyItMatters": "Read the original for the animated graphics of redraws, light masks and sprite sheets, which the summary cannot show. Anyone planning an agent-driven decompile also gets a concrete setup to copy."
+  },
+  "comments": {
+    "overview": "The thread is warm and nostalgic, with many short replies from people who played the game as children. The longest exchange is about whether the article itself was written by AI. A smaller group discusses how to run AI decompiles well and cheaply.",
+    "themes": [
+      {
+        "title": "Was the post written by AI?",
+        "synthesis": "One commenter praised the post as the right use of AI, with AI doing the decompiling and a human writing the text. Others asked how anyone could tell. One reader flagged \"named animation sequence\" as an LLM phrase. Several replies defended it as normal English that refers to the .ani file format, and one said it does not matter if the text reads well.",
+        "quotes": [
+          {
+            "author": "vintagedave",
+            "text": "This is how an AI-assisted article should be: they used AI to decompile, find things out (with some very interesting techniques listed at the top of the article) but the article itself *is human-written*.",
+            "commentId": 50270811
+          },
+          {
+            "author": "treyd",
+            "text": "The .ani file can contain multiple animation sequences that each have a name.",
+            "commentId": 50272197
+          }
+        ]
+      },
+      {
+        "title": "Skill and cost in AI decompiling",
+        "synthesis": "Commenters noted that the author used a mid-tier model and saw that as proof that skill cuts token cost. One reply warned that tokens spent measure productivity about as badly as lines of code. Others shared cheap results, such as a full MCU emulator for under 50 euros and old DOS games with DeepSeek 4.1 Flash.",
+        "quotes": [
+          {
+            "author": "glimshe",
+            "text": "This matches what I've been hearing regarding talent and experience making a big difference in task speed and cost when using AI.",
+            "commentId": 50272070
+          },
+          {
+            "author": "xyzzy_plugh",
+            "text": "The variance for a given task can be extremely high regardless of the input, not to say that there isn't any skill to prompting or that talent doesn't matter.",
+            "commentId": 50273140
+          }
+        ]
+      },
+      {
+        "title": "Memories of the game",
+        "synthesis": "Players compared the scoring rules with their own tricks, like a pizza topped with a whole fried chicken. They recalled sabotage against rivals with rats, punks and health inspectors. Others remembered the manual's real pizza recipe and a German CD that smelled of herbs.",
+        "quotes": [
+          {
+            "author": "yayachiken",
+            "text": "This led me to always create a Pizza that just had an entire fried chicken on it, as it was easy to reproduce, made a lot of money (big ingredient costs = big margins), and gave good ratings.",
+            "commentId": 50270195
+          },
+          {
+            "author": "goobatrooba",
+            "text": "You were able to send guys with cockroaches, stinky cheese or rats to the competition, then call the health inspector on them.",
+            "commentId": 50282098
+          }
+        ]
+      },
+      {
+        "title": "Names and translation",
+        "synthesis": "European readers knew the game only as Pizza Connection 2, and one commenter checked Wikipedia to sort out the series order. A German speaker said \"Goths\" is a mistranslation. In the game, \"Grufties\" was slang for old people.",
+        "quotes": [
+          {
+            "author": "yayachiken",
+            "text": "It seems they translated \"Grufties\" with \"Goths\". Which makes sense considering the real meaning of Grufti in German (members of the Goth subculture), but in the game the term was actually used as funny way to refer to old senior people",
+            "commentId": 50270195
+          }
+        ]
+      },
+      {
+        "title": "Finding old games and open remakes",
+        "synthesis": "Readers recalled finding favourite games in discount bins and noted how good games were as obscure as bad ones. Others praised open reimplementations like OpenTTD and said these projects need free assets to be complete.",
+        "quotes": [
+          {
+            "author": "fredrikholm",
+            "text": "It was an eye-opener for tween me to realize that some of the best games made in that era were about as popular as some of the worst games from the same era.",
+            "commentId": 50270279
+          }
+        ]
+      }
+    ],
+    "consensus": "Most readers liked the post and the game. They saw the work as a good example of a skilled person using AI as a tool.",
+    "dissent": "One commenter said the findings are standard techniques of the era that need no decompiling to guess. Another reader thought the post showed signs of LLM writing.",
+    "contrarian": {
+      "author": "Scaevolus",
+      "text": "Rather than loading the raw approximate decompile code into SQLite, you'll likely get better results using Ghidra directly with tool calls through an MCP adapter. This is especially important when the analysis tracing fails, like with some complex indirect jump patterns with vtables.",
+      "commentId": 50274444,
+      "why": "It questions the author's method on technical grounds, since a static text dump loses what Ghidra's live analysis can still resolve."
+    }
+  },
+  "digestedAt": "2026-10-30T17:08:40.000Z"
+}

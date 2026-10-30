@@ -1,0 +1,118 @@
+{
+  "hnId": 50257325,
+  "title": "AI promised less work. I've never worked more",
+  "url": "https://oioannou.com/blog/ai-promised-less-work/",
+  "domain": "oioannou.com",
+  "kind": "article",
+  "author": "oorestisime",
+  "postedAt": "2026-10-27T11:08:14.000Z",
+  "points": 681,
+  "commentCount": 662,
+  "readingMinutes": 7,
+  "tldr": "The author, VP of Technology at Bold.org, does all his engineering work through AI agents. His 2026 GitHub activity is back at the level of his years as a full-time engineer. Cheap implementation leads him to start far more work than before. Switching between many parallel agents tires him more than his old focused work did.",
+  "article": {
+    "keyPoints": [
+      "The author once worked on two or three serious tasks a week, one at a time. Now he runs several agents in parallel. Each one returns with questions, plans or diffs that force a context switch.",
+      "His GitHub contributions peaked at 2,711 in 2020. As Principal Engineer he averaged 114 a month. By October 27, 2026 he had 2,102, more than any full year from 2021 to 2025.",
+      "August 2026 was his busiest month ever, with 427 contributions. His median weekday rose from 3 or 4 contributions in 2022 to 2025 to 7 in 2026.",
+      "As VP he does less feature work than he did as an engineer. He says the rise comes from cheap implementation. Small bugs, codebase-wide fixes and new projects now seem worth starting.",
+      "His year runs in bursts. He counts three since January. A new model or workflow sets off each burst of new agents and experiments. After a few weeks, reviewing and context switching wear him down.",
+      "Even his quiet months stay busy. March had 203 contributions, against his Principal Engineer average of 114. He concludes that his ability to implement ideas has grown faster than his ability to think about them."
+    ],
+    "whyItMatters": "Engineers and leads who run several agents at once will recognize the pattern. The original has the month-by-month numbers and a chart of public against private contributions. The summary covers the argument, but the chart shows how sharp the bursts are."
+  },
+  "comments": {
+    "overview": "The thread was large and mostly unsympathetic to the premise. The top-ranked subthread said no employer ever promised less work, then grew into a long fight over unions, capitalism and global competition. Smaller threads took the author's experience seriously and asked why agent work feels so draining.",
+    "themes": [
+      {
+        "title": "Employers keep the productivity gains",
+        "synthesis": "The biggest subthread rejected the premise outright. Commenters said tool gains go to employers as more output, or show up as layoffs. Some said unions or a shorter work week could win back time. Others answered that AI-assisted knowledge work moves easily across borders, which weakens any local deal. A smaller group argued that firms keeping all their engineers and shipping more would beat firms that cut staff.",
+        "quotes": [
+          {
+            "author": "nkrisc",
+            "text": "Realistically there were only ever two possible outcomes: you do more work for the same amount of money, or you’re one of the ones who were laid off and your work was transferred to the former.",
+            "commentId": 50258334
+          },
+          {
+            "author": "Aurornis",
+            "text": "The type of work that AI can do is the most portable globally.",
+            "commentId": 50261128
+          }
+        ]
+      },
+      {
+        "title": "AI took the easy work that gave the brain rest",
+        "synthesis": "Many commenters said drudge work had a hidden job. Writing boilerplate, formatting slides or mapping out a class was slow but restful, and it gave deadlines slack. With agents doing that work, only hard decisions remain. Others missed the debugging and craft that built deep knowledge of a codebase and made someone the go-to person for a problem.",
+        "quotes": [
+          {
+            "author": "keeda",
+            "text": "Now with all that drudge work being done by AI, all we're left with is the hard part. Which is why it feels more stressful: because it is.",
+            "commentId": 50265285
+          },
+          {
+            "author": "thatguymike",
+            "text": "I think the burnout some of us are feeling is that the boring parts were also protecting us.",
+            "commentId": 50262000
+          }
+        ]
+      },
+      {
+        "title": "Parallel agents break focus",
+        "synthesis": "Commenters agreed with the author that juggling agents ruins concentration. One described agents that cite old decisions, exceed the plan and queue up waiting for answers. Proposed fixes included a fixed daily to-do list, a dumb phone and coordinator agents in front of the workers. One commenter and his sons each run about 100 agents but talk to only five coordinators.",
+        "quotes": [
+          {
+            "author": "eithed",
+            "text": "One comes back to me citing a decision I've made 30m ago; then another, citing a finding to something it mentioned 45m ago; then another, then another.",
+            "commentId": 50260876
+          },
+          {
+            "author": "carlgreene",
+            "text": "I switched to a dumb flip phone as my primary device and now my work mostly only gets done on my computer during work hours.",
+            "commentId": 50258627
+          }
+        ]
+      },
+      {
+        "title": "Some people do work less",
+        "synthesis": "A minority reported shorter days. Self-employed developers and solo founders said they finish by lunch or hand marketing, accounting and support to agents. Others spent weeks building validation so agents can run for days alone. Critics answered that this works for owners, not employees. An employee who works less risks replacement, and a slower business loses to competitors.",
+        "quotes": [
+          {
+            "author": "allthetime",
+            "text": "I’m self employed and I just work in the morning now. Can get so much done by lunch that’s there’s no need to keep going and then I read, cycle, play music, learn…",
+            "commentId": 50261764
+          },
+          {
+            "author": "bushido",
+            "text": "All of my effort goes into ensuring that agents work autonomously for days to weeks without me having to coddle them.",
+            "commentId": 50259023
+          }
+        ]
+      },
+      {
+        "title": "The article and its author",
+        "synthesis": "Several readers said the article reads as AI-written and called its closing note on AI drafting evasive. Others asked who promised less work, and one replied with links to CEOs predicting shorter weeks. Some said a VP should delegate, not code. The author replied that his team is intact and he works on small fixes that once sat in a drawer.",
+        "quotes": [
+          {
+            "author": "lelanthran",
+            "text": "Carefully omitted: who or what actually produced the text.",
+            "commentId": 50260128
+          },
+          {
+            "author": "oorestisime",
+            "text": "A lot of my technical work is a lot of tickets which in the past would be in the drawer.",
+            "commentId": 50261272
+          }
+        ]
+      }
+    ],
+    "consensus": "Under competition, faster tools raise expected output instead of cutting hours. Running many agents at once is draining, even for people who like the tools.",
+    "dissent": "Self-employed developers and people who automated their work heavily say they work less. Some argue the author confuses more output with more work.",
+    "contrarian": {
+      "author": "bunderbunder",
+      "text": "In software it’s less visible. Features that nobody is buying don’t physically pile up in the shipping department.",
+      "commentId": 50258390,
+      "why": "It explains the missing raise by noting that unsold features leave no visible pile, so managers count bloat as productive work."
+    }
+  },
+  "digestedAt": "2026-10-30T17:08:43.000Z"
+}

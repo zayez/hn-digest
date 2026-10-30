@@ -1,0 +1,118 @@
+{
+  "hnId": 50241664,
+  "title": "Websites Should Be Printable",
+  "url": "https://brennenputh.me/blog/printable-websites/",
+  "domain": "brennenputh.me",
+  "kind": "article",
+  "author": "bagatelle",
+  "postedAt": "2026-10-26T10:32:14.000Z",
+  "points": 404,
+  "commentCount": 214,
+  "readingMinutes": 4,
+  "tldr": "A CS student argues that text websites should print well, because some readers prefer paper. His own blog printed badly with no print styles. He fixed it with a short @media print block. He admits few people print web pages, but says the work is a small kindness to them.",
+  "article": {
+    "keyPoints": [
+      "The author reads many printed papers because marking up paper keeps him more engaged than a laptop screen.",
+      "His blog printed poorly by default. The text was about two sizes too large, the header looked bad, and links came out gray in black and white.",
+      "His fix is a short @media print block. It hides the header with a noPrint class and shows an author credit with an onlyPrint class.",
+      "The same block sets fixed point sizes, 12pt for body text and 13pt to 16pt for headings. It also turns links black and gives code blocks a black border.",
+      "Code blocks still print badly, because they do not break cleanly across pages. He asks readers for a fix.",
+      "The work took most of a morning, and he doubts many people print web pages. He still thinks a text site should support the reader's preferred medium."
+    ],
+    "whyItMatters": "The post is short, and its main value is the CSS snippet, which the author invites readers to copy. A later edit says he has since rewritten most of the stylesheet after feedback from HN and lobste.rs. The live page may no longer match the snippet."
+  },
+  "comments": {
+    "overview": "The thread agreed that print matters more than the author thought, mostly as \"print to PDF\" for records. It was harsh on browser print engines and on the author's own CSS, which printed badly for several readers. A loud minority called printing a waste of paper or a misuse of the web.",
+    "themes": [
+      {
+        "title": "Printing mostly means saving to PDF",
+        "synthesis": "Many commenters print to PDF far more than to paper, to keep receipts, order confirmations, carts for purchase requests and terms of service. Others described real paper use, like car buyers comparing listings on the kitchen table. Several said a broken print view hurts these users, and the site owner never hears about it.",
+        "quotes": [
+          {
+            "author": "f30e3dfed1c9",
+            "text": "Too many people are thinking that \"printing\" here necessarily involves paper. I almost never print on paper but I \"print\" a lot of stuff to PDF.",
+            "commentId": 50252613
+          },
+          {
+            "author": "nkrisc",
+            "text": "I used to work for a vehicle listing site, and over and over again when we talked to real users they would tell us how they would make spreadsheets and print out our vehicle pages (and from other sites too) so they could compare everything together on their kitchen table.",
+            "commentId": 50242368
+          }
+        ]
+      },
+      {
+        "title": "Browsers print badly, even this page",
+        "synthesis": "Readers said Chrome and Firefox often garble pages that render fine on screen, and page breaks were the common complaint. Resume authors could not keep headings with their sections. The author's own page printed as four mostly blank pages for one reader, and he later fixed most of it. Others pointed to the CSS Paged Media spec, a draft for two decades, and to Paged.js and Prince.",
+        "quotes": [
+          {
+            "author": "jillesvangurp",
+            "text": "My general feeling dealing with this is that CSS for print just gets a lot less scrutiny than regular CSS by browser developers.",
+            "commentId": 50245279
+          },
+          {
+            "author": "swiftcoder",
+            "text": "while you can use CSS to *prevent* a particular page break, you can't use CSS to force one inside an element like an img tag",
+            "commentId": 50248313
+          }
+        ]
+      },
+      {
+        "title": "Cheap if planned, cut if not",
+        "synthesis": "Some developers said basic printability is easy if you plan it from the start. You hide navigation, add page breaks and fix a few colors. One said it can remove the request for a separate \"download PDF\" feature. Others said it sits low on the priority list. A freelancer said clients drop print support first when the budget gets tight.",
+        "quotes": [
+          {
+            "author": "dofm",
+            "text": "Making it so all of an interface is at least basically printable is actually *easy* if you plan for it, and it's a good way of keeping focussed on broader usability.",
+            "commentId": 50242407
+          },
+          {
+            "author": "dbg31415",
+            "text": "Clients just want low prices. Printed is always the first to get removed by clients.",
+            "commentId": 50258117
+          }
+        ]
+      },
+      {
+        "title": "Is the web for print at all?",
+        "synthesis": "One top comment said the web was built for navigation, and that LaTeX and similar tools are for print. Replies said nobody wants to keep a second LaTeX copy of a page, and that print is an accessibility need for readers with tired eyes or dyslexia. A side argument called paper a waste, and replies said PDF export uses no paper.",
+        "quotes": [
+          {
+            "author": "armcat",
+            "text": "The original intent Tim Berners Lee had [1] was to create a navigable way of finding documents and information. Not printable.",
+            "commentId": 50242560
+          },
+          {
+            "author": "dofm",
+            "text": "Print is still an accessibility thing, I think.",
+            "commentId": 50242822
+          }
+        ]
+      },
+      {
+        "title": "Leave font sizes to the reader",
+        "synthesis": "The top thread objected to the author's fixed point sizes in print. The objection was that the reader's own default size may already be larger or smaller. Others said a site should still ship good defaults, because most people never change their settings. A side argument asked whether per-site zoom on mobile browsers is easy enough to expect from readers.",
+        "quotes": [
+          {
+            "author": "beej71",
+            "text": "The user controls their default font size on their platform. What if they'd already increased it, and now I'm just making it bigger?",
+            "commentId": 50243866
+          },
+          {
+            "author": "cycomachead",
+            "text": "While everyone probably should learn something about their devices, the defaults you provide to users should be good ones.",
+            "commentId": 50252762
+          }
+        ]
+      }
+    ],
+    "consensus": "Pages people need to keep should print cleanly. These include receipts, statements, carts, terms and articles. Browser print engines and print CSS make this harder than it should be.",
+    "dissent": "A minority said most sites need no print support and printing wastes paper. Some said the web is for navigation and that print belongs to PDF or LaTeX.",
+    "contrarian": {
+      "author": "nkrisc",
+      "text": "I think we all know the real reason, which I knew at the time as well: if you print the page, you aren’t seeing new ads.",
+      "commentId": 50243764,
+      "why": "The thread blamed low priority and careless developers, but this names a business reason for ad-funded sites to keep print views bad."
+    }
+  },
+  "digestedAt": "2026-10-30T17:08:38.000Z"
+}

@@ -1,0 +1,113 @@
+{
+  "hnId": 50274409,
+  "title": "CNC Stone Carving",
+  "url": "https://carmelitegothic.com/cnc-stone-carving/",
+  "domain": "carmelitegothic.com",
+  "kind": "article",
+  "author": "bschne",
+  "postedAt": "2026-10-28T14:38:22.000Z",
+  "points": 529,
+  "commentCount": 142,
+  "readingMinutes": 7,
+  "tldr": "A community of Carmelite monks is building a Gothic monastery church in stone, and they carve its ornament with CNC machines. A piece that took a skilled hand carver months now takes days. The monks argue that this makes full Gothic detail affordable again. They also say young people who grew up with computers can now do the carving.",
+  "article": {
+    "keyPoints": [
+      "The monks say medieval builders always used the newest technology of their day. In their view, a CNC machine fits the Gothic tradition.",
+      "Stone CNC machines grind the stone with diamond-tipped blades and bits. Water only cools the tool and washes away the sludge.",
+      "Most carving machines have five axes, and some add a lathe or turntable as a sixth axis for tall pieces such as pinnacles.",
+      "The machines can run unattended overnight. A typical 40-hour work week of carving takes them less than two days.",
+      "Early on, a code error made a machine pound down on several window sills overnight and shatter them. The same Prussiani machine still carves stone almost ten years later.",
+      "The work moves through three roles. A head carver sculpts each piece in 3D software, programmers turn the model into toolpaths, and sawyers set up and run the machines."
+    ],
+    "whyItMatters": "Read the original for its photos of the machines, the wire saw and the 3D models. People curious about how a small religious community runs a stone shop will get the workflow in the monks' own words."
+  },
+  "comments": {
+    "overview": "The thread is warm toward the monks and mostly admires the work. It argued about two bigger questions. Does a machine-carved cathedral lose the meaning that came from centuries of hand labor? And why do modern buildings carry so little ornament, now that machines could make it cheap?",
+    "themes": [
+      {
+        "title": "Why modern buildings have no ornament",
+        "synthesis": "The largest subthread asked why ornate facades have not come back. Some blamed cost and owners who plan to sell or flip a building within ten years. Others blamed an architecture elite whose taste differs from most people's, and cited surveys where the public picks classical designs. Critics answered that cheap fake ornament is worse than none, and that buyers prefer more floor space over decoration.",
+        "quotes": [
+          {
+            "author": "LinuxAmbulance",
+            "text": "Buildings are seen as short term (10 years or less) consumable items, and nothing endures long enough to make it seem worthwhile to buyers to put any money towards design excellence.",
+            "commentId": 50279706
+          },
+          {
+            "author": "NoImmatureAdHom",
+            "text": "Up until the late 1800s, beauty was expensive. Therefore, it was a costly (i.e., believable) signal of wealth, status, and taste.",
+            "commentId": 50276836
+          }
+        ]
+      },
+      {
+        "title": "Is the labor part of the cathedral?",
+        "synthesis": "One commenter argued that a Gothic cathedral means generations of people giving decades of work to a building they would never see finished. By that view, a CNC-built church is a copy, like a Disneyland palace. Others replied that the effort is the same relative to the monks' small numbers, and that the church exists for worship, not as a display of sacrifice. A few asked whether a monk should value slow, meditative work with stone.",
+        "quotes": [
+          {
+            "author": "roughly",
+            "text": "The time and effort isn’t an unfortunate part of the process, it’s intrinsic to what we feel when we witness the cathedral - a connection to others, reaching both ways.",
+            "commentId": 50275588
+          },
+          {
+            "author": "fatbird",
+            "text": "Even with the CNC machines, this is still a multi-decade endeavor that will span generations because the number of monks (and outside support) is small and not getting larger.",
+            "commentId": 50279020
+          }
+        ]
+      },
+      {
+        "title": "Sculptors have always automated",
+        "synthesis": "The top comment listed earlier shortcuts, such as Egyptian grids, Roman casts, pointing machines and a copying machine built by James Watt. It argued that Gothic ornament came from workshops that repeated standard designs. Others added that pointing goes back to antiquity, and that Milan's cathedral has almost 100,000 crockets. Several said the first 95% of carving is just removing rock.",
+        "quotes": [
+          {
+            "author": "wolframhempel",
+            "text": "Gothic architectural decoration wasn't about expressing the inner world of its makers in the way we think of art today. Much of it was produced by large masonry workshops using standardized geometry, wooden templates and repeated designs.",
+            "commentId": 50275842
+          },
+          {
+            "author": "noosphr",
+            "text": "They still do, it's just that the first 95% of carving things out of rock is literally getting the rock into the shape needed to start doing actual scuplting.",
+            "commentId": 50279087
+          }
+        ]
+      },
+      {
+        "title": "Machine roughing, hand finishing",
+        "synthesis": "Commenters named other places that carve stone by machine. Sagrada Família has used CNC since the early 1990s, and Monumental Labs sells robot-carved marble. In both, a machine roughs out the stone and people do the fine finishing by hand. Some hope the same method will bring ornament back to ordinary housing.",
+        "quotes": [
+          {
+            "author": "soci",
+            "text": "Actually, it’s a mix of CNC roughing to shape the stone, followed by manual finishing.",
+            "commentId": 50276920
+          },
+          {
+            "author": "clarkmoody",
+            "text": "For fine detail pieces like marble sculpture, the robot takes the project from stone block to a rough, 3D printed look. Then a human craftsman does fine work and polishing.",
+            "commentId": 50279062
+          }
+        ]
+      },
+      {
+        "title": "Monks, technology and lost jobs",
+        "synthesis": "A side thread asked whether AI job losses would send young men into monasteries. Some said the church has always given surplus sons a purpose. Others said that role mostly kept younger heirs out of the way. Separately, commenters noted that monks have long done engineering, and one wished for a monastic order that writes software.",
+        "quotes": [
+          {
+            "author": "ButlerianJihad",
+            "text": "It may seem from our perspective that monasteries are full of prayer and spiritual endeavors, but they are also the site of a large amount of manual labor and highly-educated expertise that can be brought to bear on large projects like this.",
+            "commentId": 50276955
+          }
+        ]
+      }
+    ],
+    "consensus": "Most commenters admired the monks and saw CNC carving as a practical way to get real Gothic detail. Many noted that stone carvers have used copying tools for centuries.",
+    "dissent": "A minority felt that taking the labor out of a cathedral removes much of its meaning. They called the result closer to a replica than a work of devotion.",
+    "contrarian": {
+      "author": "vinaigrette",
+      "text": "you only see, as a classic survivorship bias phenomena, what the best building with all the money in the world looked like, ie cathedrals, palaces, and expect every building to have the same standard today. It is not realistic, nor responsible.",
+      "commentId": 50279522,
+      "why": "It points out that the old buildings people admire are the expensive survivors, and that ordinary buildings were always cheap."
+    }
+  },
+  "digestedAt": "2026-10-30T17:08:44.000Z"
+}

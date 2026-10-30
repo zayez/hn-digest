@@ -1,0 +1,118 @@
+{
+  "hnId": 50289162,
+  "title": "Why are good developers so wary of agentic development?",
+  "url": "https://martinfowler.com/rachels-ramblings/good-devs-wary.html",
+  "domain": "martinfowler.com",
+  "kind": "article",
+  "author": "torutofu",
+  "postedAt": "2026-10-29T13:58:41.000Z",
+  "points": 101,
+  "commentCount": 138,
+  "readingMinutes": 9,
+  "tldr": "Rachel Laycock of Thoughtworks says experienced developers resist letting agents write all the code for a reason beyond job fears. They know that a system that is built is not yet a system proven in production. In a week-long Thoughtworks experiment where agents wrote all the code, the build was red much of the time. Laycock asks leaders to put these cautious developers in charge of finding the new practices.",
+  "article": {
+    "keyPoints": [
+      "Laycock rejects the easy explanation that skilled developers love writing code or fear for their jobs. She says they are not hesitant to use coding assistants. They are hesitant to let agents do all the execution without proven guardrails.",
+      "Nearly every system in production today was built by hand. Nobody has yet lived with a system built mainly by agents, so nobody knows how far to trust one.",
+      "In the Thoughtworks experiment, a team of senior engineers, infrastructure consultants and product people built an airline application in a week without writing any code. They reached about 80% done.",
+      "The team spent about two thirds of its time at the whiteboard on domain and boundaries. It spent the other third on tests, contracts, architecture checks and the pipeline that guided the agents.",
+      "The application ran. The build was red so often that a red build stopped meaning anything. Laycock links this to DORA's 2025 finding that AI adoption raises delivery throughput and lowers delivery stability.",
+      "Martin Fowler pointed out that a ski slope is the wrong comparison, because agentic development is unmapped backcountry. Laycock concludes that leaders should give cautious developers time and permission to fail. Developers should accept that some old practices will not hold."
+    ],
+    "whyItMatters": "Engineering leaders deciding how far to push coding agents should read the original. It lists the open questions the experiment raised about TDD, acceptance and contract tests, batch size and CI. It also describes how the team split its time, which the summary only sketches."
+  },
+  "comments": {
+    "overview": "The thread was split and often testy. Many commenters agreed with the caution but said Laycock had named the wrong cause, pointing to accountability or lost understanding instead. Others said the best developers already use agents heavily, and that the caution is emotion or identity.",
+    "themes": [
+      {
+        "title": "Losing the mental model",
+        "synthesis": "The most detailed comments said the cost of agent-written code is lost understanding, not bad syntax. Writing code by hand forces choices about data structures and architecture, and the developer learns the tradeoffs while making them. Reviewing agent output gives a false sense of that understanding. One developer reported that hand-writing the first features and then letting the agent copy the pattern gave a simpler codebase he trusted.",
+        "quotes": [
+          {
+            "author": "rsyring",
+            "text": "When agents write all the software, the majority of engineers I've seen, including myself, lose almost all context to what is actually going on at anything but a very high almost laughable level.",
+            "commentId": 50291275
+          },
+          {
+            "author": "mablopoule",
+            "text": "When you're given agentic-generated code to review, those choices are already been made implicitly by Claude, and while it give you the impression that you understand the codebase, you actually haven't been able to process the tradeoff.",
+            "commentId": 50291988
+          }
+        ]
+      },
+      {
+        "title": "Who is accountable",
+        "synthesis": "The top thread argued that software works because a person is accountable for it, and that agents weaken this. Replies split three ways. Some said the human who commits the code is still accountable, so nothing changes. Others said open-source licenses already disclaim all liability. A third group said quality comes from layered safeguards and a culture where mistakes are safe, not from blame.",
+        "quotes": [
+          {
+            "author": "poisonborz",
+            "text": "The agent runner, or committer, a single human, is to be held accountable. That responsibility is - and always was - the most important role of a programmer.",
+            "commentId": 50292709
+          },
+          {
+            "author": "CodeMage",
+            "text": "Being able to point a finger at me or one of my teammates and say \"this is the person that screwed up\" is not what makes software work.",
+            "commentId": 50296121
+          }
+        ]
+      },
+      {
+        "title": "You already trust code you never read",
+        "synthesis": "Skeptics of the caution pointed out that developers install hundreds of npm packages and never read compiler output. Defenders answered that popular packages come with a community, maintainers and a track record, while agent output has none of these. Others rejected the compiler comparison because compilers are deterministic and natural language is not a precise specification. One commenter proposed that each developer chooses a practical floor of understanding, and some application code can sit below it.",
+        "quotes": [
+          {
+            "author": "xmprt",
+            "text": "When dealing with LLM output, you're getting a 1 of 1. There's no way to measure the community, number of contributors, or how maintainable it is.",
+            "commentId": 50291880
+          },
+          {
+            "author": "batshit_beaver",
+            "text": "It doesn’t matter which programming or formal language you choose to specify your requirements in, but it cannot be natural language.",
+            "commentId": 50291802
+          }
+        ]
+      },
+      {
+        "title": "Are the best developers wary at all?",
+        "synthesis": "Several commenters said the best developers they know embrace agents and produce more, at higher quality. Others agreed with the article that these developers use agents but keep control and check the output. Some argued that only strong developers can use agents safely, because they could have written the code themselves. One former tech lead suggested that experience with delegation predicts comfort with agents better than skill does.",
+        "quotes": [
+          {
+            "author": "mrweasel",
+            "text": "My somewhat unpopular opinion is that only very good developers are able to use AI coding tools somewhat safely. They could have written the code themselves, but it's faster to have the agent do and then verify.",
+            "commentId": 50291841
+          },
+          {
+            "author": "sadilek",
+            "text": "I think it might be people with that experience who tend to be more comfortable in delegating more to agents. That seems like the more likely predictive factor to me than \"good\" vs \"bad\" developers.",
+            "commentId": 50294502
+          }
+        ]
+      },
+      {
+        "title": "Skills, jobs and management pressure",
+        "synthesis": "A smaller group put the caution down to self-interest and the job market. They said agents aim to replace developers and erode the practice that makes good developers. Others said the problem is management that forces agents on teams for speed, ignores design input and still expects developers to own the bugs. One commenter compared agents to summer interns who write code well but never push back.",
+        "quotes": [
+          {
+            "author": "majorchord",
+            "text": "If you farm out all your thinking to an AI, your own skills and knowledge will diminish and your ability to design/debug/reason about your own (or any) code can fade.",
+            "commentId": 50291144
+          },
+          {
+            "author": "gedy",
+            "text": "Just 'review it' and be expected to own the problems after.  Outsourcing basically.",
+            "commentId": 50291630
+          }
+        ]
+      }
+    ],
+    "consensus": "Most commenters agreed that agents are useful when a developer knows what they want and checks the result. They also agreed that letting agents run without review leads to code that nobody understands or can fix at 4 a.m.",
+    "dissent": "A vocal minority said the caution is mostly emotion or attachment to a craft, and that good developers adapt or fall behind. One commenter also dismissed the experiment, saying any competent team that let agents run without oversight would fail to finish in a week.",
+    "contrarian": {
+      "author": "inglor_cz",
+      "text": "If I had to choose, I would trust code designed, implemented and reviewed by three different SOTA models over code designed, implemented and reviewed by three median programmers today.",
+      "commentId": 50292676,
+      "why": "It argues that cheap, repeated machine review can make trust stronger, while the rest of the thread assumed agents can only weaken it."
+    }
+  },
+  "digestedAt": "2026-10-30T17:08:36.000Z"
+}

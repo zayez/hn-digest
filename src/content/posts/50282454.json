@@ -1,0 +1,107 @@
+{
+  "hnId": 50282454,
+  "title": "StackOverflow now gets fewer than 1000 questions a month",
+  "url": "https://data.stackexchange.com/stackoverflow/query/1926661#graph?t=1",
+  "domain": "data.stackexchange.com",
+  "kind": "unavailable",
+  "author": "babelfish",
+  "postedAt": "2026-10-28T23:35:02.000Z",
+  "points": 809,
+  "commentCount": 727,
+  "tldr": "A public Stack Exchange Data Explorer query shows Stack Overflow now gets fewer than 1,000 new questions a month. At its 2014 peak the site got about 200,000 a month. For the last few months, the count has been below the site's first month in 2008.",
+  "articleNote": "The query page returned HTTP 403 and could not be fetched. The tldr uses the numbers commenters read off the chart, and the digest covers the discussion.",
+  "comments": {
+    "overview": "The thread reads like a wake, and few mourners are sad. Former top answerers explain why they left years ago, and hundreds of commenters blame duplicate closures and a hostile culture. The main argument is about timing: did ChatGPT kill Stack Overflow, or did it finish off a site that was already dying?",
+    "themes": [
+      {
+        "title": "AI finished a decline that started years earlier",
+        "synthesis": "kstrauser annotated the chart. Questions were flat from 2014 and falling from 2017, then rose briefly with COVID in 2020. By November 2022, when ChatGPT launched, the count was about half its 2014 peak. Others replied that the drop after ChatGPT has no precedent, and a log-scale chart of all Stack Exchange sites shows the steep fall starting there. Some said the early decline was expected, because most common questions had already been asked and answered.",
+        "quotes": [
+          {
+            "author": "kstrauser",
+            "text": "SO had been flatlined since 2014 and declining since 2017. It dropped off a cliff when, 2.5 years after its 2020 bounce, ChatGPT came along with the death blow.",
+            "commentId": 50283595
+          },
+          {
+            "author": "p-e-w",
+            "text": "But this unprecedented drop in activity is 100% because of AI. Their product is as obsolete as horse-drawn carriages.",
+            "commentId": 50282984
+          }
+        ]
+      },
+      {
+        "title": "Duplicate closures kept old answers on top",
+        "synthesis": "The most common complaint was questions closed as duplicates of questions that were different, or that had answers written for a much older version. Examples included Android 14 questions closed against Android 4.0 answers, and .NET Core questions closed against .NET Framework ones. Several commenters said the site needed some duplicates to keep answers current, or a way to tag answers by version. Defenders said a changed solution is a reason to write a new answer on the old question, not to open a new one.",
+        "quotes": [
+          {
+            "author": "mort96",
+            "text": "The ridiculously strict \"no duplicates\" policy guaranteed that the old, increasingly outdated answers would remain the only answers forever. In retrospect, I believe a site like SO wants to encourage some rate of duplicates, to ensure that answers remain fresh.",
+            "commentId": 50286336
+          },
+          {
+            "author": "zahlman",
+            "text": "The fact that there are different ways to solve the problem now, doesn't make it not the same problem. It is, instead, a reason to write a new answer, but we still want all the high-quality answers in the same place.",
+            "commentId": 50296261
+          }
+        ]
+      },
+      {
+        "title": "Gatekeeping or curation?",
+        "synthesis": "Most commenters called the people who closed questions power-tripping moderators, and blamed gamification and review-queue badges for rewarding closures. A few long-time curators pushed back hard, zahlman most of all. They said ordinary users, not moderators, cast most close votes, and that closing earns no reputation. They also said most closed questions really were homework, code dumps or duplicates. Critics answered that the site existed to help people, and the curators now rule an empty site.",
+        "quotes": [
+          {
+            "author": "matsemann",
+            "text": "People don't get that SO is moderated almost entirely by users. Users are those that down vote. Users are those who vote to close a question, and when a question reaches consensus it's closed.",
+            "commentId": 50287978
+          },
+          {
+            "author": "rpdillon",
+            "text": "SO got so overrun with people that were dedicated to Maintaining Order that the site itself stopped being useful.",
+            "commentId": 50289040
+          }
+        ]
+      },
+      {
+        "title": "Why the answerers left",
+        "synthesis": "The top thread is a roll call of answerers with about 30,000 to over 300,000 reputation whose last answers date to 2015 to 2021. They cite a flood of homework questions, fewer interesting ones, and new jobs or children. Newer answerers said reputation went to old answers that Google sent traffic to, so new work earned almost nothing. Others quit when strangers rewrote their answers, sometimes wrongly, and the answers still carried their names.",
+        "quotes": [
+          {
+            "author": "joshuakcockrell",
+            "text": "90%+ of the upvotes come from super old questions that have been around forever. Google indexed them and sent traffic there.",
+            "commentId": 50299788
+          },
+          {
+            "author": "kstrauser",
+            "text": "Whatever the rules say, there's never a situation where it's morally OK to change someone else's words and leave them attributed to them.",
+            "commentId": 50292299
+          }
+        ]
+      },
+      {
+        "title": "What disappears with it",
+        "synthesis": "A quieter group regretted the loss even while agreeing the site had failed. Answers on Stack Overflow stayed public and searchable, and LLM chats help one person and vanish. Commenters also noted that models trained on Stack Overflow give no credit to the people who wrote the answers. Some asked what future models will learn from. One reply said models with tool calls now read docs and source code directly, so human conversations on Reddit and blogs matter more.",
+        "quotes": [
+          {
+            "author": "zugi",
+            "text": "Now we're all \"taking\" via AI. We don't know who posted a helpful answer 10 years ago that the AI learned from in order to help us.",
+            "commentId": 50291081
+          },
+          {
+            "author": "karel-3d",
+            "text": "While when I ask LLMs - as I do now, of course, nobody has time for SO nowadays - nothing is left, everything is ephemeral, LLM forgets, the world doesn't learn.",
+            "commentId": 50286901
+          }
+        ]
+      }
+    ],
+    "consensus": "Stack Overflow's question count was falling well before ChatGPT, and AI made sure it would not recover. Most commenters blamed aggressive duplicate closures and answers that went stale.",
+    "dissent": "One camp said AI alone explains a drop this steep, and that the moderation stories are old grudges. Long-time curators said closures were mostly correct, and that askers wanted free help without meeting the site's standards.",
+    "contrarian": {
+      "author": "shagie",
+      "text": "That growth without scaling up the tools for onboarding and curation … meant that the people trying to help new users and make discovery of well written questions easier had less time per user (or question) to do so... and got increasingly curt",
+      "commentId": 50290162,
+      "why": "Most commenters argue about who the bad actors were. shagie explains the hostility as a capacity problem. A few volunteers facing 6,000 new questions a day had seconds per question."
+    }
+  },
+  "digestedAt": "2026-10-30T17:09:25.000Z"
+}

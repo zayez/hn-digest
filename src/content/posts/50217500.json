@@ -1,0 +1,113 @@
+{
+  "hnId": 50217500,
+  "title": "Twelve years of distributed SQLite",
+  "url": "https://philipotoole.com/twelve-years-of-distributed-sqlite/",
+  "domain": "philipotoole.com",
+  "kind": "article",
+  "author": "otoolep",
+  "postedAt": "2026-10-24T01:16:58.000Z",
+  "points": 393,
+  "commentCount": 70,
+  "readingMinutes": 5,
+  "tldr": "The author of rqlite tells the history of replicated SQLite from his own start in 2014. He says rqlite was the first open-source system to put Raft in front of SQLite. The field now has three designs, built on consensus, log streaming and merging. The venture money went to hosted services, not to the free projects that came first.",
+  "article": {
+    "keyPoints": [
+      "rqlite appeared in September 2014 as SQLite with a Raft log in front of it. Every write goes to a cluster, so losing one node does not lose the data.",
+      "rqlite is a CP system. Writes go through the leader and need a majority to acknowledge them. A partitioned minority refuses writes.",
+      "Expensify's Bedrock and the Erlang system ActorDB also replicated SQLite around that time. The author says neither saw wide use outside its origin.",
+      "Canonical built dqlite in 2017 as a library to embed in LXD and MicroK8s. The author says the main difference from rqlite is packaging, since rqlite is a server you run.",
+      "Litestream arrived in 2021 and uses no consensus. It streams the SQLite WAL to S3 for cheap disaster recovery on one machine. The author says it answers a more common question than rqlite does.",
+      "Later projects took other routes. cr-sqlite merges concurrent writes with CRDTs, and libSQL forked SQLite itself. Turso, D1 and Durable Objects sell replicated SQLite as a hosted product. Supabase acquired Turso in 2026."
+    ],
+    "whyItMatters": "Read the original for a dated timeline of about ten replicated-SQLite projects from someone who was there. It also gives short notes on why each team chose its design, such as Canonical's need for an embedded store and Litestream's view that most apps run on one machine."
+  },
+  "comments": {
+    "overview": "The thread split between interest in the history and complaints about how the post was written. The largest subthread argued that an LLM wrote it, and some readers found the ending self-serving. The rest was practical, with rqlite users, a dqlite user with lock errors and a debate on whether you need remote SQLite at all.",
+    "themes": [
+      {
+        "title": "Did an LLM write the post?",
+        "synthesis": "Several readers said the post reads like Claude and found that odd for a personal history of twelve years of work. One commenter listed specific phrases and noted that the Pangram detector flagged the whole post. Others saw no LLM style at all. One of them later thanked the thread for showing a blind spot. A smaller group disliked the ending, which they read as the author staking a claim on the idea.",
+        "quotes": [
+          {
+            "author": "Scaevolus",
+            "text": "It's pretty weird to spend 12 years on something and not bother to write the thousand word history yourself.",
+            "commentId": 50218785
+          },
+          {
+            "author": "AgentME",
+            "text": "What order? The corners of this design space, which aren't spelled out until the following sentence, don't have any other natural ordering. This type of misapplied flourish feels very typical of LLMs.",
+            "commentId": 50220436
+          }
+        ]
+      },
+      {
+        "title": "Postgres with agents, or one box with SQLite",
+        "synthesis": "One commenter said coding agents make Postgres easy to run, so remote SQLite makes less sense than before. Others agreed that agents remove the admin work that kept them away from database servers like Postgres and MSSQL. The counterargument was to skip the remote database and run in-process SQLite on one large machine with Litestream backups. That commenter cited benchmarks of about 193,000 writes per second on a box under $100.",
+        "quotes": [
+          {
+            "author": "smellf",
+            "text": "Now, in a few projects I've let the LLM do postgres, and it's so nice having the pain if a db server mostly just handled.  Still choose sqlite for anything embedded or without a hosted server.",
+            "commentId": 50223112
+          },
+          {
+            "author": "rapind",
+            "text": "Just run a \"single\" beefier box with in-process SQLite and Litestream backups to object storage and never have to think about RDBMS again. I'd wager there are 90%+ applications that would be better served, more performant, and cheaper with this design.",
+            "commentId": 50225312
+          }
+        ]
+      },
+      {
+        "title": "rqlite in production and its consistency claims",
+        "synthesis": "Two users run rqlite for control planes, and one praised the maintainer at length. A client-library author called its JSON output easy to map. A user said rqlite is slower than a one-node database and that SQLite with Litestream was safe enough for them. On correctness, a reader asked about Jepsen tests. Another noted that the published test covered Strong reads, but the docs now recommend the newer Linearizable mode, which the test predates.",
+        "quotes": [
+          {
+            "author": "qaq",
+            "text": "It's basically holding tenant and operator master registry that app nodes pull down resulting in very light load on rqlite. The architecture is resilient to control layer being down (just can't provision new tenants).",
+            "commentId": 50226231
+          },
+          {
+            "author": "mxey",
+            "text": "Looking further into this: The Linearizable mode is newer than the test, so we don’t know if it would have passed.",
+            "commentId": 50240614
+          }
+        ]
+      },
+      {
+        "title": "dqlite bugs and missing transactions",
+        "synthesis": "A dqlite user in a small MicroK8s cluster reported many \"database locked\" errors and plans to switch to something better tested. Another commenter said transaction support is the key difference between these engines. In that commenter's view, dqlite supports full transactions while rqlite does not officially support BEGIN/COMMIT. Readers also asked for a comparison table and for one project that combines all the designs.",
+        "quotes": [
+          {
+            "author": "gregsadetsky",
+            "text": "IMHO support for transactions is a pretty important dividing line. Some engines support full SQLite transactions while others - like rqlite - don't officially support BEGIN/COMMIT [0], which matters if you rely on multi-statement transactions.",
+            "commentId": 50225066
+          },
+          {
+            "author": "esafak",
+            "text": "This was a very conspicuous bug, so I am surprised I was the first person to report it. I want something battle tested for control plane.",
+            "commentId": 50232229
+          }
+        ]
+      },
+      {
+        "title": "Cloudflare D1 is a thin wrapper",
+        "synthesis": "Two users called D1 unreliable in production. One cited a D1 developer who said D1 is only a singleton Durable Object around a SQLite database. Another said D1 has read replicas and point-in-time recovery but cannot create databases on demand, which makes multi-tenancy harder. A reader also thought the article dismissed D1 too fast.",
+        "quotes": [
+          {
+            "author": "ruther4d",
+            "text": "D1 also gives read replication and point in time recovery, but my biggest issue with it is you can’t create D1 dbs dynamically like you can with durable objects so things like tenancy are harder",
+            "commentId": 50220205
+          }
+        ]
+      }
+    ],
+    "consensus": "Most commenters found the history useful and treated rqlite as a solid, simple choice for small control-plane data. They also agreed that each design fits a different need.",
+    "dissent": "Many readers objected to the post itself. They said an LLM wrote it and the ending reads as a defensive claim of credit. Others argued that most apps need neither replicated SQLite nor a database server beyond one machine.",
+    "contrarian": {
+      "author": "pbowyer",
+      "text": "The VC-backed SQLite services have been shouting about their services as if they came up with the idea, and this only balances that out.",
+      "commentId": 50219132,
+      "why": "It reads the credit-claiming ending as a correction to vendor marketing, not vanity, and asks for more histories that go back further."
+    }
+  },
+  "digestedAt": "2026-10-30T17:08:33.000Z"
+}
