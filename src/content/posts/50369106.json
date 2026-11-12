@@ -1,0 +1,118 @@
+{
+  "hnId": 50369106,
+  "title": "A new Go API for JSON",
+  "url": "https://go.dev/blog/jsonv2",
+  "domain": "go.dev",
+  "kind": "article",
+  "author": "olexsmir",
+  "postedAt": "2026-11-04T17:52:11.000Z",
+  "points": 397,
+  "commentCount": 215,
+  "readingMinutes": 14,
+  "tldr": "Go 1.27 makes encoding/json/v2 and encoding/json/jsontext stable after six years of work. The new packages fix flaws that the old encoding/json could not fix without breaking callers. Its defaults are stricter. Unmarshaling is up to 10x faster. The old package now runs on top of v2, so code using either version works together.",
+  "article": {
+    "keyPoints": [
+      "The old encoding/json accepts invalid UTF-8 and duplicate object keys. It also matches field names without regard to case. Attackers have exploited duplicate keys before, as in CVE-2017-12635.",
+      "Its API forces extra work. MarshalJSON must allocate and return a byte slice, and UnmarshalJSON gets a value the package has already parsed once.",
+      "The Go 1 compatibility promise rules out fixing these behaviors in place. The team chose a separate v2 package over adding names like MarshalV2.",
+      "The new jsontext package handles JSON syntax as a true token stream without reflection. The v2 package maps JSON to Go values on top of it.",
+      "In v2, options are arguments to every Marshal and Unmarshal call. New MarshalJSONTo and UnmarshalJSONFrom methods let types stream and pass options down the call tree.",
+      "v2 rejects invalid UTF-8 and duplicate names by default. It writes nil slices and maps as [] and {}. Each change has an option to restore the old behavior, and v1 is now v2 with all those options set."
+    ],
+    "whyItMatters": "Go developers planning a migration should read the original for the full list of behavior changes and the options that undo each one. It also links the migration guide, benchmark repository and design history that this summary leaves out."
+  },
+  "comments": {
+    "overview": "The thread welcomed v2 with little complaint about the package itself. Most of its length went elsewhere. Commenters argued about Go as a language for LLM-written code, Go's slow pace of change, and whether Marshal should return an error at all.",
+    "themes": [
+      {
+        "title": "Go as a language for LLM-written code",
+        "synthesis": "The largest thread started from a developer who now has models write all their Go but still wants Go as the output. Supporters said Go's fast compiles and small, plain language suit LLMs better than Rust. One commenter wanted LLMs to emit machine code directly. Others answered that a high-level language constrains the model and gives humans something to check. A long side argument asked whether coding skills still matter when models write the code.",
+        "quotes": [
+          {
+            "author": "kibwen",
+            "text": "Someone who attempts to use LLMs to generate assembly directly will be outcompeted by someone who uses LLMs to generate code in a high-level language, which then uses an ordinary compiler to generate assembly.",
+            "commentId": 50447376
+          },
+          {
+            "author": "cyphar",
+            "text": "No, because good understanding of design comes from programming experience. Atrophied skills mean you lose touch with the actual nuts and bolts of what you are building.",
+            "commentId": 50372431
+          }
+        ]
+      },
+      {
+        "title": "Why should Marshal return an error?",
+        "synthesis": "One commenter called Marshal's error return a code bug that the compiler should catch. Replies listed real runtime failures, such as NaN floats, values typed as any, and custom MarshalJSON methods that fail. A long exchange followed between hnlmorg and thayne. thayne said Rust, Haskell and Scala reject unserializable types at compile time. Go's any parameter leaves that check to runtime. hnlmorg said the shared function signature is worth the cost and careful struct design avoids the problem.",
+        "quotes": [
+          {
+            "author": "duskwuff",
+            "text": "Among other things, MarshalJSON methods called during marshaling can return an error for whatever reason the developer sees fit - one possibility that comes to mind is that part of the object tree being marshalled is lazily loaded, and failed to do so.",
+            "commentId": 50370539
+          },
+          {
+            "author": "thayne",
+            "text": "Say you are marshaling a struct that contains a struct from a third party library, and it works fine. Then you update to a new version of that library, and that added a new field for a type that doesn't work, say a map[A]string where A is a struct. Your program still compiles fine, but then you get an error at runtime when you try to serialize something that worked before.",
+            "commentId": 50389366
+          }
+        ]
+      },
+      {
+        "title": "Six years, and Go's slow pace",
+        "synthesis": "Several commenters found six years long for a JSON API and compared it with the slow arrival of generics and modules. hnlmorg said the late modules release hurt more than early action would have. Mawr replied that waiting let the community test designs first. Others praised the v2 package path as a way to change the standard library without breaking callers. A few mocked it as two ways to do one thing.",
+        "quotes": [
+          {
+            "author": "hnlmorg",
+            "text": "Their inaction caused far more disruption to the ecosystem because people got fed up of waiting, implemented their own, integrated it into their workflow and then had to reintegrate a whole new system all over again a year or two later.",
+            "commentId": 50376002
+          },
+          {
+            "author": "Mawr",
+            "text": "I think it's wise to let the target audience explore the design space themselves a bit first. Considerably lowers the risk of cementing the wrong design.",
+            "commentId": 50376756
+          }
+        ]
+      },
+      {
+        "title": "Nil slices as empty arrays",
+        "synthesis": "Some readers expected the new default for nil slices and maps to cause bugs. Their reason was that nil and empty no longer survive a round trip. Most replies said Go code treats nil and empty the same, so v1's null output was the surprise. A PATCH endpoint that must tell absent from empty came up as the hard case, and the answer was an explicit Option type.",
+        "quotes": [
+          {
+            "author": "throwaway894345",
+            "text": "In Go, I almost always want a nil slice to be treated exactly as an empty slice, and JSONv1 was the ~only place this didn’t work as expected, leading to frequent bugs.",
+            "commentId": 50375100
+          },
+          {
+            "author": "Someone",
+            "text": "Not the OP, but serializing both *nil* and empty arrays to the same json string means round tripping will not work for all objects.",
+            "commentId": 50375996
+          }
+        ]
+      },
+      {
+        "title": "Is JSON really simple?",
+        "synthesis": "A commenter doubted the article's claim that JSON is simple, given how long languages take to get it right. Replies split the format from its implementations. The grammar is small, but RFC 8259 leaves number range, nesting depth and duplicate keys to each implementation. One commenter said a correct library needs a special number type for values like 1e1000.",
+        "quotes": [
+          {
+            "author": "kccqzy",
+            "text": "Any language that doesn’t have a special number type for JSON is a half-assed implementation, because 1e1000 is a perfectly valid JSON number that is beyond the typical IEEE754 double precision floating point numbers; does your language handle that correctly?",
+            "commentId": 50372575
+          },
+          {
+            "author": "thiht",
+            "text": "It IS a simple format. And you can make a parser yourself very easily. Doesn’t mean that it will be the fastest or most memory efficient.",
+            "commentId": 50378151
+          }
+        ]
+      }
+    ],
+    "consensus": "Most commenters called v2 a clear improvement and approved of shipping it as a new package path. Users who had tried jsontext praised its speed. The removed MarshalIndent turned out to have a direct replacement in jsontext.WithIndent.",
+    "dissent": "A minority said six years was too slow for a JSON library. Others wanted more, such as JSON5 support or compile-time checks that a type can be marshaled.",
+    "contrarian": {
+      "author": "layer8",
+      "text": "The stricter default on the parsing side is at the same time the less interoperable one.",
+      "commentId": 50378233,
+      "why": "The thread treated v2's stricter parsing as a plain win, and layer8 notes that rejecting duplicate keys or big numbers breaks exchange with lenient producers."
+    }
+  },
+  "digestedAt": "2026-11-12T12:07:59.000Z"
+}

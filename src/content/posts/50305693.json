@@ -1,0 +1,118 @@
+{
+  "hnId": 50305693,
+  "title": "AI isn't replacing SREs, it's deskilling them",
+  "url": "https://newsletter.signoz.io/p/ai-isnt-replacing-sres-its-deskilling",
+  "domain": "newsletter.signoz.io",
+  "kind": "article",
+  "author": "dorianniemiec",
+  "postedAt": "2026-10-30T15:52:18.000Z",
+  "points": 688,
+  "commentCount": 510,
+  "readingMinutes": 7,
+  "tldr": "AI now handles most routine incident work for site reliability engineers (SREs). A SigNoz newsletter argues that this makes the humans worse at the rare novel outages left to them. It applies Lisanne Bainbridge's 1983 \"Ironies of Automation\" to SRE work. New engineers may never build the skill at all.",
+  "article": {
+    "keyPoints": [
+      "Bainbridge's 1983 paper found that automation leaves operators with rare, high-stakes crises. The same automation takes away the practice they need to handle those crises.",
+      "AI already automates alert grouping, runbooks for known issues, log anomaly detection and restarts of crashed pods. PagerDuty's tier model leaves only novel, cascading failures to humans.",
+      "If SREs only see novel incidents, they lose the repetition that builds intuition about a system. The author asks where that intuition will come from.",
+      "Other fields show the effect. Endoscopists' unassisted polyp detection dropped from 28% to 22% after AI use. The FAA now mandates more manual flying time for pilots.",
+      "Deskilling is hard to notice because AI makes work feel easier and output look better. Junior SREs face what researchers call \"never-skilling\". They never build the skill in the first place.",
+      "The author proposes deliberate practice on incidents the AI could handle. They also want humans working the problem alongside the AI, not just approving its output. The piece ends with a pitch for SigNoz's own AI assistant."
+    ],
+    "whyItMatters": "SRE leads planning how far to automate incident response may want the original for its framing and links. It is short, and its evidence is two cited studies plus Bainbridge. The last third promotes SigNoz's product."
+  },
+  "comments": {
+    "overview": "A large, heated thread that agreed skill loss is real and fought over whether it matters. The biggest single argument was whether aviation's mandated manual practice can transfer to software. A long tangent about the Proton CEO calling slow, careful security \"loser thinking\" fed the same worry about cutting corners.",
+    "themes": [
+      {
+        "title": "Aviation is the model, but nobody pays for practice",
+        "synthesis": "The top comment praised the FAA's manual flying rule as a lesson for SRE teams. Most replies agreed with the idea and doubted it would happen. Aviation practice is mandated and paid for across the industry, while software firms see SREs as a cost center. Pilots in the thread also corrected claims that autopilots do most of the critical work.",
+        "quotes": [
+          {
+            "author": "nrmitchi",
+            "text": "Modern companies generally do not have the same incentive to keep their SRE (or engineers in general) upskilled.",
+            "commentId": 50308054
+          },
+          {
+            "author": "pmarreck",
+            "text": "If you let a human SRE handle a problem completely, not only will it likely take longer than an AI, but since that SRE is now deskilled, it may take FAR longer. And that's a cost. Who's going to pay it?",
+            "commentId": 50310825
+          }
+        ]
+      },
+      {
+        "title": "Is AI actually good at incident response?",
+        "synthesis": "Several engineers reported AI finding root causes in minutes that would have taken them hours or days. Others said models jump to implausible causes and waste more time than they save. A middle group said results depend on giving the agent access to infrastructure code, logs and APIs. Skeptics replied that blaming the setup or the model version makes the claim impossible to test.",
+        "quotes": [
+          {
+            "author": "steve_adams_86",
+            "text": "Given the right tools and instructions I find them to be consistently superhuman. It's unreal.",
+            "commentId": 50313373
+          },
+          {
+            "author": "bigstrat2003",
+            "text": "It is far more often the case that you will spend more time getting the answer out of the LLM than you would've gotten yourself.",
+            "commentId": 50311908
+          }
+        ]
+      },
+      {
+        "title": "A skill shift, or a lost foundation?",
+        "synthesis": "One camp compared AI to Terraform, Docker and the calculator. Each removed a skill that few people miss, and the new skill is directing the agent. Critics answered that checking an agent's output takes the knowledge you only get from doing the work. They also noted that a calculator is deterministic and cheap to own, unlike a frontier model.",
+        "quotes": [
+          {
+            "author": "stackskipton",
+            "text": "SRE here, spotting the hallucinations requires you to have the knowledge to know when it's wrong. Best way to gain knowledge on systems is actually working on them.",
+            "commentId": 50307892
+          },
+          {
+            "author": "233mhz",
+            "text": "You can own a calculator for $2, good luck owning your own frontier model",
+            "commentId": 50306388
+          }
+        ]
+      },
+      {
+        "title": "The junior pipeline is breaking",
+        "synthesis": "Commenters saw the article's never-skilling point already happening. A manager of interns found they shipped working solutions fast but could not explain how they worked. Others described senior staff replaced by offshore hires who paste runbooks into chatbots. The fear is a future with no one able to check the AI's output.",
+        "quotes": [
+          {
+            "author": "jmyeet",
+            "text": "But how do you make Senior+ SWEs? By having a pipeline of juniors who get trained and mentored. That pipeline is cooked now.",
+            "commentId": 50306128
+          },
+          {
+            "author": "sshine",
+            "text": "As review of their understanding, and for the sake of my own cognitive debt, I would first ask them the question \"How does it work?\" and they usually couldn't answer.",
+            "commentId": 50309515
+          }
+        ]
+      },
+      {
+        "title": "Doubts about the article's premise",
+        "synthesis": "Some SREs said mature teams already automated routine pages before AI, so they only ever saw novel failures. On that view, intuition for novel incidents comes from novel incidents. Others called the piece content marketing, a rewrite of an earlier HN article with a product pitch at the end. Several readers also complained that it never defines SRE.",
+        "quotes": [
+          {
+            "author": "tirumaraiselvan",
+            "text": "The main \"intuition\" I built is persistence and verifying/refuting random hypothesis. In other words, I think we can build an intuition for Tier 3 issues only by engaging with Tier 3 issues.",
+            "commentId": 50307256
+          },
+          {
+            "author": "gnfargbl",
+            "text": "Is this how content marketing operates these days? Find a popular blog post, rewrite it and attach your company's name to the end?",
+            "commentId": 50307114
+          }
+        ]
+      }
+    ],
+    "consensus": "Skill atrophy from AI use is real, and most commenters had felt it themselves. Many also agreed that companies will not pay for that practice unless regulation or policy forces them.",
+    "dissent": "A sizable minority said the lost skills are tedious ones nobody needs. They argued the job is moving to a higher level, where directing agents and owning outcomes is the new skill.",
+    "contrarian": {
+      "author": "kccqzy",
+      "text": "SREs also need to climb up the abstraction ladder. Instead of using AI to assist with grunt work, use AI or human thinking to build more reliable systems with fewer incidents. Every incident should be novel.",
+      "commentId": 50306701,
+      "why": "It treats the routine incidents the article wants to keep for practice as failures that a reliable system should have removed."
+    }
+  },
+  "digestedAt": "2026-11-12T12:07:47.000Z"
+}

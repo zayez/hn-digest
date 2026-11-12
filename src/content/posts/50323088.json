@@ -1,0 +1,118 @@
+{
+  "hnId": 50323088,
+  "title": "The AI cost of JavaScript frameworks",
+  "url": "https://nolanlawson.com/2026/10/28/the-ai-cost-of-javascript-frameworks/",
+  "domain": "nolanlawson.com",
+  "kind": "article",
+  "author": "luu",
+  "postedAt": "2026-11-01T06:06:19.000Z",
+  "points": 479,
+  "commentCount": 400,
+  "readingMinutes": 15,
+  "tldr": "Nolan Lawson had Opus 5.5 build the same Pokémon app five times in each of 12 JavaScript framework setups. Hono+htmx and Astro were the cheapest and fastest to build. Angular, Gracile+Lit and SvelteKit cost the most. The larger claim is that framework choices for coding agents can rest on measurements instead of vibes.",
+  "article": {
+    "keyPoints": [
+      "Lawson says web developers pick frameworks on vibes. Lawson sees the same pattern now in claims that a framework is \"better for agents\". Those claims rarely come with benchmarks.",
+      "The benchmark gave one spec to Opus 5.5 at high effort for 12 framework setups, five runs each. Each agent had the framework's official MCP or skills. A conformance suite checked the result.",
+      "Hono+htmx had the lowest median cost at $2.67, and Astro was next at $2.76. Angular cost the most at $4.97. SvelteKit agents read the SvelteKit 3 migration guide in every run, probably because it is newer than the model's training data.",
+      "Agents often ignored the AI tools. The Nuxt MCP was never used, and Next.js agents read the skill file in one run of five. Lawson suspects current MCPs and skills may do more harm than good.",
+      "Lighthouse performance and accessibility scores were near 100 for every framework. JavaScript shipped ranged from 0 KiB for Astro to 142 KiB for Next.js. Load times favored multi-page apps over single-page apps.",
+      "Hono+htmx needed about 70% of Angular's lines of code. Lawson argues that code size now sets the token cost of every future edit. The \"Vanilla\" setup built a single-page app every time and did worse than several frameworks."
+    ],
+    "whyItMatters": "Read the original for the full tables with ranges, the per-framework notes on MCP and skill use, and the list of caveats. Anyone choosing a stack for agent-written code can also fork the benchmark from GitHub and rerun it."
+  },
+  "comments": {
+    "overview": "The thread was large and often hostile. Many commenters liked that Lawson measured anything at all. Most still doubted that a small, content-heavy app says much about real products. The biggest subthread turned into a long fight over whether frameworks are needed at all, with or without agents.",
+    "themes": [
+      {
+        "title": "A simple content site decides the winner",
+        "synthesis": "The most common objection was that the Pokémon app is close to a static content site. That shape favors Astro and htmx from the start. Commenters asked for a social app, a forms-heavy business app, or auth and access control. Some went further and called the benchmark evidence for nothing. Others answered that a flawed measurement still beats none.",
+        "quotes": [
+          {
+            "author": "viccis",
+            "text": "Astro is obviously gonna kill it on a site that's just presenting fairly static content, but how does it handle making a more performant and pleasant reddit-like site?",
+            "commentId": 50330067
+          },
+          {
+            "author": "excentricus",
+            "text": "agreed but i would definitely take this kind of methodical, systematic work over shallow, superficial pelican stuff",
+            "commentId": 50339401
+          }
+        ]
+      },
+      {
+        "title": "Agents need frameworks as guardrails",
+        "synthesis": "One camp said frameworks existed to keep many human developers consistent, so agents that share one AGENTS.md need them less. Others said the opposite. A framework gives hard constraints that an agent cannot ignore, unlike a prompt or a skill file. Several people described agent-written vanilla code growing into a tangle that the model then struggles to edit. A smaller group argued that abstractions now mainly serve the humans who review the code.",
+        "quotes": [
+          {
+            "author": "robgibbons",
+            "text": "A framework comes with strict, mechanical constraints for both developers and agents, while the contents of AGENTS.md can be ignored by agents.",
+            "commentId": 50344557
+          },
+          {
+            "author": "injidup",
+            "text": "The benefit isn't necessarily cleaner code for its own sake, it's that the LLM can work on one part of the application without having to understand the whole thing every time.",
+            "commentId": 50324184
+          }
+        ]
+      },
+      {
+        "title": "Who frameworks really serve",
+        "synthesis": "The longest subthread began with a claim that frameworks exist so employers can skip training developers and hire more easily. Replies split on who pushes framework adoption. Some blamed developers chasing resume points. Others blamed recruiters and founders who list stacks in job ads. A defender said frameworks let other people pay for maintenance. Another commenter replied that this claim has no evidence behind it either, which is Lawson's own complaint. Much of the subthread then became personal attacks.",
+        "quotes": [
+          {
+            "author": "burningChrome",
+            "text": "Rinse, repeat. But 100% of the framework changes were always pushed the hardest by the devs.",
+            "commentId": 50330740
+          },
+          {
+            "author": "cxr",
+            "text": "The evidence-free claim here (that with frameworks you end up spending less) is all \"vibes\"—or, put more charitably, a hunch plus some inductive reasoning.  It's not a tested hypothesis.",
+            "commentId": 50326231
+          }
+        ]
+      },
+      {
+        "title": "Server-rendered HTML against SPAs",
+        "synthesis": "Server-rendering fans said most sites need little client JavaScript and that SPAs keep two copies of state in sync. SPA defenders pointed to shared UI state, like a cart shown in many places at once, as the case frameworks solve. Firsthand reports on htmx with agents were mixed. Some people had smooth runs. Others watched the agent fail on complex forms until tests kept it in line.",
+        "quotes": [
+          {
+            "author": "miki123211",
+            "text": "Because AI agents love slop and \"just one more edge case just to fix that one bug\" thinking instead of addressing the underlying root cause of the bug class, this kind of thing is more important now than it ever was before.",
+            "commentId": 50328562
+          },
+          {
+            "author": "unsloppable",
+            "text": "Like the form might work but the page would take 30s to load. Or some state would randomly drop or a toggle wouldn't work after changing a dependency.",
+            "commentId": 50324047
+          }
+        ]
+      },
+      {
+        "title": "Training data and API churn",
+        "synthesis": "Commenters connected the cost gaps to what the model already knows. New APIs, like the SvelteKit 3 release, force the agent to read docs on every run. One commenter expects this cost to fall as future models train on them. Another said a stable API matters more than a small one, because an agent wrongly sure of an old API wastes more effort than one that looks things up. Framework loyalists showed up as usual, with praise for Astro and Nuxt and complaints about Angular.",
+        "quotes": [
+          {
+            "author": "incrudible",
+            "text": "Breaking API changes are poison, worse than going with an in-house library that the LLM doesn't know how to use, because at least then it will look it up straight away",
+            "commentId": 50326819
+          },
+          {
+            "author": "ef2k",
+            "text": "A significant part of the cost is that newer framework APIs are not known to the current agents. So they need to discover them and learn them on the fly.",
+            "commentId": 50328482
+          }
+        ]
+      }
+    ],
+    "consensus": "Most commenters agreed the results fit a content-heavy site and should not be applied to complex interactive apps without more tests. Many also welcomed a measured comparison over the usual framework claims.",
+    "dissent": "A vocal minority rejected frameworks outright and said agents can write plain browser APIs or server-rendered HTML just as well. A few others dismissed the benchmark as too flawed to count as evidence.",
+    "contrarian": {
+      "author": "socketcluster",
+      "text": "I imagine if this kind of benchmark becomes popular, people would start coming up with low code frameworks which are extremely rigid and inflexible. Because rigidity is a good way to cut lines of code.",
+      "commentId": 50324894,
+      "why": "It warns that lines of code, the benchmark's maintainability measure, is easy to game by giving up flexibility that the benchmark does not test."
+    }
+  },
+  "digestedAt": "2026-11-12T12:07:51.000Z"
+}

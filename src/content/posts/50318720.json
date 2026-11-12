@@ -1,0 +1,118 @@
+{
+  "hnId": 50318720,
+  "title": "It's the memory latency, stupid",
+  "url": "https://pivotlake.io/blog/its-the-memory-latency-stupid/",
+  "domain": "pivotlake.io",
+  "kind": "article",
+  "author": "ntur1337",
+  "postedAt": "2026-10-31T18:38:16.000Z",
+  "points": 274,
+  "commentCount": 103,
+  "readingMinutes": 9,
+  "tldr": "A CPU at 100% can spend half its cycles waiting on RAM. The Pivot database team shows this with hardware counters on a naive GROUP BY over 17 million keys. Splitting the keys into 4096 small partitions first makes the hash tables fit in cache. The query does more work, yet runs about 25% faster and pulls a third as much data from DRAM.",
+  "article": {
+    "keyPoints": [
+      "A RAM access takes 50 to 100 ns, enough time for a modern core to run 400 to 800 instructions.",
+      "A CPU counts as busy whenever a task wants it, so 100% utilization can hide a core that mostly waits on memory.",
+      "A naive GROUP BY with one hash table entry per key took 3.6 seconds on ClickBench's 99 million rows, using one EPYC core.",
+      "perf showed that core stalled on memory in 50.1% of its slots and retired micro-ops in only 16.1%, after pulling 4.5 GB from DRAM.",
+      "Radix partitioning hashes each key into one of 4096 buckets first, then aggregates each bucket in its own small hash table.",
+      "The partitioned version ran 70% more instructions, yet took 2.7 seconds, cut memory stalls to 23.5% and pulled 1.5 GB from DRAM."
+    ],
+    "whyItMatters": "Read the original for the exact perf commands and AMD counter names, which you can rerun on your own bare-metal box. The authors also show Pivot's tuned result, 1.8 seconds on one core and 171 ms on 16, and promise a follow-up on prefetching and join probing."
+  },
+  "comments": {
+    "overview": "The thread spent little time on the article itself. It mostly traded stories about teams that block cache-aware work as \"premature optimization\", and about how few programmers still think about the hardware. Side threads covered cache-friendly replacements for linked lists and a long, testy argument over what \"50% faster\" means.",
+    "themes": [
+      {
+        "title": "Premature optimization as a veto",
+        "synthesis": "Several commenters had cache-friendly changes rejected in code review as premature, even with benchmarks in hand. They blamed the Clean Code era for treating style rules as more important than speed. Others reported 2x to 10x gains on code that nobody had profiled, and a team that tripled throughput on CPUs already at 100%. A minority defended caution, since every change carries risk and clean code is easier to test.",
+        "quotes": [
+          {
+            "author": "bunderbunder",
+            "text": "I somewhat wonder if the problem is that, in the 2010s, many people became convinced that certain aesthetic standards were both objectively, provably correct, and more important than anything else.",
+            "commentId": 50319818
+          },
+          {
+            "author": "hinkley",
+            "text": "It’s predominantly a way to shut down thinking, which is why it’s so often misquoted. Knuth’s version is more nuanced.",
+            "commentId": 50320844
+          }
+        ]
+      },
+      {
+        "title": "Cache-friendly data structures",
+        "synthesis": "A question about cache-friendly linked lists drew a firm answer to use dynamic arrays instead, because pointer chains force serial loads. Others listed unrolled linked lists, B-trees, segmented lists and RAOTS, with their access and space costs. One embedded developer described replacing object pointers with index and generation pairs, a trick from 2000s games. They made that change for maintenance and memory fragmentation, not speed.",
+        "quotes": [
+          {
+            "author": "immibis2",
+            "text": "A dynamic array of pointers still beats a linked list, since the pointers don't form a serial dependency chain.",
+            "commentId": 50427601
+          },
+          {
+            "author": "boricj",
+            "text": "Sometimes, the clean solution really isn't the right one and it's really sad that compsci only ever teaches classical data structures, like we're still coding in the 1970s on computers with no caches that don't suffer from pointer chasing.",
+            "commentId": 50323912
+          }
+        ]
+      },
+      {
+        "title": "Mechanical sympathy as a fading skill",
+        "synthesis": "The top comment contrasted a team writing heavy C++ on a small ARM chip with its own careful work on a microcontroller with under 1 MB of RAM. A games developer said the skilled systems programmers are aging out as studios move to Unreal Engine 5. That started a side debate on whether off-the-shelf engines are good enough or make games run badly. Another commenter blamed the dot-com hiring boom for lowering the bar on how computers work.",
+        "quotes": [
+          {
+            "author": "boricj",
+            "text": "Mechanical sympathy feels like a lost art to people I demonstrate it to...",
+            "commentId": 50319344
+          },
+          {
+            "author": "jordand",
+            "text": "They're getting on in age, and there's fewer programmers in the younger generations that are interested in any of it.",
+            "commentId": 50319460
+          }
+        ]
+      },
+      {
+        "title": "What \"faster\" means",
+        "synthesis": "A side remark about compounding 25% gains turned into a long argument. One camp says speed is a rate, so 50% faster means two-thirds of the time. hinkley argued that users and cloud bills care about time per task, so halving the time is a 50% gain. The exchange ended with an accusation of inflating numbers. The one point both sides accepted is that multipliers avoid the confusion.",
+        "quotes": [
+          {
+            "author": "kaashif",
+            "text": "I see this a lot - in software people interpret 50% faster as a 50% reduction in time taken.",
+            "commentId": 50324302
+          },
+          {
+            "author": "hinkley",
+            "text": "When that tool stopped being maintained, the person who replaced it wisely switched to reporting in multipliers. 4x faster is hard to misinterpret.",
+            "commentId": 50329268
+          }
+        ]
+      },
+      {
+        "title": "Is the technique new?",
+        "synthesis": "One reader called radix-partitioned aggregation old and asked why Pivot exists next to DuckDB and ClickHouse. Others replied that the post names the method and only claims to teach it. Another said partitioning is a clustered hash map and still not an order-of-magnitude win. One reader praised the blog for useful content without padding.",
+        "quotes": [
+          {
+            "author": "quotemstr",
+            "text": "Uh, isn't this just radix-partitioned aggregation? Hierarchical (fixed two level) aggregation is old. What's novel here?",
+            "commentId": 50321845
+          },
+          {
+            "author": "northes",
+            "text": "I didn't get the sense that this was the end-all, just a relatively simple way to show how much impact cache-friendly data structures can have for somewhat little effort over the naive solution",
+            "commentId": 50321902
+          }
+        ]
+      }
+    ],
+    "consensus": "Memory access patterns decide much of real performance, and a CPU reading 100% says little about useful work. Most commenters had seen large speedups from layout changes that teams had called impossible.",
+    "dissent": "Some pushed back on the anti-Clean-Code mood, saying readable, testable code and low risk can matter more than speed in many projects. A claim that LLMs will make software efficient again met scorn from a commenter who fights agents adding N+1 queries.",
+    "contrarian": {
+      "author": "dataflow",
+      "text": "Not sure what examples you have in mind, but the very first things I think of when I hear cache friendly code are cache-blocking and cache-oblivious algorithms, which are quite the opposite of that.",
+      "commentId": 50320779,
+      "why": "It challenges the thread's hope that cache-friendly code is also easier to read, by pointing to blocked and cache-oblivious algorithms that are harder to follow."
+    }
+  },
+  "digestedAt": "2026-11-12T12:07:56.000Z"
+}

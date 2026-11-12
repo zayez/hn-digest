@@ -1,0 +1,127 @@
+{
+  "number": 817,
+  "date": "2026-11-06",
+  "url": "https://buttondown.com/hacker-newsletter/archive/817/",
+  "posts": [
+    {
+      "post": "50323123",
+      "section": "Favorites",
+      "tier": "dontSkip",
+      "reason": "Turns the 1983 Ironies of Automation into working rules for agentic coding, such as a vibe limit per change and treating repeated \"yes, continue\" as a warning sign."
+    },
+    {
+      "post": "50323088",
+      "section": "Code",
+      "tier": "dontSkip",
+      "reason": "Five agent-built runs per framework with medians and ranges for cost, tokens, bytes and Lighthouse, plus thread pushback on whether a content-site benchmark says anything about interactive apps."
+    },
+    {
+      "post": "50369106",
+      "section": "Code",
+      "tier": "worthYourTime",
+      "reason": "A rare first-party account of replacing a widely used standard-library API: which v1 behaviours were flaws, what the new options fix, and how v1 and v2 stay compatible during migration."
+    },
+    {
+      "post": "50358562",
+      "section": "Design",
+      "tier": "worthYourTime",
+      "reason": "Explains how the browser will auto-darken light pages, how text, SVG and images are transformed, and the one CSS declaration sites use to opt out, with a thread on whether color-scheme was designed well."
+    },
+    {
+      "post": "50333332",
+      "section": "Design",
+      "tier": "worthYourTime",
+      "reason": "A footnoted essay using Barcelona, Riga and Nancy to argue that Art Nouveau was too bespoke to scale, and that classicism and then modernism won by being repeatable."
+    },
+    {
+      "post": "50378228",
+      "section": "Favorites",
+      "tier": "worthYourTime",
+      "reason": "Traces an OpenSSH bypass through commits from 1980 to 2026 to a sentinel return value colliding with disabled accounts, and the thread turns that into an argument about null returns versus option types."
+    },
+    {
+      "post": "50355767",
+      "section": "Favorites",
+      "tier": "ifYouHaveAMinute",
+      "reason": "A year's update across coding, research, writing and art, each section ending in a verdict table, from someone running five or six agents but still writing their own prose."
+    },
+    {
+      "post": "50305693",
+      "section": "Working",
+      "tier": "ifYouHaveAMinute",
+      "reason": "Applies the same 1983 automation paper to incident response, citing an endoscopy detection drop and FAA manual-flying rules; note it ends in a vendor pitch."
+    },
+    {
+      "post": "50318720",
+      "section": "Code",
+      "tier": "ifYouHaveAMinute",
+      "reason": "Perf counters show half a naive GROUP BY's CPU slots waiting on DRAM, and radix partitioning into cache-sized tables cuts both, with code for both versions."
+    },
+    {
+      "post": "50268380",
+      "section": "Show HN",
+      "tier": "ifYouHaveAMinute",
+      "reason": "Makes the case for a git-style history of the US Code, reproducing 361 of 365 amendments and citing studies of LLMs applying superseded statutes."
+    },
+    {
+      "post": "50369895",
+      "section": "Fun",
+      "tier": "ifYouHaveAMinute",
+      "reason": "A decade of reverse engineering DOS Wing Commander, from memory maps and trampolines to a WebRTC browser port with co-op via a room code."
+    }
+  ],
+  "nearMisses": [
+    {
+      "title": "What's your current AI agentic setup?",
+      "section": "Ask HN",
+      "hnId": 50366117
+    },
+    {
+      "title": "Are you tired too in this AI era?",
+      "section": "Ask HN",
+      "hnId": 50301479
+    },
+    {
+      "title": "Postgres 19 is late because so many more bugs are being found now",
+      "section": "Data",
+      "domain": "rhaas.blogspot.com",
+      "url": "https://rhaas.blogspot.com/2026/10/postgres-19-is-late-and-its-ais-fault.html",
+      "hnId": 50312408
+    },
+    {
+      "title": "The Internals of PostgreSQL",
+      "section": "Books",
+      "domain": "interdb.jp",
+      "url": "https://www.interdb.jp/pg/index.html",
+      "hnId": 50358702
+    },
+    {
+      "title": "Jules Verne's Lost Novel",
+      "section": "Books",
+      "domain": "blue-continuum.com",
+      "url": "https://blue-continuum.com/verne-paris",
+      "hnId": 50309314
+    },
+    {
+      "title": "Novellas with Groff",
+      "section": "Books",
+      "domain": "movq.de",
+      "url": "https://movq.de/blog/postings/2026-10-31/0/POSTING-en.html",
+      "hnId": 50325694
+    },
+    {
+      "title": "Insects don't swarm at LED lights",
+      "section": "Learn",
+      "domain": "birdsoutsidemywindow.org",
+      "url": "https://www.birdsoutsidemywindow.org/2026/11/03/insects-dont-swarm-at-led-lights/",
+      "hnId": 50370610
+    },
+    {
+      "title": "Postman silently auto-installs AI plugins and attempts to share all API data",
+      "section": "Startup News",
+      "domain": "github.com",
+      "url": "https://github.com/postmanlabs/postman-app-support/issues/14370",
+      "hnId": 50354960
+    }
+  ]
+}

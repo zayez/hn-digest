@@ -1,0 +1,102 @@
+{
+  "hnId": 50369895,
+  "title": "Show HN: After a decade of reversing, I got co-op working in DOS Wing Commander",
+  "url": "https://fireflyk64.github.io/wcmulti/",
+  "domain": "fireflyk64.github.io",
+  "kind": "article",
+  "author": "daniel_rh",
+  "postedAt": "2026-11-04T18:51:27.000Z",
+  "points": 256,
+  "commentCount": 41,
+  "readingMinutes": 15,
+  "tldr": "A developer and their brother spent eleven years reverse engineering the 1990 DOS game Wing Commander to add two-player co-op. They found the game state by diffing DOSBox memory dumps. They made the game call its own functions through code injected into a dead string. The game now runs co-op in a browser over WebRTC, with your own GOG copy.",
+  "article": {
+    "keyPoints": [
+      "The author found the player's position at 13D3:A9C2 by diffing memory snapshots taken while stopped and after moving. The diff left 413 candidate bytes, and 132 after a chase-camera check.",
+      "Wing Commander keeps entities in 64 slots, and the camera sits in slot 0x3D, which may be the original developers' joke on \"3D\".",
+      "Memory writes alone could not fire lasers or missiles. DOSBox therefore writes a small call stub over an unused string and jumps to it to run the game's own functions.",
+      "The first stub crashed the game at random. Borland's overlay loader walks saved BP frames to patch return addresses, so the stub needed a proper Borland stack frame.",
+      "Two machines put the same ship in different slots, so the client maps server ship IDs to local IDs. A bisection of the 64K data segment located the mission tree and victory points.",
+      "In 2026 an LLM helped port the build to emscripten and the TCP protocol to WebRTC through lobbylink, a small Go lobby server with TURN fallback and voice chat."
+    ],
+    "whyItMatters": "Read the original if you do reverse engineering or emulator hacking. It has the hex dumps, the exact stub bytes, the call-stack traces and the bisection table. These steps are reusable on other DOS games, and the summary leaves them out."
+  },
+  "comments": {
+    "overview": "A small, warm thread. Most of it is praise and nostalgia. The longest branch is about old memory hacks for cheating in games, and a smaller one asks how much AI did.",
+    "themes": [
+      {
+        "title": "Memory hacking as everyone's first hack",
+        "synthesis": "Many readers saw their own childhood in the method. They changed one value, saved, and looked for the bytes that moved, to cheat at RPGs or edit money in Sim City. Others named the tools that later did this for them, like Game Wizard, Cheat Engine and Commodore 64 freezer cartridges. One reader noted that magazines printed these memory locations, but often months late.",
+        "quotes": [
+          {
+            "author": "EmX_3000",
+            "text": "You could change one thing at a time, save, then look through and see what changed on the disk. Eventually you could identify all the locations that held the values for inventory, stats, location, quest stages, NPC state, and so on.",
+            "commentId": 50373926
+          },
+          {
+            "author": "vidarh",
+            "text": "Press a \"freeze\" button, pick a menu option, then re-enter the game, lose a life, and press the freeze button again, and it'd look for likely locations in memory based on what had changed and presumably some heuristics.",
+            "commentId": 50380939
+          }
+        ]
+      },
+      {
+        "title": "How much of this did AI do",
+        "synthesis": "The author disclosed that AI helped with the browser build, the WebRTC port and some late bugs. They stressed that the eight years of memory work were done by hand. When asked how long the project would take with AI today, they answered dryly that it would take no time, because the work is open source and now sits in training data. The asker apologized and reframed the question as which reverse engineering steps AI can speed up.",
+        "quotes": [
+          {
+            "author": "daniel_rh",
+            "text": "However, that original WC-only 8+ years of figuring out how the data segment was organized and how to call original functions was all by-hand hacking.",
+            "commentId": 50371512
+          },
+          {
+            "author": "daniel_rh",
+            "text": "0 minutes because the entire 11 years this project has been open source on a dosbox branch; therefore, it has all been harvested in the training set",
+            "commentId": 50390163
+          }
+        ]
+      },
+      {
+        "title": "Why developers fought single-player cheating",
+        "synthesis": "One commenter called anti-tamper measures in single-player games pointless and blamed non-technical executives. A reply defended early developers, who saw a hard game as something to master and cheating as a threat to that. Another reader recalled that the game Bloodlines recorded voice lines to mock cheaters, though its character creator was buggy.",
+        "quotes": [
+          {
+            "author": "asdff",
+            "text": "So what if someone cheats in a ps2 game. Doesn’t hurt anyone.",
+            "commentId": 50376036
+          },
+          {
+            "author": "InsidiousWombat",
+            "text": "They found the time for cheater heckling but not to make their character creator work right ;)",
+            "commentId": 50377620
+          }
+        ]
+      },
+      {
+        "title": "Other games and the design of the network layer",
+        "synthesis": "A reader shared a native Wing Commander decompilation with basic LAN multiplayer, and the author offered lobbylink to it. The author said Privateer or the X-Wing series could get the same treatment. They worried that people choose the one-click open source game over digging up a real installer. Smaller replies questioned voice over a data channel and Go for the server. The author defended both choices.",
+        "quotes": [
+          {
+            "author": "daniel_rh",
+            "text": "I worry that making older games work is not worth the time it takes if no one tries it.",
+            "commentId": 50376173
+          },
+          {
+            "author": "daniel_rh",
+            "text": "I do worry about congestion coupling since it would mean a bursty voice stream could affect game packets. Keeping it on a different stream allows game data priority over voice.",
+            "commentId": 50372924
+          }
+        ]
+      }
+    ],
+    "consensus": "Readers loved the project and the write-up. Many were impressed that the siblings kept returning to it for a decade.",
+    "dissent": "There was little pushback on the project. The main disagreement was about anti-cheat history, where one reader defended developers who tried to stop cheating in single-player games.",
+    "contrarian": {
+      "author": "smolder",
+      "text": "So, to game developers in the less-early-but-still-early days, letting people cheat their way through even a single player game was a danger in that it took away the prestige of actually succeeding by normal means.",
+      "commentId": 50379181,
+      "why": "It explains the anti-cheat measures from the developers' own values of the time, where the thread blamed only executives."
+    }
+  },
+  "digestedAt": "2026-11-12T12:07:40.000Z"
+}

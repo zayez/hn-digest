@@ -1,0 +1,118 @@
+{
+  "hnId": 50355767,
+  "title": "How I use AI (Oct 2026)",
+  "url": "https://ben.stolovitz.com/posts/how-use-ai-oct-2026/",
+  "domain": "ben.stolovitz.com",
+  "kind": "article",
+  "author": "citelao",
+  "postedAt": "2026-11-03T18:11:11.000Z",
+  "points": 263,
+  "commentCount": 324,
+  "readingMinutes": 20,
+  "tldr": "A Salesforce AI research engineer says agents now write over 90% of their code. They also say they still need human taste to avoid bloated, over-built designs. LLMs are now their default tool for search and for learning. They still refuse AI for writing, and call image and video generation a net negative.",
+  "article": {
+    "keyPoints": [
+      "Ben Stolovitz moved from Microsoft's Windows AI team to Salesforce AI Research. They spend about $3,000 a month on tokens. This year they started a personal AI policy, because they think people have no norms for these tools yet.",
+      "They call writing code solved. They now run five or six coding agents at once, each in its own Git worktree. An agent can prototype a new feature in about 20 minutes.",
+      "They say engineering is not solved. Left alone, agents build over-architected, unreadable code. Their best work this year was a hand-written tool that replaced about 4,000 lines of vibe-code with a few hundred.",
+      "Juggling six agents is more tiring than coding ever was, they write. They no longer review agent code line by line. They check the architecture and write review rules for problems that keep coming back.",
+      "Google's AI summary is now their default search, and they call LLMs the greatest teachers people have built. Their fear is that LLMs forget to teach and just do the work. On their own turn-detection research, AI steered them to a weaker model design.",
+      "They still do not let AI write or outline their prose, which they find plodding and vague. They enjoy some non-commercial AI music. They call image and video generation a net negative so far."
+    ],
+    "whyItMatters": "Engineers setting up their own agent workflow get the most from the original. Each section ends with a table that rates every use case with a short note. It also has concrete stories, like an agent that tested a voice app by speaking to it with macOS text-to-speech."
+  },
+  "comments": {
+    "overview": "The thread was heated and mostly argued over one line: \"writing code is solved.\" Skeptics used the article's own caveats against it. A few heavy agent users answered with their own shipped products. A long side fight broke out over whether AI music can count as art.",
+    "themes": [
+      {
+        "title": "What \"coding is solved\" means",
+        "synthesis": "Commenters agreed the phrase means different things to different people. For some it only means nobody types code by hand anymore. For others it means you no longer need to read what the agent writes, and that is where the fight started. Skeptics shared agent output that passed every test but was badly wrong underneath.",
+        "quotes": [
+          {
+            "author": "mzhaase",
+            "text": "I just had an agent implement writing a DB row like this: copy the entire DB into memory. Change data in memory. Delete the DB. Copy everything back.",
+            "commentId": 50363001
+          },
+          {
+            "author": "prmph",
+            "text": "This does not sound like \"coding is solved\". If coding is solved, then I can one-shot a complex software product into being, which is *never* going to be the case.",
+            "commentId": 50364742
+          }
+        ]
+      },
+      {
+        "title": "Can unread agent code last?",
+        "synthesis": "One solo developer said they shipped a 500k-line app and a SaaS owner said they hardly open their IDE. Both said QA testing and a second model as reviewer catch most problems. Critics answered that extra code makes every later change cost more. Others asked where all the better software is, since the apps they use seem to get worse.",
+        "quotes": [
+          {
+            "author": "kragen",
+            "text": "When a system is 200k lines of code instead of 10k lines of code, every new feature you add and bug you fix takes 5–10× the effort.",
+            "commentId": 50377088
+          },
+          {
+            "author": "user43928",
+            "text": "Based on my personal experience and 500+ hours put into my project, I can confidently say that this is not the case. Increased effort to maintain is negligible.",
+            "commentId": 50378250
+          }
+        ]
+      },
+      {
+        "title": "Where taste comes from",
+        "synthesis": "The top comment asked how anyone builds the taste the author says agents lack, if nobody writes code. Many replied that syntax was never the hard part. The hard part is modeling a domain as data. Others pushed back that, for most developers, the work really was routine database code, and that part is now automated.",
+        "quotes": [
+          {
+            "author": "mef51",
+            "text": "Where do you think human taste and experience in software comes from?",
+            "commentId": 50357584
+          },
+          {
+            "author": "chasd00",
+            "text": "Creating and updating rows in a database from user input is all the “domain modeling” there is in most software.",
+            "commentId": 50359572
+          }
+        ]
+      },
+      {
+        "title": "AI music and the art double standard",
+        "synthesis": "The author's praise for AI music set off the largest single thread. Critics said music without a human behind it has no point. Fans said it fills niches human musicians ignore. One commenter asked why people cheer an uncle who builds software with AI but sneer if that uncle makes music with it.",
+        "quotes": [
+          {
+            "author": "suddenlybananas",
+            "text": "Music is a means by which a human can express themselves, the whole _point_ of art is human expression.",
+            "commentId": 50356806
+          },
+          {
+            "author": "sashank_1509",
+            "text": "So it’s great and amazing if anyone can create their gizmos and software to help them but not if they create music or digital images, which apparently it is wrong to prompt, and not a sign of a great future.",
+            "commentId": 50359848
+          }
+        ]
+      },
+      {
+        "title": "The author's vantage point",
+        "synthesis": "Several commenters said an AI research engineer who builds prototypes is not a typical user. Others questioned the $3,000 monthly token bill, which the author said their employer pays. One commenter checked the Mumble noise-cancelling change the article praises and found it stalled after maintainer feedback.",
+        "quotes": [
+          {
+            "author": "mtlynch",
+            "text": "Then, the Mumble maintainers gave him pretty polite, patient feedback, and he just ignored it.",
+            "commentId": 50366413
+          },
+          {
+            "author": "evolve-maz",
+            "text": "I appreciate the PoV of people with different challenges, but my full-time job is not about building rapid prototypes so the guidelines are worth a bit less to me.",
+            "commentId": 50360196
+          }
+        ]
+      }
+    ],
+    "consensus": "Most commenters accept that agents now write much of the code, at least for routine work. Most also agree a human still has to own the architecture and check the results.",
+    "dissent": "A vocal group of solo builders said reading the code is no longer needed. In their view, manual QA plus a second model reviewing each change is enough for most products.",
+    "contrarian": {
+      "author": "akoboldfrying",
+      "text": "Architecture -- in fact, using any kind of abstractions at all -- is basically a crutch that humans use to make ourselves more effective in implementing and evolving code over time, usually by either compressing the problem domain so that we can pack more of it into our limited brains, or making our own mistakes visible early.",
+      "commentId": 50363687,
+      "why": "Both camps treat clean structure as the goal, and this asks whether it only exists to fit code into human memory."
+    }
+  },
+  "digestedAt": "2026-11-12T12:08:16.000Z"
+}

@@ -1,0 +1,108 @@
+{
+  "hnId": 50268380,
+  "title": "Git for the US Code",
+  "url": "https://lexifina.com/blog/git-for-the-us-code",
+  "domain": "lexifina.com",
+  "kind": "article",
+  "author": "alansaber",
+  "postedAt": "2026-10-28T01:47:50.000Z",
+  "points": 456,
+  "commentCount": 267,
+  "readingMinutes": 5,
+  "tldr": "Lexifina rebuilt the change history of nine US Code titles from the public laws that amended them. Of 365 changes since 2017, 361 reproduce the official text exactly. Each change records the law that made it and the date it took effect. The goal is to show lawyers and language models the text in force on any past date.",
+  "article": {
+    "keyPoints": [
+      "The US Code records which law wrote a sentence in prose amendment notes. Effective dates often sit in separate notes. A law with no stated date takes effect on enactment.",
+      "The small business debtor limit in 11 USC § 1182(1) shows the problem. The CARES Act raised it to $7.5 million in 2020. That increase lapsed in March 2022. A June 2022 Act restored it for cases still pending. The limit now stands at $3,424,000.",
+      "A Technical University of Munich study found that models apply superseded German rules. They also prefer newer provisions even when older ones govern. One model scored 24% alone on post-cutoff questions and 87% with the statute retrieved.",
+      "Asking a model to rebuild old text is not enough. In a second study, model output looked 93 to 99% similar to the official text. Only half of single amendments matched exactly. Experts found legally significant errors in the near misses.",
+      "Lexifina applied each public law's amending instructions to the older release point in date order. It then compared the result with the next release point. 361 of 365 changes matched. A label marks how far each of the other four could be confirmed.",
+      "The tool does not yet show when a later law reaches back over earlier dates. It reads effective-date notes by pattern. Unusual wording falls back to the enactment date."
+    ],
+    "whyItMatters": "Read it if you build legal research tools or feed statutes to language models. The § 1182 bankruptcy example shows in detail why a release point printed at one time can give the wrong answer for a case filed then."
+  },
+  "comments": {
+    "overview": "The thread was warm toward the idea but spent most of its energy on a different one. The top thread treated it as git blame for bills, then drifted into campaign finance and prosecuting politicians. Practitioners elsewhere argued that a text diff is not the law, and many posted similar projects from other countries.",
+    "themes": [
+      {
+        "title": "Would attributing edits make lawmakers accountable?",
+        "synthesis": "A 2007 NYT column imagined tracked edits shaming legislators out of donor-friendly language. Skeptics said politicians would game attribution with messaging amendments, and real negotiation would move off the record. Others noted that nonpartisan Legislative Counsel staff draft the text, so authorship would hide the sponsor. A smaller argument asked whether drafting needs privacy to let lawmakers float bold ideas.",
+        "quotes": [
+          {
+            "author": "JumpCrisscross",
+            "text": "You’d hand tough edits to your safe-seat colleagues and insert messaging amendments designed to get voted down for own comms.",
+            "commentId": 50269709
+          },
+          {
+            "author": "codethief",
+            "text": "But what you'd then likely just end up with is most negotiation & editing happening out-of-band.",
+            "commentId": 50272407
+          }
+        ]
+      },
+      {
+        "title": "A text diff is not the law in force",
+        "synthesis": "People who have worked on legal data said the hard part is not the text. Court rulings can leave statute text unchanged but unenforceable, and renumbering scatters references across the code. Commercial services like LexisNexis charge for exactly this mapping, much of it done by hand. Others argued that version control fits statute text well, and the hard part starts only when you attach case law.",
+        "quotes": [
+          {
+            "author": "tpmoney",
+            "text": "If you want to know the literal text (that may or may not be enforceable), then sure a plain text diff is sufficient… But if you want to know what the actual law is, you definitely need more than just a text diff.",
+            "commentId": 50269563
+          },
+          {
+            "author": "scronkfinkle",
+            "text": "\"What is an atomic unit of legislation?\" is also fuzzy as amendments will both move and edit named blocks of legislation at once.",
+            "commentId": 50274537
+          }
+        ]
+      },
+      {
+        "title": "Tool problem or people problem",
+        "synthesis": "One camp said the papertrail already exists and the real gap is journalism and public attention. The other replied that a better tool lowers the cost for whoever does the digging. A side argument asked who benefits more from git diffs, humans or AI agents. One commenter said agents can brute-force raw text, so humans gain more. A document-management developer warned against forcing git on legislative drafters.",
+        "quotes": [
+          {
+            "author": "p-e-w",
+            "text": "Our problem is that the press isn’t doing their job, not that legislation doesn’t have a commit graph.",
+            "commentId": 50269808
+          },
+          {
+            "author": "crabmusket",
+            "text": "LLMs make brute forcing intellect possible. It's humans who need finely crafted tools.",
+            "commentId": 50270481
+          }
+        ]
+      },
+      {
+        "title": "Prior art in other countries",
+        "synthesis": "Commenters listed similar systems. Poland's ISAP publishes consolidated snapshots with links between amending acts, and Switzerland's Fedlex compares versions and languages. Others named La Fabrique de la Loi and Legifrance in France, plus DC's law-xml repo. Several earlier git mirrors of the US Code came up, as did LawVM, an open-source compiler for amendment-driven law.",
+        "quotes": [
+          {
+            "author": "Xirdus",
+            "text": "These documents aren't technically the law, they just show a snapshot of what the law is at the specific moment.",
+            "commentId": 50269722
+          }
+        ]
+      },
+      {
+        "title": "Who should run it, and where is it?",
+        "synthesis": "Several readers could not find a working demo, and one objected that a private company should not hold the record. The author then released the data as a public GitHub repo under CC0. Another commenter wanted Congress to require the Law Revision Counsel to maintain such a repo. Their reason was that volunteers handle a one-time import but not the ongoing upkeep.",
+        "quotes": [
+          {
+            "author": "iAMkenough",
+            "text": "If transparency is the goal, the entire codebase for this should be public domain and not profitable. Otherwise there's a profit motive to rewrite history.",
+            "commentId": 50268855
+          }
+        ]
+      }
+    ],
+    "consensus": "Most agreed that law changes are hard to trace today and that a clear, dated history of the code is worth having.",
+    "dissent": "Practitioners doubted that git fits law. They said renumbering, court rulings and effective dates need a purpose-built model, and authorship of bills cannot be captured honestly.",
+    "contrarian": {
+      "author": "jcranmer",
+      "text": "The tl;dr is that doing git-style change-tracking of the legislation isn't as helpful in practice as you'd think (especially because a lot of the very basic change-tracking is already available in the existing tools that lawyers use!).",
+      "commentId": 50269104,
+      "why": "Most of the thread assumed lawyers lack this history, but the paid research tools they already use show basic version changes."
+    }
+  },
+  "digestedAt": "2026-11-12T12:08:02.000Z"
+}

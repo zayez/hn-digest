@@ -1,0 +1,118 @@
+{
+  "hnId": 50378228,
+  "title": "sshole",
+  "url": "https://sshhole.com",
+  "domain": "sshhole.com",
+  "kind": "article",
+  "author": "josemrb",
+  "postedAt": "2026-11-05T12:19:02.000Z",
+  "points": 3001,
+  "commentCount": 752,
+  "readingMinutes": 5,
+  "tldr": "Since 2016, OpenSSH on musl systems without PAM accepted any password of 257 to 1024 characters for accounts locked with \"*\". The cause is musl's crypt() returning \"*\" on failure, and it fails on passwords over 256 bytes. On Alpine's official AWS and Azure images, this gives root. OpenSSH 10.6p2 fixes it.",
+  "article": {
+    "keyPoints": [
+      "In 1980 Bill Joy put \"*\" in the password field of the daemon account. A \"*\" is not a hash, so no password can match it. Unix still locks accounts this way.",
+      "In August 2012 musl changed crypt() to return \"*\" on failure instead of NULL. Its reason was that many programs crashed when they compared a NULL result.",
+      "Twenty days later musl added SHA-512 crypt and capped passwords at 256 bytes to stop slow-hash denial of service. A longer password makes crypt() fail, and the failure returns \"*\".",
+      "In 2016 OpenSSH fixed a user-enumeration timing leak, CVE-2016-6210. For an account without a real hash, sshd now hashes the typed password with another account's salt. On musl, a long password makes that call return \"*\", which matches the locked account's field.",
+      "Alpine 3.16 switched root from \"!\" to \"*\" in 2022, because \"!\" also blocked key logins without PAM. Alpine's AWS and Azure images ship a passwordless \"alpine\" user with passwordless doas.",
+      "The author found the bug with agent swarms that sent about 17,600 unusual logins to sshd builds on glibc, musl, PAM and no PAM. Only musl without PAM accepted logins it should refuse."
+    ],
+    "whyItMatters": "Admins of Alpine, OpenWrt, Buildroot or Yocto systems running OpenSSH should read the \"are you affected?\" checklist and the log check near the end. The page also links each commit and mailing-list post in the ten-year chain, including a 2024 musl thread that hit the same limit and missed sshd."
+  },
+  "comments": {
+    "overview": "A huge and heated thread. Most of it argued over who owns the bug: C's weak error handling, musl's choice of \"*\", or OpenSSH's fake-salt code. Side threads tested real exposure, mocked the AI-written page, and asked whether the change was a planted backdoor.",
+    "themes": [
+      {
+        "title": "Is C to blame?",
+        "synthesis": "The largest debate. One camp said C has no sum types, tuples or exceptions, so library authors fall back on sentinel values like NULL or \"*\". Rust or Haskell callers could not use a hash without first handling the error case. Others replied that a Rust API under the same backward-compatibility pressure would get the same hack. A long side argument disputed whether a nullable pointer already counts as type safe.",
+        "quotes": [
+          {
+            "author": "muvlon",
+            "text": "A programming language is not just the things that are in some way possible within it, but more importantly the things that are easy in it.",
+            "commentId": 50380766
+          },
+          {
+            "author": "creata",
+            "text": "Maybe I'm wrong, but it looks to me like the exact same incentives and means to screw things up exist in C and in Rust for this particular bug.",
+            "commentId": 50382952
+          }
+        ]
+      },
+      {
+        "title": "Crash loudly or return a sentinel",
+        "synthesis": "Commenters were close to unanimous that \"*\" was the worst possible error token, since it is already the shadow-file marker for a locked account. Many said a NULL crash beats a silent wrong answer, and a long string or random value would at least never match. Defenders of the history said Unix crypt() never returned NULL in practice, so decades of callers never check it. Debian's libxcrypt uses \"*0\" for the same reason, one character away from this bug.",
+        "quotes": [
+          {
+            "author": "panzi",
+            "text": "\"But if people don't check for it it crashes their programs!\" Good! Let it crash loudly! Then they notice and fix the issue.",
+            "commentId": 50380920
+          },
+          {
+            "author": "JdeBP",
+            "text": "This is why programs were written to never check the result of crypt().",
+            "commentId": 50383920
+          }
+        ]
+      },
+      {
+        "title": "The bug is in OpenSSH's fake check",
+        "synthesis": "Several careful readers said musl already avoids returning \"*\" when the stored hash is \"*\". The bug fires only because sshd hashes with another user's salt and compares the result against the locked user's field. They argued that a check done only to waste time should never be able to grant a login. OpenSSH shipped a minimum-hash-length check but calls the root cause musl's.",
+        "quotes": [
+          {
+            "author": "mpyne",
+            "text": "However OpenSSH passes a different hash to musl’s crypt() than what it later uses to compare, so musl doesn’t switch to the alternate return output…",
+            "commentId": 50405707
+          },
+          {
+            "author": "amluto",
+            "text": "If you're doing a fake password hash to obscure timing, *remember* that it's fake and don't let the user log in!",
+            "commentId": 50383434
+          }
+        ]
+      },
+      {
+        "title": "How many systems are exposed",
+        "synthesis": "Skeptics listed the conditions and said all of them must hold together. Others answered that each condition is a default on Alpine and many embedded systems. Readers clarified that OpenWrt uses Dropbear by default, which is not affected, and that most Alpine containers do not run sshd. Reproductions worked only on unpatched packages, and only on the second attempt. A parallel thread argued again that password logins should be off everywhere.",
+        "quotes": [
+          {
+            "author": "tonnydourado",
+            "text": "The conditions are all ANDed, miss a single one and you're fine.",
+            "commentId": 50380029
+          },
+          {
+            "author": "justinsaccount",
+            "text": "It also accepts the password on the 2nd+ attempt, NOT the first.",
+            "commentId": 50379159
+          }
+        ]
+      },
+      {
+        "title": "An AI-written page with scroll-jacking",
+        "synthesis": "Many readers found the lowercase prose and animations hard to follow, and praised the top comment's plain explanation instead. Admins wanted the affected-systems check first, not a history lesson. Others liked the design, and a few said it hardly matters who or what wrote the text.",
+        "quotes": [
+          {
+            "author": "oefrha",
+            "text": "This is a super duper annoying site for people who just want to know if their systems are vulnerable, after patching like a dozen critical vulnerabilities in other software over the last week and are almost at the breaking point of resigning.",
+            "commentId": 50378678
+          },
+          {
+            "author": "numeri",
+            "text": "The surface-level hints are gone, but the attempt to make every sentence pithy, the decisions on what information to present and what to assume the audience knows, and the over-emotionalization are all still there.",
+            "commentId": 50382540
+          }
+        ]
+      }
+    ],
+    "consensus": "Returning \"*\" from crypt() on error was a bad decision. A crash or an explicit error would have been safer than a value that can match a locked account. Password logins should be off on exposed servers.",
+    "dissent": "A vocal minority read the two 2012 musl commits, twenty days apart, as a planted backdoor. Others answered that the changes were public and documented. Another group said the page oversells a bug that needs several uncommon conditions at once.",
+    "contrarian": {
+      "author": "fc417fc802",
+      "text": "Yes, crypt is specified to return NULL on failure but if you read the rest of that page it is only permitted to fail with ENOSYS. The spec does not allow for failure for any other reason.",
+      "commentId": 50388334,
+      "why": "The spec gave musl no legal way to report a too-long password. The thread's \"just return NULL like POSIX says\" is weaker than it looked."
+    }
+  },
+  "digestedAt": "2026-11-12T12:07:55.000Z"
+}

@@ -1,0 +1,108 @@
+{
+  "hnId": 50358562,
+  "title": "Safari introduces Adaptive Dark Mode in 27.3",
+  "url": "https://webkit.org/blog/18541/introducing-adaptive-dark-mode/",
+  "domain": "webkit.org",
+  "kind": "article",
+  "author": "paddingtone",
+  "postedAt": "2026-11-03T21:39:05.000Z",
+  "points": 518,
+  "commentCount": 264,
+  "readingMinutes": 5,
+  "tldr": "Safari 27.3 beta adds Adaptive Dark Mode, an opt-in setting that turns light websites dark. WebKit says 40% of page loads come from dark-mode users. Only 10% of page loads support dark mode. Safari leaves sites alone that declare their own color scheme or opt out with \"light only\".",
+  "article": {
+    "keyPoints": [
+      "Almost 40% of web page loads come from users in dark mode. Only 10% of page loads support dark mode.",
+      "Safari skips any page that declares color-scheme: light dark, and any page that is already mostly dark. It transforms the rest.",
+      "A color matrix inverts the luminosity of colors and keeps their hue. Transformed text aims for the WCAG 4.5:1 contrast ratio.",
+      "Most images stay unchanged. Safari recolors SVG icons when needed and inverts simple black-and-white bitmap logos after analyzing their pixel histograms.",
+      "Safari turns off masks and mix-blend-mode in some cases and leaves canvas content alone. Authors can opt out with color-scheme: light only, which beta 1 does not yet support.",
+      "Scripts that read CSS colors get the original colors, and canvas drawings render in their original form. WebKit says this stops trackers from using the setting to fingerprint users."
+    ],
+    "whyItMatters": "Web developers with a light-only site should read the original. It lists the old techniques that break under the transform, such as baked-in image backgrounds and image sprites, and the CSS features for building a proper dark mode instead."
+  },
+  "comments": {
+    "overview": "The thread welcomed the feature, but much of it turned into an old fight over whether dark mode is good for the eyes at all. Developers argued over a browser's right to restyle their pages, users compared the extensions that already do this, and many asked why Hacker News itself still has no dark theme.",
+    "themes": [
+      {
+        "title": "Dark mode hurts some eyes",
+        "synthesis": "Many commenters with astigmatism say light text on black smears into halos, a problem one named astigmatic halation. Others report migraines or after-images from dark pages. Others say dark mode helps them with floaters, migraines or a dark bedroom. Several asked for the reverse feature, turning dark sites light, and complained that pure black backgrounds are the worst offenders.",
+        "quotes": [
+          {
+            "author": "kps",
+            "text": "Not them, but my left eye isn't fully correctable. The average dark mode site looks like I'm driving the Las Vegas strip in the rain.",
+            "commentId": 50358996
+          },
+          {
+            "author": "kccqzy",
+            "text": "I cannot take it because the contrast is too much: #fff on #000 is way more uncomfortable than #000 on #fff for me.",
+            "commentId": 50359537
+          }
+        ]
+      },
+      {
+        "title": "Whose page is it?",
+        "synthesis": "Some developers called it a nightmare that a site will now look different to different people, and one called Apple arrogant for changing logos and graphics. Most replies said the browser is the user's agent and the web was never pixel-perfect. Agency developers answered that clients still sign off on a fixed layout and a brand book.",
+        "quotes": [
+          {
+            "author": "isityettime",
+            "text": "the web has never been a fixed canvas that you get to paint on and then hand to users.",
+            "commentId": 50359015
+          },
+          {
+            "author": "cluckindan",
+            "text": "A web agency is not going to start questioning the brand book of a 100x larger client.",
+            "commentId": 50358902
+          }
+        ]
+      },
+      {
+        "title": "Extensions already do this",
+        "synthesis": "Users compared Dark Reader, Noir, Stylus and Chrome's hidden enable-force-dark flag. Dark Reader drew complaints about slow page loads, broad permissions, background requests and a malicious clone. Noir users praised it and expect Apple to Sherlock it. Firefox users regretted that their browser has no built-in equivalent.",
+        "quotes": [
+          {
+            "author": "pxoe",
+            "text": "People love to say \"just get an addon\" for this or that, but they just don't work that well, and it's not that great having to rely on some random addon developers for something that'd be adjusting every website that you visit.",
+            "commentId": 50369706
+          }
+        ]
+      },
+      {
+        "title": "Hacker News has no dark mode",
+        "synthesis": "A long subthread used the launch to complain that HN ignores prefers-color-scheme, and people shared their own userstyles and extensions for it. One reader with neurological Lyme disease said white pages were painful enough to need a CSS overlay. A tester reported that Adaptive Dark Mode works well on HN.",
+        "quotes": [
+          {
+            "author": "matthova",
+            "text": "I do appreciate how minimalist hackernews tries to be, but I think respecting the operating system's theme can be considered very minimalist",
+            "commentId": 50360465
+          }
+        ]
+      },
+      {
+        "title": "Standards details and the privacy lie",
+        "synthesis": "One commenter objected that Safari now lies to pages about colors. Others replied that browsers already lie for privacy, as they do with visited-link colors. A long argument split over whether Chrome's prefers-color-scheme handling is a bug, and another over whether light-dark() locks CSS into two schemes. One commenter warned that WCAG's 4.5:1 ratio is unreliable for light text on dark backgrounds.",
+        "quotes": [
+          {
+            "author": "kccqzy",
+            "text": "Browsers lie all the time. Browsers also prevent sites from getting the color of a link because visited links can be shown in a different color and this can be used by the site to tell if a user has ever visited a link.",
+            "commentId": 50358801
+          },
+          {
+            "author": "seanwilson",
+            "text": "The WCAG 2 contrast checker is known to be inaccurate, specifically for light on dark color combinations (i.e. dark mode) meaning 4.5:1 isn't always going to be easy to read so it's surprising they're not at least using a higher ratio.",
+            "commentId": 50359463
+          }
+        ]
+      }
+    ],
+    "consensus": "Users should choose between light and dark, and sites should honor prefers-color-scheme. Because the feature is opt-in, most commenters saw it as a net gain.",
+    "dissent": "A minority expects broken sites and angry users, comparing it to Gmail's forced dark mode in email. Others object to any browser changing a page's design without the author's consent.",
+    "contrarian": {
+      "author": "drusepth",
+      "text": "Investing \"a little bit of effort\" is how I got myself into the trap of doubling+ UI QA time to make sure everything _also_ looks good in dark mode (and also in dark mode across a matrix of other configurations) every time I want to ship anything new to users.",
+      "commentId": 50359393,
+      "why": "The thread kept telling developers to just add prefers-color-scheme, and this developer counts the real cost of a second theme in testing time."
+    }
+  },
+  "digestedAt": "2026-11-12T12:07:46.000Z"
+}
