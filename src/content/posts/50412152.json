@@ -1,0 +1,118 @@
+{
+  "hnId": 50412152,
+  "title": "Petered",
+  "url": "https://aworkinglibrary.com/writing/petered",
+  "domain": "aworkinglibrary.com",
+  "kind": "article",
+  "author": "adrianhoward",
+  "postedAt": "2026-11-08T10:56:43.000Z",
+  "points": 167,
+  "commentCount": 94,
+  "readingMinutes": 2,
+  "tldr": "Mandy Brown argues that people promoted to their level of incompetence do not simply stay there. Their jobs come under threat, so some take on the organization's dirty work to stay valuable. These \"petered\" leaders become real imposters who hide behind busyness and obscurity. Brown suggests the popular idea of imposter syndrome may help hide them.",
+  "article": {
+    "keyPoints": [
+      "The Peter Principle says people rise until they reach a job they cannot do, and the usual assumption is that they then stay put.",
+      "Gläßel and Scharpf's book on careers in dictatorships says that position is unstable, because an incompetent person risks losing the job.",
+      "Under this career pressure, people take on risky or morally questionable tasks for their superiors, or sabotage the people above them to open a vacancy.",
+      "Brown links this to David Graeber's claim that many managers exist mainly to make their bosses look good, often by doing the dirty work.",
+      "The petered leader must look competent while failing at the real job, so obscurity and constant busyness become their main tools.",
+      "Brown says the term \"imposter phenomenon\" became \"imposter syndrome\", which moved the problem from the system onto the person who feels it."
+    ],
+    "whyItMatters": "The original is a short reading note of about 570 words, so it takes two minutes. Read it for the long quote from Gläßel and Scharpf and for Brown's exact wording on imposter syndrome, which many commenters found confusing."
+  },
+  "comments": {
+    "overview": "The thread mostly ignored the article's dictatorship angle and argued about the Peter Principle itself. The largest debate was whether management is a separate job that engineers should not be pushed into. The imposter syndrome paragraph drew both agreement and open confusion.",
+    "themes": [
+      {
+        "title": "Management is a different job",
+        "synthesis": "Many commenters said managing and engineering need different skills, so promoting good engineers into management sets them up to fail. They blamed career ladders that only pay more for moving into management, and praised companies with parallel technical tracks. A strong counter-current said engineering managers still need real engineering experience, or at least an engineering mindset. Others argued that technical decisions belong to the team and the manager's job is the people.",
+        "quotes": [
+          {
+            "author": "prinny_",
+            "text": "It is very common for the promotion path to be senior -> team leader -> choose between engineer manager and staff engineer / architect, meaning that the reward for being a good engineer is to be promoted to a manager role, even if the person is ill suited to pick up such responsibilities.",
+            "commentId": 50415510
+          },
+          {
+            "author": "bluGill",
+            "text": "Being an engineer makes you a better engineering manager. However, that puts a floor on how bad you could be. It doesn't put a ceiling on how good you could be.",
+            "commentId": 50413645
+          }
+        ]
+      },
+      {
+        "title": "Is the Peter Principle even right?",
+        "synthesis": "Several commenters called the principle too simple. They said it assumes people cannot learn and that each higher job needs more of the same skill. Defenders replied that the principle already allows for a different skill set and that the ability to learn is part of competence. Others said ability rarely decides promotion at all, because politics and timing matter more.",
+        "quotes": [
+          {
+            "author": "the_af",
+            "text": "In its most bare form, the principle states that people get promoted until they get stuck at a role in which they cannot adapt and do a bad job at. It never states it's a single dimension of competence or incremental over their last role.",
+            "commentId": 50413626
+          },
+          {
+            "author": "namenotrequired",
+            "text": "Competence includes the competence to learn. If I’m promoted to a job that I can learn how to do, great, I’ll learn how to do it and then I can be promoted to the next job",
+            "commentId": 50413252
+          }
+        ]
+      },
+      {
+        "title": "The imposter syndrome claim",
+        "synthesis": "Brown's paragraph on imposter syndrome split readers. Some did not understand what \"being impostered\" meant, and one reacted to the patriarchy framing with \"WTF?\". Another argued the older term was obscure, citing Google Trends and Ngram data. Others liked the core idea that the feeling often points to a real imposter above you.",
+        "quotes": [
+          {
+            "author": "jrm4",
+            "text": "Very often, the cause of imposter syndrome is that there is, in fact, an imposter. It just ain't YOU.",
+            "commentId": 50412666
+          },
+          {
+            "author": "stephenlf",
+            "text": "I have no idea what this is saying. What does “being impostered” mean? As far as I know, “Imposter Syndrome” is all about personal insecurities.",
+            "commentId": 50413794
+          }
+        ]
+      },
+      {
+        "title": "Survival by politics, and doubts about the dirty-work link",
+        "synthesis": "Some commenters agreed that petered people survive through relationships and politics rather than skill, and that this drives good people out. Others thought the link to dirty work was forced. One pointed out that the source book studied the Argentinian army, where officers' lives were at stake. That is a long way from an office.",
+        "quotes": [
+          {
+            "author": "JSR_FDED",
+            "text": "After they’ve been promoted to their level of incompetence, they lean in very hard on relationships to survive.",
+            "commentId": 50412330
+          },
+          {
+            "author": "kstenerud",
+            "text": "Christian Gläßel and Adam Scharpf studied data from the Argentinian army and compared it with historical accounts of dictatorships and coups, tracing differences between henchmen, coup plotters, and other members of the officer corps. These are situations where your physical survival often depends on what you do.",
+            "commentId": 50413860
+          }
+        ]
+      },
+      {
+        "title": "Firsthand stories of being petered",
+        "synthesis": "Several people described taking a management job, hating it, and stepping back down. One developed a nerve disorder from the stress. Others said even senior technical promotions can bring unwanted duties, and that many companies no longer promote internally at all.",
+        "quotes": [
+          {
+            "author": "donatj",
+            "text": "A year in I got the only negative review of my career, and knew I couldn't keep doing this. I was so stressed I developed trigeminal neuralgia. I had to leave.",
+            "commentId": 50413611
+          },
+          {
+            "author": "the_af",
+            "text": "I've seen an extremely solid staff engineer get promoted to principal, riddled with bullshit responsibilities, given a bad performance review when he didn't meet them, and quitting as a result.",
+            "commentId": 50413776
+          }
+        ]
+      }
+    ],
+    "consensus": "Most commenters agreed that promotion systems often push people into jobs that need different skills from the ones that earned the promotion. They agreed that separate technical and management career tracks help.",
+    "dissent": "A minority said the Peter Principle and the article are too simple. In their view, people learn on the job, ability rarely drives promotion, and a study of dictatorships says little about companies.",
+    "contrarian": {
+      "author": "bluGill",
+      "text": "The jobs are not nearly as different as people would imagine. In both cases, you're more a people person than a technical person.",
+      "commentId": 50413625,
+      "why": "Most of the thread called management a separate job, but this comment notes that senior engineers already spend most of their time on people work."
+    }
+  },
+  "digestedAt": "2026-11-13T18:38:05.000Z"
+}

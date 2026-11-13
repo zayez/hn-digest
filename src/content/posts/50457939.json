@@ -1,0 +1,118 @@
+{
+  "hnId": 50457939,
+  "title": "Why are we still working this hard?",
+  "url": "https://wilsoniumite.com/2026/11/11/why-are-we-still-working-this-hard/",
+  "domain": "wilsoniumite.com",
+  "kind": "article",
+  "author": "Wilsoniumite",
+  "postedAt": "2026-11-11T20:05:29.000Z",
+  "points": 241,
+  "commentCount": 298,
+  "readingMinutes": 24,
+  "tldr": "US workers now make in 16 hours what took 40 hours in 1973. Yet an hour of ordinary pay buys only 19 percent more. The author argues the wage fails because it is both a price for labor and most people's only claim on output. The author proposes a public ownership share that pays everyone a dividend, set up before automation makes ownership too costly to buy.",
+  "article": {
+    "keyPoints": [
+      "BEA input-output tables show that an hour of US business work produces 2.5 times what it did in 1973. Hours worked per person rose 10 percent over the same period.",
+      "Of the 24 freed hours, 18 never reached ordinary pay. About a fifth of that gap went to owners of machines. About two-fifths went to top earners pulling away from ordinary workers, a change Acemoglu and Restrepo tie mostly to automation of routine tasks.",
+      "The author says a wage does two jobs. It is a price for an hour, and it is most people's only claim on output, which the author calls a ticket. Because people cannot refuse the ticket, the price no longer shows what their time is worth.",
+      "In the author's model, machines become 100 times better relative to people. Total income grows 32-fold. Work's share of income falls from 60 percent to 17 percent. The richest tenth's share of market income rises from 46 to 62 percent.",
+      "A tax on machine returns fails in the model, because a 20 percent tax cuts wages by almost as much as it raises. Full expensing of investment instead makes the state a one-fifth partner in every new machine, with no drop in investment.",
+      "The proposal has three parts: a common fund paying about $374 a month per person, wage earners saving into ownership, and taxes moved from wages to spending. Alaska's oil dividend and Norway's fund are the precedents. Ownership costs 6.7 years of national wages today and 48 years at the hundredfold point. The author concludes that waiting makes it harder."
+    ],
+    "whyItMatters": "Read the original and its SSRN paper for the method behind the numbers. The essay traces a consumer dollar back through every supplier and explains the model's assumptions. It ends with a list sorting each claim by whether it rests on public data, the model or the author's judgment. The author says Claude drafted most of the text, and several commenters found the prose hard to read."
+  },
+  "comments": {
+    "overview": "A large, heated thread that mostly argued past the article's proposal. Commenters fought over who captured the productivity gains, whether competition forces long hours, and whether anyone can simply choose to work less. A smaller group attacked the AI-drafted prose or said the ideas were old.",
+    "themes": [
+      {
+        "title": "Investors, risk and who gets the gains",
+        "synthesis": "The longest argument started from the claim that productivity gains went to the investor class. Defenders said investors funded the gains and carry risk that workers do not. Replies called career risk real and uncompensated, and pointed to taxpayer-funded research behind much of the technology. A self-described rentier agreed the system is rigged. madaxe_again said they pay less tax than people earning a quarter of their income.",
+        "quotes": [
+          {
+            "author": "smallmancontrov",
+            "text": "Labor takes no risks? Hahahhahaha! Career risk looks exactly like capital risk, with the big difference being that it is uncompensated.",
+            "commentId": 50467249
+          },
+          {
+            "author": "madaxe_again",
+            "text": "I am a rentier, an investor. I haven’t worked in any conventional sense for over a decade now, and I keep getting richer.",
+            "commentId": 50458987
+          }
+        ]
+      },
+      {
+        "title": "Competition sets the hours",
+        "synthesis": "Many argued that no one can cut hours alone, because rivals and peers absorb every gain. Commenters cited a study linking happiness to income rank and a Fed letter tying house prices to income growth. One commenter said a company that cut to 30 hours would lose to competitors. Others pushed back. apercu said they do more in 15 hours than client staff do in 40, and organized labor came up as the historical fix.",
+        "quotes": [
+          {
+            "author": "palata",
+            "text": "I guess the point is that *you* cannot work less if *the others* don't.",
+            "commentId": 50459311
+          },
+          {
+            "author": "Swizec",
+            "text": "Tech (business in general) is a Red Queen's Race. If everyone else runs faster, you have to run faster just to stay in place.",
+            "commentId": 50458451
+          }
+        ]
+      },
+      {
+        "title": "Higher living standards, or rising essentials?",
+        "synthesis": "One camp said the gains went into consumption: bigger homes, air conditioning, safer cars with more features. A sharper version said no economic law ties wages to productivity and blamed the 1973 break on land-use limits. The other camp answered that housing, health care, education and food drive the squeeze, not gadgets. One commenter doubted that inflation figures handle quality changes honestly.",
+        "quotes": [
+          {
+            "author": "kjshsh123",
+            "text": "There is no economic law that productivity should equal wages. When there's decreasing marginal returns to labor, it's marginal productivity that determines wages.",
+            "commentId": 50462070
+          },
+          {
+            "author": "slopinthebag",
+            "text": "but the unaffordability crisis stems from housing, food, fuel, etc. people aren't struggling because of an iphone they buy every few years, or the $20/month their AC adds to their monthly summer utility bill.",
+            "commentId": 50459126
+          }
+        ]
+      },
+      {
+        "title": "Can you just choose to work less?",
+        "synthesis": "testing22321, a former city software engineer, described working 10 to 20 hours a week in a mountain town, in a country with public health care. palata pressed testing22321 that this is a choice only for people who earn enough. Others said well-paid jobs rarely allow part-time work, and US health insurance ties people to full-time jobs. Some described US salaried jobs where 40 hours is the minimum, not the maximum.",
+        "quotes": [
+          {
+            "author": "testing22321",
+            "text": "We realized More money will not make us happier. We don’t want more money.",
+            "commentId": 50458564
+          },
+          {
+            "author": "wat10000",
+            "text": "20 hours per week is for crappy jobs in retail and food service. It's very unlikely that you'll find a tech job willing to employ you part time at any pay level.",
+            "commentId": 50458326
+          }
+        ]
+      },
+      {
+        "title": "AI prose and old ideas",
+        "synthesis": "The top thread objected to the note that Claude drafted most of the text. The author joined to say they had edited the note to read \"with the help of\" after that comment. Some found the prose awkward to read, and others called that a dodge of the ideas. Critics said the argument repeats classical economics and Marx, and that the model behind it is not shown.",
+        "quotes": [
+          {
+            "author": "j2kun",
+            "text": "Condescending attitude aside, if I wanted to hear what Fable says about this, I'd ask Fable myself. I want to hear what YOU have to say about this.",
+            "commentId": 50458969
+          },
+          {
+            "author": "skew-aberration",
+            "text": "The basic observation, that productivity goes up but the rich get richer, is not novel to their work.",
+            "commentId": 50459100
+          }
+        ]
+      }
+    ],
+    "consensus": "Most commenters agreed that ordinary workers have not received the productivity gains as either pay or free time. Housing, health care and education costs came up again and again as the place the money goes.",
+    "dissent": "A minority rejected the premise. In their view, people chose more consumption over leisure, and the gains went into bigger homes, better cars and new technology. Others said individuals can already work less if they accept a smaller life.",
+    "contrarian": {
+      "author": "mike_hearn",
+      "text": "A lot of people aren't working hard. They might sit at their desk from 9-5 but total effort put in is probably only around 15hrs a week of solid work.",
+      "commentId": 50458530,
+      "why": "It questions whether office workers work long hours at all, which suggests Keynes's 15-hour week may already exist inside many 40-hour jobs."
+    }
+  },
+  "digestedAt": "2026-11-13T18:38:17.000Z"
+}

@@ -1,0 +1,113 @@
+{
+  "hnId": 50399933,
+  "title": "Libghostty 1.0",
+  "url": "https://mitchellh.com/writing/libghostty-1-0",
+  "domain": "mitchellh.com",
+  "kind": "article",
+  "author": "mfiguiere",
+  "postedAt": "2026-11-06T23:30:52.000Z",
+  "points": 1092,
+  "commentCount": 214,
+  "readingMinutes": 7,
+  "tldr": "libghostty-vt, the terminal emulation core of Ghostty, reached 1.0 with a stable C ABI. JetBrains IDEs already use it, which puts it in front of over 12.5 million users. Neovim, KDE, Turborepo and over a hundred other projects embed it or plan to. The release adds packaging for Linux distributions and CI tests on seven platforms.",
+  "article": {
+    "keyPoints": [
+      "A year after the Zig module first merged, libghostty-vt has a complete C API and runs in hundreds of products.",
+      "JetBrains replaced its JediTerm terminal with libghostty, and the company reports over 12.5 million active users.",
+      "Neovim has an approved pull request that swaps libvterm for libghostty-vt and closes a 10-year-old scrollback reflow issue.",
+      "The ABI uses opaque handles and enum-keyed getters and setters. Newer headers against an older library return GHOSTTY_UNSUPPORTED instead of crashing.",
+      "CI checks every change with libabigail against a committed baseline, and ELF builds version every exported symbol.",
+      "The library is MIT licensed, needs only libc at runtime, and creates no threads. Mitchell Hashimoto ran 10,000 live terminals on a 4-core, 8 GB server."
+    ],
+    "whyItMatters": "Read the original if you maintain a C library or package software for a distribution. It lists the exact ABI rules, build outputs and per-platform artifacts that the summary only names."
+  },
+  "comments": {
+    "overview": "The thread was warm, with many embedders thanking the team and reporting good results. Most argument went into why anyone needs a terminal library at all, and into side debates about iTerm2 and Rex, Hashimoto's new terminal product.",
+    "themes": [
+      {
+        "title": "Why a terminal library exists",
+        "synthesis": "Several commenters asked why people keep building their own terminals. The answer that landed compared libghostty to a browser engine. The engine has objectively correct behavior worth solving once, and each app builds the subjective parts on top. Others asked whether AI agents make custom emulators cheap enough to skip a shared library. The replies said that correctness, performance and maintenance still cost real time and tokens.",
+        "quotes": [
+          {
+            "author": "zem",
+            "text": "now one key point is that you can get a terminal engine right according to a bunch of reasonably objective criteria, so it's a problem well worth solving once and for all.",
+            "commentId": 50403324
+          },
+          {
+            "author": "zem",
+            "text": "AI is not magic; there is a fair amount of work involved in getting a complex piece of software correct and performant, and once someone has done that it makes way more sense to build on top of it than to reinvent the wheel.",
+            "commentId": 50403384
+          }
+        ]
+      },
+      {
+        "title": "Embedders report it just works",
+        "synthesis": "Many commenters had shipped something on libghostty. JetBrains users said the new terminal fixed years of escape sequence and rendering bugs. Emacs users called the Ghostel package the first Emacs terminal that worked properly. Others built a Sublime Text plugin, web terminals and a Go game engine on it. One embedder found no speed gain for a MUD client.",
+        "quotes": [
+          {
+            "author": "AnggaSP",
+            "text": "There was so many little things that bugs me with JediTerm, unsupported escape sequences, bugged visualization, truncated output, you name it.",
+            "commentId": 50400799
+          },
+          {
+            "author": "WhereIsTheTruth",
+            "text": "Used it to for a terminal emulator plugin for sublime text, works flawlessly, better than Terminus, tmux and interactive programs works out of the box",
+            "commentId": 50402586
+          }
+        ]
+      },
+      {
+        "title": "Lessons in stable C ABI design",
+        "synthesis": "A developer writing a C interface for a Zig interpreter asked for well-designed C libraries to learn from. Replies named libopus, libgit2, libuv and HPy. They also explained versioned structs, where the first field holds the struct size so receivers can check which members exist. Commenters disagreed on whether a version field is also needed. One reader whose job covers ABI policy said the post hit nearly every item on their internal checklist.",
+        "quotes": [
+          {
+            "author": "spacechild1",
+            "text": "If you have structs that might need to be extended, you can use \"versioned structs\". One popular technique is to include the struct size as the first field.",
+            "commentId": 50402503
+          }
+        ]
+      },
+      {
+        "title": "iTerm2 versus Ghostty",
+        "synthesis": "A long side thread compared terminals. iTerm2 users stayed for tmux integration, profiles, search and image handling. People who left cited frequent security updates for features nobody asked for, and slow input. Ghostty's plain text config won fans who keep settings in git. Others missed iTerm2's settings GUI.",
+        "quotes": [
+          {
+            "author": "rafram",
+            "text": "It’s extremely annoying to have your work interrupted by multiple update prompts in a day from your *terminal*.",
+            "commentId": 50404503
+          },
+          {
+            "author": "isomorphic",
+            "text": "I guess I want the best of both worlds: A well-organized settings UI, with search; and a file I can easily neovim.",
+            "commentId": 50401805
+          }
+        ]
+      },
+      {
+        "title": "Rex and who pays for it",
+        "synthesis": "The top thread praised Hashimoto for leaving Rex, Hashimoto's own product, off the list of agentic tools. Beta users called Rex polished and said it replaced herdr and tmux for them. Some guessed Rex would become paid while Ghostty stays a free reference app. Others cited a statement that Rex will stay free. On funding, commenters pointed out that Hashimoto is wealthy from the HashiCorp sale and has sponsors.",
+        "quotes": [
+          {
+            "author": "9dev",
+            "text": "Rex, then, will possibly be a paid product at some point, and adds features like the server, agent integration, and persistent session management on top.",
+            "commentId": 50402576
+          },
+          {
+            "author": "blactuary",
+            "text": "He's wealthy and likes to code and is giving back to the community",
+            "commentId": 50404834
+          }
+        ]
+      }
+    ],
+    "consensus": "Most commenters agreed that libghostty solves a hard problem well and that embedding it beats writing yet another emulator. Firsthand reports from JetBrains, Emacs and Sublime Text users backed this.",
+    "dissent": "Some readers objected that the post calls libghostty a C library when it is Zig with a C ABI. One asked whether Debian can package it before Zig itself is packaged. Others questioned why ABI stability matters when agents can do mechanical migrations.",
+    "contrarian": {
+      "author": "VadimPR",
+      "text": "Tried libghostty-vt 1.0 as Mudlet's ANSI decoder - no measurable speed gain in tests and its terminal grid doesn't suit a MUD client (UTF-8 only, scrollback can't be edited)",
+      "commentId": 50401419,
+      "why": "It is the only hands-on test in the thread that found limits, and it shows the library fits terminal panes better than general text decoding."
+    }
+  },
+  "digestedAt": "2026-11-13T18:38:13.000Z"
+}

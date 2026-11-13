@@ -1,0 +1,118 @@
+{
+  "hnId": 50426681,
+  "title": "On Being an Engineer in 2026",
+  "url": "https://shahar.blog/2026/11/08/on-being-an-engineer-in-2026/",
+  "domain": "shahar.blog",
+  "kind": "article",
+  "author": "talboren",
+  "postedAt": "2026-11-09T15:07:23.000Z",
+  "points": 199,
+  "commentCount": 310,
+  "readingMinutes": 4,
+  "tldr": "Shahar Glazner argues that engineers still have real leverage over coding agents. The evidence offered is that great engineers still get far better results than average ones from the same models. Glazner traces that edge to tacit knowledge built from lived experience. Agents do not have that experience yet.",
+  "article": {
+    "keyPoints": [
+      "Agents now write the author's code, Slack messages and documents. Since Opus 4.6, debugging has mostly meant clicking the option the agent recommends.",
+      "The author argues by contradiction. Everyone has roughly the same models. If humans added nothing, the output gap between engineers would shrink. Instead, the author says, 10x engineers have become 100x engineers.",
+      "Glazner lists where humans still beat agents. One is asking questions until the real problem is clear. Another is sensing which problems are hard. A third is asking whether a solution will still make sense in two years.",
+      "Part of the author's edge is intuition that resists explanation. The example given is how readers spot AI slop within one sentence without knowing why.",
+      "The essay borrows two ideas from the study of consciousness. Emergence is a property that arises from many parts that lack it alone. Tacit knowledge is Michael Polanyi's idea that \"we can know more than we can tell.\"",
+      "The author concludes that models know about things but have not lived them. Each of the author's instincts comes from a past mistake, such as building a solution to the wrong problem."
+    ],
+    "whyItMatters": "Read it if you feel agents taking over your work and want one engineer's case for what is left. It is a short personal essay. It offers no data for the 10x-to-100x claim, and the thread points that out."
+  },
+  "comments": {
+    "overview": "The thread was gloomy and argumentative, and few commenters engaged with the essay's philosophy. Most of the fight was over the 10x-to-100x line, whether the job is still worth doing, and whether the jobs will last. A loud group called the productivity claims hype.",
+    "themes": [
+      {
+        "title": "The job lost its fun",
+        "synthesis": "Many senior engineers said they are more productive and less happy. They described their work as reviewing agent output and adjusting prompts, and said they no longer hold the code in their heads. Some said their old edge, deep design work, now only slows the team down. A few disagreed and said they are thrilled, or still understand everything because they direct agents in small steps.",
+        "quotes": [
+          {
+            "author": "zeroonetwothree",
+            "text": "I don't really feel like I have a true understanding of anything anymore, I basically just spend all day making a set of small decisions or adjusting prompts to guide the agents down the good path.",
+            "commentId": 50436334
+          },
+          {
+            "author": "kypro",
+            "text": "I suggest we do things another way, but I'm now just slowing things down and it's hard to argue against the comment, \"if that becomes a problem we can just get Claude to refactor later\".",
+            "commentId": 50432454
+          }
+        ]
+      },
+      {
+        "title": "Who the 10x engineers really are",
+        "synthesis": "The top comment agreed with the essay and said agents now replace average engineers who only close tickets. Others pushed back hard. They said nobody can measure productivity, and that the \"average\" engineer was simply doing the job the company defined. In their view, ticket-sized roles are disappearing, not ticket-minded people. One commenter said self-declared 100x engineers often ship rewrites full of strange bugs for others to clean up.",
+        "quotes": [
+          {
+            "author": "mjr00",
+            "text": "Every engineer on your team who isn't a 10x-cum-100x engineer feels like a massive lost opportunity.",
+            "commentId": 50432187
+          },
+          {
+            "author": "schiem",
+            "text": "So whenever I see someone claim something like \"I used to be a 10x developer, now I'm a 100x developer,\" I have to wonder how much they're just inflicting garbage on everyone else and they just don't have the self awareness to realize.",
+            "commentId": 50441752
+          }
+        ]
+      },
+      {
+        "title": "Will the jobs survive",
+        "synthesis": "One commenter expected a full replacement for a software team within a year. Others answered that the industry has said this for three years and that their agents still hallucinate in review. Optimists compared it to past shifts, like typists and print rooms, where roles changed and new jobs appeared. Pessimists said many displaced workers never recovered, and that teams have been shrinking for years through offshoring, cloud and now agents.",
+        "quotes": [
+          {
+            "author": "pjmlp",
+            "text": "Teams that once used to be around 20 people for project delivery are now around 5, and if they could be reduced to zero, that would be ideal from customer shareholders point of view.",
+            "commentId": 50438267
+          },
+          {
+            "author": "popkkksidhd",
+            "text": "I just had fable 5.2 (high effort) review a change. It hallucinated 2 problems that I was only able to correct because I also understand the code.",
+            "commentId": 50431810
+          }
+        ]
+      },
+      {
+        "title": "Where humans still fit",
+        "synthesis": "Several commenters said humans must define the work and judge the result, even if agents do the middle. Others stressed accountability and security, since someone must sign off on what ships. A commenter testing frontier models on a regex engine still found memory safety bugs and O(n^2) code. Another reported that non-engineer analysts now ship products themselves, which leaves engineers to guard the core systems.",
+        "quotes": [
+          {
+            "author": "saulpw",
+            "text": "Replace the humans at the start and you have a paperclip-optimizer; replace them at the end and you have slop.",
+            "commentId": 50431376
+          },
+          {
+            "author": "rbehrends",
+            "text": "They may not manifest at all depending on what you do, but if they do, they can hurt a lot, especially in production.",
+            "commentId": 50440741
+          }
+        ]
+      },
+      {
+        "title": "Tacit knowledge is not a moat",
+        "synthesis": "The few who took on the essay's argument mostly rejected it. One said reinforcement learning after pretraining exists to teach models tacit knowledge. Another said cognitive psychology already explains expert intuition as lots of practice, which is training data. A third said an LLM's single pass is already intuition it cannot explain, while a skeptic replied that it only predicts tokens.",
+        "quotes": [
+          {
+            "author": "wrs",
+            "text": "But tacit knowledge is exactly what reinforcement learning post-training is about.",
+            "commentId": 50431063
+          },
+          {
+            "author": "red_admiral",
+            "text": "The answer, in modern terms that apply to both human and artificial intelligences, is *training data*.",
+            "commentId": 50438667
+          }
+        ]
+      }
+    ],
+    "consensus": "The work has changed from writing code to directing and checking agents. For now, someone who understands the code and the business still has to catch the agents' mistakes.",
+    "dissent": "A large minority called the 10x and 100x claims unmeasured hype, with no sign of more or better software in the world. At the other end, a few expected agents to replace whole teams within a year or two.",
+    "contrarian": {
+      "author": "kokanee",
+      "text": "Even if the tacit knowledge that the current generation of engineers were able to build up in the years prior to ~2025 does give us value that won't be completely replaced for a long time, why would you assume that the delta between what you can do and what claude can do will still be worth $200K in 5 years?",
+      "commentId": 50431468,
+      "why": "It grants the essay's premise and still shows that a lasting human edge does not mean a lasting salary."
+    }
+  },
+  "digestedAt": "2026-11-13T18:38:06.000Z"
+}

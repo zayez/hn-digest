@@ -1,0 +1,113 @@
+{
+  "hnId": 50412067,
+  "title": "Writing as a thinking tool",
+  "url": "http://muratbuffalo.blogspot.com/2026/11/writing-as-thinking-tool.html",
+  "domain": "muratbuffalo.blogspot.com",
+  "kind": "article",
+  "author": "jruohonen",
+  "postedAt": "2026-11-08T10:41:52.000Z",
+  "points": 473,
+  "commentCount": 115,
+  "readingMinutes": 7,
+  "tldr": "Murat, a computer science researcher, argues that writing is how people think bigger thoughts. Paper turns a mind from a finite automaton into a Turing machine. LLMs now let people produce text without that thinking. That makes writing for yourself a growing advantage.",
+  "article": {
+    "keyPoints": [
+      "Murat starts from Manuel Blum's point that the only difference between a finite automaton and a Turing machine is paper and pencil. Without writing, a person drops a whole complexity class.",
+      "Murat compares writing to out-of-core execution, where the problem lives in external memory. Writing a paper review often shows Murat that the first reading gave only about 60% understanding.",
+      "A 2018 post on the similarity between Paxos and Nakamoto consensus started with no thesis. The connections appeared during the writing, and the post became the seed of a research paper.",
+      "LLMs know the literature but not the writer's half-formed intuitions. Bezos said a six-page memo proves clear thinking. Murat says that is no longer true, because a model can produce six pages with no thinking behind them.",
+      "Murat's rules are to draft in bulk without judgment, then edit like a harsh critic. Cut text the way you delete code. Following McPhee, Murat writes a piece three or four times over.",
+      "Murat also tells writers to keep prose plain, to write for themselves, and to put writing on a fixed schedule. A weekly posting habit keeps Murat in what the post calls a noticing frame of mind."
+    ],
+    "whyItMatters": "Read the original for the full Blum quote and the drafting rules in Murat's own voice. It also explains how the blog became Murat's external memory. Researchers and engineers who write papers or design docs will find the review and freewriting examples the most practical."
+  },
+  "comments": {
+    "overview": "The thread was warm and mostly agreed with the essay. Most of the argument was about AI. Commenters asked whether AI-written text shows the author skipped the thinking, and whether an LLM is acceptable as an editor. A second large group extended the idea to code and design, and a smaller one traded notebooks and pens.",
+    "themes": [
+      {
+        "title": "AI text signals skipped thinking",
+        "synthesis": "A former PhD student often found the real research question only while writing the paper. To this commenter, AI-written text is a sign the author took a shortcut. Others named a cost for the reader. A careful reply may just go back into an LLM, so they stop writing careful replies. One commenter said the whole selling point of AI is saving the effort of deep thought, and the writing problem follows from that.",
+        "quotes": [
+          {
+            "author": "billypilgrim",
+            "text": "The problem with AI writing is that it makes people believe that writing is just writing and not a tool for thinking very deeply about the topic you are writing about.",
+            "commentId": 50414123
+          },
+          {
+            "author": "torben-friis",
+            "text": "Even worse: Facing AI writing, there's a strong suspicion that any concerns or counterpoints you bring won't be actually considered, but rather copypasted into an llm session.",
+            "commentId": 50415256
+          }
+        ]
+      },
+      {
+        "title": "The same holds for code and design",
+        "synthesis": "Many engineers said writing code or a plan does the same job as writing prose. Hidden cases and wrong assumptions appear only when you must put a step into words or code. Several said vibe coding and agents remove that discovery step. A designer made the same case for Figma against prompting, while two others found that reacting to an LLM's prototype taught them faster.",
+        "quotes": [
+          {
+            "author": "0c3ca83",
+            "text": "The code I produce in a year I could type in a week. The time goes into understanding the problem.",
+            "commentId": 50415468
+          },
+          {
+            "author": "patryk_builds",
+            "text": "Half the real decisions happened while writing it, not while building. Questions like \"what happens when the external service is down\" only showed up because I had to put the step into a sentence.",
+            "commentId": 50414412
+          }
+        ]
+      },
+      {
+        "title": "Is an LLM acceptable as an editor?",
+        "synthesis": "One writer drafts alone and asks an LLM only for editorial feedback, which forces a rethink and a rewrite. Another refuses even feedback, out of fear of losing track of which ideas are their own. A third replied that no human tried to understand the text, so little of real editing is left. Others treated the LLM as a patient tutor or a rubber duck, if the user keeps asking until they understand.",
+        "quotes": [
+          {
+            "author": "bartread",
+            "text": "The trick, I think - at least this has helped me - is not to use the AI to write for me, nor to use it to rewrite my drafts, but is to do the writing myself and to ask it for editorial feedback.",
+            "commentId": 50415979
+          },
+          {
+            "author": "xorcist",
+            "text": "No human tried to understand your writing, and tried to explain their understandings back to you. How much is left of the editorial process then?",
+            "commentId": 50426289
+          }
+        ]
+      },
+      {
+        "title": "Paper still wins for thinking",
+        "synthesis": "Many commenters do their design thinking on paper and named their gear: 5mm grid pads, four-color ballpoints, numbered Moleskines and composition books. An iPad and pencil came close but did not match paper for one of them. One reader built a color and symbol code that an automation turns into Obsidian markdown. A few prefer Org mode, because its folding and structural editing make it easy to reorder thoughts.",
+        "quotes": [
+          {
+            "author": "iammjm",
+            "text": "For thinking, nothing beats handwriting. It's just the unconstrained freedom of movement in every direction, shape or form, and the lack of friction and distractions.",
+            "commentId": 50415180
+          }
+        ]
+      },
+      {
+        "title": "The Turing machine analogy is loose",
+        "synthesis": "Pedants pointed out that a Turing machine with a finite tape is no stronger than a finite automaton. The real difference is unbounded space. One reply turned this into advice: buy paper in bulk so it feels infinite. Another said the tape matters because it is read, erased and rewritten, so the lesson is to reread and revise.",
+        "quotes": [
+          {
+            "author": "raincole",
+            "text": "A TM with a finite tape is equivalent to an FA. The fundamental difference between a TM and an FA is that a TM has infinite space.",
+            "commentId": 50414312
+          },
+          {
+            "author": "fwlr",
+            "text": "Buying a nice notebook or a nice pen is a trap because both feel finite; buying a box of decent pens and a carton of decent notepads takes you out of the scarcity mindset and unlocks the Turing machine like advantages mentioned.",
+            "commentId": 50415084
+          }
+        ]
+      }
+    ],
+    "consensus": "Most commenters agreed that writing, coding and sketching by hand show you what you do not yet understand. Handing that work to an LLM skips the understanding.",
+    "dissent": "A minority said AI helps thinking if you keep asking questions until you understand, or if you use it only for feedback. A few had never needed writing at all, and one said machines now think better than people.",
+    "contrarian": {
+      "author": "baxtr",
+      "text": "For highly analytical people, writing may become counterproductive. Especially, when it is used to continuously elaborate thoughts rather than to challenge assumptions, test hypotheses or reach decisions.",
+      "commentId": 50414341,
+      "why": "It names a failure mode the essay and thread ignore, where writing becomes endless elaboration that never reaches a decision."
+    }
+  },
+  "digestedAt": "2026-11-13T18:38:11.000Z"
+}

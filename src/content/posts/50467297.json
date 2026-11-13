@@ -1,0 +1,118 @@
+{
+  "hnId": 50467297,
+  "title": "Our software engineering interviews are changing a little",
+  "url": "https://blog.janestreet.com/software-engineering-interviews-are-changing-a-little/",
+  "domain": "blog.janestreet.com",
+  "kind": "article",
+  "author": "maitland",
+  "postedAt": "2026-11-12T14:05:28.000Z",
+  "points": 244,
+  "commentCount": 222,
+  "readingMinutes": 3,
+  "tldr": "Jane Street is trialing new onsite interview rounds for campus candidates. The new rounds involve less code-writing. They test software design, judging the quality of code, and producing code with LLMs. Most rounds stay traditional coding interviews without LLM help.",
+  "article": {
+    "keyPoints": [
+      "Most Jane Street engineers now use LLMs every day to write, read, debug and review code.",
+      "The coding interviews have not changed in years. A candidate programs through a problem with an interviewer and talks while working.",
+      "Code is now cheaper to generate than ever. Taste, lasting abstractions and checking correctness therefore matter more in the job.",
+      "Since this summer, some campus onsites include rounds on software design, on judging code quality and intent, and on producing code with LLMs.",
+      "The firm keeps the new formats vague on purpose. It expects them to look different in six months.",
+      "Candidates do not need a refined agent workflow. The firm wants people who know where their tools work and where they fail."
+    ],
+    "whyItMatters": "The post is short and gives no question examples or rubrics. Read it only to see how one selective employer frames LLM use in hiring."
+  },
+  "comments": {
+    "overview": "The thread was lively and mostly off the post itself. Many readers called the post vague, so commenters argued about interviewing in general. A long side fight asked whether git skills still matter, and another asked why Jane Street keeps reaching the front page.",
+    "themes": [
+      {
+        "title": "Leetcode as a hiring filter",
+        "synthesis": "The top thread said leetcode never measured the job and LLMs make it weaker still. Defenders called it an IQ proxy or a gate that cuts a flood of applicants, with the real interview after it. Critics replied that it measures time spent cramming and repels experienced engineers. One account traced how public questions and big salaries turned a useful test into a trainable one.",
+        "quotes": [
+          {
+            "author": "janalsncm",
+            "text": "Never once in my career has writing a tricky algorithm under time pressure been relevant.",
+            "commentId": 50476422
+          },
+          {
+            "author": "hibikir",
+            "text": "But there's nothing in a leetcode interview that cannot be trained. So the metric became the target, and we ended up in the current mess.",
+            "commentId": 50478943
+          }
+        ]
+      },
+      {
+        "title": "Does git knowledge still matter?",
+        "synthesis": "One interviewer asks candidates to open a PR to test git basics. Replies pointed out that pull requests are a GitHub feature, not a git one. The larger fight was about letting an agent run git commands. One side said only the resulting commits and PR matter, like googling a command. The other side reported real damage from developers who trusted an LLM's git commands without understanding them.",
+        "quotes": [
+          {
+            "author": "saghm",
+            "text": "I can't wrap my head around why anyone should care whether an LLM happened to execute the `git commit` and `git push` shell commands!",
+            "commentId": 50470655
+          },
+          {
+            "author": "StrangeWill",
+            "text": "It wasn't Claude running it on its own, but was entirely driven by a mix of a developer's lack of understanding their tools, and trusting Claude's output too much.",
+            "commentId": 50477931
+          }
+        ]
+      },
+      {
+        "title": "Why Jane Street keeps showing up",
+        "synthesis": "Several commenters noticed three Jane Street stories on the front page at once and suspected a recruiting push. Others pointed to high pay, OCaml and nerd prestige, or to plain chance. One count of HN submissions found Jane Street stories rose from 41 in 2024 to 93 in 2026. A side argument asked whether the firm's trading harms investors, with a market maker rejecting the front-running charge.",
+        "quotes": [
+          {
+            "author": "uptrails",
+            "text": "relatively few people patrol new submissions and the the first 3-4 upvotes in the first 15 minutes decide if something bubbles up to the front page or not.",
+            "commentId": 50470354
+          },
+          {
+            "author": "saghm",
+            "text": "The fact that you seem to adamantly disagree that there's any plausible angle here doesn't mean it's not marketing, but it might mean that it is marketing and that it's working on you.",
+            "commentId": 50468820
+          }
+        ]
+      },
+      {
+        "title": "Interview formats that use LLMs",
+        "synthesis": "Interviewers shared formats they already run. One lets seniors use an LLM but makes them explain every line it wrote. Another says an agent in the room makes juniors easier to spot, because they hand all the thinking to it. A deliberately broken LLM that the candidate must correct came up twice, and people liked it.",
+        "quotes": [
+          {
+            "author": "SkyPuncher",
+            "text": "Less experienced candidates tend to jump right in, build way too much, and stumble because they delegated all of the critical thinking to the agent.",
+            "commentId": 50470829
+          },
+          {
+            "author": "GuB-42",
+            "text": "Both indicate competence, what you don't want is someone who doesn't see the mistakes and hand you slop.",
+            "commentId": 50475136
+          }
+        ]
+      },
+      {
+        "title": "No evidence behind any of it",
+        "synthesis": "Some readers called the post empty, since it describes no actual question. One commenter asked whether any interviewer, Jane Street included, has tested if their process beats random hiring. Others answered that research on LLM-era interviews cannot exist yet, because it needs years of follow-up on hires.",
+        "quotes": [
+          {
+            "author": "bluGill",
+            "text": "They also are not showing any indication that they have done any testing - to see if their questions help hire better people.",
+            "commentId": 50469844
+          },
+          {
+            "author": "Aurornis",
+            "text": "Scientific research on interview techniques requires years of retrospective analysis after the hired employees have been evaluated in their roles for a long time.",
+            "commentId": 50471459
+          }
+        ]
+      }
+    ],
+    "consensus": "Most commenters agreed that classic algorithm puzzles say little about the job. They also agreed that judging and explaining code now matters more than typing it. Few saw much concrete detail in the post itself.",
+    "dissent": "A minority defended leetcode as a crude but needed filter for huge applicant pools. Others said writing code by hand is obsolete, so any coding round tests the wrong thing.",
+    "contrarian": {
+      "author": "noduerme",
+      "text": "All this is to say that DSA knowledge may be even more important when LLMs are writing most of the code, because an unguided LLM will write stuff that can practically only be maintained by an LLM, and make design decisions that don't cohere or scale.",
+      "commentId": 50477528,
+      "why": "The thread treated data-structure knowledge as interview trivia, but this commenter reports that LLMs choose bad data models and need a human to steer them."
+    }
+  },
+  "digestedAt": "2026-11-13T18:38:18.000Z"
+}

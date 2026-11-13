@@ -1,0 +1,135 @@
+{
+  "number": 818,
+  "date": "2026-11-13",
+  "url": "https://buttondown.com/hacker-newsletter/archive/818/",
+  "posts": [
+    {
+      "post": "50412067",
+      "section": "Favorites",
+      "tier": "dontSkip",
+      "reason": "Builds on Blum's finite-automaton remark and Lamport's line on thinking without writing to give five concrete writing rules, and argues that writing your own prose is now an advantage over LLM text."
+    },
+    {
+      "post": "50363019",
+      "section": "Learn",
+      "tier": "dontSkip",
+      "reason": "A philosopher-backed argument, drawing on Longino, Brandom and Thurston, that verified results only become knowledge through accountability, criticism and human understanding."
+    },
+    {
+      "post": "50457939",
+      "section": "Working",
+      "tier": "dontSkip",
+      "reason": "Original national-accounts calculations and a reproducible model behind the claim that output per hour rose 2.5 times since 1973 while ordinary pay buys 19 percent more, ending in a case for a common ownership dividend."
+    },
+    {
+      "post": "50399933",
+      "section": "Code",
+      "tier": "worthYourTime",
+      "reason": "A concrete account of turning an app's internals into a 1.0 library: a stable C ABI, semantic versioning, ABI checks enforced in CI, packaging for distributions, and a 10,000-terminal load test."
+    },
+    {
+      "post": "50426681",
+      "section": "Working",
+      "tier": "worthYourTime",
+      "reason": "Argues by reductio that engineers keep their leverage over coding agents through problem framing, a sense of what will age badly and Polanyi-style tacit knowledge, and the 310-comment thread brings first-hand reports from senior engineers."
+    },
+    {
+      "post": "50416456",
+      "section": "Favorites",
+      "tier": "worthYourTime",
+      "reason": "Paul Ford makes the case that browser APIs like WebAssembly, WebGL and Web Crypto already make the web a full app platform, and practitioners in the thread compare their own browser builds, including Three.js against vanilla WebGL."
+    },
+    {
+      "post": "50395183",
+      "section": "Learn",
+      "tier": "worthYourTime",
+      "reason": "A 20,000-word history-and-travel essay on how a tiny republic survived thirteen invasion or annexation attempts, a fascist period, a semi-communist government and a banking collapse."
+    },
+    {
+      "post": "50438318",
+      "section": "Code",
+      "tier": "ifYouHaveAMinute",
+      "reason": "Lists four causes and four symptoms of fragility in AI-heavy codebases from experience rather than data, and the 625-comment thread sets similar reports against people whose AI-written code works fine."
+    },
+    {
+      "post": "50410107",
+      "section": "Favorites",
+      "tier": "ifYouHaveAMinute",
+      "reason": "A long-time Claude Code user explains a move to the open-source Pi harness with specifics: lost editor selections, prompt changes across 244 releases and a Bash tool description of nearly 3,000 tokens."
+    },
+    {
+      "post": "50467297",
+      "section": "Working",
+      "tier": "ifYouHaveAMinute",
+      "reason": "Jane Street's short note that some interview rounds now test software design, verifying code and working with LLMs; the thread is a debate over what coding screens still measure."
+    },
+    {
+      "post": "50412152",
+      "section": "Working",
+      "tier": "ifYouHaveAMinute",
+      "reason": "Reads the Peter Principle through a study of careers under dictatorship, arguing that leaders promoted past their competence may turn to dirty work to protect their position, with a thread on separate technical and management tracks."
+    },
+    {
+      "post": "50405789",
+      "section": "Learn",
+      "tier": "ifYouHaveAMinute",
+      "reason": "Maciej Cegłowski works through space radiation, the Tanpopo ISS experiment, permafrost and a disputed 250-million-year-old bacterium to argue that contamination control is the real bottleneck for Mars samples."
+    }
+  ],
+  "nearMisses": [
+    {
+      "title": "Socratic Tutor",
+      "section": "Favorites",
+      "domain": "github.com",
+      "url": "https://github.com/janestreet/agent_skills/blob/master/socratic-tutor/SKILL.md",
+      "hnId": 50438261
+    },
+    {
+      "title": "How do you manage your AI agents' context across clients and projects?",
+      "section": "Ask HN",
+      "hnId": 50403153
+    },
+    {
+      "title": "Rust 1.100",
+      "section": "Code",
+      "domain": "blog.rust-lang.org",
+      "url": "https://blog.rust-lang.org/2026/11/12/Rust-1.100.0/",
+      "hnId": 50472038
+    },
+    {
+      "title": "Ultorg: The User Interface for Relational Databases",
+      "section": "Data",
+      "domain": "ultorg.com",
+      "url": "https://www.ultorg.com/",
+      "hnId": 50435898
+    },
+    {
+      "title": "The Utah Teapot",
+      "section": "Design",
+      "domain": "graphics.cs.utah.edu",
+      "url": "https://graphics.cs.utah.edu/teapot/",
+      "hnId": 50457618
+    },
+    {
+      "title": "Why I wrote the BEAM book",
+      "section": "Books",
+      "domain": "happihacking.com",
+      "url": "https://happihacking.com/blog/posts/2025/why_I_wrote_theBEAMBook/",
+      "hnId": 50427107
+    },
+    {
+      "title": "Five memorable books about programming",
+      "section": "Books",
+      "domain": "prog21.dadgum.com",
+      "url": "https://prog21.dadgum.com/19.html",
+      "hnId": 50406319
+    },
+    {
+      "title": "AI, activity, and outcomes in software engineering",
+      "section": "Watching",
+      "domain": "cabird.com",
+      "url": "https://cabird.com/talks/shipping-faster/",
+      "hnId": 50455332
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "hnId": 50438318,
+  "title": "AI usage generates a fragile codebase",
+  "url": "https://evanxmerz.com/post/ai-usage-generates-a-fragile-codebase/",
+  "domain": "evanxmerz.com",
+  "kind": "article",
+  "author": "plun9",
+  "postedAt": "2026-11-10T10:25:58.000Z",
+  "points": 641,
+  "commentCount": 625,
+  "readingMinutes": 6,
+  "tldr": "A developer laid off from Meta argues that heavy AI coding produces brittle codebases. The author names four causes: shallow tests, needless complexity, lost human understanding, and review that cannot keep pace. The predicted results are more incidents, slower recovery and a worse user experience. The author still generates all their code with AI, because the new employer expects it.",
+  "article": {
+    "keyPoints": [
+      "The author suspects that slower adoption of AI coding tools was one reason Meta laid them off in May.",
+      "AI writes shallow tests, such as e2e tests for only one type of user, whose gaps line-coverage metrics do not reveal.",
+      "AI adds needless complexity, using two or three helper methods where one would do and applying DRY too rigidly.",
+      "The more a team relies on agents, the fewer developers understand the data structures well enough to reject a bad abstraction in review.",
+      "Pull requests arrive faster than reviewers can read them, which lets small quality issues pile up into spaghetti code.",
+      "The predicted symptoms are more incidents, slower recovery, errors that only real users see, and a worse experience for users and developers."
+    ],
+    "whyItMatters": "Engineers working under AI-usage quotas get a first-hand account from a former Meta developer, including a concrete :hover example and an incident timeline. The essay offers no data or case studies. Read it as a checklist of symptoms to compare against your own incident history, not as proof."
+  },
+  "comments": {
+    "overview": "The thread is large, split and often heated. One camp blames last year's models and careless prompting, and others cite overfit fixes, duplicated code and teams that no longer understand what they ship. A third group argues that enterprise code was never robust, so AI changes the speed of decay more than its direction.",
+    "themes": [
+      {
+        "title": "Outdated models and bad prompting, or a real limit?",
+        "synthesis": "Many readers said the article reads like it was written a year ago. They argued that newer models, explicit rules, mutation tests, linters and architecture tests fix shallow tests and bloat. Skeptics answered that they have heard \"the latest model fixes it\" for years. Others said complexity creeps back on hard problems even when the agent is told to keep things simple.",
+        "quotes": [
+          {
+            "author": "iagooar",
+            "text": "\"AI writes shallow tests\" - used to be true, not true anymore since Astra and Fable 5.1 / Opus 5.5.",
+            "commentId": 50446216
+          },
+          {
+            "author": "fallingbananna",
+            "text": "I use AI and find it great, but I don't think we should be dismissing any negative feedback as user error.",
+            "commentId": 50451846
+          }
+        ]
+      },
+      {
+        "title": "How agent code goes wrong",
+        "synthesis": "Practitioners gave concrete failure modes. Agents overfit fixes to the current state of the code and compute one value through two separate mechanisms. One agent wrote a 400-line setup for a single alert instead of generic plumbing. A team where AI both wrote and reviewed the code later found a 20,000-line file. Several said AI review loops find different issues on each run and inflate small tasks.",
+        "quotes": [
+          {
+            "author": "pseudohadamard",
+            "text": "I've seen this overfitting again and again, solutions that cleanly fix the problem but depend on so much of the rest of the code base and/or data being in a particular form that it breaks if anything changes.",
+            "commentId": 50450687
+          },
+          {
+            "author": "eddythompson80",
+            "text": "The problem was the entire 400 lines were custom for that X metric. Meaning if we needed to add a second alert, it’s another 400 lines.",
+            "commentId": 50451555
+          }
+        ]
+      },
+      {
+        "title": "Who understands the code when it breaks?",
+        "synthesis": "The claim that human understanding just \"moves up a level\" drew heavy pushback. Commenters said they don't know the Linux kernel because they don't maintain it, and the people who maintain it do. A company that ships AI code still answers to customers at 1am. Supporters replied that teams already rely on code nobody in-house understands, such as crypto libraries and cloud services.",
+        "quotes": [
+          {
+            "author": "pif",
+            "text": "if *I* must bear responsibility of the code facing a customer, then *I* have to understand the code.",
+            "commentId": 50451230
+          },
+          {
+            "author": "kodebach",
+            "text": "If a whole company switches to LLM development for their (closed source) product, nobody has a deep understanding of the code anymore.",
+            "commentId": 50448269
+          }
+        ]
+      },
+      {
+        "title": "Quality was never the priority",
+        "synthesis": "The top comment argued that business coding rarely valued robust code, so AI only extends an old pattern. Others agreed that the average corporate codebase was already poor and that AI may beat it. Opponents said quality was always cheaper for anything beyond a prototype. Several said AI removed the slack that once let engineers do careful work unnoticed.",
+        "quotes": [
+          {
+            "author": "basilgohar",
+            "text": "my experience tells me that enterprise and business coding has rarely ever been about stable or robust codebases.",
+            "commentId": 50444477
+          },
+          {
+            "author": "throw-the-towel",
+            "text": "I feel that before LLMs I could smuggle quality code in, without the managers knowing. Now, I cannot -- I'm visibly too slow if I'm trying to.",
+            "commentId": 50444626
+          }
+        ]
+      },
+      {
+        "title": "Evidence from production, and the rewrite bet",
+        "synthesis": "A developer with a 500k-line AI-built mobile app said fragility had no practical cost. Replies noted the app had been live two weeks with 30 users, so real maintenance had not started. Others said rewrites are now cheap enough to replace maintenance. Critics answered that a rewrite throws away the confidence only production use builds, and that messy code raises token bills.",
+        "quotes": [
+          {
+            "author": "user43928",
+            "text": "After 7 months and a 500k LOC codebase I can say that in my experience the fragility is inconsequential.",
+            "commentId": 50438912
+          },
+          {
+            "author": "hologramofham",
+            "text": "At 30 users you have no idea what maintenance looks like. That's literally what maintenance is - responding to real world usage.",
+            "commentId": 50439633
+          }
+        ]
+      }
+    ],
+    "consensus": "Most agreed that unsupervised agents produce bloated, brittle code. Most also agreed that any fix comes from human-set standards, review and automated checks, not from trusting the default output.",
+    "dissent": "A sizable minority called the article outdated. They report fewer incidents and better tests with current models. Some treat code quality as a cost that businesses will rightly trade for speed.",
+    "contrarian": {
+      "author": "keeda",
+      "text": "this looks like code at any other big company and none of them have collapsed because … they rely on other built in processes (like customer service and security pen testers, say) to deal with the inevitable issues.",
+      "commentId": 50444419,
+      "why": "keeda accepts the diagnosis of bloated agent code but points out that big companies have always shipped code like this and survived."
+    }
+  },
+  "digestedAt": "2026-11-13T18:38:29.000Z"
+}

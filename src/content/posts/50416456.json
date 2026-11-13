@@ -1,0 +1,113 @@
+{
+  "hnId": 50416456,
+  "title": "The Web Is More Than Enough",
+  "url": "https://ftrain.com/aboard-the-web-is-more-than-enough",
+  "domain": "ftrain.com",
+  "kind": "article",
+  "author": "edward",
+  "postedAt": "2026-11-08T19:48:32.000Z",
+  "points": 214,
+  "commentCount": 170,
+  "readingMinutes": 5,
+  "tldr": "Paul Ford argues that the web browser is a very strong platform for building apps. The cost of using that power falls almost every day. Ford built a web office suite with modest effort and hosted it for $0. If many more people can now build software, app stores and the tech economy will change.",
+  "article": {
+    "keyPoints": [
+      "Ford launched tinylittleoffice.com, an office suite that stores its data in the URL. A couple hundred thousand people visited it, and Cloudflare hosting cost $0.",
+      "The suite took Ford about twice the effort of a long newsletter post. Ford says any reader can learn to do the same.",
+      "Browsers now ship Web Crypto, WebAssembly, WebGL and Web Audio. Each API is huge, because it was built for large teams at companies like Google.",
+      "One person can now combine these APIs. Ford's example is Simon Willison's Battle Drones, a 3D multiplayer game in the browser that works offline.",
+      "Ford thinks a hundredfold rise in people making software would shake the tech economy. Testing an idea from a $0 web server also makes the app store tax harder to justify.",
+      "To Ford, software development now feels like writing, and people rarely pay writers. Ford expects developers to feel devalued for a while before the market settles."
+    ],
+    "whyItMatters": "The piece is short and personal, so the summary covers most of it. Read the original for Ford's voice and the carpet-loom analogy about personalized manufacturing."
+  },
+  "comments": {
+    "overview": "A testy thread that mostly ignored the article's AI economics. It argued over web apps against native apps, and over who controls each platform. A smaller group asked whether people who prompt Claude can say they wrote the result.",
+    "themes": [
+      {
+        "title": "Web apps or native apps",
+        "synthesis": "The largest fight. The web camp said a URL beats any installer, and that tabs, bookmarks and deep links make web apps better. The native camp said apps belong on the OS and the web suits documents. Carlosjobim added that most serious web apps demand sign-up and email verification, which erases the install advantage. Several people noted that their working day already runs almost entirely in a browser.",
+        "quotes": [
+          {
+            "author": "cyberax",
+            "text": "Native apps are _invariably_ worse than well-designed webapps: no tabs, no bookmarks, no copy/paste, deep links are usually broken, no ability to open multiple apps side-by-side.",
+            "commentId": 50420285
+          },
+          {
+            "author": "palata",
+            "text": "My stance is that the web is great for websites, not for webapps. Apps should run on the OS, not in the browser.",
+            "commentId": 50419807
+          }
+        ]
+      },
+      {
+        "title": "Who controls the platform",
+        "synthesis": "Palata said web apps lock users into Chromium, and so into Google. Jauntywundrkind answered that native platforms are worse, with app store fees, slow reviews and new signing rules on Android and Windows. Others pointed to the W3C and WHATWG as shared governance. Skeptics replied that a browser is now too large for anyone but a giant company to build, though some named Ladybird as a counterexample.",
+        "quotes": [
+          {
+            "author": "palata",
+            "text": "Pushing for webapps is pushing to lock us into Chromium, controlled by Google.",
+            "commentId": 50418858
+          },
+          {
+            "author": "jauntywundrkind",
+            "text": "want to give away open source? too bad, pay apple. too bad, pay google.",
+            "commentId": 50420219
+          }
+        ]
+      },
+      {
+        "title": "The browser sandbox as the real advantage",
+        "synthesis": "Some commenters valued the browser most for its isolation. They would rather run a stranger's code in a tab than install it. Others said a native app from a trusted open-source repository gives more control and can be inspected. A few pointed out that Flatpak, macOS and mobile OSes now sandbox native apps too, so the gap is narrowing outside Windows.",
+        "quotes": [
+          {
+            "author": "wry_xy",
+            "text": "I do not enjoy running random strangers' Rust on my machine unless it's sitting in a VM and probably also a container, at which point the performance benefit is gone anyways.",
+            "commentId": 50419680
+          },
+          {
+            "author": "badsectoracula",
+            "text": "Because when something is running on my machine i have more control over it and greater ability to inspect what it does.",
+            "commentId": 50431269
+          }
+        ]
+      },
+      {
+        "title": "Who built it, the person or Claude?",
+        "synthesis": "Ford wrote that Willison built Battle Drones alone, but the repo shows Claude wrote the code. Some compared prompting to a tech lead who delegates to a junior engineer. Others rejected that comparison because an LLM is software, not a person. Several settled on softer verbs such as building \"with\" Claude.",
+        "quotes": [
+          {
+            "author": "azangru",
+            "text": "I checked the repo, and it is written by Claude. Does this count as writing it himself?",
+            "commentId": 50432592
+          },
+          {
+            "author": "kragen",
+            "text": "I've been saying I'm \"eliciting\" code from Opus 5.5.  It doesn't feel correct to say I'm building it or writing it.",
+            "commentId": 50423264
+          }
+        ]
+      },
+      {
+        "title": "LLMs can skip the frameworks",
+        "synthesis": "Socalgal2 told Willison to drop three.js and let the LLM write raw WebGL. Willison tried it and got a working port in one prompt. Commenters measured a much smaller download and faster interaction for the vanilla version. Merelysounds noted that it lost some effects, such as the glow and glass.",
+        "quotes": [
+          {
+            "author": "simonw",
+            "text": "But yeah, it turns out Claude Opus 5.5 is perfectly capable of 3D modeling in Vanilla JS + WebGL without Three.js.",
+            "commentId": 50421091
+          }
+        ]
+      }
+    ],
+    "consensus": "Most agreed that the web wins on reach. A user needs only a URL, and the same app runs on almost any device.",
+    "dissent": "A large minority said browsers have grown too big and too Google-controlled. Some wanted native apps back, and rsync argued the web of 1998 was enough.",
+    "contrarian": {
+      "author": "Devasta",
+      "text": "That AI is making it easier is happenstance, it makes generating UIs in anything easier.",
+      "commentId": 50417764,
+      "why": "It separates the two claims in the article, since falling AI costs help native toolkits as much as the browser."
+    }
+  },
+  "digestedAt": "2026-11-13T18:38:18Z"
+}

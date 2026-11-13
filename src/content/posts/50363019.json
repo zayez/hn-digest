@@ -1,0 +1,78 @@
+{
+  "hnId": 50363019,
+  "title": "Verification Is Not Knowledge: Science needs more than answers",
+  "url": "https://blog.cosmos-institute.org/p/verification-is-not-knowledge",
+  "domain": "blog.cosmos-institute.org",
+  "kind": "article",
+  "author": "ersinesen",
+  "postedAt": "2026-11-04T09:01:58.000Z",
+  "points": 245,
+  "commentCount": 142,
+  "readingMinutes": 14,
+  "tldr": "Computer scientist Jessica Hullman argues that a verified result is not yet scientific knowledge. Knowledge needs someone who can answer for a claim when it is challenged. Treating correctness as the only value comes from an old \"value-free\" ideal of science. Letting AI produce results nobody understands erodes the human skills that criticism and review depend on.",
+  "article": {
+    "keyPoints": [
+      "Debates about AI for science split into two camps. One camp counts correct outputs, such as proofs and cures. The other camp says human understanding comes first.",
+      "The author says defenders of understanding lose when they treat it as a private mental state. The real issue is what happens when a result turns out wrong and nobody can explain it.",
+      "The belief that only correctness matters comes from the post-war \"value-free ideal\" of science. Most philosophers of science now reject that ideal.",
+      "Values decide which results matter, even in mathematics. Fermat's Last Theorem became central because of its link to the modularity conjecture, not because of its intrinsic importance.",
+      "Following Helen Longino and Robert Brandom, the author treats knowledge as a social act. A claim becomes knowledge when an answerable source can defend it under criticism.",
+      "Current AI agents lack persistent identity and have nothing to lose from a retraction. Even an accountable AI would need humans skilled enough to question its answers."
+    ],
+    "whyItMatters": "Read the original if you work in research or peer review and want the philosophical case in full. It covers the history of the social contract for science, Brandom's thought experiment about a reliable but reasonless community, and Thurston's view of mathematical success."
+  },
+  "comments": {
+    "overview": "A busy, philosophical thread that split between people who accept useful answers without explanation and people who think understanding drives future progress. Many arguments turned on what \"knowledge\" means, and a few exchanges became heated.",
+    "themes": [
+      {
+        "title": "Science already runs on results nobody understands",
+        "synthesis": "Several commenters pointed out that science adopted Kepler's laws before Newton explained them. Medicine prescribes drugs like gabapentin without knowing how they work. Others replied that Kepler understood his data and how to test his laws, which is the accountability the author means. A side debate argued that even Newton and Einstein explained \"how\" and never \"why\".",
+        "quotes": [
+          { "author": "matheusmoreira", "text": "Sometimes looking up a drug's mechanism of action yields nothing, literature just says it's unclear and gives us some educated guesses if we're lucky.", "commentId": 50367048 },
+          { "author": "advisedwang", "text": "Kepler did understand the data he had, where it came from, what his laws were claiming, how to verify that the data fits the laws, how the data dis-proves heliocentricity etc, which is really what the article is talking about.", "commentId": 50368348 }
+        ]
+      },
+      {
+        "title": "Can the AI explain what it found?",
+        "synthesis": "One commenter predicted that AI verifiers will soon explain their answers to humans. Others answered that current models write fluently but explain badly. One developer described asking a model what a pull request does and getting invented jargon instead of one plain sentence. A physicist disagreed and found models good at explaining concepts. Another commenter warned that confident wrong explanations now take a domain expert to catch.",
+        "quotes": [
+          { "author": "RugnirViking", "text": "I ask my colleague and he says something like \"oh it deletes records from such-and-such a system when they aren't needed anymore after a merge\" and I know exactly what he means. A single well composed sentence was all that was needed.", "commentId": 50367410 },
+          { "author": "teiferer", "text": "It has gotten to a point where you really need a domain expert though to realize this, which makes it tough for using it in areas where you are not an expert and don't have easy access to one either.", "commentId": 50364093 }
+        ]
+      },
+      {
+        "title": "Is an oracle's answer knowledge?",
+        "synthesis": "A thought experiment about an infallible oracle telling Archimedes the speed of light started the longest exchange. One side said a true fact received is knowledge, however it arrives. The other side used the \"justified true belief\" definition, so a fact without justification is only belief. A middle position held that humans can understand the proof checker even when they cannot follow the proof.",
+        "quotes": [
+          { "author": "vinceguidry", "text": "The infallible oracle simply gave Archimedes a true belief, the needed justification, sensors that can actually give meaning to the precise number, would take hundreds of years to develop.", "commentId": 50366968 },
+          { "author": "txrx0000", "text": "Humans may not be able to internalize the proofs, but we can internalize the programs which verify the proofs. So we do know the proofs are correct, or rather, as correct as the verifier programs.", "commentId": 50368270 }
+        ]
+      },
+      {
+        "title": "Understanding is what lets the next result happen",
+        "synthesis": "Many commenters argued that the value of a proof lies in the techniques and abstractions it creates. Without the right abstraction, brute force only handles slightly larger problems. Commenters cited David Deutsch's view that science aims to explain, and Peter Scholze as a mathematician who builds frameworks. One reply countered that people chasing high-stakes problems will take the answer and skip the theory.",
+        "quotes": [
+          { "author": "jrumbut", "text": "Perhaps an LLM can force its way to a solution through 3 million mind numbingly boring and convoluted steps, but if the number of steps increases exponentially without the right abstraction that means it can only handle a slightly larger problem than a human with pen and paper.", "commentId": 50363498 },
+          { "author": "YeGoblynQueenne", "text": "Understanding ultimately improves prediction but prediction alone does not necessarily improve understanding.", "commentId": 50379101 }
+        ]
+      },
+      {
+        "title": "Paper factories and the lab bottleneck",
+        "synthesis": "An academic described professors using AI to publish several papers a month while grant committees count papers. Others called this a scale-up of what Edison's labs already did. Experimental scientists said AI helps little when each measurement needs a physical lab, staff and calibration. One commenter proposed a public repository of AI results, with journals rewarding the humans who interpret them.",
+        "quotes": [
+          { "author": "wqtz", "text": "Now, some professors are churning out 1–3 papers a month with the same group of co-authors. All the grant money goes to them.", "commentId": 50364387 },
+          { "author": "program_whiz", "text": "Once answers are easy to obtain, it seems most people are concluding that actually understanding why its true isn't worth the effort, which means that the question maybe wasn't worth asking.", "commentId": 50364817 }
+        ]
+      }
+    ],
+    "consensus": "Most commenters agreed that understanding makes further progress easier. They also agreed that current models explain their own results poorly.",
+    "dissent": "A sizable minority said that useful, verified answers count even without understanding. They cited Kepler, pharma and Roman concrete, and called the essay's position human chauvinism.",
+    "contrarian": {
+      "author": "txrx0000",
+      "text": "But human brains are blackboxes too. I cannot tell what's going on in another person's head when they're writing a proof either.",
+      "commentId": 50365739,
+      "why": "It notes that the essay's answerable human author is also opaque, so opacity alone cannot separate AI results from human ones."
+    }
+  },
+  "digestedAt": "2026-11-13T18:38:44.000Z"
+}

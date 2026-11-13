@@ -1,0 +1,118 @@
+{
+  "hnId": 50405789,
+  "title": "How Long Can Life Wait?",
+  "url": "https://mceglowski.substack.com/p/how-long-can-life-wait",
+  "domain": "mceglowski.substack.com",
+  "kind": "article",
+  "author": "Ariarule",
+  "postedAt": "2026-11-07T16:22:59.000Z",
+  "points": 156,
+  "commentCount": 108,
+  "readingMinutes": 14,
+  "tldr": "Bacteria shaded from ultraviolet light can survive for years in open space. Bacteria in permafrost stay viable for about 600,000 years, long enough to ride a rock from Mars to Earth. Claims of microbes revived from salt 40 to 250 million years old remain unproven, probably because of contamination. Finding life on Mars will need better sterile methods than Earth labs use today.",
+  "article": {
+    "keyPoints": [
+      "Ultraviolet light is the main killer of microbes in space. A thin film of dust or dead cells is enough to shield the microbes beneath it.",
+      "In Japan's Tanpopo experiment, D. radiodurans spent three years outside the ISS and came back healthier than the control group inside. A 1 mm pellet of it could last 2 to 8 years in open space, and decades in shade. Earth microbes have probably reached Mars under lander shells.",
+      "Entry heating reaches only the outer centimeter or two of a meteorite. Impacts can throw Martian rock into space without heating it. The Martian meteorite ALH84001 never got hotter than 40 degrees C.",
+      "Permafrost bacteria 400,000 and 600,000 years old stayed viable because they kept repairing their DNA. Cosmic radiation is then the limit, about 50,000 years in small rocks and 500,000 years in larger ones.",
+      "In 2000, Russell Vreeland claimed to revive a 250-million-year-old bacterium, 2-9-3, from New Mexico salt. Its rDNA differs from a modern Dead Sea relative by only two base pairs, where a quarter billion years should give at least 50. A 2023 thesis showed his sterilization protocol does not kill spores.",
+      "Survival in salt is solid only for 100,000 years. The author wants a funder to standardize sterile drilling and single-cell sequencing on Earth, because Mars samples will be harder to analyze."
+    ],
+    "whyItMatters": "Readers interested in planetary protection or the origin of life get each finding with its date and team. The original also covers the salt-crystal dispute in more depth, including Vreeland's reply to his critics in a footnote."
+  },
+  "comments": {
+    "overview": "The thread split in two. Many readers took the title as a question about their own lives, and the largest subthread became advice for lonely introverts. The science discussion was smaller, and the author answered most of its questions directly.",
+    "themes": [
+      {
+        "title": "Panspermia among sibling stars",
+        "synthesis": "schiffern argued that panspermia is far more likely in a young star cluster, where stars sit close and swap more material. The author replied that models still give about 1 chance in 1000 there, much worse than Mars to Earth. pfdietz suggested the Sun's sibling stars could share life while the rest of the galaxy stays empty. pfdietz wants SETI to focus on stars that look like the Sun's siblings.",
+        "quotes": [
+          {
+            "author": "idlewords",
+            "text": "you get something like 1 chance in 1000 of possible panspermia events (based on modeling lumps of rock flying back and forth). Not terrible odds, but nothing like the Mars -> Earth odds.",
+            "commentId": 50407061
+          },
+          {
+            "author": "pfdietz",
+            "text": "But if OoL is extremely unlikely, the cluster panspermia idea still allows extraterrestrial life to reasonably exist and be reachable, because that life didn't require a separate highly unlikely OoL event.",
+            "commentId": 50407285
+          }
+        ]
+      },
+      {
+        "title": "The author answers the lab questions",
+        "synthesis": "Readers asked whether spores survive the launch from Mars. The author said Melosh fired spores from a rifle at forces far above what an impact needs, and they survived. Another reader asked why labs don't just image sealed crystals. The author said no imaging method can read DNA, and salt blocks genome amplification. A third reader questioned the mutation model behind the 2-9-3 critique.",
+        "quotes": [
+          {
+            "author": "idlewords",
+            "text": "Melosh (the guy I cite in the article) fired B. subtilis and D. Radiococcus spores from a rifle(!) and established that the acceleration and jerk aren't a problem, at levels far higher than the panspermia mechanism needs.",
+            "commentId": 50416419
+          },
+          {
+            "author": "idlewords",
+            "text": "The problem is getting a DNA sequence through non-invasive imaging. We don't have technology that can do that",
+            "commentId": 50416353
+          }
+        ]
+      },
+      {
+        "title": "The title drew a different crowd",
+        "synthesis": "Many readers expected an essay about life choices. The top comment, by einrealist, urged readers to connect with people and mentioned a visit to a sister's grave. Sniffnoy asked einrealist to post it elsewhere, and mmooss defended it as the best thing on the page. The author asked what title a space blog should have used, then apologized for the bait.",
+        "quotes": [
+          {
+            "author": "jader201",
+            "text": "often the title of the article is more interesting to HN than the article itself, which may be the case in this instance given it’s (currently) the top-voted comment.",
+            "commentId": 50407269
+          },
+          {
+            "author": "idlewords",
+            "text": "Man, I broke a lot of nerds' hearts today. Sorry for rug-pulling you with questions on the nature and origin of life, rather than something deep and philosophical!",
+            "commentId": 50409606
+          }
+        ]
+      },
+      {
+        "title": "Where single introverts can meet people",
+        "synthesis": "A request for a handbook for single introverts in their 30s drew dozens of replies. lukan pushed dancing, and casualscience called that bad advice and said to join a club for something you already like. allenu defended dancing because nerd hobbies are often mostly male. Others offered climbing, triathlon clubs, or simply accepting introversion.",
+        "quotes": [
+          {
+            "author": "casualscience",
+            "text": "Find a club or social scene doing something you like, don't pick up a random hobby you don't like just to \"meet people\".",
+            "commentId": 50407346
+          },
+          {
+            "author": "allenu",
+            "text": "The problem with nerds finding a social scene for what they already enjoy doing already is that there's a very good chance it's going to be a male-dominated activity.",
+            "commentId": 50407661
+          }
+        ]
+      },
+      {
+        "title": "Should humans spread life",
+        "synthesis": "jpablo wants humans to spread life everywhere. Geezus_42 said colonies would carry today's conflicts to a larger scale, and robots could do the work instead. dyauspitr expects genetic engineering to improve humans within a century. andrewflnr doubted anyone would agree on what an improved human is.",
+        "quotes": [
+          {
+            "author": "Geezus_42",
+            "text": "I do believe that colonizing other planets at our current level of cultural development will exacerbate the negative aspects of our current reality a thousand fold",
+            "commentId": 50429451
+          },
+          {
+            "author": "andrewflnr",
+            "text": "If that level of genetic engineering becomes available anytime soon, which template to use will just become another thing to fight about.",
+            "commentId": 50409791
+          }
+        ]
+      }
+    ],
+    "consensus": "Most agreed the title reads as a life question to anyone who does not know the blog covers space. Nobody defended the 250-million-year bacterium, and readers mostly asked follow-up questions about the science.",
+    "dissent": "Some readers objected to the personal thread taking over a science post. Others said HN has room for both and the comment was worth reading.",
+    "contrarian": {
+      "author": "dekhn",
+      "text": "Ribosomal DNA is extremely highly conserved and normal random mutation models do not predict it's changes well at all.",
+      "commentId": 50408776,
+      "why": "It is the only challenge to the article's main evidence against the ancient bacterium, though the author replied that the article's model is calibrated to rDNA."
+    }
+  },
+  "digestedAt": "2026-11-13T18:38:02.000Z"
+}

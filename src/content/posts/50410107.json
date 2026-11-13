@@ -1,0 +1,118 @@
+{
+  "hnId": 50410107,
+  "title": "Goodbye Claude, hello Pi",
+  "url": "https://caleb.software/posts/claude-to-pi.html",
+  "domain": "caleb.software",
+  "kind": "article",
+  "author": "karagenit",
+  "postedAt": "2026-11-08T03:11:48.000Z",
+  "points": 824,
+  "commentCount": 493,
+  "readingMinutes": 4,
+  "tldr": "A longtime Claude Code user is moving their daily coding agent to Pi, an open-source alternative. The author blames many small frustrations, not one failure. Of Claude Code's 244 releases this year, over 3/4 changed the system prompt or tool descriptions. The author concludes that nobody at Anthropic has the job of saying no to new features.",
+  "article": {
+    "keyPoints": [
+      "Claude Code began reading AGENTS.md files only a day after the author decided to leave. Until then, users had to copy or symlink their CLAUDE.md files.",
+      "When Claude Code runs in a VS Code terminal, only one session at a time receives text selected in the editor. Users reported this by December 2025, and the report was closed as a duplicate of an unrelated bug.",
+      "The official VS Code extension allows several tabs. Half the built-in slash commands fail in it, it has no custom status line, and subagent output mixes into the main chat.",
+      "The author says Anthropic ships features like agent teams and ultrareviews fast, with little care for stability. Prompt changes in most of this year's 244 releases can change how the model behaves.",
+      "The default Bash tool description is almost 3,000 tokens, mostly about git and GitHub pull requests. A footnote estimates that cutting 1,000 tokens could save millions of dollars a year in inference.",
+      "The author still credits Anthropic with building the first tool of its kind. The author likes Pi for its stability, small core and extensions. The author wrote a Pi extension that fixes the selection bug in about 20 minutes."
+    ],
+    "whyItMatters": "Claude Code users with the same complaints can read the original for its bug report and footnotes. It is a short opinion piece. It says little about daily work in Pi, so readers comparing agents will learn more from the thread."
+  },
+  "comments": {
+    "overview": "A busy and mostly friendly thread that wandered far from the post. The top thread became a long fight over terminal interfaces versus desktop apps for agents. Elsewhere, commenters weighed Anthropic's subscription rules, Pi's extension model, and whether Claude Code's tuning helps or gets in the way.",
+    "themes": [
+      {
+        "title": "Terminal or desktop app",
+        "synthesis": "The largest thread asked who still runs agents in a terminal. Desktop app fans cited cleaner rendering, session lists, images, phone access and easy copy and paste. A screen reader user added that terminal interfaces cannot expose accessibility data. Terminal fans answered with SSH, headless servers and sandboxes, and tools like herdr or tmux to manage a dozen sessions. Many people have built their own interface.",
+        "quotes": [
+          {
+            "author": "oh_no",
+            "text": "I think the TUI is kinda cosplay for people wanting to feel closer to the code.",
+            "commentId": 50415587
+          },
+          {
+            "author": "fasterik",
+            "text": "There are legitimate reasons to prefer TUI. It's easier to sandbox and runs on headless/remote sessions.",
+            "commentId": 50415644
+          }
+        ]
+      },
+      {
+        "title": "The subscription keeps people on Claude Code",
+        "synthesis": "Many said the real reason to stay is price. Anthropic's flat subscription buys far more tokens than API billing, and commenters disagreed on whether third-party agents may use it. Some cited bans and a GitHub issue claiming lower limits outside Claude Code. Others pointed to the Agent SDK, new monthly API credits, or OpenAI's open policy for Codex subscriptions. One user claimed open models do the same work for under $100 a month, and several others flatly disagreed.",
+        "quotes": [
+          {
+            "author": "leobuskin",
+            "text": "you have close to zero chances to get unbanned with Anthropic, and it's the best coding model(s) available today.",
+            "commentId": 50410950
+          },
+          {
+            "author": "sausagefeet",
+            "text": "my experience is that in terms of pure output per dollar, you cannot beat an Anthropic subscription with an open weight model.",
+            "commentId": 50423576
+          }
+        ]
+      },
+      {
+        "title": "Tuned for the model, or constantly shifting",
+        "synthesis": "Defenders said Claude Code uses hidden flags, custom headers, better compaction and careful caching that a generic agent lacks. One tester saw non-native agents burn up to five times the tokens. Critics turned the same facts around. To them, the hidden changes make each release behave differently. One commenter argued that a token-heavy prompt earns Anthropic money, which explains why it stays long.",
+        "quotes": [
+          {
+            "author": "real_faxenoff",
+            "text": "All my experiments using third-party harnesses for code-writing agents showed that if a model is used in a non-native harness, it sometimes burns through 5 times as many tokens, and the results are worse.",
+            "commentId": 50414680
+          },
+          {
+            "author": "dash-44",
+            "text": "All these flags and updates to claude code break so many workflows and give a different experience every time you use it. It's highly inconsistent and very annoying.",
+            "commentId": 50415540
+          }
+        ]
+      },
+      {
+        "title": "Building your own agent from parts",
+        "synthesis": "Pi users praised its small core and the ease of adding plan mode, subagents or better compaction through extensions, often written by the model itself. Some prefer a packaged fork like Oh My Pi. Skeptics worried about piles of half-finished extensions and time lost tuning tools. One author who built a plugin-based agent now doubts that most people need to customize anything as models improve.",
+        "quotes": [
+          {
+            "author": "0xbadcafebee",
+            "text": "This means not only can you write your own extension easily, 5 other people already have.",
+            "commentId": 50411772
+          },
+          {
+            "author": "julesrms",
+            "text": "The models have got so good over the last year that I just don't think that tweaking the harness is something many people will need to do as things progress.",
+            "commentId": 50411950
+          }
+        ]
+      },
+      {
+        "title": "No guardrails by default",
+        "synthesis": "Pi ships without permission checks or an auto mode that blocks dangerous commands. One user returned to Claude Code because a strict sandbox made Pi less useful. That user trusted Anthropic's classifier more. Others prefer a strong container with all checks off, and several shared Pi extensions that copy Claude Code's auto mode.",
+        "quotes": [
+          {
+            "author": "giladd",
+            "text": "This gives you a harmless, less capable agent. To get both safety and usefulness, Ant's solution of a fast classifier works really well.",
+            "commentId": 50411897
+          },
+          {
+            "author": "mpern",
+            "text": "Strong sandbox + disabling permission checks gives me maximum capabilities, least annoyance and (relative) peace of mind that any prompt injection, malicious plugin,... won't wreck my shit or leak credentials of any kind",
+            "commentId": 50412660
+          }
+        ]
+      }
+    ],
+    "consensus": "Pi suits people who want full control of their agent and will spend time configuring it. Anthropic's subscription pricing is the main thing that keeps many users on Claude Code.",
+    "dissent": "A loyal minority says Claude Code runs smoothly and is tuned for Anthropic's models. They see no reason to rebuild its features in Pi with third-party extensions and risk an account ban.",
+    "contrarian": {
+      "author": "zmmmmm",
+      "text": "They had a bunch of problems with Claude, most in features Pi does not even support in the first place. They don't like \"instability\" aka rapid pace of development, ignoring Pi is just as if not more rapid.",
+      "commentId": 50418357,
+      "why": "A Pi fan points out that the post's complaints mostly concern features Pi lacks, so they make a weak case for switching."
+    }
+  },
+  "digestedAt": "2026-11-13T18:38:10.000Z"
+}
